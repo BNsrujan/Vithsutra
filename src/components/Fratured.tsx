@@ -15,17 +15,17 @@ export default function WeOfferSection() {
   ];
 
   return (
-    <div className="w-xl mx-auto px-4 py-12 sm:px-6 lg:px-8">
-      <div className="mb-2 font-medium text-sm text-company-text-gray tracking-wider">
+    <div className="w-[1800px] mx-auto px-4 py-12 sm:px-6 lg:px-8">
+      <div className="mb-2 container-supporting-full text-company-text-gray ">
         FEATURED
       </div>
-      <h2 className="text-4xl font-bold text-company-black mb-8">We Offer</h2>
+      <h2 className=" section-head text-company-black mb-8">We Offer</h2>
 
       <div className="space-y-6 ">
         {features.map((feature, index) => (
           <div
             key={index}
-            className={` rounded-[24px] p-12 h-96 relative bg-cover  `}
+            className="rounded-[24px] p-12 h-96 relative bg-cover  "
             style={{ backgroundImage: `url(${feature.bgImage}) opacity-20 ` }}
           >
             <div className="max-w-md">

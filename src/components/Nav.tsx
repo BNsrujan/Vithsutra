@@ -9,7 +9,7 @@ export default function Navbar() {
       </div>
 
       {/* Nav Links */}
-      <ul className="hidden md:flex items-center gap-8 text-sm text-gray-700 font-medium">
+      <ul className="hidden md:flex label-text items-center gap-8">
         <li>
           <Link href="/services">Services</Link>
         </li>
@@ -30,9 +30,6 @@ export default function Navbar() {
       {/* Let's Talk Button */}
       <div>
         <Link href="/contact">
-          {/* <Button className="border border-black text-black text-sm px-4 py-2 rounded-md hover:bg-black hover:text-white transition">
-            Let’s Talk
-          </Button> */}
           <ShimmerButton className="shadow-2xl bg-white">
             Let&apos;s Talk
           </ShimmerButton>

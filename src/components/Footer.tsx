@@ -79,16 +79,14 @@ export default function Footer() {
   return (
     <footer className="bg-company-light-light-gray w-full py-16 flex flex-col justify-center m-auto">
       <div className="w-full lg:px-36 mx-auto ">
-        {/* Company Info */}
         <div className="flex justify-between px-4 sm:px-6 lg:px-8">
           <div className="lg:col-span-1">
-            <h2 className="text-3xl font-bold text-gray-900">Vithsutra</h2>
+            <h2 className=" text-gray-900">Vithsutra</h2>
             <p className="mt-4 text-gray-600 max-w-xs">
               Our vision is to provide convenience and help automate your work.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-3 lg:gap-10">
-            {/* Dynamic Sections */}
             {sections.slice(0, 2).map((section, index) => (
               <div
                 key={index}
