@@ -2,8 +2,8 @@ import { TextAnimate } from "@/components/magicui/text-animate";
 
 export default function WhyVithsutra() {
   return (
-    <section className="flex flex-col  lg:flex-row  justify-between px-6 md:px-16 py-16 bg-company-white">
-      <div className="max-w-[1800px] ">
+    <section className="flex flex-col h-6/12 lg:flex-row  justify-between px-6 md:px-16 py-16 bg-company-white">
+      <div className="max-w-[1200px] ">
         <TextAnimate className="section-head text-company-black mb-4">
           Why Vithsutra is the best.
         </TextAnimate>
@@ -17,17 +17,10 @@ export default function WhyVithsutra() {
         </p>
       </div>
 
-      <div className="mt-10 lg:mt-0 lg:ml-16">
-        <div className="flex justify-center items-center w-96 h-[500px] overflow-hidden rounded-lg bg-company-light-light-gray">
+      <div className="mt-10 lg:mt-0 ">
+        <div className="  w-96 h-[500px] overflow-hidden rounded-lg bg-company-light-light-gray">
           {/* biome-ignore lint/a11y/useMediaCaption: <explanation> */}
-          <video
-            width="380"
-            height="240"
-            autoPlay
-            loop
-            controls
-            // className="overflow-hidden"
-          >
+          <video width="380" height="240" autoPlay loop controls>
             <source src="/video.webm" type="video/webm" />
             Your browser does not support the video tag.
           </video>

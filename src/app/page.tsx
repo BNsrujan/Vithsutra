@@ -2,6 +2,7 @@ import WhyVithsutra from "@/components/About";
 
 import WeOfferSection from "@/components/Fratured";
 import Hero from "@/components/Hero";
+// import { AppleCardsCarouselDemo } from "@/components/ourProduct";
 import AutomationSection from "@/components/Services";
 
 export default function Home() {
@@ -10,7 +11,8 @@ export default function Home() {
       <Hero />
       <WhyVithsutra />
       <AutomationSection />
-      <WeOfferSection />s
+      <WeOfferSection />
+      {/* <AppleCardsCarouselDemo /> */}
     </div>
   );
 }

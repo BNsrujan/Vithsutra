@@ -81,7 +81,7 @@ export default function Footer() {
       <div className="w-full lg:px-36 mx-auto ">
         <div className="flex justify-between px-4 sm:px-6 lg:px-8">
           <div className="lg:col-span-1">
-            <h2 className=" text-gray-900">Vithsutra</h2>
+            <h2 className="section-head text-gray-900">Vithsutra</h2>
             <p className="mt-4 text-gray-600 max-w-xs">
               Our vision is to provide convenience and help automate your work.
             </p>
