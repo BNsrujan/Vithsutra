@@ -20,7 +20,7 @@ export default function Hero() {
         <h1 className="hero-heading  md:text-6xl  mb-4 text-company-black">
           Vithsutra intelligence
         </h1>
-        <p className="hero-heading-description max-w-xl text-company-black ">
+        <p className="hero-heading-description max-w-xl text-company-text-gray ">
           We create tailored solutions designed to meet your organization’s
           unique needs and goals. Our team is committed to delivering projects
           on time, without compromising on quality. With a strong focus on
