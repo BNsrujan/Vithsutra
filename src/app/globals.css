@@ -498,7 +498,7 @@
   font-size: 48px;
   line-height: 1.0834;
   letter-spacing: -0.003em;
-  max-width: 600px;
+  font-weight: 600px;
   margin-top: 6px;
 }
 
@@ -513,7 +513,7 @@
 /* Section Container Supporting Half */
 .container-supporting-half {
   font-size: 21px;
-  line-height: 1.194;
+  line-height: 1;
   letter-spacing: 0;
   font-weight: 400;
 }
@@ -521,9 +521,10 @@
 /* Body Text */
 .body-text {
   font-size: 14px;
-  line-height: 1.28;
-  letter-spacing: -0.16em;
-  max-width: 400px;
+  line-height: 1.4;
+  letter-spacing: 0.03em;
+  font-weight: 400px;
+
 }
 
 /* Labeled Text */
@@ -532,7 +533,7 @@
   line-height: 1.6;
   letter-spacing: .20px;
   font-weight: 400;
-  margin: 9.6px 0;
+  /* margin: 9.6px 0; */
   color: #000000b8;
 }
 

@@ -18,7 +18,7 @@ export default function Hero() {
           Experience The
         </p>
         <h1 className="hero-heading  md:text-6xl  mb-4 text-company-black">
-          Vithsutra intelligence
+          Vithsutra 
         </h1>
         <p className="hero-heading-description max-w-xl text-company-text-gray ">
           We create tailored solutions designed to meet your organization’s

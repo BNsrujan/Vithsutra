@@ -1,20 +1,30 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { cn } from '@/lib/utils'; // optional: to merge Tailwind classes
+"use client";
+import React, { useState } from "react";
+import { cn } from "@/lib/utils"; 
 
-export const IconButton = ({ icon: Icon, active = false, onClick }) => {
+export const IconButton = ({ icon: Icon, active = false }) => {
+  const [isHovered, setIsHovered] = useState(false);
+
   return (
-    <motion.button
-      whileHover={{ scale: 1.1 }}
-      whileTap={{ scale: 0.95 }}
-      onClick={onClick}
+    <button
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
       className={cn(
-        "w-16 h-16 rounded-full flex items-center justify-center transition-all duration-500",
-        active ? "bg-[#1e1e1e] text-orange-500 shadow-[0_0_20px_rgba(255,100,0,0.8)]" :
-                 "bg-[#1e1e1e] text-gray-400 hover:text-orange-400 hover:shadow-[0_0_12px_rgba(255,80,0,0.5)]"
+        "relative w-12 h-12 rounded-full flex items-center justify-center transition-all duration-300 ease-in-out",
+        "bg-transparent text-gray-400 hover:text-blue-600"
       )}
     >
-      <Icon className="w-6 h-6" />
-    </motion.button>
+     
+      <div
+        className={cn(
+          "absolute inset-0 z-0 rounded-full transition-opacity duration-500 ease-in-out",
+          isHovered ? "opacity-100" : "opacity-0",
+          "bg-[radial-gradient(circle_at_center,_rgba(96,165,250,0.4)_0%,_transparent_80%)]"
+        )}
+      ></div>
+
+      
+      <Icon className="w-4 h-4 z-10" />
+    </button>
   );
 };

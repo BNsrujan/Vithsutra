@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { ShimmerButton } from "./magicui/shimmer-button";
+import { ShimmerButton } from "../magicui/shimmer-button";
 export default function Navbar() {
   return (
     <nav className="flex items-center justify-between px-6 md:px-12 py-4 bg-white ">
@@ -20,17 +20,18 @@ export default function Navbar() {
           <Link href="/industries">Industries</Link>
         </li>
         <li>
-          <Link href="/about">About</Link>
-        </li>
-        <li>
           <Link href="/explore">Explore</Link>
         </li>
+        <li>
+          <Link href="/about">About</Link>
+        </li>
+        
       </ul>
 
       {/* Let's Talk Button */}
       <div>
         <Link href="/contact">
-          <ShimmerButton className="shadow-2xl bg-white">
+          <ShimmerButton className="shadow-2xl ">
             Let&apos;s Talk
           </ShimmerButton>
         </Link>

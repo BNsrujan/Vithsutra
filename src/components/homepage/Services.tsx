@@ -1,6 +1,6 @@
 "use client";
 import { Plus, Server, Cpu, Layers } from "lucide-react";
-import { TextAnimate } from "./magicui/text-animate";
+import { TextAnimate } from "../magicui/text-animate";
 import * as motion from "motion/react-client";
 const features = [
   {
