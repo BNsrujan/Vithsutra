@@ -1,8 +1,12 @@
 "use client";
-import React, { useState } from "react";
+import React, { FC, SVGProps, useState } from "react";
 import { cn } from "@/lib/utils"; 
 
-export const IconButton = ({ icon: Icon}) => {
+interface IconButtonProps{
+  icon:FC<SVGProps<SVGSVGElement>>;
+}
+
+export const IconButton: React.FC<IconButtonProps> = ({ icon:Icon}) => {
   const [isHovered, setIsHovered] = useState(false);
 
   return (

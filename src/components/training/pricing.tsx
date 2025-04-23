@@ -27,8 +27,9 @@ import {
   Wrench,
   Compass,
 } from 'lucide-react';
+import { JSX } from 'react';
 
-const iconMap: Record<string, JSX.Element> = {
+const iconMap: Record<string,JSX.Element > = {
   'Introduction to Robotics & Industry Applications': <IconButton icon={BookOpen} />,
   'Types of Robots: Cartesian, Articulated, Cobots, etc.': <IconButton icon={Settings2} />,
   'Motion Basics: Joint, Linear, Tool Movements.': <IconButton icon={Move3D} />,
@@ -147,7 +148,7 @@ export default function PricingModels() {
                   key={idx}
                   className="flex items-center gap-2 group transition duration-300 ease-in group-hover:text-blue-600"
                 >
-                  {iconMap[feature] ?? <IconButton icon={Puzzle} active={idx}/>}
+                  {iconMap[feature] ?? <IconButton icon={Puzzle} />}
                   <span className="body-text text-company-text-gray group-hover:text-blue-600">
                     {feature}
                   </span>
