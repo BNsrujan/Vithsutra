@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import { cn } from "@/lib/utils"; 
 
-export const IconButton = ({ icon: Icon, active = false }) => {
+export const IconButton = ({ icon: Icon}) => {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
