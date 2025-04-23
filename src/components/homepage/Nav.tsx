@@ -5,7 +5,9 @@ export default function Navbar() {
   return (
     <nav className="flex items-center justify-between px-6 md:px-12 py-4 bg-white ">
       <div className="flex items-center gap-2">
+        <Link href={"/"}>
         <Image src="/logo.png" alt="Logo" width={40} height={40} />
+        </Link>
       </div>
 
       {/* Nav Links */}

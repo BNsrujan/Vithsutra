@@ -25,7 +25,7 @@ const features = [
 
 export default function AutomationSection() {
   return (
-    <div className="px-12 py-16  h-screen flex flex-col justify-center items-center text-company-black">
+    <div className=" py-16 max-w-[1400px]  h-screen flex flex-col justify-center items-center text-company-black">
       <div className="m mx-auto">
         <div className="mt-1 font-medium text-sm tracking-wider text-company-text-gray">
           FEATURED

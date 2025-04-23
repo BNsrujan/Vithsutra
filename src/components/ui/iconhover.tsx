@@ -22,8 +22,6 @@ export const IconButton = ({ icon: Icon, active = false }) => {
           "bg-[radial-gradient(circle_at_center,_rgba(96,165,250,0.4)_0%,_transparent_80%)]"
         )}
       ></div>
-
-      
       <Icon className="w-4 h-4 z-10" />
     </button>
   );

@@ -19,7 +19,7 @@ export default function WeOfferSection() {
   ];
 
   return (
-    <div className="max-w-[1400px] h-10/12 lg:w-[1400px]  mx-auto px-4 py-12 sm:px-6 lg:px-8">
+    <div className="max-w-[1400px] h-10/12 lg:w-[1400px]  mx-auto  py-12 sm:px-6 lg:px-8">
       <div className="mb-2  text-company-text-gray ">Services</div>
       <h2 className=" section-head text-company-black mb-8">We Offer</h2>
 

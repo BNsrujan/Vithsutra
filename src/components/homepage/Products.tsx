@@ -62,7 +62,7 @@ const products = [
 
 export default function Products() {
   return (
-    <div className="max-w-[1800px] mx-auto px-4 py-16">
+    <div className="max-w-[1400px] mx-auto  py-16">
       <div className="mb-2 text-company-text-gray">Products</div>
       <h2 className="section-head text-company-black mb-8">Our Solutions</h2>
 

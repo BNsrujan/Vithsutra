@@ -2,8 +2,8 @@ import { TextAnimate } from "@/components/magicui/text-animate";
 
 export default function WhyVithsutra() {
   return (
-    <section className="flex gap-5 flex-col h-6/12 lg:flex-row  justify-between px-6 md:px-16 py-16 bg-company-white">
-      <div className="max-w-[1200px] ">
+    <section className="flex max-w-[1400px] gap-5 flex-col h-6/12 lg:flex-row  justify-between px-6 md:px-16 py-16 bg-company-white">
+      <div className=" ">
         <TextAnimate className="section-head text-company-black mb-4 ">
           Why Vithsutra is the best.
         </TextAnimate>

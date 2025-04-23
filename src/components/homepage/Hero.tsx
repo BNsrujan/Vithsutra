@@ -3,7 +3,7 @@ import { AnimatedGridPattern } from "@/components/magicui/animated-grid-pattern"
 
 export default function Hero() {
   return (
-    <div className="relative flex h-screen w-full items-center justify-center  p-20">
+    <div className="relative flex h-screen w-full items-center justify-center max-w-[1400px]  p-20">
       <AnimatedGridPattern
         numSquares={30}
         maxOpacity={0.1}
