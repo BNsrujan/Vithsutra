@@ -11,7 +11,6 @@ export default function Training() {
       <ComparisonTable/>
       <BrochureDownload/>
       <Faq/>
-    
     </div>
   );
 }

@@ -1,20 +1,3 @@
-// import React from "react";
-
-// function NotFound() {
-//   return (
-//     <div className="flex contain-content text-center h-screen  ">
-//       <div></div>
-//       <div>
-//         <h1 className="text-company-black openfield-text"> Page Not Found</h1>
-//         <p className="text-company-text-gray h-screen">
-//           The page you are searching isn't available{" "}
-//         </p>
-//       </div>
-//     </div>
-//   );
-// }
-
-// export default NotFound;
 
 
 import { ArrowLeft } from 'lucide-react';
