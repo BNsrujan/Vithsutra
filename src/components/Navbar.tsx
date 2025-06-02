@@ -5,7 +5,7 @@ import { text } from "@/lib/typography";
 
 export default function Navbar() {
   return (
-    <nav className="z-20 absolute top-0 w-full text-company-white-text flex items-center justify-between px-6 md:px-12 py-4 h bg-transparent h-[64px]">
+    <nav className="z-20 absolute top-0 w-full text-company-black-text flex items-center justify-between px-6 md:px-12 py-4 h bg-transparent h-[64px]">
       <div className="flex items-center gap-2">
         <Link href="/">
           <Image src="/logo/company_logo_without_text.png" alt="Logo" width={40} height={40} />

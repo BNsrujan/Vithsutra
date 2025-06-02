@@ -1,0 +1,226 @@
+{
+  "pages": [
+    {
+      "path": "/",
+      "title": "Home",
+      "description": "Vithsutra - Industrial IoT and Robotics Solutions",
+      "priority": 1.0,
+      "sections": [
+        {
+          "id": "hero",
+          "title": "Hero Section"
+        },
+        {
+          "id": "about",
+          "title": "About Us"
+        },
+        {
+          "id": "solutions",
+          "title": "Our Solutions"
+        },
+        {
+          "id": "features",
+          "title": "Key Features"
+        },
+        {
+          "id": "testimonials",
+          "title": "Client Testimonials"
+        },
+        {
+          "id": "contact",
+          "title": "Contact Us"
+        }
+      ]
+    },
+    {
+      "path": "/about",
+      "title": "About Us",
+      "description": "Learn about our mission, vision, and the team behind Vithsutra's innovative IIoT and robotics solutions",
+      "priority": 0.8,
+      "sections": [
+        {
+          "id": "mission",
+          "title": "Our Mission"
+        },
+        {
+          "id": "vision",
+          "title": "Our Vision"
+        },
+        {
+          "id": "team",
+          "title": "Leadership Team"
+        },
+        {
+          "id": "values",
+          "title": "Our Values"
+        },
+        {
+          "id": "history",
+          "title": "Company History"
+        }
+      ]
+    },
+    {
+      "path": "/products",
+      "title": "Products & Solutions",
+      "description": "Explore our comprehensive range of IIoT and robotics solutions for industrial automation",
+      "priority": 0.9,
+      "sections": [
+        {
+          "id": "overview",
+          "title": "Solutions Overview"
+        },
+        {
+          "id": "iot-platform",
+          "title": "IIoT Platform"
+        },
+        {
+          "id": "robotics",
+          "title": "Robotics Solutions"
+        },
+        {
+          "id": "automation",
+          "title": "Industrial Automation"
+        },
+        {
+          "id": "integration",
+          "title": "System Integration"
+        }
+      ],
+      "subpages": [
+        {
+          "path": "/products/iot-platform",
+          "title": "IIoT Platform",
+          "description": "Our comprehensive IIoT platform for industrial monitoring and optimization",
+          "priority": 0.8
+        },
+        {
+          "path": "/products/robotics",
+          "title": "Robotics Solutions",
+          "description": "Advanced robotics solutions for manufacturing and industrial automation",
+          "priority": 0.8
+        },
+        {
+          "path": "/products/automation",
+          "title": "Industrial Automation",
+          "description": "End-to-end industrial automation solutions for enhanced productivity",
+          "priority": 0.8
+        }
+      ]
+    },
+    {
+      "path": "/case-studies",
+      "title": "Case Studies",
+      "description": "Real-world examples of how our IIoT and robotics solutions have transformed businesses",
+      "priority": 0.7,
+      "sections": [
+        {
+          "id": "featured",
+          "title": "Featured Case Studies"
+        },
+        {
+          "id": "industries",
+          "title": "Industry Solutions"
+        },
+        {
+          "id": "success-stories",
+          "title": "Success Stories"
+        }
+      ],
+      "subpages": [
+        {
+          "path": "/case-studies/smart-factory",
+          "title": "Smart Factory Transformation",
+          "description": "How we helped a manufacturing plant achieve 40% efficiency improvement",
+          "priority": 0.6
+        },
+        {
+          "path": "/case-studies/energy-optimization",
+          "title": "Energy Management Optimization",
+          "description": "Reducing energy costs by 30% through IIoT implementation",
+          "priority": 0.6
+        }
+      ]
+    },
+    {
+      "path": "/careers",
+      "title": "Careers",
+      "description": "Join our team of innovators and help shape the future of industrial automation",
+      "priority": 0.6,
+      "sections": [
+        {
+          "id": "open-positions",
+          "title": "Open Positions"
+        },
+        {
+          "id": "benefits",
+          "title": "Benefits & Culture"
+        },
+        {
+          "id": "life-at-vithsutra",
+          "title": "Life at Vithsutra"
+        }
+      ],
+      "subpages": [
+        {
+          "path": "/careers/engineering",
+          "title": "Engineering Positions",
+          "description": "Engineering roles in robotics, IoT, and industrial automation",
+          "priority": 0.5
+        },
+        {
+          "path": "/careers/research",
+          "title": "Research & Development",
+          "description": "R&D opportunities in cutting-edge industrial technologies",
+          "priority": 0.5
+        }
+      ]
+    },
+    {
+      "path": "/blog",
+      "title": "Blog & Insights",
+      "description": "Latest news, insights, and trends in IIoT and robotics",
+      "priority": 0.5,
+      "sections": [
+        {
+          "id": "latest",
+          "title": "Latest Articles"
+        },
+        {
+          "id": "categories",
+          "title": "Categories"
+        },
+        {
+          "id": "newsletter",
+          "title": "Subscribe to Newsletter"
+        }
+      ]
+    },
+    {
+      "path": "/contact",
+      "title": "Contact Us",
+      "description": "Get in touch with our team for inquiries about our IIoT and robotics solutions",
+      "priority": 0.7,
+      "sections": [
+        {
+          "id": "form",
+          "title": "Contact Form"
+        },
+        {
+          "id": "locations",
+          "title": "Our Locations"
+        },
+        {
+          "id": "support",
+          "title": "Support"
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "lastModified": "2024-03-20",
+    "version": "1.0",
+    "siteName": "Vithsutra",
+    "baseUrl": "https://vithsutra.com"
+  }
+} 
