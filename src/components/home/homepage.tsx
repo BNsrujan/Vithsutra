@@ -3,21 +3,21 @@ import About from './About'
 import Hero from './herosection'
 import WeOfferSection from './domain'
 import AutomationSection from './sectore'
-import { CarouselSpacing } from './carouselApplication'
+import CardSection from './cardSection'
 
 function Homepage() {
   return (
-    <div className='flex flex-col justify-center overflow-x-hidden'>
-      <Hero/>
-      <div className='flex flex-col  justify-center m-auto pt-30 max-w-[1399px]'>
-      <div className='lg:pb-[800px]'>
-      <About/>
+    <main className="w-full min-h-screen bg-white">
+      <Hero />
+      <div className="container mx-auto px-4 py-16">
+        <div className="space-y-24">
+          <About />
+          <CardSection />
+          <AutomationSection />
+          <WeOfferSection />
+        </div>
       </div>
-      <AutomationSection/>
-      <WeOfferSection/>
-      <CarouselSpacing/>
-      </div>
-    </div>
+    </main>
   )
 }
 
