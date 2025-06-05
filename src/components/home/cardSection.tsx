@@ -59,10 +59,8 @@ export default function CardSection() {
     activeFilter === 'Featured' ? true : card.category === activeFilter
   )
 
-  const slideWidth = 280 // Width of each card on mobile
-  const slideWidthDesktop = 300 // Width of each card on desktop
-  const gap = 16 // Gap between cards on mobile
-  const gapDesktop = 24 // Gap between cards on desktop
+  const slideWidth = 320 // Increased width for better content display
+  const gap = 24 // Increased gap for better spacing
 
   const nextSlide = () => {
     if (currentIndex < filteredCards.length - 1) {
@@ -77,10 +75,10 @@ export default function CardSection() {
   }
 
   return (
-    <section className="py-12 sm:py-16 md:py-20 bg-gray-50">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-24 bg-company-light-light-gray">
+      <div className="max-w-[1400px] mx-auto px-4">
         {/* Filter Buttons */}
-        <div className="flex flex-wrap gap-2 sm:gap-4 mb-6 sm:mb-8">
+        <div className="flex flex-wrap gap-3 mb-12">
           {filters.map((filter) => (
             <button
               key={filter}
@@ -88,10 +86,10 @@ export default function CardSection() {
                 setActiveFilter(filter)
                 setCurrentIndex(0)
               }}
-              className={`px-4 sm:px-6 py-2 rounded-full text-xs sm:text-sm font-medium transition-colors
+              className={`px-6 py-2.5 rounded-full text-sm font-medium transition-all duration-300
                 ${activeFilter === filter 
-                  ? 'bg-blue-600 text-white' 
-                  : 'bg-white text-gray-600 hover:bg-gray-100 border border-gray-200'}`}
+                  ? 'bg-company-blue text-white shadow-md' 
+                  : 'bg-company-white text-company-text-gray hover:bg-company-light-gray border border-company-gray'}`}
             >
               {filter}
             </button>
@@ -104,9 +102,9 @@ export default function CardSection() {
           <button
             onClick={prevSlide}
             disabled={currentIndex === 0}
-            className={`absolute left-0 top-1/2 -translate-y-1/2 z-10 p-2 rounded-full bg-white text-gray-600 transition-colors
-              ${currentIndex === 0 ? 'opacity-50 cursor-not-allowed' : 'hover:bg-gray-100'}
-              hidden sm:block shadow-md`}
+            className={`absolute -left-4 top-1/2 -translate-y-1/2 z-10 p-3 rounded-full bg-company-white text-company-text-gray transition-all duration-300
+              ${currentIndex === 0 ? 'opacity-50 cursor-not-allowed' : 'hover:bg-company-light-gray hover:text-company-blue'}
+              hidden sm:block shadow-lg`}
             aria-label="Previous slide"
           >
             <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -117,9 +115,9 @@ export default function CardSection() {
           <button
             onClick={nextSlide}
             disabled={currentIndex >= filteredCards.length - 1}
-            className={`absolute right-0 top-1/2 -translate-y-1/2 z-10 p-2 rounded-full bg-white text-gray-600 transition-colors
-              ${currentIndex >= filteredCards.length - 1 ? 'opacity-50 cursor-not-allowed' : 'hover:bg-gray-100'}
-              hidden sm:block shadow-md`}
+            className={`absolute -right-4 top-1/2 -translate-y-1/2 z-10 p-3 rounded-full bg-company-white text-company-text-gray transition-all duration-300
+              ${currentIndex >= filteredCards.length - 1 ? 'opacity-50 cursor-not-allowed' : 'hover:bg-company-light-gray hover:text-company-blue'}
+              hidden sm:block shadow-lg`}
             aria-label="Next slide"
           >
             <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -130,9 +128,9 @@ export default function CardSection() {
           {/* Cards Container */}
           <div ref={carouselRef} className="overflow-hidden">
             <motion.div
-              className="flex gap-4 sm:gap-6"
+              className="flex gap-6"
               animate={{
-                x: -(currentIndex * (window.innerWidth < 640 ? slideWidth + gap : slideWidthDesktop + gapDesktop))
+                x: -(currentIndex * (slideWidth + gap))
               }}
               transition={{ type: "spring", stiffness: 300, damping: 30 }}
             >
@@ -142,33 +140,34 @@ export default function CardSection() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5 }}
-                  className="flex-none w-[280px] sm:w-[300px] bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow"
+                  className="flex-none w-[320px] bg-company-white rounded-[28px] overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 group"
                 >
                   {card.image && (
-                    <div className="h-40 sm:h-48">
+                    <div className="h-48 relative overflow-hidden">
                       <img
                         src={card.image}
                         alt={card.title}
-                        className="w-full h-full object-cover"
+                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                       />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                     </div>
                   )}
-                  <div className="p-4 sm:p-6">
-                    <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-2 sm:mb-3">
+                  <div className="p-6">
+                    <h3 className="text-xl font-semibold text-company-black mb-3 group-hover:text-company-blue transition-colors">
                       {card.title}
                     </h3>
-                    <p className="text-gray-600 text-xs sm:text-sm mb-3 sm:mb-4">
+                    <p className="text-company-text-gray text-sm mb-4 leading-relaxed">
                       {card.description}
                     </p>
                     <div className="flex justify-between items-center">
-                      <span className="text-xs font-medium text-blue-600 bg-blue-50 px-2 sm:px-3 py-1 rounded-full">
+                      <span className="text-sm font-medium text-company-blue bg-company-light-light-gray px-4 py-1.5 rounded-full">
                         {card.tag}
                       </span>
                       <button 
-                        className="text-gray-400 hover:text-blue-600 transition-colors"
+                        className="text-company-text-gray hover:text-company-blue transition-colors p-2 hover:bg-company-light-light-gray rounded-full"
                         aria-label={`Read more about ${card.title}`}
                       >
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 sm:h-5 sm:w-5" viewBox="0 0 20 20" fill="currentColor">
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                           <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
                         </svg>
                       </button>
@@ -180,13 +179,13 @@ export default function CardSection() {
           </div>
 
           {/* Dots Navigation */}
-          <div className="flex justify-center gap-2 mt-4 sm:mt-6">
+          <div className="flex justify-center gap-2 mt-8">
             {filteredCards.map((_, index) => (
               <button
                 key={index}
                 onClick={() => setCurrentIndex(index)}
-                className={`w-2 h-2 rounded-full transition-all
-                  ${currentIndex === index ? 'bg-blue-600 w-4' : 'bg-gray-300 hover:bg-gray-400'}`}
+                className={`h-2 rounded-full transition-all duration-300
+                  ${currentIndex === index ? 'bg-company-blue w-8' : 'bg-company-gray w-2 hover:bg-company-text-gray'}`}
                 aria-label={`Go to slide ${index + 1}`}
               />
             ))}

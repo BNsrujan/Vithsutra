@@ -9,67 +9,67 @@ const industries = [
     title: "Automotive",
     description: "Smart manufacturing and automation solutions for the automotive industry.",
     link: "/industries/automotive",
-    image: "/images/industries/automotive/hero.jpg"
+    image: "/industry/automotive.avif"
   },
   {
     title: "Logistics",
     description: "Intelligent logistics and supply chain management solutions.",
     link: "/industries/logistics",
-    image: "/images/industries/logistics/hero.jpg"
+    image: "/industry/istockphoto-1149575577-612x612.webp"
   },
   {
     title: "FMOG",
     description: "Fast Moving Consumer Goods automation and optimization solutions.",
     link: "/industries/fmog",
-    image: "/images/industries/fmog/hero.jpg"
+    image: "/industry/fmog.avif"
   },
   {
     title: "Chemical & Pharma",
     description: "Advanced automation and compliance solutions for chemical and pharmaceutical industries.",
     link: "/industries/chemical-pharma",
-    image: "/images/industries/chemical-pharma/hero.jpg"
+    image: "/industry/chemicalanharmadp.avif"
   },
   {
     title: "Plastics & Polymers",
     description: "Smart manufacturing and quality control solutions for plastics and polymers.",
     link: "/industries/plastics-polymers",
-    image: "/images/industries/plastics-polymers/hero.jpg"
+    image: "/industry/plastic and polymer.webp"
   },
   {
     title: "Metal & Machining",
     description: "Precision manufacturing and automation solutions for metal and machining industries.",
     link: "/industries/metal-machining",
-    image: "/images/industries/metal-machining/hero.jpg"
+    image: "/industry/metal and machining.avif"
   },
   {
     title: "New Energy",
     description: "Renewable energy and smart grid management solutions.",
     link: "/industries/new-energy",
-    image: "/images/industries/new-energy/hero.jpg"
+    image: "/industry/newenery.avif"
   },
   {
     title: "Healthcare",
     description: "Healthcare automation and patient care management solutions.",
     link: "/industries/healthcare",
-    image: "/images/industries/healthcare/hero.jpg"
+    image: "/industry/healthcare.webp"
   },
   {
     title: "Retail",
     description: "Retail automation and customer experience solutions.",
     link: "/industries/retail",
-    image: "/images/industries/retail/hero.jpg"
+    image: "/industry/retail.avif"
   },
   {
     title: "Manufacturing",
     description: "Industry 4.0 and smart manufacturing solutions.",
     link: "/industries/manufacturing",
-    image: "/images/industries/manufacturing/hero.jpg"
+    image: "/industry/manufactureing.avif"
   },
   {
     title: "Education",
     description: "Smart learning and campus management solutions.",
     link: "/industries/education",
-    image: "/images/industries/education/hero.jpg"
+    image: "/industry/educationlab.avif"
   }
 ];
 

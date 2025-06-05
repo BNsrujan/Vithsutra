@@ -2,32 +2,64 @@
 
 import { TextReveal } from "../magicui/text-reveal";
 import { text } from "../../lib/typography";
-import { motion } from "motion/react"
-import { containerVariants, itemVariants } from "../../lib/motion";
+import * as motion from "motion/react-client";
+
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.2,
+      delayChildren: 0.3,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.6,
+      ease: [0.21, 0.47, 0.32, 0.98],
+    },
+  },
+};
 
 export default function About() {
   return (
-    <section className="relative min-h-screen py-12 sm:py-16 md:py-20 lg:py-24">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col-reverse lg:flex-row items-center gap-8 sm:gap-12 lg:gap-16">
+    <section className="relative py-24 bg-company-light-light-gray">
+      <div className="max-w-[1400px] mx-auto px-4">
+        <div className="flex flex-col-reverse lg:flex-row items-center gap-12 lg:gap-16">
           {/* Text Content */}
           <div className="w-full lg:w-1/2">
             <motion.div
               variants={containerVariants}
               initial="hidden"
-              animate="visible"
-              className="mb-6 sm:mb-8"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-100px" }}
+              className="mb-8"
             >
+              <motion.div 
+                variants={itemVariants}
+                className="inline-block px-4 py-1.5 rounded-full bg-company-white mb-6"
+              >
+                <span className="text-sm font-medium tracking-wider text-company-text-gray">
+                  ABOUT US
+                </span>
+              </motion.div>
+
               <motion.h2 
                 variants={itemVariants}
-                className={`${text.cardHeadingtext} text-gray-900 text-3xl sm:text-4xl md:text-5xl lg:text-6xl`}
+                className={`${text.Sectiontext} text-company-black mb-6`}
               >
-                Why Choose Vithsutra.
+                Why Choose Vithsutra
               </motion.h2>
             </motion.div>
             
-            <TextReveal className="text-gray-700 text-base sm:text-lg md:text-xl leading-relaxed">
-              Ton revolutionize how businesses interact with technology by creating
+            <TextReveal className="text-company-text-gray text-base leading-relaxed">
+              To revolutionize how businesses interact with technology by creating
               intelligent, integrated solutions that anticipate future challenges
               and place our clients at the forefront of digital transformation. By
               2030, we aim to be a global leader in technological innovation,
@@ -35,22 +67,46 @@ export default function About() {
               efficiency, growth, and competitive advantage.
             </TextReveal>
 
-            <div className="mt-8 sm:mt-10 md:mt-12">
+            <motion.div 
+              variants={itemVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              className="mt-10"
+            >
               <a 
                 href="/about" 
-                className="inline-block bg-company-blue text-white px-6 py-3 rounded-lg hover:bg-company-blue-dark transition-colors shadow-lg text-sm sm:text-base"
+                className="inline-flex items-center gap-2 bg-company-blue text-white px-8 py-3.5 rounded-full hover:bg-company-blue-dark transition-all duration-300 shadow-md hover:shadow-lg text-sm font-medium"
               >
                 Learn More
+                <svg 
+                  xmlns="http://www.w3.org/2000/svg" 
+                  className="h-4 w-4" 
+                  viewBox="0 0 20 20" 
+                  fill="currentColor"
+                >
+                  <path 
+                    fillRule="evenodd" 
+                    d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" 
+                    clipRule="evenodd" 
+                  />
+                </svg>
               </a>
-            </div>
+            </motion.div>
           </div>
 
           {/* Video Content */}
-          <div className="w-full lg:w-1/2">
-            <div className="sticky top-24">
-              <div className="aspect-video w-full max-w-2xl mx-auto overflow-hidden rounded-xl bg-gray-100 shadow-xl">
+          <motion.div 
+            variants={itemVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            className="w-full lg:w-1/2"
+          >
+            <div className="relative">
+              <div className="aspect-video w-full max-w-2xl mx-auto overflow-hidden rounded-[28px] bg-company-white shadow-xl group">
                 <video 
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   autoPlay 
                   loop 
                   muted
@@ -59,9 +115,10 @@ export default function About() {
                   <source src="/video/video.webm" type="video/webm" />
                   Your browser does not support the video tag.
                 </video>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

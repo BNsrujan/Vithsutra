@@ -96,8 +96,8 @@ export function Navbar() {
                       </p>
                     </Link>
                   </NavigationMenuLink>
-                </li>
-                <li>
+        </li>
+        <li>
                   <NavigationMenuLink asChild>
                     <Link href="/industries/metal-machining" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
                       <div className="text-sm font-medium leading-none">Metal & Machining</div>
@@ -106,8 +106,8 @@ export function Navbar() {
                       </p>
                     </Link>
                   </NavigationMenuLink>
-                </li>
-                <li>
+        </li>
+        <li>
                   <NavigationMenuLink asChild>
                     <Link href="/industries/new-energy" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
                       <div className="text-sm font-medium leading-none">New Energy</div>
@@ -116,8 +116,8 @@ export function Navbar() {
                       </p>
                     </Link>
                   </NavigationMenuLink>
-                </li>
-                <li>
+        </li>
+        <li>
                   <NavigationMenuLink asChild>
                     <Link href="/industries/healthcare" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
                       <div className="text-sm font-medium leading-none">Healthcare</div>
@@ -126,8 +126,8 @@ export function Navbar() {
                       </p>
                     </Link>
                   </NavigationMenuLink>
-                </li>
-                <li>
+        </li>
+        <li>
                   <NavigationMenuLink asChild>
                     <Link href="/industries/retail" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
                       <div className="text-sm font-medium leading-none">Retail</div>
@@ -136,8 +136,8 @@ export function Navbar() {
                       </p>
                     </Link>
                   </NavigationMenuLink>
-                </li>
-                <li>
+        </li>
+        <li>
                   <NavigationMenuLink asChild>
                     <Link href="/industries/manufacturing" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
                       <div className="text-sm font-medium leading-none">Manufacturing</div>
@@ -146,8 +146,8 @@ export function Navbar() {
                       </p>
                     </Link>
                   </NavigationMenuLink>
-                </li>
-                <li>
+        </li>
+        <li>
                   <NavigationMenuLink asChild>
                     <Link href="/industries/education" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
                       <div className="text-sm font-medium leading-none">Education</div>
@@ -156,8 +156,8 @@ export function Navbar() {
                       </p>
                     </Link>
                   </NavigationMenuLink>
-                </li>
-              </ul>
+        </li>
+      </ul>
             </NavigationMenuContent>
           </NavigationMenuItem>
 
@@ -209,7 +209,7 @@ export function Navbar() {
                       <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
                         Intelligent retail technology solutions
                       </p>
-                    </Link>
+        </Link>
                   </NavigationMenuLink>
                 </li>
               </ul>
@@ -224,7 +224,7 @@ export function Navbar() {
               <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2">
                 <li className="row-span-3">
                   <NavigationMenuLink asChild>
-                    <Link
+          <Link 
                       className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
                       href="/business-solutions"
                     >
@@ -244,7 +244,7 @@ export function Navbar() {
                       <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
                         End-to-end enterprise business solutions
                       </p>
-                    </Link>
+          </Link>
                   </NavigationMenuLink>
                 </li>
               </ul>
@@ -259,7 +259,7 @@ export function Navbar() {
               <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2">
                 <li className="row-span-3">
                   <NavigationMenuLink asChild>
-                    <Link
+          <Link 
                       className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
                       href="/projects"
                     >
@@ -319,7 +319,7 @@ export function Navbar() {
                       <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
                         Smart hydroponic farming solutions
                       </p>
-                    </Link>
+          </Link>
                   </NavigationMenuLink>
                 </li>
               </ul>
@@ -334,7 +334,7 @@ export function Navbar() {
               <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2">
                 <li className="row-span-3">
                   <NavigationMenuLink asChild>
-                    <Link
+          <Link 
                       className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
                       href="/applications"
                     >
@@ -434,7 +434,7 @@ export function Navbar() {
                       <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
                         Automated machine tending solutions
                       </p>
-                    </Link>
+          </Link>
                   </NavigationMenuLink>
                 </li>
                 <li>
@@ -444,7 +444,7 @@ export function Navbar() {
                       <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
                         Automated material processing systems
                       </p>
-                    </Link>
+          </Link>
                   </NavigationMenuLink>
                 </li>
                 <li>
@@ -454,7 +454,7 @@ export function Navbar() {
                       <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
                         Automated retail operations solutions
                       </p>
-                    </Link>
+          </Link>
                   </NavigationMenuLink>
                 </li>
               </ul>
@@ -470,9 +470,9 @@ export function Navbar() {
               <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2">
                 <li className="row-span-3">
                   <NavigationMenuLink asChild>
-                    <Link
+          <Link 
                       className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
-                      href="/about"
+            href="/about" 
                     >
                       <div className="mb-2 mt-4 text-lg font-medium">
                         About Us
@@ -500,7 +500,7 @@ export function Navbar() {
                       <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
                         Latest news and insights
                       </p>
-                    </Link>
+          </Link>
                   </NavigationMenuLink>
                 </li>
                 <li>
@@ -510,7 +510,7 @@ export function Navbar() {
                       <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
                         Frequently asked questions
                       </p>
-                    </Link>
+          </Link>
                   </NavigationMenuLink>
                 </li>
                 <li>
@@ -520,7 +520,7 @@ export function Navbar() {
                       <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
                         Join our growing team
                       </p>
-                    </Link>
+          </Link>
                   </NavigationMenuLink>
                 </li>
               </ul>
