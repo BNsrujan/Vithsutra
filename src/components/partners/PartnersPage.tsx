@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion"
 import { useState } from "react"
-import { Building2, Quote, ArrowRight, CheckCircle2 } from "lucide-react"
+import {  Quote, ArrowRight, CheckCircle2 } from "lucide-react"
 
 // Partner data
 const partners = {

@@ -14,13 +14,13 @@ export default function WeOfferSection() {
       title: "IoT Solutions",
       description:
         "Smart, connected systems that provide real-time insights and control",
-      bgImage: "/iot.png",
+      bgImage: "/iot_images/image.png",
     },
     {
       title: "Robotics & Automation",
       description:
         "Advanced robotics solutions that optimize, automate operations and improve efficiency",
-      bgImage: "/robotics.png",
+      bgImage: "/robotics/image.png",
     },
   ];
   

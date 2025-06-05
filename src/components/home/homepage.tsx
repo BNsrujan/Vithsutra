@@ -4,6 +4,7 @@ import Hero from './herosection'
 import WeOfferSection from './domain'
 import AutomationSection from './sectore'
 import CardSection from './cardSection'
+import IndustriesSection from './IndustriesSection'
 
 function Homepage() {
   return (
@@ -13,6 +14,7 @@ function Homepage() {
         <div className="space-y-24">
           <About />
           <CardSection />
+          <IndustriesSection />
           <AutomationSection />
           <WeOfferSection />
         </div>

@@ -10,11 +10,11 @@ const blogPost = {
   category: "IoT",
   date: "March 15, 2024",
   author: {
-    name: "Dr. Sarah Chen",
+    name: "Dr. Sathwik.K.D",
     role: "CTO",
-    image: "/images/team/sarah-chen.jpg"
+    image: "/TeamProfile/sathwik_kd.png"
   },
-  image: "/images/blog/iot-trends.jpg",
+  image: "/robotics/The-Future-of-Industrial-IoT.png",
   content: `
     <p class="mb-6">
       The Industrial Internet of Things (IIoT) continues to evolve at a rapid pace, bringing transformative changes to manufacturing and industrial processes. As we move through 2024, several key trends are emerging that will shape the future of industrial automation.

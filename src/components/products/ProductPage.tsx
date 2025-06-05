@@ -53,17 +53,17 @@ const useCases = [
   {
     title: "Smart Manufacturing",
     description: "Real-time monitoring and optimization of production lines",
-    image: "/images/use-cases/manufacturing.jpg"
+    image: "/robotics/Smart_Manufacturing.png"
   },
   {
     title: "Energy Management",
     description: "Intelligent energy consumption monitoring and optimization",
-    image: "/images/use-cases/energy.jpg"
+    image: "/robotics/Energy_Management.png"
   },
   {
     title: "Quality Control",
     description: "Automated quality inspection and defect detection",
-    image: "/images/use-cases/quality.jpg"
+    image: "/robotics/Quality_Control.png"
   }
 ]
 
@@ -251,9 +251,9 @@ export default function ProductPage() {
               <video
                 controls
                 className="w-full h-full"
-                poster="/images/demo-thumbnail.jpg"
+                poster="/robotics/image.png"
               >
-                <source src="/video/product-demo.mp4" type="video/mp4" />
+                <source src="/video/video2.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
             </div>

@@ -13,7 +13,7 @@ const blogPosts = [
     category: "IoT",
     date: "March 15, 2024",
     excerpt: "Explore the emerging trends in Industrial IoT that are reshaping manufacturing and industrial processes.",
-    image: "/images/blog/iot-trends.jpg",
+    image: "/robotics/The-Future-of-Industrial-IoT.png",
     slug: "future-of-industrial-iot-trends-2024"
   },
   {
@@ -22,16 +22,16 @@ const blogPosts = [
     category: "Robotics",
     date: "March 10, 2024",
     excerpt: "Discover how artificial intelligence is transforming the way we control and program industrial robots.",
-    image: "/images/blog/ai-robotics.jpg",
+    image: "/robotics/How-AI-is-Revolutionizing-Robotics-Control-Systems.png",
     slug: "ai-revolutionizing-robotics-control"
   },
   {
     id: 3,
     title: "Edge Computing: The Key to Real-time IoT Analytics",
     category: "IoT",
-    date: "March 5, 2024",
+    date: "March 5, 2024",  
     excerpt: "Learn how edge computing is enabling faster, more efficient data processing in IoT applications.",
-    image: "/images/blog/edge-computing.jpg",
+    image: "/robotics/Edge-Computing-The-Key-to-Real-time-IoT-Analytics.png",
     slug: "edge-computing-real-time-iot-analytics"
   },
   {
@@ -40,7 +40,7 @@ const blogPosts = [
     category: "AI",
     date: "February 28, 2024",
     excerpt: "A deep dive into how machine learning algorithms are optimizing industrial automation processes.",
-    image: "/images/blog/ml-automation.jpg",
+    image: "/robotics/Machine-Learning-in-Industrial-Automation.png",
     slug: "machine-learning-industrial-automation"
   },
   {
@@ -49,7 +49,7 @@ const blogPosts = [
     category: "Robotics",
     date: "February 20, 2024",
     excerpt: "Stay updated with the latest safety standards and regulations in industrial robotics.",
-    image: "/images/blog/robotics-safety.jpg",
+    image: "/robotics/Robotics-Safety-Standards-What-s-New-in-2024.png",
     slug: "robotics-safety-standards-2024"
   },
   {
@@ -58,7 +58,7 @@ const blogPosts = [
     category: "IoT",
     date: "February 15, 2024",
     excerpt: "Essential security measures to protect your industrial IoT infrastructure from cyber threats.",
-    image: "/images/blog/iot-security.jpg",
+    image: "/robotics/IoT-Security-Best-Practices-for-Industrial-Networks.png",
     slug: "iot-security-industrial-networks"
   }
 ]

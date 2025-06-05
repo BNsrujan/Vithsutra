@@ -8,74 +8,85 @@ import { Linkedin, Github, Twitter } from "lucide-react"
 const teamMembers = [
   {
     id: 1,
-    name: "Dr. Sarah Chen",
-    title: "Chief Technology Officer",
-    department: "Engineering",
-    image: "/images/team/sarah-chen.jpg",
-    bio: "Ph.D. in Robotics from MIT with 15+ years of experience in industrial automation. Led multiple successful IIoT implementations for Fortune 500 companies.",
-    linkedin: "https://linkedin.com/in/sarah-chen",
-    github: "https://github.com/sarah-chen",
-    twitter: "https://twitter.com/sarah-chen"
+    name: "Shubhang.C.S",
+    title: "Design Head & Quality Assurence Manager",
+    department: "Design",
+    image: "/TeamProfile/shubhang_cs.png",
+    bio: "Leading our design initiatives and ensuring the highest quality standards across all projects.",
+    linkedin: "https://linkedin.com/in/shubhang-cs",
+    github: "https://github.com/shubhang-cs",
+    twitter: "https://twitter.com/shubhang-cs"
   },
   {
     id: 2,
-    name: "Michael Rodriguez",
-    title: "Head of Research & Development",
-    department: "R&D",
-    image: "/images/team/michael-rodriguez.jpg",
-    bio: "Former NASA engineer specializing in sensor fusion and machine learning. Published author with 20+ patents in industrial automation.",
-    linkedin: "https://linkedin.com/in/michael-rodriguez",
-    github: "https://github.com/michael-rodriguez",
-    twitter: "https://twitter.com/michael-rodriguez"
+    name: "Gowtham.M.A",
+    title: "Chief Technical Manager",
+    department: "Engineering",
+    image: "/TeamProfile/gowtham_ma.png",
+    bio: "Overseeing all technical operations and driving innovation in our engineering processes.",
+    linkedin: "https://linkedin.com/in/gowtham-ma",
+    github: "https://github.com/gowtham-ma",
+    twitter: "https://twitter.com/gowtham-ma"
   },
   {
     id: 3,
-    name: "Dr. Aisha Patel",
-    title: "Lead AI Engineer",
-    department: "Engineering",
-    image: "/images/team/aisha-patel.jpg",
-    bio: "Expert in computer vision and deep learning. Previously led AI initiatives at Google and has published numerous papers in top-tier conferences.",
-    linkedin: "https://linkedin.com/in/aisha-patel",
-    github: "https://github.com/aisha-patel",
-    twitter: "https://twitter.com/aisha-patel"
+    name: "Sumith.K.S",
+    title: "Chief Operational Manager",
+    department: "Operations",
+    image: "/TeamProfile/sumith_ks.png",
+    bio: "Managing day-to-day operations and ensuring smooth execution of all projects.",
+    linkedin: "https://linkedin.com/in/sumith-ks",
+    github: "https://github.com/sumith-ks",
+    twitter: "https://twitter.com/sumith-ks"
   },
   {
     id: 4,
-    name: "James Wilson",
-    title: "Operations Director",
-    department: "Operations",
-    image: "/images/team/james-wilson.jpg",
-    bio: "20+ years of experience in industrial operations and supply chain management. Expert in implementing IIoT solutions for manufacturing efficiency.",
-    linkedin: "https://linkedin.com/in/james-wilson",
-    github: "https://github.com/james-wilson",
-    twitter: "https://twitter.com/james-wilson"
+    name: "Srujan.K.M",
+    title: "Developer & Product Resource Manager",
+    department: "Engineering",
+    image: "/TeamProfile/srujan.png",
+    bio: "Leading development efforts and managing product resources for optimal delivery.",
+    linkedin: "https://linkedin.com/in/srujan-km",
+    github: "https://github.com/srujan-km",
+    twitter: "https://twitter.com/srujan-km"
   },
   {
     id: 5,
-    name: "Dr. Elena Popov",
-    title: "Senior Research Scientist",
-    department: "R&D",
-    image: "/images/team/elena-popov.jpg",
-    bio: "Specializes in edge computing and real-time systems. Former professor at Stanford with expertise in distributed systems and IoT architecture.",
-    linkedin: "https://linkedin.com/in/elena-popov",
-    github: "https://github.com/elena-popov",
-    twitter: "https://twitter.com/elena-popov"
+    name: "Kiran Kashyap",
+    title: "Marketing Head & Company Relationship Manager",
+    department: "Marketing",
+    image: "/TeamProfile/kiran_kashyap.png",
+    bio: "Driving marketing strategies and managing key company relationships.",
+    linkedin: "https://linkedin.com/in/kiran-kashyap",
+    github: "https://github.com/kiran-kashyap",
+    twitter: "https://twitter.com/kiran-kashyap"
   },
   {
     id: 6,
-    name: "David Kim",
-    title: "Head of Product Engineering",
+    name: "Sathwik.K.D",
+    title: "Developer & Media Officer",
     department: "Engineering",
-    image: "/images/team/david-kim.jpg",
-    bio: "Product visionary with 12+ years of experience in industrial software development. Led the development of multiple award-winning IIoT platforms.",
-    linkedin: "https://linkedin.com/in/david-kim",
-    github: "https://github.com/david-kim",
-    twitter: "https://twitter.com/david-kim"
+    image: "/TeamProfile/sathwik_kd.png",
+    bio: "Handling development tasks and managing media communications.",
+    linkedin: "https://linkedin.com/in/sathwik-kd",
+    github: "https://github.com/sathwik-kd",
+    twitter: "https://twitter.com/sathwik-kd"
+  },
+  {
+    id: 7,
+    name: "Gagan",
+    title: "Solder Artist",
+    department: "Engineering",
+    image: "/TeamProfile/gagan.png",
+    bio: "Expert in precision soldering and hardware assembly.",
+    linkedin: "https://linkedin.com/in/gagan",
+    github: "https://github.com/gagan",
+    twitter: "https://twitter.com/gagan"
   }
 ]
 
 // Department filter options
-const departments = ["All", "Engineering", "R&D", "Operations"]
+const departments = ["All", "Engineering", "Design", "Operations", "Marketing"]
 
 export default function TeamPage() {
   const [selectedDepartment, setSelectedDepartment] = useState("All")
