@@ -4,6 +4,7 @@ import { motion, MotionValue, useScroll, useTransform } from "motion/react";
 import { ComponentPropsWithoutRef, FC, ReactNode, useRef } from "react";
 
 import { cn } from "@/lib/utils";
+import { Button } from "../ui/button";
 
 export interface TextRevealProps extends ComponentPropsWithoutRef<"div"> {
   children: string;
@@ -25,24 +26,33 @@ export const TextReveal: FC<TextRevealProps> = ({ children, className }) => {
     <div ref={targetRef} className={cn("relative z-0 h-[200vh]", className)}>
       <div
         className={
-          "sticky top-0 mx-auto flex  max-w-4xl items-center bg-transparent px-[1rem]  py-[5rem] "
+          "sticky top-0 mx-auto flex  max-w-9xl items-center bg-transparent  py-[5rem]  "
         }
       >
         <span
           ref={targetRef}
           className={
-            "flex flex-wrap  text-xl font-bold text-black/20 dark:text-white/20 md:p-8 md:text-2xl lg:p-10 lg:text-3xl xl:text-3xl"
+            "flex flex-wrap  text-xl font-bold text-black/20 dark:text-white/20 md:text-2xl  lg:text-3xl xl:text-3xl"
           }
         >
           {words.map((word, i) => {
             const start = i / words.length;
             const end = start + 1 / words.length;
             return (
+              <>
               <Word key={i} progress={scrollYProgress} range={[start, end]}>
                 {word}
               </Word>
+              
+              </>
+
             );
           })}
+          <div className="w-full pt-8">
+          <Button className=" ">
+                Know more
+          </Button>
+          </div>
         </span>
       </div>
     </div>
@@ -65,6 +75,7 @@ const Word: FC<WordProps> = ({ children, progress, range }) => {
         className={"text-black dark:text-white"}
       >
         {children}
+        
       </motion.span>
     </span>
   );

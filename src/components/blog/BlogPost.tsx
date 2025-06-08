@@ -3,6 +3,7 @@
 import { motion } from "framer-motion"
 import { Calendar, ArrowLeft, Share2, BookmarkPlus } from "lucide-react"
 import Link from "next/link"
+import Image from "next/image"
 
 // This would typically come from a CMS or API
 const blogPost = {
@@ -53,6 +54,10 @@ const blogPost = {
 }
 
 export default function BlogPost({ slug }: { slug: string }) {
+  // Use the slug to fetch the correct blog post
+  // For now, we're using the static blogPost object
+  const post = blogPost
+
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
@@ -73,30 +78,32 @@ export default function BlogPost({ slug }: { slug: string }) {
 
             <div className="flex items-center gap-4 mb-6">
               <span className="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-sm font-medium">
-                {blogPost.category}
+                {post.category}
               </span>
               <div className="flex items-center text-gray-500 text-sm">
                 <Calendar className="w-4 h-4 mr-1" />
-                {blogPost.date}
+                {post.date}
               </div>
             </div>
 
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              {blogPost.title}
+              {post.title}
             </h1>
 
             <div className="flex items-center gap-4">
-              <img
-                src={blogPost.author.image}
-                alt={blogPost.author.name}
-                className="w-12 h-12 rounded-full object-cover"
+              <Image
+                src={post.author.image}
+                alt={post.author.name}
+                width={48}
+                height={48}
+                className="rounded-full object-cover"
               />
               <div>
                 <p className="font-medium text-gray-900">
-                  {blogPost.author.name}
+                  {post.author.name}
                 </p>
                 <p className="text-gray-600 text-sm">
-                  {blogPost.author.role}
+                  {post.author.role}
                 </p>
               </div>
             </div>
@@ -108,9 +115,11 @@ export default function BlogPost({ slug }: { slug: string }) {
       <section className="py-8">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <img
-              src={blogPost.image}
-              alt={blogPost.title}
+            <Image
+              src={post.image}
+              alt={post.title}
+              width={1200}
+              height={400}
               className="w-full h-[400px] object-cover rounded-xl"
             />
           </div>
@@ -132,7 +141,7 @@ export default function BlogPost({ slug }: { slug: string }) {
 
             <div
               className="prose prose-lg max-w-none"
-              dangerouslySetInnerHTML={{ __html: blogPost.content }}
+              dangerouslySetInnerHTML={{ __html: post.content }}
             />
           </div>
         </div>

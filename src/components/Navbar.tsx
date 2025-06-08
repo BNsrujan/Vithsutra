@@ -15,7 +15,7 @@ import {
 import Image from "next/image"
 export function Navbar() {
   return (
-    <div className="flex items-center justify-between w-full p-4 border-b">
+    <div className="flex items-center justify-around w-full p-3 border-b">
       {/* Left: Logo */}
       <div className="font-bold text-lg">
         <Link href="/">
@@ -31,7 +31,7 @@ export function Navbar() {
               Industries
             </NavigationMenuTrigger>
             <NavigationMenuContent>
-              <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
+              <ul className="grid w-[400px] gap-3 p-4  md:w-[500px] md:grid-cols-2 lg:w-[600px]">
                 <li className="row-span-3">
                   <NavigationMenuLink asChild>
                     <Link
@@ -216,40 +216,7 @@ export function Navbar() {
             </NavigationMenuContent>
           </NavigationMenuItem>
 
-          <NavigationMenuItem>
-            <NavigationMenuTrigger className={navigationMenuTriggerStyle()}>
-              Business Solutions
-            </NavigationMenuTrigger>
-            <NavigationMenuContent>
-              <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2">
-                <li className="row-span-3">
-                  <NavigationMenuLink asChild>
-          <Link 
-                      className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
-                      href="/business-solutions"
-                    >
-                      <div className="mb-2 mt-4 text-lg font-medium">
-                        Business Solutions
-                      </div>
-                      <p className="text-sm leading-tight text-muted-foreground">
-                        Comprehensive business solutions for enterprises.
-                      </p>
-                    </Link>
-                  </NavigationMenuLink>
-                </li>
-                <li>
-                  <NavigationMenuLink asChild>
-                    <Link href="/business-solutions/enterprise-business-solutions" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
-                      <div className="text-sm font-medium leading-none">Enterprise Solutions</div>
-                      <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                        End-to-end enterprise business solutions
-                      </p>
-          </Link>
-                  </NavigationMenuLink>
-                </li>
-              </ul>
-            </NavigationMenuContent>
-          </NavigationMenuItem>
+          
 
           <NavigationMenuItem>
             <NavigationMenuTrigger className={navigationMenuTriggerStyle()}>

@@ -3,7 +3,8 @@
 import { TextReveal } from "../magicui/text-reveal";
 import { text } from "../../lib/typography";
 import * as motion from "motion/react-client";
-
+import { Button } from "../ui/button";
+import { useRouter } from "next/navigation";
 const containerVariants = {
   hidden: { opacity: 0 },
   visible: {
@@ -28,12 +29,13 @@ const itemVariants = {
 };
 
 export default function About() {
+  const router = useRouter();
   return (
     <section className="relative py-24 bg-company-light-light-gray">
-      <div className="max-w-[1400px] mx-auto px-4">
+      <div className=" mx-auto ">
         <div className="flex flex-col-reverse lg:flex-row items-center gap-12 lg:gap-16">
-          {/* Text Content */}
-          <div className="w-full lg:w-1/2">
+          
+          <div className="w-full lg:w-1/2 p-0">
             <motion.div
               variants={containerVariants}
               initial="hidden"
@@ -43,7 +45,7 @@ export default function About() {
             >
               <motion.div 
                 variants={itemVariants}
-                className="inline-block px-4 py-1.5 rounded-full bg-company-white mb-6"
+                className="inline-block rounded-full bg-company-white "
               >
                 <span className="text-sm font-medium tracking-wider text-company-text-gray">
                   ABOUT US
@@ -52,7 +54,7 @@ export default function About() {
 
               <motion.h2 
                 variants={itemVariants}
-                className={`${text.Sectiontext} text-company-black mb-6`}
+                className={`${text.Sectiontext} text-company-black `}
               >
                 Why Choose Vithsutra
               </motion.h2>
@@ -65,34 +67,10 @@ export default function About() {
               2030, we aim to be a global leader in technological innovation,
               empowering organizations across continents to achieve unprecedented
               efficiency, growth, and competitive advantage.
+            
+            
             </TextReveal>
 
-            <motion.div 
-              variants={itemVariants}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              className="mt-10"
-            >
-              <a 
-                href="/about" 
-                className="inline-flex items-center gap-2 bg-company-blue text-white px-8 py-3.5 rounded-full hover:bg-company-blue-dark transition-all duration-300 shadow-md hover:shadow-lg text-sm font-medium"
-              >
-                Learn More
-                <svg 
-                  xmlns="http://www.w3.org/2000/svg" 
-                  className="h-4 w-4" 
-                  viewBox="0 0 20 20" 
-                  fill="currentColor"
-                >
-                  <path 
-                    fillRule="evenodd" 
-                    d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" 
-                    clipRule="evenodd" 
-                  />
-                </svg>
-              </a>
-            </motion.div>
           </div>
 
           {/* Video Content */}
@@ -101,9 +79,9 @@ export default function About() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            className="w-full lg:w-1/2"
+            className="w-full lg:w-1/2  relative z-0 h-[190vh] "
           >
-            <div className="relative">
+            <div className="sticky top-0 mx-auto flex  max-w-4xl items-center bg-transparent px-[1rem] py-[5rem] ">
               <div className="aspect-video w-full max-w-2xl mx-auto overflow-hidden rounded-[28px] bg-company-white shadow-xl group">
                 <video 
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
@@ -115,7 +93,8 @@ export default function About() {
                   <source src="/video/video.webm" type="video/webm" />
                   Your browser does not support the video tag.
                 </video>
-                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+
+               
               </div>
             </div>
           </motion.div>

@@ -1,7 +1,9 @@
 "use client";
 
 import { text } from "@/lib/typography";
+import { ArrowUpRightIcon } from "lucide-react";
 import * as motion from "motion/react-client";
+import Image from "next/image";
 import { useState, useEffect } from "react";
 
 export default function WeOfferSection() {
@@ -29,76 +31,50 @@ export default function WeOfferSection() {
         "Advanced robotics solutions that optimize, automate operations and improve efficiency",
       bgImage: "/robotics/image.png",
     },
+    {
+      title: "Robotics & Automation",
+      description:
+        "Advanced robotics solutions that optimize, automate operations and improve efficiency",
+      bgImage: "/robotics/image.png",
+    },
   ];
 
   return (
     <section className="relative py-24 bg-company-light-light-gray overflow-hidden">
-      <div className="max-w-[1400px] mx-auto px-4">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.6, ease: [0.21, 0.47, 0.32, 0.98] }}
-          className="text-center mb-16"
-        >
-          <div className="inline-block px-4 py-1.5 rounded-full bg-company-white mb-6">
+      <div className="max-w-[1400px] mx-auto px">
+        <div className="mx-auto  pb-12">
+          <div className="inline-block   rounded-full bg-company-light-light-gray ">
             <span className="text-sm font-medium tracking-wider text-company-text-gray">
-              OUR SOLUTIONS
+              FEATURED
             </span>
           </div>
-          <h2 className={`${text.Sectiontext} text-company-black mb-6`}>
-            We Offer
-          </h2>
-        </motion.div>
 
-        {/* Animated Text Section */}
-        <div className="relative h-[50vh] flex items-center justify-center mb-24">
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            className="relative h-20"
-          >
-            {texts.map((text, index) => (
-              <motion.h3
-                key={text}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ 
-                  opacity: currentIndex === index ? 1 : 0,
-                  y: currentIndex === index ? 0 : 20
-                }}
-                transition={{ 
-                  duration: 0.5,
-                  ease: [0.21, 0.47, 0.32, 0.98]
-                }}
-                className="text-4xl md:text-5xl lg:text-6xl text-company-blue font-bold absolute inset-0 flex items-center justify-center"
-              >
-                {text}
-              </motion.h3>
-            ))}
-          </motion.div>
+          <h1 className={`${text.Sectiontext} text-company-black mb-6`}>
+            Our Product 
+          </h1>
         </div>
-
         {/* Features Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols- gap-8">
           {features.map((feature, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
-              transition={{ 
+              transition={{
                 duration: 0.6,
                 delay: index * 0.2,
-                ease: [0.21, 0.47, 0.32, 0.98]
+                ease: [0.21, 0.47, 0.32, 0.98],
               }}
-              className="group relative aspect-video rounded-[28px] overflow-hidden bg-company-white shadow-lg hover:shadow-xl transition-all duration-300"
+              className="group relative aspect-video  rounded-[28px] overflow-hidden bg-company-white shadow-lg hover:shadow-xl transition-all duration-300"
             >
               <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-company-black/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              <img
+              <Image
                 src={feature.bgImage}
                 alt={feature.title}
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                width={600}
+                height={600}
               />
               <div className="absolute inset-0 p-8 flex flex-col justify-end">
                 <motion.div
@@ -107,13 +83,20 @@ export default function WeOfferSection() {
                   viewport={{ once: true }}
                   transition={{ delay: 0.3 }}
                 >
-                  <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-company-blue transition-colors">
+                  <h3 className="text-5xl font-bold text-white mb-3  group-hover:text-company-blue transition-colors">
                     {feature.title}
                   </h3>
-                  <p className="text-company-text-gray text-sm leading-relaxed group-hover:text-white transition-colors">
+                  <p className="text-company-light-gray text-md leading-relaxed group-hover:text-white transition-colors">
                     {feature.description}
                   </p>
+                 
                 </motion.div>
+                <button className="absolute  right-8 bg-company-white rounded-full p-5 shadow-sm hover:shadow-md transition-all duration-300 group-hover:bg-company-primary-royalBlue group-hover:text-white">
+                    <ArrowUpRightIcon
+                      className="h-5 w-5 text-company-text-gray group-hover:text-white transition-colors"
+                      strokeWidth={2.5}
+                    />
+                </button>
               </div>
             </motion.div>
           ))}
