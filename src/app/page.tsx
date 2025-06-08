@@ -5,6 +5,8 @@ import Hero from "@/components/homepage/Hero";
 import Application from "@/components/homepage/Application";
 import AutomationSection from "@/components/homepage/Services";
 import Products from "@/components/homepage/Products";
+import MIdbox from "@/components/box/mediumbox";
+
 
 export default function Home() {
   return (
@@ -15,6 +17,7 @@ export default function Home() {
       <WeOfferSection />
       <Application/>
       <Products/>
+      
     </div>
   );
 }

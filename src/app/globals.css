@@ -6,15 +6,56 @@
 :root {
 
   /* blue sets  */
-  --company-primary-royalBlue: #6495ED;
-  --company-white-text: #fff;
-  --company-light-light-gray: #F5F5F7;
-  --company-light-gray: #86868b;
-  --company-dark-gray: #b3afaf;
-  --company-dark-dark-gray-text: #1d1d1f;
+  --company-primary-royalBlue: #4169E1;
+  --company-secondary-yello:#ffde59;
+  --company-blue-white: #F5F5F7;
+  --company-light1-gray: #b3afaf;
+  --company-mid-gray: #86868b;
+  --company-dark-gray:#8A8B94;
+  --company-blue-black:#101520;
   --company-black: #000000;
-  --company-text-gray: #6e6e73;
+  
+  /* company text */
+  --company-white-text: #fff;
+  --company-gray-text: #6e6e73;
+  --company-dark-dark-gray-text: #1d1d1f;
 
+
+  /* navbar height */
+  --navbar-heaight:64px;
+  --navbar-font-style:15px;
+
+
+
+  /* boxes */
+  --big-box-w:1856px;
+  --big-box:844px;
+  --big-box-radias:16px;
+
+  
+  /* large boxes */
+  --large-box-w:501px;
+  --large-box-h:534px;
+
+
+  /* medium boxes */
+  --medium-box-width:285px;
+  --medium-box-height:285px;
+  --medium-rectangle-width:576px;
+  --medimum-box-rouded:24px
+
+  /* Extra small boxes */
+  --extra-small-box:75px;
+  --extra-small-hover-box:110;
+
+  /* colabarater boxes */
+  --colabarater-box-width:423px;
+  --colabarater-box-height:122px;
+  --colabarater-smallbox-w:90px;
+
+  /*  */
+  
+   
 
 
   /* border */

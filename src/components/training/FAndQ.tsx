@@ -35,8 +35,8 @@ export default function Faq() {
 
   return (
     <section className="py-12  max-w-[1400px] mx-auto bg-white">
-      <div className="mb-2 text-company-text-gray">FAQ</div>
-      <h2 className="section-head text-company-black mb-8">Frequently Asked Questions</h2>
+      <div className="mb-2 text-company-text-gray">F&Q</div>
+      <h2 className="section-head text-company-black mb-8">F&Q</h2>
       
       <div className="space-y-3">
         {faqs.map((faq, index) => (

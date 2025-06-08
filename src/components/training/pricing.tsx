@@ -116,7 +116,7 @@ export default function PricingModels() {
       <h2 className="section-head text-company-black mb-5">Choose Your Path</h2>
       
       <motion.div
-        className="md:grid md:grid-cols-3 md:gap-0  flex flex-col  justify-center gap-5  md:mb-0 z-10"
+        className="md:grid md:grid-cols-3 md:gap-4  flex flex-col  justify-center gap-5  md:mb-0 z-10"
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         exit={{ opacity: 0, y: -20 }}
@@ -127,9 +127,9 @@ export default function PricingModels() {
           <div
             key={index}
             
-            className={`relative  ${index == 2 ?`border-none`:`border-r`}   rounded-[10px] max-w-[500px] p-6  transition duration-300 ease-in bg-company-light-light-gray z-10`}
+            className={`relative  ${index == 2 ?`border-none`:`border-r`}    rounded-[15px]    max-w-[500px] p-6  transition duration-300 ease-in bg-company-light-light-gray z-10 text-black`}
             >
-            {index == 2 && <div className="absolute -top-5 left-0 max-w-[500px] w-full h-7  font-semibold px-4 py-1  -t  -l  -r rounded-t-[12px] text-blue-500 bg-amber-200
+            {index == 2 && <div className="absolute -top-4  left-0 max-w-[500px] w-full h-9  font-semibold px-4 py-1  -t  -l  -r rounded-t-[12px] text-white bg-[#E1B941]
              z-20">
               Master model full pack</div>}
             <div className="flex items-center mb-4 mr-3">

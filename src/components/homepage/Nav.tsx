@@ -1,16 +1,21 @@
+"use pah"
 import Link from "next/link";
 import Image from "next/image";
 import { ShimmerButton } from "../magicui/shimmer-button";
+import ModeToggle from "../theme-togal";
+
+
 export default function Navbar() {
   return (
-    <nav className="flex items-center justify-between px-6 md:px-12 py-4 bg-white ">
+    
+    <nav className=" absolute top-0 w-full flex items-center justify-between px-6 md:px-12 py-4 h bg-transparent h-[64px] ">
       <div className="flex items-center gap-2">
         <Link href={"/"}>
         <Image src="/logo.png" alt="Logo" width={40} height={40} />
         </Link>
       </div>
 
-      {/* Nav Links */}
+
       <ul className="hidden md:flex label-text items-center gap-8">
         <li>
           <Link href="/services">Services</Link>
@@ -25,16 +30,12 @@ export default function Navbar() {
           <Link href="/explore">Explore</Link>
         </li>
         <li>
-          <Link href="/about">About</Link>
-        </li>
-        <li>
-          <Link href="/Testing">Testing</Link>
-        </li>
-        
+          <Link href="#about">About</Link>
+        </li> 
       </ul>
 
-      {/* Let's Talk Button */}
-      <div>
+      <div className="flex gap-4 justify-center items-center"> 
+        <ModeToggle/>
         <Link href="/contact">
           <ShimmerButton className="shadow-2xl ">
             Let&apos;s Talk

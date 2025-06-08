@@ -1,3 +1,7 @@
+"use client"
+import { Caladea } from "next/font/google";
+import { usePathname } from "next/navigation";
+
 export default function Footer() {
   const sections = [
     {
@@ -8,7 +12,7 @@ export default function Footer() {
       ],
     },
     {
-      title: "Industries",
+      title: "Industries", 
       links: [
         { label: "Automotive", href: "/industries/automotive" },
         { label: "Logistics", href: "/industries/logistics" },
@@ -20,7 +24,7 @@ export default function Footer() {
       ],
     },
     {
-      title: "Robootics ",
+      title: "Robotics",
       links: [
         { label: "Assembly", href: "/applications/assembly" },
         {
@@ -75,87 +79,68 @@ export default function Footer() {
       ],
     },
   ];
-
+  const path = usePathname();
   return (
-    <footer className="bg-company-light-light-gray w-full py-16 flex flex-col justify-center m-auto">
-      <div className="w-full lg:px-36 mx-auto ">
-        <div className="flex justify-between px-4 sm:px-6 lg:px-8">
-          <div className="lg:col-span-1">
-            <h2 className="section-head text-gray-900">Vithsutra</h2>
-            <p className="mt-4 text-gray-600 max-w-xs">
-              Our vision is to provide convenience and help automate your work.
-            </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-3 lg:gap-10">
-            {sections.slice(0, 2).map((section, index) => (
-              <div
-                key={index}
-                className="space-y-8 font-[400] text-[12px] text-company-text-gray"
-              >
+    <div className={!path ? "h-full" : "h-0"}>
+      {!path ? (
+        <footer className="bg-company-light-light-gray w-full py-16 flex flex-col justify-center m-auto">
+          <div className="w-full lg:px-36 mx-auto ">
+            <div className="flex justify-between px-4 sm:px-6 lg:px-8">
+              <div className="lg:col-span-1">
+                <h2 className="section-head text-gray-900">Vithsutra</h2>
+                <p className="mt-4 text-gray-600 max-w-xs">
+                  Our vision is to provide convenience and help automate your work.
+                </p>
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-3 lg:gap-10">
+                {sections.slice(0, 2).map((section, index) => (
+                  <div
+                    key={index}
+                    className="space-y-8 font-[400] text-[12px] text-company-text-gray"
+                  >
+                    <div>
+                      <h3 className="text-company-black font-[600] tracking-wider uppercase mb-4">
+                        {section.title}
+                      </h3>
+                      <ul className="space-y-2">
+                        {section.links.map((link, i) => (
+                          <li key={i}>
+                            <a href={link.href} className=" hover:text-gray-900">
+                              {link.label}
+                            </a>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                    {sections[index + 1] && (
+                      <div>
+                        <h3 className=" text-company-black font-[600] tracking-wider uppercase mb-4">
+                          {sections[index + 1].title}
+                        </h3>
+                        <ul className="space-y-2">
+                          {sections[index + 1].links.map((link, i) => (
+                            <li key={i}>
+                              <a
+                                href={link.href}
+                                className="font-[400] text-[12px] text-company-text-gray hover:text-company-black"
+                              >
+                                {link.label}
+                              </a>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
+                  </div>
+                ))}
+
+                {/* Robotics Applications */}
                 <div>
-                  <h3 className="text-company-black font-[600] tracking-wider uppercase mb-4">
-                    {section.title}
+                  <h3 className="text-company-black font-[600] text-[12px] tracking-wider uppercase mb-4">
+                    {sections[2].title}
                   </h3>
                   <ul className="space-y-2">
-                    {section.links.map((link, i) => (
-                      <li key={i}>
-                        <a href={link.href} className=" hover:text-gray-900">
-                          {link.label}
-                        </a>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-                {sections[index + 1] && (
-                  <div>
-                    <h3 className=" text-company-black font-[600] tracking-wider uppercase mb-4">
-                      {sections[index + 1].title}
-                    </h3>
-                    <ul className="space-y-2">
-                      {sections[index + 1].links.map((link, i) => (
-                        <li key={i}>
-                          <a
-                            href={link.href}
-                            className="font-[400] text-[12px] text-company-text-gray hover:text-company-black"
-                          >
-                            {link.label}
-                          </a>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                )}
-              </div>
-            ))}
-
-            {/* Robotics Applications */}
-            <div>
-              <h3 className="text-company-black font-[600] text-[12px] tracking-wider uppercase mb-4">
-                {sections[2].title}
-              </h3>
-              <ul className="space-y-2">
-                {sections[2].links.map((link, i) => (
-                  <li key={i}>
-                    <a
-                      href={link.href}
-                      className="font-[400] text-[12px] text-company-text-gray hover:text-company-black"
-                    >
-                      {link.label}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Support + Partners + Explore */}
-            <div className="space-y-8">
-              {sections.slice(3, 6).map((section, index) => (
-                <div key={index}>
-                  <h3 className="text-company-black font-[600] text-[12px] tracking-wider uppercase mb-4">
-                    {section.title}
-                  </h3>
-                  <ul className="space-y-1">
-                    {section.links.map((link, i) => (
+                    {sections[2].links.map((link, i) => (
                       <li key={i}>
                         <a
                           href={link.href}
@@ -167,51 +152,76 @@ export default function Footer() {
                     ))}
                   </ul>
                 </div>
-              ))}
+
+                {/* Support + Partners + Explore */}
+                <div className="space-y-8">
+                  {sections.slice(3, 6).map((section, index) => (
+                    <div key={index}>
+                      <h3 className="text-company-black font-[600] text-[12px] tracking-wider uppercase mb-4">
+                        {section.title}
+                      </h3>
+                      <ul className="space-y-1">
+                        {section.links.map((link, i) => (
+                          <li key={i}>
+                            <a
+                              href={link.href}
+                              className="font-[400] text-[12px] text-company-text-gray hover:text-company-black"
+                            >
+                              {link.label}
+                            </a>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  ))}
+                </div>
+
+                {/* IoT Applications */}
+                <div>
+                  <h3 className="text-company-black font-[600] text-[12px] tracking-wider uppercase mb-4">
+                    {sections[6].title}
+                  </h3>
+                  <ul className="space-y-2">
+                    {sections[6].links.map((link, i) => (
+                      <li key={i}>
+                        <a
+                          href={link.href}
+                          className="font-[400] text-[12px] text-company-text-gray hover:text-company-black"
+                        >
+                          {link.label}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
             </div>
 
-            {/* IoT Applications */}
-            <div>
-              <h3 className="text-company-black font-[600] text-[12px] tracking-wider uppercase mb-4">
-                {sections[6].title}
-              </h3>
-              <ul className="space-y-2">
-                {sections[6].links.map((link, i) => (
-                  <li key={i}>
-                    <a
-                      href={link.href}
-                      className="font-[400] text-[12px] text-company-text-gray hover:text-company-black"
-                    >
-                      {link.label}
-                    </a>
-                  </li>
-                ))}
-              </ul>
+            {/* Bottom section */}
+            <div className="mt-12 pt-8 border-t border-gray-200 flex flex-col md:flex-row justify-between items-start md:items-center">
+              <p className="text-company-text-gray text-sm">
+                ©2022 Company Name. All rights reserved
+              </p>
+              <div className="mt-2 md:mt-0 flex space-x-4">
+                <a
+                  href="/privacy"
+                  className="text-company-text-gray hover:text-company-black"
+                >
+                  Privacy & Policy
+                </a>
+                <a
+                  href="/terms"
+                  className="text-company-text-gray hover:text-company-black"
+                >
+                  Terms & Condition
+                </a>
+              </div>
             </div>
           </div>
-        </div>
-
-        {/* Bottom section */}
-        <div className="mt-12 pt-8 border-t border-gray-200 flex flex-col md:flex-row justify-between items-start md:items-center">
-          <p className="text-company-text-gray text-sm">
-            ©2022 Company Name. All rights reserved
-          </p>
-          <div className="mt-2 md:mt-0 flex space-x-4">
-            <a
-              href="/privacy"
-              className="text-company-text-gray hover:text-company-black"
-            >
-              Privacy & Policy
-            </a>
-            <a
-              href="/terms"
-              className="text-company-text-gray hover:text-company-black"
-            >
-              Terms & Condition
-            </a>
-          </div>
-        </div>
-      </div>
-    </footer>
+        </footer>
+      ) : (
+        <footer className="h-0 "></footer>
+      )}
+    </div>
   );
 }
