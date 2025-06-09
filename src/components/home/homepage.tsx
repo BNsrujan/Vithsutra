@@ -4,8 +4,9 @@ import Hero from './herosection'
 import WeOfferSection from './domain'
 import CardSection from './cardSection'
 import IndustriesSection from './IndustriesSection'
-
 import { VentureCapital } from './VentureCaopital'
+import Quickfacts from './quickfacts'
+import Unique from './Unique'
 function Homepage() {
   return (
     <main className="w-full min-h-screen bg-white">
@@ -17,6 +18,8 @@ function Homepage() {
           <CardSection />
           <IndustriesSection />
           <VentureCapital/>
+          <Quickfacts />
+          <Unique />
         </div>
       </div>
     </main>
