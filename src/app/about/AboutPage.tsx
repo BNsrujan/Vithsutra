@@ -1,6 +1,7 @@
 "use client"
 import { motion } from 'framer-motion'
 import Image from 'next/image'
+import { heroContent, textReveal, gridItem, imageHover } from '@/lib/motion'
 
 // Sample data for the masonry grid
 const gridItems = [
@@ -50,27 +51,30 @@ export default function AboutPage() {
           {/* Content Block */}
           <div className="max-w-[400px] space-y-8">
             <motion.h2 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
+              variants={textReveal}
+              initial="initial"
+              whileInView="whileInView"
+              viewport={{ once: true }}
               className="text-4xl font-bold text-gray-900"
             >
               WHO WE ARE
             </motion.h2>
 
             <motion.p 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
+              variants={textReveal}
+              initial="initial"
+              whileInView="whileInView"
+              viewport={{ once: true }}
               className="text-lg font-medium text-gray-600 leading-relaxed"
             >
               We are a team of innovators and engineers dedicated to transforming industries through cutting-edge IIoT and robotics solutions. Our mission is to bridge the gap between traditional manufacturing and the future of smart automation, creating sustainable and efficient industrial ecosystems.
             </motion.p>
 
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.4 }}
+              variants={textReveal}
+              initial="initial"
+              whileInView="whileInView"
+              viewport={{ once: true }}
               className="space-y-4"
             >
               <div className="flex items-center gap-3">
@@ -111,9 +115,10 @@ export default function AboutPage() {
             </motion.div>
 
             <motion.button
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.6 }}
+              variants={textReveal}
+              initial="initial"
+              whileInView="whileInView"
+              viewport={{ once: true }}
               className="px-8 py-3 bg-blue-600 hover:bg-blue-700 rounded-full text-white font-medium transition-colors flex items-center gap-2"
             >
               LEARN MORE
@@ -130,19 +135,22 @@ export default function AboutPage() {
             {gridItems.map((item) => (
               <motion.div
                 key={item.id}
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5 }}
+                variants={gridItem}
+                initial="initial"
+                animate="animate"
                 className="mb-4 break-inside-avoid"
               >
-                <div className="relative aspect-[4/3] rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
+                <motion.div 
+                  variants={imageHover}
+                  className="relative aspect-[4/3] rounded-xl overflow-hidden transition-shadow"
+                >
                   <Image
                     src={item.image}
                     alt={item.alt}
                     fill
-                    className="object-cover hover:scale-105 transition-transform duration-300"
+                    className="object-cover transition-transform duration-300"
                   />
-                </div>
+                </motion.div>
               </motion.div>
             ))}
           </div>

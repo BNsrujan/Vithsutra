@@ -30,7 +30,7 @@ export default function Hero() {
           <p className={`${text.DisplayPrefixtext} text-company-blue-white text-base sm:text-lg md:text-xl`}>
             Experience The
           </p>
-          <h1 className={`${text.Displaytext} text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-7xl tnext-company-blue-white font-bold`}>
+          <h1 className={`${text.Displaytext} text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-7xl text-company-blue-white font-bold`}>
             Vithsutra 
           </h1>
           <p className={`${text.midtext} text-gray-200 max-w-7xl mx-auto text-sm sm:text-base md:text-lg lg:text-xl font-medium px-4 sm:px-6 md:px-8`}>

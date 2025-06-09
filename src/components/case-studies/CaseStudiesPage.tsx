@@ -3,6 +3,8 @@
 import { motion } from "framer-motion"
 import { useState } from "react"
 import { X, ChevronRight, ArrowRight } from "lucide-react"
+import Image from "next/image"
+import { heroContent, caseStudyCard, modalOverlay, modalContent } from '@/lib/motion'
 
 // Case study data
 const caseStudies = [
@@ -81,8 +83,9 @@ export default function CaseStudiesPage() {
       <section className="relative py-24 bg-gray-50">
         <div className="container mx-auto px-4">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+            variants={heroContent}
+            initial="initial"
+            animate="animate"
             className="max-w-3xl mx-auto text-center"
           >
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
@@ -99,19 +102,22 @@ export default function CaseStudiesPage() {
       <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {caseStudies.map((study, index) => (
+            {caseStudies.map((study) => (
               <motion.div
                 key={study.id}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.1 }}
-                className="bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow cursor-pointer"
+                variants={caseStudyCard}
+                initial="initial"
+                whileInView="whileInView"
+                viewport={{ once: true }}
+                className="bg-white rounded-xl transition-shadow cursor-pointer"
                 onClick={() => setSelectedCase(study)}
               >
                 <div className="aspect-video relative">
-                  <img
+                  <Image
                     src={study.image}
                     alt={study.title}
+                    width={800}
+                    height={450}
                     className="w-full h-full object-cover rounded-t-xl"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
@@ -129,6 +135,8 @@ export default function CaseStudiesPage() {
                     <img
                       src={study.logo}
                       alt={study.client}
+                      width={48}
+                      height={48}
                       className="h-12 w-auto"
                     />
                     <span className="text-gray-600">
@@ -151,21 +159,31 @@ export default function CaseStudiesPage() {
 
       {/* Case Study Modal */}
       {selectedCase && (
-        <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4">
+        <motion.div
+          variants={modalOverlay}
+          initial="initial"
+          animate="animate"
+          exit="exit"
+          className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4"
+        >
           <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
+            variants={modalContent}
+            initial="initial"
+            animate="animate"
+            exit="exit"
             className="bg-white rounded-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto"
           >
             <div className="relative">
               <img
                 src={selectedCase.image}
                 alt={selectedCase.title}
+                width={800}
+                height={256}
                 className="w-full h-64 object-cover rounded-t-xl"
               />
               <button
                 onClick={() => setSelectedCase(null)}
-                className="absolute top-4 right-4 p-2 bg-white rounded-full shadow-lg hover:bg-gray-100 transition-colors"
+                className="absolute top-4 right-4 p-2 bg-white rounded-full hover:bg-gray-100 transition-colors"
               >
                 <X className="w-6 h-6" />
               </button>
@@ -175,6 +193,8 @@ export default function CaseStudiesPage() {
                 <img
                   src={selectedCase.logo}
                   alt={selectedCase.client}
+                  width={64}
+                  height={64}
                   className="h-16 w-auto"
                 />
                 <div>
@@ -241,7 +261,7 @@ export default function CaseStudiesPage() {
               </div>
             </div>
           </motion.div>
-        </div>
+        </motion.div>
       )}
     </div>
   )

@@ -6,6 +6,7 @@ import CardSection from './cardSection'
 import IndustriesSection from './IndustriesSection'
 
 import { VentureCapital } from './VentureCaopital'
+import { Unique } from './Unique'
 function Homepage() {
   return (
     <main className="w-full min-h-screen bg-white">
@@ -17,6 +18,7 @@ function Homepage() {
           <CardSection />
           <IndustriesSection />
           <VentureCapital/>
+          <Unique/>
         </div>
       </div>
     </main>

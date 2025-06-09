@@ -3,6 +3,8 @@
 import { motion } from "framer-motion"
 import { useState } from "react"
 import {  Quote, ArrowRight, CheckCircle2 } from "lucide-react"
+import Image from "next/image"
+import { heroContent, partnerLogo, textReveal, formField } from '@/lib/motion'
 
 // Partner data
 const partners = {
@@ -66,8 +68,9 @@ export default function PartnersPage() {
       <section className="relative py-24 bg-gray-50">
         <div className="container mx-auto px-4">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+            variants={heroContent}
+            initial="initial"
+            animate="animate"
             className="max-w-3xl mx-auto text-center"
           >
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
@@ -97,22 +100,31 @@ export default function PartnersPage() {
       {/* Featured Partners */}
       <section className="py-20">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-gray-900 text-center mb-12">
+          <motion.h2
+            variants={textReveal}
+            initial="initial"
+            whileInView="whileInView"
+            viewport={{ once: true }}
+            className="text-3xl font-bold text-gray-900 text-center mb-12"
+          >
             Featured Partners
-          </h2>
+          </motion.h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-            {partners.featured.map((partner, index) => (
+            {partners.featured.map((partner) => (
               <motion.div
                 key={partner.name}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.2 }}
-                className="bg-white rounded-xl shadow-sm p-8"
+                variants={partnerLogo}
+                initial="initial"
+                whileInView="whileInView"
+                viewport={{ once: true }}
+                className="bg-white rounded-xl p-8"
               >
                 <div className="flex items-center gap-4 mb-6">
-                  <img
+                  <Image
                     src={partner.logo}
                     alt={partner.name}
+                    width={48}
+                    height={48}
                     className="h-12 object-contain"
                   />
                   <div>
@@ -144,21 +156,30 @@ export default function PartnersPage() {
       {/* Partner Logos Grid */}
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-gray-900 text-center mb-12">
+          <motion.h2
+            variants={textReveal}
+            initial="initial"
+            whileInView="whileInView"
+            viewport={{ once: true }}
+            className="text-3xl font-bold text-gray-900 text-center mb-12"
+          >
             Trusted by Industry Leaders
-          </h2>
+          </motion.h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {partners.logos.map((partner, index) => (
+            {partners.logos.map((partner) => (
               <motion.div
                 key={partner.name}
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                transition={{ delay: index * 0.1 }}
-                className="flex items-center justify-center p-6 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow"
+                variants={partnerLogo}
+                initial="initial"
+                whileInView="whileInView"
+                viewport={{ once: true }}
+                className="flex items-center justify-center p-6 bg-white rounded-lg transition-shadow"
               >
-                <img
+                <Image
                   src={partner.logo}
                   alt={partner.name}
+                  width={48}
+                  height={48}
                   className="h-12 object-contain filter grayscale hover:grayscale-0 transition-all"
                 />
               </motion.div>
@@ -171,16 +192,28 @@ export default function PartnersPage() {
       <section className="py-20">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto">
-            <div className="text-center mb-12">
+            <motion.div
+              variants={textReveal}
+              initial="initial"
+              whileInView="whileInView"
+              viewport={{ once: true }}
+              className="text-center mb-12"
+            >
               <h2 className="text-3xl font-bold text-gray-900 mb-4">
                 Become a Partner
               </h2>
               <p className="text-gray-600">
                 Join our network of industry leaders and transform your business with cutting-edge IoT and robotics solutions
               </p>
-            </div>
+            </motion.div>
 
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <motion.form
+              variants={formField}
+              initial="initial"
+              animate="animate"
+              onSubmit={handleSubmit}
+              className="space-y-6"
+            >
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
                   <label htmlFor="company" className="block text-sm font-medium text-gray-700 mb-2">
@@ -267,7 +300,7 @@ export default function PartnersPage() {
                   <ArrowRight className="w-5 h-5 ml-2" />
                 </button>
               </div>
-            </form>
+            </motion.form>
           </div>
         </div>
       </section>

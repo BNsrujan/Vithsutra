@@ -3,6 +3,7 @@
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
+import { Skeleton } from "./Skeleton";
 
 export const InfiniteMovingCards = ({
   items,
@@ -79,17 +80,18 @@ export const InfiniteMovingCards = ({
         >
           {items.map((item) => (
             <li
-              className="relative w-[200px] max-w-full shrink-0 rounded-[8px] overflow-hidden md:w-[140px] "
+              className="relative w-[170px] max-w-full shrink-0 rounded-[8px] overflow-hidden md:w-[200px] "
               key={item.name}
             >
               <div className="flex items-center justify-center h-full">
-                <Image
+                {/* <Image
                   src={item.image}
                   alt={item.name}
                   width={120}
                   height={120}
                   className="object-contain w-full h-full"
-                />
+                /> */}
+                <Skeleton/>
               </div>
             </li>
           ))}
