@@ -3,6 +3,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { motion } from "framer-motion";
+import { text } from '@/lib/typography';
 
 const industries = [
   {
@@ -76,18 +77,19 @@ const industries = [
 export default function IndustriesSection() {
   return (
     <div className="py-16 max-w-[1400px] mx-auto px-4">
-      <div className="text-center mb-12">
-        <div className="mt-1 font-medium text-sm tracking-wider text-company-text-gray">
-          INDUSTRIES
-        </div>
-        <h2 className="text-4xl font-bold text-company-black mb-4">
-          Industry Solutions
-        </h2>
-        <p className="text-company-text-gray max-w-2xl mx-auto">
-          Discover our comprehensive solutions tailored for various industries, designed to drive efficiency, innovation, and growth.
-        </p>
-      </div>
+      <div className="max-w-[1400px] mx-auto px">
+        <div className="mx-auto  pb-12">
+          <div className="inline-block   rounded-full bg-company-light-light-gray ">
+            <span className="text-sm font-medium tracking-wider text-company-text-gray">
+            INDUSTRIES
+            </span>
+          </div>
 
+          <h1 className={`${text.Sectiontext} text-company-black mb-6`}>
+          Industry Solutions 
+          </h1>
+        </div>
+        </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {industries.map((industry, idx) => (
           <motion.div

@@ -53,6 +53,7 @@ export default function WeOfferSection() {
             Our Product 
           </h1>
         </div>
+
         {/* Features Grid */}
         <div className="grid grid-cols-1 md:grid-cols- gap-8">
           {features.map((feature, index) => (
@@ -66,15 +67,15 @@ export default function WeOfferSection() {
                 delay: index * 0.2,
                 ease: [0.21, 0.47, 0.32, 0.98],
               }}
-              className="group relative aspect-video  rounded-[28px] overflow-hidden bg-company-white shadow-lg hover:shadow-xl transition-all duration-300"
+              className="group relative aspect-video  rounded-[28px] overflow-hidden bg-company-white transition-all duration-300"
             >
               <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-company-black/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               <Image
                 src={feature.bgImage}
                 alt={feature.title}
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 width={600}
                 height={600}
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
               <div className="absolute inset-0 p-8 flex flex-col justify-end">
                 <motion.div
@@ -91,7 +92,7 @@ export default function WeOfferSection() {
                   </p>
                  
                 </motion.div>
-                <button className="absolute  right-8 bg-company-white rounded-full p-5 shadow-sm hover:shadow-md transition-all duration-300 group-hover:bg-company-primary-royalBlue group-hover:text-white">
+                <button className="absolute  right-8 bg-company-white rounded-full p-5 transition-all duration-300 group-hover:bg-company-primary-royalBlue group-hover:text-white">
                     <ArrowUpRightIcon
                       className="h-5 w-5 text-company-text-gray group-hover:text-white transition-colors"
                       strokeWidth={2.5}

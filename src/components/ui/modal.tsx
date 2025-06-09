@@ -80,7 +80,7 @@ export function Modal({
             exit={{ scale: 0.95, opacity: 0 }}
             transition={{ duration: 0.2 }}
             className={cn(
-              "relative w-full max-w-lg bg-white rounded-lg shadow-xl",
+              "relative w-full max-w-lg bg-white rounded-lg",
               className
             )}
           >

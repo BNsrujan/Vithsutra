@@ -3,6 +3,7 @@
 import { motion } from "framer-motion"
 import { useState } from "react"
 import { ArrowRight, MapPin, Briefcase, Clock, Star, Users, Lightbulb, Zap } from "lucide-react"
+import Image from "next/image"
 
 // Job listings data
 const jobListings = [
@@ -181,9 +182,11 @@ export default function CareersPage() {
                 className="bg-white rounded-xl p-6 shadow-sm"
               >
                 <div className="flex items-center gap-4 mb-4">
-                  <img
+                  <Image
                     src={testimonial.image}
                     alt={testimonial.name}
+                    width={48}
+                    height={48}
                     className="w-12 h-12 rounded-full object-cover"
                   />
                   <div>
@@ -236,12 +239,14 @@ export default function CareersPage() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1 }}
-                className="bg-white rounded-xl shadow-sm hover:shadow-md transition-all duration-300"
+                className="bg-white rounded-xl transition-all duration-300"
               >
                 <div className="aspect-video relative">
                   <img
                     src={job.image}
                     alt={job.title}
+                    width={800}
+                    height={450}
                     className="w-full h-full object-cover rounded-t-xl"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
