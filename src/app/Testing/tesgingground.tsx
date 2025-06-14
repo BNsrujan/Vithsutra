@@ -38,3 +38,22 @@ export default function Testingground() {
     </div>
   )
 }
+
+//   industries: {
+//   title: "Industry Solutions",
+//   description: "Discover our comprehensive solutions tailored for various industries.",
+//   href: "/industries",
+//   items: [
+//     { title: "Automotive", description: "Smart manufacturing and automation solutions", href: "/industries/automotive" },
+//     { title: "Logistics", description: "Intelligent logistics and supply chain solutions", href: "/industries/logistics" },
+//     { title: "FMOG", description: "Fast Moving Consumer Goods solutions", href: "/industries/fmog" },
+//     { title: "Chemical & Pharma", description: "Advanced automation and compliance solutions", href: "/industries/chemical-pharma" },
+//     { title: "Plastics & Polymers", description: "Smart manufacturing and quality control", href: "/industries/plastics-polymers" },
+//     { title: "Metal & Machining", description: "Precision manufacturing solutions", href: "/industries/metal-machining" },
+//     { title: "New Energy", description: "Renewable energy and smart grid solutions", href: "/industries/new-energy" },
+//     { title: "Healthcare", description: "Healthcare automation and patient care", href: "/industries/healthcare" },
+//     { title: "Retail", description: "Retail automation and customer experience", href: "/industries/retail" },
+//     { title: "Manufacturing", description: "Industry 4.0 and smart manufacturing", href: "/industries/manufacturing" },
+//     { title: "Education", description: "Smart learning and campus management", href: "/industries/education" },
+//   ]
+// },

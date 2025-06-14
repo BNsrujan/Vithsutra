@@ -131,8 +131,7 @@ export const SectorLayout: React.FC<SectorLayoutProps> = ({ data }) => {
         </div>
       </section>
 
-      {/* Footer */}
-      <Footer />
+     
     </div>
   );
 }; 

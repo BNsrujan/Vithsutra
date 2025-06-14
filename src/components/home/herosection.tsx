@@ -4,54 +4,75 @@ import { Button } from "../ui/button";
 import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 import { heroContent, fadeInUp, fadeInDown } from "@/lib/animations";
+import Image from "next/image";
+import FlipText from "../ui/fliptext";
+
 
 export default function Hero() {
   const router = useRouter();
   return (
-    <div className="relative w-full h-[100vh] min-h-[600px] overflow-hidden">
-      <div className="absolute inset-0">
-   
-        <div className="absolute inset-0 bg-black/40" />
-      </div>
-      
-      <motion.section 
-        className="relative h-full flex flex-col justify-center items-center text-center px-4 sm:px-6 lg:px-8 z-10"
-        variants={heroContent}
-        initial="initial"
-        animate="animate"
-      >
-        <div className="max-w-7xl mx-auto space-y-6">
-          <motion.p 
-            variants={fadeInDown}
-            className={`${text.DisplayPrefixtext} text-[var(--company-white)]`}
+    <div className="relative w-full min-h-[90vh] bg-[var(--company-litest-gray)]">
+      <div className="max-w-[1400px] mx-auto px-4 h-full">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center h-full">
+          {/* Left Content */}
+          <motion.div 
+            className="flex flex-col justify-center content-center space-y-8 py-16 lg:py-0"
+            variants={heroContent}
+            initial="initial"
+            animate="animate"
           >
-            Experience The
-          </motion.p>
-          <motion.h1 
-            variants={fadeInUp}
-            className={`${text.Displaytext} text-[var(--company-white)]`}
-          >
-            Vithsutra 
-          </motion.h1>
-          <motion.p 
-            variants={fadeInUp}
-            className={`${text.midtext} text-[var(--company-white)] max-w-7xl mx-auto`}
-          >
-            We create tailored solutions designed to meet your organization&apos;s
-            unique needs and goals. Our team is committed to delivering projects
-            on time, without compromising on quality. With a strong focus on
-            detail and excellence.
-          </motion.p>
-          <motion.div variants={fadeInUp}>
-            <Button 
-              onClick={() => router.push('/contact')} 
-              className={`${text.Buttontext} bg-[var(--company-primary-royalBlue)] hover:bg-[var(--company-primary-royalBlue)]/90 text-[var(--company-white)]`}
+            <motion.p 
+              variants={fadeInDown}
+              className={`${text.DisplayPrefixtext} text-[var(--company-primary-royalBlue)]`}
             >
-              Get Started
-            </Button>
+              Welcome to
+            </motion.p>
+            <motion.h1 
+              variants={fadeInUp}
+              className={`${text.Displaytext} text-[var(--company-blue-black)]`}
+            >
+              Vithsutra
+            </motion.h1>
+            <div className="font-bold border-2 border-[var(--company-primary-royalBlue)] rounded-[8px] p-4 bg-white/50 backdrop-blur-sm">
+              <FlipText/>
+            </div>
+            
+            <motion.div 
+              variants={fadeInUp}
+              className="flex gap-4"
+            >
+              <Button 
+                onClick={() => router.push('/contact')} 
+                className={`${text.Buttontext} bg-[var(--company-primary-royalBlue)] hover:bg-[var(--company-primary-royalBlue)]/90 text-[var(--company-white)]`}
+              >
+                Get Started
+              </Button>
+     
+            </motion.div>
+          </motion.div>
+
+          {/* Right Image */}
+          <motion.div 
+            className="relative h-[500px] lg:h-[600px]"
+            variants={fadeInUp}
+            initial="initial"
+            animate="animate"
+          >
+            <Image
+              src="/hero/hero-image.png"
+              alt="Vithsutra Hero"
+              fill
+              className="object-contain"
+              priority
+            />
           </motion.div>
         </div>
-      </motion.section>
+      </div>
+
+      {/* Background Pattern */}
+      <div className="absolute inset-0 -z-10 opacity-10">
+        <div className="absolute inset-0 bg-[url('/patterns/grid.svg')] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]" />
+      </div>
     </div>
   );
 }

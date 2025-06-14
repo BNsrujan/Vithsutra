@@ -4,7 +4,10 @@ import React from 'react';
 import Link from 'next/link';
 import { motion } from "motion/react";
 import { text } from '@/lib/typography';
-import { containerVariants, itemVariants, sectionTitle, fadeInUp } from '@/lib/motion';
+import { containerVariants, itemVariants } from '@/lib/motion';
+import { SectionHeader } from '../ui/section-header';
+import Image from 'next/image';
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '../ui/card';
 
 const industries = [
   {
@@ -85,26 +88,10 @@ export default function IndustriesSection() {
         whileInView="visible"
         viewport={{ once: true }}
       >
-        <motion.div 
-          className="mx-auto pb-12"
-          variants={itemVariants}
-        >
-          <motion.div 
-            className="inline-block rounded-full bg-[var(--company-litest-gray)] px-4 py-2"
-            variants={fadeInUp}
-          >
-            <span className={`${text.Navtext} text-[var(--company-mid-gray)]`}>
-              INDUSTRIES
-            </span>
-          </motion.div>
-
-          <motion.h1 
-            variants={sectionTitle}
-            className={`${text.Sectiontext} text-[var(--company-blue-black)] mb-6`}
-          >
-            Industry Solutions 
-          </motion.h1>
-        </motion.div>
+        <SectionHeader 
+          label="INDUSTRIES"
+          title="Industry Solutions"
+        />
       </motion.div>
 
       <motion.div 
@@ -122,24 +109,26 @@ export default function IndustriesSection() {
             className="group"
           >
             <Link href={industry.link}>
-              <div className="bg-[var(--company-white)] rounded-lg shadow-lg overflow-hidden transition-all duration-300 group-hover:shadow-xl group-hover:-translate-y-1">
+              <Card className="overflow-hidden transition-all duration-300 border-2 group-hover:-translate-y-1">
                 <div className="relative h-48 overflow-hidden">
-                  <img
+                  <Image
                     src={industry.image}
                     alt={industry.title}
+                    width={140}
+                    height={140}
                     className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                 </div>
-                <div className="p-6">
-                  <h3 className={`${text.cardHeadingtext} text-[var(--company-blue-black)] mb-2`}>
+                <CardContent className="p-6">
+                  <CardTitle className="text-[var(--company-blue-black)] mb-2">
                     {industry.title}
-                  </h3>
-                  <p className={`${text.cardBodytext} text-[var(--company-mid-gray)]`}>
+                  </CardTitle>
+                  <CardDescription className="text-[var(--company-mid-gray)]">
                     {industry.description}
-                  </p>
-                </div>
-              </div>
+                  </CardDescription>
+                </CardContent>
+              </Card>
             </Link>
           </motion.div>
         ))}

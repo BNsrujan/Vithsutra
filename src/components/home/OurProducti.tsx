@@ -3,9 +3,11 @@ import { useState, useRef } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { text } from "@/lib/typography";
-import { ArrowUpRightIcon } from "lucide-react";
+import { ChevronLeftIcon, ChevronRightIcon } from "lucide-react";
 import { useRouter } from "next/navigation";
-import { containerVariants, itemVariants, sectionTitle, fadeInUp } from "@/lib/animations";
+import { containerVariants, itemVariants } from "@/lib/animations";
+import { SectionHeader } from "../ui/section-header";
+import { ArrowButton } from "../ui/largecard";
 
 // Define the card data type
 type Card = {
@@ -69,7 +71,7 @@ export default function CardSection() {
     activeFilter === "Featured" ? true : card.category === activeFilter
   );
 
-  const slideWidth = 600;
+  const slideWidth = 1000;
   const gap = 24;
 
   const nextSlide = () => {
@@ -85,34 +87,18 @@ export default function CardSection() {
   };
 
   return (
-    <section className="bg-[var(--company-litest-gray)] py-16">
+    <section className="">
       <motion.div 
-        className="max-w-[1400px] mx-auto px-4"
+        className=" mx-auto "
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
       >
-        <motion.div 
-          className="mx-auto pb-12"
-          variants={itemVariants}
-        >
-          <motion.div 
-            className="inline-block rounded-full bg-[var(--company-white)] px-4 py-2"
-            variants={fadeInUp}
-          >
-            <span className={`${text.Navtext} text-[var(--company-mid-gray)]`}>
-              FEATURED
-            </span>
-          </motion.div>
-
-          <motion.h1 
-            variants={sectionTitle}
-            className={`${text.Sectiontext} text-[var(--company-blue-black)] mb-6`}
-          >
-            Our Products
-          </motion.h1>
-        </motion.div>
+        <SectionHeader 
+          label="FEATURED"
+          title="Our Products"
+        />
 
         {/* Filter Buttons */}
         <motion.div 
@@ -128,11 +114,11 @@ export default function CardSection() {
                 setActiveFilter(filter);
                 setCurrentIndex(0);
               }}
-              className={`px-6 py-2.5 rounded-full ${text.Buttontext} transition-all duration-300
+              className={`px-6 py-2.5 rounded-full ${text.Buttontext} transition-all border-2 border-company-litest-gray  duration-300
                 ${
                   activeFilter === filter
-                    ? "bg-[var(--company-primary-royalBlue)] text-[var(--company-white)] shadow-md"
-                    : "bg-[var(--company-white)] text-[var(--company-mid-gray)] hover:bg-[var(--company-litest-gray)] border border-[var(--company-light-gray)]"
+                    ? "bg-[var(--company-primary-royalBlue)] text-[var(--company-white)] "
+                    : "bg-company-white text-company-mid-gray hover:bg-[var(--company-litest-gray)] border border-[var(--company-light-gray)]"
                 }`}
             >
               {filter}
@@ -141,68 +127,11 @@ export default function CardSection() {
         </motion.div>
 
         {/* Carousel Container */}
-        <div className="relative">
-          {/* Navigation Buttons */}
-          <motion.button
-            onClick={prevSlide}
-            disabled={currentIndex === 0}
-            className={`absolute -left-8 top-1/2 -translate-y-1/2 z-10 p-3 rounded-full bg-[var(--company-white)] text-[var(--company-mid-gray)] transition-all duration-300
-              ${
-                currentIndex === 0
-                  ? "opacity-50 cursor-not-allowed"
-                  : "hover:bg-[var(--company-primary-royalBlue)] hover:text-[var(--company-white)]"
-              }
-              hidden sm:block shadow-lg`}
-            aria-label="Previous slide"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-6 w-6"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M15 19l-7-7 7-7"
-              />
-            </svg>
-          </motion.button>
-
-          <motion.button
-            onClick={nextSlide}
-            disabled={currentIndex >= filteredCards.length - 1}
-            className={`absolute -right-8 top-1/2 -translate-y-1/2 z-10 p-3 rounded-full bg-[var(--company-white)] text-[var(--company-mid-gray)] transition-all duration-300
-              ${
-                currentIndex >= filteredCards.length - 1
-                  ? "opacity-50 cursor-not-allowed"
-                  : "hover:bg-[var(--company-primary-royalBlue)] hover:text-[var(--company-white)]"
-              }
-              hidden sm:block shadow-lg`}
-            aria-label="Next slide"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-6 w-6"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M9 5l7 7-7 7"
-              />
-            </svg>
-          </motion.button>
-
+        <div className="relative overflow-hidden ">
           {/* Cards Container */}
-          <div ref={carouselRef} className="overflow-x-hidden h-[600px]">
+          <div ref={carouselRef} className=" h-[600px]">
             <motion.div
-              className="flex gap-6 h-full"
+              className="flex gap-x-[24px]"
               animate={{
                 x: -(currentIndex * (slideWidth + gap)),
               }}
@@ -213,47 +142,77 @@ export default function CardSection() {
                   key={card.id}
                   variants={itemVariants}
                   custom={index}
-                  className="relative flex-none w-[700px] h-[500px] bg-[var(--company-white)] rounded-[16px] overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 group"
+                  className="relative flex-none w-[1000px] h-[600px] bg-[var(--company-white)] rounded-[16px] overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 group"
                 >
                   {card.image && (
-                    <div className="relative h-[300px] overflow-hidden">
+                    <div className="absolute inset-0">
                       <Image
                         src={card.image}
                         alt={card.title}
                         className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                        width={600}
-                        height={300}
+                        width={1000}
+                        height={600}
+                        priority
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent" />
                     </div>
                   )}
-                  <div className="p-8">
-                    <h3 className={`${text.cardHeadingtext} text-[var(--company-blue-black)] mb-4 group-hover:text-[var(--company-primary-royalBlue)] transition-colors`}>
-                      {card.title}
-                    </h3>
-                    <p className={`${text.cardBodytext} text-[var(--company-mid-gray)] mb-6 leading-relaxed line-clamp-3`}>
-                      {card.description}
-                    </p>
-                    <div className="absolute bottom-8 left-6 right-4 flex justify-between items-center">
-                      <span className={`${text.cardsubtext} text-[var(--company-primary-royalBlue)] bg-[var(--company-litest-gray)] px-6 py-2 rounded-full`}>
+                  <div className="relative p-8 h-full flex flex-col justify-end">
+                    
+                    <div className=" w-full   flex justify-baseline items-center">
+                      <div className="w-3/4">
+                        <h3 className={`${text.Sectionprefixtext} text-[var(--company-white)] mb-4  transition-colors`}>
+                          {card.title}
+                        </h3>
+                        <p className={`${text.cardBodytext} text-[var(--company-white)] mb-6 leading-relaxed line-clamp-3`}>
+                          {card.description}
+                        </p>
+                      </div>
+                      <span className={`${text.cardsubtext} absolute top-5 right-5 text-[var(--company-white)] bg-[var(--company-primary-royalBlue)]/80 px-6 py-2 rounded-full`}>
                         {card.tag}
                       </span>
-                      <motion.button 
-                        className="absolute right-8 bg-[var(--company-white)] rounded-full p-5 shadow-sm hover:shadow-md transition-all duration-300 group-hover:bg-[var(--company-primary-royalBlue)] group-hover:text-[var(--company-white)]"
+                      <ArrowButton 
                         onClick={() => Router.push(`/${card.title}`)}
-                        whileHover={{ scale: 1.1 }}
-                        whileTap={{ scale: 0.95 }}
-                      >
-                        <ArrowUpRightIcon
-                          className="h-5 w-5 text-[var(--company-mid-gray)] group-hover:text-[var(--company-white)] transition-colors"
-                          strokeWidth={2.5}
-                        />
-                      </motion.button>
+                        className="absolute right-8 bottom-8"
+                      />
                     </div>
                   </div>
                 </motion.div>
               ))}
             </motion.div>
+          </div>
+
+          {/* Navigation Buttons */}
+          <div className="flex justify-end gap-4 mt-8">
+            <motion.button
+              onClick={prevSlide}
+              disabled={currentIndex === 0}
+              className={`p-3 rounded-full bg-[var(--company-white)] text-[var(--company-mid-gray)] transition-all duration-300
+                ${
+                  currentIndex === 0
+                    ? "opacity-50 cursor-not-allowed"
+                    : "hover:bg-[var(--company-primary-royalBlue)] hover:text-[var(--company-white)]"
+                }
+                border border-company-mid-gray`}
+              aria-label="Previous slide"
+            >
+              <ChevronLeftIcon className="h-6 w-6" />
+            </motion.button>
+
+            <motion.button
+              onClick={nextSlide}
+              disabled={currentIndex >= filteredCards.length - 1}
+              className={`p-3 rounded-full bg-[var(--company-white)] text-[var(--company-mid-gray)] transition-all duration-300
+                ${
+                  currentIndex >= filteredCards.length - 1
+                    ? "opacity-50 cursor-not-allowed"
+                    : "hover:bg-[var(--company-primary-royalBlue)] hover:text-[var(--company-white)]"
+                }
+                border border-company-mid-gray`}
+              aria-label="Next slide"
+            >
+              <ChevronRightIcon className="h-6 w-6" />
+            </motion.button>
           </div>
 
           {/* Dots Navigation */}

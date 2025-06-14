@@ -4,8 +4,9 @@ import Hero from './herosection'
 import WeOfferSection from './domain'
 import CardSection from './OurProducti'
 import IndustriesSection from './IndustriesSection'
-
 import { VentureCapital } from './VentureCaopital'
+import QuickFacts from './QuickFacts'
+import UniqueFeatures from './UniqueFeatures'
 
 function Homepage() {
   return (
@@ -16,9 +17,11 @@ function Homepage() {
           <About />
           <WeOfferSection />
           <CardSection />
+          <UniqueFeatures />
           <IndustriesSection />
           <VentureCapital/>
-    
+          <QuickFacts />
+          
         </div>
       </div>
     </main>
