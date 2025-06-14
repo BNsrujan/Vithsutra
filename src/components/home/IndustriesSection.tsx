@@ -2,8 +2,9 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import { text } from '@/lib/typography';
+import { containerVariants, itemVariants, sectionTitle, fadeInUp } from '@/lib/motion';
 
 const industries = [
   {
@@ -77,30 +78,51 @@ const industries = [
 export default function IndustriesSection() {
   return (
     <div className="py-16 max-w-[1400px] mx-auto px-4">
-      <div className="max-w-[1400px] mx-auto px">
-        <div className="mx-auto  pb-12">
-          <div className="inline-block   rounded-full bg-company-light-light-gray ">
-            <span className="text-sm font-medium tracking-wider text-company-text-gray">
-            INDUSTRIES
+      <motion.div 
+        className="max-w-[1400px] mx-auto"
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+      >
+        <motion.div 
+          className="mx-auto pb-12"
+          variants={itemVariants}
+        >
+          <motion.div 
+            className="inline-block rounded-full bg-[var(--company-litest-gray)] px-4 py-2"
+            variants={fadeInUp}
+          >
+            <span className={`${text.Navtext} text-[var(--company-mid-gray)]`}>
+              INDUSTRIES
             </span>
-          </div>
+          </motion.div>
 
-          <h1 className={`${text.Sectiontext} text-company-black mb-6`}>
-          Industry Solutions 
-          </h1>
-        </div>
-        </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <motion.h1 
+            variants={sectionTitle}
+            className={`${text.Sectiontext} text-[var(--company-blue-black)] mb-6`}
+          >
+            Industry Solutions 
+          </motion.h1>
+        </motion.div>
+      </motion.div>
+
+      <motion.div 
+        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+      >
         {industries.map((industry, idx) => (
           <motion.div
             key={industry.title}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: idx * 0.1 }}
+            variants={itemVariants}
+            custom={idx}
             className="group"
           >
             <Link href={industry.link}>
-              <div className="bg-white rounded-lg shadow-lg overflow-hidden transition-transform duration-300 group-hover:shadow-xl group-hover:-translate-y-1">
+              <div className="bg-[var(--company-white)] rounded-lg shadow-lg overflow-hidden transition-all duration-300 group-hover:shadow-xl group-hover:-translate-y-1">
                 <div className="relative h-48 overflow-hidden">
                   <img
                     src={industry.image}
@@ -110,10 +132,10 @@ export default function IndustriesSection() {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                 </div>
                 <div className="p-6">
-                  <h3 className="text-xl font-semibold text-company-black mb-2">
+                  <h3 className={`${text.cardHeadingtext} text-[var(--company-blue-black)] mb-2`}>
                     {industry.title}
                   </h3>
-                  <p className="text-company-text-gray text-sm">
+                  <p className={`${text.cardBodytext} text-[var(--company-mid-gray)]`}>
                     {industry.description}
                   </p>
                 </div>
@@ -121,7 +143,7 @@ export default function IndustriesSection() {
             </Link>
           </motion.div>
         ))}
-      </div>
+      </motion.div>
     </div>
   );
 } 

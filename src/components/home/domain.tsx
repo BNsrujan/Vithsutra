@@ -43,17 +43,16 @@ export default function WeOfferSection() {
     <section className="relative py-24 bg-company-light-light-gray overflow-hidden">
       <div className="max-w-[1400px] mx-auto px">
         <div className="mx-auto  pb-12">
-          <div className="inline-block   rounded-full bg-company-light-light-gray ">
-            <span className="text-sm font-medium tracking-wider text-company-text-gray">
-              FEATURED
-            </span>
-          </div>
-
-          <h1 className={`${text.Sectiontext} text-company-black mb-6`}>
-            Our Product 
-          </h1>
-        </div>
-
+              <div className="inline-block   rounded-full bg-company-light-light-gray ">
+                <span className="text-sm font-medium tracking-wider text-company-text-gray">
+                  FEATURED
+                </span>
+              </div>
+        
+              <h1 className={`${text.Sectiontext} text-company-black mb-6`}>
+                Automation at All Levels
+              </h1>
+            </div>
         {/* Features Grid */}
         <div className="grid grid-cols-1 md:grid-cols- gap-8">
           {features.map((feature, index) => (
@@ -105,4 +104,6 @@ export default function WeOfferSection() {
       </div>
     </section>
   );
+
+
 }

@@ -8,12 +8,13 @@
     /* blue sets  */
     --company-primary-royalBlue: #4169E1;
     --company-secondary-yello:#ffde59;
-    --company-blue-white: #F5F5F7;
+    --company-white: #ffffff; 
+    --company-litest-gray:#f5f5f7;
     --company-light-gray: #b3afaf;
     --company-mid-gray: #86868b;
-    --company-dark-gray:#8A8B94;
-    --company-blue-black:#101520;
-    --company-black: #000000;
+    --company-dark-gray:#8A8B94; 
+    --company-blue-black:#101520; 
+    --company-black: #000000; 
 
     /* company text */
     --company-white-text: #fff;
@@ -72,12 +73,13 @@
   /* Company Colors */
   --color-company-primary-royalBlue: var(--company-primary-royalBlue);
   --color-company-secondary-yello:var(--color-company-secondary-yello);
-  --color-company-blue-white:var(--company-blue-white);
+  --color-company-white:var(--company-white);
   --color-company-light-gray: var(--company-light-gray);
   --color-company-mid-gray: var(--company-mid-gray);
   --color-company-dark-gray: var(--company-dark-gray);
   --color-company-blue-black:var(--company-blue-black);
   --color-company-black: var(--company-black);
+  --color-company-litest-gray:var(--company-litest-gray);
 
   --color-company-gray-text: var(--company-gray-text);
   --color-company-white-text: var(--company-white-text);

@@ -1,23 +1,22 @@
-import { Variants } from "framer-motion"
+import { type Variants } from "motion/react"
 
-const containerVariants = {
+export const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.2
+        staggerChildren: 0.1
       }
     }
   };
 
-  const itemVariants = {
-    hidden: { opacity: 0, y: 50 },
+  export const itemVariants: Variants = {
+    hidden: { opacity: 0, y: 20 },
     visible: {
       opacity: 1,
       y: 0,
       transition: {
-        duration: 0.6,
-        ease: "easeInOut"
+        duration: 0.5
       }
     }
   };
@@ -43,14 +42,26 @@ const containerVariants = {
   // Fade in from bottom
   export const fadeInUp: Variants = {
     initial: { opacity: 0, y: 20 },
-    animate: { opacity: 1, y: 0 },
+    animate: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.5
+      }
+    },
     exit: { opacity: 0, y: 20 }
   }
 
   // Fade in from top
   export const fadeInDown: Variants = {
     initial: { opacity: 0, y: -20 },
-    animate: { opacity: 1, y: 0 },
+    animate: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.5
+      }
+    },
     exit: { opacity: 0, y: -20 }
   }
 
@@ -127,8 +138,13 @@ const containerVariants = {
 
   // Hero section animations
   export const heroContent: Variants = {
-    initial: { opacity: 0, y: 30 },
-    animate: { opacity: 1, y: 0 },
+    initial: { opacity: 0 },
+    animate: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2
+      }
+    },
     transition: { duration: 0.6, ease: [0.21, 0.47, 0.32, 0.98] }
   }
 
@@ -187,10 +203,15 @@ const containerVariants = {
 
   // Section title animations
   export const sectionTitle: Variants = {
-    initial: { opacity: 0, y: 20 },
-    whileInView: { opacity: 1, y: 0 },
-    viewport: { once: true },
-    transition: { duration: 0.5 }
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.5,
+        delay: 0.2,
+      },
+    },
   }
 
   // List item animations
@@ -207,5 +228,3 @@ const containerVariants = {
     exit: { opacity: 0 },
     transition: { duration: 0.3 }
   }
-
-  export {containerVariants,itemVariants}
