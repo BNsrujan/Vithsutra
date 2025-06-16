@@ -37,14 +37,14 @@ export default function WeOfferSection() {
 
   return (
     <section className="relative py-24 bg-company-light-light-gray overflow-hidden">
-      <div className="mx-auto px">
+      <div className="mx-auto ">
         <SectionHeader 
           label="FEATURED"
           title="Automation at All Levels"
         />
 
         {/* Features Grid */}
-        <div className="flex flex-col gap-y-[64px]">
+        <div className="flex flex-col gap-y-[24px] md:gap-y-[64px]">
           {features.map((feature, index) => (
             <Largecard 
               key={index}

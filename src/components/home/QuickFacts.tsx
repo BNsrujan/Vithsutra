@@ -8,22 +8,19 @@ import { SectionHeader } from "../ui/section-header";
 
 const facts = [
   {
-    number: 100,
+    number: 1000,
     suffix: "+",
-    title: "Projects Completed",
-    description: "Successfully delivered innovative solutions across various industries"
-  },
-  {
-    number: 50,
-    suffix: "+",
-    title: "Expert Team",
-    description: "Skilled professionals dedicated to delivering excellence"
+    title: "Products Deployed",
   },
   {
     number: 15,
     suffix: "+",
-    title: "Years Experience",
-    description: "Decades of expertise in industrial automation and innovation"
+    title: "Domains Served",
+  },
+  {
+    number: 2,
+    suffix: "+",
+    title: "Years Of Experience",
   },
 
 ];
@@ -67,9 +64,9 @@ function Counter({ end, suffix, duration = 2 }: { end: number; suffix: string; d
 
 export default function QuickFacts() {
   return (
-    <section className="flex flex-col justify-center">
+    <section className="flex flex-col ">
       <motion.div 
-        className="max-w-[1400px] mx-auto px-4"
+        className=" mx-auto px-4"
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"

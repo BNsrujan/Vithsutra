@@ -5,9 +5,9 @@ import { SectionHeader } from "../ui/section-header";
 
 export default function About() {
   return (
-    <section className="h-screen flex justify-center items-center">
-      <div className="mx-auto px-4">
-        <div className="flex flex-col lg:flex-row items-center gap-12">
+    <section className="h-full  md:h-screen flex justify-center items-center">
+      <div className="mx-auto ">
+        <div className="flex flex-col lg:flex-row items-center gap-[28px] w-full">
           <div className="w-full lg:w-2/3">
             <SectionHeader 
               label="ABOUT US"
@@ -15,19 +15,14 @@ export default function About() {
             />
             
             <p className={`${text.cardBodytext} text-[var(--company-mid-gray)]`}>
-              To revolutionize how businesses interact with technology by creating
-              intelligent, integrated solutions that anticipate future challenges
-              and place our clients at the forefront of digital transformation. By
-              2030, we aim to be a global leader in technological innovation,
-              empowering organizations across continents to achieve unprecedented
-              efficiency, growth, and competitive advantage.
+            To be a global leader in IoT and robotics, delivering precision-engineered products that seamlessly blend advanced technology with elegant design. We envision a world where simplicity drives innovation, and every solution we create empowers businesses and individuals through reliable, beautifully crafted technology.
             </p>
           </div>
 
-          <div className="w-full lg:w-1/3">
-            <div className="aspect-video w-full overflow-hidden rounded-[28px] bg-[var(--company-white)] shadow-xl">
+          <div className="w-full lg:w-1/3 h-full">
+            <div className="aspect-video w-full overflow-hidden rounded-[16px] bg-[var(--company-white)] shadow-xl">
               <video 
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover m-0 p-0"
                 autoPlay 
                 loop 
                 muted

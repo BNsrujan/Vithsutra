@@ -1,137 +1,273 @@
 "use client";
 
 import React from "react";
-import Image from "next/image";
-import Link from "next/link";
-import { Carousel } from "./Carousel";
+import { Carousel, type CarouselItem } from "../ui/carousel";
 import { ProductGrid } from "./ProductGrid";
-import { Footer } from "./Footer";
+import { motion } from "framer-motion";
+import { text } from "@/lib/typography";
+import { Button } from "../ui/button";
+import { SectionHeader } from "../ui/section-header";
+import { containerVariants, itemVariants } from "@/lib/animations";
+import Link from "next/link";
+import Image from "next/image";
 
 interface SectorData {
   title: string;
   description: string;
-  carouselItems: {
-    image: string;
-    caption: string;
-    link: string;
-  }[];
+  carouselItems: CarouselItem[];
   products: {
+    id: number;
     name: string;
     description: string;
-    image?: string;
+    image: string;
     link: string;
   }[];
-  applications: string[];
+  applications: {
+    title: string;
+    description: string;
+    icon: string;
+  }[];
   solutions: {
-    overview: string;
-    categories: {
-      title: string;
-      description: string;
-    }[];
-  };
-  relatedIndustries: string[];
+    title: string;
+    description: string;
+    icon: string;
+  }[];
+  relatedIndustries: {
+    title: string;
+    description: string;
+    href: string;
+  }[];
 }
 
 interface SectorLayoutProps {
   data: SectorData;
 }
 
-export const SectorLayout: React.FC<SectorLayoutProps> = ({ data }) => {
+const SectorLayout: React.FC<SectorLayoutProps> = ({ data }) => {
   return (
-    <div className="min-h-screen flex flex-col">
-      {/* Intro Section */}
-      <section className="bg-gradient-to-r from-blue-50 to-white py-16">
-        <div className="container mx-auto px-4">
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">{data.title}</h1>
-          <p className="text-xl text-gray-600 max-w-3xl">{data.description}</p>
+    <div className="min-h-screen bg-company-blue-white">
+      {/* Introduction Section */}
+      <motion.section 
+        className=" relative px-4 sm:px-6 lg:px-8 py-12 h-screen sm:py-16 lg:py-20"
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+      >
+        <div className=" justify-end mx-auto w-full max-w-[1800px]">
+          <motion.h1 
+            className={`${text.Sectiontext}font-semibold mb-4 sm:mb-6`}
+            variants={itemVariants}
+          >
+            {data.title}
+          </motion.h1>
+          <motion.p 
+            className={`${text.Sectionbodytext} md:w-9/12 text-company-mid-gray `}
+            variants={itemVariants}
+          >
+            {data.description}
+          </motion.p>
         </div>
-      </section>
+        <div className="">
+          <Image 
+          src={"/"}
+          width={150}
+          height={150}
+          alt="image"
+          className=" absolute "
+          />
+        </div>
+      </motion.section>
 
       {/* Carousel Section */}
-      <section className="py-12 bg-white">
-        <div className="container mx-auto px-4">
-          <Carousel items={data.carouselItems} />
+      <motion.section 
+        className="px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20 bg-company-white"
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+      >
+        <div className="mx-auto max-w-[1800px]">
+          <SectionHeader 
+            label="FEATURED"
+            title="Key Highlights"
+          />
+          <div className="mt-8 sm:mt-12">
+            <Carousel 
+              items={data.carouselItems}
+              variant="default"
+              autoPlay={true}
+              interval={5000}
+              showIndicators={true}
+              showNavigation={true}
+            />
+          </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Products Section */}
-      <section className="py-12 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-gray-900 mb-8">Our Products</h2>
-          <ProductGrid products={data.products} />
+      <motion.section 
+        className="px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20"
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+      >
+        <div className="mx-auto max-w-[1800px]">
+          <SectionHeader 
+            label="PRODUCTS"
+            title="Our Solutions"
+          />
+          <div className="mt-8 sm:mt-12">
+            <ProductGrid products={data.products} />
+          </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Applications Section */}
-      <section className="py-12 bg-white">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-gray-900 mb-8">Applications</h2>
-          <ul className="space-y-4">
+      <motion.section 
+        className="px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20 bg-company-white"
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+      >
+        <div className="mx-auto max-w-[1800px]">
+          <SectionHeader 
+            label="APPLICATIONS"
+            title="Industry Applications"
+          />
+          <div className="mt-8 sm:mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {data.applications.map((app, index) => (
-              <li key={index} className="flex items-center text-lg text-gray-700">
-                <span className="w-2 h-2 bg-blue-500 rounded-full mr-3"></span>
-                {app}
-              </li>
+              <motion.div
+                key={index}
+                variants={itemVariants}
+                custom={index}
+                className="bg-company-blue-white p-6 sm:p-8 rounded-lg"
+              >
+                <div className="w-12 h-12 sm:w-16 sm:h-16 mb-4 sm:mb-6">
+                  <Image src={app.icon} alt={app.title}
+                  width={150}
+                  height={150}
+                  className="w-full h-full object-contain" />
+                </div>
+                <h3 className={`${text.cardHeadingtext} text-company-gray mb-2 sm:mb-3`}>
+                  {app.title}
+                </h3>
+                <p className={`${text.cardBodytext} text-company-mid-gray`}>
+                  {app.description}
+                </p>
+              </motion.div>
             ))}
-          </ul>
+          </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Solutions Section */}
-      <section className="py-12 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-gray-900 mb-8">Our Solutions</h2>
-          <p className="text-lg text-gray-600 mb-8">{data.solutions.overview}</p>
-          <div className="grid md:grid-cols-3 gap-8">
-            {data.solutions.categories.map((category, index) => (
-              <div key={index} className="bg-white p-6 rounded-lg shadow-md">
-                <h3 className="text-xl font-semibold text-gray-900 mb-3">
-                  {category.title}
+      <motion.section 
+        className="px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20"
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+      >
+        <div className="mx-auto max-w-[1800px]">
+          <SectionHeader 
+            label="SOLUTIONS"
+            title="Our Approach"
+          />
+          <div className="mt-8 sm:mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+            {data.solutions.map((solution, index) => (
+              <motion.div
+                key={index}
+                variants={itemVariants}
+                custom={index}
+                className="bg-company-white p-6 sm:p-8 rounded-lg shadow-sm"
+              >
+                <div className="w-12 h-12 sm:w-16 sm:h-16 mb-4 sm:mb-6">
+                  <img src={solution.icon} alt={solution.title} className="w-full h-full object-contain" />
+                </div>
+                <h3 className={`${text.Sectiontext} text-company-gray mb-2 sm:mb-3`}>
+                  {solution.title}
                 </h3>
-                <p className="text-gray-600">{category.description}</p>
-              </div>
+                <p className={`${text.Sectionbodytext} text-company-mid-gray`}>
+                  {solution.description}
+                </p>
+              </motion.div>
             ))}
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Related Industries Section */}
-      <section className="py-12 bg-white">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-gray-900 mb-8">Related Industries</h2>
-          <div className="flex flex-wrap gap-4">
+      <motion.section 
+        className="px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20 bg-company-white"
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+      >
+        <div className="mx-auto max-w-[1800px]">
+          <SectionHeader 
+            label="INDUSTRIES"
+            title="Related Industries"
+          />
+          <div className="mt-8 sm:mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {data.relatedIndustries.map((industry, index) => (
-              <Link
+              <motion.div
                 key={index}
-                href={`/industries/${industry.toLowerCase().replace(/ /g, "-")}`}
-                className="text-blue-600 hover:text-blue-800 hover:underline"
+                variants={itemVariants}
+                custom={index}
+                className="bg-company-blue-white p-6 sm:p-8 rounded-lg hover:shadow-md transition-shadow duration-300"
               >
-                → {industry}
-              </Link>
+                <Link href={industry.href} className="block">
+                  <h3 className={`${text.Sectiontext} text-company-gray mb-2 sm:mb-3 hover:text-company-primary-royalBlue transition-colors`}>
+                    {industry.title}
+                  </h3>
+                  <p className={`${text.Sectionbodytext} text-company-mid-gray`}>
+                    {industry.description}
+                  </p>
+                </Link>
+              </motion.div>
             ))}
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-blue-600">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold text-white mb-4">
-            Ready to Start Your Project?
-          </h2>
-          <p className="text-xl text-white mb-8">
-            Contact our team today to discuss your {data.title} project.
-          </p>
-          <Link
-            href="/contact"
-            className="inline-block bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
+      <motion.section 
+        className="px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20 bg-company-primary-royalBlue"
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+      >
+        <div className="mx-auto max-w-[1800px] text-center">
+          <motion.h2 
+            className={`${text.Displaytext} text-company-white mb-4 sm:mb-6`}
+            variants={itemVariants}
           >
-            Start Your Project
-          </Link>
+            Ready to Transform Your Industry?
+          </motion.h2>
+          <motion.p 
+            className={`${text.Sectionbodytext} text-company-white/80 mb-8 sm:mb-12 max-w-2xl mx-auto`}
+            variants={itemVariants}
+          >
+            Let&apos;s discuss how our solutions can help you achieve your goals.
+          </motion.p>
+          <motion.div variants={itemVariants}>
+            <Button 
+              variant="secondary"
+              size="lg"
+              onClick={() => window.location.href = '/contact'}
+            >
+              Contact Us
+            </Button>
+          </motion.div>
         </div>
-      </section>
-
-     
+      </motion.section>
     </div>
   );
-}; 
+};
+
+export { SectorLayout }; 

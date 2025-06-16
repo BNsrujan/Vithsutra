@@ -5,7 +5,13 @@ import { text } from "@/lib/typography";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
 
-const words = ["Low Cost automation ", "IIOT", "Robotics"];
+const words = [
+  "Idea to Product",
+  "Industrial Automation",
+  "IIoT Solutions",
+  "Industrial Robotics",
+  "Training & Projects",
+];
 
 export default function FlipText() {
   const [index, setIndex] = useState(0);
@@ -13,12 +19,12 @@ export default function FlipText() {
   useEffect(() => {
     const interval = setInterval(() => {
       setIndex((prev) => (prev + 1) % words.length);
-    }, 2000); 
+    }, 3000); 
     return () => clearInterval(interval);
   }, []);
 
   return (
-    <div className={`${text.Sectionbodytext} relative h-16 w-full text-center text-4xl font-bold text-[var(--company-blue-black)]`}>
+    <div className="relative flex bg-company-light-gray justify-center  content-center    ">
       <AnimatePresence mode="wait">
         <motion.div
           key={index}
@@ -26,12 +32,14 @@ export default function FlipText() {
           animate={{ y: 0, opacity: 1 }}
           exit={{ y: -50, opacity: 0 }}
           transition={{ 
-            duration: 0.5,
-            ease: "easeInOut"
+            duration: 0.7,
+            ease: [0.4, 0, 0.2, 1]
           }}
-          className="absolute inset-0 flex items-center justify-center"
+          className=" flex items-center    p-0 m-0 md:min-w-[500px]"
         >
-          {words[index]}
+          <span className={`${text.Sectionprefixtext}  text-[var(--company-primary-royalBlue)]`}>
+            {words[index]}
+          </span>
         </motion.div>
       </AnimatePresence>
     </div>

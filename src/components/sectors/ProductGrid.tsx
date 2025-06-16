@@ -3,6 +3,9 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { motion } from "framer-motion";
+import { text } from "@/lib/typography";
+import { containerVariants, itemVariants } from "@/lib/animations";
 
 interface Product {
   name: string;
@@ -17,31 +20,45 @@ interface ProductGridProps {
 
 export const ProductGrid: React.FC<ProductGridProps> = ({ products }) => {
   return (
-    <div className="grid md:grid-cols-2 gap-8">
+    <motion.div 
+      className="grid sm:grid-cols-2 gap-6 sm:gap-8"
+      variants={containerVariants}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+    >
       {products.map((product, index) => (
-        <Link
+        <motion.div
           key={index}
-          href={product.link}
-          className="group bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow"
+          variants={itemVariants}
+          custom={index}
         >
-          <div className="p-6">
+          <Link
+            href={product.link}
+            className="group block bg-company-white rounded-xl shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden"
+          >
             {product.image && (
-              <div className="relative w-full h-48 mb-4">
+              <div className="relative w-full h-48 sm:h-56 md:h-64">
                 <Image
                   src={product.image}
                   alt={product.name}
                   fill
-                  className="object-cover rounded-lg"
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 />
               </div>
             )}
-            <h3 className="text-xl font-semibold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">
-              {product.name}
-            </h3>
-            <p className="text-gray-600">{product.description}</p>
-          </div>
-        </Link>
+            <div className="p-4 sm:p-6">
+              <h3 className={`${text.cardHeadingtext} text-company-blue mb-2 group-hover:text-company-primary-royalBlue transition-colors`}>
+                {product.name}
+              </h3>
+              <p className={`${text.cardBodytext} text-company-gray line-clamp-2 sm:line-clamp-3`}>
+                {product.description}
+              </p>
+            </div>
+          </Link>
+        </motion.div>
       ))}
-    </div>
+    </motion.div>
   );
 }; 

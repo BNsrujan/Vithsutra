@@ -64,9 +64,6 @@ const menuData: Record<string, MenuSection> = {
       { title: "Education & Research", description: "Providing institutions with IIoT labs and robotics training kits for real-world learning and innovation.", href: "/industries/education-research" },
       { title: "Farming & Agriculture", description: "Empowering modern farmers with hydroponics automation, sensor-based monitoring, and precision farming tech.", href: "/industries/farming-agriculture" },
       { title: "Manufacturing", description: "Streamlining industrial operations through PLC-based automation, SCADA systems, and robotic integration.", href: "/industries/manufacturing" },
-      { title: "Public Infrastructure", description: "RFID-based communication systems and biometric access tools for hostels, offices, and public spaces.", href: "/industries/public-infrastructure" },
-      { title: "Logistics & Warehousing", description: "Enabling intelligent tracking, inventory control, and access automation through IIoT and robotics-driven solutions.", href: "/industries/public-infrastructure" },
-
     ]
   },
   company: {
@@ -75,10 +72,8 @@ const menuData: Record<string, MenuSection> = {
     href: "/about",
     items: [
       { title: "Blog", description: "Latest news and insights", href: "/blog" },
-      { title: "Case_Study", description: "our works", href: "/Case_study" },
-      { title: "Events", description: "Join our event", href: "/" },
-      { title: "Our Team", description: "Meet our talented team members", href: "/team" },
-      { title: "FAQ", description: "Frequently asked questions", href: "/faq" },
+      { title: "Case Studies", description: "Explore our successful projects and implementations", href: "/case-studies" },
+      { title: "Contact", description: "Get in touch with our team", href: "/contact" }
     ]
   }
 }
@@ -103,7 +98,7 @@ MenuItem.displayName = 'MenuItem'
 
 // Reusable menu section component
 const MenuSection = React.memo(({ section, items }: { section: MenuSection, items: MenuItem[] }) => (
-  <NavigationMenuItem className="">
+  <NavigationMenuItem>
     <NavigationMenuTrigger className={`${navigationMenuTriggerStyle()} ${text.Navtext} text-[var(--company-blue-black)] hover:text-[var(--company-primary-royalBlue)]`}>
       {section.title}
     </NavigationMenuTrigger>
@@ -112,13 +107,13 @@ const MenuSection = React.memo(({ section, items }: { section: MenuSection, item
         <li className="row-span-3">
           <NavigationMenuLink asChild>
             <Link
-              className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-[var(--company-litest-gray)] to-[var(--company-white)] p-6 no-underline outline-none focus:shadow-md"
+              className="flex h-full w-full select-none flex-col overflow-hidden justify-end rounded-md bg-company-litest-gray p-6 no-underline outline-none focus:shadow-md"
               href={section.href}
             >
-              <div className={`${text.cardHeadingtext} text-[var(--company-blue-black)]`}>
+              <div className={`${text.DisplaySaportingtext} text-wrap  text-[var(--company-blue-black)]`}>
                 {section.title}
               </div>
-              <p className={`${text.cardBodytext} text-[var(--company-mid-gray)]`}>
+              <p className={`${text.cardsubtext} text-[var(--company-mid-gray)]`}>
                 {section.description}
               </p>
             </Link>
@@ -150,16 +145,13 @@ export function Navbar() {
   }, [])
 
   return (
-    <div className="relative w-full bg-company-white flex justify-center  content-center ">
-      <div className="flex items-center justify-between w-full px-3 max-w-[1800px]  border-[var(--company-litest-gray)]">
-        
-        <div className=" flex  space-x-[8px] justify-end font-bold text-lg">
-          <Link href="/">
-            <Image src="/logo/company_logo_without_text.png" alt="Logo" width={50} height={50} />
+    <div className="absolute top-0 z-50 w-full bg-company-white">
+      <div className="flex items-center justify-between w-full px-4 py-3 max-w-[1800px] mx-auto">
+        <div className="flex items-center space-x-2">
+          <Link href="/" className="flex items-center">
+            <Image src="/logo/company_logo_without_text.png" alt="Logo" width={40} height={40} />
+            <h1 className="vithsutra ml-2 text-lg font-bold">Vithsutra</h1>
           </Link>
-          
-            <h1 className="vithsutra">Vithsutra</h1>
-            
         </div>
 
         {/* Desktop Navigation */}
@@ -185,7 +177,7 @@ export function Navbar() {
 
         {/* Mobile Menu Button */}
         <button
-          className="md:hidden p-2 mobile-menu-button text-[var(--company-blue-black)]"
+          className="md:hidden p-2 mobile-menu-button text-[var(--company-blue-black)] hover:bg-[var(--company-litest-gray)] rounded-lg transition-colors"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           aria-label="Toggle menu"
         >
@@ -195,25 +187,49 @@ export function Navbar() {
 
       {/* Mobile Menu */}
       <div
-        className={`md:hidden absolute top-full left-0 w-full bg-[var(--company-white)] border-b border-[var(--company-litest-gray)] transition-all duration-300 ease-in-out mobile-menu ${
-          isMobileMenuOpen ? "max-h-[calc(100vh-64px)] opacity-100" : "max-h-0 opacity-0"
-        } overflow-hidden`}
+        className={`md:hidden fixed inset-0 top-[64px] bg-[var(--company-white)] transition-all duration-300 ease-in-out mobile-menu ${
+          isMobileMenuOpen ? "translate-x-0" : "translate-x-full"
+        }`}
       >
-        <div className="p-4 space-y-4">
-          <NavigationMenu>
-            <NavigationMenuList>
-              {Object.entries(menuData).map(([key, section]) => (
-                <MenuSection key={key} section={section} items={section.items} />
-              ))}
-            </NavigationMenuList>
-          </NavigationMenu>
-          <div className="pt-4">
-            <Button 
-              variant="default" 
-              className="w-full bg-[var(--company-primary-royalBlue)] hover:bg-[var(--company-primary-royalBlue)]/90"
-            >
-              <Link href="/contact" className={text.Buttontext}>Let&apos;s Talk</Link>
-            </Button>
+        <div className="h-full overflow-y-auto">
+          <div className="p-4 space-y-6">
+            {Object.entries(menuData).map(([key, section]) => (
+              <div key={key} className="border-b border-[var(--company-litest-gray)] pb-4 last:border-0">
+                <Link 
+                  href={section.href}
+                  className="block mb-2 text-lg font-semibold text-[var(--company-blue-black)] hover:text-[var(--company-primary-royalBlue)]"
+                >
+                  {section.title}
+                </Link>
+                <p className="text-sm text-[var(--company-mid-gray)] mb-3">
+                  {section.description}
+                </p>
+                <div className="space-y-2">
+                  {section.items.map((item, index) => (
+                    <Link
+                      key={index}
+                      href={item.href}
+                      className="block p-2 rounded-lg hover:bg-[var(--company-litest-gray)] transition-colors"
+                    >
+                      <div className="font-medium text-[var(--company-blue-black)]">
+                        {item.title}
+                      </div>
+                      <div className="text-sm text-[var(--company-mid-gray)]">
+                        {item.description}
+                      </div>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            ))}
+            <div className="pt-4">
+              <Button 
+                variant="default" 
+                className="w-full bg-[var(--company-primary-royalBlue)] hover:bg-[var(--company-primary-royalBlue)]/90"
+              >
+                <Link href="/contact" className={text.Buttontext}>Let&apos;s Talk</Link>
+              </Button>
+            </div>
           </div>
         </div>
       </div>

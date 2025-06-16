@@ -1,13 +1,11 @@
 "use client";
-import { useState, useRef } from "react";
+import { useState } from "react";
 import { motion } from "framer-motion";
-import Image from "next/image";
 import { text } from "@/lib/typography";
-import { ChevronLeftIcon, ChevronRightIcon } from "lucide-react";
-import { useRouter } from "next/navigation";
 import { containerVariants, itemVariants } from "@/lib/animations";
 import { SectionHeader } from "../ui/section-header";
-import { ArrowButton } from "../ui/largecard";
+import React from "react";
+import { Carousel, type CarouselItem } from "../ui/carousel";
 
 // Define the card data type
 type Card = {
@@ -60,10 +58,7 @@ const cards: Card[] = [
 ];
 
 export default function CardSection() {
-  const Router = useRouter(); 
   const [activeFilter, setActiveFilter] = useState<string>("Featured");
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const carouselRef = useRef<HTMLDivElement>(null);
 
   const filters = ["Featured", "IIoT", "Robotics", "Automation"];
 
@@ -71,25 +66,19 @@ export default function CardSection() {
     activeFilter === "Featured" ? true : card.category === activeFilter
   );
 
-  const slideWidth = 1000;
-  const gap = 24;
-
-  const nextSlide = () => {
-    if (currentIndex < filteredCards.length - 1) {
-      setCurrentIndex((prev) => prev + 1);
-    }
-  };
-
-  const prevSlide = () => {
-    if (currentIndex > 0) {
-      setCurrentIndex((prev) => prev - 1);
-    }
-  };
+  // Convert cards to carousel items
+  const carouselItems: CarouselItem[] = filteredCards.map(card => ({
+    image: card.image || "",
+    caption: card.title,
+    link: `/${card.title}`,
+    description: card.description,
+    tag: card.tag
+  }));
 
   return (
-    <section className="">
+    <section className="px-4 sm:px-6 lg:px-8">
       <motion.div 
-        className=" mx-auto "
+        className="mx-auto max-w-[1800px]"
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
@@ -102,7 +91,7 @@ export default function CardSection() {
 
         {/* Filter Buttons */}
         <motion.div 
-          className="flex flex-wrap gap-3 mb-12"
+          className="flex flex-wrap gap-2 sm:gap-3 mb-8 sm:mb-12 md:overflow-x-auto pb-2 sm:pb-0"
           variants={containerVariants}
         >
           {filters.map((filter, index) => (
@@ -110,11 +99,8 @@ export default function CardSection() {
               key={filter}
               variants={itemVariants}
               custom={index}
-              onClick={() => {
-                setActiveFilter(filter);
-                setCurrentIndex(0);
-              }}
-              className={`px-6 py-2.5 rounded-full ${text.Buttontext} transition-all border-2 border-company-litest-gray  duration-300
+              onClick={() => setActiveFilter(filter)}
+              className={`px-4 sm:px-6 py-2 sm:py-2.5 rounded-full ${text.Buttontext} transition-all border-2 border-company-litest-gray duration-300 whitespace-nowrap
                 ${
                   activeFilter === filter
                     ? "bg-[var(--company-primary-royalBlue)] text-[var(--company-white)] "
@@ -127,115 +113,15 @@ export default function CardSection() {
         </motion.div>
 
         {/* Carousel Container */}
-        <div className="relative overflow-hidden ">
-          {/* Cards Container */}
-          <div ref={carouselRef} className=" h-[600px]">
-            <motion.div
-              className="flex gap-x-[24px]"
-              animate={{
-                x: -(currentIndex * (slideWidth + gap)),
-              }}
-              transition={{ type: "spring", stiffness: 300, damping: 30 }}
-            >
-              {filteredCards.map((card, index) => (
-                <motion.div
-                  key={card.id}
-                  variants={itemVariants}
-                  custom={index}
-                  className="relative flex-none w-[1000px] h-[600px] bg-[var(--company-white)] rounded-[16px] overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 group"
-                >
-                  {card.image && (
-                    <div className="absolute inset-0">
-                      <Image
-                        src={card.image}
-                        alt={card.title}
-                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                        width={1000}
-                        height={600}
-                        priority
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent" />
-                    </div>
-                  )}
-                  <div className="relative p-8 h-full flex flex-col justify-end">
-                    
-                    <div className=" w-full   flex justify-baseline items-center">
-                      <div className="w-3/4">
-                        <h3 className={`${text.Sectionprefixtext} text-[var(--company-white)] mb-4  transition-colors`}>
-                          {card.title}
-                        </h3>
-                        <p className={`${text.cardBodytext} text-[var(--company-white)] mb-6 leading-relaxed line-clamp-3`}>
-                          {card.description}
-                        </p>
-                      </div>
-                      <span className={`${text.cardsubtext} absolute top-5 right-5 text-[var(--company-white)] bg-[var(--company-primary-royalBlue)]/80 px-6 py-2 rounded-full`}>
-                        {card.tag}
-                      </span>
-                      <ArrowButton 
-                        onClick={() => Router.push(`/${card.title}`)}
-                        className="absolute right-8 bottom-8"
-                      />
-                    </div>
-                  </div>
-                </motion.div>
-              ))}
-            </motion.div>
-          </div>
-
-          {/* Navigation Buttons */}
-          <div className="flex justify-end gap-4 mt-8">
-            <motion.button
-              onClick={prevSlide}
-              disabled={currentIndex === 0}
-              className={`p-3 rounded-full bg-[var(--company-white)] text-[var(--company-mid-gray)] transition-all duration-300
-                ${
-                  currentIndex === 0
-                    ? "opacity-50 cursor-not-allowed"
-                    : "hover:bg-[var(--company-primary-royalBlue)] hover:text-[var(--company-white)]"
-                }
-                border border-company-mid-gray`}
-              aria-label="Previous slide"
-            >
-              <ChevronLeftIcon className="h-6 w-6" />
-            </motion.button>
-
-            <motion.button
-              onClick={nextSlide}
-              disabled={currentIndex >= filteredCards.length - 1}
-              className={`p-3 rounded-full bg-[var(--company-white)] text-[var(--company-mid-gray)] transition-all duration-300
-                ${
-                  currentIndex >= filteredCards.length - 1
-                    ? "opacity-50 cursor-not-allowed"
-                    : "hover:bg-[var(--company-primary-royalBlue)] hover:text-[var(--company-white)]"
-                }
-                border border-company-mid-gray`}
-              aria-label="Next slide"
-            >
-              <ChevronRightIcon className="h-6 w-6" />
-            </motion.button>
-          </div>
-
-          {/* Dots Navigation */}
-          <motion.div 
-            className="flex justify-center gap-2 mt-8"
-            variants={containerVariants}
-          >
-            {filteredCards.map((_, index) => (
-              <motion.button
-                key={index}
-                onClick={() => setCurrentIndex(index)}
-                className={`h-2 rounded-full transition-all duration-300
-                  ${
-                    currentIndex === index
-                      ? "bg-[var(--company-primary-royalBlue)] w-8"
-                      : "bg-[var(--company-primary-royalBlue)]/50 w-2 hover:bg-[var(--company-primary-royalBlue)]"
-                  }`}
-                aria-label={`Go to slide ${index + 1}`}
-                whileHover={{ scale: 1.2 }}
-                whileTap={{ scale: 0.9 }}
-              />
-            ))}
-          </motion.div>
+        <div className="relative md:overflow-hidden">
+          <Carousel 
+            items={carouselItems}
+            variant="product"
+            autoPlay={true}
+            interval={5000}
+            showIndicators={true}
+            showNavigation={true}
+          />
         </div>
       </motion.div>
     </section>
