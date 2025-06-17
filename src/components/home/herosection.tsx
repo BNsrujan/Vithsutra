@@ -10,7 +10,7 @@ import FlipText from "../ui/fliptext";
 export default function Hero() {
   const router = useRouter();
   return (
-    <div className="relative w-full mt-[40px] justify-center content-center bg-transparent">
+    <div className="relative w-full  justify-center content-center bg-transparent">
       <div className="max-w-[1700px]  mx-auto px-4 sm:px-6 lg:px-8 h-full">
         <div className="grid grid-cols-1 lg:grid-cols-2 w-full gap-8 items-center min-h-[100vh] py-16 lg:py-0">
           {/* Left Content */}
@@ -22,10 +22,10 @@ export default function Hero() {
           >
             
 
-            <div className="space-y-6 ">
+            <div className="space-y-3">
               <div className="flex flex-col justify-start md:flex-row items-center ">
-                <span className={`${text.Sectionprefixtext} md:pr-[8px] text-center md:text-left text-[var(--company-blue-black)]`}>
-                  We Build
+                <span className={`${text.Sectionprefixtext} md:pr-[px] text-center md:text-left text-[var(--company-blue-black)]`}>
+                  Our Expertise
                 </span>
                 <div className="w-full md:w-auto bg-company-white rounded-[8px] overflow-hidden md:min-w-[300px] lg:min-w-[500px] py-6 md:py-9 px-4 md:px-6 flex justify-center content-center h-[50px] md:h-[60px]">
                   <FlipText />

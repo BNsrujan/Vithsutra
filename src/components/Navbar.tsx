@@ -145,7 +145,7 @@ export function Navbar() {
   }, [])
 
   return (
-    <div className="absolute top-0 z-50 w-full bg-company-white">
+    <div className="sticky top-0 z-50 w-full bg-white/5 backdrop-blur-sm">
       <div className="flex items-center justify-between w-full px-4 py-3 max-w-[1800px] mx-auto">
         <div className="flex items-center space-x-2">
           <Link href="/" className="flex items-center">

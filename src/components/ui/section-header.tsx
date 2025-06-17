@@ -8,7 +8,7 @@ interface SectionHeaderProps {
 
 export function SectionHeader({ label, title, className = '' }: SectionHeaderProps) {
   return (
-    <div className={`mx-auto w-full p-0 md:pb-12 ${className}`}>
+    <div className={`mx-auto w-full pb-5 md:pb-12 ${className}`}>
       <div className="">
         <span className="text-xs sm:text-sm  font-medium tracking-wider text-company-gray-text">
           {label}

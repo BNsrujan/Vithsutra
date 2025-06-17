@@ -76,7 +76,7 @@ export default function CardSection() {
   }));
 
   return (
-    <section className="px-4 sm:px-6 lg:px-8">
+    <section className="md:px-4 sm:px-6 lg:px-8">
       <motion.div 
         className="mx-auto max-w-[1800px]"
         variants={containerVariants}
@@ -90,7 +90,7 @@ export default function CardSection() {
         />
 
         {/* Filter Buttons */}
-        <motion.div 
+        {/* <motion.div 
           className="flex flex-wrap gap-2 sm:gap-3 mb-8 sm:mb-12 md:overflow-x-auto pb-2 sm:pb-0"
           variants={containerVariants}
         >
@@ -110,7 +110,7 @@ export default function CardSection() {
               {filter}
             </motion.button>
           ))}
-        </motion.div>
+        </motion.div> */}
 
         {/* Carousel Container */}
         <div className="relative md:overflow-hidden">

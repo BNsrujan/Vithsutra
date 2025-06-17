@@ -9,23 +9,23 @@ export default function WeOfferSection() {
 
   const features = [
     {
-      title: "IoT Solutions",
+      title: "Internet of Things (IoT)",
       description:
-        "Smart, connected systems that provide real-time insights and control",
+        "Smart sensor-based systems that connect devices, monitor data, and enable real-time control",
       bgImage: "/iot_images/image.png",
       link: "/solutions/iot"
     },
     {
-      title: "Robotics & Automation",
+      title: "Robotics",
       description:
-        "Advanced robotics solutions that optimize, automate operations and improve efficiency",
+        "Industrial and educational robotics for automation, training, and real-world innovation",
       bgImage: "/robotics/image.png",
       link: "/solutions/robotics"
     },
     {
-      title: "Robotics & Automation",
+      title: "Industrial Automation",
       description:
-        "Advanced robotics solutions that optimize, automate operations and improve efficiency",
+        "Custom PLC, SCADA, and cloud-integrated systems for intelligent factory control",
       bgImage: "/robotics/image.png",
       link: "/solutions/automation"
     },
@@ -36,21 +36,23 @@ export default function WeOfferSection() {
   };
 
   return (
-    <section className="relative py-24 bg-company-light-light-gray overflow-hidden">
-      <div className="mx-auto ">
+    <section className="relative py-16 md:py-24 bg-company-light-light-gray overflow-hidden">
+      <div className="max-w-[1400px] mx-auto px-4">
         <SectionHeader 
           label="FEATURED"
           title="Automation at All Levels"
+          className="mb-8 md:mb-12"
         />
 
         {/* Features Grid */}
-        <div className="flex flex-col gap-y-[24px] md:gap-y-[64px]">
+        <div className="flex flex-col gap-y-8 md:gap-y-12 lg:gap-y-[64px]">
           {features.map((feature, index) => (
             <Largecard 
               key={index}
               index={index}
               feature={feature}
               onCardClick={() => handleCardClick(feature.link || '')}
+              className="w-full md:max-w-[90%] lg:max-w-full mx-auto"
             />
           ))}
         </div>

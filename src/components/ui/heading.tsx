@@ -2,7 +2,7 @@ import { text } from "@/lib/typography";
 
 export default function Heading({heading,Display}) {
     return (<div className="mx-auto  pb-12">
-      <div className="inline-block   rounded-full bg-company-light-light-gray ">
+      <div className="inline-block  rounded-full bg-company-light-light-gray ">
         <span className="text-sm font-medium tracking-wider text-company-text-gray">
           {heading}
         </span>

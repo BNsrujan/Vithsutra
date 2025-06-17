@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { ChevronLeft, ChevronRight } from "lucide-react"
-import { motion, AnimatePresence } from "framer-motion"
+import { motion, AnimatePresence, useAnimation, PanInfo } from "framer-motion"
 import { text } from "@/lib/typography"
 import { Button } from "@/components/ui/button"
 
@@ -37,6 +37,7 @@ export const Carousel: React.FC<CarouselProps> = ({
 }) => {
   const [currentIndex, setCurrentIndex] = useState(0)
   const [isAutoPlaying, setIsAutoPlaying] = useState(autoPlay)
+  const controls = useAnimation()
 
   useEffect(() => {
     if (!isAutoPlaying) return
@@ -67,16 +68,41 @@ export const Carousel: React.FC<CarouselProps> = ({
 
   const isProductVariant = variant === "product"
 
+  const handleDragEnd = (_event: MouseEvent | TouchEvent | PointerEvent, info: PanInfo) => {
+    const threshold = 50 // minimum distance for swipe
+    const dragDistance = info.offset.x
+
+    if (Math.abs(dragDistance) > threshold) {
+      if (dragDistance > 0) {
+        goToPrevious()
+      } else {
+        goToNext()
+      }
+    } else {
+      // Return to original position if drag distance is too small
+      controls.start({ x: 0 })
+    }
+  }
+
   return (
-    <div className={`relative w-full ${isProductVariant ? 'h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px]' : 'h-[300px] sm:h-[400px] md:h-[500px]'} overflow-hidden rounded-xl ${className}`}>
+    <div className={`relative w-full ${isProductVariant ? 'h-[50vh]' : 'h-[90vh]'} overflow-hidden rounded-xl ${className}`}>
       <AnimatePresence mode="wait">
         <motion.div
           key={currentIndex}
-          initial={{ opacity: 0, x: 100 }}
-          animate={{ opacity: 1, x: 0 }}
-          exit={{ opacity: 0, x: -100 }}
-          transition={{ duration: 0.5, ease: "easeInOut" }}
+          initial={{ x: 1000 }}
+          animate={{ x: 0 }}
+          exit={{ x: -1000 }}
+          transition={{ 
+            type: "spring",
+            stiffness: 300,
+            damping: 30
+          }}
           className="absolute inset-0"
+          drag="x"
+          dragConstraints={{ left: 0, right: 0 }}
+          dragElastic={0.2}
+          onDragEnd={handleDragEnd}
+          whileDrag={{ cursor: "grabbing" }}
         >
           <Image
             src={items[currentIndex].image}
@@ -89,7 +115,12 @@ export const Carousel: React.FC<CarouselProps> = ({
           <div className={`absolute inset-0 ${isProductVariant ?  ' bg-gradient-to-t from-black/60 via-black/30 to-transparent' : 'bg-gradient-to-t from-black/70 via-black/30 to-transparent'}`} />
           
           <div className={`absolute ${isProductVariant ? 'p-3 sm:p-4 md:p-6 lg:p-8' : 'p-4 sm:p-6 md:p-8'} h-full flex flex-col justify-end`}>
-            <div className="w-full flex flex-col sm:flex-row justify-baseline items-start sm:items-center">
+            <motion.div 
+              className="w-full flex flex-col sm:flex-row justify-baseline items-start sm:items-center"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2 }}
+            >
               <div className="w-full sm:w-3/4">
                 <Link 
                   href={items[currentIndex].link}
@@ -110,14 +141,14 @@ export const Carousel: React.FC<CarouselProps> = ({
                   {items[currentIndex].tag}
                 </span>
               )} */}
-            </div>
+            </motion.div>
           </div>
         </motion.div>
       </AnimatePresence>
 
-      {/* Navigation Buttons */}
+      {/* Navigation Buttons - Only show on desktop */}
       {showNavigation && (
-        <div className="absolute inset-y-0 left-0 right-0 flex items-center justify-between px-2 sm:px-4">
+        <div className="absolute hidden md:flex bottom-4 right-4 items-center gap-2">
           <Button
             onClick={goToPrevious}
             variant="ghost"

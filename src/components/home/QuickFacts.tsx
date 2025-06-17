@@ -8,10 +8,16 @@ import { SectionHeader } from "../ui/section-header";
 
 const facts = [
   {
+    number: 2000,
+    suffix: "+",
+    title: "Students Educated",
+  },
+  {
     number: 1000,
     suffix: "+",
     title: "Products Deployed",
   },
+  
   {
     number: 15,
     suffix: "+",
@@ -22,6 +28,7 @@ const facts = [
     suffix: "+",
     title: "Years Of Experience",
   },
+  
 
 ];
 
@@ -73,12 +80,12 @@ export default function QuickFacts() {
         viewport={{ once: true }}
       >
         <SectionHeader 
-          label="QUICK FACTS"
-          title="Our Impact in Numbers"
+          label="QUICK STATS"
+          title="What We've Built So Far"
         />
 
         <motion.div 
-          className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-8 "
+          className="grid grid-cols-2 h-[40vh] pt-9 pt:p-0 md:grid-cols-4 lg:grid-cols-4 gap-8 "
           variants={containerVariants}
         >
           {facts.map((fact, index) => (

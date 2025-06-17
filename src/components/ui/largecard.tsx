@@ -33,9 +33,10 @@ interface LargecardProps {
     link?: string;
   };
   onCardClick?: () => void;
+  className?: string;
 }
 
-function Largecard({ index, feature, onCardClick }: LargecardProps) {
+function Largecard({ index, feature, onCardClick, className = "" }: LargecardProps) {
   const [isTouched, setIsTouched] = useState(false);
   const [touchTimeout, setTouchTimeout] = useState<NodeJS.Timeout | null>(null);
 
@@ -60,7 +61,10 @@ function Largecard({ index, feature, onCardClick }: LargecardProps) {
   }, [onCardClick]);
 
   return (
-    <div className="relative w-full mx-auto">
+    <div 
+      className={`relative overflow-hidden rounded-2xl cursor-pointer ${className}`}
+      onClick={handleClick}
+    >
       <motion.div
         key={index}
         initial={{ opacity: 0, y: 30 }}
@@ -73,8 +77,7 @@ function Largecard({ index, feature, onCardClick }: LargecardProps) {
         }}
         onTouchStart={handleTouchStart}
         onTouchEnd={handleTouchEnd}
-        onClick={handleClick}
-        className={`group relative aspect-video border border-company-litest-gray rounded-[8px] sm:rounded-16px sm:rounded-[24px] sm:min-h-[350px] md:min-h-[500px] overflow-hidden bg-company-white transition-all duration-700 ease-in-out ${isTouched ? 'touch-active' : ''} cursor-pointer`}
+        className={`group relative aspect-video border border-company-litest-gray rounded-[8px] sm:rounded-16px sm:rounded-[24px] sm:min-h-[350px] md:min-h-[500px] overflow-hidden bg-company-white transition-all duration-700 ease-in-out ${isTouched ? 'touch-active' : ''}`}
       >
         <Image
           src={feature.bgImage}

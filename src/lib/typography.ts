@@ -17,7 +17,7 @@ const text = {
     "text-[14px] sm:text-[18px] md:text-[20px] lg:text-[21px] md:leading-[1.2] tracking-tight font-semibold md:mt-[7px] md:mb-[18px] text-wrap   text-wrap",
 
   DisplayPrefixtext:
-    "text-[11px] sm:text-[16px] md:text-[17px] leading-[1.2] tracking-tight font-normal max-w-[200px] md:max-w-full mt-[7px] mb-[18px]  text-wrap",
+    "text-[11px] sm:text-[16px] md:text-[17px]  sm:leading-[1] w-full md:leading-[1.2] tracking-tight font-normal  md:max-w-full md:mt-[7px] md:mb-[18px]  text-wrap",
 
   Sectiontext:
     "text-[30px] sm:text-[48px] md:text-[56px] lg:text-[64px] leading-[1.1] tracking-tight font-semibold  text-wrap",
@@ -26,7 +26,7 @@ const text = {
     "text-[16px] sm:text-[22px] md:text-[24px] lg:text-[28px] leading-[1.2]  font-extralight    text-wrap",
 
   Sectionbodyteexts: /* DisplayPrefixtext */
-    "text-[11px] sm:text-[16px] md:text-[17px] leading-[1.2] tracking-tight font-normal max-w-[200px] md:max-w-full mt-[7px] mb-[18px]  text-wrap",
+    "text-[11px] sm:text-[16px] md:text-[17px] leading-[1.2] tracking-tight font-normal max-w-[200px] sm:max-w-[400px] md:max-w-full mt-[7px] mb-[18px]  text-wrap",
 
   Sectionprefixtext:
     "text-[24px] sm:text-[36px] md:text-[42px] lg:text-[48px] leading-[1.1] tracking-tight font-semibold  text-wrap",

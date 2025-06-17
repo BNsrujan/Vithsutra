@@ -124,7 +124,7 @@ export default function ContactPage() {
   // Reusable form field component
   const FormField = ({ id, label, type, required }: typeof formFields[0]) => (
     <div>
-      <label htmlFor={id} className={`${text.FooterHeadingtext} block text-company-gray mb-3`}>
+      <label htmlFor={id} className={`${text.FooterHeadingtext} block text-company-gray `}>
         {label}
       </label>
       {type === 'textarea' ? (
@@ -155,21 +155,21 @@ export default function ContactPage() {
   );
 
   return (
-    <div className="min-h-screen pt-24 sm:pt-28 md:pt-32 pb-12 sm:pb-16 px-4 sm:px-6 md:px-8 lg:px-16 bg-company-blue-white">
-      <div className="max-w-7xl mx-auto">
+    <div className="min-h-screen pt-2 sm:pt-2 md:pt-2 pb-2  sm:pb-16 px-4 sm:px-6 md:px-8 lg:px-16 bg-company-blue-white">
+      <div className="  mx-auto">
         <motion.div
           variants={heroContent}
           initial="initial"
           animate="animate"
-          className="sm:mb-16"
+          className=""
         >
           <Heading 
             heading="Contact us" 
-            Display="it's time for vithsutrait's time for vithsutra"
+            Display="it's time for vithsutrait's "
           />
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-4">
           <motion.div
             variants={textReveal}
             initial="initial"
@@ -187,7 +187,7 @@ export default function ContactPage() {
             initial="initial"
             whileInView="whileInView"
             viewport={{ once: true }}
-            className="bg-white rounded-xl p-6 sm:p-8 md:p-10 shadow-sm hover:shadow-md transition-shadow duration-300"
+            className="bg-white rounded-xl p-6 sm:p-8 md:p-10  transition-shadow duration-300"
           >
             <motion.form
               variants={formField}
