@@ -8,14 +8,14 @@ interface SectionHeaderProps {
 
 export function SectionHeader({ label, title, className = '' }: SectionHeaderProps) {
   return (
-    <div className={`mx-auto w-full pb-5 md:pb-12 ${className}`}>
+    <div className={`mx-auto w-full pb-[10px] md:pb-[24px] ${className}`}>
       <div className="">
-        <span className="text-xs sm:text-sm  font-medium tracking-wider text-company-gray-text">
+        <span className="text-xs sm:text-sm pb-[24px] uppercase font-medium tracking-wider text-company-gray-text">
           {label}
         </span>
       </div>
     
-      <h1 className={`${text.Sectiontext} text-company-black mb-2 md:mb-6`}>
+      <h1 className={`${text.Sectiontexthead} text-company-black `}>
         {title}
       </h1>
     </div>

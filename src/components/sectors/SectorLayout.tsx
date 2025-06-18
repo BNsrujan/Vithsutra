@@ -56,13 +56,13 @@ const SectorLayout: React.FC<SectorLayoutProps> = ({ data }) => {
       >
         <div className=" justify-end mx-auto w-full max-w-[1800px]">
           <motion.h1 
-            className={`${text.Sectiontext}font-semibold mb-4 sm:mb-6`}
+            className={`${text.Sectiontexthead}font-semibold mb-4 sm:mb-6`}
             variants={itemVariants}
           >
             {data.title}
           </motion.h1>
           <motion.p 
-            className={`${text.Sectionbodytext} md:w-9/12 text-company-mid-gray `}
+            className={`${text. Extratex} md:w-9/12 text-company-mid-gray `}
             variants={itemVariants}
           >
             {data.description}
@@ -187,10 +187,10 @@ const SectorLayout: React.FC<SectorLayoutProps> = ({ data }) => {
                 <div className="w-12 h-12 sm:w-16 sm:h-16 mb-4 sm:mb-6">
                   <img src={solution.icon} alt={solution.title} className="w-full h-full object-contain" />
                 </div>
-                <h3 className={`${text.Sectiontext} text-company-gray mb-2 sm:mb-3`}>
+                <h3 className={`${text.Sectiontexthead} text-company-gray mb-2 sm:mb-3`}>
                   {solution.title}
                 </h3>
-                <p className={`${text.Sectionbodytext} text-company-mid-gray`}>
+                <p className={`${text. Extratex} text-company-mid-gray`}>
                   {solution.description}
                 </p>
               </motion.div>
@@ -221,10 +221,10 @@ const SectorLayout: React.FC<SectorLayoutProps> = ({ data }) => {
                 className="bg-company-blue-white p-6 sm:p-8 rounded-lg hover:shadow-md transition-shadow duration-300"
               >
                 <Link href={industry.href} className="block">
-                  <h3 className={`${text.Sectiontext} text-company-gray mb-2 sm:mb-3 hover:text-company-primary-royalBlue transition-colors`}>
+                  <h3 className={`${text.Sectiontexthead} text-company-gray mb-2 sm:mb-3 hover:text-company-primary-royalBlue transition-colors`}>
                     {industry.title}
                   </h3>
-                  <p className={`${text.Sectionbodytext} text-company-mid-gray`}>
+                  <p className={`${text. Extratex} text-company-mid-gray`}>
                     {industry.description}
                   </p>
                 </Link>
@@ -250,7 +250,7 @@ const SectorLayout: React.FC<SectorLayoutProps> = ({ data }) => {
             Ready to Transform Your Industry?
           </motion.h2>
           <motion.p 
-            className={`${text.Sectionbodytext} text-company-white/80 mb-8 sm:mb-12 max-w-2xl mx-auto`}
+            className={`${text. Extratex} text-company-white/80 mb-8 sm:mb-12 max-w-2xl mx-auto`}
             variants={itemVariants}
           >
             Let&apos;s discuss how our solutions can help you achieve your goals.

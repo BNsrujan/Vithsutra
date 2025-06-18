@@ -17,9 +17,9 @@ function Homepage() {
           <About />
           <WeOfferSection />
           <CardSection />
-          <UniqueFeatures />
           <IndustriesSection />
           <VentureCapital/>
+          <UniqueFeatures />
           <QuickFacts />
           
         </div>

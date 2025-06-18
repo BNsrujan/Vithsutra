@@ -24,18 +24,18 @@ export default function FlipText() {
   }, []);
 
   return (
-    <div className="relative flex  justify-center  content-center    ">
+    <div className="relative flex  justify-center w-full  content-center    ">
       <AnimatePresence mode="wait">
         <motion.div
           key={index}
-          initial={{ y: 50, opacity: 0 }}
+          initial={{ y: 40, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
-          exit={{ y: -50, opacity: 0 }}
+          exit={{ y: -40, opacity: 0 }}
           transition={{ 
             duration: 0.7,
             ease: [0.4, 0, 0.2, 1]
           }}
-          className=" flex items-center    p-0 m-0 md:min-w-[500px]"
+          className=" flex items-center justify-center md:justify-start p-0 m-0 w-full md:min-w-[390px]"
         >
           <span className={`${text.Sectionprefixtext}  text-[var(--company-primary-royalBlue)]`}>
             {words[index]}

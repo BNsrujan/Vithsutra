@@ -71,16 +71,16 @@ function Counter({ end, suffix, duration = 2 }: { end: number; suffix: string; d
 
 export default function QuickFacts() {
   return (
-    <section className="flex flex-col ">
+    <section className="w-full  ">
       <motion.div 
-        className=" mx-auto px-4"
+        className="w-full mx-auto px-4"
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
       >
         <SectionHeader 
-          label="QUICK STATS"
+          label="Achievements"
           title="What We've Built So Far"
         />
 
@@ -96,11 +96,11 @@ export default function QuickFacts() {
               className="text-center"
             >
               <div className="mb-4">
-                <span className={`${text.Sectiontext} text-[var(--company-primary-royalBlue)]`}>
+                <span className={`${text.Sectiontexthead} text-[var(--company-primary-royalBlue)]`}>
                   <Counter end={fact.number} suffix={fact.suffix} />
                 </span>
               </div>
-              <h3 className={`${text.Sectionbodytext} text-[var(--company-blue-black)] mb-2`}>
+              <h3 className={`${text.Extratext} text-[var(--company-blue-black)] mb-2`}>
                 {fact.title}
               </h3>
               

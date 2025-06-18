@@ -6,10 +6,10 @@ import { SectionHeader } from "../ui/section-header";
 
 export function VentureCapital() {
   return (
-    <div className="w-full">
+    <div className="w-full h-[50vh] flex flex-col justify-center content-center">
       <SectionHeader label="" title="Worked With" />
 
-      <div className="h-[10rem] rounded-md flex flex-col antialiased bg-white dark:bg-black dark:bg-grid-white/[0.05] items-center justify-center relative overflow-hidden">
+      <div className="h-[10rem] rounded-md   flex flex-col antialiased bg-white dark:bg-black dark:bg-grid-white/[0.05] items-center justify-center relative overflow-hidden">
         <InfiniteMovingCards
           items={testimonials}
           direction="right"

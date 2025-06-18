@@ -3,11 +3,10 @@
 import React from 'react';
 import Link from 'next/link';
 import { motion } from "motion/react";
-import { text } from '@/lib/typography';
 import { containerVariants, itemVariants } from '@/lib/motion';
 import { SectionHeader } from '../ui/section-header';
 import Image from 'next/image';
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '../ui/card';
+import { Card, CardContent,  CardTitle, CardDescription } from '../ui/card';
 
 const industries = [
   {
@@ -70,7 +69,10 @@ export default function IndustriesSection() {
           <motion.div
             key={industry.title}
             variants={itemVariants}
+            initial="hidden"
+            whileInView="visible"
             custom={idx}
+            viewport={{once:true,margin:"-100px"}}
             className="group md:min-h-96 w-full "
           >
             <Link href={industry.link}>

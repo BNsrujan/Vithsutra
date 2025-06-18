@@ -3,43 +3,24 @@ import { type Variants } from "motion/react"
 export const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1
-      }
+      opacity: 1
     }
   };
 
   export const itemVariants: Variants = {
-    hidden: { opacity: 0, y: 20 },
+    hidden: { opacity: 0, y: 50 },
     visible: {
       opacity: 1,
       y: 0,
-      transition: {
-        duration: 0.5
+      transition:{delay:0.2,
+        type:"spring",
+        damping:20,
+        stiffness:50,
       }
     }
   };
 
-  // <motion.div
-  //           initial={{ opacity: 0, y: 30 }}
-  //           whileInView={{ opacity: 1, y: 0 }}
-  //           transition={{ delay: index * 0.2, duration: 0.5, ease: "easeOut" }}
-  //           key={`${index}+${feature.title}`}
-  //           className="rounded-[24px] p-12 h-96 relative bg-cover bg-company-light-light-gray "
-  //           style={{ backgroundImage: `url(${feature.bgImage}) opacity-20 ` }}
-  //         >
-  //           <div className="max-w-md">
-  //             <h3 className="text-xl font-semibold text-company-white mb-1">
-  //               {feature.title}
-  //             </h3>
-  //             <p className="text-company-text-gray text-sm">
-  //               {feature.description}
-  //             </p>
-  //           </div>
-  //         </motion.div>
-
-  // Fade in from bottom
+  // Fade in from bottoml
   export const fadeInUp: Variants = {
     initial: { opacity: 0, y: 20 },
     animate: {
@@ -111,8 +92,7 @@ export const containerVariants: Variants = {
   // Grid item animations
   export const gridItem: Variants = {
     initial: { opacity: 0, scale: 0.9 },
-    animate: { opacity: 1, scale: 1 },
-    transition: { duration: 0.5 }
+    animate: { opacity: 1, scale: 1 }
   }
 
   // Bento grid item animations
@@ -140,12 +120,8 @@ export const containerVariants: Variants = {
   export const heroContent: Variants = {
     initial: { opacity: 0 },
     animate: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2
-      }
-    },
-    transition: { duration: 0.6, ease: [0.21, 0.47, 0.32, 0.98] }
+      opacity: 1
+    }
   }
 
   // Feature card animations
@@ -162,15 +138,13 @@ export const containerVariants: Variants = {
   // Case study card animations
   export const caseStudyCard: Variants = {
     initial: { opacity: 0, y: 20 },
-    whileInView: { opacity: 1, y: 0 },
-    transition: { duration: 0.5 }
+    whileInView: { opacity: 1, y: 0 }
   }
 
   // Partner logo animations
   export const partnerLogo: Variants = {
     initial: { opacity: 0 },
-    whileInView: { opacity: 1 },
-    transition: { duration: 0.3 }
+    whileInView: { opacity: 1 }
   }
 
   // Form field animations
@@ -190,15 +164,13 @@ export const containerVariants: Variants = {
   // Image hover animations
   export const imageHover: Variants = {
     initial: { scale: 1 },
-    whileHover: { scale: 1.05 },
-    transition: { duration: 0.3 }
+    whileHover: { scale: 1.05 }
   }
 
   // Text reveal animations
   export const textReveal: Variants = {
     initial: { opacity: 0, y: 20 },
-    whileInView: { opacity: 1, y: 0 },
-    viewport: { once: true }
+    whileInView: { opacity: 1, y: 0 }
   }
 
   // Section title animations

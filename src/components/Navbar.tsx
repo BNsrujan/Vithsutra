@@ -135,14 +135,24 @@ export function Navbar() {
   React.useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       const target = event.target as HTMLElement
-      if (!target.closest('.mobile-menu') && !target.closest('.mobile-menu-button')) {
-        setIsMobileMenuOpen(false)
+      const mobileMenu = document.querySelector('.mobile-menu')
+      const mobileMenuButton = document.querySelector('.mobile-menu-button')
+      
+      if (mobileMenu && mobileMenuButton) {
+        if (!mobileMenu.contains(target) && !mobileMenuButton.contains(target)) {
+          setIsMobileMenuOpen(false)
+        }
       }
     }
 
-    document.addEventListener('click', handleClickOutside)
-    return () => document.removeEventListener('click', handleClickOutside)
-  }, [])
+    if (isMobileMenuOpen) {
+      document.addEventListener('click', handleClickOutside)
+    }
+    
+    return () => {
+      document.removeEventListener('click', handleClickOutside)
+    }
+  }, [isMobileMenuOpen])
 
   return (
     <div className="sticky top-0 z-50 w-full bg-white/5 backdrop-blur-sm">
@@ -177,7 +187,7 @@ export function Navbar() {
 
         {/* Mobile Menu Button */}
         <button
-          className="md:hidden p-2 mobile-menu-button text-[var(--company-blue-black)] hover:bg-[var(--company-litest-gray)] rounded-lg transition-colors"
+          className="md:hidden p-2 mobile-menu-button text-[var(--company-blue-black)] hover:bg-[var(--company-litest-gray)]  rounded-lg transition-colors z-50 relative"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           aria-label="Toggle menu"
         >
@@ -186,53 +196,46 @@ export function Navbar() {
       </div>
 
       {/* Mobile Menu */}
-      <div
-        className={`md:hidden fixed inset-0 top-[64px] bg-[var(--company-white)] transition-all duration-300 ease-in-out mobile-menu ${
-          isMobileMenuOpen ? "translate-x-0" : "translate-x-full"
-        }`}
-      >
-        <div className="h-full overflow-y-auto">
-          <div className="p-4 space-y-6">
-            {Object.entries(menuData).map(([key, section]) => (
-              <div key={key} className="border-b border-[var(--company-litest-gray)] pb-4 last:border-0">
-                <Link 
-                  href={section.href}
-                  className="block mb-2 text-lg font-semibold text-[var(--company-blue-black)] hover:text-[var(--company-primary-royalBlue)]"
-                >
-                  {section.title}
-                </Link>
-                <p className="text-sm text-[var(--company-mid-gray)] mb-3">
-                  {section.description}
-                </p>
-                <div className="space-y-2">
-                  {section.items.map((item, index) => (
-                    <Link
-                      key={index}
-                      href={item.href}
-                      className="block p-2 rounded-lg hover:bg-[var(--company-litest-gray)] transition-colors"
-                    >
-                      <div className="font-medium text-[var(--company-blue-black)]">
-                        {item.title}
-                      </div>
-                      <div className="text-sm text-[var(--company-mid-gray)]">
-                        {item.description}
-                      </div>
-                    </Link>
-                  ))}
+      {isMobileMenuOpen && (
+        <div className="md:hidden fixed  top-[64px] bg-company-white  z-60">
+          <div className="h-[calc(100vh-64px)] overflow-y-auto">
+            <div className="p-4 space-y-6">
+              {Object.entries(menuData).map(([key, section]) => (
+                <div key={key} className="border-b border-[var(--company-litest-gray)] pb-4 last:border-0">
+                  <Link 
+                    href={section.href}
+                    className="block mb-2 text-lg font-semibold text-[var(--company-blue-black)] hover:text-[var(--company-primary-royalBlue)]"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    {section.title}
+                  </Link>
+                  <p className="text-sm text-[var(--company-mid-gray)] mb-3">
+                    {section.description}
+                  </p>
+                  <div className="space-y-2">
+                    {section.items.map((item, index) => (
+                      <Link
+                        key={index}
+                        href={item.href}
+                        className="block p-2 rounded-lg hover:bg-[var(--company-litest-gray)] transition-colors"
+                        onClick={() => setIsMobileMenuOpen(false)}
+                      >
+                        <div className="font-medium text-[var(--company-blue-black)]">
+                          {item.title}
+                        </div>
+                        <div className="text-sm text-[var(--company-mid-gray)]">
+                          {item.description}
+                        </div>
+                      </Link>
+                    ))}
+                  </div>
                 </div>
-              </div>
-            ))}
-            <div className="pt-4">
-              <Button 
-                variant="default" 
-                className="w-full bg-[var(--company-primary-royalBlue)] hover:bg-[var(--company-primary-royalBlue)]/90"
-              >
-                <Link href="/contact" className={text.Buttontext}>Let&apos;s Talk</Link>
-              </Button>
+              ))}
+              
             </div>
           </div>
         </div>
-      </div>
+      )}
     </div>
   )
 }

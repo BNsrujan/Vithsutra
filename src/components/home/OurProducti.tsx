@@ -1,128 +1,123 @@
 "use client";
-import { useState } from "react";
 import { motion } from "framer-motion";
-import { text } from "@/lib/typography";
-import { containerVariants, itemVariants } from "@/lib/animations";
+import { containerVariants } from "@/lib/animations";
 import { SectionHeader } from "../ui/section-header";
 import React from "react";
-import { Carousel, type CarouselItem } from "../ui/carousel";
+import { Carousel, Card } from "@/components/ui/apple-cards-carousel";
 
 // Define the card data type
 type Card = {
   id: number;
   title: string;
   description: string;
-  image?: string;
+  image: string;
   tag: string;
-  category: "Featured" | "IIoT" | "Robotics" | "Automation";
+  caption: string;
+  link: string;
 };
 
 // Sample data
 const cards: Card[] = [
   {
     id: 1,
-    title: "Smart Factory Solutions",
+    title: "Biometric Product",
     description:
-      "Revolutionizing manufacturing through advanced IIoT sensors and real-time monitoring systems.",
+      "Affordable biometric access with cloud dashboard & real-time monitoring.",
     image: "/robotics/Smart_Manufacturing.png",
-    tag: "IIoT",
-    category: "IIoT",
+    tag: "Security",
+    caption: "Biometric Access",
+    link: "/solutions/biometric"
   },
   {
     id: 2,
-    title: "Industrial Robotics",
+    title: "RFID-Based Telephone",
     description:
-      "State-of-the-art robotic systems for precision manufacturing and assembly operations.",
+      "Secure RFID calling system with student-specific digital balance recharge.",
     image: "/appli_image_iiot/Smart-robots.jpg",
-    tag: "Robotics",
-    category: "Robotics",
+    tag: "Communication",
+    caption: "RFID Telephone",
+    link: "/solutions/rfid-telephone"
   },
   {
     id: 3,
-    title: "Process Automation",
+    title: "Hydroponic Controller",
     description:
-      "Streamlining industrial processes with cutting-edge automation technologies.",
+      "Smart farming with sensor-driven precision and real-time farm stats display.",
     image: "/appli_image_iiot/Industrial-Automation.jpg",
-    tag: "Automation",
-    category: "Automation",
+    tag: "Agriculture",
+    caption: "VIthNet Device",
+    link: "/solutions/hydroponic"
   },
   {
     id: 4,
-    title: "Predictive Maintenance",
+    title: "Robotics Training Kit",
     description:
-      "AI-powered systems for predictive maintenance and equipment optimization.",
+      "Hands-on robotics education using real industrial cobots like IGUS ReBeL.",
     image: "/robotics/The-Future-of-Industrial-IoT.png",
-    tag: "IIoT",
-    category: "IIoT",
+    tag: "Education",
+    caption: "Training Kit",
+    link: "/solutions/robotics-training"
   },
 ];
 
 export default function CardSection() {
-  const [activeFilter, setActiveFilter] = useState<string>("Featured");
-
-  const filters = ["Featured", "IIoT", "Robotics", "Automation"];
-
-  const filteredCards = cards.filter((card) =>
-    activeFilter === "Featured" ? true : card.category === activeFilter
-  );
-
-  // Convert cards to carousel items
-  const carouselItems: CarouselItem[] = filteredCards.map(card => ({
-    image: card.image || "",
-    caption: card.title,
-    link: `/${card.title}`,
-    description: card.description,
-    tag: card.tag
-  }));
-
   return (
-    <section className="md:px-4 sm:px-6 lg:px-8">
+    <section className="py-16 md:py-24 md:px-4 sm:px-4 lg:px-8">
       <motion.div 
-        className="mx-auto max-w-[1800px]"
+        className="mx-auto "
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true }}
+        viewport={{ once: true, margin: "-100px" }}
       >
-        <SectionHeader 
-          label="FEATURED"
-          title="Our Products"
-        />
-
-        {/* Filter Buttons */}
-        {/* <motion.div 
-          className="flex flex-wrap gap-2 sm:gap-3 mb-8 sm:mb-12 md:overflow-x-auto pb-2 sm:pb-0"
-          variants={containerVariants}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ type: "spring", stiffness: 50, damping: 20 }}
         >
-          {filters.map((filter, index) => (
-            <motion.button
-              key={filter}
-              variants={itemVariants}
-              custom={index}
-              onClick={() => setActiveFilter(filter)}
-              className={`px-4 sm:px-6 py-2 sm:py-2.5 rounded-full ${text.Buttontext} transition-all border-2 border-company-litest-gray duration-300 whitespace-nowrap
-                ${
-                  activeFilter === filter
-                    ? "bg-[var(--company-primary-royalBlue)] text-[var(--company-white)] "
-                    : "bg-company-white text-company-mid-gray hover:bg-[var(--company-litest-gray)] border border-[var(--company-light-gray)]"
-                }`}
-            >
-              {filter}
-            </motion.button>
-          ))}
-        </motion.div> */}
+          <SectionHeader 
+            label="FEATURED"
+            title="Our Products"
+          />
+        </motion.div>
 
         {/* Carousel Container */}
-        <div className="relative md:overflow-hidden">
-          <Carousel 
-            items={carouselItems}
-            variant="product"
-            autoPlay={true}
-            interval={5000}
-            showIndicators={true}
-            showNavigation={true}
-          />
-        </div>
+        <motion.div 
+          className="relative md:overflow-hidden "
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ 
+            type: "spring", 
+            stiffness: 50, 
+            damping: 20,
+            delay: 0.2 
+          }}
+        >
+          <Carousel items={cards.map((card) => (
+            <Card
+              key={card.id}
+              card={{
+                src: card.image,
+                title: card.title,
+                category: card.tag,
+                content: (
+                  <div className="space-y-4">
+                    <p className="text-lg text-gray-600 dark:text-gray-300">{card.description}</p>
+                    <a 
+                      href={card.link}
+                      className="inline-block text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300"
+                    >
+                      Learn more →
+                    </a>
+                  </div>
+                )
+              }}
+              index={card.id - 1}
+            />
+          ))} />
+        </motion.div>
       </motion.div>
     </section>
   );

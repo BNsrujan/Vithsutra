@@ -13,39 +13,34 @@ export default function typ() {
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-      },
-    },
+      opacity: 1
+    }
   };
 
   const itemVariants = {
     hidden: { opacity: 0, y: 50 },
     visible: {
       opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.6,
-        ease: "easeInOut",
-      },
-    },
+      y: 0
+    }
   };
 
   return (
-    <div className="flex  justify-center w-full bg-company-litest-gray ">
-      <div className="flex justify-center  content-center   items-center w-full flex-col max-w-[1296px] gap-y-96 ">
+    <div className="flex justify-center w-full bg-company-litest-gray">
+      <div className="flex justify-center content-center items-center w-full flex-col max-w-[1296px] gap-y-96">
         <motion.div
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
-          className="h-screen flex justify-center   items-center"
+          transition={{ staggerChildren: 0.2 }}
+          className="h-screen flex justify-center items-center"
         >
           {box1.map((_, i) => (
             <motion.div
               key={i}
               variants={itemVariants}
+              transition={{ type: "spring", stiffness: 100, damping: 20 }}
               className="h-[497px] w-[1296px] rounded-[28px] flex text-6xl justify-center items-center text-company-blue-black bg-company-white"
             >
               Hello
@@ -143,63 +138,78 @@ export default function typ() {
           ))}
         </motion.div>
 
-        <div className="div">
-          <div>
-            <div className="p-6 space-y-10 max-w-4xl mx-auto">
-              <div className={text.Displaytext}>
-                Display Text - The quick brown fox jumps over the lazy dog.
-              </div>
-
-              <div className={text.DisplaySaportingtext}>
-                Display Supporting Text - The quick brown fox jumps over the
-                lazy dog.
-              </div>
-
-              <div className={text.DisplayPrefixtext}>
-                Display Prefix Text - The quick brown fox jumps over the lazy
-                dog.
-              </div>
-
-              <h1 className={text.Sectiontext}>
-                Section Heading - The quick brown fox jumps over the lazy dog.
-              </h1>
-
-              <p className={text.Sectionbodytext}>
-                Section Body Text - The quick brown fox jumps over the lazy dog.
-              </p>
-
-              <p className={text.Sectionprefixtext}>
-                Section Prefix Text - The quick brown fox jumps over the lazy
-                dog.
-              </p>
-
-              <h2 className={text.cardHeadingtext}>
-                Card Heading - The quick brown fox jumps over the lazy dog.
-              </h2>
-
-              <p className={text.cardBodytext}>
-                Card Body Text - The quick brown fox jumps over the lazy dog.
-              </p>
-
-              
-
-              <nav className={text.Navtext}>
-                Navigation Text - The quick brown fox jumps over the lazy dog.
-              </nav>
-
-              <footer>
-                <a href="#" className={text.Footerlinktext}>
-                  Footer Link Text
-                </a>
-                <h3 className={text.FooterHeadingtext}>Footer Heading Text</h3>
-              </footer>
-
-              <button className={text.Buttontext}>Primary Button</button>
-              <button className={text.secondaryButtontext}>
-                Secondary Button
-              </button>
-            </div>
+        <div className="w-full p-6 space-y-10 max-w-4xl mx-auto">
+          <div className={text.midtext}>
+            Mid Text - The quick brown fox jumps over the lazy dog.
           </div>
+
+          <div className={text.Displaytext}>
+            Display Text - The quick brown fox jumps over the lazy dog.
+          </div>
+
+          <div className={text.DisplaySaportingtext}>
+            Display Supporting Text - The quick brown fox jumps over the lazy dog.
+          </div>
+
+          <div className={text.DisplayPrefixtext}>
+            Display Prefix Text - The quick brown fox jumps over the lazy dog.
+          </div>
+
+          <h1 className={text.Sectiontexthead}>
+            Section Heading - The quick brown fox jumps over the lazy dog.
+          </h1>
+
+          <p className={text.Extratext}>
+            Section Body Text - The quick brown fox jumps over the lazy dog.
+          </p>
+
+          <p className={text.Sectionprefixtext}>
+            Section Prefix Text - The quick brown fox jumps over the lazy dog.
+          </p>
+
+          <p className={text.Sectionbodyteexts}>
+            Section Body Text (Alt) - The quick brown fox jumps over the lazy dog.
+          </p>
+
+          <h2 className={text.cardHeadingtext}>
+            Card Heading - The quick brown fox jumps over the lazy dog.
+          </h2>
+
+          <p className={text.cardBodytext}>
+            Card Body Text - The quick brown fox jumps over the lazy dog.
+          </p>
+
+          <p className={text.cardsubtext}>
+            Card Sub Text - The quick brown fox jumps over the lazy dog.
+          </p>
+
+          <nav className={text.Navtext}>
+            Navigation Text - The quick brown fox jumps over the lazy dog.
+          </nav>
+
+          <footer className="space-y-4">
+            <a href="#" className={text.Footerlinktext}>
+              Footer Link Text - The quick brown fox jumps over the lazy dog.
+            </a>
+            <h3 className={text.FooterHeadingtext}>
+              Footer Heading Text - The quick brown fox jumps over the lazy dog.
+            </h3>
+          </footer>
+
+          <div className="space-y-4">
+            <button className={text.Buttontext}>
+              Primary Button - The quick brown fox jumps over the lazy dog.
+            </button>
+            <button className={text.secondaryButtontext}>
+              Secondary Button - The quick brown fox jumps over the lazy dog.
+            </button>
+          </div>
+
+          <input 
+            type="text" 
+            placeholder="Input Placeholder Text" 
+            className={text.inputplaceholdertext}
+          />
         </div>
 
         <Components/>
