@@ -62,7 +62,7 @@ const cards: Card[] = [
 
 export default function CardSection() {
   return (
-    <section className="py-16 md:py-24 md:px-4 sm:px-4 lg:px-8">
+    <section className="md:py-24 md:px-4  sm:px-4 lg:px-8">
       <motion.div 
         className="mx-auto "
         variants={containerVariants}

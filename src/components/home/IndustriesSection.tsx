@@ -43,7 +43,7 @@ const industries = [
 
 export default function IndustriesSection() {
   return (
-    <div className="py-16 max-w-[1400px] mx-auto md:px-4">
+    <div className="max-w-[1400px] mx-auto md:px-4">
       <motion.div 
         className="max-w-[1400px] mx-auto"
         variants={containerVariants}

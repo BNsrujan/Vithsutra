@@ -51,7 +51,7 @@ const menuData: Record<string, MenuSection> = {
     items: [
       { title: "IIOT & Robotics", description: "Industrial IoT and robotic automation solutions", href: "/technologies/iiot-robotics" },
       { title: "Electronics", description: "Advanced electronic solutions and components", href: "/technologies/electronics" },
-      { title: "Smart Retail", description: "Intelligent retail technology solutions", href: "/technologies/smart-retail" },
+      { title: "Softwares", description: "Real time Cloud based Dashboard", href: "/technologies/Softwares" },
     ]
   },
   industries: {
@@ -155,7 +155,7 @@ export function Navbar() {
   }, [isMobileMenuOpen])
 
   return (
-    <div className="sticky top-0 z-50 w-full bg-white/5 backdrop-blur-sm">
+    <div className="sticky top-0  z-50 w-full bg-white ">
       <div className="flex items-center justify-between w-full px-4 py-3 max-w-[1800px] mx-auto">
         <div className="flex items-center space-x-2">
           <Link href="/" className="flex items-center">

@@ -42,7 +42,7 @@ const FeatureCard = ({ title, description, delay = 0 }: { title: string; descrip
 
 export default function UniqueFeatures() {
   return (
-    <section className="relative py-16 md:py-24">
+    <section className="relative  md:py-24">
       <div className="hidden md:absolute md:top-80 w-full h-full">
         <Image 
           src="/logo/company_logo_without_text.png" 

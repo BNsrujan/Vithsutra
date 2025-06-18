@@ -221,7 +221,7 @@ export const Card = ({
         className={`absolute  z-50 sm:right-1 md:right-8 bottom-4 sm:bottom-6 md:bottom-8 bg-company-white rounded-full p-4 sm:p-5 md:p-8 transition-all duration-700 ease-in-out  text-company-black group-hover:bg-company-primary-royalBlue group-hover:text-company-white-text'} ${className}`}
       >
         <ArrowUpRightIcon
-          className={`h-4 w-4 sm:h-6 sm:w-6 ${isTouched ? 'text-company-white-text' : 'text-company-text-gray group-hover:text-company-white-text'} transition-all duration-700 ease-in-out`}
+          className={`h-4 w-4 sm:h-6 sm:w-6 ${isTouched ? 'text-company-primary-royalBlue ' : 'text-company-text-gray group-hover:text-company-white-text'} transition-all duration-700 ease-in-out`}
           strokeWidth={3}
         />
       </button>
@@ -232,12 +232,12 @@ export const Card = ({
     <>
       <AnimatePresence>
         {open && (
-          <div className="fixed inset-0 z-50 h-screen overflow-auto">
+          <div className="fixed  inset-0 z-50 h-screen overflow-auto">
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="fixed inset-0 h-full w-full bg-black/80 backdrop-blur-lg"
+              className="fixed inset-0 h-full full p bg-black/80 backdrop-blur-lg"
             />
             <motion.div
               initial={{ opacity: 0 }}

@@ -36,7 +36,7 @@ export default function WeOfferSection() {
   };
 
   return (
-    <section className="relative py-16 md:py-24 bg-company-light-light-gray overflow-hidden">
+    <section className="relative md:py-24 bg-company-light-light-gray overflow-hidden">
       <div className="max-w-[1400px] mx-auto px-4">
         <SectionHeader 
           label="FEATURED"
