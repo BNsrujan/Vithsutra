@@ -29,7 +29,7 @@ const text = {
     "text-[16px] sm:text-[22px] md:text-[24px] lg:text-[28px] leading-[1.2]  font-extralight    text-wrap",
 
   Sectionbodyteexts: /* DisplayPrefixtext */
-    "text-[11px] sm:text-[16px] md:text-[17px] leading-[1.3] tracking font-normal max-w-[200px] sm:max-w-[400px] md:max-w-full mt-[7px] mb-[18px]  text-wrap",
+    "text-[11px] sm:text-[16px] md:text-[17px] leading-[1.3] tracking font-normal max-w-[270px] sm:max-w-[400px] md:max-w-full mt-[7px] mb-[18px]  text-wrap",
 
   Sectionprefixtext:
     "text-[24px] sm:text-[36px] md:text-[42px] lg:text-[48px] leading-[1.1] tracking-tight font-semibold  text-wrap",

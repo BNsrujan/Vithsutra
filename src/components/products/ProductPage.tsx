@@ -13,10 +13,12 @@ import {
   fadeInDown,
 } from "@/lib/motion";
 import { Carousel, Card } from "@/components/ui/apple-cards-carousel";
-import { Skeleton } from "../ui/Skeleton";
 import ProcessStepCard from "@/components/ui/ProcessStepCard";
-import { useRef } from "react";
-import TestimonialsCarousel from '@/components/ui/testimonials-carousel';
+import TestimonialsCarousel from "@/components/ui/testimonials-carousel";
+import Application from "../ui/Application";
+import { useRouter } from "next/navigation";
+import { DialogDemo } from "../Dialog";
+
 
 // Define the product feature type
 type ProductFeature = {
@@ -40,10 +42,17 @@ type Product = {
   mainImage: string;
   features: ProductFeature[];
   specifications: ProductSpec[];
+  Howitworks:howitworks[];
   benefits: string[];
   applications: string[];
   gallery?: string[];
 };
+
+interface howitworks{
+  image:string;
+  title:string;
+  description:string
+}
 
 interface ProductPageProps {
   product: Product;
@@ -54,59 +63,59 @@ export default function ProductPage({
   product,
   otherProducts = [],
 }: ProductPageProps) {
-  const scrollRef = useRef<HTMLDivElement>(null);
+
+  const router = useRouter();
 
   return (
     <main className="min-h-screen  ">
       {/* Hero Section */}
-      <section className="relative h-[93vh] w-full bg-gradient-to-b from-company-primary-royalBlue to-company-white flex justify-center items-center ">
-        <div className="container mx-auto px-4 flex flex-col lg:flex-row items-center justify-between ">
+      <section className="relative min-h-[80vh] md:min-h-[80vh] lg:h-[93vh] w-full bg-gradient-to-b from-company-primary-royalBlue to-company-white flex flex-col lg:flex-row justify-center items-center ">
+        <div className="container mx-auto px-4 flex flex-col-reverse lg:flex-row items-center justify-between w-full h-full py-12 md:py-20 lg:py-0">
           {/* Left side - Text Content */}
-          <div className="w-full lg:w-1/2 text-white pr-8 flex flex-col justify-center h-full">
+          <div className="w-full lg:w-1/2 text-white flex flex-col justify-center h-full items-center lg:items-start mt-8 lg:mt-0">
             <motion.div
               variants={containerVariants}
               initial="hidden"
               animate="visible"
-              className="space-y-6"
+              className="space-y-6 text-center lg:text-left"
             >
               <motion.h1
-                className={`${text.Sectiontexthead} `}
+                className={`${text.Sectiontexthead} text-3xl md:text-4xl lg:text-5xl`}
                 variants={fadeInDown}
               >
-                RFID-Based Telephone
+                {product.tagline}
               </motion.h1>
               <motion.p
-                className={`${text.cardBodytext} max-w-2xl`}
+                className={`${text.cardBodytext} max-w-2xl mx-auto lg:mx-0 text-base md:text-lg`}
                 variants={fadeInUp}
               >
-                This RFID-based telephone is made for hostels, schools, and
-                campuses. It replaces coin phones with smart, secure RFID cards.
-                Each call is tracked, timed, and easy to manage.
+                {product.description}
               </motion.p>
-              <Button>Book a Demo</Button>
+              <div className="flex justify-center lg:justify-start">
+                <Button>Book a Demo</Button>
+              </div>
             </motion.div>
           </div>
 
           {/* Right side - Image */}
-          <div className=" relative  w-full lg:w-1/2  h-[400px] flex justify-center  items-center ">
-            <div className="absolute h-4  -bottom-38 w-3/5 justify-center rounded-full  bg-gradient-to-t from-transparent to-gray-600/10  blur-xs backdrop-blur-3xl" />
+          <div className="relative w-full lg:w-1/2 h-[260px] md:h-[350px] lg:h-[400px] flex justify-center items-center">
+            <div className="absolute h-4 -bottom-8 w-3/5 justify-center rounded-full bg-gradient-to-t from-transparent to-gray-600/10 blur-xs backdrop-blur-3xl" />
             <motion.div
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
-              className="relative h-full w-[600px]   overflow-visible rounded-[28px] "
+              className="relative h-full w-[90vw] sm:w-[400px] md:w-[500px] lg:w-[600px] max-w-full overflow-visible rounded-[28px]"
             >
               <Image
                 src={product.mainImage}
                 alt={product.name}
                 fill
-                className="object-cover overflow-visible  rounded-4xl"
+                className="object-contain md:object-cover overflow-visible rounded-4xl"
                 priority
               />
               {/* Hovering Cards */}
-
               <motion.div
-                className=" absolute -top-18 -left-5 bg-white/10 backdrop-blur-lg w-[260px] p-6 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2"
+                className="hidden md:block absolute -top-18 -left-5 bg-white/10 backdrop-blur-lg w-[200px] md:w-[260px] p-4 md:p-6 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2"
                 whileHover={{ scale: 1.05 }}
                 animate={{ y: [0, -15, 0, 15, 0] }}
                 transition={{
@@ -115,14 +124,14 @@ export default function ProductPage({
                   ease: "easeInOut",
                 }}
               >
-                <h3 className="text-xl font-semibold mb-2">Secure</h3>
-                <p className="text-company-black">
+                <h3 className="text-lg md:text-xl font-semibold mb-2">Secure</h3>
+                <p className="text-company-black text-xs md:text-base">
                   RFID authentication ensures secure access and usage tracking
                 </p>
               </motion.div>
 
               <motion.div
-                className=" absolute -right-19 top-1/2 w-[260px] bg-white/10 backdrop-blur-lg p-6 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2"
+                className="hidden md:block absolute -right-19 top-1/2 w-[200px] md:w-[260px] bg-white/10 backdrop-blur-lg p-4 md:p-6 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2"
                 whileHover={{ scale: 1.05 }}
                 animate={{ y: [0, 15, 0, -15, 0] }}
                 transition={{
@@ -132,15 +141,15 @@ export default function ProductPage({
                   delay: 1,
                 }}
               >
-                <h3 className="text-xl font-semibold mb-2">Fast</h3>
-                <p className="text-company-black">
+                <h3 className="text-lg md:text-xl font-semibold mb-2">Fast</h3>
+                <p className="text-company-black text-xs md:text-base">
                   Quick and efficient call connection with tap-and-go
                   functionality
                 </p>
               </motion.div>
 
               <motion.div
-                className=" absolute -bottom-19 -left-19 w-[260px] bg-white/10 backdrop-blur-lg p-6 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2"
+                className="hidden md:block absolute -bottom-19 -left-19 w-[200px] md:w-[260px] bg-white/10 backdrop-blur-lg p-4 md:p-6 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2"
                 whileHover={{ scale: 1.05 }}
                 animate={{ y: [0, -10, 0, 10, 0] }}
                 transition={{
@@ -150,8 +159,8 @@ export default function ProductPage({
                   delay: 2,
                 }}
               >
-                <h3 className="text-xl font-semibold mb-2">Smart</h3>
-                <p className="text-company-black">
+                <h3 className="text-lg md:text-xl font-semibold mb-2">Smart</h3>
+                <p className="text-company-black text-xs md:text-base">
                   Intelligent tracking and management of call duration and usage
                 </p>
               </motion.div>
@@ -165,7 +174,7 @@ export default function ProductPage({
         <div className="max-w-7xl mx-auto">
           <Heading heading="FEATURES" Display="Key Features" />
           <motion.div
-            className="grid md:grid-cols-3 gap-12 "
+            className="grid md:grid-cols-3 gap-6  md:gap-12 "
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
@@ -175,19 +184,19 @@ export default function ProductPage({
               <motion.div
                 key={index}
                 variants={itemVariants}
-                className=" flex flex-col items-center "
+                className=" flex flex-col items-center h-full "
               >
                 {feature.icon && (
-                  <div className=" relative border rounded-[24px] overflow-hidden border-company-litest-gray  w-full md:h-[400px] mb-6 ">
+                  <div className=" relative border rounded-[24px] p-4 overflow-hidden  w-full   md:h-[400px] md:mb-6 ">
                     <Image
                       src={feature.icon}
                       alt={feature.title}
-                      width={64}
-                      height={64}
-                      className="bg-gray-400 w-full h-full "
+                      width={164}
+                      height={164}
+                      className="w-full h-2/3  rounded-3xl border  bg-company-litest-gray "
                     />
 
-                    <div className=" absolute   bottom-0 p-[24px]">
+                    <div className="pt-4  ">
                       <h3 className={`${text.cardHeadingtext} mb-4`}>
                         {feature.title}
                       </h3>
@@ -204,32 +213,11 @@ export default function ProductPage({
       </section>
 
       {/* How It Works Section */}
-      <section className="md:p-[20px] bg-gray-50">
+      <section className="md:p-[20px] ">
         <div className="max-w-7xl mx-auto px-4 md:px-8">
           <Heading heading="PROCESS" Display="How It Works" />
           <div className="flex flex-col md:flex-row items-center justify-between gap-8 ">
-            {[
-              {
-                image: "/Products/rfid-tel/setp1.png",
-                title: "Tap to Recharge",
-                description: "User taps card on VithSutra's recharge machine",
-              },
-              {
-                image: "/Products/rfid-tel/step2.png",
-                title: "Insert Card",
-                description: "Insert RFID card into the telephone unit",
-              },
-              {
-                image: "/Products/rfid-tel/step3.png",
-                title: "Dial and Talk",
-                description: "Dial the number and start your call",
-              },
-              {
-                image: "/Products/rfid-tel/step4.png",
-                title: "Auto Deduction",
-                description: "Amount is deducted from the card",
-              },
-            ].map((step, idx, arr) => (
+            {product.Howitworks.map((step, idx, arr) => (
               <ProcessStepCard
                 key={step.title}
                 image={step.image}
@@ -246,227 +234,42 @@ export default function ProductPage({
       <section className="py-24">
         <div className="max-w-7xl mx-auto px-4 md:px-8">
           <Heading heading="SPECS" Display="Technical Specifications" />
-          <motion.div
-            className="grid md:grid-cols-2 gap-8 "
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-          >
-            {product.specifications.map((spec, index) => (
-              <motion.div
-                key={index}
-                variants={itemVariants}
-                className="flex justify-between  border-b border-gray-200 py-4"
-              >
-                <span className={`${text.midtext} text-black `}>
-                  {spec.name}
-                </span>
-                <span className={`${text.Sectionbodytext} italic font-medium`}>
-                  {spec.value}
-                </span>
-              </motion.div>
-            ))}
-          </motion.div>
         </div>
       </section>
 
       {/* Applications Section */}
-      <section className="py-24 bg-gray-50 relative">
-        <div className="max-w-7xl mx-auto px-4 md:px-8">
-          <Heading heading="USE CASES" Display="Applications" />
-          <motion.div
-            className="mt-12"
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-          >
-            <div className="relative">
-              {/* Scrollable container */}
-              <div
-                ref={scrollRef}
-                className="flex space-x-6 pb-6 overflow-x-auto scrollbar-hide scroll-smooth"
-                style={{ scrollBehavior: "smooth" }}
-              >
-                {[
-                  {
-                    title: "Educational Institutions",
-                    image: "/appli_image_iiot/Smart-robots.jpg",
-                    description:
-                      "Secure access control and communication systems for schools and universities",
-                  },
-                  {
-                    title: "Healthcare Facilities",
-                    image: "/robotics/Smart_Manufacturing.png",
-                    description:
-                      "Patient monitoring and facility management solutions",
-                  },
-                  {
-                    title: "Industrial Facilities",
-                    image: "/appli_image_iiot/Industrial-Automation.jpg",
-                    description:
-                      "Automated control systems for manufacturing and production",
-                  },
-                  {
-                    title: "Commercial Buildings",
-                    image: "/robotics/The-Future-of-Industrial-IoT.png",
-                    description:
-                      "Smart building management and security solutions",
-                  },
-                  {
-                    title: "Research Facilities",
-                    image: "/appli_image_iiot/Smart-robots.jpg",
-                    description:
-                      "Advanced monitoring and control systems for research environments",
-                  },
-                ].map((app, index) => (
-                  <motion.div
-                    key={index}
-                    variants={itemVariants}
-                    className="flex-none w-[400px] bg-white rounded-lg overflow-hidden"
-                  >
-                    <div className="relative h-48">
-                      <Image
-                        src={app.image}
-                        alt={app.title}
-                        fill
-                        className="object-cover"
-                      />
-                      <Skeleton />
-                    </div>
-                    <div className="p-6">
-                      <h3 className={`${text.cardHeadingtext} mb-2`}>
-                        {app.title}
-                      </h3>
-                      <p className={`${text.cardsubtext} text-gray-600`}>
-                        {app.description}
-                      </p>
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
-              {/* Left Arrow */}
-              <button
-                onClick={() => {
-                  if (scrollRef.current) {
-                    scrollRef.current.scrollBy({
-                      left: -400,
-                      behavior: "smooth",
-                    });
-                  }
-                }}
-                className="hidden md:flex items-center justify-center absolute left-0 top-1/2 -translate-y-1/2 w-12 h-12 bg-white rounded-full shadow-lg z-10"
-                aria-label="Scroll left"
-              >
-                <svg
-                  className="w-6 h-6 text-gray-600"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M15 19l-7-7 7-7"
-                  />
-                </svg>
-              </button>
-              {/* Right Arrow */}
-              <button
-                onClick={() => {
-                  if (scrollRef.current) {
-                    scrollRef.current.scrollBy({
-                      left: 400,
-                      behavior: "smooth",
-                    });
-                  }
-                }}
-                className="hidden md:flex items-center justify-center absolute right-0 top-1/2 -translate-y-1/2 w-12 h-12 bg-white rounded-full shadow-lg z-10"
-                aria-label="Scroll right"
-              >
-                <svg
-                  className="w-6 h-6 text-gray-600"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M9 5l7 7-7 7"
-                  />
-                </svg>
-              </button>
-              {/* Bottom-right floating arrow */}
-              <button
-                onClick={() => {
-                  if (scrollRef.current) {
-                    scrollRef.current.scrollTo({
-                      left: scrollRef.current.scrollWidth,
-                      behavior: "smooth",
-                    });
-                  }
-                }}
-                className="fixed md:absolute bottom-8 right-8 md:bottom-8 md:right-8 w-12 h-12 bg-blue-500 text-white rounded-full shadow-lg flex items-center justify-center z-20"
-                aria-label="Scroll to end"
-              >
-                <svg
-                  className="w-6 h-6"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M9 5l7 7-7 7"
-                  />
-                </svg>
-              </button>
-            </div>
-            {/* Dots Navigation */}
-            <div className="flex justify-center mt-8 space-x-2">
-              {[0, 1, 2, 3, 4].map((index) => (
-                <button
-                  key={index}
-                  className="w-2 h-2 rounded-full bg-gray-300 hover:bg-gray-400 transition-colors"
-                  aria-label={`Go to slide ${index + 1}`}
-                />
-              ))}
-            </div>
-          </motion.div>
+      <section className="py-16 px-4 md:py-24 md:px-8 bg-gray-50 relative flex justify-center items-center">
+        <div className="w-full  max-w-7xl">
+          <Application />
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 bg-blue-50">
-        <div className="max-w-7xl mx-auto px-4 md:px-8 text-center">
+      <section className="">
+        <div className="max-w-7xl mx-auto md:rounded-4xl bg-company-primary-royalBlue h-[300px] flex flex-col justify-center px-2 md:px-8 text-center">
           <motion.div
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
           >
-            <h2 className={`${text.cardHeadingtext} mb-6`}>
+            <h2 className={`${text.cardHeadingtext} text-white mb-2`}>
               Ready to Get Started?
             </h2>
             <p
-              className={`${text.cardsubtext} text-gray-600 mb-8 max-w-2xl mx-auto`}
+              className={`${text.Sectionbodyteexts} text-company-litest-gray  mb-10 max-w-2xl mx-auto`}
             >
               Contact us today to learn more about {product.name} and how it can
               benefit your business.
             </p>
-            <div className="flex w-fll justify-center content-center gap-8 ">
-              <Button className="bg-[var(--company-primary-royalBlue)] hover:bg-[var(--company-primary-royalBlue)]/90">
+            <div className="md:flex  space-y-4 md:space-y-0  w-fll justify-center content-center md:gap-8 ">
+              <Button
+                onClick={() => router.push("/Contact")}
+                className="bg-company-secondary-yello text-black hover:text-black hover:bg-company-secondary-yello/80"
+              >
                 <span className={text.Buttontext}>Request a Demo</span>
               </Button>
-              <Button className="bg-[var(--company-primary-royalBlue)] hover:bg-[var(--company-primary-royalBlue)]/90">
-                <span className={text.Buttontext}>Download Brochure</span>
-              </Button>
+              <DialogDemo />
             </div>
           </motion.div>
         </div>

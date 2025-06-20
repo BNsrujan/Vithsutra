@@ -1,20 +1,19 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { ChevronLeft, ChevronRight } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import Heading from "./heading"
-import { text } from "@/lib/typography"
-import Image from "next/image"
-import TestimonialCard from "./TestimonialCard"
+import { useState } from "react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import Heading from "./heading";
+import TestimonialCard from "./TestimonialCard";
+import { motion, AnimatePresence } from "framer-motion";
 
 interface Testimonial {
-  id: number
-  name: string
-  title: string
-  company: string
-  quote: string
-  avatar?: string
+  id: number;
+  name: string;
+  title: string;
+  company: string;
+  quote: string;
+  avatar?: string;
 }
 
 const testimonials: Testimonial[] = [
@@ -50,20 +49,69 @@ const testimonials: Testimonial[] = [
     quote:
       "The customer support is outstanding, and the platform is incredibly intuitive. Our team was able to get up and running in just a few days, which exceeded all our expectations.",
   },
-]
+];
+
+// Arrow navigation component
+const TestimonialCarouselArrows = ({ onNext, onPrevious, className = "" }: { onNext: () => void; onPrevious: () => void; className?: string }) => (
+  <div className={`flex gap-2 ${className}`}>
+    <Button
+      variant="outline"
+      size="icon"
+      onClick={onPrevious}
+      className="w-12 h-12 rounded-full bg-gray-100 border-gray-200 hover:bg-gray-200 text-gray-600"
+    >
+      <ChevronLeft className="w-5 h-5" />
+      <span className="sr-only">Previous testimonial</span>
+    </Button>
+    <Button
+      variant="outline"
+      size="icon"
+      onClick={onNext}
+      className="w-12 h-12 rounded-full bg-gray-100 border-gray-200 hover:bg-gray-200 text-gray-600"
+    >
+      <ChevronRight className="w-5 h-5" />
+      <span className="sr-only">Next testimonial</span>
+    </Button>
+  </div>
+);
 
 export default function TestimonialsCarousel() {
-  const [currentIndex, setCurrentIndex] = useState(0)
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [direction, setDirection] = useState(0); // -1 for left, 1 for right
 
   const goToPrevious = () => {
-    setCurrentIndex((prevIndex) => (prevIndex === 0 ? testimonials.length - 1 : prevIndex - 1))
-  }
+    setDirection(-1);
+    setCurrentIndex((prevIndex) =>
+      prevIndex === 0 ? testimonials.length - 1 : prevIndex - 1
+    );
+  };
 
   const goToNext = () => {
-    setCurrentIndex((prevIndex) => (prevIndex === testimonials.length - 1 ? 0 : prevIndex + 1))
-  }
+    setDirection(1);
+    setCurrentIndex((prevIndex) =>
+      prevIndex === testimonials.length - 1 ? 0 : prevIndex + 1
+    );
+  };
 
-  const currentTestimonial = testimonials[currentIndex]
+  const currentTestimonial = testimonials[currentIndex];
+
+  const variants = {
+    enter: (dir: number) => ({
+      x: dir > 0 ? 300 : -300,
+      opacity: 0,
+      position: "absolute" as const,
+    }),
+    center: {
+      x: 0,
+      opacity: 1,
+      position: "relative" as const,
+    },
+    exit: (dir: number) => ({
+      x: dir < 0 ? 300 : -300,
+      opacity: 0,
+      position: "absolute" as const,
+    }),
+  };
 
   return (
     <section className=" px-4 md:px-6 lg:px-8 max-w-7xl mx-auto">
@@ -74,61 +122,37 @@ export default function TestimonialsCarousel() {
         </div>
 
         {/* Testimonial Card with Transition */}
-        <div className="relative ">
-          <div className="bg-gray-50 rounded-2xl p-8 md:p-12  transition-all duration-500 ease-in-out flex items-center min-h-[320px] md:min-h-[230px] lg:min-h-[200px]">
-            <div className="flex flex-col md:flex-row gap-6 md:gap-8 w-full">
-              {/* Avatar */}
-              <div className="flex-shrink-0">
-                <div className="w-20 h-20 md:w-24  overflow-hidden md:h-24 bg-gray-300 rounded-full flex items-center justify-center">
-                 <Image className="h-full w-full " src={"/"} width={150} height={150} alt="" /> 
-                </div>
-              </div>
-
-              {/* Content */}
-              <div className="flex-1 space-y-4">
-                <div>
-                  <h3 className={`${text.cardHeadingtext}`}>{currentTestimonial.name}</h3>
-                  <p className={`${text.Navtext} font-medium text-gray-500`}>
-                    {currentTestimonial.title}, {currentTestimonial.company}
-                  </p>
-                </div>
-
-                <blockquote className={`${text.cardBodytext} text-gray-900 leading-relaxed`}>
-                  &ldquo;{currentTestimonial.quote}&rdquo;
-                </blockquote>
-              </div>
-            </div>
+        
+        <div className="relative  ">
+          <div className="min-h-[320px] md:min-h-[230px] lg:min-h-[300px]">
+          <AnimatePresence custom={direction} mode="wait" >
+            <motion.div
+              key={currentTestimonial.id}
+              custom={direction}
+              variants={variants}
+              initial="enter"
+              animate="center"
+              exit="exit"
+              transition={{ type: "spring", stiffness: 400, damping: 40, duration: 0.4 }}
+              className="w-full"
+            >
+              <TestimonialCard
+                name={currentTestimonial.name}
+                title={currentTestimonial.title}
+                company={currentTestimonial.company}
+                quote={currentTestimonial.quote}
+                avatar={currentTestimonial.avatar}
+              />
+            </motion.div>
+          </AnimatePresence>
           </div>
 
           {/* Navigation Buttons */}
           <div className="flex justify-end items-center mt-6">
- 
-
-            {/* Arrow Navigation */}
-            <div className="flex gap-2">
-              <Button
-                variant="outline"
-                size="icon"
-                onClick={goToPrevious}
-                className="w-12 h-12 rounded-full bg-gray-100 border-gray-200 hover:bg-gray-200 text-gray-600"
-              >
-                <ChevronLeft className="w-5 h-5" />
-                <span className="sr-only">Previous testimonial</span>
-              </Button>
-              <Button
-                variant="outline"
-                size="icon"
-                onClick={goToNext}
-                className="w-12 h-12 rounded-full bg-gray-100 border-gray-200 hover:bg-gray-200 text-gray-600"
-              >
-                <ChevronRight className="w-5 h-5" />
-                <span className="sr-only">Next testimonial</span>
-              </Button>
-            </div>
-            
+            <TestimonialCarouselArrows onNext={goToNext} onPrevious={goToPrevious} />
           </div>
         </div>
       </div>
     </section>
-  )
+  );
 }

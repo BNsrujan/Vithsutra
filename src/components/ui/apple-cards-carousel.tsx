@@ -221,7 +221,7 @@ export const Card = ({
         className={`absolute  z-50 sm:right-1 md:right-8 bottom-4 sm:bottom-6 md:bottom-8 bg-company-white rounded-full p-4 sm:p-5 md:p-8 transition-all duration-700 ease-in-out  text-company-black group-hover:bg-company-primary-royalBlue group-hover:text-company-white-text'} ${className}`}
       >
         <ArrowUpRightIcon
-          className={`h-4 w-4 sm:h-6 sm:w-6 ${isTouched ? 'text-company-white Group-hover:text-company-primary-royalBlue'  : 'text-company-text-gray group-hover:text-company-white-text'} transition-all  duration-700 ease-in-out`}
+          className={`h-4 w-4 sm:h-6 sm:w-6 text-company-black ${isTouched ? 'text-company-white Group-hover:text-company-primary-royalBlue'  : 'text-company-text-gray group-hover:text-company-white-text'} transition-all  duration-700 ease-in-out`}
           strokeWidth={3}
         />
       </button>
@@ -291,8 +291,8 @@ export const Card = ({
         
         className="group relative w-[80vw] z-10 flex h-80 flex-col  items-start justify-start scale-0.9 overflow-hidden rounded-3xl bg-gray-100 md:h-[40rem] md:w-[50vw] dark:bg-neutral-900 transition-all duration-700 ease-in-out hover:scale-[1.0001]"
       >
-        <div className="pointer-events-none absolute w-auto inset-x-0 top-0 z-30 h-full bg-gradient-to-b from-black/50 via-transparent to-transparent transition-all duration-700 ease-in-out group-hover:from-black/70" />
-        <div className="relative z-40 p-8">
+        <div className="pointer-events-none  absolute w-auto inset-x-0 top-0 z-30 h-full bg-gradient-to-b from-black/50 via-transparent to-transparent transition-all duration-700 ease-in-out group-hover:from-black/70" />
+        <div className=" absolute bottom-0 left-1 z-40 p-8">
           <motion.p
             layoutId={layout ? `category-${card.category}` : undefined}
             className={`${text.cardsubtext} text-left text-white transition-all duration-700 ease-in-out group-hover:text-company-white-text`}
@@ -312,7 +312,7 @@ export const Card = ({
           fill
           className="absolute inset-0 z-10 object-cover transition-all duration-700 ease-in-out group-hover:scale-110"
         />
-        <div className="absolute  inset-y-0  right-16 z-40">
+        <div className="absolute  inset-y-0  right-16 md:right-3  z-40">
           <ArrowButtons isTouched={isTouched} />
         </div>
       </motion.button>
