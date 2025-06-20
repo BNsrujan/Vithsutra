@@ -1,5 +1,69 @@
 import ProductPage from '@/components/products/ProductPage';
 
+const hydroponicProduct = {
+  id: "hydroponic-controller",
+  name: "Hydroponic Controller",
+  tagline: "Smart farming with sensor-driven precision and real-time farm stats display",
+  description: "Our VIthNet Hydroponic Controller brings precision agriculture to your fingertips. With advanced sensor technology and real-time monitoring, it optimizes growing conditions for maximum yield while minimizing resource usage.",
+  mainImage: "/appli_image_iiot/Industrial-Automation.jpg",
+  features: [
+    {
+      title: "Real-time Monitoring",
+      description: "Live tracking of all critical growing parameters",
+      icon: "/icons/monitor.svg"
+    },
+    {
+      title: "Automated Control",
+      description: "Smart adjustment of nutrient levels and environmental conditions",
+      icon: "/icons/automation.svg"
+    },
+    {
+      title: "Cloud Dashboard",
+      description: "Access your farm's data from anywhere, anytime",
+      icon: "/icons/cloud.svg"
+    }
+  ],
+  specifications: [
+    {
+      name: "Sensors",
+      value: "pH, EC, Temperature, Humidity, Light"
+    },
+    {
+      name: "Control Parameters",
+      value: "Nutrient dosing, pH adjustment, Climate control"
+    },
+    {
+      name: "Connectivity",
+      value: "WiFi, 4G, Ethernet"
+    },
+    {
+      name: "Power Supply",
+      value: "AC/DC with backup"
+    }
+  ],
+  benefits: [
+    "Increased crop yield",
+    "Reduced water and nutrient waste",
+    "Lower labor costs",
+    "Better crop quality",
+    "Remote monitoring capability",
+    "Data-driven decision making"
+  ],
+  applications: [
+    "Commercial Greenhouses",
+    "Vertical Farms",
+    "Research Facilities",
+    "Urban Agriculture",
+    "Educational Institutions",
+    "Home Growers"
+  ],
+  gallery: [
+    "/appli_image_iiot/Industrial-Automation.jpg",
+    "/robotics/Smart_Manufacturing.png",
+    "/appli_image_iiot/Smart-robots.jpg"
+  ]
+};
+
 const biometricProduct = {
   id: "biometric-product",
   name: "Biometric Product",
@@ -128,73 +192,9 @@ const rfidProduct = {
   ]
 };
 
-const hydroponicProduct = {
-  id: "hydroponic-controller",
-  name: "Hydroponic Controller",
-  tagline: "Smart farming with sensor-driven precision and real-time farm stats display",
-  description: "Our VIthNet Hydroponic Controller brings precision agriculture to your fingertips. With advanced sensor technology and real-time monitoring, it optimizes growing conditions for maximum yield while minimizing resource usage.",
-  mainImage: "/appli_image_iiot/Industrial-Automation.jpg",
-  features: [
-    {
-      title: "Real-time Monitoring",
-      description: "Live tracking of all critical growing parameters",
-      icon: "/icons/monitor.svg"
-    },
-    {
-      title: "Automated Control",
-      description: "Smart adjustment of nutrient levels and environmental conditions",
-      icon: "/icons/automation.svg"
-    },
-    {
-      title: "Cloud Dashboard",
-      description: "Access your farm's data from anywhere, anytime",
-      icon: "/icons/cloud.svg"
-    }
-  ],
-  specifications: [
-    {
-      name: "Sensors",
-      value: "pH, EC, Temperature, Humidity, Light"
-    },
-    {
-      name: "Control Parameters",
-      value: "Nutrient dosing, pH adjustment, Climate control"
-    },
-    {
-      name: "Connectivity",
-      value: "WiFi, 4G, Ethernet"
-    },
-    {
-      name: "Power Supply",
-      value: "AC/DC with backup"
-    }
-  ],
-  benefits: [
-    "Increased crop yield",
-    "Reduced water and nutrient waste",
-    "Lower labor costs",
-    "Better crop quality",
-    "Remote monitoring capability",
-    "Data-driven decision making"
-  ],
-  applications: [
-    "Commercial Greenhouses",
-    "Vertical Farms",
-    "Research Facilities",
-    "Urban Agriculture",
-    "Educational Institutions",
-    "Home Growers"
-  ],
-  gallery: [
-    "/appli_image_iiot/Industrial-Automation.jpg",
-    "/robotics/Smart_Manufacturing.png",
-    "/appli_image_iiot/Smart-robots.jpg"
-  ]
-};
-
-export default function BiometricProductPage() {
+export default function HydroponicControllerPage() {
   return <ProductPage 
-    product={biometricProduct} 
-    otherProducts={[rfidProduct, hydroponicProduct]}
+    product={hydroponicProduct} 
+    otherProducts={[biometricProduct, rfidProduct]}
   />;
 } 

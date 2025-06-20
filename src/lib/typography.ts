@@ -29,7 +29,7 @@ const text = {
     "text-[16px] sm:text-[22px] md:text-[24px] lg:text-[28px] leading-[1.2]  font-extralight    text-wrap",
 
   Sectionbodyteexts: /* DisplayPrefixtext */
-    "text-[11px] sm:text-[16px] md:text-[17px] leading-[1.2] tracking-tight font-normal max-w-[200px] sm:max-w-[400px] md:max-w-full mt-[7px] mb-[18px]  text-wrap",
+    "text-[11px] sm:text-[16px] md:text-[17px] leading-[1.3] tracking font-normal max-w-[200px] sm:max-w-[400px] md:max-w-full mt-[7px] mb-[18px]  text-wrap",
 
   Sectionprefixtext:
     "text-[24px] sm:text-[36px] md:text-[42px] lg:text-[48px] leading-[1.1] tracking-tight font-semibold  text-wrap",
@@ -39,6 +39,9 @@ const text = {
 
   cardHeadingtext:
     "text-[24px] sm:text-[32px] md:text-[34px] lg:text-[36px] leading-[0.8] md:leading-[1.1] -tracking-[0.4] font-semibold sm:max-w-[800px] md:max-w-[1200px]  text-wrap",
+
+  cardHeadingsmall: // DisplaySaportingtext:
+    "text-[14px] sm:text-[18px] md:text-[20px] lg:text-[21px] md:leading-[1.2] tracking-tight font-semibold  text-wrap   text-wrap",
 
   cardBodytext:
     "text-[16px] sm:text-[18px] md:text-[20px] lg:text-[21px] leading-[1.3] md:leading-[1.5]  tracking-[0] font-norma  text-wrap",

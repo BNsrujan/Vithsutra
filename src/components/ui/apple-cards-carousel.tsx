@@ -103,7 +103,7 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
     >
       <div className="relative w-full">
         <div
-          className="flex w-full overflow-x-scroll overscroll-x-auto scroll-smooth py-10 [scrollbar-width:none] md:py-20"
+          className="flex w-full overflow-x-scroll overscroll-x-auto scroll-smooth py-10 [scrollbar-width:none] "
           ref={carouselRef}
           onScroll={checkScrollability}
         >
@@ -221,7 +221,7 @@ export const Card = ({
         className={`absolute  z-50 sm:right-1 md:right-8 bottom-4 sm:bottom-6 md:bottom-8 bg-company-white rounded-full p-4 sm:p-5 md:p-8 transition-all duration-700 ease-in-out  text-company-black group-hover:bg-company-primary-royalBlue group-hover:text-company-white-text'} ${className}`}
       >
         <ArrowUpRightIcon
-          className={`h-4 w-4 sm:h-6 sm:w-6 ${isTouched ? 'text-company-primary-royalBlue ' : 'text-company-text-gray group-hover:text-company-white-text'} transition-all duration-700 ease-in-out`}
+          className={`h-4 w-4 sm:h-6 sm:w-6 ${isTouched ? 'text-company-white Group-hover:text-company-primary-royalBlue'  : 'text-company-text-gray group-hover:text-company-white-text'} transition-all  duration-700 ease-in-out`}
           strokeWidth={3}
         />
       </button>

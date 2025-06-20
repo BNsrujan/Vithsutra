@@ -1,5 +1,69 @@
 import ProductPage from '@/components/products/ProductPage';
 
+const rfidProduct = {
+  id: "rfid-telephone",
+  name: "RFID-Based Telephone",
+  tagline: "Secure RFID calling system with student-specific digital balance recharge",
+  description: "Our RFID-based telephone system revolutionizes campus communication by providing secure, student-specific calling solutions with digital balance management. The system ensures controlled access while offering convenient recharge options and detailed usage tracking.",
+    mainImage: "/Products/rfid-tel/telephone[1].png",
+  features: [
+    {
+      title: "Digital Balance Management",
+      description: "Easy online recharge and balance tracking system",
+      icon: "/icons/digital.svg"
+    },
+    {
+      title: "Student Authentication",
+      description: "Secure RFID-based student identification and access control",
+      icon: "/icons/rfid.svg"
+    },
+    {
+      title: "Usage Analytics",
+      description: "Detailed call logs and usage patterns for better management",
+      icon: "/icons/analytics.svg"
+    }
+  ],
+  specifications: [
+    {
+      name: "RFID Technology",
+      value: "13.56 MHz ISO 14443"
+    },
+    {
+      name: "Call Duration Limit",
+      value: "Configurable per student"
+    },
+    {
+      name: "Balance Alert",
+      value: "Low balance notifications"
+    },
+    {
+      name: "Network Support",
+      value: "PSTN, VoIP"
+    }
+  ],
+  benefits: [
+    "Controlled access to telephone services",
+    "Prevents unauthorized usage",
+    "Easy balance management",
+    "Detailed usage tracking",
+    "Cost-effective communication solution",
+    "Reduced maintenance overhead"
+  ],
+  applications: [
+    "Educational Institutions",
+    "Student Housing",
+    "Corporate Campuses",
+    "Hostels",
+    "Boarding Schools",
+    "University Dormitories"
+  ],
+  gallery: [
+    "/appli_image_iiot/Smart-robots.jpg",
+    "/appli_image_iiot/Industrial-Automation.jpg",
+    "/robotics/The-Future-of-Industrial-IoT.png"
+  ]
+};
+
 const biometricProduct = {
   id: "biometric-product",
   name: "Biometric Product",
@@ -61,70 +125,6 @@ const biometricProduct = {
     "/robotics/Smart_Manufacturing.png",
     "/robotics/The-Future-of-Industrial-IoT.png",
     "/appli_image_iiot/Smart-robots.jpg"
-  ]
-};
-
-const rfidProduct = {
-  id: "rfid-telephone",
-  name: "RFID-Based Telephone",
-  tagline: "Secure RFID calling system with student-specific digital balance recharge",
-  description: "Our RFID-based telephone system revolutionizes campus communication by providing secure, student-specific calling solutions with digital balance management. The system ensures controlled access while offering convenient recharge options and detailed usage tracking.",
-  mainImage: "/appli_image_iiot/Smart-robots.jpg",
-  features: [
-    {
-      title: "Digital Balance Management",
-      description: "Easy online recharge and balance tracking system",
-      icon: "/icons/digital.svg"
-    },
-    {
-      title: "Student Authentication",
-      description: "Secure RFID-based student identification and access control",
-      icon: "/icons/rfid.svg"
-    },
-    {
-      title: "Usage Analytics",
-      description: "Detailed call logs and usage patterns for better management",
-      icon: "/icons/analytics.svg"
-    }
-  ],
-  specifications: [
-    {
-      name: "RFID Technology",
-      value: "13.56 MHz ISO 14443"
-    },
-    {
-      name: "Call Duration Limit",
-      value: "Configurable per student"
-    },
-    {
-      name: "Balance Alert",
-      value: "Low balance notifications"
-    },
-    {
-      name: "Network Support",
-      value: "PSTN, VoIP"
-    }
-  ],
-  benefits: [
-    "Controlled access to telephone services",
-    "Prevents unauthorized usage",
-    "Easy balance management",
-    "Detailed usage tracking",
-    "Cost-effective communication solution",
-    "Reduced maintenance overhead"
-  ],
-  applications: [
-    "Educational Institutions",
-    "Student Housing",
-    "Corporate Campuses",
-    "Hostels",
-    "Boarding Schools",
-    "University Dormitories"
-  ],
-  gallery: [
-    "/appli_image_iiot/Smart-robots.jpg",
-    "/appli_image_iiot/Industrial-Automation.jpg",
-    "/robotics/The-Future-of-Industrial-IoT.png"
   ]
 };
 
@@ -192,9 +192,11 @@ const hydroponicProduct = {
   ]
 };
 
-export default function BiometricProductPage() {
-  return <ProductPage 
-    product={biometricProduct} 
-    otherProducts={[rfidProduct, hydroponicProduct]}
-  />;
+export default function RFIDTelephonePage() {
+  return (
+    <ProductPage
+      product={rfidProduct}
+      otherProducts={[biometricProduct, hydroponicProduct]}
+    />
+  );
 } 

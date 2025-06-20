@@ -4,7 +4,7 @@ export default function Heading({heading,Display}:{
   heading:string,
   Display:string
 }) {
-    return (<div className="mx-auto  pb-12">
+    return (<div className="mx-auto  ">
       <div className="inline-block  rounded-full bg-company-light-light-gray ">
         <span className="text-sm font-medium tracking-wider text-company-text-gray">
           {heading}

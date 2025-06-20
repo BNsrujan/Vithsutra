@@ -132,6 +132,7 @@ export default function CareersPage() {
             <p className="text-xl text-gray-600 mb-8">
               Help us shape the future of industrial automation and IoT solutions
             </p>
+            
           </motion.div>
         </div>
       </section>
@@ -199,7 +200,7 @@ export default function CareersPage() {
                   </div>
                 </div>
                 <p className="text-gray-600 italic">
-                  "{testimonial.quote}"
+                  {testimonial.quote}
                 </p>
               </motion.div>
             ))}
