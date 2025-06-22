@@ -18,6 +18,7 @@ import TestimonialsCarousel from "@/components/ui/testimonials-carousel";
 import Application from "../ui/Application";
 import { useRouter } from "next/navigation";
 import { DialogDemo } from "../Dialog";
+import TechnicalSpecs from "../Technicalspec";
 
 
 // Define the product feature type
@@ -42,7 +43,7 @@ type Product = {
   mainImage: string;
   features: ProductFeature[];
   specifications: ProductSpec[];
-  Howitworks:howitworks[];
+  Howitworks?:howitworks[];
   benefits: string[];
   applications: string[];
   gallery?: string[];
@@ -213,28 +214,28 @@ export default function ProductPage({
       </section>
 
       {/* How It Works Section */}
-      <section className="md:p-[20px] ">
-        <div className="max-w-7xl mx-auto px-4 md:px-8">
-          <Heading heading="PROCESS" Display="How It Works" />
-          <div className="flex flex-col md:flex-row items-center justify-between gap-8 ">
-            {product.Howitworks.map((step, idx, arr) => (
-              <ProcessStepCard
-                key={step.title}
-                image={step.image}
-                title={step.title}
-                description={step.description}
-                showArrow={idx < arr.length - 1}
-              />
-            ))}
+      {product.Howitworks && product.Howitworks.length > 0 && (
+        <section className="py-16 px-4 md:py-24 md:px-8">
+          <div className="max-w-7xl mx-auto">
+            <Heading heading="PROCESS" Display="How It Works" />
+            <div className="flex flex-col md:flex-row items-center justify-between gap-8">
+              {product.Howitworks.map((step, idx, arr) => (
+                <ProcessStepCard
+                  key={step.title}
+                  image={step.image}
+                  title={step.title}
+                  description={step.description}
+                  showArrow={idx < arr.length - 1}
+                />
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
 
       {/* Technical Specifications Section */}
       <section className="py-24">
-        <div className="max-w-7xl mx-auto px-4 md:px-8">
-          <Heading heading="SPECS" Display="Technical Specifications" />
-        </div>
+      <TechnicalSpecs />
       </section>
 
       {/* Applications Section */}

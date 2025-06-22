@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { Carousel, type CarouselItem } from "../ui/carousel";
+// import { Carousel, type CarouselItem } from "@/components/ui/apple-cards-carousel";
 import { ProductGrid } from "./ProductGrid";
 import { motion } from "framer-motion";
 import { text } from "@/lib/typography";

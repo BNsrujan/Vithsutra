@@ -2,7 +2,7 @@ const text = {
   midtext:
     "text-base font-bold text-black/20 dark:text-white/20 flex flex-wrap sm:text-lg md:p-8 md:text-2xl lg:p-10 lg:text-3xl xl:text-3xl  text-wrap",
 
-  Navtext: "text-[10px] sm:text-[12px] md:text-[14px] tracking-tight leading-5 font-[500] text-wrap",
+  Navtext: "text-[10px] sm:text-[12px] md:text-[16px] tracking-tight leading-5 font-[500] text-wrap",
 
   Buttontext:
     "text-[12px] sm:text-[13px] md:text-[14px] font-bold leading-[1.5] tracking-[0.15px] sm:tracking-[0.2px] md:tracking-[0.22px] max-w-[400px]  text-wrap",
