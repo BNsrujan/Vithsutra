@@ -178,8 +178,7 @@ export function Navbar() {
         {/* Desktop CTA */}
         <div className="hidden md:block">
           <Button 
-            variant="default" 
-            className="bg-[var(--company-primary-royalBlue)] hover:bg-[var(--company-primary-royalBlue)]/90"
+            variant="neumorphic" 
           >
             <Link href="/contact" className={text.Buttontext}>Let&apos;s Talk</Link>
           </Button>

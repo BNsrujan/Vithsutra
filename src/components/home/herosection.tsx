@@ -58,6 +58,7 @@ From affordable automation tools to cutting-edge robotics training, our innovati
               transition={{ duration: 0.5, delay: 0.5 }}
             >
               <Button 
+              variant={"neumorphic"}
                 onClick={() => router.push('/contact')} 
                 className={`${text.Buttontext} bg-[var(--company-primary-royalBlue)] hover:bg-[var(--company-primary-royalBlue)]/90 text-[var(--company-white)]`}
               >

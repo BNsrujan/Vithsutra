@@ -2,6 +2,8 @@
 import { motion } from "motion/react";
 import { text } from "@/lib/typography";
 import Components from "./Components";
+import ShareButton from "@/components/ui/smooth-button";
+import { Button } from "@/components/ui/button";
 
 export default function typ() {
   const box1 = [1];
@@ -212,7 +214,10 @@ export default function typ() {
           />
         </div>
 
+
         <Components/>
+
+        <Button variant={"neumorphic"} className="mb-4">share</Button>
       </div>
     </div>
   );

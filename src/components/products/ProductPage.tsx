@@ -8,7 +8,7 @@ import { text } from "@/lib/typography";
 import Heading from "@/components/ui/heading";
 import {
   containerVariants,
-  itemVariants,
+
   fadeInUp,
   fadeInDown,
 } from "@/lib/motion";
@@ -19,13 +19,14 @@ import Application from "../ui/Application";
 import { useRouter } from "next/navigation";
 import { DialogDemo } from "../Dialog";
 import TechnicalSpecs from "../Technicalspec";
+import { LucideIcon } from "lucide-react";
 
 
 // Define the product feature type
 type ProductFeature = {
   title: string;
   description: string;
-  icon?: string;
+  icon?: string | LucideIcon;
 };
 
 // Define the product specification type
@@ -174,42 +175,36 @@ export default function ProductPage({
       <section className="py-24 px-4 md:px-8">
         <div className="max-w-7xl mx-auto">
           <Heading heading="FEATURES" Display="Key Features" />
-          <motion.div
-            className="grid md:grid-cols-3 gap-6  md:gap-12 "
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-          >
-            {product.features.map((feature, index) => (
-              <motion.div
-                key={index}
-                variants={itemVariants}
-                className=" flex flex-col items-center h-full "
-              >
-                {feature.icon && (
-                  <div className=" relative border rounded-[24px] p-4 overflow-hidden  w-full   md:h-[400px] md:mb-6 ">
-                    <Image
-                      src={feature.icon}
-                      alt={feature.title}
-                      width={164}
-                      height={164}
-                      className="w-full h-2/3  rounded-3xl border  bg-company-litest-gray "
-                    />
-
-                    <div className="pt-4  ">
-                      <h3 className={`${text.cardHeadingtext} mb-4`}>
-                        {feature.title}
-                      </h3>
-                      <p className={`${text.cardsubtext} text-gray-600`}>
-                        {feature.description}
-                      </p>
-                    </div>
-                  </div>
-                )}
-              </motion.div>
-            ))}
-          </motion.div>
+          <div className="max-w-6xl mx-auto p-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {product.features.map((feature, idx) => {
+          let IconComponent = null;
+          if (typeof feature.icon === "string") {
+            IconComponent = (
+              <Image src={feature.icon} alt={feature.title} width={24} height={24} />
+            );
+          } else if (feature.icon) {
+            IconComponent = React.createElement(feature.icon, { className: "w-6 h-6 text-gray-700" });
+          }
+          return (
+            <div
+              key={feature.title + idx}
+              className="flex items-start gap-4 p-6 bg-white rounded-lg border border-gray-200 hover:shadow-md transition-shadow"
+            >
+              <div className="flex-shrink-0">
+                <div className="w-12 h-12 bg-gray-100 rounded-lg flex items-center justify-center">
+                  {IconComponent}
+                </div>
+              </div>
+              <div className="flex-1">
+                <h3 className="font-semibold text-gray-900 text-lg mb-2">{feature.title}</h3>
+                <p className="text-gray-600 text-sm leading-relaxed">{feature.description}</p>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </div>
         </div>
       </section>
 

@@ -1,42 +1,79 @@
 // Centralized product data for all products
+import { Shield, Cloud, Calculator, Settings, CreditCard, Layers, Clock, LucideIcon } from "lucide-react"
 
-export const rfidProduct = {
+type ProductFeature = {
+  title: string;
+  description: string;
+  icon?: string | LucideIcon;
+};
+
+type ProductSpec = {
+  name: string;
+  value: string;
+};
+
+type howitworks = {
+  image: string;
+  title: string;
+  description: string;
+};
+
+type Product = {
+  id: string;
+  name: string;
+  tagline: string;
+  description: string;
+  mainImage: string;
+  features: ProductFeature[];
+  specifications: ProductSpec[];
+  Howitworks?: howitworks[];
+  benefits: string[];
+  applications: string[];
+  gallery?: string[];
+};
+
+export const rfidProduct: Product = {
   id: "rfid-telephone",
   name: "RFID-Based Telephone",
   tagline: "RFID-Based Telephone",
   description:
     "This RFID-based telephone is made for hostels, schools, and campuses. It replaces coin phones with smart, secure RFID cards. Each call is tracked, timed, and easy to manage.",
   mainImage: "/Products/rfid-tel/telephone[1].png",
-  features: [
+  features:[
     {
-      title: "RFID Securityt",
+      icon: Shield,
+      title: "RFID Security",
       description: "Secure access with individual RFID card authentication.",
-      icon: "/Products/rfid-tel/feature/accessGranted.png",
     },
     {
+      icon: Cloud,
       title: "Cloud Dashboard",
       description: "Live data monitoring with admin-level access from anywhere.",
-      icon: "/Products/rfid-tel/feature/customerulles.png",
     },
     {
+      icon: Calculator,
       title: "Smart Billing",
-      description: "₹1 is deducted for every 60 seconds of talktime.",
-      icon: "/Products/rfid-tel/feature/smartbilling.png",
+      description: "$1 is deducted for every 60 seconds of talktime.",
     },
     {
+      icon: Settings,
       title: "Custom Rules",
       description: "Set limits for call time, users, or access hours.",
-      icon: "/Products/rfid-tel/feature/accessGranted.png",
     },
     {
+      icon: CreditCard,
       title: "Easy Recharge",
-      description: "Tap and recharge using VithSutra's recharge machine.",
-      icon: "/Products/rfid-tel/feature/customerulles.png",
+      description: "Top and recharge using VINSura's recharge machine.",
     },
     {
+      icon: Layers,
       title: "Durable Hardware",
       description: "Built for long-term public use with low power",
-      icon: "/Products/rfid-tel/feature/smartbilling.png",
+    },
+    {
+      icon: Clock,
+      title: "24/7 operational availability",
+      description: "Operational anytime, day or night.",
     },
   ],
   Howitworks: [
@@ -102,7 +139,7 @@ export const rfidProduct = {
   ],
 };
 
-export const biometricProduct = {
+export const biometricProduct: Product = {
   id: "biometric-product",
   name: "Biometric Product",
   tagline:
@@ -171,7 +208,7 @@ export const biometricProduct = {
   ],
 };
 
-export const hydroponicProduct = {
+export const hydroponicProduct: Product = {
   id: "hydroponic-controller",
   name: "Hydroponic Controller",
   tagline:
