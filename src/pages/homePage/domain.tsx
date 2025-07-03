@@ -1,8 +1,8 @@
 "use client";
 
-import Largecard from "../ui/largecard";
+import Largecard from "@/components/ui/largecard";
 import { useRouter } from "next/navigation";
-import { SectionHeader } from "../ui/section-header";
+import { SectionHeader } from "@/components/ui/section-header";
 
 export default function WeOfferSection() {
   const router = useRouter();

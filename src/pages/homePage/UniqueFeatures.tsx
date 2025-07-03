@@ -3,7 +3,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { containerVariants } from "@/lib/animations";
-import { SectionHeader } from "../ui/section-header";
+import { SectionHeader } from "@/components/ui/section-header";
 import Image from "next/image";
 
 const FeatureCard = ({ title, description, delay = 0 }: { title: string; description: string; delay?: number }) => (

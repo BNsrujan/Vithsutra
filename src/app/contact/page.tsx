@@ -1,4 +1,4 @@
-import ContactPage from '@/components/contact/ContactPage'
+import ContactPage from '@/pages/contactPage/ContactPage'
 import React from 'react'
 
 function page() {

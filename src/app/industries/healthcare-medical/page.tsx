@@ -1,5 +1,5 @@
 import React from "react";
-import { SectorLayout } from "@/components/sectors/SectorLayout";
+import { SectorLayout } from "@/components/SectorLayout";
 
 const healthcareMedicalData = {
   title: "Healthcare & Medical Solutions",

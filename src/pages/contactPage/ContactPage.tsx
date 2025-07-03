@@ -2,12 +2,12 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { text } from "@/lib/typography";
-import Heading from "../ui/heading";
+import Heading from "../../components/ui/heading";
 import { heroContent, textReveal, formField } from "@/lib/motion";
 import { Mail, Phone, MapPin, Send } from "lucide-react";
 import { toast } from "sonner";
-import { Button } from "../ui/button";
-import { Input } from "../ui/input";
+import { Button } from "../../components/ui/button";
+import { Input } from "../../components/ui/input";
 
 // Types
 type FormData = {

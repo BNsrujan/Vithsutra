@@ -4,7 +4,7 @@ import React, { useEffect, useRef } from 'react';
 import { motion } from "framer-motion";
 import { text } from "@/lib/typography";
 import { containerVariants, itemVariants } from "@/lib/animations";
-import { SectionHeader } from "../ui/section-header";
+import { SectionHeader } from "@/components/ui/section-header";
 
 const facts = [
   {

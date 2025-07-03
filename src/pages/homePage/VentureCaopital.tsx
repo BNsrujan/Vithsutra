@@ -1,8 +1,8 @@
 "use client";
 
 import React from "react";
-import { InfiniteMovingCards } from "../ui/infinite-moving-cards";
-import { SectionHeader } from "../ui/section-header";
+import { InfiniteMovingCards } from "@/components/ui/infinite-moving-cards";
+import { SectionHeader } from "@/components/ui/section-header";
 
 export function VentureCapital() {
   return (

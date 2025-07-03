@@ -1,7 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 import { containerVariants } from "@/lib/animations";
-import { SectionHeader } from "../ui/section-header";
+import { SectionHeader } from "@/components/ui/section-header";
 import React from "react";
 import { Carousel, Card } from "@/components/ui/apple-cards-carousel";
 

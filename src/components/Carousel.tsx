@@ -6,7 +6,7 @@ import Link from "next/link";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { text } from "@/lib/typography";
-import { Button } from "../ui/button";
+import { Button } from "./ui/button";
 
 interface CarouselItem {
   image: string;

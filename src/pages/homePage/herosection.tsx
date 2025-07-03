@@ -1,11 +1,11 @@
 "use client";
 import { text } from "@/lib/typography";
-import { Button } from "../ui/button";
+import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 import { heroContent } from "@/lib/animations";
 import Image from "next/image";
-import FlipText from "../ui/fliptext";
+import FlipText from "@/components/ui/fliptext";
 
 export default function Hero() {
   const router = useRouter();
