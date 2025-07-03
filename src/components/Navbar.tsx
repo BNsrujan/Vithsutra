@@ -73,7 +73,9 @@ const menuData: Record<string, MenuSection> = {
     items: [
       { title: "Blog", description: "Latest news and insights", href: "/blog" },
       { title: "Case Studies", description: "Explore our successful projects and implementations", href: "/case-studies" },
-      { title: "Contact", description: "Get in touch with our team", href: "/contact" }
+      { title: "Career", description: "Join our team", href: "/career" },
+      {title:"F&Q",description:"Have any Questions",href:"/faq"},
+      {title:"Team",description:"Our Team",href:"/team"}
     ]
   }
 }
@@ -87,7 +89,7 @@ const MenuItem = React.memo(({ item }: { item: MenuItem }) => (
         className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-[var(--company-litest-gray)] hover:text-[var(--company-primary-royalBlue)] focus:bg-[var(--company-litest-gray)] focus:text-[var(--company-primary-royalBlue)]"
       >
         <div className={`${text.Navtext} font-medium`}>{item.title}</div>
-        <p className={`${text.cardsubtext} text-[var(--company-mid-gray)]`}>
+        <p className={`${text.cardBodytextlight} font-light text-[var(--company-mid-gray)]`}>
           {item.description}
         </p>
       </Link>
@@ -110,10 +112,10 @@ const MenuSection = React.memo(({ section, items }: { section: MenuSection, item
               className="flex h-full w-full select-none flex-col overflow-hidden justify-end rounded-md bg-company-litest-gray p-6 no-underline outline-none focus:shadow-md"
               href={section.href}
             >
-              <div className={`${text.DisplaySaportingtext} text-wrap  text-[var(--company-blue-black)]`}>
+              <div className={`${text.cardHeadingsmall} text-wrap  text-[var(--company-blue-black)]`}>
                 {section.title}
               </div>
-              <p className={`${text.cardsubtext} text-[var(--company-mid-gray)]`}>
+              <p className={`${text.cardBodytextlight} text-[var(--company-mid-gray)]`}>
                 {section.description}
               </p>
             </Link>
@@ -160,7 +162,7 @@ export function Navbar() {
         <div className="flex items-center space-x-2">
           <Link href="/" className="flex items-center">
             <Image src="/logo/company_logo_without_text.png" alt="Logo" width={40} height={40} />
-            <h1 className="vithsutra ml-2 text-lg font-bold">Vithsutra</h1>
+            <h1 className={`vithsutra ${text.Sectionbodytext} ml-2 text-lg font-bold`}>Vithsutra</h1>
           </Link>
         </div>
 

@@ -1,7 +1,7 @@
 "use client"
 import { motion } from 'framer-motion'
 import Image from 'next/image'
-import { heroContent, textReveal, gridItem, imageHover } from '@/lib/motion'
+import {  textReveal, gridItem, imageHover } from '@/lib/motion'
 
 // Sample data for the masonry grid
 const gridItems = [

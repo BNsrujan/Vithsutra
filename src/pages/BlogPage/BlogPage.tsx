@@ -4,6 +4,7 @@ import { motion } from "framer-motion"
 import { useState } from "react"
 import { Search, Calendar, ArrowRight } from "lucide-react"
 import Link from "next/link"
+import Image from "next/image"
 
 // Blog post data
 const blogPosts = [
@@ -147,7 +148,8 @@ export default function BlogPage() {
               >
                 <Link href={`/blog/${post.slug}`}>
                   <div className="aspect-video relative">
-                    <img
+                    <Image
+                    fill
                       src={post.image}
                       alt={post.title}
                       className="w-full h-full object-cover rounded-t-xl"

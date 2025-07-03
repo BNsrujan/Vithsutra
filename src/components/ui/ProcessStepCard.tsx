@@ -15,7 +15,7 @@ const ProcessStepCard: React.FC<ProcessStepCardProps> = ({
   showArrow = false,
 }) => (
   <div className="relative flex flex-col text-start bg-company-litest-gray justify-center rounded-[28px] p-6 ">
-    <div className="w-full flex justify-center border  bg-company-primary-royalBlue rounded-[24px]">
+    <div className="w-full flex justify-center border   rounded-[24px]">
       <Image
         src={image}
         width={150}

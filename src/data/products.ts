@@ -1,82 +1,96 @@
 // Centralized product data for all products
-import { Shield, Cloud, Calculator, Settings, CreditCard, Layers, Clock, LucideIcon } from "lucide-react"
+import { LucideIcon } from "lucide-react"
 
-type ProductFeature = {
+export type ProductFeature = {
   title: string;
   description: string;
+  image?: string;
   icon?: string | LucideIcon;
 };
 
-type ProductSpec = {
+export type ProductSpec = {
   name: string;
   value: string;
 };
 
-type howitworks = {
+export type HowItWorks = {
   image: string;
   title: string;
   description: string;
 };
 
-type Product = {
+export type Product = {
   id: string;
   name: string;
   tagline: string;
   description: string;
   mainImage: string;
+  productSectionImage:string;
+  tecnicalimage:string;
   features: ProductFeature[];
   specifications: ProductSpec[];
-  Howitworks?: howitworks[];
+  howItWorks?: HowItWorks[];
   benefits: string[];
   applications: string[];
   gallery?: string[];
+  testimonials?: Testimonial[];
 };
+
+export interface Testimonial {
+  id: number;
+  name: string;
+  title: string;
+  company: string;
+  quote: string;
+  avatar?: string;
+}
 
 export const rfidProduct: Product = {
   id: "rfid-telephone",
   name: "RFID-Based Telephone",
   tagline: "RFID-Based Telephone",
+  productSectionImage:"/Products/rfid-tel/telephone[1].png",
   description:
     "This RFID-based telephone is made for hostels, schools, and campuses. It replaces coin phones with smart, secure RFID cards. Each call is tracked, timed, and easy to manage.",
   mainImage: "/Products/rfid-tel/telephone[1].png",
   features:[
     {
-      icon: Shield,
+      image: "/Products/rfid-tel/feature/image 37.svg",
       title: "RFID Security",
       description: "Secure access with individual RFID card authentication.",
     },
     {
-      icon: Cloud,
+      image: "/Products/rfid-tel/feature/image 38.svg",
       title: "Cloud Dashboard",
       description: "Live data monitoring with admin-level access from anywhere.",
     },
     {
-      icon: Calculator,
+      image: "/Products/rfid-tel/feature/image 39.svg",
       title: "Smart Billing",
       description: "$1 is deducted for every 60 seconds of talktime.",
     },
     {
-      icon: Settings,
+      image: "/Products/rfid-tel/feature/image 40.svg",
       title: "Custom Rules",
       description: "Set limits for call time, users, or access hours.",
     },
     {
-      icon: CreditCard,
+      image: "/Products/rfid-tel/feature/image 41.svg",
       title: "Easy Recharge",
       description: "Top and recharge using VINSura's recharge machine.",
     },
     {
-      icon: Layers,
+      image: "/Products/rfid-tel/feature/image 42.svg",
       title: "Durable Hardware",
       description: "Built for long-term public use with low power",
     },
     {
-      icon: Clock,
+      image: "/Products/rfid-tel/feature/image 43.svg",
       title: "24/7 operational availability",
       description: "Operational anytime, day or night.",
     },
   ],
-  Howitworks: [
+  howItWorks: [
     {
       image: "/Products/rfid-tel/setp1.png",
       title: "Tap to Recharge",
@@ -97,6 +111,25 @@ export const rfidProduct: Product = {
       title: "Auto Deduction",
       description: "Amount is deducted from the card",
     },
+  ],
+  tecnicalimage:"/Products/rfid-tel/tec_telephone.svg",
+  testimonials:[
+    {
+      id: 1,
+      name: "Ragavendra  Shetty",
+      title: "Hostel Manager",
+      company: "Ski-line Boys Hostel, Mysore",
+      quote:
+        "Managing communication in a boys' hostel with over 300 students was always a challenge especially when students' personalphones were often misplaced or misused. Since installing these RFID-based telephones, daily communication has become streamlined and secure. Each student now has verified access, and calls can be tracked for accountability. The product has drastically reduced misuse and brought a sense of discipline in the hostel. It's become an essential part of our daily routine.",
+    },
+    {
+      id: 2,
+      name: "Surjeet Yadav",
+      title: "Site Operations Head",
+      company: "Mahadev Mining Corporation, Jharkhand",
+      quote:"Our mining site is located deep in a region where mobile networks from different SIM providers constantly fail. Communication was a huge bottleneck affecting both safety and coordination. After implementing these telephones with wide coverage antennas,  we've finally found a reliable solution. Now, our teams stay connected across the entire site, without worrying about poor signal  strength. It's a game-changer for the mining industry."
+    },
+  
   ],
   specifications: [
     {
@@ -146,26 +179,46 @@ export const biometricProduct: Product = {
     "Affordable biometric access with cloud dashboard & real-time monitoring",
   description:
     "Our biometric access system provides secure, reliable, and affordable authentication solutions with real-time monitoring capabilities. The system integrates seamlessly with existing infrastructure while providing advanced security features and comprehensive access control.",
-  mainImage: "/robotics/Smart_Manufacturing.png",
+  mainImage: "/Products/biometric-product/main_photo2.svg",
+  productSectionImage:"/Products/biometric-product/main_productsection.svg",
   features: [
     {
       title: "Cloud Dashboard",
       description:
         "Real-time monitoring and access control through our intuitive cloud dashboard",
-      icon: "/icons/cloud.svg",
+      icon: "Cloud",
     },
     {
       title: "Multi-factor Authentication",
       description:
         "Enhanced security with fingerprint, face recognition, and RFID options",
-      icon: "/icons/security.svg",
+      icon: "Shield",
     },
     {
       title: "Real-time Monitoring",
       description:
         "Instant alerts and comprehensive access logs for better security management",
-      icon: "/icons/monitor.svg",
+      icon: "Monitor",
     },
+  ],
+  tecnicalimage:"/Products/rfid-tel/tec_telephone.svg",
+  testimonials:[
+    {
+      id: 1,
+      name: "Ragavendra  Shetty",
+      title: "Hostel Manager",
+      company: "Ski-line Boys Hostel, Mysore",
+      quote:
+        "Managing communication in a boys' hostel with over 300 students was always a challenge especially when students' personalphones were often misplaced or misused. Since installing these RFID-based telephones, daily communication has become streamlined and secure. Each student now has verified access, and calls can be tracked for accountability. The product has drastically reduced misuse and brought a sense of discipline in the hostel. It's become an essential part of our daily routine.",
+    },
+    {
+      id: 2,
+      name: "Surjeet Yadav",
+      title: "Site Operations Head",
+      company: "Mahadev Mining Corporation, Jharkhand",
+      quote:"Our mining site is located deep in a region where mobile networks from different SIM providers constantly fail. Communication was a huge bottleneck affecting both safety and coordination. After implementing these telephones with wide coverage antennas,  we've finally found a reliable solution. Now, our teams stay connected across the entire site, without worrying about poor signal  strength. It's a game-changer for the mining industry."
+    },
+  
   ],
   specifications: [
     {
@@ -216,22 +269,42 @@ export const hydroponicProduct: Product = {
   description:
     "Our VIthNet Hydroponic Controller brings precision agriculture to your fingertips. With advanced sensor technology and real-time monitoring, it optimizes growing conditions for maximum yield while minimizing resource usage.",
   mainImage: "/appli_image_iiot/Industrial-Automation.jpg",
+  productSectionImage:"/Products/biometric-product/main_productsection.svg",
   features: [
     {
       title: "Real-time Monitoring",
       description: "Live tracking of all critical growing parameters",
-      icon: "/icons/monitor.svg",
+      icon: "Monitor",
     },
     {
       title: "Automated Control",
       description: "Smart adjustment of nutrient levels and environmental conditions",
-      icon: "/icons/automation.svg",
+      icon: "Settings",
     },
     {
       title: "Cloud Dashboard",
       description: "Access your farm's data from anywhere, anytime",
-      icon: "/icons/cloud.svg",
+      icon: "Cloud",
     },
+  ],
+  tecnicalimage:"/Products/rfid-tel/tec_telephone.svg",
+  testimonials:[
+    {
+      id: 1,
+      name: "Ragavendra  Shetty",
+      title: "Hostel Manager",
+      company: "Ski-line Boys Hostel, Mysore",
+      quote:
+        "Managing communication in a boys' hostel with over 300 students was always a challenge especially when students' personalphones were often misplaced or misused. Since installing these RFID-based telephones, daily communication has become streamlined and secure. Each student now has verified access, and calls can be tracked for accountability. The product has drastically reduced misuse and brought a sense of discipline in the hostel. It's become an essential part of our daily routine.",
+    },
+    {
+      id: 2,
+      name: "Surjeet Yadav",
+      title: "Site Operations Head",
+      company: "Mahadev Mining Corporation, Jharkhand",
+      quote:"Our mining site is located deep in a region where mobile networks from different SIM providers constantly fail. Communication was a huge bottleneck affecting both safety and coordination. After implementing these telephones with wide coverage antennas,  we've finally found a reliable solution. Now, our teams stay connected across the entire site, without worrying about poor signal  strength. It's a game-changer for the mining industry."
+    },
+  
   ],
   specifications: [
     {

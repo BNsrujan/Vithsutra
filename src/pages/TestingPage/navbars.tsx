@@ -1,6 +1,5 @@
 "use client"
 
-import * as React from "react"
 import Link from "next/link"
 import { CircleCheckIcon, CircleHelpIcon, CircleIcon } from "lucide-react"
 
@@ -209,4 +208,8 @@ function ListItem({
       </NavigationMenuLink>
     </li>
   )
+}
+
+export default function NavbarPage() {
+  return <NavigationMenuDemo />;
 }

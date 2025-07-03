@@ -132,7 +132,7 @@ export default function CaseStudiesPage() {
                 </div>
                 <div className="p-6">
                   <div className="flex items-center gap-4 mb-4">
-                    <img
+                    <Image
                       src={study.logo}
                       alt={study.client}
                       width={48}
@@ -174,7 +174,7 @@ export default function CaseStudiesPage() {
             className="bg-white rounded-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto"
           >
             <div className="relative">
-              <img
+              <Image
                 src={selectedCase.image}
                 alt={selectedCase.title}
                 width={800}
@@ -190,7 +190,7 @@ export default function CaseStudiesPage() {
             </div>
             <div className="p-8">
               <div className="flex items-center gap-4 mb-6">
-                <img
+                <Image
                   src={selectedCase.logo}
                   alt={selectedCase.client}
                   width={64}

@@ -21,7 +21,7 @@ import { ArrowUpRightIcon } from "lucide-react";
 
 
 interface CarouselProps {
-  items: JSX.Element[];
+  items: React.ReactNode[];
   initialScroll?: number;
 }
 
@@ -101,7 +101,7 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
     <CarouselContext.Provider
       value={{ onCardClose: handleCardClose, currentIndex }}
     >
-      <div className="relative w-full">
+      <div className="relative w-full  overflow-x-visible ">
         <div
           className="flex w-full overflow-x-scroll overscroll-x-auto scroll-smooth py-10 [scrollbar-width:none] "
           ref={carouselRef}
@@ -109,7 +109,7 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
         >
           <div
             className={cn(
-              "absolute right-0 z-[1000] h-auto w-[5%] overflow-hidden bg-gradient-to-l",
+              "absolute right-0 z-[1000] h-auto w-[5%]  bg-gradient-to-l",
             )}
           ></div>
 
@@ -131,8 +131,7 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
                   transition: {
                     duration: 0.5,
                     delay: 0.2 * index,
-                    ease: "easeOut",
-                    once: true,
+                    ease: "easeOut"
                   },
                 }}
                 key={"card" + index}
@@ -175,8 +174,13 @@ export const Card = ({
 }) => {
   const [open, setOpen] = useState(false);
   const [isTouched, setIsTouched] = useState(false);
-  const containerRef = useRef<HTMLDivElement>(null);
-  const { onCardClose, currentIndex } = useContext(CarouselContext);
+  const containerRef = useRef<HTMLDivElement>(null!);
+  const { onCardClose } = useContext(CarouselContext);
+
+  const handleClose = React.useCallback(() => {
+    setOpen(false);
+    onCardClose(index);
+  }, [onCardClose, index]);
 
   useEffect(() => {
     function onKeyDown(event: KeyboardEvent) {
@@ -193,17 +197,12 @@ export const Card = ({
 
     window.addEventListener("keydown", onKeyDown);
     return () => window.removeEventListener("keydown", onKeyDown);
-  }, [open]);
+  }, [open, handleClose]);
 
-  useOutsideClick(containerRef, () => handleClose());
+  useOutsideClick(containerRef, handleClose);
 
   const handleOpen = () => {
     setOpen(true);
-  };
-
-  const handleClose = () => {
-    setOpen(false);
-    onCardClose(index);
   };
 
   const handleTouchStart = () => {
@@ -255,7 +254,7 @@ export const Card = ({
               </button>
               <motion.p
                 layoutId={layout ? `category-${card.title}` : undefined}
-                className={`${text.cardsubtext} text-black dark:text-white`}
+                className={`${text.cardBodytext} text-black dark:text-white`}
               >
                 {card.category}
               </motion.p>
@@ -295,7 +294,7 @@ export const Card = ({
         <div className=" absolute bottom-0 left-1 z-40 p-8">
           <motion.p
             layoutId={layout ? `category-${card.category}` : undefined}
-            className={`${text.cardsubtext} text-left text-black transition-all duration-700 ease-in-out group-hover:text-company-black`}
+            className={`${text.cardBodytext} text-left text-black transition-all duration-700 ease-in-out group-hover:text-company-black`}
           >
             {card.category}
           </motion.p>

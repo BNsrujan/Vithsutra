@@ -1,8 +1,10 @@
 // pages/index.js
+
 "use client"
-import { motion, AnimatePresence } from "framer-motion"
+import { motion, AnimatePresence } from "motion/react"
 import { useState, useEffect } from "react"
 
+export default function TextAppierAnimation() {
   const texts = ["We Offer", "IIT", "Robotics"];
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -12,7 +14,7 @@ import { useState, useEffect } from "react"
     }, 2000); // Change text every 2 seconds
 
     return () => clearInterval(interval);
-  }, []);
+  }, [texts.length]);
 
   return (
     <div className="h-[300vh] relative bg-gray-50 w-screen">

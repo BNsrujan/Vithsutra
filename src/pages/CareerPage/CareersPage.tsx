@@ -243,7 +243,7 @@ export default function CareersPage() {
                 className="bg-white rounded-xl transition-all duration-300"
               >
                 <div className="aspect-video relative">
-                  <img
+                  <Image
                     src={job.image}
                     alt={job.title}
                     width={800}

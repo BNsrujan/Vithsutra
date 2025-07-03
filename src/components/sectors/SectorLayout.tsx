@@ -10,7 +10,12 @@ import { SectionHeader } from "../ui/section-header";
 import { containerVariants, itemVariants } from "@/lib/animations";
 import Link from "next/link";
 import Image from "next/image";
-
+import { Carousel } from "./Carousel";
+interface CarouselItem {
+  image: string;
+  caption: string;
+  link: string;
+}
 interface SectorData {
   title: string;
   description: string;
@@ -62,7 +67,7 @@ const SectorLayout: React.FC<SectorLayoutProps> = ({ data }) => {
             {data.title}
           </motion.h1>
           <motion.p 
-            className={`${text. Extratex} md:w-9/12 text-company-mid-gray `}
+            className={`${text.Extratext} md:w-9/12 text-company-mid-gray `}
             variants={itemVariants}
           >
             {data.description}
@@ -95,11 +100,11 @@ const SectorLayout: React.FC<SectorLayoutProps> = ({ data }) => {
           <div className="mt-8 sm:mt-12">
             <Carousel 
               items={data.carouselItems}
-              variant="default"
-              autoPlay={true}
-              interval={5000}
-              showIndicators={true}
-              showNavigation={true}
+              // variant="default"
+              // autoPlay={true}
+              // interval={5000}
+              // showIndicators={true}
+              // showNavigation={true}
             />
           </div>
         </div>
@@ -185,12 +190,12 @@ const SectorLayout: React.FC<SectorLayoutProps> = ({ data }) => {
                 className="bg-company-white p-6 sm:p-8 rounded-lg shadow-sm"
               >
                 <div className="w-12 h-12 sm:w-16 sm:h-16 mb-4 sm:mb-6">
-                  <img src={solution.icon} alt={solution.title} className="w-full h-full object-contain" />
+                  <Image src={solution.icon} alt={solution.title} className="w-full h-full object-contain" />
                 </div>
                 <h3 className={`${text.Sectiontexthead} text-company-gray mb-2 sm:mb-3`}>
                   {solution.title}
                 </h3>
-                <p className={`${text. Extratex} text-company-mid-gray`}>
+                <p className={`${text.Extratext} text-company-mid-gray`}>
                   {solution.description}
                 </p>
               </motion.div>
@@ -224,7 +229,7 @@ const SectorLayout: React.FC<SectorLayoutProps> = ({ data }) => {
                   <h3 className={`${text.Sectiontexthead} text-company-gray mb-2 sm:mb-3 hover:text-company-primary-royalBlue transition-colors`}>
                     {industry.title}
                   </h3>
-                  <p className={`${text. Extratex} text-company-mid-gray`}>
+                  <p className={`${text.Extratext} text-company-mid-gray`}>
                     {industry.description}
                   </p>
                 </Link>
@@ -250,7 +255,7 @@ const SectorLayout: React.FC<SectorLayoutProps> = ({ data }) => {
             Ready to Transform Your Industry?
           </motion.h2>
           <motion.p 
-            className={`${text. Extratex} text-company-white/80 mb-8 sm:mb-12 max-w-2xl mx-auto`}
+            className={`${text.Extratext} text-company-white/80 mb-8 sm:mb-12 max-w-2xl mx-auto`}
             variants={itemVariants}
           >
             Let&apos;s discuss how our solutions can help you achieve your goals.

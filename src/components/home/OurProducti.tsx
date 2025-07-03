@@ -62,9 +62,9 @@ const cards: Card[] = [
 
 export default function CardSection() {
   return (
-    <section className="md:py-24 md:px-4  sm:px-4 lg:px-8">
+    <section className="md:py-24  overflow-visible md:px-4  sm:px-4 lg:px-8">
       <motion.div 
-        className="mx-auto "
+        className="mx-auto  overflow-visible z-10"
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
@@ -84,7 +84,7 @@ export default function CardSection() {
 
         {/* Carousel Container */}
         <motion.div 
-          className="relative md:overflow-hidden "
+          className="relative  overflow-visible z-10"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}

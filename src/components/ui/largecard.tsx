@@ -62,14 +62,14 @@ function Largecard({ index, feature, onCardClick, className = "" }: LargecardPro
 
   return (
     <div 
-      className={`relative overflow-hidden rounded-2xl cursor-pointer ${className}`}
+      className={`relative  rounded-2xl cursor-pointer ${className}`}
       onClick={handleClick}
     >
       <motion.div
         key={index}
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: "-100px" }}
+        viewport={{ once: true, margin: "100px" }}
         transition={{
           duration: 0.7,
           delay: index * 0.2,
@@ -103,7 +103,7 @@ function Largecard({ index, feature, onCardClick, className = "" }: LargecardPro
             <h3 className={`${text.SectionHeader} text-company-white-text ${isTouched ? 'text-company-white-text' : 'group-hover:text-company-white-text'} transition-all duration-700 ease-in-out`}>
               {feature.title}
             </h3>
-            <p className={`${text.Sectionbodyteexts} text-clip h-4 md:h-full md:w-full w-80 sm:w-full text-company-light-gray ${isTouched ? 'text-company-white-text' : 'group-hover:text-company-white-text'} transition-all duration-700 ease-in-out`}>
+            <p className={`${text.cardBodytextwrape} text-clip h-4 md:h-full md:w-full w-80 sm:w-full text-company-light-gray  ${isTouched ? 'text-company-white-text' : 'group-hover:text-company-white-text'} transition-all duration-700 ease-in-out`}>
               {feature.description}
             </p>
           </motion.div>

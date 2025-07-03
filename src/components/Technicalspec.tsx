@@ -117,7 +117,7 @@ const TechnicalSpecs = () => {
                           transition={{ delay: detailIdx * 0.1 }}
                         >
                           <div className="w-2 h-2 bg-gradient-to-r from-company-primary-royalBlue to-blue-600 rounded-full mt-2 flex-shrink-0"></div>
-                          <p className={`${text.cardsubtext} text-company-mid-gray`}>{detail}</p>
+                          <p className={`${text.cardBodytext} text-company-mid-gray`}>{detail}</p>
                         </motion.div>
                       ))}
                     </div>

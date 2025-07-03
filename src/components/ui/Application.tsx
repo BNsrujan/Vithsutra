@@ -107,7 +107,7 @@ function ApplicationCarousel() {
               />
               <div className=" absolute bottom-0  p-12 text-start w-full">
                 <h2 className={`${text.cardHeadingtext} mt-2`}>{currentApp.name}</h2>
-                <p className={`${text.cardsubtext} text-gray-600 mt-2`}>{currentApp.subtext}</p>
+                <p className={`${text.cardBodytext} text-gray-600 mt-2`}>{currentApp.subtext}</p>
               </div>
             </motion.div>
           </AnimatePresence>

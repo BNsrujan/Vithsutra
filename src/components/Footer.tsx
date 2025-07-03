@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
+import { text } from "@/lib/typography";
 
 const industries = [
   { name: "Food Processing", href: "/industries/food-processing" },
@@ -41,109 +42,110 @@ const legalLinks = [
 export default function Footer() {
   return (
     <footer className="bg-company-litest-gray text-company-black">
-      <div className="max-w-[1400px] mx-auto px-4 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-16">
+      <div className="max-w-[1700px] mx-auto justify-between pt-12 pb-[12px] flex flex-col items-baseline">
+        <div className="w-full flex flex-col lg:flex-row items-start gap-12 justify-between">
           {/* logo section */}
-          <div className="lg:col-span-1">
-            <Link href="/" className="inline-block">
-              <Image 
-                src="/logo/company_logo_without_text.png" 
-                alt="Company Logo" 
-                width={50} 
-                height={50}
-                className="mb-4"
-              />
-            </Link>
-            <h1 className="text-2xl font-bold text-company-blue">Vithsutra</h1>
-            <p className="text-company-text-gray text-sm mt-2">
+          <div className="flex-shrink-0 max-w-[700px]  lg:w-auto mb-8 lg:mb-0">
+            <div className="flex gap-2 items-center">
+              <Link href="/" className="inline-block">
+                <Image 
+                  src="/logo/company_logo_without_text.png" 
+                  alt="Company Logo" 
+                  width={50} 
+                  height={50}
+                  className="w-16 mb-[8px]"
+                />
+              </Link>
+              <h1 className={`${text.Sectionbodytext}`}>Vithsutra</h1>
+            </div>
+            <p className={` ${text.FooterHeadingtext} text-company-gray-text  font-semibold w-[400px]`}>
               Empowering industries with innovative automation solutions and cutting-edge technology.
             </p>
           </div>
 
           {/* Navigation Sections */}
-          <div className="lg:col-span-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:pl-8">
-            {/* Industries */}
-            <div>
-              <h3 className="text-lg font-semibold mb-4 text-company-blue">Industries</h3>
-              <ul className="space-y-2">
-                {industries.map((industry) => (
-                  <li key={industry.name}>
-                    <Link 
-                      href={industry.href} 
-                      className="text-company-text-gray hover:text-company-blue text-sm transition-colors"
-                    >
-                      {industry.name}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Solutions */}
-            <div>
-              <h3 className="text-lg font-semibold mb-4 text-company-blue">Solutions</h3>
-              <ul className="space-y-2">
-                {solutions.map((solution) => (
-                  <li key={solution.name}>
-                    <Link 
-                      href={solution.href} 
-                      className="text-company-text-gray hover:text-company-blue text-sm transition-colors"
-                    >
-                      {solution.name}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Technologies */}
-            <div>
-              <h3 className="text-lg font-semibold mb-4 text-company-blue">Technologies</h3>
-              <ul className="space-y-2">
-                {technologies.map((tech) => (
-                  <li key={tech.name}>
-                    <Link 
-                      href={tech.href} 
-                      className="text-company-text-gray hover:text-company-blue text-sm transition-colors"
-                    >
-                      {tech.name}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Company & Contact */}
-            <div>
-              <h3 className="text-lg font-semibold mb-4 text-company-blue">Company</h3>
-              <ul className="space-y-2">
-                {companyLinks.map((link) => (
-                  <li key={link.name}>
-                    <Link 
-                      href={link.href} 
-                      className="text-company-text-gray hover:text-company-blue text-sm transition-colors"
-                    >
-                      {link.name}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
+          <div className="flex-1 max-w-[900px] ">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:pl-8 w-full">
+              {/* Industries */}
+              <div>
+                <h3 className={`text-lg font-semibold mb-4 text-company-blue ${text.FooterHeadingtext}`}>Industries</h3>
+                <ul className="space-y-[4px]">
+                  {industries.map((industry) => (
+                    <li key={industry.name}>
+                      <Link 
+                        href={industry.href} 
+                        className={`text-company-text-gray hover:text-company-blue text-sm transition-colors ${text.Footerlinktext}`}
+                      >
+                        {industry.name}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              {/* Solutions */}
+              <div>
+                <h3 className={`text-lg font-semibold mb-4 text-company-blue ${text.FooterHeadingtext}`}>Solutions</h3>
+                <ul className="space-y-[4px]">
+                  {solutions.map((solution) => (
+                    <li key={solution.name}>
+                      <Link 
+                        href={solution.href} 
+                        className={`text-company-text-gray hover:text-company-blue text-sm transition-colors ${text.Footerlinktext}`}
+                      >
+                        {solution.name}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              {/* Technologies */}
+              <div>
+                <h3 className={`text-lg font-semibold mb-4 text-company-blue ${text.FooterHeadingtext}`}>Technologies</h3>
+                <ul className="space-y-[4px]">
+                  {technologies.map((tech) => (
+                    <li key={tech.name}>
+                      <Link 
+                        href={tech.href} 
+                        className={`text-company-text-gray hover:text-company-blue text-sm transition-colors ${text.Footerlinktext}`}
+                      >
+                        {tech.name}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              {/* Company & Contact */}
+              <div>
+                <h3 className={`text-lg font-semibold mb-4 text-company-blue ${text.FooterHeadingtext}`}>Company</h3>
+                <ul className="space-y-[4px]">
+                  {companyLinks.map((link) => (
+                    <li key={link.name}>
+                      <Link 
+                        href={link.href} 
+                        className={`text-company-text-gray hover:text-company-blue text-sm transition-colors ${text.Footerlinktext}`}
+                      >
+                        {link.name}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
           </div>
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-company-gray mt-12 pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <p className="text-company-text-gray text-sm">
+        <div className="border-t border-company-gray mt-[24px] pt-[8px] w-full">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+            <p className={` ${text.FooterHeadingtext} text-company-text-gray text-sm`}>
               © {new Date().getFullYear()} Vithsutra. All rights reserved.
             </p>
-            <div className="flex space-x-6 mt-4 md:mt-0">
+            <div className="flex flex-wrap justify-center md:justify-end space-x-6 mt-2 md:mt-0">
               {legalLinks.map((link) => (
                 <Link 
                   key={link.name}
                   href={link.href} 
-                  className="text-company-text-gray hover:text-company-blue text-sm transition-colors"
+                  className={`text-company-text-gray hover:text-company-blue text-sm transition-colors ${text.Footerlinktext}`}
                 >
                   {link.name}
                 </Link>

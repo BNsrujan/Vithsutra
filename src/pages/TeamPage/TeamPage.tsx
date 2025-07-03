@@ -3,6 +3,7 @@
 import { motion } from "framer-motion"
 import { useState } from "react"
 import { Linkedin, Github, Twitter } from "lucide-react"
+import Image from "next/image"
 
 // Team member data
 const teamMembers = [
@@ -149,7 +150,8 @@ export default function TeamPage() {
                 className="bg-white rounded-xl shadow-sm hover:shadow-md transition-all duration-300"
               >
                 <div className="aspect-square relative">
-                  <img
+                  <Image
+                  fill
                     src={member.image}
                     alt={member.name}
                     className="w-full h-full object-cover rounded-t-xl"

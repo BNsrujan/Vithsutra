@@ -6,55 +6,14 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { text } from "@/lib/typography";
 import Heading from "@/components/ui/heading";
-import {
-  containerVariants,
-
-  fadeInUp,
-  fadeInDown,
-} from "@/lib/motion";
+import { containerVariants, fadeInUp, fadeInDown } from "@/lib/motion";
 import { Carousel, Card } from "@/components/ui/apple-cards-carousel";
 import ProcessStepCard from "@/components/ui/ProcessStepCard";
 import TestimonialsCarousel from "@/components/ui/testimonials-carousel";
 import Application from "../ui/Application";
 import { useRouter } from "next/navigation";
 import { DialogDemo } from "../Dialog";
-import TechnicalSpecs from "../Technicalspec";
-import { LucideIcon } from "lucide-react";
-
-
-// Define the product feature type
-type ProductFeature = {
-  title: string;
-  description: string;
-  icon?: string | LucideIcon;
-};
-
-// Define the product specification type
-type ProductSpec = {
-  name: string;
-  value: string;
-};
-
-// Define the main product type
-type Product = {
-  id: string;
-  name: string;
-  tagline: string;
-  description: string;
-  mainImage: string;
-  features: ProductFeature[];
-  specifications: ProductSpec[];
-  Howitworks?:howitworks[];
-  benefits: string[];
-  applications: string[];
-  gallery?: string[];
-};
-
-interface howitworks{
-  image:string;
-  title:string;
-  description:string
-}
+import { Product } from "@/data/products";
 
 interface ProductPageProps {
   product: Product;
@@ -65,7 +24,6 @@ export default function ProductPage({
   product,
   otherProducts = [],
 }: ProductPageProps) {
-
   const router = useRouter();
 
   return (
@@ -126,7 +84,9 @@ export default function ProductPage({
                   ease: "easeInOut",
                 }}
               >
-                <h3 className="text-lg md:text-xl font-semibold mb-2">Secure</h3>
+                <h3 className="text-lg md:text-xl font-semibold mb-2">
+                  Secure
+                </h3>
                 <p className="text-company-black text-xs md:text-base">
                   RFID authentication ensures secure access and usage tracking
                 </p>
@@ -172,49 +132,58 @@ export default function ProductPage({
       </section>
 
       {/* Features Section */}
-      <section className="py-24 px-4 md:px-8">
+      <section className="py-24  flex flex-col justify-center px-4 md:px-8">
         <div className="max-w-7xl mx-auto">
           <Heading heading="FEATURES" Display="Key Features" />
-          <div className="max-w-6xl mx-auto p-6">
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {product.features.map((feature, idx) => {
-          let IconComponent = null;
-          if (typeof feature.icon === "string") {
-            IconComponent = (
-              <Image src={feature.icon} alt={feature.title} width={24} height={24} />
-            );
-          } else if (feature.icon) {
-            IconComponent = React.createElement(feature.icon, { className: "w-6 h-6 text-gray-700" });
-          }
-          return (
-            <div
-              key={feature.title + idx}
-              className="flex items-start gap-4 p-6 bg-white rounded-lg border border-gray-200 hover:shadow-md transition-shadow"
-            >
-              <div className="flex-shrink-0">
-                <div className="w-12 h-12 bg-gray-100 rounded-lg flex items-center justify-center">
-                  {IconComponent}
-                </div>
-              </div>
-              <div className="flex-1">
-                <h3 className="font-semibold text-gray-900 text-lg mb-2">{feature.title}</h3>
-                <p className="text-gray-600 text-sm leading-relaxed">{feature.description}</p>
-              </div>
+          <div className="py-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {product.features.map((feature, idx) => {
+                const IconComponent = feature.image ? (
+                  <Image
+                    src={feature.image}
+                    alt={feature.title}
+                    width={40}
+                    height={40}
+                  />
+                ) : typeof feature.icon === "function" ? (
+                  React.createElement(feature.icon, {
+                    className: "w-6 h-6 text-gray-700",
+                  })
+                ) : null;
+
+                return (
+                  <div
+                    key={feature.title + idx}
+                    className="flex items-start gap-4  border p-2  justify-center  rounded-lg"
+                  >
+                    <div className="flex-shrink-0">
+                      <div className="w-20 h-20 bg-white border border-gray-200 rounded-lg p-2 flex items-center justify-center">
+                        {IconComponent}
+                      </div>
+                    </div>
+                    <div className="flex-1 justify-center h-full">
+                      <h3 className={` ${text.cardHeadingsmall}  text-gray-900 `}>
+                        {feature.title}
+                      </h3>
+                      <p className="text-sm text-gray-600 leading-relaxed">
+                        {feature.description}
+                      </p>
+                    </div>
+                  </div>
+                );
+              })}
             </div>
-          );
-        })}
-      </div>
-    </div>
+          </div>
         </div>
       </section>
 
       {/* How It Works Section */}
-      {product.Howitworks && product.Howitworks.length > 0 && (
+      {product.howItWorks && product.howItWorks.length > 0 && (
         <section className="py-16 px-4 md:py-24 md:px-8">
           <div className="max-w-7xl mx-auto">
             <Heading heading="PROCESS" Display="How It Works" />
             <div className="flex flex-col md:flex-row items-center justify-between gap-8">
-              {product.Howitworks.map((step, idx, arr) => (
+              {product.howItWorks.map((step, idx, arr) => (
                 <ProcessStepCard
                   key={step.title}
                   image={step.image}
@@ -229,8 +198,8 @@ export default function ProductPage({
       )}
 
       {/* Technical Specifications Section */}
-      <section className="py-24">
-      <TechnicalSpecs />
+      <section className="py-24 justify-center flex ">
+        <Image src={product.tecnicalimage} alt={product.name} width={1000} height={1000} />
       </section>
 
       {/* Applications Section */}
@@ -253,7 +222,7 @@ export default function ProductPage({
               Ready to Get Started?
             </h2>
             <p
-              className={`${text.Sectionbodyteexts} text-company-litest-gray  mb-10 max-w-2xl mx-auto`}
+              className={`${text.Sectionbodytexts} text-company-litest-gray  mb-10 max-w-2xl mx-auto`}
             >
               Contact us today to learn more about {product.name} and how it can
               benefit your business.
@@ -272,9 +241,11 @@ export default function ProductPage({
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-24">
-        <TestimonialsCarousel />
-      </section>
+      {product.testimonials && product.testimonials.length > 0 && (
+        <section className="py-24 flex justify-center">
+          <TestimonialsCarousel testimonials={product.testimonials} />
+        </section>
+      )}
 
       {/* Other Products Section */}
       {otherProducts.length > 0 && (
@@ -293,12 +264,12 @@ export default function ProductPage({
                   <Card
                     key={p.id}
                     card={{
-                      src: p.mainImage,
+                      src: p.productSectionImage,
                       title: p.name,
                       category: p.tagline,
                       content: (
                         <div className="space-y-4">
-                          <p className={`${text.cardsubtext} text-gray-600`}>
+                          <p className={`${text.cardBodytext} text-gray-600`}>
                             {p.description}
                           </p>
                           <a

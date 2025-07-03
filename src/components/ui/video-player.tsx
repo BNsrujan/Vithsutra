@@ -37,7 +37,7 @@ export function VideoPlayer({
   const [showControls, setShowControls] = useState(true)
   const [isHovered, setIsHovered] = useState(false)
   const videoRef = useRef<HTMLVideoElement>(null)
-  const controlsTimeoutRef = useRef<NodeJS.Timeout>()
+  const controlsTimeoutRef = useRef<NodeJS.Timeout | null>(null)
 
   useEffect(() => {
     if (videoRef.current) {

@@ -1,5 +1,7 @@
+"use client"
+
 import React from 'react';
-import { motion } from 'framer-motion';
+import { motion } from 'motion/react';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { text } from '@/lib/typography';
@@ -116,7 +118,7 @@ export default function SoftwaresPage() {
                     <h3 className={`${text.cardHeadingtext} mb-4`}>
                       {feature.title}
                     </h3>
-                    <p className={`${text.cardsubtext} text-gray-600`}>
+                    <p className={`${text.cardBodytext} text-gray-600`}>
                       {feature.description}
                     </p>
                   </div>
@@ -147,7 +149,7 @@ export default function SoftwaresPage() {
                 <div className="w-12 h-12 bg-company-primary-royalBlue rounded-lg flex items-center justify-center mb-4">
                   <div className="text-white text-xl">✓</div>
                 </div>
-                <p className={`${text.cardsubtext} text-gray-700`}>{benefit}</p>
+                <p className={`${text.cardBodytext} text-gray-700`}>{benefit}</p>
               </motion.div>
             ))}
           </motion.div>
@@ -166,7 +168,7 @@ export default function SoftwaresPage() {
             <h2 className={`${text.cardHeadingtext} text-white mb-2`}>
               Ready to Transform Your Operations?
             </h2>
-            <p className={`${text.Sectionbodyteexts} text-gray-200 mb-10 max-w-2xl mx-auto`}>
+            <p className={`${text.Sectionbodytexts} text-gray-200 mb-10 max-w-2xl mx-auto`}>
               Contact us today to learn more about our cloud dashboard solutions and how they can benefit your business.
             </p>
             <Button
