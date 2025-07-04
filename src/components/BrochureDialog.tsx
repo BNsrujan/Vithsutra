@@ -15,13 +15,9 @@ import { Label } from "@/components/ui/label"
 import { text } from "@/lib/typography"
 
 export function DialogDemo() {
-
-    
     const handleSubmit = () =>{
 
     }
-
-
   return (
     <Dialog>
       <form>

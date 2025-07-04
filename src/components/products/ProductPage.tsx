@@ -12,7 +12,7 @@ import ProcessStepCard from "@/components/ui/ProcessStepCard";
 import TestimonialsCarousel from "@/components/ui/testimonials-carousel";
 import Application from "../ui/Application";
 import { useRouter } from "next/navigation";
-import { DialogDemo } from "../Dialog";
+import { DialogDemo } from "../BrochureDialog";
 import { Product } from "@/data/products";
 
 interface ProductPageProps {

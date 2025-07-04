@@ -190,7 +190,7 @@ const SectorLayout: React.FC<SectorLayoutProps> = ({ data }) => {
                 className="bg-company-white p-6 sm:p-8 rounded-lg shadow-sm"
               >
                 <div className="w-12 h-12 sm:w-16 sm:h-16 mb-4 sm:mb-6">
-                  <Image src={solution.icon} alt={solution.title} className="w-full h-full object-contain" />
+                  <Image src={solution.icon} alt={solution.title} fill className="w-full h-full object-contain" />
                 </div>
                 <h3 className={`${text.Sectiontexthead} text-company-gray mb-2 sm:mb-3`}>
                   {solution.title}
