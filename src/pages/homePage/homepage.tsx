@@ -5,8 +5,34 @@ import WeOfferSection from './domain'
 import CardSection from './OurProducti'
 import IndustriesSection from './IndustriesSection'
 import { VentureCapital } from './VentureCaopital'
-import QuickFacts from './QuickFacts'
+import QuickFacts from '../../components/QuickFacts'
 import UniqueFeatures from './UniqueFeatures'
+
+
+const facts = [
+  {
+    number: 2000,
+    suffix: "+",
+    title: "Students Educated",
+  },
+  {
+    number: 1000,
+    suffix: "+",
+    title: "Products Deployed",
+  },
+  
+  {
+    number: 15,
+    suffix: "+",
+    title: "Domains Served",
+  },
+  {
+    number: 2,
+    suffix: "+",
+    title: "Years Of Experience",
+  },
+];
+
 
 function Homepage() {
   return (
@@ -20,7 +46,7 @@ function Homepage() {
           <IndustriesSection />
           <VentureCapital/>
           <UniqueFeatures />
-          <QuickFacts />
+          <QuickFacts facts={facts} />
         </div>
       </div>
     </main>

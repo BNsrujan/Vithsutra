@@ -34,14 +34,14 @@ type MenuSection = {
 const menuData: Record<string, MenuSection> = {
   projects: {
     title: "Solutions",
-    description: "Explore our diverse range of successful projects.",
+    description: "Explore our diverse range of successful Products.",
     href: "/Solutions",
     items: [
-      { title: "RFID-Based Telephone", description: "Secure RFID calling system with student-specific digital balance recharge", href: "/projects/rfid-telephone" },
-      { title: "Biometric System", description: "Affordable biometric authentication with cloud integration and live access logs", href: "/projects/biometric-product" },
-      { title: "Hydroponics Controller ", description: "Precision-controlled farming using industrial-grade sensors and real-time dashboards", href: "/projects/billing-system" },
-      { title: "Robotics Training Program", description: "Hands-on robotics education using collaborative industrial robots like IGUS ReBeL", href: "/projects/hydroponic-controller" },
-      { title: "Industrial Automation Suite", description: "End-to-end automation using PLCs, SCADA, sensors, and remote dashboards", href: "/projects/hydroponic-project" },
+      { title: "RFID-Based Telephone", description: "Secure RFID calling system with student-specific digital balance recharge", href: "/products/rfid-telephone" },
+      { title: "Biometric System", description: "Affordable biometric authentication with cloud integration and live access logs", href: "/products/biometric-product" },
+      { title: "Hydroponics Controller ", description: "Precision-controlled farming using industrial-grade sensors and real-time dashboards", href: "/products/billing-system" },
+      { title: "Robotics Training Program", description: "Hands-on robotics education using collaborative industrial robots like IGUS ReBeL", href: "/products/hydroponic-controller" },
+      { title: "Industrial Automation Suite", description: "End-to-end automation using PLCs, SCADA, sensors, and remote dashboards", href: "/products/hydroponic-project" },
     ]
   },
   technologies: {

@@ -10,10 +10,17 @@ import { containerVariants, fadeInUp, fadeInDown } from "@/lib/motion";
 import { Carousel, Card } from "@/components/ui/apple-cards-carousel";
 import ProcessStepCard from "@/components/ui/ProcessStepCard";
 import TestimonialsCarousel from "@/components/ui/testimonials-carousel";
-import Application from "../ui/Application";
+import Application from "../../components/ui/Application";
 import { useRouter } from "next/navigation";
-import { DialogDemo } from "../BrochureDialog";
+import { DialogDemo } from "../../components/BrochureDialog";
 import { Product } from "@/data/products";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+import QuickFacts from "@/components/QuickFacts";
 
 interface ProductPageProps {
   product: Product;
@@ -29,10 +36,10 @@ export default function ProductPage({
   return (
     <main className="min-h-screen  ">
       {/* Hero Section */}
-      <section className="relative min-h-[80vh] md:min-h-[80vh] lg:h-[93vh] w-full bg-gradient-to-b from-company-primary-royalBlue to-company-white flex flex-col lg:flex-row justify-center items-center ">
+      <section className="relative min-h-[80vh] md:min-h-[80vh] lg:h-[93vh] w-full bg-gradient-to-b from-blue-200 to-company-white flex flex-col lg:flex-row justify-center items-center ">
         <div className="container mx-auto px-4 flex flex-col-reverse lg:flex-row items-center justify-between w-full h-full py-12 md:py-20 lg:py-0">
           {/* Left side - Text Content */}
-          <div className="w-full lg:w-1/2 text-white flex flex-col justify-center h-full items-center lg:items-start mt-8 lg:mt-0">
+          <div className="w-full lg:w-1/2 text-black flex flex-col justify-center h-full items-center lg:items-start mt-8 lg:mt-0">
             <motion.div
               variants={containerVariants}
               initial="hidden"
@@ -74,7 +81,7 @@ export default function ProductPage({
                 priority
               />
               {/* Hovering Cards */}
-              <motion.div
+              {/* <motion.div
                 className="hidden md:block absolute -top-18 -left-5 bg-white/10 backdrop-blur-lg w-[200px] md:w-[260px] p-4 md:p-6 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2"
                 whileHover={{ scale: 1.05 }}
                 animate={{ y: [0, -15, 0, 15, 0] }}
@@ -125,7 +132,8 @@ export default function ProductPage({
                 <p className="text-company-black text-xs md:text-base">
                   Intelligent tracking and management of call duration and usage
                 </p>
-              </motion.div>
+              </motion.div> */}
+
             </motion.div>
           </div>
         </div>
@@ -162,7 +170,9 @@ export default function ProductPage({
                       </div>
                     </div>
                     <div className="flex-1 justify-center h-full">
-                      <h3 className={` ${text.cardHeadingsmall}  text-gray-900 `}>
+                      <h3
+                        className={` ${text.cardHeadingsmall}  text-gray-900 `}
+                      >
                         {feature.title}
                       </h3>
                       <p className="text-sm text-gray-600 leading-relaxed">
@@ -199,7 +209,12 @@ export default function ProductPage({
 
       {/* Technical Specifications Section */}
       <section className="py-24 justify-center flex ">
-        <Image src={product.tecnicalimage} alt={product.name} width={1000} height={1000} />
+        <Image
+          src={product.tecnicalimage}
+          alt={product.name}
+          width={1000}
+          height={1000}
+        />
       </section>
 
       {/* Applications Section */}
@@ -247,6 +262,23 @@ export default function ProductPage({
         </section>
       )}
 
+      {/* F&Q */}
+      <section className="py-24 flex justify-center">
+        <div className="max-w-7xl w-full">
+        <Heading heading="Have any Q&A" Display="Your Query" />
+        <Accordion type="single" collapsible>
+          {product.FaQ &&
+            product.FaQ.length > 0 &&
+            product.FaQ.map(({ qution, answer }) => (
+              <AccordionItem  key={qution} value={qution}>
+                <AccordionTrigger className={`${text.cardBodytext}`} >{qution}</AccordionTrigger>
+                <AccordionContent>{answer}</AccordionContent>
+              </AccordionItem>
+            ))}
+        </Accordion>
+        </div>
+      </section>
+
       {/* Other Products Section */}
       {otherProducts.length > 0 && (
         <section className="py-24">
@@ -289,6 +321,26 @@ export default function ProductPage({
           </div>
         </section>
       )}
+
+      {/*our Galry*/}
+      {product.gallery && product.gallery.length > 0 && (
+        <section>
+        <div className="max-w-7xl">
+          {product.gallery}
+        </div>
+      </section>
+      )}
+
+
+      {/* Our Track */}
+      {product.facts  && (
+        <section className="py-24 flex justify-center">
+          <div className="max-w-7xl ">
+              <QuickFacts facts={product.facts}/>
+          </div>
+        </section>
+      )}
+
     </main>
   );
 }

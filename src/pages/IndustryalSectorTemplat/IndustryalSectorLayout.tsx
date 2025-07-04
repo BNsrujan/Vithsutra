@@ -2,15 +2,17 @@
 
 import React from "react";
 // import { Carousel, type CarouselItem } from "@/components/ui/apple-cards-carousel";
-import { ProductGrid } from "./ProductGrid";
+import { ProductGrid } from "../../components/ProductGrid";
 import { motion } from "framer-motion";
 import { text } from "@/lib/typography";
-import { Button } from "./ui/button";
-import { SectionHeader } from "./ui/section-header";
+import { Button } from "../../components/ui/button";
+import { SectionHeader } from "../../components/ui/section-header";
 import { containerVariants, itemVariants } from "@/lib/animations";
 import Link from "next/link";
 import Image from "next/image";
-import { Carousel } from "./Carousel";
+import { Carousel } from "../../components/CarouselWithL&RArrow";
+
+
 interface CarouselItem {
   image: string;
   caption: string;

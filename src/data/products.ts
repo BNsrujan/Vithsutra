@@ -18,6 +18,11 @@ export type HowItWorks = {
   title: string;
   description: string;
 };
+export interface Fact {
+  number:number;
+  title:string;
+  suffix:string;
+}
 
 export type Product = {
   id: string;
@@ -34,6 +39,8 @@ export type Product = {
   applications: string[];
   gallery?: string[];
   testimonials?: Testimonial[];
+  FaQ: { qution: string; answer: string }[];
+  facts:Fact[];
 };
 
 export interface Testimonial {
@@ -170,6 +177,34 @@ export const rfidProduct: Product = {
     "/appli_image_iiot/Industrial-Automation.jpg",
     "/robotics/The-Future-of-Industrial-IoT.png",
   ],
+  FaQ: [
+    { qution: "What is the warranty period?", answer: "The product comes with a 1-year warranty." },
+    { qution: "Can I recharge the card online?", answer: "Yes, online recharge is supported via the dashboard." },
+    { qution: "Is installation included?", answer: "Yes, installation is included in the package." }
+  ],
+  facts:[
+    {
+      number: 2000,
+      suffix: "+",
+      title: "Students Educated",
+    },
+    {
+      number: 1000,
+      suffix: "+",
+      title: "Products Deployed",
+    },
+    
+    {
+      number: 15,
+      suffix: "+",
+      title: "Domains Served",
+    },
+    {
+      number: 2,
+      suffix: "+",
+      title: "Years Of Experience",
+    },
+  ]
 };
 
 export const biometricProduct: Product = {
@@ -259,6 +294,34 @@ export const biometricProduct: Product = {
     "/robotics/The-Future-of-Industrial-IoT.png",
     "/appli_image_iiot/Smart-robots.jpg",
   ],
+  FaQ: [
+    { qution: "What biometric methods are supported?", answer: "Fingerprint, face recognition, and RFID." },
+    { qution: "Is the dashboard cloud-based?", answer: "Yes, you can access it from anywhere." },
+    { qution: "How many users can be stored?", answer: "Up to 10,000 users." }
+  ],
+  facts:[
+    {
+      number: 2000,
+      suffix: "+",
+      title: "Students Educated",
+    },
+    {
+      number: 1000,
+      suffix: "+",
+      title: "Products Deployed",
+    },
+    
+    {
+      number: 15,
+      suffix: "+",
+      title: "Domains Served",
+    },
+    {
+      number: 2,
+      suffix: "+",
+      title: "Years Of Experience",
+    },
+  ]
 };
 
 export const hydroponicProduct: Product = {
@@ -345,4 +408,32 @@ export const hydroponicProduct: Product = {
     "/robotics/Smart_Manufacturing.png",
     "/appli_image_iiot/Smart-robots.jpg",
   ],
+  FaQ: [
+    { qution: "What sensors are included?", answer: "pH, EC, temperature, humidity, and light sensors." },
+    { qution: "Can I monitor remotely?", answer: "Yes, remote monitoring is available via the cloud dashboard." },
+    { qution: "Is there a backup power option?", answer: "Yes, AC/DC with backup is supported." }
+  ],
+  facts:[
+    {
+      number: 2000,
+      suffix: "+",
+      title: "Students Educated",
+    },
+    {
+      number: 1000,
+      suffix: "+",
+      title: "Products Deployed",
+    },
+    
+    {
+      number: 15,
+      suffix: "+",
+      title: "Domains Served",
+    },
+    {
+      number: 2,
+      suffix: "+",
+      title: "Years Of Experience",
+    },
+  ]
 }; 

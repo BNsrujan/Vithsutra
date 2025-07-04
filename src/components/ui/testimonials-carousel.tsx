@@ -84,7 +84,7 @@ export default function TestimonialsCarousel({ testimonials }: TestimonialsCarou
   };
 
   return (
-    <section className=" px-4 md:px-6 lg:px-8 max-w-7xl mx-auto">
+    <section className=" px-4 md:px-0 max-w-7xl mx-auto">
       <div className="">
         {/* Header */}
         <div className="">

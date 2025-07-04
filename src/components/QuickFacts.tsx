@@ -6,31 +6,6 @@ import { text } from "@/lib/typography";
 import { containerVariants, itemVariants } from "@/lib/animations";
 import { SectionHeader } from "@/components/ui/section-header";
 
-const facts = [
-  {
-    number: 2000,
-    suffix: "+",
-    title: "Students Educated",
-  },
-  {
-    number: 1000,
-    suffix: "+",
-    title: "Products Deployed",
-  },
-  
-  {
-    number: 15,
-    suffix: "+",
-    title: "Domains Served",
-  },
-  {
-    number: 2,
-    suffix: "+",
-    title: "Years Of Experience",
-  },
-  
-
-];
 
 function Counter({ end, suffix, duration = 2 }: { end: number; suffix: string; duration?: number }) {
   const [count, setCount] = React.useState(0);
@@ -69,7 +44,17 @@ function Counter({ end, suffix, duration = 2 }: { end: number; suffix: string; d
   );
 }
 
-export default function QuickFacts() {
+interface Fact {
+  number:number;
+  title:string;
+  suffix:string;
+}
+
+interface factsProps {
+  facts:Fact[]
+}
+
+export default function QuickFacts({facts}:factsProps) {
   return (
     <section className="w-full  ">
       <motion.div 

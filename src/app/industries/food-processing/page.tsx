@@ -1,5 +1,5 @@
 import React from "react";
-import { SectorLayout } from "@/components/IndustryalSectorLayout";
+import { SectorLayout } from "@/pages/IndustryalSectorTemplat/IndustryalSectorLayout";
 
 const foodProcessingData = {
   title: "Food Processing Industry Solutions",
