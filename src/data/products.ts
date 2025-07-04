@@ -99,22 +99,22 @@ export const rfidProduct: Product = {
   ],
   howItWorks: [
     {
-      image: "/Products/rfid-tel/setp1.png",
+      image: "/Products/rfid-tel/how_it_works/setp1.png",
       title: "Tap to Recharge",
       description: "User taps card on VithSutra's recharge machine",
     },
     {
-      image: "/Products/rfid-tel/step2.png",
+      image: "/Products/rfid-tel/how_it_works/step2.png",
       title: "Insert Card",
       description: "Insert RFID card into the telephone unit",
     },
     {
-      image: "/Products/rfid-tel/step3.png",
+      image: "/Products/rfid-tel/how_it_works/step3.png",
       title: "Dial and Talk",
       description: "Dial the number and start your call",
     },
     {
-      image: "/Products/rfid-tel/step4.png",
+      image: "/Products/rfid-tel/how_it_works/step4.png",
       title: "Auto Deduction",
       description: "Amount is deducted from the card",
     },
@@ -236,7 +236,29 @@ export const biometricProduct: Product = {
       icon: "Monitor",
     },
   ],
-  tecnicalimage:"/Products/rfid-tel/tec_telephone.svg",
+  howItWorks: [
+    {
+      image: "/Products/biometric-product/How_it_works/setp1.png",
+      title: "Enroll Fingerprint",
+      description: "Admin scans and stores fingerprints securely using the enrollment interface",
+    },
+    {
+      image: "/Products/biometric-product/How_it_works/step2.png",
+      title: "Place Finger",
+      description: "User places their finger on the sensor to request access.",
+    },
+    {
+      image: "/Products/biometric-product/How_it_works/step3.png",
+      title: " Authenticate",
+      description: "System verifies the fingerprint with stored templates in milliseconds.",
+    },
+    {
+      image: "/Products/biometric-product/How_it_works/step4.png",
+      title: "Access Granted or Denied",
+      description: "Based on custom rules and fingerprint match  access is either approved or denied.",
+    },
+  ],
+  tecnicalimage:"/Products/biometric-product/TechPhoto.svg",
   testimonials:[
     {
       id: 1,
@@ -331,26 +353,53 @@ export const hydroponicProduct: Product = {
     "Smart farming with sensor-driven precision and real-time farm stats display",
   description:
     "Our VIthNet Hydroponic Controller brings precision agriculture to your fingertips. With advanced sensor technology and real-time monitoring, it optimizes growing conditions for maximum yield while minimizing resource usage.",
-  mainImage: "/appli_image_iiot/Industrial-Automation.jpg",
-  productSectionImage:"/Products/biometric-product/main_productsection.svg",
+  mainImage: "/Products/vithnet/vithnet_device_2.svg",
+  productSectionImage:"/Products/vithnet/vithnet_device_2.svg",
   features: [
     {
-      title: "Real-time Monitoring",
-      description: "Live tracking of all critical growing parameters",
-      icon: "Monitor",
+      title: "Multi Seasen ",
+      description: "Grow in any season or location",
+      icon: "/Products/vithnet/features/wether.png",
     },
     {
-      title: "Automated Control",
-      description: "Smart adjustment of nutrient levels and environmental conditions",
-      icon: "Settings",
+      title: "Water Consumtion",
+      description: "Use up to 90% less water",
+      icon: "/Products/vithnet/features/waterconsumtion.png",
     },
     {
-      title: "Cloud Dashboard",
-      description: "Access your farm's data from anywhere, anytime",
-      icon: "Cloud",
+      title: "Achieve consistent",
+      description: "Achieve consistent,high-quality output",
+      icon: "/Products/vithnet/features/isolate.png",
+    },
+    {
+      title: "Real-Time",
+      description: " Track and optimize conditions in real-time",
+      icon: "/Products/vithnet/features/analitecs.png",
     },
   ],
-  tecnicalimage:"/Products/rfid-tel/tec_telephone.svg",
+  howItWorks: [
+    {
+      image: "/Products/vithnet/how_it_work/step1.svg",
+      title: "Sensor Data Collection",
+      description: "VithNet is connected to multiple environmental sensors installed in the hydroponic setup.",
+    },
+    {
+      image: "/Products/vithnet/how_it_work/step2.svg",
+      title: " Instant Data Processing",
+      description: "The system processes the incoming sensor data to ensure it's clean and reliable.",
+    },
+    {
+      image: "/Products/vithnet/how_it_work/step3.svg",
+      title: " Live Dashboard Display",
+      description: "All sensor data is instantly sent to the VithNet web & mobile dashboard.",
+    },
+    {
+      image: "/Products/vithnet/how_it_work/step4.svg",
+      title: "Custom Threshold Alerts",
+      description: "Users can set custom limits or warning levels for any parameter.",
+    },
+  ],
+  tecnicalimage:"/Products/vithnet/vithnet_device_2.svg",
   testimonials:[
     {
       id: 1,
