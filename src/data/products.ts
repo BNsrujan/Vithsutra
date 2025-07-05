@@ -24,6 +24,12 @@ export interface Fact {
   suffix:string;
 }
 
+export type ProductApplication = string | {
+  title: string;
+  image: string;
+  description: string;
+};
+
 export type Product = {
   id: string;
   name: string;
@@ -36,7 +42,7 @@ export type Product = {
   specifications: ProductSpec[];
   howItWorks?: HowItWorks[];
   benefits: string[];
-  applications: string[];
+  applications: ProductApplication[];
   gallery?: string[];
   testimonials?: Testimonial[];
   FaQ: { qution: string; answer: string }[];
@@ -455,18 +461,29 @@ export const hydroponicProduct: Product = {
     "Remote monitoring capability",
     "Data-driven decision making",
   ],
-  applications: [
-    "Commercial Greenhouses",
-    "Vertical Farms",
-    "Research Facilities",
-    "Urban Agriculture",
-    "Educational Institutions",
-    "Home Growers",
-  ],
+
   gallery: [
     "/Products/vithnet/vithnet_device_2.svg",
     "/Products/vithnet/3DproductImage/",
     "/Products/vithnet/Tecnical/",
+  ],
+
+  applications: [
+    {
+      title: "Hydroponics",
+      image: "/images/hydroponics.png", // Replace with actual image path or URL
+      description: "Vithnet automates nutrient delivery, pH control, and water flow for soilless hydroponic systems. It ensures healthy root growth and maximizes yield with precise environmental monitoring."
+    },
+    {
+      title: "Aeroponics",
+      image: "/images/aeroponics.png", // Replace with actual image path or URL
+      description: "With custom integration, Vithnet can control misting cycles and manage nutrient spray timing. Ideal for high-efficiency root oxygenation in vertical and indoor aeroponic setups."
+    },
+    {
+      title: "Aquaponics",
+      image: "/images/aquaponics.png", // Replace with actual image path or URL
+      description: "Vithnet supports plant-side automation by managing pH, water flow, and temperature. It complements fish-plant systems by enabling consistent crop-side conditions."
+    }
   ],
   FaQ: [
     { qution: "Can I automate my hydroponics system using VithNet?", answer: "Yes, VithNet has been deployed across multiple hydroponic farms, helping automate pH, EC, and nutrient cycle monitoring." },
@@ -582,19 +599,19 @@ export const IIOT = {
       name: "Nikhil Jadhav",
       designation: "Project Supervisor – AquaSure Infra Pvt. Ltd.",
       location: "Bengaluru",
-      feedback: `“Managing STPs and ETPs across different cities was chaotic until we adopted VithSutra’s IIoT platform. 
+      feedback: `"Managing STPs and ETPs across different cities was chaotic until we adopted VithSutra's IIoT platform. 
 From flow sensors to tank levels and pump pressure — we now track everything remotely with precise data logs. 
 It has made SLA compliance easier with on-time overflow alerts and live analytics for pump efficiency. 
-The shift from reactive to proactive control has transformed our operational model completely.”`
+The shift from reactive to proactive control has transformed our operational model completely."`
     },
     {
       name: "Farhan Khan",
       designation: "Maintenance Head – CoreFuel Energy Ltd.",
       location: "Mumbai",
-      feedback: `“Safety and uptime are mission-critical in our sector, and VithSutra’s solution has elevated both. 
+      feedback: `"Safety and uptime are mission-critical in our sector, and VithSutra's solution has elevated both. 
 Our team now monitors pipeline pressure, pump vibration, and leak indicators in real time across multiple sites. 
-The system’s threshold-based alarms helped us prevent two major failures in just the first month of deployment. 
-It has reduced our unplanned maintenance and strengthened our remote control and safety protocols.”`
+The system's threshold-based alarms helped us prevent two major failures in just the first month of deployment. 
+It has reduced our unplanned maintenance and strengthened our remote control and safety protocols."`
     }
   ],
   applications: [
@@ -624,7 +641,7 @@ It has reduced our unplanned maintenance and strengthened our remote control and
     }
   ],
   howItWorks: {
-    heading: "How VithSutra’s IIoT Automation Works",
+    heading: "How VithSutra's IIoT Automation Works",
     subheading: "Real-time data. Smarter decisions. Seamless automation.",
     steps: [
       {
@@ -676,7 +693,7 @@ export const roboticsWorkshop = {
   faq: [
     {
       question: "We already have a robotics club. How is this different?",
-      answer: "Most robotics clubs use basic DIY kits. We offer real industrial-grade training with robotic arms, something that’s rarely found in student environments."
+      answer: "Most robotics clubs use basic DIY kits. We offer real industrial-grade training with robotic arms, something that's rarely found in student environments."
     },
     {
       question: "What infrastructure do we need to host this training?",
@@ -688,7 +705,7 @@ export const roboticsWorkshop = {
     },
     {
       question: "What duration does the training cover?",
-      answer: "Our programs range from 2-day workshops to 1-week bootcamps — depending on the institution’s preference and learning goals."
+      answer: "Our programs range from 2-day workshops to 1-week bootcamps — depending on the institution's preference and learning goals."
     },
     {
       question: "Will students receive certification?",
