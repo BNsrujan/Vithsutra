@@ -4,7 +4,7 @@ import React from "react";
 import { InfiniteMovingCards } from "@/components/ui/infinite-moving-cards";
 import { SectionHeader } from "@/components/ui/section-header";
 
-export function VentureCapital() {
+export default function VentureCapital() {
   return (
     <div className="w-full h-[50vh] flex flex-col justify-center content-center">
       <SectionHeader label="" title="Worked With" />

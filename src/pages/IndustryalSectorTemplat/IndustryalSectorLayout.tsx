@@ -277,4 +277,4 @@ const SectorLayout: React.FC<SectorLayoutProps> = ({ data }) => {
   );
 };
 
-export { SectorLayout }; 
+export default SectorLayout ; 
