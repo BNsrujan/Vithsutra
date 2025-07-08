@@ -263,7 +263,7 @@ export default function ProductPage({
       )}
 
       {/* F&Q */}
-      <section className="py-24 flex justify-center">
+      <section className="py-24 px-4 md:px-8 flex justify-center">
         <div className="max-w-7xl w-full">
         <Heading heading="Have any Q&A" Display="Your Query" />
         <Accordion type="single" collapsible>
@@ -271,8 +271,8 @@ export default function ProductPage({
             product.FaQ.length > 0 &&
             product.FaQ.map(({ qution, answer }) => (
               <AccordionItem  key={qution} value={qution}>
-                <AccordionTrigger className={`${text.cardBodytext}`} >{qution}</AccordionTrigger>
-                <AccordionContent>{answer}</AccordionContent>
+                <AccordionTrigger className={`${text.cardBodytext} font-bold text-company-primary-royalBlue`} >{qution}</AccordionTrigger>
+                <AccordionContent className={`${text.cardBodytext} `}>{answer}</AccordionContent>
               </AccordionItem>
             ))}
         </Accordion>

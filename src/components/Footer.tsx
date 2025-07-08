@@ -45,7 +45,7 @@ export default function Footer() {
       <div className="max-w-[1700px] mx-auto justify-between pt-12 pb-[12px] flex flex-col items-baseline">
         <div className="w-full flex flex-col lg:flex-row items-start gap-12 justify-between">
           {/* logo section */}
-          <div className="flex-shrink-0 max-w-[700px]  lg:w-auto mb-8 lg:mb-0">
+          <div className="flex-shrink-0 max-w-[700px] ml-7 md:m-0 lg:w-auto mb-8 lg:mb-0">
             <div className="flex gap-2 items-center">
               <Link href="/" className="inline-block">
                 <Image 
@@ -58,13 +58,13 @@ export default function Footer() {
               </Link>
               <h1 className={`${text.Sectionbodytext}`}>Vithsutra</h1>
             </div>
-            <p className={` ${text.FooterHeadingtext} text-company-gray-text  font-semibold w-[400px]`}>
+            <p className={` ${text.FooterHeadingtext} text-company-gray-text   font-semibold w-[350px]`}>
               Empowering industries with innovative automation solutions and cutting-edge technology.
             </p>
           </div>
 
           {/* Navigation Sections */}
-          <div className="flex-1 max-w-[900px] ">
+          <div className="flex-1 max-w-[900px] ml-7 md:m-0 ">
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:pl-8 w-full">
               {/* Industries */}
               <div>

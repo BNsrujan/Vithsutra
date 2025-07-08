@@ -38,10 +38,10 @@ const text = {
     "text-[14px] sm:text-[18px] md:text-[20px] lg:text-[21px] md:leading-[1.2] tracking-tight font-semibold  text-wrap   text-wrap",
 
   cardBodytext:
-    "text-[14px] sm:text-[18px] md:text-[16px] lg:text-[16px] leading-[0.9] md:leading-[1.3]  tracking-[0] font-semibold   ",
+    "text-[14px] sm:text-[18px] md:text-[18px] lg:text-[16px] leading-[1.1] md:leading-[1.3]  tracking-[0] font-semibold   ",
 
   cardBodytextlight:
-    "text-[16px] sm:text-[18px] md:text-[16px] lg:text-[16px] leading-[0.9] md:leading-[1.3]  tracking-[0] font-light  text-wrap",
+    "text-[14px] sm:text-[18px] md:text-[18px] lg:text-[16px] leading-[1.1] md:leading-[1.3]  tracking-[0] font-light  text-wrap",
     
   cardBodytextwrape:
     "text-[14px] sm:text-[18px] md:text-[16px] lg:text-[16px] leading-[0.9] md:leading-[1.3]  tracking-[0] font-semibold w-[270px] ... truncate ",

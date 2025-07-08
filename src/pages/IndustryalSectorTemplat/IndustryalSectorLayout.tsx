@@ -145,27 +145,49 @@ const SectorLayout: React.FC<SectorLayoutProps> = ({ data }) => {
             title="Industry Applications"
           />
           <div className="mt-8 sm:mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-            {data.applications.map((app, index) => (
-              <motion.div
-                key={index}
-                variants={itemVariants}
-                custom={index}
-                className="bg-company-blue-white p-6 sm:p-8 rounded-lg"
-              >
-                <div className="w-12 h-12 sm:w-16 sm:h-16 mb-4 sm:mb-6">
-                  <Image src={app.icon} alt={app.title}
-                  width={150}
-                  height={150}
-                  className="w-full h-full object-contain" />
-                </div>
-                <h3 className={`${text.cardHeadingtext} text-company-gray mb-2 sm:mb-3`}>
-                  {app.title}
-                </h3>
-                <p className={`${text.cardBodytext} text-company-mid-gray`}>
-                  {app.description}
-                </p>
-              </motion.div>
-            ))}
+            {data.applications.map((app, index) => {
+              if (typeof app === "string") {
+                return (
+                  <motion.div
+                    key={index}
+                    variants={itemVariants}
+                    custom={index}
+                    className="bg-company-blue-white p-6 sm:p-8 rounded-lg"
+                  >
+                    <h3 className={`${text.cardHeadingtext} text-company-gray mb-2 sm:mb-3`}>
+                      {app}
+                    </h3>
+                  </motion.div>
+                );
+              } else {
+                // Type guard for image property
+                const hasImage = Object.prototype.hasOwnProperty.call(app, 'image');
+                return (
+                  <motion.div
+                    key={index}
+                    variants={itemVariants}
+                    custom={index}
+                    className="bg-company-blue-white p-6 sm:p-8 rounded-lg"
+                  >
+                    <div className="w-12 h-12 sm:w-16 sm:h-16 mb-4 sm:mb-6">
+                      <Image
+                        src={app.icon || (hasImage ? (app as unknown as { image: string }).image : "/placeholder.png")}
+                        alt={app.title}
+                        width={150}
+                        height={150}
+                        className="w-full h-full object-contain"
+                      />
+                    </div>
+                    <h3 className={`${text.cardHeadingtext} text-company-gray mb-2 sm:mb-3`}>
+                      {app.title}
+                    </h3>
+                    <p className={`${text.cardBodytext} text-company-mid-gray`}>
+                      {app.description}
+                    </p>
+                  </motion.div>
+                );
+              }
+            })}
           </div>
         </div>
       </motion.section>
