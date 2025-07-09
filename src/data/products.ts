@@ -49,7 +49,6 @@ export type Product = {
   features: ProductFeature[];
   specifications: ProductSpec[];
   howItWorks?: HowItWorks[];
-  benefits: string[];
   applications: ProductApplication[];
   gallery?: string[];
   testimonials?: Testimonial[];
@@ -170,14 +169,7 @@ export const rfidProduct: Product = {
       value: "PSTN, VoIP",
     },
   ],
-  benefits: [
-    "Controlled access to telephone services",
-    "Prevents unauthorized usage",
-    "Easy balance management",
-    "Detailed usage tracking",
-    "Cost-effective communication solution",
-    "Reduced maintenance overhead",
-  ],
+
   applications: [
     {
       image:"/public/industry/fmog.avif",
@@ -256,84 +248,97 @@ export const biometricProduct: Product = {
     "Our biometric access system provides secure, reliable, and affordable authentication solutions with real-time monitoring capabilities. The system integrates seamlessly with existing infrastructure while providing advanced security features and comprehensive access control.",
   mainImage: "/Products/biometric-product/main_photo2.svg",
   productSectionImage:"/Products/biometric-product/main_productsection.svg",
-  features: [
+  features : [
     {
-      title: "Cloud Dashboard",
-      description:
-        "Real-time monitoring and access control through our intuitive cloud dashboard",
-      image: "/Products/biometric-product/features/cloud-data-server-animation-download-in-lottie-json-gif-static-svg-file-formats--database-pack-network-communication-animations-4011782 1.svg",
-    },
-    {
-      title: "Multi-factor Authentication",
-      description:
-        "Enhanced security with fingerprint, face recognition, and RFID options",
-      image: "/Products/biometric-product/features/image 15.svg",
-    },
-    {
-      title: "Real-time Monitoring",
-      description:
-        "Instant alerts and comprehensive access logs for better security management",
-      image: "/Products/biometric-product/features/image 16.svg",
-    },
-    {
+      image: "/Products/biometric-product/features/custemrules1.svg",
       title: "Custom Rules",
-      description:
-        "Set custom access rules and restrictions for different user groups",
-      image: "/Products/biometric-product/features/custem rules 1.svg",
+      description: "Set limits for access hours, user roles, or restricted days."
     },
     {
-      title: "Availability",
-      description:
-        "24/7 system availability with backup and redundancy",
-      image: "/Products/biometric-product/features/availability 1.svg",
+      image: "/Products/biometric-product/features/image20.svg",
+      title: "Easy Enrollment",
+      description: "Enroll users in seconds using the guided fingerprint registration system."
     },
     {
-      title: "Advanced Security",
-      description:
-        "Multi-layered security with encryption and audit trails",
-      image: "/Products/biometric-product/features/image 17.svg",
+      image: "/Products/biometric-product/features/cloud.svg",
+      title: "Cloud Dashboard",
+      description: "Live access monitoring with admin-level control — anytime, anywhere."
     },
+    {
+      image: "/Products/biometric-product/features/image15.svg",
+      title: "Smart Access Tracking",
+      description: "Real-time logging of every fingerprint entry, ready for reports, audits, or investigations."
+    },
+    {
+      image: "/Products/biometric-product/features/availability1.svg",
+      title: "24/7 Operational Availability",
+      description: "Operational anytime, day or night."
+    },
+    {
+      image: "/Products/biometric-product/features/image18.svg",
+      title: "Fingerprint Authentication",
+      description: "Secure access through fast and accurate biometric fingerprint recognition."
+    },
+    {
+      image: "/Products/biometric-product/features/image17.svg",
+      title: "Fast Response",
+      description: "Built in rust, fast response in 0.5 second."
+    },
+    {
+      image: "/Products/biometric-product/features/image19.svg",
+      title: "Export file in any format",
+      description: "Export the file in .csv or .pdf format."
+    },
+    {
+      image: "/Products/biometric-product/features/image16.svg",
+      title: "Durable Hardware",
+      description: "Rugged build, designed for long-term public use with low maintenance."
+    }
   ],
+  
   howItWorks: [
     {
-      image: "/Products/biometric-product/How_it_works/setp1.png",
+      image: "/Products/biometric-product/How_it_works/step1.svg",
       title: "Enroll Fingerprint",
       description: "Admin scans and stores fingerprints securely using the enrollment interface",
     },
     {
-      image: "/Products/biometric-product/How_it_works/step2.png",
+      image: "/Products/biometric-product/How_it_works/step2.svg",
       title: "Place Finger",
       description: "User places their finger on the sensor to request access.",
     },
     {
-      image: "/Products/biometric-product/How_it_works/step3.png",
+      image: "/Products/biometric-product/How_it_works/step3.svg",
       title: " Authenticate",
       description: "System verifies the fingerprint with stored templates in milliseconds.",
     },
     {
-      image: "/Products/biometric-product/How_it_works/step4.png",
+      image: "/Products/biometric-product/How_it_works/step4.svg",
       title: "Access Granted or Denied",
       description: "Based on custom rules and fingerprint match  access is either approved or denied.",
     },
   ],
   tecnicalimage:"/Products/biometric-product/TechPhoto.svg",
   testimonials:[
+   
     {
       id: 1,
-      name: "Ragavendra  Shetty",
-      title: "Hostel Manager",
-      company: "Ski-line Boys Hostel, Mysore",
+      avatar:"/Products/biometric-product/testimonialprofilephoto/image_2.png",
+      name: "Amitabh Rao",
+      title: "College Operations Manager",
+      company: "Pragna Institute of Technology",
       quote:
-        "Managing communication in a boys' hostel with over 300 students was always a challenge especially when students' personalphones were often misplaced or misused. Since installing these RFID-based telephones, daily communication has become streamlined and secure. Each student now has verified access, and calls can be tracked for accountability. The product has drastically reduced misuse and brought a sense of discipline in the hostel. It's become an essential part of our daily routine.",
+        "Implementing VithSutra’s Biometric System in our engineering college has been a game-changer. Our students now mark attendance through fingerprint scans, replacing the old, time-consuming paper-based method. It has reduced manual errors, saved faculty time, and improved overall efficiency. The deployment was smooth, and the system has been performing consistently across all departments."
     },
     {
       id: 2,
-      name: "Surjeet Yadav",
-      title: "Site Operations Head",
-      company: "Mahadev Mining Corporation, Jharkhand",
-      quote:"Our mining site is located deep in a region where mobile networks from different SIM providers constantly fail. Communication was a huge bottleneck affecting both safety and coordination. After implementing these telephones with wide coverage antennas,  we've finally found a reliable solution. Now, our teams stay connected across the entire site, without worrying about poor signal  strength. It's a game-changer for the mining industry."
-    },
-  
+      avatar:"/Products/biometric-product/testimonialprofilephoto/images_1.png",
+      name: "Dinesh Rao",
+      title: "Operations Officer",
+      company: "VMax Die Casting",
+      quote:
+        "We’ve deployed the Biometric System from VithSutra across our die casting industry units, with over 200+ installations now in place. More than 1,000 employees across India use it daily for secure, hassle-free access and attendance. The system is reliable, efficient, and has proven to be a strong fit for our industrial environment."
+    }
   ],
   specifications: [
     {
@@ -353,44 +358,22 @@ export const biometricProduct: Product = {
       value: "WiFi, Ethernet, 4G",
     },
   ],
-  benefits: [
-    "Enhanced security with biometric authentication",
-    "Real-time monitoring and alerts",
-    "Easy integration with existing systems",
-    "Cost-effective solution for businesses of all sizes",
-    "Cloud-based management for remote access",
-    "Comprehensive audit trails and reporting",
-  ],
+
   applications: [
     {
-      image:"/public/industry/fmog.avif",
-      industry: "Food & Beverage Processing",
-      description: "Monitor critical parameters like temperature, humidity, and machine hygiene in real-time to ensure food safety and compliance with standards."
+      image: "/Products/biometric-product/application/biometricfactory1.png",
+      industry: "Industries & Manufacturing Units",
+      description: "Restricted Area Access: Only authorized personnel can enter hazardous or sensitive zones. Production Floor Time Logs: Track when operators begin and finish tasks for productivity analysis."
     },
     {
-      image:"/public/industry/fmog.avif",
-      industry: "Cement & Steel Industries",
-      description: "Monitor kiln temperature, vibration, motor current, and conveyor operation to prevent critical failures."
+      image: "/Products/biometric-product/application/biometricinschool1.png",
+      industry: "Educational Institutions (Schools, Colleges, Hostels)",
+      description: "Student Attendance Tracking: Eliminate paper registers; automate attendance with fingerprint scans. Staff Clock In/Out: Accurately track faculty and admin staff working hours."
     },
     {
-      image:"/public/industry/fmog.avif",
-      industry: "Manufacturing",
-      description: "Monitor production lines, reduce unplanned downtime, track OEE (Overall Equipment Effectiveness), and optimize energy usage."
-    },
-    {
-      image:"/public/industry/fmog.avif",
-      industry: "Pharmaceuticals & Chemical Processing",
-      description: "Monitor critical parameters like temperature, pressure, and flow in real-time to maintain product quality and ensure compliance."
-    },
-    {
-      image:"/public/industry/fmog.avif",
-      industry: "Power & Energy",
-      description: "Track performance of turbines, transformers, and solar panels; automate load balancing and predictive maintenance."
-    },
-    {
-      image:"/public/industry/fmog.avif",
-      industry: "Water & Wastewater Management",
-      description: "Automate pump control, track tank levels, detect leaks, and optimize water flow using real-time sensor data."
+      image: "/Products/biometric-product/application/office.png",
+      industry: "Corporate Offices",
+      description: "Employee Attendance & HR Integration: Sync biometric data with HR systems for payroll and leave tracking. Meeting Room or Floor Access Control: Control who enters specific workspaces or departments."
     }
   ],
   gallery: [
@@ -509,14 +492,7 @@ export const hydroponicProduct: Product = {
       value: "AC/DC with backup",
     },
   ],
-  benefits: [
-    "Increased crop yield",
-    "Reduced water and nutrient waste",
-    "Lower labor costs",
-    "Better crop quality",
-    "Remote monitoring capability",
-    "Data-driven decision making",
-  ],
+
 
   gallery: [
     "/Products/vithnet/vithnet_device_2.svg",

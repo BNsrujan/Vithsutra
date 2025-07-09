@@ -33,7 +33,7 @@ export default function Error({
 
       <h2 className={`${text.cardHeadingsmall}text-3xl font-bold mb-company-xs-8 text-company-primary-royalBlue`}>Something went wrong!</h2>
       <p className={`text-gray-600 mb-6 max-w-md`}>
-        We're sorry, an unexpected error has occurred. Please try again or come back later.
+        We&apos;re sorry, an unexpected error has occurred. Please try again or come back later.
       </p>
 
       <Button variant={'neumorphic'} onClick={() => reset()} className="">
