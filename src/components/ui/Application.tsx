@@ -5,25 +5,9 @@ import { text } from "@/lib/typography";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from "framer-motion";
+import { ProductApplication } from "@/data/products";
 
-interface ApplicationType {
-  image: string;
-  name: string;
-  subtext: string;
-}
 
-const applications: ApplicationType[] = [
-  {
-    image: "/image/robotic.png",
-    name: "College & Hostel Laboratories",
-    subtext: "Easy to use and integrate",
-  },
-  {
-    image: "/image/you.png",
-    name: "Collection & Hosting",
-    subtext: "A bit hard to configure initially",
-  },
-];
 
 const ApplicationCarouselArrows = ({ onNext, onPrevious }: { onNext: () => void; onPrevious: () => void }) => (
   <div className="flex gap-2 justify-center mt-6">
@@ -48,21 +32,30 @@ const ApplicationCarouselArrows = ({ onNext, onPrevious }: { onNext: () => void;
   </div>
 );
 
-function ApplicationCarousel() {
+interface ApplicationProps {
+  applications: ProductApplication[];
+}
+
+function Application({ applications }: ApplicationProps) {
+  // Filter out any string entries for safety
+  const filteredApplications = applications.filter(
+    (app): app is { industry: string; image: string; description: string } =>
+      typeof app === 'object' && app !== null && 'industry' in app && 'image' in app && 'description' in app
+  );
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [direction, setDirection] = useState(0); // -1 for left, 1 for right
+  const [direction, setDirection] = useState(0);
 
   const goToPrevious = () => {
     setDirection(-1);
-    setCurrentIndex((prevIndex) => (prevIndex === 0 ? applications.length - 1 : prevIndex - 1));
+    setCurrentIndex((prevIndex) => (prevIndex === 0 ? filteredApplications.length - 1 : prevIndex - 1));
   };
 
   const goToNext = () => {
     setDirection(1);
-    setCurrentIndex((prevIndex) => (prevIndex === applications.length - 1 ? 0 : prevIndex + 1));
+    setCurrentIndex((prevIndex) => (prevIndex === filteredApplications.length - 1 ? 0 : prevIndex + 1));
   };
 
-  const currentApp = applications[currentIndex];
+  const currentApp = filteredApplications[currentIndex];
 
   const variants = {
     enter: (dir: number) => ({
@@ -82,6 +75,8 @@ function ApplicationCarousel() {
     }),
   };
 
+  if (filteredApplications.length === 0) return null;
+
   return (
     <div className="md:py-16">
       <div className="max-w-7xl mx-auto">
@@ -89,7 +84,7 @@ function ApplicationCarousel() {
         <div className="flex justify-center items-center w-full min-h-[40vh] relative overflow-hidden">
           <AnimatePresence custom={direction} mode="wait">
             <motion.div
-              key={currentApp.name}
+              key={currentApp.industry}
               className="relative flex w-full h-[40vh] flex-col items-center text-center bg-white rounded-[24px] shadow-lg "
               custom={direction}
               variants={variants}
@@ -100,14 +95,14 @@ function ApplicationCarousel() {
             >
               <Image
                 src={currentApp.image}
-                alt={currentApp.name}
+                alt={currentApp.industry}
                 width={300}
                 height={180}
                 className="rounded-lg w-full h-full object-cover bg-gray-200"
               />
               <div className=" absolute bottom-0  p-12 text-start w-full">
-                <h2 className={`${text.cardHeadingtext} mt-2`}>{currentApp.name}</h2>
-                <p className={`${text.cardBodytext} text-gray-600 mt-2`}>{currentApp.subtext}</p>
+                <h2 className={`${text.cardHeadingtext} mt-2`}>{currentApp.industry}</h2>
+                <p className={`${text.cardBodytext} text-gray-600 mt-2`}>{currentApp.description}</p>
               </div>
             </motion.div>
           </AnimatePresence>
@@ -120,4 +115,4 @@ function ApplicationCarousel() {
   );
 }
 
-export default ApplicationCarousel;
+export default Application;

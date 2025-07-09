@@ -24,6 +24,24 @@
     /* big box */
     --big-box-w:1296px;
     --big-box-h:850px;
+
+    /* radius */
+    --button-radius:8px;
+    --card-radius:16px;
+    --section-radius:24px;
+
+
+    /* spacing  - 2 , 3 ,4 ,6 ,8 */
+    --company-xs-8:8px;
+    --company-sm-12:12px;
+    --company-md-16:16px;
+    --company-lg-24:24px;
+    --company-xl-48:48px;
+
+    /* icon size */
+  
+  
+
     /*  */
     --radius: 0.625rem;
     --background: oklch(1 0 0);
@@ -81,6 +99,22 @@
   --color-company-black: var(--company-black);
   --color-company-litest-gray:var(--company-litest-gray);
 
+
+  /* company radius */
+  --radius-company-button-8:var(--button-radius);
+  --radius-company-card-16:var(--card-radius);
+  --radius-company-section-24:var(--section-radius);
+
+
+  /* company spacing  */
+  --spacing-company-xs-8:var(--company-xs-8);
+  --spacing-company-sm-12:var(--company-sm-12);
+  --spacing-company-md-16:var(--company-md-16);
+  --spacing-company-lg-24:var(--company-lg-24);
+  --spacing-company-xl-48:var(--company-xl-48);
+
+
+  /* color */
   --color-company-gray-text: var(--company-gray-text);
   --color-company-white-text: var(--company-white-text);
   --color-company-dark-dark-gray-text: var(--company-dark-dark-gray-text);

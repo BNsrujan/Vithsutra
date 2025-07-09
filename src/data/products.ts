@@ -1,6 +1,7 @@
 // Centralized product data for all products
 import { LucideIcon } from "lucide-react"
 
+
 export type ProductFeature = {
   title: string;
   description: string;
@@ -25,10 +26,17 @@ export interface Fact {
 }
 
 export type ProductApplication = string | {
-  title: string;
+  industry: string;
   image: string;
   description: string;
 };
+
+export type ApplicationType = {
+  image: string;
+  title: string;
+  subtext: string;
+}
+
 
 export type Product = {
   id: string;
@@ -171,12 +179,36 @@ export const rfidProduct: Product = {
     "Reduced maintenance overhead",
   ],
   applications: [
-    "Educational Institutions",
-    "Student Housing",
-    "Corporate Campuses",
-    "Hostels",
-    "Boarding Schools",
-    "University Dormitories",
+    {
+      image:"/public/industry/fmog.avif",
+      industry: "Food & Beverage Processing",
+      description: "Monitor critical parameters like temperature, humidity, and machine hygiene in real-time to ensure food safety and compliance with standards."
+    },
+    {
+      image:"/public/industry/fmog.avif",
+      industry: "Cement & Steel Industries",
+      description: "Monitor kiln temperature, vibration, motor current, and conveyor operation to prevent critical failures."
+    },
+    {
+      image:"/public/industry/fmog.avif",
+      industry: "Manufacturing",
+      description: "Monitor production lines, reduce unplanned downtime, track OEE (Overall Equipment Effectiveness), and optimize energy usage."
+    },
+    {
+      image:"/public/industry/fmog.avif",
+      industry: "Pharmaceuticals & Chemical Processing",
+      description: "Monitor critical parameters like temperature, pressure, and flow in real-time to maintain product quality and ensure compliance."
+    },
+    {
+      image:"/public/industry/fmog.avif",
+      industry: "Power & Energy",
+      description: "Track performance of turbines, transformers, and solar panels; automate load balancing and predictive maintenance."
+    },
+    {
+      image:"/public/industry/fmog.avif",
+      industry: "Water & Wastewater Management",
+      description: "Automate pump control, track tank levels, detect leaks, and optimize water flow using real-time sensor data."
+    }
   ],
   gallery: [
     "/Products/rfid-tel/telephone[1].png",
@@ -330,12 +362,36 @@ export const biometricProduct: Product = {
     "Comprehensive audit trails and reporting",
   ],
   applications: [
-    "Office Buildings",
-    "Educational Institutions",
-    "Healthcare Facilities",
-    "Industrial Facilities",
-    "Residential Complexes",
-    "Government Buildings",
+    {
+      image:"/public/industry/fmog.avif",
+      industry: "Food & Beverage Processing",
+      description: "Monitor critical parameters like temperature, humidity, and machine hygiene in real-time to ensure food safety and compliance with standards."
+    },
+    {
+      image:"/public/industry/fmog.avif",
+      industry: "Cement & Steel Industries",
+      description: "Monitor kiln temperature, vibration, motor current, and conveyor operation to prevent critical failures."
+    },
+    {
+      image:"/public/industry/fmog.avif",
+      industry: "Manufacturing",
+      description: "Monitor production lines, reduce unplanned downtime, track OEE (Overall Equipment Effectiveness), and optimize energy usage."
+    },
+    {
+      image:"/public/industry/fmog.avif",
+      industry: "Pharmaceuticals & Chemical Processing",
+      description: "Monitor critical parameters like temperature, pressure, and flow in real-time to maintain product quality and ensure compliance."
+    },
+    {
+      image:"/public/industry/fmog.avif",
+      industry: "Power & Energy",
+      description: "Track performance of turbines, transformers, and solar panels; automate load balancing and predictive maintenance."
+    },
+    {
+      image:"/public/industry/fmog.avif",
+      industry: "Water & Wastewater Management",
+      description: "Automate pump control, track tank levels, detect leaks, and optimize water flow using real-time sensor data."
+    }
   ],
   gallery: [
     "/Products/biometric-product/main_photo2.svg",
@@ -470,17 +526,17 @@ export const hydroponicProduct: Product = {
 
   applications: [
     {
-      title: "Hydroponics",
+      industry: "Hydroponics",
       image: "/images/hydroponics.png", // Replace with actual image path or URL
       description: "Vithnet automates nutrient delivery, pH control, and water flow for soilless hydroponic systems. It ensures healthy root growth and maximizes yield with precise environmental monitoring."
     },
     {
-      title: "Aeroponics",
+      industry: "Aeroponics",
       image: "/images/aeroponics.png", // Replace with actual image path or URL
       description: "With custom integration, Vithnet can control misting cycles and manage nutrient spray timing. Ideal for high-efficiency root oxygenation in vertical and indoor aeroponic setups."
     },
     {
-      title: "Aquaponics",
+      industry: "Aquaponics",
       image: "/images/aquaponics.png", // Replace with actual image path or URL
       description: "Vithnet supports plant-side automation by managing pH, water flow, and temperature. It complements fish-plant systems by enabling consistent crop-side conditions."
     }
@@ -616,26 +672,32 @@ It has reduced our unplanned maintenance and strengthened our remote control and
   ],
   applications: [
     {
+      image:"/public/industry/fmog.avif",
       industry: "Food & Beverage Processing",
       description: "Monitor critical parameters like temperature, humidity, and machine hygiene in real-time to ensure food safety and compliance with standards."
     },
     {
+      image:"/public/industry/fmog.avif",
       industry: "Cement & Steel Industries",
       description: "Monitor kiln temperature, vibration, motor current, and conveyor operation to prevent critical failures."
     },
     {
+      image:"/public/industry/fmog.avif",
       industry: "Manufacturing",
       description: "Monitor production lines, reduce unplanned downtime, track OEE (Overall Equipment Effectiveness), and optimize energy usage."
     },
     {
+      image:"/public/industry/fmog.avif",
       industry: "Pharmaceuticals & Chemical Processing",
       description: "Monitor critical parameters like temperature, pressure, and flow in real-time to maintain product quality and ensure compliance."
     },
     {
+      image:"/public/industry/fmog.avif",
       industry: "Power & Energy",
       description: "Track performance of turbines, transformers, and solar panels; automate load balancing and predictive maintenance."
     },
     {
+      image:"/public/industry/fmog.avif",
       industry: "Water & Wastewater Management",
       description: "Automate pump control, track tank levels, detect leaks, and optimize water flow using real-time sensor data."
     }
