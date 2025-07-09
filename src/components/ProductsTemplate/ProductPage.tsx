@@ -261,13 +261,14 @@ export default function ProductPage({
                         src: p.productSectionImage,
                         title: p.name,
                         category: p.tagline || '',
+                        link: `/products/${p.id}`,
                         content: (
                           <div className="space-y-4">
                             <p className={`${text.cardBodytext} text-gray-600`}>
                               {p.description}
                             </p>
                             <a
-                              href={`/projects/${p.id}`}
+                              href={`/products/${p.id}`}
                               className="inline-block text-blue-600 hover:text-blue-800"
                             >
                               Learn more →

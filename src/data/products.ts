@@ -54,6 +54,7 @@ export type Product = {
   testimonials?: Testimonial[];
   FaQ: { qution: string; answer: string }[];
   facts:Fact[];
+  link:string;
 };
 
 export interface Testimonial {
@@ -236,7 +237,8 @@ export const rfidProduct: Product = {
       suffix: "+",
       title: "Years Of Experience",
     },
-  ]
+  ],
+  link:"/products/rfid-telephone"
 };
 
 export const biometricProduct: Product = {
@@ -398,7 +400,8 @@ export const biometricProduct: Product = {
       suffix: "+",
       title: "Products Deployed",
     },
-  ]
+  ],
+  link:"/products/biometric-product"
 };
 
 export const hydroponicProduct: Product = {
@@ -490,14 +493,11 @@ export const hydroponicProduct: Product = {
       value: "AC/DC with backup",
     },
   ],
-
-
   gallery: [
     "/Products/vithnet/vithnet_device_2.svg",
     "/Products/vithnet/3DproductImage/",
     "/Products/vithnet/Tecnical/",
   ],
-
   applications: [
     {
       industry: "Hydroponics",
@@ -544,7 +544,8 @@ export const hydroponicProduct: Product = {
       suffix: "+",
       title: "Years Of Experience",
     },
-  ]
+  ],
+  link:"/products/hydroponic-controller"
 }; 
 
 export const IIOT = {

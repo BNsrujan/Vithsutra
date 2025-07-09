@@ -34,6 +34,7 @@ interface ArrowButtonProps {
 type Card = {
   src: string;
   title: string;
+  link:string;
   category: string;
   content: React.ReactNode;
 };
@@ -224,7 +225,7 @@ export const Card = ({
      
       <motion.button
         layoutId={layout ? `card-${card.title}` : undefined}
-        onClick={()=>router.push("/products/biometric-product")}
+        onClick={()=>router.push(card.link)}
         onTouchStart={handleTouchStart}
         onTouchEnd={handleTouchEnd}
         onMouseEnter={handleTouchStart}
