@@ -1,5 +1,5 @@
 import React from 'react'
-import Training from '@/pages/training/training'
+import Training from '@/PagesForApp/training/training'
 
 
 function page() {

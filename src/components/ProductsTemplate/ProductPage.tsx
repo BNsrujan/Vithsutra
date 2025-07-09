@@ -252,30 +252,32 @@ export default function ProductPage({
               viewport={{ once: true }}
             >
               <Carousel
-                items={otherProducts.map((p, index) => (
-                  <Card
-                    key={p.id}
-                    card={{
-                      src: p.productSectionImage,
-                      title: p.name,
-                      category: p.tagline,
-                      content: (
-                        <div className="space-y-4">
-                          <p className={`${text.cardBodytext} text-gray-600`}>
-                            {p.description}
-                          </p>
-                          <a
-                            href={`/projects/${p.id}`}
-                            className="inline-block text-blue-600 hover:text-blue-800"
-                          >
-                            Learn more →
-                          </a>
-                        </div>
-                      ),
-                    }}
-                    index={index}
-                  />
-                ))}
+                items={otherProducts
+                  .filter((p): p is Product => !!p && !!p.id && !!p.name)
+                  .map((p, index) => (
+                    <Card
+                      key={p.id}
+                      card={{
+                        src: p.productSectionImage,
+                        title: p.name,
+                        category: p.tagline || '',
+                        content: (
+                          <div className="space-y-4">
+                            <p className={`${text.cardBodytext} text-gray-600`}>
+                              {p.description}
+                            </p>
+                            <a
+                              href={`/projects/${p.id}`}
+                              className="inline-block text-blue-600 hover:text-blue-800"
+                            >
+                              Learn more →
+                            </a>
+                          </div>
+                        ),
+                      }}
+                      index={index}
+                    />
+                  ))}
               />
             </motion.div>
           </div>

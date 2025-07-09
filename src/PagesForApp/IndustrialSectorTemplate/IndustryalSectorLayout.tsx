@@ -51,6 +51,9 @@ interface SectorLayoutProps {
 }
 
 const SectorLayout: React.FC<SectorLayoutProps> = ({ data }) => {
+  if (!data || !data.title) {
+    return <div>Sector data not found or incomplete.</div>;
+  }
   return (
     <div className="min-h-screen bg-company-blue-white">
       {/* Introduction Section */}

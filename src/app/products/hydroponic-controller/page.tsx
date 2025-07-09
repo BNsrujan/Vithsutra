@@ -1,4 +1,4 @@
-import ProductPage from '@/pages/ProductsTemplate/ProductPage';
+import ProductPage from '@/components/ProductsTemplate/ProductPage';
 import { hydroponicProduct, biometricProduct, rfidProduct } from '@/data/products';
 
 export default function HydroponicControllerPage() {

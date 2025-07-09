@@ -1,4 +1,4 @@
-import AboutPage from '@/pages/AboutPage/AboutPage'
+import AboutPage from '@/PagesForApp/AboutPage/AboutPage'
 
 export default function Page() {
   return <AboutPage />

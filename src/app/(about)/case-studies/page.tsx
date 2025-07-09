@@ -1,4 +1,4 @@
-import CaseStudiesPage from '@/pages/CaseStudiesPage/CaseStudiesPage'
+import CaseStudiesPage from '@/PagesForApp/CaseStudiesPage/CaseStudiesPage'
 import React from 'react'
 
 export default function CaseStudies() {

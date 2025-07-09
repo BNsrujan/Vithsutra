@@ -1,4 +1,4 @@
-import FAQPage from '@/pages/faqPage/FAQPage'
+import FAQPage from '@/PagesForApp/faqPage/FAQPage'
 
 export default function Page() {
   return <FAQPage />

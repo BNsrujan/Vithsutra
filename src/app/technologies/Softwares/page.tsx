@@ -1,4 +1,4 @@
-import SoftwaresPage from '@/pages/SoftwarePage/software'
+import SoftwaresPage from '@/PagesForApp/SoftwarePage/software'
 import React from 'react'
 
 function Page() {

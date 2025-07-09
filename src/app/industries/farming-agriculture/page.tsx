@@ -1,5 +1,5 @@
 import React from "react";
-import SectorLayout  from "@/pages/IndustryalSectorTemplat/IndustryalSectorLayout";
+import SectorLayout  from "@/PagesForApp/IndustrialSectorTemplate/IndustryalSectorLayout";
 
 const farmingAgricultureData = {
   title: "Farming & Agriculture Solutions",

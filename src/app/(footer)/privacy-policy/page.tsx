@@ -1,4 +1,4 @@
-import PrivacyPolicyPage from "@/pages/PrivacyPolicyPage/privacyPolicy"
+import PrivacyPolicyPage from "@/PagesForApp/PrivacyPolicyPage/privacyPolicy"
 
 import React from 'react'
 

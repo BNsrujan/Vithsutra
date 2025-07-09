@@ -1,4 +1,4 @@
-import Homepage from '@/pages/homePage/homepage'
+import Homepage from '@/PagesForApp/homePage/homepage'
 import React from 'react'
 
 function page() {

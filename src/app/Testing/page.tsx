@@ -1,4 +1,4 @@
-import Testing from '@/pages/TestingPage/page'
+import Testing from '@/PagesForApp/TestingPage/page'
 import React from 'react'
 
 function page() {

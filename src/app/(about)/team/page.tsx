@@ -1,4 +1,4 @@
-import TeamPage from "@/pages/TeamPage/TeamPage"
+import TeamPage from "@/PagesForApp/TeamPage/TeamPage"
 
 export default function Page() {
   return <TeamPage />

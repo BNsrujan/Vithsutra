@@ -1,4 +1,4 @@
-import TermsOfServicePage from "@/pages/TermsOfServicePage/termsofservicepage";
+import TermsOfServicePage from "@/PagesForApp/TermsOfServicePage/termsofservicepage";
 
 import React from 'react'
 

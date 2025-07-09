@@ -41,7 +41,7 @@ export type ApplicationType = {
 export type Product = {
   id: string;
   name: string;
-  tagline: string;
+  tagline?: string | null;
   description: string;
   mainImage: string;
   productSectionImage:string;
@@ -242,8 +242,7 @@ export const rfidProduct: Product = {
 export const biometricProduct: Product = {
   id: "biometric-product",
   name: "Biometric Product",
-  tagline:
-    "Affordable biometric access with cloud dashboard & real-time monitoring",
+  tagline:"Affordable biometric access with cloud dashboard & real-time monitoring",
   description:
     "Our biometric access system provides secure, reliable, and affordable authentication solutions with real-time monitoring capabilities. The system integrates seamlessly with existing infrastructure while providing advanced security features and comprehensive access control.",
   mainImage: "/Products/biometric-product/main_photo2.svg",
@@ -405,8 +404,7 @@ export const biometricProduct: Product = {
 export const hydroponicProduct: Product = {
   id: "hydroponic-controller",
   name: "Hydroponic Controller",
-  tagline:
-    "Smart farming with sensor-driven precision and real-time farm stats display",
+  tagline:"Smart farming with sensor-driven precision and real-time farm stats display",
   description:
     "Our VIthNet Hydroponic Controller brings precision agriculture to your fingertips. With advanced sensor technology and real-time monitoring, it optimizes growing conditions for maximum yield while minimizing resource usage.",
   mainImage: "/Products/vithnet/vithnet_device_2.svg",

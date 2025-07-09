@@ -1,4 +1,4 @@
-import ProductPage from '@/pages/ProductsTemplate/ProductPage';
+import ProductPage from '@/components/ProductsTemplate/ProductPage';
 import { rfidProduct, biometricProduct, hydroponicProduct } from '@/data/products';
 
 export default function RFIDTelephonePage() {

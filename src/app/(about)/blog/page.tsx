@@ -1,4 +1,4 @@
-import BlogPage from '@/pages/BlogPage/BlogPage'
+import BlogPage from '@/PagesForApp/BlogPage/BlogPage'
 import React from 'react'
 
 export default function Blog() {
