@@ -9,6 +9,13 @@ export type ProductFeature = {
   icon?: string | LucideIcon;
 };
 
+export type Whychose = {
+  title: string;
+  description: string;
+  image?: string;
+  icon?: string | LucideIcon;
+};
+
 export type ProductSpec = {
   name: string;
   value: string;
@@ -19,6 +26,7 @@ export type HowItWorks = {
   title: string;
   description: string;
 };
+
 export interface Fact {
   number:number;
   title:string;
@@ -46,6 +54,7 @@ export type Product = {
   mainImage: string;
   productSectionImage:string;
   tecnicalimage:string;
+  whychose?:Whychose[];
   features: ProductFeature[];
   specifications: ProductSpec[];
   howItWorks?: HowItWorks[];
@@ -412,7 +421,7 @@ export const hydroponicProduct: Product = {
     "Our VIthNet Hydroponic Controller brings precision agriculture to your fingertips. With advanced sensor technology and real-time monitoring, it optimizes growing conditions for maximum yield while minimizing resource usage.",
   mainImage: "/Products/vithnet/vithnet_device_2.svg",
   productSectionImage:"/Products/vithnet/vithnet_device_2.svg",
-  features: [
+  whychose: [
     {
       title: "Multi Season",
       description: "Grow in any season or location",
@@ -433,6 +442,38 @@ export const hydroponicProduct: Product = {
       description: "Track and optimize conditions in real-time",
       image: "/Products/vithnet/features/analitecs.png",
     },
+  ],
+  features:[
+    {
+      title: "High-Precision Sensors",
+      image: "/Products/vithnet/builtin_features/high-precision-sensors.svg",
+      description: "Provides accurate environmental readings to support data-driven decisions."
+    },
+    {
+      title: "Mobile & Web Dashboard",
+      image: "/Products/vithnet/builtin_features/mobile&webdashboard.svg",
+      description: "Real-time sensor data visualization through a user-friendly interface."
+    },
+    {
+      title: "Historical Data Storage",
+      image: "/Products/vithnet/builtin_features/historicaldatastorage.svg",
+      description: "Helps track environmental trends and crop performance."
+    },
+    {
+      title: "24/7 Customer Support",
+      image: "/Products/vithnet/builtin_features/Screenshot_from_2025-07-05_18-35-14-removebg-preview 1.svg",
+      description: "Round-the-clock help for setup and troubleshooting."
+    },
+    {
+      title: "Wi-Fi Integrated",
+      image: "/Products/vithnet/builtin_features/wifi-integrated.svg",
+      description: "Easy sensor configuration and data upload via Wi-Fi."
+    },
+    {
+      title: "Secure Transmission",
+      image: "/Products/vithnet/builtin_features/securetransmiss.svg",
+      description: "End-to-end encrypted data for safety and compliance."
+    }
   ],
   howItWorks: [
     {
@@ -456,6 +497,7 @@ export const hydroponicProduct: Product = {
       description: "Users can set custom limits or warning levels for any parameter.",
     },
   ],
+ 
   tecnicalimage:"/Products/vithnet/vithnet_device_2.svg",
   testimonials:[
     {
