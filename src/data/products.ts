@@ -251,47 +251,47 @@ export const biometricProduct: Product = {
   productSectionImage:"/Products/biometric-product/main_productsection.svg",
   features : [
     {
-      image: "/Products/biometric-product/features/custemrules1.svg",
+      image: "/Products/biometric-product/features/customrules.svg",
       title: "Custom Rules",
       description: "Set limits for access hours, user roles, or restricted days."
     },
     {
-      image: "/Products/biometric-product/features/image20.svg",
+      image: "/Products/biometric-product/features/easyenrollment.svg",
       title: "Easy Enrollment",
       description: "Enroll users in seconds using the guided fingerprint registration system."
     },
     {
-      image: "/Products/biometric-product/features/cloud.svg",
+      image: "/Products/biometric-product/features/custmdashboard.svg",
       title: "Cloud Dashboard",
       description: "Live access monitoring with admin-level control — anytime, anywhere."
     },
     {
-      image: "/Products/biometric-product/features/image15.svg",
+      image: "/Products/biometric-product/features/smartaccesstracker.svg",
       title: "Smart Access Tracking",
       description: "Real-time logging of every fingerprint entry, ready for reports, audits, or investigations."
     },
     {
-      image: "/Products/biometric-product/features/availability1.svg",
+      image: "/Products/biometric-product/features/24x7.svg",
       title: "24/7 Operational Availability",
       description: "Operational anytime, day or night."
     },
     {
-      image: "/Products/biometric-product/features/image18.svg",
+      image: "/Products/biometric-product/features/fingerprintauthentication.svg",
       title: "Fingerprint Authentication",
       description: "Secure access through fast and accurate biometric fingerprint recognition."
     },
     {
-      image: "/Products/biometric-product/features/image17.svg",
+      image: "/Products/biometric-product/features/fastrespons.svg",
       title: "Fast Response",
       description: "Built in rust, fast response in 0.5 second."
     },
     {
-      image: "/Products/biometric-product/features/image19.svg",
+      image: "/Products/biometric-product/features/file-export-icon-illustration-vector 1.svg",
       title: "Export file in any format",
       description: "Export the file in .csv or .pdf format."
     },
     {
-      image: "/Products/biometric-product/features/image16.svg",
+      image: "/Products/biometric-product/features/durablehardware.svg",
       title: "Durable Hardware",
       description: "Rugged build, designed for long-term public use with low maintenance."
     }
