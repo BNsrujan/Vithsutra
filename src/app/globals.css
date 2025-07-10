@@ -41,6 +41,8 @@
     /* icon size */
   
   
+    /* width  */
+    --section-width:1400px
 
     /*  */
     --radius: 0.625rem;
@@ -87,6 +89,10 @@
   /* big box */
   --spacing-big-box-w:var(--box-box-w);
   --spacing-bix-box-h:var(--box-box-h);
+
+
+  /* weidth of section */
+  --spacing-company-section-width:var(--section-width);
 
   /* Company Colors */
   --color-company-primary-royalBlue: var(--company-primary-royalBlue);

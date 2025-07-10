@@ -9,8 +9,8 @@ export default function About() {
   return (
     <section className="h-full md:h-screen flex justify-center items-center">
       <div className="mx-auto">
-        <motion.div 
-          className="flex flex-col lg:flex-row items-center gap-[28px] w-full"
+        <motion.div
+          className="flex md:flex-row flex-col items-center gap-company-lg-24 w-full"
           variants={aboutSection}
           initial="initial"
           whileInView="whileInView"
@@ -40,7 +40,7 @@ export default function About() {
             variants={aboutVideo}
             viewport={{ once: true, margin: "-100px" }}
           >
-            <div className="aspect-video w-full overflow-hidden rounded-[16px] bg-[var(--company-white)] shadow-xl">
+            <div className="aspect-video w-full overflow-hidden rounded-company-card-16  shadow-xl">
               <video 
                 className="w-full h-full object-cover m-0 p-0"
                 autoPlay 

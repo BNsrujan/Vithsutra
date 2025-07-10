@@ -58,7 +58,7 @@ export default function UniqueFeatures() {
   return (
     <section className="relative py-16 md:py-24">
       <motion.div
-        className="relative z-10 max-w-7xl mx-auto px-4"
+        className="relative z-10 max-w-company-section-width mx-auto px-4"
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
@@ -72,8 +72,8 @@ export default function UniqueFeatures() {
           <SectionHeader label="UNIQUE" title="What Makes Us Unique" />
         </motion.div>
 
-        <div className="flex flex-col gap-6 mt-12">
-          <div className="flex flex-wrap gap-6">
+        <div className="flex flex-col gap-company-lg-24 mt-12">
+          <div className="flex flex-wrap gap-company-lg-24">
             <div className="w-full md:w-7/12 h-[50vh]">
               <FeatureCard
                 title="24/7 Support"
@@ -92,7 +92,7 @@ export default function UniqueFeatures() {
             </div>
           </div>
 
-          <div className="flex flex-wrap gap-6">
+          <div className="flex flex-wrap gap-company-lg-24">
             <div className="w-full md:w-4/12 h-[50vh]">
               <FeatureCard
                 title="Cloud-Based Service"

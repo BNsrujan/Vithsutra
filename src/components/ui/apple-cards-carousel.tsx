@@ -83,7 +83,7 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
   const handleCardClose = (index: number) => {
     if (carouselRef.current) {
       const cardWidth = isMobile() ? 230 : 384; // (md:w-96)
-      const gap = isMobile() ? 4 : 8;
+      const gap = isMobile() ? 12 : 24;
       const scrollPosition = (cardWidth + gap) * (index + 1);
       carouselRef.current.scrollTo({
         left: scrollPosition,
@@ -117,8 +117,8 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
 
           <div
             className={cn(
-              "flex flex-row justify-start gap-4 pl-4 w-screen md:w-full",
-              "mx-auto max-w-7xl", // remove max-w-4xl if you want the carousel to span the full width of its container
+              "flex flex-row justify-start gap-company-lg-24  pl-4 w-screen md:w-full",
+              "mx-auto ", // remove max-w-4xl if you want the carousel to span the full width of its container
             )}
           >
             {items.map((item, index) => (
@@ -222,7 +222,6 @@ export const Card = ({
 
   return (
     <>
-     
       <motion.button
         layoutId={layout ? `card-${card.title}` : undefined}
         onClick={()=>router.push(card.link)}
@@ -244,17 +243,17 @@ export const Card = ({
         
         className="group relative w-[80vw] z-10 flex h-80 flex-col  items-start justify-start scale-0.9 overflow-hidden rounded-3xl bg-gray-100 md:h-[40rem] md:w-[50vw] dark:bg-neutral-900 transition-all duration-700 ease-in-out hover:scale-[1.0001]"
       >
-        <div className="pointer-events-none  absolute w-auto inset-x-0 top-0 z-30 h-full bg-gradient-to-b from-black/50 via-transparent to-transparent transition-all duration-700 ease-in-out group-hover:from-black/70" />
+        <div className="pointer-events-none  absolute w-auto inset-x-0 top-0 z-30 h-full bg-company-dark-gray/20  duration-700 ease-in-out " />
         <div className=" absolute bottom-0 left-1 z-40 p-8">
           <motion.p
             layoutId={layout ? `category-${card.category}` : undefined}
-            className={`${text.cardBodytext} text-left text-black transition-all duration-700 ease-in-out group-hover:text-company-black`}
+            className={`${text.cardBodytext} text-left text-company-black/70 transition-all duration-700 ease-in-out group-hover:text-company-black`}
           >
             {card.category}
           </motion.p>
           <motion.p
             layoutId={layout ? `title-${card.title}` : undefined}
-            className={`${text.cardHeadingtext} mt-2 max-w-xs text-left text-black transition-all duration-700 ease-in-out group-hover:text-company-black`}
+            className={`${text.cardHeadingtext} mt-2 max-w-xs text-left text-company-black/70  transition-all duration-700 ease-in-out group-hover:text-company-black`}
           >
             {card.title}
           </motion.p>
@@ -263,7 +262,7 @@ export const Card = ({
           src={card.src}
           alt={card.title}
           fill
-          className="absolute inset-0 z-10   object-contain transition-all duration-700 ease-in-out group-hover:scale-110"
+          className="absolute inset-0 z-10   object-contain transition-all duration-700 ease-in-out group-hover:scale-105"
         />
         <div className="absolute  inset-y-0  right-16 md:right-3  z-40">
           <ArrowButtons isTouched={isTouched} />

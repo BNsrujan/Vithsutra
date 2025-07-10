@@ -24,7 +24,7 @@ const text = {
     "text-[11px] sm:text-[16px] md:text-[17px] leading-[1.3] tracking font-normal max-w-[270px] sm:max-w-[400px] md:max-w-full text-wrap",
 
   Sectionprefixtext:
-    "text-[24px] sm:text-[36px] md:text-[42px] lg:text-[48px] leading-[1.1] tracking-tight font-semibold  text-wrap",
+    "text-[24px] sm:text-[36px] md:text-[42px] lg:text-[48px] leading-[1.1] tracking-tight font-semibold ",
 
   /*section prefixtext*/
   SectionHeader:

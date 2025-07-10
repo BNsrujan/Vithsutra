@@ -15,16 +15,16 @@ export default function Hero() {
   const router = useRouter();
   return (
     <div className="relative w-full ">
-      <div className="max-w-[1700px]  mx-auto px-company-md-16 sm:px-company-lg-24 lg:px-company-xl-48 h-full">
+      <div className="max-w-[1700px]  mx-auto px-company-md-16 sm:px-company-lg-24 lg:px-company-lg-24 h-full">
         <div className="grid grid-cols-1 lg:grid-cols-2 w-full gap-8  min-h-[100vh] py-company-sm-12 lg:py-0">
           {/* Left Content */}
           <motion.div
-            className="relative z-20 flex flex-col justify-center h-full space-y-company-xs-8"
+            className="relative z-20 flex flex-col justify-center h-full space-y-company-lg-24"
             variants={heroContent}
             initial="initial"
             animate="animate"
           >
-            <motion.div className="space-y-company-xs-8">
+            <motion.div className=" space-y-company-lg-24">
               <motion.div
                 className="flex flex-col justify-center md:justify-start md:flex-row items-center"
                 initial={{ opacity: 0, y: 20 }}
@@ -32,7 +32,7 @@ export default function Hero() {
                 transition={{ duration: 0.5, delay: 0.1 }}
               >
                 <span
-                  className={`${text.Sectionprefixtext} w-full text-center md:text-left text-[var(--company-blue-black)]`}
+                  className={`${text.Sectionprefixtext} w-full text-center md:text-left flex-nowrap text-[var(--company-blue-black)]`}
                 >
                   Our Expertise
                 </span>
@@ -70,6 +70,7 @@ export default function Hero() {
 
           {/* Right Image */}
           <motion.div
+          // masking 
             className="relative lg:absolute md:[mask-image:linear-gradient(to_left,white_20%,white_80%,transparent)] [mask-image:linear-gradient(to_bottom,white-20%,white_80%,transparent)] lg:right-0 lg:top-0 lg:w-1/2 lg:h-full z-10"
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -82,7 +83,7 @@ export default function Hero() {
                 fill
                 className="object-cover"
                 priority
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 50vw"
+                sizes="max-w-[768px] 100vw, max-w-[1200px] 50vw, 50vw"
               />
             </div>
           </motion.div>
@@ -90,9 +91,10 @@ export default function Hero() {
       </div>
 
       {/* Background Pattern */}
-      <div className="absolute inset-0 -z-10 opacity-10">
+      {/* <div className="absolute inset-0 -z-10 opacity-10">
         <div className="absolute inset-0 bg-[url('/patterns/grid.svg')] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]" />
       </div>
+       */}
     </div>
   );
 }

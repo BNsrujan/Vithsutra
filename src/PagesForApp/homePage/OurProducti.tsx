@@ -5,67 +5,16 @@ import { containerVariants } from "@/lib/animations";
 import { SectionHeader } from "@/components/ui/section-header";
 import React from "react";
 import { Carousel, Card } from "@/components/ui/apple-cards-carousel";
+import { biometricProduct, rfidProduct, hydroponicProduct } from "@/data/products";
 
-// Define the card data type
-type Card = {
-  id: number;
-  title: string;
-  description: string;
-  image: string;
-  tag: string;
-  caption: string;
-  link: string;
-};
-
-// Sample data
-const cards: Card[] = [
-  {
-    id: 1,
-    title: "Biometric Product",
-    description:
-      "Affordable biometric access with cloud dashboard & real-time monitoring.",
-    image: "/robotics/Smart_Manufacturing.png",
-    tag: "Security",
-    caption: "Biometric Access",
-    link: "/solutions/biometric"
-  },
-  {
-    id: 2,
-    title: "RFID-Based Telephone",
-    description:
-      "Secure RFID calling system with student-specific digital balance recharge.",
-    image: "/appli_image_iiot/Smart-robots.jpg",
-    tag: "Communication",
-    caption: "RFID Telephone",
-    link: "/solutions/rfid-telephone"
-  },
-  {
-    id: 3,
-    title: "Hydroponic Controller",
-    description:
-      "Smart farming with sensor-driven precision and real-time farm stats display.",
-    image: "/appli_image_iiot/Industrial-Automation.jpg",
-    tag: "Agriculture",
-    caption: "VIthNet Device",
-    link: "/solutions/hydroponic"
-  },
-  {
-    id: 4,
-    title: "Robotics Training Kit",
-    description:
-      "Hands-on robotics education using real industrial cobots like IGUS ReBeL.",
-    image: "/robotics/The-Future-of-Industrial-IoT.png",
-    tag: "Education",
-    caption: "Training Kit",
-    link: "/solutions/robotics-training"
-  },
-];
+// Create an array of products
+const products = [biometricProduct, rfidProduct, hydroponicProduct];
 
 export default function CardSection() {
   return (
-    <section className="md:py-24  overflow-visible md:px-4  sm:px-4 lg:px-8">
+    <section className=" md:px-4  sm:px-4 lg:px-8">
       <motion.div 
-        className="mx-auto  overflow-visible z-10"
+        className="mx-auto "
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
@@ -85,7 +34,7 @@ export default function CardSection() {
 
         {/* Carousel Container */}
         <motion.div 
-          className="relative  overflow-visible z-10"
+          className=""
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
@@ -96,15 +45,15 @@ export default function CardSection() {
             delay: 0.2 
           }}
         >
-          <Carousel items={cards.map((card) => (
+          <Carousel items={products.map((card, index) => (
             <Card
               key={card.id}
               card={{
-                src: card.image,
-                title: card.title,
-                category: card.tag,
+                src: card.mainImage,
+                title: card.name,
+                category: card.tagline || "",
                 content: (
-                  <div className="space-y-4">
+                  <div className=" grid  gap-company-lg-24">
                     <p className="text-lg text-gray-600 dark:text-gray-300">{card.description}</p>
                     <a 
                       href={card.link}
@@ -113,9 +62,10 @@ export default function CardSection() {
                       Learn more →
                     </a>
                   </div>
-                )
+                ),
+                link: card.link
               }}
-              index={card.id - 1}
+              index={index}
             />
           ))} />
         </motion.div>

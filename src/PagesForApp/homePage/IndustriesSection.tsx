@@ -7,45 +7,13 @@ import { containerVariants, itemVariants } from '@/lib/motion';
 import { SectionHeader } from '@/components/ui/section-header';
 import Image from 'next/image';
 import { Card, CardContent,  CardTitle, CardDescription } from '@/components/ui/card';
-
-const industries = [
-  {
-    title: "Food Processing",
-    description: "Automating packaging, sorting, and quality control with robotics and smart sensors to boost hygiene and efficiency.",
-    link: "/industries/food-processing",
-    image: "/industry/food-processing.avif"
-  },
-  {
-    title: "Healthcare & Medical",
-    description: "Secure patient access, sample inspection, and hospital automation powered by biometrics, robotics, and IIoT.",
-    link: "/industries/healthcare-medical",
-    image: "/industry/healthcare.webp"
-  },
-  {
-    title: "Education & Research",
-    description: "Providing institutions with IIoT labs and robotics training kits for real-world learning and innovation.",
-    link: "/industries/education-research",
-    image: "/industry/educationlab.avif"
-  },
-  {
-    title: "Farming & Agriculture",
-    description: "Empowering modern farmers with hydroponics automation, sensor-based monitoring, and precision farming tech.",
-    link: "/industries/farming-agriculture",
-    image: "/industry/farming.avif"
-  },
-  {
-    title: "Manufacturing",
-    description: "Streamlining industrial operations through PLC-based automation, SCADA systems, and robotic integration.",
-    link: "/industries/manufacturing",
-    image: "/industry/manufactureing.avif"
-  }
-];
+import { industries } from '@/data/products';
 
 export default function IndustriesSection() {
   return (
-    <div className="max-w-[1400px] mx-auto md:px-4">
+    <div className="max-w-company-section-width mx-auto md:px-4">
       <motion.div 
-        className="max-w-[1400px] mx-auto"
+        className="max-w-company-section-width mx-auto"
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
@@ -54,12 +22,11 @@ export default function IndustriesSection() {
         <SectionHeader 
           label="INDUSTRIES"
           title="Industry Solutions"
-          className='pb-0'
         />
       </motion.div>
 
       <motion.div 
-        className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-6"
+        className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-company-lg-24"
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"

@@ -13,14 +13,14 @@ export default function WeOfferSection() {
       description:
         "Smart sensor-based systems that connect devices, monitor data, and enable real-time control",
       bgImage: "/iot_images/image.png",
-      link: "/solutions/iot"
+      link: "/technologies/robotics"
     },
     {
       title: "Robotics",
       description:
         "Industrial and educational robotics for automation, training, and real-world innovation",
       bgImage: "/robotics/image.png",
-      link: "/solutions/robotics"
+      link: "/technologies/robotics"
     },
     {
       title: "Industrial Automation",
@@ -36,8 +36,8 @@ export default function WeOfferSection() {
   };
 
   return (
-    <section className="relative md:py-24 bg-company-light-light-gray overflow-hidden">
-      <div className="max-w-[1400px] mx-auto px-4">
+    <section className="relative  overflow-hidden">
+      <div className="max-w-company-section-width mx-auto px-4">
         <SectionHeader 
           label="FEATURED"
           title="Automation at All Levels"
@@ -45,7 +45,7 @@ export default function WeOfferSection() {
         />
 
         {/* Features Grid */}
-        <div className="flex flex-col gap-y-8 md:gap-y-12 lg:gap-y-[64px]">
+        <div className="flex flex-col gap-company-lg-24 ">
           {features.map((feature, index) => (
             <Largecard 
               key={index}

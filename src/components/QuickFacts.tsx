@@ -56,9 +56,9 @@ interface factsProps {
 
 export default function QuickFacts({facts}:factsProps) {
   return (
-    <section className="w-full  ">
+    <section className="w-full max-w-company-section-width   ">
       <motion.div 
-        className="w-full mx-auto px-4"
+        className="w-full mx-auto "
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
@@ -70,7 +70,7 @@ export default function QuickFacts({facts}:factsProps) {
         />
 
         <motion.div 
-          className="grid grid-cols-2 h-[40vh] pt-9 pt:p-0 md:grid-cols-4 lg:grid-cols-4 gap-8 "
+          className="grid grid-cols-2 h-[40vh] pt-company-xs-8  md:grid-cols-4 "
           variants={containerVariants}
         >
           {facts.map((fact, index) => (
@@ -80,12 +80,12 @@ export default function QuickFacts({facts}:factsProps) {
               custom={index}
               className="text-center"
             >
-              <div className="mb-4">
+              <div className="mb-company-sm-12">
                 <span className={`${text.Sectiontexthead} text-[var(--company-primary-royalBlue)]`}>
                   <Counter end={fact.number} suffix={fact.suffix} />
                 </span>
               </div>
-              <h3 className={`${text.Extratext} text-[var(--company-blue-black)] mb-2`}>
+              <h3 className={`${text.Extratext} text-[var(--company-blue-black)] `}>
                 {fact.title}
               </h3>
               
