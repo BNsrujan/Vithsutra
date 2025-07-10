@@ -31,7 +31,7 @@ const text = {
     "text-[24px] sm:text-[36px] md:text-[42px] lg:text-[48px] leading-[1.1] tracking-tight font-semibold  text-wrap",
 
   cardHeadingtext:
-    "text-[24px] sm:text-[32px] md:text-[34px] lg:text-[36px] leading-[0.8] md:leading-[1.1] -tracking-[0.4] font-semibold sm:max-w-[800px] md:max-w-[1200px]  text-wrap",
+    "text-[24px] sm:text-[32px] md:text-[34px] lg:text-[36px] leading-[0.8] md:leading-[1] -tracking-[0.4] font-semibold sm:max-w-[800px] md:max-w-[1200px]  text-wrap",
 
   // DisplaySupportingtext:
   cardHeadingsmall:

@@ -43,7 +43,7 @@ export default function IndustriesSection() {
             className="group md:min-h-96 w-full "
           >
             <Link href={industry.link}>
-              <Card className="relative h-full min-h-[400px] overflow-hidden w-full transition-all duration-300 border-2 group-hover:-translate-y-1">
+              <Card className="relative h-full min-h-[400px] overflow-hidden w-full  duration-300  ">
                 <div className="absolute inset-0 overflow-hidden">
                   <Image
                     src={industry.image}
@@ -54,13 +54,13 @@ export default function IndustriesSection() {
                     priority
                     className="absolute w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
+                  <div className="absolute inset-0 bg-black/20" />
                 </div>
-                <CardContent className="relative p-[16px] md:p-[24px] w-full z-10 h-full flex flex-col justify-end">
-                  <CardTitle className="text-[var(--company-white)] mb-1 md:mb-2 text-2xl font-bold">
+                <CardContent className="relative  p-company-lg-24 w-full z-10 h-full  flex flex-col justify-end">
+                  <CardTitle className="text-[var(--company-white)]  font-bold">
                     {industry.title}
                   </CardTitle>
-                  <CardDescription className="text-[var(--company-litest-gray)]  text-wrap w-full text-base">
+                  <CardDescription className="text-[var(--company-litest-gray)]  text-wrap w-full ">
                     {industry.description}
                   </CardDescription>
                 </CardContent>

@@ -92,7 +92,7 @@ function Largecard({ index, feature, onCardClick, className = "" }: LargecardPro
             isTouched ? 'opacity-90' : 'opacity-70 group-hover:opacity-90'
           }`}
         />
-        <div className="absolute inset-0 p-4 sm:p-6 md:p-8 flex flex-col justify-end">
+        <div className="absolute inset-0 p-4 sm:p-6 md:p-company-lg-24 flex flex-col justify-end">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}

@@ -117,7 +117,7 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
 
           <div
             className={cn(
-              "flex flex-row justify-start gap-company-lg-24  pl-4 w-screen md:w-full",
+              "flex flex-row justify-start gap-company-lg-24   w-screen md:w-full",
               "mx-auto ", // remove max-w-4xl if you want the carousel to span the full width of its container
             )}
           >
@@ -244,16 +244,16 @@ export const Card = ({
         className="group relative w-[80vw] z-10 flex h-80 flex-col  items-start justify-start scale-0.9 overflow-hidden rounded-3xl bg-gray-100 md:h-[40rem] md:w-[50vw] dark:bg-neutral-900 transition-all duration-700 ease-in-out hover:scale-[1.0001]"
       >
         <div className="pointer-events-none  absolute w-auto inset-x-0 top-0 z-30 h-full bg-company-dark-gray/20  duration-700 ease-in-out " />
-        <div className=" absolute bottom-0 left-1 z-40 p-8">
+        <div className=" absolute bottom-0 left-1 z-40 p-company-lg-24">
           <motion.p
             layoutId={layout ? `category-${card.category}` : undefined}
-            className={`${text.cardBodytext} text-left text-company-black/70 transition-all duration-700 ease-in-out group-hover:text-company-black`}
+            className={`${text.cardBodytext} text-left text-company-black/70  transition-all duration-700 ease-in-out group-hover:text-company-black`}
           >
             {card.category}
           </motion.p>
           <motion.p
             layoutId={layout ? `title-${card.title}` : undefined}
-            className={`${text.cardHeadingtext} mt-2 max-w-xs text-left text-company-black/70  transition-all duration-700 ease-in-out group-hover:text-company-black`}
+            className={`${text.cardHeadingtext}  max-w-xs text-left text-company-black/70  transition-all duration-700 ease-in-out group-hover:text-company-black`}
           >
             {card.title}
           </motion.p>

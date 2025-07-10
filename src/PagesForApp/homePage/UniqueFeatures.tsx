@@ -19,7 +19,7 @@ const FeatureCard = ({
   delay?: number;
 }) => (
   <motion.div
-    className="relative bg-white/5 backdrop-blur-sm border rounded-2xl p-6 h-full flex flex-col justify-end overflow-hidden"
+    className="relative bg-white/5 backdrop-blur-sm border rounded-2xl p-company-lg-24 h-full flex flex-col justify-end overflow-hidden"
     initial={{ opacity: 0, y: 30 }}
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true, margin: "-100px" }}
@@ -42,7 +42,7 @@ const FeatureCard = ({
       </div>
       <div>
         <h3
-          className={`${text.cardHeadingtext}text-2xl font-bold mb-2 text-company-primary-royalBlue`}
+          className={`${text.cardHeadingtext}  mb-company-xs-8 text-company-primary-royalBlue`}
         >
           {title}
         </h3>

@@ -12,7 +12,7 @@ const products = [biometricProduct, rfidProduct, hydroponicProduct];
 
 export default function CardSection() {
   return (
-    <section className=" md:px-4  sm:px-4 lg:px-8">
+    <section className=" px-company-xs-8">
       <motion.div 
         className="mx-auto "
         variants={containerVariants}
