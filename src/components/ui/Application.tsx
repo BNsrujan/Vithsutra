@@ -78,8 +78,8 @@ function Application({ applications }: ApplicationProps) {
   if (filteredApplications.length === 0) return null;
 
   return (
-    <div className="md:py-16">
-      <div className="max-w-company-section-width mx-auto pb-company-xl-48 w-full">
+    <div className="md:py-company-lg-24">
+      <div className="max-w-company-section-width mx-auto  w-full">
         <Heading Display="Application" heading="Use Cases" />
         <div className="flex justify-center items-center w-full min-h-96 relative overflow-hidden">
           <AnimatePresence custom={direction} mode="wait">

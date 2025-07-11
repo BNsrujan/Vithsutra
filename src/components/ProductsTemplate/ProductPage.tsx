@@ -65,19 +65,19 @@ export default function ProductPage({
           </div>
 
           {/* Right side - Image */}
-          <div className="relative w-full lg:w-1/2 h-[260px] md:h-[350px] lg:h-[400px] flex justify-center items-center">
+          <div className="relative w-full lg:w-1/2 h-[260px] md:h-[350px] lg:h-[700px] flex justify-center items-center">
             <div className="absolute h-4 -bottom-2 md:-bottom-8 w-3/5 justify-center rounded-full bg-gradient-to-t from-transparent to-gray-600/10 blur-xs backdrop-blur-3xl" />
             <motion.div
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
-              className="relative h-full w-[90vw] sm:w-[400px] md:w-[500px] lg:w-[600px] max-w-full overflow-visible rounded-[28px]"
+              className="relative h-full w-[90vw] sm:w-[400px] md:w-[500px] lg:w-[700px] max-w-full overflow-visible rounded-[28px]"
             >
               <Image
                 src={product.mainImage}
                 alt={product.name}
                 fill
-                className="object-contain md:object-cover overflow-visible rounded-4xl"
+                className="object-contain md:object-contain overflow-visible rounded-4xl"
                 priority
               />
             </motion.div>
@@ -85,60 +85,140 @@ export default function ProductPage({
         </div>
       </section>
 
-      {/* buit in featuere */}
-      {product.whychose && product.whychose.length > 0 && (
-        <section className=" px-company-md-16 flex min-h-screen flex-col justify-center  ">
-          <div className="max-w-company-section-width mx-auto">
-            <Heading heading="FEATURES" Display="Key Features" />
-            <div className="py-6">
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-company-xl-48">
-                {product.whychose.map((whychose, idx) => {
-                  const IconComponent = whychose.image ? (
-                    <Image
-                      src={whychose.image}
-                      alt={whychose.title}
-                      width={50}
-                      height={50}
-                    />
-                  ) : typeof whychose.icon === "function" ? (
-                    React.createElement(whychose.icon, {
-                      className: " text-gray-700",
-                    })
-                  ) : null;
+      {product.name == "Hydroponic Controller" && (
+        <div>
+        <section className="relative min-h-[70vh]  w-full  ">
+          <div className="container mx-auto px-4 flex flex-wrap-reverse items-center justify-between w-full h-full py-20 gap-company-xl-48 md:gap-0">
+            {/* Right side - Image */}
+            <div className="relative w-full lg:w-1/2 h-[260px] md:h-[350px] lg:h-[700px] flex justify-center items-center">
+              <motion.div
+                variants={containerVariants}
+                initial="hidden"
+                animate="visible"
+                className="relative h-full w-[90vw] sm:w-[400px] md:w-[500px] lg:w-[700px] max-w-full overflow-visible rounded-[28px]"
+              >
+                <Image
+                  src={"/Products/vithnet/CEA1.png"}
+                  alt={product.name}
+                  fill
+                  className="object-contain md:object-contain overflow-visible rounded-4xl"
+                  priority
+                />
+              </motion.div>
+            </div>
 
-                  return (
-                    <div
-                      key={whychose.title + idx}
-                      className="flex items-start gap-company-xs-8 justify-center "
-                    >
-                      <div className="flex-shrink-0">
-                        <div className="w-20 h-20 bg-white border border-gray-200 rounded-company-button-8  flex items-center justify-center">
-                          {IconComponent}
-                        </div>
-                      </div>
-                      <div className="flex-1 justify-center h-full">
-                        <h3
-                          className={` ${text.cardHeadingsmall} pb-company-xs-8 text-gray-900 `}
-                        >
-                          {whychose.title}
-                        </h3>
-                        <p
-                          className={`${text.cardBodytextlight}text-sm text-gray-600 leading-relaxed`}
-                        >
-                          {whychose.description}
-                        </p>
-                      </div>
-                    </div>
-                  );
-                })}
-              </div>
+            {/* Left side - Text Content */}
+            <div className="w-full lg:w-1/2 text-black flex  flex-col justify-center h-full items-center lg:items-start ">
+              <motion.div
+                variants={containerVariants}
+                initial="hidden"
+                animate="visible"
+                className=" space-y-company-md-16 md:space-y-company-lg-24 text-center lg:text-left"
+              >
+                <motion.h1
+                  className={`${text.Sectiontexthead} `}
+                  variants={fadeInDown}
+                >
+                  What is Controlled Environment Farming?
+                </motion.h1>
+                <motion.p
+                  className={`${text.cardBodytext} max-w-2xl `}
+                  variants={fadeInUp}
+                >
+                  Controlled Environment Farming (CEF) is the practice of
+                  growing crops in enclosed spaces with precise control over
+                  environmental factors. It enhances crop yield and resource
+                  efficiency by managing temperature, humidity, pH, and
+                  nutrients.
+                </motion.p>
+              </motion.div>
             </div>
           </div>
         </section>
+        <section className="relative min-h-[70vh]  w-full  ">
+          <div className="container mx-auto px-4 flex flex-wrap-reverse items-center justify-between w-full h-full py-20 gap-company-xl-48 md:gap-0">
+            {/* Left side - Text Content */}
+            <div className="w-full lg:w-1/2 text-black flex  flex-col justify-center h-full items-center lg:items-start ">
+              <motion.div
+                variants={containerVariants}
+                initial="hidden"
+                animate="visible"
+                className=" space-y-company-md-16 md:space-y-company-lg-24 text-center lg:text-left"
+              >
+                <motion.h1
+                  className={`${text.Sectiontexthead} `}
+                  variants={fadeInDown}
+                >
+                  What is Controlled Environment Farming?
+                </motion.h1>
+                <motion.p
+                  className={`${text.cardBodytext} max-w-2xl `}
+                  variants={fadeInUp}
+                >
+                  Controlled Environment Farming (CEF) is the practice of
+                  growing crops in enclosed spaces with precise control over
+                  environmental factors. It enhances crop yield and resource
+                  efficiency by managing temperature, humidity, pH, and
+                  nutrients.
+                </motion.p>
+              </motion.div>
+            </div>
+
+        
+              <div className="md:w-1/2 mx-auto">
+                <Heading heading="FEATURES" Display="Key Features" />
+                <div className="py-6">
+                  <div className="grid grid-cols-1 md:grid-cols-2  gap-company-xl-48">
+                    {product.whychose.map((whychose, idx) => {
+                      const IconComponent = whychose.image ? (
+                        <Image
+                          src={whychose.image}
+                          alt={whychose.title}
+                          width={50}
+                          height={50}
+                        />
+                      ) : typeof whychose.icon === "function" ? (
+                        React.createElement(whychose.icon, {
+                          className: " text-gray-700",
+                        })
+                      ) : null;
+
+                      return (
+                        <div
+                          key={whychose.title + idx}
+                          className="flex items-start gap-company-xs-8 justify-center "
+                        >
+                          <div className="flex-shrink-0">
+                            <div className="w-20 h-20 bg-white border border-gray-200 rounded-company-button-8  flex items-center justify-center">
+                              {IconComponent}
+                            </div>
+                          </div>
+                          <div className="flex-1 justify-center h-full">
+                            <h3
+                              className={` ${text.cardHeadingsmall} pb-company-xs-8 text-gray-900 `}
+                            >
+                              {whychose.title}
+                            </h3>
+                            <p
+                              className={`${text.cardBodytextlight}text-sm text-gray-600 leading-relaxed`}
+                            >
+                              {whychose.description}
+                            </p>
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
+                </div>
+              </div>
+            
+          </div>
+        </section>
+        </div>
       )}
 
       {/* Features Section */}
-      <section className=" px-company-md-16 flex min-h-screen flex-col justify-center  ">
+      <section className="  flex py-company-xl-48 flex-col justify-center  ">
         <div className="max-w-company-section-width mx-auto">
           <Heading heading="FEATURES" Display="Key Features" />
           <div className="py-6">
@@ -189,9 +269,13 @@ export default function ProductPage({
 
       {/* How It Works Section */}
       {product.howItWorks && product.howItWorks.length > 0 && (
-        <section className="px-company-md-16 md:px-8  min-h-screen">
-          <div className="max-w-company-section-width mx-auto">
-            <Heading heading="Simple, secure, and streamlined - our four-step process ensures reliable communication access" Display="How It Works"  className="flex flex-col-reverse"/>
+        <section className="px-company-md-16 md:px-8  min-h-screen flex  justify-center items-center w-full">
+          <div className="max-w-company-section-width mx-auto w-full">
+            <Heading
+              heading="Simple, secure, and streamlined - our four-step process ensures reliable communication access"
+              Display="How It Works"
+              className="flex flex-col-reverse"
+            />
             <div className="flex flex-col md:flex-row items-center justify-between gap-company-xl-48 w-full">
               {product.howItWorks.map((step, idx, arr) => (
                 <ProcessStepCard
@@ -208,9 +292,13 @@ export default function ProductPage({
       )}
 
       {/* Technical Specifications Section */}
-      <section className="flex  justify-center  ">
+      <section className="flex p-company-xs-8 md:p-0  justify-center  ">
         <div className="max-w-company-section-width  w-full h-full">
-        <Heading heading="Detailed technical information for system integration and deployment" Display="Technical Specifications" className="flex flex-col-reverse "  />
+          <Heading
+            heading="Detailed technical information for system integration and deployment"
+            Display="Technical Specifications"
+            className="flex flex-col-reverse "
+          />
           <div className="h-full flex justify-center  items-center bg-company-litest-gray rounded-company-section-24 border z-100 mx-auto ">
             <Image
               src={product.tecnicalimage}
@@ -238,7 +326,9 @@ export default function ProductPage({
             whileInView="visible"
             viewport={{ once: true }}
           >
-            <h2 className={`${text.cardHeadingtext} text-white mb-company-md-16`}>
+            <h2
+              className={`${text.cardHeadingtext} text-white mb-company-md-16`}
+            >
               Ready to Get Started?
             </h2>
             <p
@@ -268,7 +358,7 @@ export default function ProductPage({
       )}
 
       {/* F&Q */}
-      <section className="py-24 p- px-4 md:px-0 flex justify-center">
+      <section className=" px-4 md:px-0 flex justify-center">
         <div className="max-w-company-section-width w-full">
           <Heading heading="Have any Q&A" Display="Your Query" />
           <Accordion type="single" collapsible>
@@ -340,13 +430,16 @@ export default function ProductPage({
 
       {/*our Galry*/}
       {product.gallery && product.gallery.length > 0 && (
-        <section className="">
-          <div className="max-w-company-section-width">
-            <Heading Display="Gallery" heading=""/>
-            <div  className="flex flex-wrap">
+        <section className=" w-full flex  justify-center">
+          <div className="max-w-company-section-width w-full">
+            <Heading Display="Gallery" heading="" className="pb-1" />
+            <div className="flex flex-wrap gap-company-lg-24">
               {product.gallery.map((image) => (
-                <div key={image} className="w-[4rem] h-[4rem]">
-                  <Image src={image} alt="" width={150} height={150}/>
+                <div
+                  key={image}
+                  className="w-[12rem] rounded-company-button-8 border "
+                >
+                  <Image src={image} alt="" width={150} height={150} />
                 </div>
               ))}
             </div>
@@ -356,8 +449,8 @@ export default function ProductPage({
 
       {/* Our Track */}
       {product.facts && (
-        <section className="py-24 flex justify-center">
-          <div className="max-w-7xl ">
+        <section className="py-24 flex justify-center w-full">
+          <div className="max-w-company-section-width w-full ">
             <QuickFacts facts={product.facts} />
           </div>
         </section>

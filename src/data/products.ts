@@ -255,9 +255,9 @@ export const rfidProduct: Product = {
 export const biometricProduct: Product = {
   id: "biometric-product",
   name: "Biometric Product",
-  tagline:"Affordable biometric access with cloud dashboard & real-time monitoring",
+  tagline:"Biometric Access System",
   description:
-    "Our biometric access system provides secure, reliable, and affordable authentication solutions with real-time monitoring capabilities. The system integrates seamlessly with existing infrastructure while providing advanced security features and comprehensive access control.",
+    "This biometric access system is built for hostels, institutions, and workplaces. It replaces manual registers, cards, or PINs with fast, accurate fingerprint authentication. Every entry is logged, timed, and secured with minimal human intervention",
   mainImage: "/Products/biometric-product/main_photo2.svg",
   productSectionImage:"/Products/biometric-product/main_productsection.svg",
   features : [
@@ -417,9 +417,9 @@ export const biometricProduct: Product = {
 export const hydroponicProduct: Product = {
   id: "hydroponic-controller",
   name: "Hydroponic Controller",
-  tagline:"Smart farming with sensor-driven precision and real-time farm stats display",
+  tagline:"Smart Farming Automation System",
   description:
-    "Our VIthNet Hydroponic Controller brings precision agriculture to your fingertips. With advanced sensor technology and real-time monitoring, it optimizes growing conditions for maximum yield while minimizing resource usage.",
+    "VITHNET is an IoT-powered automation system for Controlled Environment Agriculture (CEA) that helps optimize crop growth using minimal water and space. VITHNET offers real-time monitoring, automated sensing, and precise climate control, ensuring healthier crops and higher yields with minimal manual effort.",
   mainImage: "/Products/vithnet/vithnet_device_2.svg",
   productSectionImage:"/Products/vithnet/vithnet_device_2.svg",
   whychose: [
