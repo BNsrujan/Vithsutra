@@ -79,13 +79,13 @@ function Application({ applications }: ApplicationProps) {
 
   return (
     <div className="md:py-16">
-      <div className="max-w-7xl mx-auto pb-company-xl-48">
+      <div className="max-w-company-section-width mx-auto pb-company-xl-48 w-full">
         <Heading Display="Application" heading="Use Cases" />
-        <div className="flex justify-center items-center w-full min-h-[80vh] relative overflow-hidden">
+        <div className="flex justify-center items-center w-full min-h-96 relative overflow-hidden">
           <AnimatePresence custom={direction} mode="wait">
             <motion.div
               key={currentApp.industry}
-              className="relative flex w-full h-[80vh] flex-col items-center text-center bg-white rounded-[24px] shadow-lg "
+              className="relative flex w-full h-[80vh] flex-col overflow-hidden items-center text-center bg-white rounded-company-section-24 shadow-lg "
               custom={direction}
               variants={variants}
               initial="enter"
@@ -97,9 +97,9 @@ function Application({ applications }: ApplicationProps) {
                 src={currentApp.image}
                 alt={currentApp.industry}
                 fill
-                className="rounded-lg w-full h-full object-cover bg-gray-200"
+                className="rounded-company-section-24 w-full h-full object-cover bg-gray-200"
               />
-              <div className=" absolute bottom-0  p-12 text-start w-full">
+              <div className=" absolute bottom-0  p-company-lg-24 text-start w-full">
                 <h2 className={`${text.cardHeadingtext} mt-2 text-black`}>{currentApp.industry}</h2>
                 <p className={`${text.cardBodytext} text-gray-500 mt-2`}>{currentApp.description}</p>
               </div>

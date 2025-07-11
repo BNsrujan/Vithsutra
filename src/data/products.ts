@@ -151,13 +151,15 @@ export const rfidProduct: Product = {
       company: "Ski-line Boys Hostel, Mysore",
       quote:
         "Managing communication in a boys' hostel with over 300 students was always a challenge especially when students' personalphones were often misplaced or misused. Since installing these RFID-based telephones, daily communication has become streamlined and secure. Each student now has verified access, and calls can be tracked for accountability. The product has drastically reduced misuse and brought a sense of discipline in the hostel. It's become an essential part of our daily routine.",
+    avatar:"/Products/rfid-tel/testimonal_profile/image2.png"
     },
     {
       id: 2,
       name: "Surjeet Yadav",
       title: "Site Operations Head",
       company: "Mahadev Mining Corporation, Jharkhand",
-      quote:"Our mining site is located deep in a region where mobile networks from different SIM providers constantly fail. Communication was a huge bottleneck affecting both safety and coordination. After implementing these telephones with wide coverage antennas,  we've finally found a reliable solution. Now, our teams stay connected across the entire site, without worrying about poor signal  strength. It's a game-changer for the mining industry."
+      quote:"Our mining site is located deep in a region where mobile networks from different SIM providers constantly fail. Communication was a huge bottleneck affecting both safety and coordination. After implementing these telephones with wide coverage antennas,  we've finally found a reliable solution. Now, our teams stay connected across the entire site, without worrying about poor signal  strength. It's a game-changer for the mining industry.",
+      avatar:"/Products/rfid-tel/testimonal_profile/image2.png"
     },
   
   ],
@@ -330,7 +332,6 @@ export const biometricProduct: Product = {
   ],
   tecnicalimage:"/Products/biometric-product/TechPhoto.svg",
   testimonials:[
-   
     {
       id: 1,
       avatar:"/Products/biometric-product/testimonialprofilephoto/image_2.png",
@@ -502,7 +503,7 @@ export const hydroponicProduct: Product = {
   testimonials:[
     {
       id: 1,
-      name: "Ragavendra  Shetty",
+      name: "Ragavendr  Shetty",
       title: "Hostel Manager",
       company: "Ski-line Boys Hostel, Mysore",
       quote:
@@ -669,22 +670,26 @@ export const IIOT = {
   ],
   testimonials: [
     {
+      id: 1,
       name: "Nikhil Jadhav",
-      designation: "Project Supervisor – AquaSure Infra Pvt. Ltd.",
-      location: "Bengaluru",
-      feedback: `"Managing STPs and ETPs across different cities was chaotic until we adopted VithSutra's IIoT platform. 
+      title: "Project Supervisor",
+      company: "AquaSure Infra Pvt. Ltd., Bengaluru",
+      quote: `Managing STPs and ETPs across different cities was chaotic until we adopted VithSutra's IIoT platform. 
 From flow sensors to tank levels and pump pressure — we now track everything remotely with precise data logs. 
 It has made SLA compliance easier with on-time overflow alerts and live analytics for pump efficiency. 
-The shift from reactive to proactive control has transformed our operational model completely."`
+The shift from reactive to proactive control has transformed our operational model completely.`,
+      avatar: ""
     },
     {
+      id: 2,
       name: "Farhan Khan",
-      designation: "Maintenance Head – CoreFuel Energy Ltd.",
-      location: "Mumbai",
-      feedback: `"Safety and uptime are mission-critical in our sector, and VithSutra's solution has elevated both. 
+      title: "Maintenance Head",
+      company: "CoreFuel Energy Ltd., Mumbai",
+      quote: `Safety and uptime are mission-critical in our sector, and VithSutra's solution has elevated both. 
 Our team now monitors pipeline pressure, pump vibration, and leak indicators in real time across multiple sites. 
 The system's threshold-based alarms helped us prevent two major failures in just the first month of deployment. 
-It has reduced our unplanned maintenance and strengthened our remote control and safety protocols."`
+It has reduced our unplanned maintenance and strengthened our remote control and safety protocols.`,
+      avatar: ""
     }
   ],
   applications: [
@@ -793,16 +798,20 @@ export const roboticsWorkshop = {
   ],
   testimonials: [
     {
+      id: 1,
       name: "Dr. Nalini Rao",
-      role: "Managing Trustee",
-      organization: "Vidya Vihar Educational Trust, Maharashtra",
-      statement: "Vithsutra's robotics training brought our students face-to-face with real automation. The hands-on sessions with industrial robots helped them understand concepts that textbooks alone could never deliver. It was a game-changing experience for our institution."
+      title: "Managing Trustee",
+      company: "Vidya Vihar Educational Trust, Maharashtra",
+      quote: `Vithsutra's robotics training brought our students face-to-face with real automation. The hands-on sessions with industrial robots helped them understand concepts that textbooks alone could never deliver. It was a game-changing experience for our institution.`,
+      avatar: ""
     },
     {
+      id: 2,
       name: "Mr. Suresh Deshmukh",
-      role: "",
-      organization: "",
-      statement: "We were impressed by how Vithsutra seamlessly blended advanced robotics with an easy-to-understand curriculum. Their approach ignited interest even in non-technical students and created a buzz across our campus. Highly recommended for any institution serious about future-ready education."
+      title: "",
+      company: "",
+      quote: `We were impressed by how Vithsutra seamlessly blended advanced robotics with an easy-to-understand curriculum. Their approach ignited interest even in non-technical students and created a buzz across our campus. Highly recommended for any institution serious about future-ready education.`,
+      avatar: ""
     }
   ]
 };

@@ -21,28 +21,23 @@
     --company-gray-text: #6e6e73;
     --company-dark-dark-gray-text: #1d1d1f;
 
-    /* big box */
-    --big-box-w:1296px;
-    --big-box-h:850px;
+/* big box */
+--big-box-w: 81rem;      /* 1296px ÷ 16 */
+--big-box-h: 53.125rem;  /* 850px ÷ 16 */
 
-    /* radius */
-    --button-radius:8px;
-    --card-radius:16px;
-    --section-radius:24px;
+/* radius */
+--button-radius: 0.5rem;   /* 8px */
+--card-radius: 1rem;       /* 16px */
+--section-radius: 1.5rem;  /* 24px */
+
+/* spacing - 2, 3, 4, 6, 8 */
+--company-xs-8: 0.5rem;     /* 8px */
+--company-sm-12: 0.75rem;   /* 12px */
+--company-md-16: 1rem;      /* 16px */
+--company-lg-24: 1.5rem;    /* 24px */
+--company-xl-48: 3rem;      /* 48px */
 
 
-    /* spacing  - 2 , 3 ,4 ,6 ,8 */
-    --company-xs-8:8px;
-    --company-sm-12:12px;
-    --company-md-16:16px;
-    --company-lg-24:24px;
-    --company-xl-48:48px;
-
-    /* icon size */
-  
-  
-    /* width  */
-    --section-width:1400px
 
     /*  */
     --radius: 0.625rem;
@@ -92,7 +87,8 @@
 
 
   /* weidth of section */
-  --spacing-company-section-width:var(--section-width);
+  --container-company-section-width:87.5rem;  /* 1400px */
+
 
   /* Company Colors */
   --color-company-primary-royalBlue: var(--company-primary-royalBlue);
@@ -159,6 +155,8 @@
   --radius-xl: calc(var(--radius) + 4px);
   --animate-marquee: marquee var(--duration) infinite linear;
   --animate-marquee-vertical: marquee-vertical var(--duration) linear infinite;
+  
+
   @keyframes marquee {
   from {
     transform: translateX(0);

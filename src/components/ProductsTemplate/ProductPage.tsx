@@ -59,7 +59,7 @@ export default function ProductPage({
                 {product.description}
               </motion.p>
               <div className="flex justify-center lg:justify-start">
-                <Button  variant={"neumorphic"}>Book a Demo</Button>
+                <Button variant={"neumorphic"}>Book a Demo</Button>
               </div>
             </motion.div>
           </div>
@@ -85,9 +85,61 @@ export default function ProductPage({
         </div>
       </section>
 
+      {/* buit in featuere */}
+      {product.whychose && product.whychose.length > 0 && (
+        <section className=" px-company-md-16 flex min-h-screen flex-col justify-center  ">
+          <div className="max-w-company-section-width mx-auto">
+            <Heading heading="FEATURES" Display="Key Features" />
+            <div className="py-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-company-xl-48">
+                {product.whychose.map((whychose, idx) => {
+                  const IconComponent = whychose.image ? (
+                    <Image
+                      src={whychose.image}
+                      alt={whychose.title}
+                      width={50}
+                      height={50}
+                    />
+                  ) : typeof whychose.icon === "function" ? (
+                    React.createElement(whychose.icon, {
+                      className: " text-gray-700",
+                    })
+                  ) : null;
+
+                  return (
+                    <div
+                      key={whychose.title + idx}
+                      className="flex items-start gap-company-xs-8 justify-center "
+                    >
+                      <div className="flex-shrink-0">
+                        <div className="w-20 h-20 bg-white border border-gray-200 rounded-company-button-8  flex items-center justify-center">
+                          {IconComponent}
+                        </div>
+                      </div>
+                      <div className="flex-1 justify-center h-full">
+                        <h3
+                          className={` ${text.cardHeadingsmall} pb-company-xs-8 text-gray-900 `}
+                        >
+                          {whychose.title}
+                        </h3>
+                        <p
+                          className={`${text.cardBodytextlight}text-sm text-gray-600 leading-relaxed`}
+                        >
+                          {whychose.description}
+                        </p>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* Features Section */}
       <section className=" px-company-md-16 flex min-h-screen flex-col justify-center  ">
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-company-section-width mx-auto">
           <Heading heading="FEATURES" Display="Key Features" />
           <div className="py-6">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-company-xl-48">
@@ -138,8 +190,8 @@ export default function ProductPage({
       {/* How It Works Section */}
       {product.howItWorks && product.howItWorks.length > 0 && (
         <section className="px-company-md-16 md:px-8  min-h-screen">
-          <div className="max-w-7xl mx-auto">
-            <Heading heading="PROCESS" Display="How It Works" />
+          <div className="max-w-company-section-width mx-auto">
+            <Heading heading="Simple, secure, and streamlined - our four-step process ensures reliable communication access" Display="How It Works"  className="flex flex-col-reverse"/>
             <div className="flex flex-col md:flex-row items-center justify-between gap-company-xl-48 w-full">
               {product.howItWorks.map((step, idx, arr) => (
                 <ProcessStepCard
@@ -156,45 +208,46 @@ export default function ProductPage({
       )}
 
       {/* Technical Specifications Section */}
-      <section className="flex  justify-center  h-screen ">
-        <div className=" w-full h-full">
-        <div className=" w-full h-full flex justify-center  items-center bg-company-litest-gray mx-auto ">
-          <Image
-            src={product.tecnicalimage}
-            alt={product.name}
-            width={1000}
-            height={1000}
-          />
-        </div>
+      <section className="flex  justify-center  ">
+        <div className="max-w-company-section-width  w-full h-full">
+        <Heading heading="Detailed technical information for system integration and deployment" Display="Technical Specifications" className="flex flex-col-reverse "  />
+          <div className="h-full flex justify-center  items-center bg-company-litest-gray rounded-company-section-24 border z-100 mx-auto ">
+            <Image
+              src={product.tecnicalimage}
+              alt={product.name}
+              width={1000}
+              height={1000}
+            />
+          </div>
         </div>
       </section>
 
       {/* Applications Section */}
-      <section className="py-16 px-4 md:py-24 md:px-8 bg-gray-50 relative flex justify-center items-center">
-        <div className="w-full  max-w-7xl">
+      <section className="py-16 px-4 md:px-0 md:py-24  relative flex justify-center items-center">
+        <div className="w-full ">
           <Application applications={product.applications} />
         </div>
       </section>
 
       {/* CTA Section */}
       <section className="">
-        <div className="max-w-7xl mx-auto md:rounded-4xl bg-company-primary-royalBlue h-[300px] flex flex-col justify-center px-2 md:px-8 text-center">
+        <div className="max-w-company-section-width mx-auto md:rounded-4xl bg-company-primary-royalBlue h-[300px] flex flex-col justify-center  items-center  text-center">
           <motion.div
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
           >
-            <h2 className={`${text.cardHeadingtext} text-white mb-2`}>
+            <h2 className={`${text.cardHeadingtext} text-white mb-company-md-16`}>
               Ready to Get Started?
             </h2>
             <p
-              className={`${text.Sectionbodytexts} text-company-litest-gray  mb-10 max-w-2xl mx-auto`}
+              className={`${text.Sectionbodytexts} text-company-litest-gray  mb-company-md-16 max-w-2xl mx-auto`}
             >
               Contact us today to learn more about {product.name} and how it can
               benefit your business.
             </p>
-            <div className="md:flex  space-y-4 md:space-y-0  w-fll justify-center content-center md:gap-8 ">
+            <div className="md:flex  space-y-4 md:space-y-0  w-fll justify-center content-center md:gap-company-md-16 ">
               <Button
                 onClick={() => router.push("/Contact")}
                 className="bg-company-secondary-yello text-black hover:text-black hover:bg-company-secondary-yello/80"
@@ -215,8 +268,8 @@ export default function ProductPage({
       )}
 
       {/* F&Q */}
-      <section className="py-24 p- px-4 md:px-8 flex justify-center">
-        <div className="max-w-7xl w-full">
+      <section className="py-24 p- px-4 md:px-0 flex justify-center">
+        <div className="max-w-company-section-width w-full">
           <Heading heading="Have any Q&A" Display="Your Query" />
           <Accordion type="single" collapsible>
             {product.FaQ &&
@@ -242,7 +295,7 @@ export default function ProductPage({
       {/* Other Products Section */}
       {otherProducts.length > 0 && (
         <section className="py-24">
-          <div className="max-w-7xl mx-auto px-4 md:px-8">
+          <div className="max-w-company-section-width mx-auto px-4 md:px-0">
             <Heading heading="MORE" Display="Other Products" />
             <motion.div
               className=""
@@ -260,7 +313,7 @@ export default function ProductPage({
                       card={{
                         src: p.productSectionImage,
                         title: p.name,
-                        category: p.tagline || '',
+                        category: p.tagline || "",
                         link: `/products/${p.id}`,
                         content: (
                           <div className="space-y-4">
@@ -287,8 +340,17 @@ export default function ProductPage({
 
       {/*our Galry*/}
       {product.gallery && product.gallery.length > 0 && (
-        <section>
-          <div className="max-w-7xl">{product.gallery}</div>
+        <section className="">
+          <div className="max-w-company-section-width">
+            <Heading Display="Gallery" heading=""/>
+            <div  className="flex flex-wrap">
+              {product.gallery.map((image) => (
+                <div key={image} className="w-[4rem] h-[4rem]">
+                  <Image src={image} alt="" width={150} height={150}/>
+                </div>
+              ))}
+            </div>
+          </div>
         </section>
       )}
 
