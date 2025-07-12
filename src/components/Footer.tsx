@@ -13,17 +13,17 @@ const industries = [
 ];
 
 const solutions = [
-  { name: "RFID-Based Telephone", href: "/projects/rfid-based-telephone" },
-  { name: "Biometric System", href: "/projects/biometric-product" },
-  { name: "Hydroponics Controller", href: "/projects/billing-system" },
-  { name: "Robotics Training Program", href: "/projects/hydroponic-project" },
-  { name: "Industrial Automation Suite", href: "/projects/hydroponic-project" },
+  { name: "RFID-Based Telephone", href: "/products/rfid-telephone" },
+  { name: "Biometric System", href: "/products/biometric-product" },
+  { name: "Hydroponics Controller", href: "/products/hydroponic-controller" },
+  { name: "Robotics Training Program", href: "/products/hydroponic-controller" },
+  { name: "Industrial Automation Suite", href: "/products/hydroponic-project" },
 ];
 
 const technologies = [
-  { name: "IIOT & Robotics", href: "/technologies/iiot-robotics" },
-  { name: "Electronics", href: "/technologies/electronics" },
-  { name: "Smart Retail", href: "/technologies/smart-retail" },
+  { name: "IIOT", href: "/technologies/iiot" },
+  { name: "Robotics", href: "/technologies/robotics" },
+  { name: "Softwares", href: "/technologies/Softwares" },
 ];
 
 const companyLinks = [
@@ -65,7 +65,7 @@ export default function Footer() {
 
           {/* Navigation Sections */}
           <div className="flex-1 max-w-[900px] ml-7 md:m-0 ">
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:pl-8 w-full">
+            <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:pl-8 w-full">
               {/* Industries */}
               <div>
                 <h3 className={`text-lg font-semibold mb-4 text-company-blue ${text.FooterHeadingtext}`}>Industries</h3>

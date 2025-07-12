@@ -71,7 +71,7 @@ export default function ProductPage({
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
-              className="relative h-full w-[90vw] sm:w-[400px] md:w-[500px] lg:w-[700px] max-w-full overflow-visible rounded-[28px]"
+              className="relative h-full w-[90vw] sm:w-full md:w-[500px] lg:w-[700px] max-w-full overflow-visible rounded-[28px]"
             >
               <Image
                 src={product.mainImage}
@@ -218,7 +218,7 @@ export default function ProductPage({
       )}
 
       {/* Features Section */}
-      <section className="  flex py-company-xl-48 flex-col justify-center  ">
+      <section className=" px-4 md:px-0  flex py-company-xl-48 flex-col justify-center  ">
         <div className="max-w-company-section-width mx-auto">
           <Heading heading="FEATURES" Display="Key Features" />
           <div className="py-6">
@@ -292,7 +292,7 @@ export default function ProductPage({
       )}
 
       {/* Technical Specifications Section */}
-      <section className="flex p-company-xs-8 md:p-0  justify-center  ">
+      <section className="flex p-company-xs-8 md:p-0  contain-content justify-center  ">
         <div className="max-w-company-section-width  w-full h-full">
           <Heading
             heading="Detailed technical information for system integration and deployment"
@@ -352,7 +352,7 @@ export default function ProductPage({
 
       {/* Testimonials Section */}
       {product.testimonials && product.testimonials.length > 0 && (
-        <section className="py-24 flex justify-center">
+        <section className="py-24 w-full flex justify-center">
           <TestimonialsCarousel testimonials={product.testimonials} />
         </section>
       )}

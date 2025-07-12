@@ -11,7 +11,7 @@ interface TestimonialCardProps {
 }
 
 const TestimonialCard: React.FC<TestimonialCardProps> = ({ name, title, company, quote, avatar }) => (
-  <div className="bg-company-primary-royalBlue/20  border-company-primary-royalBlue border rounded-2xl p-8 md:p-12  transition-all duration-500 ease-in-out flex items-center min-h-[320px] md:min-h-[230px] lg:min-h-[200px]">
+  <div className="bg-company-primary-royalBlue/10    border-company-primary-royalBlue/20 border rounded-2xl p-8 md:p-12  transition-all duration-500 ease-in-out flex items-center min-h-[320px] md:min-h-[230px] w-full lg:min-w-[500px] lg:h-[280px]">
     <div className="flex flex-col md:flex-row gap-6 md:gap-8 w-full">
       {/* Avatar */}
       <div className="flex-shrink-0">

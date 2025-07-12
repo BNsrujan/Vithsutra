@@ -28,7 +28,7 @@ const TestimonialCarouselArrows = ({ onNext, onPrevious, className = ""  }: { on
       variant="outline"
       size="icon"
       onClick={onPrevious}
-      className="w-12 h-12 rounded-full bg-gray-100 border-gray-200 hover:bg-gray-200 text-gray-600"
+      className="w-12 h-12 rounded-full bg-company-primary-royalBlue/10 border-company-primary-royalBlue/20 hover:bg-company-primary-royalBlue/20 text-gray-600"
     >
       <ChevronLeft className="w-5 h-5" />
       <span className="sr-only">Previous testimonial</span>
@@ -37,7 +37,7 @@ const TestimonialCarouselArrows = ({ onNext, onPrevious, className = ""  }: { on
       variant="outline"
       size="icon"
       onClick={onNext}
-      className="w-12 h-12 rounded-full bg-gray-100 border-gray-200 hover:bg-gray-200 text-gray-600"
+      className="w-12 h-12 rounded-full bg-company-primary-royalBlue/10 border-company-primary-royalBlue/20 hover:bg-company-primary-royalBlue/20 text-gray-600"
     >
       <ChevronRight className="w-5 h-5" />
       <span className="sr-only">Next testimonial</span>
@@ -93,9 +93,9 @@ export default function TestimonialsCarousel({ testimonials }: TestimonialsCarou
 
         {/* Testimonial Card with Transition */}
         
-        <div className="relative  ">
-          <div className="min-h-[320px] md:min-h-[230px] lg:min-h-[300px]">
-          <AnimatePresence custom={direction} mode="wait" >
+        <div className="relative w-full ">
+          <div className="h-[500px] md:h-[230px] w-[347px] md:w-company-section-width lg:h-[300px]">
+          <AnimatePresence custom={direction} mode="wait"  >
             <motion.div
               key={currentTestimonial.id}
               custom={direction}
@@ -118,7 +118,7 @@ export default function TestimonialsCarousel({ testimonials }: TestimonialsCarou
           </div>
 
           {/* Navigation Buttons */}
-          <div className="flex justify-end items-center mt-6">
+          <div className="flex justify-end items-center mt-company-xl-48">
             <TestimonialCarouselArrows onNext={goToNext} onPrevious={goToPrevious} />
           </div>
         </div>

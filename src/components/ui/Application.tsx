@@ -15,7 +15,7 @@ const ApplicationCarouselArrows = ({ onNext, onPrevious }: { onNext: () => void;
       variant="outline"
       size="icon"
       onClick={onPrevious}
-      className="w-12 h-12 rounded-full bg-gray-100 border-gray-200 hover:bg-gray-200 text-gray-600"
+      className="w-12 h-12 rounded-full 'bg-company-primary-royalBlue/10 border-company-primary-royalBlue/20 hover:bg-company-primary-royalBlue/20' text-gray-600"
     >
       <ChevronLeft className="w-5 h-5" />
       <span className="sr-only">Previous application</span>
@@ -24,7 +24,7 @@ const ApplicationCarouselArrows = ({ onNext, onPrevious }: { onNext: () => void;
       variant="outline"
       size="icon"
       onClick={onNext}
-      className="w-12 h-12 rounded-full bg-gray-100 border-gray-200 hover:bg-gray-200 text-gray-600"
+      className="w-12 h-12 rounded-full bg-company-primary-royalBlue/10 border-company-primary-royalBlue/20 hover:bg-company-primary-royalBlue-20 text-gray-600"
     >
       <ChevronRight className="w-5 h-5" />
       <span className="sr-only">Next application</span>
@@ -81,11 +81,11 @@ function Application({ applications }: ApplicationProps) {
     <div className="md:py-company-lg-24">
       <div className="max-w-company-section-width mx-auto  w-full">
         <Heading Display="Application" heading="Use Cases" />
-        <div className="flex justify-center items-center w-full min-h-96 relative overflow-hidden">
+        <div className="flex justify-center items-center w-full  h-[400px] md:h-[600px] min-h-96 relative overflow-hidden">
           <AnimatePresence custom={direction} mode="wait">
             <motion.div
               key={currentApp.industry}
-              className="relative flex w-full h-[80vh] flex-col overflow-hidden items-center text-center bg-white rounded-company-section-24 shadow-lg "
+              className="relative flex w-full h-[400px] md:h-[600px] flex-col overflow-hidden items-center text-center bg-white rounded-company-section-24 shadow-lg "
               custom={direction}
               variants={variants}
               initial="enter"

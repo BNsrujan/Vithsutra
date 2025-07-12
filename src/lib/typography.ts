@@ -109,7 +109,7 @@ const text = {
 
   // 24px, 32px, 34px, 36px, leading: 0.8–1, tracking: -0.4px, max-w: 800px, 1200px
   cardHeadingtext:
-    "text-[1.5rem] sm:text-[2rem] md:text-[2.125rem] lg:text-[2.25rem] leading-[0.8] md:leading-[1] -tracking-[0.025rem] font-semibold sm:max-w-[50rem] md:max-w-[75rem] text-wrap",
+    "text-[1.5rem] sm:text-[2rem] md:text-[2.125rem] lg:text-[2.25rem] leading-[1.3] md:leading-[1] -tracking-[0.025rem] font-semibold sm:max-w-[50rem] md:max-w-[75rem] text-wrap",
 
   // 14px, 18px, 20px, 21px
   cardHeadingsmall:
@@ -137,7 +137,7 @@ const text = {
 
   // 10px, 12px, 16px, tracking: 0.8em → 0.8em, 0.01em
   Footerlinktext:
-    "text-[0.625rem] sm:text-[0.75rem] md:text-[0.875rem] leading-[1em] tracking-[1.1em] md:tracking-[0.01em] font-semibold text-black/50 text-wrap",
+    "text-[0.625rem] sm:text-[0.75rem] md:text-[0.875rem] leading-[1em] tracking-[1.1] md:tracking-[0.01em] font-semibold text-black/50 text-wrap",
 
   // 12px, 13px, 14px, tracking: 0.15px–0.22px → rems
   Buttontext:
