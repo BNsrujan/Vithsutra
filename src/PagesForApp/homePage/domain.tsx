@@ -37,11 +37,11 @@ export default function WeOfferSection() {
 
   return (
     <section className="relative  overflow-hidden">
-      <div className="max-w-company-section-width mx-auto px-4">
+      <div className="max-w-company-section-width mx-auto ">
         <SectionHeader 
           label="FEATURED"
           title="Automation at All Levels"
-          className="mb-8 md:mb-12"
+          className="mb-company-lg-24 md:mb-company-xl-48"
         />
 
         {/* Features Grid */}

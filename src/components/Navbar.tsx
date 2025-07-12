@@ -15,6 +15,7 @@ import {
 import Image from "next/image"
 import { Menu, X } from "lucide-react"
 import { text } from "@/lib/typography"
+import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/components/ui/accordion"
 
 // Types for menu items
 type MenuItem = {
@@ -158,7 +159,7 @@ export function Navbar() {
 
   return (
     <div className="sticky top-0  z-50 w-full bg-white ">
-      <div className="flex items-center justify-between w-full px-4 py-3 max-w-[1800px] mx-auto">
+      <div className="flex items-center justify-between w-full px-2 py-3 max-w-[1800px] mx-auto">
         <div className="flex items-center space-x-2">
           <Link href="/" className="flex items-center">
             <Image src="/logo/company_logo_without_text.png" alt="Logo" width={40} height={40} />
@@ -198,41 +199,52 @@ export function Navbar() {
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="md:hidden fixed  top-[64px] bg-company-white  z-60">
-          <div className="h-[calc(100vh-64px)] overflow-y-auto">
+        <div
+          className={`mobile-menu md:hidden fixed top-[64px] w-full right-0 left-auto bg-company-white z-60 h-[calc(100vh-64px)]   transition-transform duration-300 ${isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}
+        >
+          <div className="h-full overflow-y-auto">
             <div className="p-4 space-y-6">
-              {Object.entries(menuData).map(([key, section]) => (
-                <div key={key} className="border-b border-[var(--company-litest-gray)] pb-4 last:border-0">
-                  <Link 
-                    href={section.href}
-                    className="block mb-2 text-lg font-semibold text-[var(--company-blue-black)] hover:text-[var(--company-primary-royalBlue)]"
-                    onClick={() => setIsMobileMenuOpen(false)}
-                  >
-                    {section.title}
-                  </Link>
-                  <p className="text-sm text-[var(--company-mid-gray)] mb-3">
-                    {section.description}
-                  </p>
-                  <div className="space-y-2">
-                    {section.items.map((item, index) => (
-                      <Link
-                        key={index}
-                        href={item.href}
-                        className="block p-2 rounded-lg hover:bg-[var(--company-litest-gray)] transition-colors"
-                        onClick={() => setIsMobileMenuOpen(false)}
-                      >
-                        <div className="font-medium text-[var(--company-blue-black)]">
-                          {item.title}
-                        </div>
-                        <div className="text-sm text-[var(--company-mid-gray)]">
-                          {item.description}
-                        </div>
-                      </Link>
-                    ))}
-                  </div>
-                </div>
-              ))}
-              
+              <Accordion type="single" collapsible>
+                {Object.entries(menuData).map(([key, section]) => (
+                  <AccordionItem key={key} value={key}>
+                    <AccordionTrigger className="text-lg  font-semibold text-[var(--company-blue-black)] hover:text-[var(--company-primary-royalBlue)]">
+                    <div>
+                      {section.title}
+                      <p className="text-sm text-[var(--company-mid-gray)] ">
+                        {section.description}
+                      </p>
+                      </div>
+                    </AccordionTrigger>
+                    <AccordionContent>
+                      
+                      <div className="space-y-2">
+                        {/* <Link 
+                          href={section.href}
+                          className="block p-2 rounded-lg hover:bg-[var(--company-litest-gray)] transition-colors font-medium text-[var(--company-blue-black)] mb-2"
+                          onClick={() => setIsMobileMenuOpen(false)}
+                        >
+                          View All
+                        </Link> */}
+                        {section.items.map((item, index) => (
+                          <Link
+                            key={index}
+                            href={item.href}
+                            className="block p-2 border-t-1 hover:bg-[var(--company-litest-gray)] transition-colors"
+                            onClick={() => setIsMobileMenuOpen(false)}
+                          >
+                            <div className="font-medium text-[var(--company-blue-black)]">
+                              {item.title}
+                            </div>
+                            <div className="text-sm text-[var(--company-mid-gray)]">
+                              {item.description}
+                            </div>
+                          </Link>
+                        ))}
+                      </div>
+                    </AccordionContent>
+                  </AccordionItem>
+                ))}
+              </Accordion>
             </div>
           </div>
         </div>

@@ -11,7 +11,7 @@ import { industries } from '@/data/products';
 
 export default function IndustriesSection() {
   return (
-    <div className="max-w-company-section-width mx-auto md:px-4">
+    <div className="max-w-company-section-width  py-4 w-full">
       <motion.div 
         className="max-w-company-section-width mx-auto"
         variants={containerVariants}
