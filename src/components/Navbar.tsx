@@ -49,8 +49,8 @@ const menuData: Record<string, MenuSection> = {
     description: "Explore our cutting-edge technology solutions.",
     href: "/technologies",
     items: [
-      { title: "IIOT & Robotics", description: "Industrial IoT and robotic automation solutions", href: "/technologies/iiot-robotics" },
-      { title: "Electronics", description: "Advanced electronic solutions and components", href: "/technologies/electronics" },
+      { title: "IIOT ", description: "Industrial IoT ", href: "/technologies/iiot" },
+      { title: "Robotics", description: "Robotic Automation Solutions", href: "/Technologics/robotics" },
       { title: "Softwares", description: "Real time Cloud based Dashboard", href: "/technologies/Softwares" },
     ]
   },
