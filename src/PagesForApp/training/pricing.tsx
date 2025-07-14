@@ -135,11 +135,11 @@ export default function PricingModels() {
             key={index}
             className={`relative  border-1 border-company-primary-royalBlue/40 rounded-card max-w-company-card-width p-company-lg-24 transition duration-300 rounded-company-section-24 ease-in bg-company-litest-gray z-10 text-black`}
           >
-            {index == 2 && (
+            {/* {index == 2 && (
               <div className="absolute -top-4 left-0 max-w-company-card-width w-full h-9 font-semibold px-3 py-1 rounded-t-company-section-24  bg-company-secondary-yello  z-20">
                 Master model full pack
               </div>
-            )}
+            )} */}
             <div className="">
               <div className="flex items-center mt-company-sm-12 ">
                 <div className="flex  items-center h-full size-6  ">
