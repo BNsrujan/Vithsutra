@@ -58,21 +58,21 @@ const SectorLayout: React.FC<SectorLayoutProps> = ({ data }) => {
     <div className="min-h-screen bg-company-blue-white">
       {/* Introduction Section */}
       <motion.section 
-        className=" relative px-4 sm:px-6 lg:px-8 py-12 h-screen sm:py-16 lg:py-20"
+        className="relative px-company-md-16 sm:px-company-lg-24 lg:px-company-xl-48 py-company-xl-48 h-screen sm:py-company-xl-48 lg:py-company-xl-48"
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
       >
-        <div className=" justify-end mx-auto w-full max-w-[1800px]">
+        <div className=" justify-end mx-auto w-full max-w-company-section-width">
           <motion.h1 
-            className={`${text.Sectiontexthead}font-semibold mb-4 sm:mb-6`}
+            className={`${text.Sectiontexthead} font-semibold mb-company-md-16 sm:mb-company-lg-24`}
             variants={itemVariants}
           >
             {data.title}
           </motion.h1>
           <motion.p 
-            className={`${text.Extratext} md:w-9/12 text-company-mid-gray `}
+            className={`${text.Extratext} md:w-9/12 text-company-mid-gray`}
             variants={itemVariants}
           >
             {data.description}
@@ -91,25 +91,20 @@ const SectorLayout: React.FC<SectorLayoutProps> = ({ data }) => {
 
       {/* Carousel Section */}
       <motion.section 
-        className="px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20 bg-company-white"
+        className="px-company-md-16 sm:px-company-lg-24 lg:px-company-xl-48 py-company-xl-48 bg-company-white"
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
       >
-        <div className="mx-auto max-w-[1800px]">
+        <div className="mx-auto max-w-company-section-width">
           <SectionHeader 
             label="FEATURED"
             title="Key Highlights"
           />
-          <div className="mt-8 sm:mt-12">
+          <div className="mt-company-lg-24 sm:mt-company-xl-48">
             <Carousel 
               items={data.carouselItems}
-              // variant="default"
-              // autoPlay={true}
-              // interval={5000}
-              // showIndicators={true}
-              // showNavigation={true}
             />
           </div>
         </div>
@@ -117,18 +112,18 @@ const SectorLayout: React.FC<SectorLayoutProps> = ({ data }) => {
 
       {/* Products Section */}
       <motion.section 
-        className="px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20"
+        className="px-company-md-16 sm:px-company-lg-24 lg:px-company-xl-48 py-company-xl-48"
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
       >
-        <div className="mx-auto max-w-[1800px]">
+        <div className="mx-auto max-w-company-section-width">
           <SectionHeader 
             label="PRODUCTS"
             title="Our Solutions"
           />
-          <div className="mt-8 sm:mt-12">
+          <div className="mt-company-lg-24 sm:mt-company-xl-48">
             <ProductGrid products={data.products} />
           </div>
         </div>
@@ -136,18 +131,18 @@ const SectorLayout: React.FC<SectorLayoutProps> = ({ data }) => {
 
       {/* Applications Section */}
       <motion.section 
-        className="px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20 bg-company-white"
+        className="px-company-md-16 sm:px-company-lg-24 lg:px-company-xl-48 py-company-xl-48 bg-company-white"
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
       >
-        <div className="mx-auto max-w-[1800px]">
+        <div className="mx-auto max-w-company-section-width">
           <SectionHeader 
             label="APPLICATIONS"
             title="Industry Applications"
           />
-          <div className="mt-8 sm:mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+          <div className="mt-company-lg-24 sm:mt-company-xl-48 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-company-lg-24 sm:gap-company-xl-48">
             {data.applications.map((app, index) => {
               if (typeof app === "string") {
                 return (
@@ -155,9 +150,9 @@ const SectorLayout: React.FC<SectorLayoutProps> = ({ data }) => {
                     key={index}
                     variants={itemVariants}
                     custom={index}
-                    className="bg-company-blue-white p-6 sm:p-8 rounded-lg"
+                    className="bg-company-blue-white p-company-lg-24 sm:p-company-xl-48 rounded-card"
                   >
-                    <h3 className={`${text.cardHeadingtext} text-company-gray mb-2 sm:mb-3`}>
+                    <h3 className={`${text.cardHeadingtext} text-company-gray mb-company-md-16 sm:mb-company-lg-24`}>
                       {app}
                     </h3>
                   </motion.div>
@@ -170,7 +165,7 @@ const SectorLayout: React.FC<SectorLayoutProps> = ({ data }) => {
                     key={index}
                     variants={itemVariants}
                     custom={index}
-                    className="bg-company-blue-white p-6 sm:p-8 rounded-lg"
+                    className="bg-company-blue-white p-company-lg-24 sm:p-company-xl-48 rounded-card"
                   >
                     <div className="w-12 h-12 sm:w-16 sm:h-16 mb-4 sm:mb-6">
                       <Image
@@ -181,10 +176,10 @@ const SectorLayout: React.FC<SectorLayoutProps> = ({ data }) => {
                         className="w-full h-full object-contain"
                       />
                     </div>
-                    <h3 className={`${text.cardHeadingtext} text-company-gray mb-2 sm:mb-3`}>
+                    <h3 className={`${text.cardHeadingtext} text-company-gray mb-company-md-16 sm:mb-company-lg-24`}>
                       {app.title}
                     </h3>
-                    <p className={`${text.cardBodytext} text-company-mid-gray`}>
+                    <p className={`${text.cardBodytextlight} text-company-mid-gray`}>
                       {app.description}
                     </p>
                   </motion.div>
@@ -197,29 +192,29 @@ const SectorLayout: React.FC<SectorLayoutProps> = ({ data }) => {
 
       {/* Solutions Section */}
       <motion.section 
-        className="px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20"
+        className="px-company-md-16 sm:px-company-lg-24 lg:px-company-xl-48 py-company-xl-48"
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
       >
-        <div className="mx-auto max-w-[1800px]">
+        <div className="mx-auto max-w-company-section-width">
           <SectionHeader 
             label="SOLUTIONS"
             title="Our Approach"
           />
-          <div className="mt-8 sm:mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+          <div className="mt-company-lg-24 sm:mt-company-xl-48 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-company-lg-24 sm:gap-company-xl-48">
             {data.solutions.map((solution, index) => (
               <motion.div
                 key={index}
                 variants={itemVariants}
                 custom={index}
-                className="bg-company-white p-6 sm:p-8 rounded-lg shadow-sm"
+                className="bg-company-white p-company-lg-24 sm:p-company-xl-48 rounded-card shadow-sm"
               >
                 <div className="w-12 h-12 sm:w-16 sm:h-16 mb-4 sm:mb-6">
                   <Image src={solution.icon} alt={solution.title} fill className="w-full h-full object-contain" />
                 </div>
-                <h3 className={`${text.Sectiontexthead} text-company-gray mb-2 sm:mb-3`}>
+                <h3 className={`${text.Sectiontexthead} text-company-gray mb-company-md-16 sm:mb-company-lg-24`}>
                   {solution.title}
                 </h3>
                 <p className={`${text.Extratext} text-company-mid-gray`}>
@@ -233,27 +228,27 @@ const SectorLayout: React.FC<SectorLayoutProps> = ({ data }) => {
 
       {/* Related Industries Section */}
       <motion.section 
-        className="px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20 bg-company-white"
+        className="px-company-md-16 sm:px-company-lg-24 lg:px-company-xl-48 py-company-xl-48 bg-company-white"
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
       >
-        <div className="mx-auto max-w-[1800px]">
+        <div className="mx-auto max-w-company-section-width">
           <SectionHeader 
             label="INDUSTRIES"
             title="Related Industries"
           />
-          <div className="mt-8 sm:mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+          <div className="mt-company-lg-24 sm:mt-company-xl-48 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-company-lg-24 sm:gap-company-xl-48">
             {data.relatedIndustries.map((industry, index) => (
               <motion.div
                 key={index}
                 variants={itemVariants}
                 custom={index}
-                className="bg-company-blue-white p-6 sm:p-8 rounded-lg hover:shadow-md transition-shadow duration-300"
+                className="bg-company-blue-white p-company-lg-24 sm:p-company-xl-48 rounded-card hover:shadow-md transition-shadow duration-300"
               >
                 <Link href={industry.href} className="block">
-                  <h3 className={`${text.Sectiontexthead} text-company-gray mb-2 sm:mb-3 hover:text-company-primary-royalBlue transition-colors`}>
+                  <h3 className={`${text.Sectiontexthead} text-company-gray mb-company-md-16 sm:mb-company-lg-24 hover:text-company-primary-royalBlue transition-colors`}>
                     {industry.title}
                   </h3>
                   <p className={`${text.Extratext} text-company-mid-gray`}>
@@ -268,21 +263,21 @@ const SectorLayout: React.FC<SectorLayoutProps> = ({ data }) => {
 
       {/* CTA Section */}
       <motion.section 
-        className="px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20 bg-company-primary-royalBlue"
+        className="px-company-md-16 sm:px-company-lg-24 lg:px-company-xl-48 py-company-xl-48 bg-company-primary-royalBlue"
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
       >
-        <div className="mx-auto max-w-[1800px] text-center">
+        <div className="mx-auto max-w-company-section-width text-center">
           <motion.h2 
-            className={`${text.Displaytext} text-company-white mb-4 sm:mb-6`}
+            className={`${text.Displaytext} text-company-white mb-company-md-16 sm:mb-company-lg-24`}
             variants={itemVariants}
           >
             Ready to Transform Your Industry?
           </motion.h2>
           <motion.p 
-            className={`${text.Extratext} text-company-white/80 mb-8 sm:mb-12 max-w-2xl mx-auto`}
+            className={`${text.Extratext} text-company-white/80 mb-company-lg-24 sm:mb-company-xl-48 max-w-2xl mx-auto`}
             variants={itemVariants}
           >
             Let&apos;s discuss how our solutions can help you achieve your goals.

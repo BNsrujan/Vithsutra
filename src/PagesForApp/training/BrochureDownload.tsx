@@ -1,5 +1,8 @@
 'use client';
 
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { text } from '@/lib/typography';
 import { useState } from 'react';
 import { z } from "zod";
 
@@ -49,61 +52,63 @@ export default function BrochureDownload() {
   };
 
   return (
-    <section className="text-center py-12">
-      <h2 className="text-2xl font-semibold mb-4 text-gray-800">Want the Full Robotics Brochure?</h2>
-      <button
-        className="px-6 py-3 bg-company-primary-royalBlue text-white rounded-lg hover:bg-blue-500 transition"
+    <section className="text-center bg-company-primary-royalBlue rounded-company-section-24 h-full w-company-section-width py-12">
+      <h2 className="text-2xl font-semibold mb-4 text-white">Want the Full Robotics Brochure?</h2>
+      <Button
+        variant={'neumorphicYellow'}
         onClick={() => setIsOpen(true)}
       >
         Download Brochure
-      </button>
+      </Button>
 
       {isOpen && (
         <div className="fixed inset-0 bg-[#0000006b] z-50 flex items-center justify-center">
-          <div className="bg-white p-6 rounded-lg w-full max-w-md space-y-4   -xl text-black">
-            <h3 className="text-lg font-semibold">Enter your details to download</h3>
-            <div className="space-y-2">
-              <input
+          <div className="bg-white p-6 rounded-lg w-full max-w-md space-y-company-lg-24   -xl text-black">
+            <h3 className={`${text.cardHeadingsmall}text-lg font-semibold`}>Enter your details to download</h3>
+            <div className="space-y-company-lg-24">
+              <Input
                 type="text"
                 placeholder="Your Name"
-                className={`w-full border px-3 py-2 rounded ${errors.name ? 'border-red-500' : ''}`}
+                className={`w-full  ${errors.name ? 'border-red-500' : ''}`}
                 onChange={(e) => handleInputChange('name', e.target.value)}
               />
               {errors.name && <p className="text-red-500 text-sm">{errors.name}</p>}
             </div>
-            <div className="space-y-2">
-              <input
+            <div className="space-y-company-lg-24">
+              <Input
                 type="email"
                 placeholder="Email Address"
-                className={`w-full border px-3 py-2 rounded ${errors.email ? 'border-red-500' : ''}`}
+                className={`w-full  ${errors.email ? 'border-red-500' : ''}`}
                 onChange={(e) => handleInputChange('email', e.target.value)}
               />
               {errors.email && <p className="text-red-500 text-sm">{errors.email}</p>}
             </div>
-            <div className="space-y-2">
-              <input
+            <div className="space-y-company-lg-24">
+              <Input
                 type="tel"
                 placeholder="Phone Number"
-                className={`w-full border px-3 py-2 rounded ${errors.phone ? 'border-red-500' : ''}`}
+                className={`w-full  ${errors.phone ? 'border-red-500' : ''}`}
                 onChange={(e) => handleInputChange('phone', e.target.value)}
               />
               {errors.phone && <p className="text-red-500 text-sm">{errors.phone}</p>}
             </div>
-            <button
-              className="w-full bg-company-primary-royalBlue text-white py-2 rounded hover:bg-blue-500 transition"
+            <div className='flex  justify-center space-x-company-lg-24'>
+            <Button
+              variant={"neumorphic"}
               onClick={handleDownload}
             >
               Subscribe & Download
-            </button>
-            <button
-              className="text-sm text-red-400 mt-2"
+            </Button>
+            <Button 
+              variant={"destructive"}
               onClick={() => {
                 setIsOpen(false);
                 setErrors({});
               }}
             >
               Cancel
-            </button>
+            </Button>
+            </div>
           </div>
         </div>
       )}

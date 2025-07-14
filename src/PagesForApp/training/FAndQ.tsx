@@ -1,7 +1,8 @@
 'use client';
 
-import { useState } from 'react';
-import { ChevronDown, ChevronUp } from 'lucide-react';
+import Heading from '@/components/ui/heading';
+import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from '@/components/ui/accordion';
+import { text } from '@/lib/typography';
 
 const faqs = [
   {
@@ -27,41 +28,19 @@ const faqs = [
 ];
 
 export default function Faq() {
-  const [openIndex, setOpenIndex] = useState<number | null>(null);
-
-  const toggle = (index: number) => {
-    setOpenIndex(openIndex === index ? null : index);
-  };
-
   return (
-    <section className="py-12  max-w-[1400px] mx-auto bg-white">
-      <div className="mb-2 text-company-text-gray">F&Q</div>
-      <h2 className="section-head text-company-black mb-8">F&Q</h2>
-      
-      <div className="space-y-3">
+    <section className="py-12 w-full max-w-company-section-width mx-auto ">
+      <Heading Display='F&Q' heading='' />
+      <Accordion type="single" collapsible className="mt-8">
         {faqs.map((faq, index) => (
-          <div 
-            key={index} 
-            className="rounded-[12px] overflow-hidden bg-company-light-light-gray    transition-all duration-300 ease-in-out"
-          >
-            <button
-              className="flex justify-between items-center w-full px-6 py-4 text-left focus:outline-none"
-              onClick={() => toggle(index)}
-            >
-              <span className=" text-company-black">{faq.question}</span>
-              {openIndex === index ? <ChevronUp className="w-5 h-5 text-company-text-gray" /> : <ChevronDown className="w-5 h-5 text-company-text-gray" />}
-            </button>
-
-            <div
-              className={`px-6 overflow-hidden transition-all duration-300 ease-in-out ${
-                openIndex === index ? 'max-h-40 opacity-100 py-4' : 'max-h-0 opacity-0 py-0'
-              }`}
-            >
-              <p className="body-text text-company-text-gray">{faq.answer}</p>
-            </div>
-          </div>
+          <AccordionItem key={index} value={String(index)}>
+            <AccordionTrigger className={`text-company-black ${text.cardHeadingsmall}`}>{faq.question}</AccordionTrigger>
+            <AccordionContent>
+              <p className={`text-company-text-gray ${text.cardBodytextlight}`}>{faq.answer}</p>
+            </AccordionContent>
+          </AccordionItem>
         ))}
-      </div>
+      </Accordion>
     </section>
   );
 }

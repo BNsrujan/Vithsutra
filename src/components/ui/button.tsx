@@ -17,7 +17,7 @@ const buttonVariants = cva(
         default:
           "bg-company-primary-royalBlue rounded-[8px] text-company-white hover:bg-primary/90 hover:text-blue-100",
         destructive:
-          "bg-destructive text-white shadow-xs hover:bg-destructive/90 focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40 dark:bg-destructive/60",
+          "bg-destructive text-white shadow-xs hover:bg-destructive/90 focus-visible:ring-destructive/20 rounded-[8px] px-[20px] py-[10px] font-semibold text-white dark:focus-visible:ring-destructive/40 dark:bg-destructive/60",
         outline:
           "border bg-background shadow-xs hover:bg-accent hover:text-accent-foreground dark:bg-input/30 dark:border-input dark:hover:bg-input/50",
         secondary:
@@ -35,6 +35,15 @@ const buttonVariants = cva(
           hover:from-[#214CC4] hover:to-[#4169E1] hover:duration-700
           hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.3),0_4px_6px_rgba(65,105,225,0.25),0_0_0_1px_rgba(65,105,225,1)]
           active:translate-y-[1px] active:shadow-[inset_0_2px_1px_rgba(0,0,0,0.2),0_1px_2px_rgba(0,0,0,0.1)]
+        `,
+        neumorphicYellow: `
+          rounded-[8px] px-[20px] py-[10px] font-semibold text-[#7a5a00]
+          duration-300
+          bg-gradient-to-b from-[#ffde59] to-[#ffd700]
+          shadow-[inset_0_1px_0_rgba(255,255,255,0.33),0_3px_4px_rgba(255,222,89,0.15),0_0_0_1px_rgba(255,222,89,1)]
+          hover:from-[#ffe066] hover:to-[#ffc700] hover:duration-700
+          hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.3),0_4px_6px_rgba(255,222,89,0.25),0_0_0_1px_rgba(255,222,89,1)]
+          active:translate-y-[1px] active:shadow-[inset_0_2px_1px_rgba(255,215,0,0.2),0_1px_2px_rgba(255,215,0,0.1)]
         `
       },
 

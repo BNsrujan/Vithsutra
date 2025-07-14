@@ -28,6 +28,9 @@ import {
   Compass,
 } from 'lucide-react';
 import { JSX } from 'react';
+import { text } from '@/lib/typography';
+import Heading from '@/components/ui/heading';
+import { Button } from '@/components/ui/button';
 
 const iconMap: Record<string,JSX.Element > = {
   'Introduction to Robotics & Industry Applications': <IconButton icon={BookOpen} />,
@@ -111,12 +114,10 @@ const models = [
 
 export default function PricingModels() {
   return (
-    <section className="py-12  max-w-[1400px] mx-auto bg-white">
-      <div className="mb-2 text-company-text-gray">Training Models</div>
-      <h2 className="section-head text-company-black mb-5">Choose Your Path</h2>
-      
+    <section className="py-12 max-w-company-section-width mx-auto bg-company-white">
+      <Heading heading='Training Models' Display='Choose Your Path'/>
       <motion.div
-        className="md:grid md:grid-cols-3 md:gap-4  flex flex-col  justify-center gap-5  md:mb-0 z-10"
+        className="md:grid md:grid-cols-3 md:gap-company-lg-24 flex flex-col h-c justify-center gap-company-lg-24 md:mb-0 z-10"
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         exit={{ opacity: 0, y: -20 }}
@@ -126,30 +127,32 @@ export default function PricingModels() {
         {models.map((model, index) => (
           <div
             key={index}
-            
-            className={`relative  ${index == 2 ?`border-none`:`border-r`}    rounded-[15px]    max-w-[500px] p-6  transition duration-300 ease-in bg-company-light-light-gray z-10 text-black`}
-            >
-            {index == 2 && <div className="absolute -top-4  left-0 max-w-[500px] w-full h-9  font-semibold px-4 py-1  -t  -l  -r rounded-t-[12px] text-white bg-[#E1B941]
-             z-20">
+            className={`relative ${index == 2 ? 'border-none' : 'border-r'} rounded-card max-w-company-card-width p-company-lg-24 transition duration-300 rounded-company-section-24 ease-in bg-company-litest-gray z-10 text-black`}
+          >
+            {index == 2 && <div className="absolute -top-4 left-0 max-w-company-card-width w-full h-9 font-semibold px-4 py-1 rounded-t-company-section-24 text-white bg-[#E1B941] z-20">
               Master model full pack</div>}
-            <div className="flex items-center mb-4 mr-3">
-              <div className='flex justify-center items-center h-full '>
-              {model.icon}
+              <div  className='md:h-40'>
+            <div className="flex items-center mb-4 mr-3 space-x-company-md-16 ">
+              <div className='flex  items-center h-full  '>
+                {model.icon}
               </div>
-              <div className='h-full '>
-                <p className=" text-base/tight   ">{model.title}</p>
-                <p className="label-text ">{model.subtitle}</p>
+              <div className='h-full  '>
+                <p className={text.cardHeadingsmall + "mb-company-xs-8 "}>{model.title}</p>
+                <p className={text.Sectionbodytexts + "  text-company-primary-royalBlue"}>{model.subtitle}</p>
               </div>
             </div>
-            <p className="body-text text-company-text-gray mb-4  ">{model.description}</p>
-            <ul className="">
+            <p className={text.cardBodytextlight + " text-company-text-gray mb-4"}>{model.description}</p> 
+              </div>
+              <hr className=' w-full   my-company-lg-24   bg-company-dark-gray'/>
+            <ul className="space-y-company-md-16">
+
               {model.features.map((feature, idx) => (
                 <li
                   key={idx}
-                  className="flex items-center gap-2 group transition duration-300 ease-in group-hover:text-blue-600"
+                  className="flex items-center   gap-company-md-16 group transition duration-300 ease-in group-hover:text-company-primary-royalBlue"
                 >
-                  {iconMap[feature] ?? <IconButton icon={Puzzle} />}
-                  <span className="body-text text-company-text-gray group-hover:text-blue-600">
+                  {iconMap[feature] ?? <IconButton icon={Puzzle}  />}
+                  <span className={text.cardBodytextlight + " text-company-text-gray group-hover:text-company-primary-royalBlue"}>
                     {feature}
                   </span>
                 </li>
@@ -159,16 +162,16 @@ export default function PricingModels() {
         ))}
       </motion.div>
 
-      <section className="text-center py-12 bg-gray-100 rounded-xl mt-10">
-        <h2 className="text-3xl font-bold text-gray-800 mb-4">
+      <section className="text-center py-company-xl-48 space-y-company-xs-8 bg-company-primary-royalBlue rounded-company-section-24 mt-company-lg-24">
+        <h2 className={text.SectionHeader + " text-white"}>
           Ready to Start Your Robotics Journey?
         </h2>
-        <p className="text-gray-600 mb-6">
+        <p className={text.cardBodytextlight + " text-white/90 pb-company-md-16"}>
           Choose your model and begin hands-on learning with industry experts.
         </p>
-        <button className="bg-company-primary-royalBlue text-white px-6 py-3 rounded-lg hover:bg-blue-500 transition">
+        <Button variant={"neumorphicYellow"} >
           Contact Us
-        </button>
+        </Button>
       </section>
     </section>
   );

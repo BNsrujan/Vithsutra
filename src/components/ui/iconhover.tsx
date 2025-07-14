@@ -14,7 +14,7 @@ export const IconButton: React.FC<IconButtonProps> = ({ icon:Icon}) => {
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       className={cn(
-        "relative w-12 h-12 rounded-full flex items-center justify-center transition-all duration-300 ease-in-out",
+        "relative  rounded-full flex items-center justify-center transition-all duration-300 ease-in-out",
         "bg-transparent text-gray-400 hover:text-blue-600"
       )}
     >

@@ -6,7 +6,7 @@ import PricingModels from "@/PagesForApp/training/pricing";
 
 export default function Training() {
   return (
-    <div className="bg-white max-w-[1800px]">
+    <div className="flex justify-center  items-center flex-col">
       <PricingModels/>
       <ComparisonTable/>
       <BrochureDownload/>

@@ -269,22 +269,22 @@ function IIOTPages() {
               <div className="py-6">
                 <div className="grid grid-cols-1 md:grid-cols-2  gap-company-xl-48">
                   {IIOT.specifications.map((whychose, idx) => {
-                    const IconComponent = whychose.image ? (
+                    const IconComponent = whychose ? (
                       <Image
-                        src={whychose.image}
-                        alt={whychose.title}
+                        src={whychose.description}
+                        alt={whychose.label}
                         width={50}
                         height={50}
                       />
-                    ) : typeof whychose.icon === "function" ? (
-                      React.createElement(whychose.icon, {
+                    ) : typeof whychose === "function" ? (
+                      React.createElement(whychose, {
                         className: " text-gray-700",
                       })
                     ) : null;
 
                     return (
                       <div
-                        key={whychose.title + idx}
+                        key={whychose.label + idx}
                         className="flex items-start gap-company-xs-8 justify-center "
                       >
                         <div className="flex-shrink-0">
@@ -296,7 +296,7 @@ function IIOTPages() {
                           <h3
                             className={` ${text.cardHeadingsmall} pb-company-xs-8 text-gray-900 `}
                           >
-                            {whychose.title}
+                            {whychose.label}
                           </h3>
                           <p
                             className={`${text.cardBodytextlight}text-sm text-gray-600 leading-relaxed`}
