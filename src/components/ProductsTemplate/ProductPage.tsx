@@ -340,9 +340,9 @@ export default function ProductPage({
             <div className="md:flex  space-y-4 md:space-y-0  w-fll justify-center content-center md:gap-company-md-16 ">
               <Button
                 onClick={() => router.push("/Contact")}
-                className="bg-company-secondary-yello text-black hover:text-black hover:bg-company-secondary-yello/80"
+                variant={"neumorphicYellow"}
               >
-                <span className={text.Buttontext}>Request a Demo</span>
+                Request a Demo
               </Button>
               <DialogDemo />
             </div>

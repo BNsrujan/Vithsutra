@@ -142,7 +142,7 @@ export default function FAQPage() {
                       transition={{ duration: 0.3 }}
                       className="overflow-hidden"
                     >
-                      <div className="mt-4 space-y-4">
+                      <div className="mt-4 space-x-company-lg-24">
                         {category.questions.map((item, index) => (
                           <div
                             key={index}

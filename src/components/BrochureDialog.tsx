@@ -12,7 +12,7 @@ import {
 } from "@/components/ui/dialog"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
-import { text } from "@/lib/typography"
+
 
 export function DialogDemo() {
     const handleSubmit = () =>{
@@ -22,7 +22,7 @@ export function DialogDemo() {
     <Dialog>
       <form>
       <DialogTrigger asChild>
-          <Button className={`${text.Buttontext} bg-company-secondary-yello text-black p-6 py-6 hover:bg-c`}>Download Brochure</Button>
+          <Button  variant={"neumorphicYellow"}>Download Brochure</Button>
         </DialogTrigger>
         <DialogContent className="sm:max-w-[425px]">
           <DialogHeader>

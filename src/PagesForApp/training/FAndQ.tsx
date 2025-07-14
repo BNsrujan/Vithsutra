@@ -34,7 +34,7 @@ export default function Faq() {
       <Accordion type="single" collapsible className="mt-8">
         {faqs.map((faq, index) => (
           <AccordionItem key={index} value={String(index)}>
-            <AccordionTrigger className={`text-company-black ${text.cardHeadingsmall}`}>{faq.question}</AccordionTrigger>
+            <AccordionTrigger className={`text-company-blue-black ${text.cardBodytext}`}>{faq.question}</AccordionTrigger>
             <AccordionContent>
               <p className={`text-company-text-gray ${text.cardBodytextlight}`}>{faq.answer}</p>
             </AccordionContent>
