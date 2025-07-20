@@ -59,7 +59,7 @@ export default function ProductPage({
                 {product.description}
               </motion.p>
               <div className="flex md:justify-center lg:justify-start">
-                <Button onClick={router.push("/contact")} variant={"neumorphic"}>Book a Demo</Button>
+                <Button onClick={()=>router.push("/contact")} variant={"neumorphic"}>Book a Demo</Button>
               </div>
             </motion.div>
           </div>
@@ -332,7 +332,7 @@ export default function ProductPage({
               Ready to Get Started?
             </h2>
             <p
-              className={`${text.Sectionbodytexts} text-company-litest-gray  mb-company-md-16 max-w-2xl mx-auto`}
+              className={`${text.Extratext} text-company-litest-gray  mb-company-md-16 max-w-2xl mx-auto`}
             >
               Contact us today to learn more about {product.name} and how it can
               benefit your business.

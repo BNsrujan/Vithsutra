@@ -117,7 +117,7 @@ const text = {
 
   // 14px, 18px, 18px, 16px
   cardBodytext:
-    "text-[1.1rem] sm:text-[1.125rem] md:text-[1.125rem] lg:text-[1rem] leading-[1.1] md:leading-[1.3] tracking-[0] font-semibold",
+    "text-[1.1rem] sm:text-[1.425rem] md:text-[2.425rem] lg:text-[1.3rem] leading-[1.1] md:leading-[1.3] tracking-[0]  font-medium",
 
   // 14px, 18px, 18px, 16px
   cardBodytextlight:

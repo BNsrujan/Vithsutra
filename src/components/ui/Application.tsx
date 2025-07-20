@@ -85,7 +85,7 @@ function Application({ applications }: ApplicationProps) {
           <AnimatePresence custom={direction} mode="wait">
             <motion.div
               key={currentApp.industry}
-              className="relative flex w-full h-[400px] md:h-[600px] flex-col overflow-hidden items-center text-center bg-white rounded-company-section-24 shadow-lg "
+              className="relative flex w-full h-[400px] md:h-[600px] flex-col overflow-hidden items-center text-center bg-white rounded-company-section-24 shadow-lg group"
               custom={direction}
               variants={variants}
               initial="enter"
@@ -93,15 +93,23 @@ function Application({ applications }: ApplicationProps) {
               exit="exit"
               transition={{ type: "spring", stiffness: 400, damping: 40, duration: 0.4 }}
             >
+              <div 
+          className={`absolute z-2 inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent transition-all duration-700 ease-in-out 
+            `}
+        />
               <Image
                 src={currentApp.image}
                 alt={currentApp.industry}
                 fill
                 className="rounded-company-section-24 w-full h-full object-cover bg-gray-200"
               />
-              <div className=" absolute bottom-0  p-company-lg-24 text-start w-full">
-                <h2 className={`${text.cardHeadingtext} mt-2 text-black`}>{currentApp.industry}</h2>
-                <p className={`${text.cardBodytext} text-gray-500 mt-2`}>{currentApp.description}</p>
+              <div className="absolute bottom-0 p-company-lg-24 z-10 text-start w-full">
+                <h2 className={`${text.cardHeadingtext} mt-2 text-white`}>
+                  {currentApp.industry}
+                </h2>
+                <p className={`${text.cardBodytext}   transition-all duration-900 text-gray-200 mt-2`}>
+                  {currentApp.description}
+                </p>
               </div>
             </motion.div>
           </AnimatePresence>
