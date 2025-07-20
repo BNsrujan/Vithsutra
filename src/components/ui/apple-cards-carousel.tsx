@@ -6,19 +6,15 @@ import React, {
   createContext,
   useContext,
 } from "react";
-import {
-  IconArrowNarrowLeft,
-  IconArrowNarrowRight,
-  
-} from "@tabler/icons-react";
+import { IconArrowNarrowLeft, IconArrowNarrowRight } from "@tabler/icons-react";
 import { cn } from "@/lib/utils";
-import {  motion } from "motion/react";
+import { motion } from "motion/react";
 import Image, { ImageProps } from "next/image";
 import { useOutsideClick } from "@/hooks/use-outside-click";
 import { text } from "@/lib/typography";
-import { ArrowUpRightIcon } from "lucide-react";
+import { ArrowUpRightIcon, ChevronLeft, ChevronRight } from "lucide-react";
 import { useRouter } from "next/navigation";
-
+import { Button } from "./button";
 
 interface CarouselProps {
   items: React.ReactNode[];
@@ -34,7 +30,7 @@ interface ArrowButtonProps {
 type Card = {
   src: string;
   title: string;
-  link:string;
+  link: string;
   category: string;
   content: React.ReactNode;
 };
@@ -97,8 +93,6 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
     return window && window.innerWidth < 768;
   };
 
-
-
   return (
     <CarouselContext.Provider
       value={{ onCardClose: handleCardClose, currentIndex }}
@@ -111,14 +105,14 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
         >
           <div
             className={cn(
-              "absolute right-0 z-[1000] h-auto w-[5%]  bg-gradient-to-l",
+              "absolute right-0 z-[1000] h-auto w-[5%]  bg-gradient-to-l"
             )}
           ></div>
 
           <div
             className={cn(
               "flex flex-row justify-start gap-company-lg-24   w-screen md:w-full",
-              "mx-auto ", // remove max-w-4xl if you want the carousel to span the full width of its container
+              "mx-auto " // remove max-w-4xl if you want the carousel to span the full width of its container
             )}
           >
             {items.map((item, index) => (
@@ -133,7 +127,7 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
                   transition: {
                     duration: 0.5,
                     delay: 0.2 * index,
-                    ease: "easeOut"
+                    ease: "easeOut",
                   },
                 }}
                 key={"card" + index}
@@ -144,21 +138,29 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
             ))}
           </div>
         </div>
+
         <div className="mr-10 flex justify-end gap-2">
-          <button
-            className="relative z-40 flex h-10 w-10 items-center justify-center rounded-full bg-gray-100 disabled:opacity-50"
+         
+          <Button
+            variant="outline"
+            size="icon"
             onClick={scrollLeft}
             disabled={!canScrollLeft}
+            className="w-12 h-12 rounded-full 'bg-company-primary-royalBlue/10 border-company-primary-royalBlue/20 hover:bg-company-primary-royalBlue/20' text-gray-600"
           >
-            <IconArrowNarrowLeft className="h-6 w-6 text-gray-500" />
-          </button>
-          <button
-            className="relative z-40 flex h-10 w-10 items-center justify-center rounded-full bg-gray-100 disabled:opacity-50"
+            <ChevronLeft className="w-5 h-5" />
+            <span className="sr-only">Previous application</span>
+          </Button>
+          <Button
+            variant="outline"
+            size="icon"
             onClick={scrollRight}
             disabled={!canScrollRight}
+            className="w-12 h-12 rounded-full bg-company-primary-royalBlue/10 border-company-primary-royalBlue/20 hover:bg-company-primary-royalBlue-20 text-gray-600"
           >
-            <IconArrowNarrowRight className="h-6 w-6 text-gray-500" />
-          </button>
+            <ChevronRight className="w-5 h-5" />
+            <span className="sr-only">Next application</span>
+          </Button>
         </div>
       </div>
     </CarouselContext.Provider>
@@ -179,7 +181,6 @@ export const Card = ({
   const { onCardClose } = useContext(CarouselContext);
   const router = useRouter();
   const handleClose = React.useCallback(() => {
-  
     onCardClose(index);
   }, [onCardClose, index]);
 
@@ -190,13 +191,11 @@ export const Card = ({
       }
     }
 
-
     window.addEventListener("keydown", onKeyDown);
     return () => window.removeEventListener("keydown", onKeyDown);
-  }, [ handleClose]);
+  }, [handleClose]);
 
   useOutsideClick(containerRef, handleClose);
-
 
   const handleTouchStart = () => {
     setIsTouched(true);
@@ -206,41 +205,46 @@ export const Card = ({
     setIsTouched(false);
   };
 
-  const ArrowButtons = ({ onClick, className = '', isTouched = false }: ArrowButtonProps) => {
+  const ArrowButtons = ({
+    onClick,
+    className = "",
+    isTouched = false,
+  }: ArrowButtonProps) => {
     return (
-      <button 
+      <button
         onClick={onClick}
         className={`absolute  z-50 sm:right-1 md:right-8 bottom-4 sm:bottom-6 md:bottom-8 bg-company-white rounded-full p-4 sm:p-5 md:p-8 transition-all duration-700 ease-in-out  text-company-black group-hover:bg-company-primary-royalBlue group-hover:text-company-white-text'} ${className}`}
       >
         <ArrowUpRightIcon
-          className={`h-4 w-4 sm:h-6 sm:w-6 text-company-black ${isTouched ? 'text-company-white Group-hover:text-company-primary-royalBlue'  : 'text-company-text-gray group-hover:text-company-white-text'} transition-all  duration-700 ease-in-out`}
+          className={`h-4 w-4 sm:h-6 sm:w-6 text-company-black ${
+            isTouched
+              ? "text-company-white Group-hover:text-company-primary-royalBlue"
+              : "text-company-text-gray group-hover:text-company-white-text"
+          } transition-all  duration-700 ease-in-out`}
           strokeWidth={3}
         />
       </button>
     );
-  }
+  };
 
   return (
     <>
       <motion.button
         layoutId={layout ? `card-${card.title}` : undefined}
-        onClick={()=>router.push(card.link)}
+        onClick={() => router.push(card.link)}
         onTouchStart={handleTouchStart}
         onTouchEnd={handleTouchEnd}
         onMouseEnter={handleTouchStart}
         onMouseLeave={handleTouchEnd}
         whileInView={{
-          scale:1
-          
+          scale: 1,
         }}
         initial={{
-          scale:0.9
+          scale: 0.9,
         }}
         transition={{
-          delay:-1
+          delay: -1,
         }}
-        
-        
         className="group relative w-[80vw] z-10 flex h-80 flex-col  items-start justify-start scale-0.9 overflow-hidden rounded-3xl bg-gray-100 md:h-[40rem] md:w-[50vw] dark:bg-neutral-900 transition-all duration-700 ease-in-out hover:scale-[1.0001]"
       >
         <div className="pointer-events-none  absolute w-auto inset-x-0 top-0 z-30 h-full bg-company-dark-gray/20  duration-700 ease-in-out " />
@@ -286,7 +290,7 @@ export const BlurImage = ({
       className={cn(
         "h-full w-full transition duration-300",
         isLoading ? "blur-sm" : "blur-0",
-        className,
+        className
       )}
       onLoad={() => setLoading(false)}
       src={src as string}
