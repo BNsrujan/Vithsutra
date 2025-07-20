@@ -12,7 +12,7 @@ function Input({ className, id, label, helpText, type, placeholder, ...props }: 
   return (
     <div className="px-company-lg-24">
       {label && (
-        <label htmlFor={id} className={`${text.Footerlinktext}  text-company-gray  pt-[14px] `}>
+        <label htmlFor={id} className={`${text.Footerlinktext}  text-company-gray  pt-company-sm-12 `}>
           {label}
         </label>
       )}
@@ -20,7 +20,7 @@ function Input({ className, id, label, helpText, type, placeholder, ...props }: 
         type={type}
         data-slot="input"
         className={cn(
-          `file:text-company-white placeholder:text-company-primary-royalBlue/50  md:w-full max-w-[600px]  selection:bg-company-white selection:text-company-white my-[10px] px-company-md-16 py-company-md-16 dark:bg-input/30  flex w-full min-w-0 rounded-company-button-8 border border-company-primary-royalBlue bg-transparent   outline-none file:inline-flex file:h-7 file:border-0 file:bg-transparent file:text-sm file:font-medium disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 `,
+          `file:text-company-white placeholder:text-company-primary-royalBlue/50  md:w-full max-w-[600px]  selection:bg-company-white selection:text-company-white my-[8px] px-company-md-16 py-company-md-16 dark:bg-input/30  flex w-full min-w-0 rounded-company-button-8 border border-company-primary-royalBlue bg-transparent   outline-none file:inline-flex file:h-7 file:border-0 file:bg-transparent file:text-sm file:font-medium disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 `,
           "focus-visible:border-company-primary-royalBlue focus-visible:ring-company-primary-royalBlue  focus-visible:ring-[1px] duration-500",
           "aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive  placeholder:font-semibold font-semibold",
           className,
@@ -30,7 +30,7 @@ function Input({ className, id, label, helpText, type, placeholder, ...props }: 
         
         {...props}
       />
-      <div className="h-[14px]">
+      <div className="h-company-md-16">
       {helpText && (
         <p className={`${text.Footerlinktext}  text-red-600 `}>
           {helpText}

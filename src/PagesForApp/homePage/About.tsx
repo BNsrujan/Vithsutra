@@ -27,7 +27,7 @@ export default function About() {
             />
             
             <motion.p 
-              className={`${text.cardBodytext} text-[var(--company-mid-gray)]`}
+              className={`${text.Extratext} text-[var(--company-mid-gray)]`}
               variants={aboutContent}
               viewport={{ once: true, margin: "-100px" }}
             >

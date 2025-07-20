@@ -84,7 +84,7 @@ export default function TestimonialsCarousel({ testimonials }: TestimonialsCarou
   };
 
   return (
-    <section className=" px-4 md:px-0 max-w-company-section-width mx-auto">
+    <section className="px-4 md:px-0 max-w-company-section-width mx-auto">
       <div className="">
         {/* Header */}
         <div className="">
@@ -94,7 +94,7 @@ export default function TestimonialsCarousel({ testimonials }: TestimonialsCarou
         {/* Testimonial Card with Transition */}
         
         <div className="relative w-full ">
-          <div className="h-[500px] md:h-[230px] w-[347px] md:w-company-section-width lg:h-[300px]">
+          <div className="h-[700px] md:h-[230px] w-[347px] md:w-company-section-width lg:h-[300px]">
           <AnimatePresence custom={direction} mode="wait"  >
             <motion.div
               key={currentTestimonial.id}

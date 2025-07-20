@@ -37,14 +37,14 @@ export default function ProductPage({
     <main className="min-h-screen   space-y-company-xl-48">
       {/* Hero Section */}
       <section className="relative min-h-[80vh] lg:h-[93vh] w-full bg-gradient-to-b from-blue-100 to-company-white  ">
-        <div className="container mx-auto px-4 flex flex-wrap-reverse items-center justify-between w-full h-full py-20 gap-company-xl-48 md:gap-0">
+        <div className="container mx-auto px-4 flex flex-wrap-reverse md:items-center justify-start w-full h-full py-20 gap-company-xl-48 md:gap-0">
           {/* Left side - Text Content */}
-          <div className="w-full lg:w-1/2 text-black flex flex-col justify-center h-full items-center lg:items-start ">
+          <div className="w-full lg:w-1/2 text-black flex flex-col md:justify-center h-full items-center lg:items-start ">
             <motion.div
               variants={containerVariants}
               initial="hidden"
               animate="visible"
-              className=" space-y-company-md-16 md:space-y-company-lg-24 text-center lg:text-left"
+              className=" space-y-company-lg-24 md:space-y-company-lg-24  lg:text-left"
             >
               <motion.h1
                 className={`${text.Sectiontexthead} `}
@@ -53,13 +53,13 @@ export default function ProductPage({
                 {product.tagline}
               </motion.h1>
               <motion.p
-                className={`${text.cardBodytext} max-w-2xl `}
+                className={`${text.Extratext}  max-w-2xl `}
                 variants={fadeInUp}
               >
                 {product.description}
               </motion.p>
-              <div className="flex justify-center lg:justify-start">
-                <Button variant={"neumorphic"}>Book a Demo</Button>
+              <div className="flex md:justify-center lg:justify-start">
+                <Button onClick={router.push("/contact")} variant={"neumorphic"}>Book a Demo</Button>
               </div>
             </motion.div>
           </div>
@@ -95,7 +95,7 @@ export default function ProductPage({
                 variants={containerVariants}
                 initial="hidden"
                 animate="visible"
-                className="relative h-full w-[90vw] sm:w-[400px] md:w-[500px] lg:w-[700px] max-w-full overflow-visible rounded-[28px]"
+                className="relative h-full  sm:w-[600px] md:w-[500px] lg:w-[700px] max-w-full overflow-visible rounded-[28px]"
               >
                 <Image
                   src={"/Products/vithnet/CEA1.png"}
@@ -152,7 +152,7 @@ export default function ProductPage({
                   What is Controlled Environment Farming?
                 </motion.h1>
                 <motion.p
-                  className={`${text.cardBodytext} max-w-2xl `}
+                  className={`${text.cardBodytext} md:max-w-2xl max-w-64  `}
                   variants={fadeInUp}
                 >
                   Controlled Environment Farming (CEF) is the practice of
@@ -165,9 +165,9 @@ export default function ProductPage({
             </div>
 
         
-              <div className="md:w-1/2 mx-auto">
+              <div className="md:w-1/2 mx-auto px-company-lg-24 ">
                 <Heading heading="FEATURES" Display="Key Features" />
-                <div className="py-6">
+                <div className="min-w-company-section-width px-company-xl-48">
                   <div className="grid grid-cols-1 md:grid-cols-2  gap-company-xl-48">
                     {product.whychose.map((whychose, idx) => {
                       const IconComponent = whychose.image ? (
@@ -319,7 +319,7 @@ export default function ProductPage({
 
       {/* CTA Section */}
       <section className="">
-        <div className="max-w-company-section-width mx-auto md:rounded-4xl bg-company-primary-royalBlue h-[300px] flex flex-col justify-center  items-center  text-center">
+        <div className="max-w-company-section-width w-full mx-auto md:rounded-4xl bg-company-primary-royalBlue h-[300px] flex flex-col justify-center  items-center  text-center">
           <motion.div
             variants={containerVariants}
             initial="hidden"
@@ -449,7 +449,7 @@ export default function ProductPage({
 
       {/* Our Track */}
       {product.facts && (
-        <section className="py-24 flex justify-center w-full">
+        <section className="mx-company-md-16 md:px-0 py-24 flex justify-center w-full">
           <div className="max-w-company-section-width w-full ">
             <QuickFacts facts={product.facts} />
           </div>

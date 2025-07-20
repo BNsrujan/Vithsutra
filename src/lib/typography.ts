@@ -93,7 +93,7 @@ const text = {
 
   // 16px, 22px, 24px, 28px
   Extratext:
-    "text-[1rem] sm:text-[1.375rem] md:text-[1.5rem] lg:text-[1.75rem] leading-[1em] font-extralight text-wrap",
+    "text-[1rem] sm:text-[1.375rem] md:text-[1.5rem] lg:text-[1.75rem] leading-[1.6em] font-light text-wrap",
 
   // 11px, 16px, 17px, max-w: 270px, 400px
   Sectionbodytexts:
@@ -117,7 +117,7 @@ const text = {
 
   // 14px, 18px, 18px, 16px
   cardBodytext:
-    "text-[0.875rem] sm:text-[1.125rem] md:text-[1.125rem] lg:text-[1rem] leading-[1.1] md:leading-[1.3] tracking-[0] font-semibold",
+    "text-[1.1rem] sm:text-[1.125rem] md:text-[1.125rem] lg:text-[1rem] leading-[1.1] md:leading-[1.3] tracking-[0] font-semibold",
 
   // 14px, 18px, 18px, 16px
   cardBodytextlight:

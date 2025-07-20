@@ -152,7 +152,7 @@ export const rfidProduct: Product = {
       company: "Ski-line Boys Hostel, Mysore",
       quote:
         "Managing communication in a boys' hostel with over 300 students was always a challenge especially when students' personalphones were often misplaced or misused. Since installing these RFID-based telephones, daily communication has become streamlined and secure. Each student now has verified access, and calls can be tracked for accountability. The product has drastically reduced misuse and brought a sense of discipline in the hostel. It's become an essential part of our daily routine.",
-      avatar: "/Products/rfid-tel/testimonal_profile/image2.png",
+      avatar: "/Products/rfid-tel/testimonial_profilephoto/image_1.png",
     },
     {
       id: 2,
@@ -161,7 +161,7 @@ export const rfidProduct: Product = {
       company: "Mahadev Mining Corporation, Jharkhand",
       quote:
         "Our mining site is located deep in a region where mobile networks from different SIM providers constantly fail. Communication was a huge bottleneck affecting both safety and coordination. After implementing these telephones with wide coverage antennas,  we've finally found a reliable solution. Now, our teams stay connected across the entire site, without worrying about poor signal  strength. It's a game-changer for the mining industry.",
-      avatar: "/Products/rfid-tel/testimonal_profile/image2.png",
+      avatar: "/Products/rfid-tel/testimonial_profilephoto/images_2.png",
     },
   ],
   specifications: [
@@ -186,39 +186,21 @@ export const rfidProduct: Product = {
   applications: [
     {
       image: "/public/industry/fmog.avif",
-      industry: "Food & Beverage Processing",
+      industry: "Hostels (Schools & Colleges)",
       description:
-        "Monitor critical parameters like temperature, humidity, and machine hygiene in real-time to ensure food safety and compliance with standards.",
+        "Student communication to parents/guardians using a secure calling system without mobile phones or coins. RFID-based prepaid calling eliminates the need for tokens or physical money.",
     },
     {
       image: "/public/industry/fmog.avif",
-      industry: "Cement & Steel Industries",
+      industry: "Industries, Mining Sites & Worker Quarters",
       description:
-        "Monitor kiln temperature, vibration, motor current, and conveyor operation to prevent critical failures.",
+        "In remote industrial and mining regions, unstable network coverage and varying SIM providers make communication difficult. Mobile phones act as a distraction, reducing productivity, discipline, and safety.",
     },
     {
       image: "/public/industry/fmog.avif",
-      industry: "Manufacturing",
+      industry: "High-Security Zones (Defence, Government, R&D Labs)",
       description:
-        "Monitor production lines, reduce unplanned downtime, track OEE (Overall Equipment Effectiveness), and optimize energy usage.",
-    },
-    {
-      image: "/public/industry/fmog.avif",
-      industry: "Pharmaceuticals & Chemical Processing",
-      description:
-        "Monitor critical parameters like temperature, pressure, and flow in real-time to maintain product quality and ensure compliance.",
-    },
-    {
-      image: "/public/industry/fmog.avif",
-      industry: "Power & Energy",
-      description:
-        "Track performance of turbines, transformers, and solar panels; automate load balancing and predictive maintenance.",
-    },
-    {
-      image: "/public/industry/fmog.avif",
-      industry: "Water & Wastewater Management",
-      description:
-        "Automate pump control, track tank levels, detect leaks, and optimize water flow using real-time sensor data.",
+        "Used in Indian Army Bases, DRDO Labs, and research facilities to allow only authorized personnel to initiate secure calls. RFID authentication ensures identity verification and prevents unauthorized communication.",
     },
   ],
   // gallery: [
