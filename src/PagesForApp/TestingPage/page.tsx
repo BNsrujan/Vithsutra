@@ -206,11 +206,7 @@ export default function Testing() {
             </Button>
           </div>
 
-          <Input
-            type="text"
-            placeholder="Input Placeholder Text"
-            className={text.inputplaceholdertext}
-          />
+          
         </div>
 
         <Components />
@@ -218,6 +214,12 @@ export default function Testing() {
         <Button variant={"neumorphic"} className="mb-4">
           share
         </Button>
+        <Input
+            type="text"
+            label="Email"
+            placeholder="Input Placeholder Text"
+            className={text.inputplaceholdertext}
+          />
       </div>
     </div>
   );

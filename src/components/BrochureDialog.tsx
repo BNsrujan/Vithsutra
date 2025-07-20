@@ -33,16 +33,15 @@ export function DialogDemo() {
           </DialogHeader>
           <div className="grid gap-4">
             <div className="grid gap-3">
-              <Label htmlFor="name-1">Name</Label>
-              <Input id="name-1" name="name" placeholder="Pedro Duarte" />
+              
+              <Input id="name-1" name="name" label="Name" placeholder="Pedro Duarte" />
             </div>
             <div className="grid gap-3">
-              <Label htmlFor="Comany or institution name">Phone Number</Label>
-              <Input id="Cname" name="Cname" type="text" placeholder="+19 xxxxxxxxxx" />
+              
+              <Input id="Cname" name="Cname" type="text" label="Phone Number" placeholder="+19 xxxxxxxxxx" />
             </div>
             <div className="grid gap-3">
-              <Label htmlFor="Gmail">Gmail</Label>
-              <Input id="Gmail" name="Gmail" type="gmail" placeholder="example@xyz.com" />
+              <Input id="Gmail" name="Gmail" type="gmail" label="Gmail" placeholder="example@xyz.com" />
             </div>
           </div>
           <DialogFooter>

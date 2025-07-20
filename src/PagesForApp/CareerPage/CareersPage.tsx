@@ -4,6 +4,7 @@ import { motion } from "framer-motion"
 import { useState } from "react"
 import { ArrowRight, MapPin, Briefcase, Clock, Star, Users, Lightbulb, Zap } from "lucide-react"
 import Image from "next/image"
+import { Input } from "@/components/ui/input"
 
 // Job listings data
 const jobListings = [
@@ -328,31 +329,29 @@ export default function CareersPage() {
 
               <form className="space-y-4">
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">
-                    Full Name
-                  </label>
-                  <input
+
+                  <Input
+                  label="Full Name"
                     type="text"
                     className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                     placeholder="John Doe"
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">
-                    Email
-                  </label>
-                  <input
+
+                  <Input
+                  label="Email"
                     type="email"
                     className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                     placeholder="john@example.com"
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">
-                    LinkedIn Profile
-                  </label>
-                  <input
+   
+                  <Input
+                  label="LinkedIn Profile"
                     type="url"
+                    
                     className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                     placeholder="https://linkedin.com/in/johndoe"
                   />
@@ -368,10 +367,8 @@ export default function CareersPage() {
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">
-                    Resume/CV
-                  </label>
-                  <input
+                  <Input
+                  label="Resume/CV"
                     type="file"
                     className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                     accept=".pdf,.doc,.docx"
