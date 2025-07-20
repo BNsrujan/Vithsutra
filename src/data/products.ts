@@ -221,11 +221,11 @@ export const rfidProduct: Product = {
         "Automate pump control, track tank levels, detect leaks, and optimize water flow using real-time sensor data.",
     },
   ],
-  gallery: [
-    "/Products/rfid-tel/telephone[1].png",
-    "/Products/rfid-tel/id_card[1].png",
-    "/Products/rfid-tel/tec_telephone.png",
-  ],
+  // gallery: [
+  //   "/Products/rfid-tel/telephone[1].png",
+  //   "/Products/rfid-tel/id_card[1].png",
+  //   "/Products/rfid-tel/tec_telephone.png",
+  // ],
   FaQ: [
     {
       qution: "What is an RFID-based telephone, and how does it work?",
@@ -429,11 +429,11 @@ export const biometricProduct: Product = {
         "Employee Attendance & HR Integration: Sync biometric data with HR systems for payroll and leave tracking. Meeting Room or Floor Access Control: Control who enters specific workspaces or departments.",
     },
   ],
-  gallery: [
-    "/Products/biometric-product/main_photo2.svg",
-    "/Products/biometric-product/biometric-singal-photo.svg",
-    "/Products/biometric-product/TechPhoto.svg",
-  ],
+  // gallery: [
+  //   "/Products/biometric-product/main_photo2.svg",
+  //   "/Products/biometric-product/biometric-singal-photo.svg",
+  //   "/Products/biometric-product/TechPhoto.svg",
+  // ],
   FaQ: [
     {
       qution: "How does the biometric system help in student attendance?",
@@ -609,11 +609,11 @@ export const hydroponicProduct: Product = {
       value: "AC/DC with backup",
     },
   ],
-  gallery: [
-    "/Products/vithnet/vithnet_device_2.svg",
-    "/Products/vithnet/3DproductImage/",
-    "/Products/vithnet/Tecnical/",
-  ],
+  // gallery: [
+  //   "/Products/vithnet/vithnet_device_2.svg",
+  //   "/Products/vithnet/3DproductImage/",
+  //   "/Products/vithnet/Tecnical/",
+  // ],
   applications: [
     {
       industry: "Hydroponics",

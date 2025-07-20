@@ -164,7 +164,7 @@ export default function ContactPage() {
           className=""
         >
           <Heading 
-            heading="Contact us" 
+            heading="CONTACT US" 
             Display="it's time for vithsutrait's "
           />
         </motion.div>

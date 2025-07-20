@@ -297,7 +297,7 @@ export default function ProductPage({
           <Heading
             heading="Detailed technical information for system integration and deployment"
             Display="Technical Specifications"
-            className="flex flex-col-reverse "
+            className="flex flex-col-reverse  "
           />
           <div className="h-full flex justify-center  items-center bg-company-litest-gray rounded-company-section-24 border z-100 mx-auto ">
             <Image
@@ -360,7 +360,7 @@ export default function ProductPage({
       {/* F&Q */}
       <section className=" px-4 md:px-0 flex justify-center">
         <div className="max-w-company-section-width w-full">
-          <Heading heading="Have any Q&A" Display="Your Query" />
+          <Heading heading="HAVE ANY Q&A" Display="Your Query" />
           <Accordion type="single" collapsible>
             {product.FaQ &&
               product.FaQ.length > 0 &&
@@ -386,7 +386,7 @@ export default function ProductPage({
       {otherProducts.length > 0 && (
         <section className="py-24">
           <div className="max-w-company-section-width mx-auto px-4 md:px-0">
-            <Heading heading="MORE" Display="Other Products" />
+            <Heading heading="BEST SELLING PRODUCT" Display="Other Products" />
             <motion.div
               className=""
               variants={containerVariants}

@@ -30,7 +30,7 @@ const faqs = [
 export default function Faq() {
   return (
     <section className="py-12 w-full max-w-company-section-width mx-auto ">
-      <Heading Display='F&Q' heading='' />
+      <Heading Display='HAVE ANY Q&A' heading='Your Query' />
       <Accordion type="single" collapsible className="mt-8">
         {faqs.map((faq, index) => (
           <AccordionItem key={index} value={String(index)}>
