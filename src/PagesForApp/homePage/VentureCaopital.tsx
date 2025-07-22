@@ -3,11 +3,12 @@
 import React from "react";
 import { InfiniteMovingCards } from "@/components/ui/infinite-moving-cards";
 import { SectionHeader } from "@/components/ui/section-header";
+import Heading from "@/components/ui/heading";
 
 export default function VentureCapital() {
   return (
     <div className="w-full  flex flex-col justify-center content-center">
-      <SectionHeader label="" title="Worked With" />
+      <Heading heading="" Display="Worked With" />
 
       <div className="h-[7rem] md:h-[10rem] rounded-md   flex flex-col antialiased bg-white dark:bg-black dark:bg-grid-white/[0.05] items-center justify-center relative overflow-hidden">
         <InfiniteMovingCards

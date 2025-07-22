@@ -6,6 +6,7 @@ import { containerVariants } from "@/lib/animations";
 import { SectionHeader } from "@/components/ui/section-header";
 import Image from "next/image";
 import { text } from "@/lib/typography";
+import Heading from "@/components/ui/heading";
 
 const FeatureCard = ({
   title,
@@ -69,7 +70,7 @@ export default function UniqueFeatures() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
         >
-          <SectionHeader label="UNIQUE" title="What Makes Us Unique" />
+          <Heading heading="UNIQUE" Display="What Makes Us Unique" />
         </motion.div>
 
         <div className="flex flex-col gap-company-lg-24 mt-12">

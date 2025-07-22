@@ -3,6 +3,7 @@
 import Largecard from "@/components/ui/largecard";
 import { useRouter } from "next/navigation";
 import { SectionHeader } from "@/components/ui/section-header";
+import Heading from "@/components/ui/heading";
 
 export default function WeOfferSection() {
   const router = useRouter();
@@ -38,9 +39,9 @@ export default function WeOfferSection() {
   return (
     <section className="relative  overflow-hidden">
       <div className="max-w-company-section-width mx-auto ">
-        <SectionHeader 
-          label="FEATURED"
-          title="Automation at All Levels"
+        <Heading
+          heading="FEATURED"
+          Display="Automation at All Levels"
           className="mb-company-lg-24 md:mb-company-xl-48"
         />
 
@@ -52,7 +53,7 @@ export default function WeOfferSection() {
               index={index}
               feature={feature}
               onCardClick={() => handleCardClick(feature.link || '')}
-              className="w-full md:max-w-[90%] lg:max-w-full mx-auto"
+              className="w-full md:max-w-[100%] lg:max-w-full mx-auto"
             />
           ))}
         </div>

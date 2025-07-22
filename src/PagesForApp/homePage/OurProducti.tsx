@@ -6,6 +6,7 @@ import { SectionHeader } from "@/components/ui/section-header";
 import React from "react";
 import { Carousel, Card } from "@/components/ui/apple-cards-carousel";
 import { biometricProduct, rfidProduct, hydroponicProduct } from "@/data/products";
+import Heading from "@/components/ui/heading";
 
 // Create an array of products
 const products = [biometricProduct, rfidProduct, hydroponicProduct];
@@ -26,9 +27,9 @@ export default function CardSection() {
           viewport={{ once: true, margin: "-100px" }}
           transition={{ type: "spring", stiffness: 50, damping: 20 }}
         >
-          <SectionHeader 
-            label="FEATURED"
-            title="Our Products"
+          <Heading 
+            heading="FEATURED"
+            Display="Our Products"
           />
         </motion.div>
 

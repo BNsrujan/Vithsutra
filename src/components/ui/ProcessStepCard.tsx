@@ -31,7 +31,7 @@ const ProcessStepCard: React.FC<ProcessStepCardProps> = ({
       <p className={`${text.cardBodytextlight}text-gray-600  pt-company-xs-8 `}>{description}</p>
     </div>
     {showArrow && (
-      <div className="hidden md:block absolute right-[-42px] top-1/2 -translate-y-1/2">
+      <div className="hidden md:block absolute right-[-72px] top-1/2 -translate-y-1/2">
         <svg width="32" height="32" fill="none" viewBox="0 0 24 24">
           <path
             d="M5 12h14M13 6l6 6-6 6"

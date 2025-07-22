@@ -87,7 +87,7 @@ export default function ContactPage() {
                 Get in Touch
               </h3>
               <p className="text-gray-600 pt-company-xs-8">
-                We're here to help and answer any questions you might have.
+                We&apos;re here to help and answer any questions you might have.
               </p>
             </motion.div>
 

@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { text } from "@/lib/typography";
 import { containerVariants, itemVariants } from "@/lib/animations";
 import { SectionHeader } from "@/components/ui/section-header";
+import Heading from './ui/heading';
 
 
 function Counter({ end, suffix, duration = 2 }: { end: number; suffix: string; duration?: number }) {
@@ -64,13 +65,13 @@ export default function QuickFacts({facts}:factsProps) {
         whileInView="visible"
         viewport={{ once: true }}
       >
-        <SectionHeader 
-          label="Achievements"
-          title="What We've Built So Far"
+        <Heading 
+          heading="Achievements"
+          Display="What We've Built So Far"
         />
 
         <motion.div 
-          className="grid grid-cols-2 md:h-[20vh] pt-company-xs-8  md:grid-cols-4 "
+          className="grid grid-cols-2 md:h-[300px] h[] pt-company-xs-8  xl:grid-cols-4 "
           variants={containerVariants}
         >
           {facts.map((fact, index) => (
@@ -78,7 +79,7 @@ export default function QuickFacts({facts}:factsProps) {
               key={fact.title}
               variants={itemVariants}
               custom={index}
-              className="text-center"
+              className="text-center "
             >
               <div className="mb-company-sm-12">
                 <span className={`${text.Sectiontexthead} text-[var(--company-primary-royalBlue)]`}>

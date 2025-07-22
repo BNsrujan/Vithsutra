@@ -41,7 +41,7 @@ const legalLinks = [
 
 export default function Footer() {
   return (
-    <footer className="bg-company-litest-gray text-company-black">
+    <footer className="bg-company-litest-gray text-company-black px-10">
       <div className="max-w-[1700px] mx-auto justify-between pt-12 pb-[12px] flex flex-col items-baseline">
         <div className="w-full flex flex-col lg:flex-row items-start gap-12 justify-between">
           {/* logo section */}

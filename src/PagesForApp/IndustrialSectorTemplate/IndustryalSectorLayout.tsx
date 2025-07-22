@@ -11,6 +11,7 @@ import { containerVariants, itemVariants } from "@/lib/animations";
 import Link from "next/link";
 import Image from "next/image";
 import { Carousel } from "../../components/CarouselWithL&RArrow";
+import Heading from "@/components/ui/heading";
 
 
 interface CarouselItem {
@@ -98,9 +99,9 @@ const SectorLayout: React.FC<SectorLayoutProps> = ({ data }) => {
         viewport={{ once: true }}
       >
         <div className="mx-auto max-w-company-section-width">
-          <SectionHeader 
-            label="FEATURED"
-            title="Key Highlights"
+          <Heading 
+            heading="FEATURED"
+            Display="Key Highlights"
           />
           <div className="mt-company-lg-24 sm:mt-company-xl-48">
             <Carousel 
@@ -119,9 +120,9 @@ const SectorLayout: React.FC<SectorLayoutProps> = ({ data }) => {
         viewport={{ once: true }}
       >
         <div className="mx-auto max-w-company-section-width">
-          <SectionHeader 
-            label="PRODUCTS"
-            title="Our Solutions"
+          <Heading 
+            heading="PRODUCTS"
+            Display="Our Solutions"
           />
           <div className="mt-company-lg-24 sm:mt-company-xl-48">
             <ProductGrid products={data.products} />
@@ -138,9 +139,9 @@ const SectorLayout: React.FC<SectorLayoutProps> = ({ data }) => {
         viewport={{ once: true }}
       >
         <div className="mx-auto max-w-company-section-width">
-          <SectionHeader 
-            label="APPLICATIONS"
-            title="Industry Applications"
+          <Heading 
+            heading="APPLICATIONS"
+            Display="Industry Applications"
           />
           <div className="mt-company-lg-24 sm:mt-company-xl-48 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-company-lg-24 sm:gap-company-xl-48">
             {data.applications.map((app, index) => {
@@ -199,9 +200,9 @@ const SectorLayout: React.FC<SectorLayoutProps> = ({ data }) => {
         viewport={{ once: true }}
       >
         <div className="mx-auto max-w-company-section-width">
-          <SectionHeader 
-            label="SOLUTIONS"
-            title="Our Approach"
+          <Heading 
+            heading="SOLUTIONS"
+            Display="Our Approach"
           />
           <div className="mt-company-lg-24 sm:mt-company-xl-48 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-company-lg-24 sm:gap-company-xl-48">
             {data.solutions.map((solution, index) => (
@@ -235,9 +236,9 @@ const SectorLayout: React.FC<SectorLayoutProps> = ({ data }) => {
         viewport={{ once: true }}
       >
         <div className="mx-auto max-w-company-section-width">
-          <SectionHeader 
-            label="INDUSTRIES"
-            title="Related Industries"
+          <Heading 
+            heading="INDUSTRIES"
+            Display="Related Industries"
           />
           <div className="mt-company-lg-24 sm:mt-company-xl-48 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-company-lg-24 sm:gap-company-xl-48">
             {data.relatedIndustries.map((industry, index) => (

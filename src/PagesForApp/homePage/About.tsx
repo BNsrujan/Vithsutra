@@ -4,6 +4,7 @@ import { text } from "../../lib/typography";
 import { SectionHeader } from "@/components/ui/section-header";
 import { motion } from "framer-motion";
 import { aboutSection, aboutContent, aboutVideo } from "@/lib/animations";
+import Heading from "@/components/ui/heading";
 
 export default function About() {
   return (
@@ -21,9 +22,9 @@ export default function About() {
             variants={aboutContent}
             viewport={{ once: true, margin: "-100px" }}
           >
-            <SectionHeader 
-              label="ABOUT US"
-              title="Why Choose Vithsutra"
+            <Heading 
+            heading=""
+              Display="Why Choose Vithsutra"
             />
             
             <motion.p 

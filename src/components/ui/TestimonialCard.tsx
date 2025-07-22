@@ -31,7 +31,7 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({ name, title, company,
             {title}, {company}
           </p>
         </div>
-        <blockquote className={`${text.cardBodytext} text-gray-900 leading-relaxed`}>
+        <blockquote className={`${text.cardBodytextlight} text-gray-900 leading-relaxed`}>
           &ldquo;{quote}&rdquo;
         </blockquote>
       </div>

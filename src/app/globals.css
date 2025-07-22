@@ -88,7 +88,7 @@
 
   /* weidth of section */
   --container-company-section-width:87.5rem;  /* 1400px */
-
+  --container-company-product-h:70rem;
 
   /* Company Colors */
   --color-company-primary-royalBlue: var(--company-primary-royalBlue);
@@ -114,6 +114,8 @@
   --spacing-company-md-16:var(--company-md-16);
   --spacing-company-lg-24:var(--company-lg-24);
   --spacing-company-xl-48:var(--company-xl-48);
+
+
 
 
   /* color */

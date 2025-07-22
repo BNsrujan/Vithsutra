@@ -158,7 +158,7 @@ export function Navbar() {
   }, [isMobileMenuOpen])
 
   return (
-    <div className="sticky top-0  z-50 w-full bg-white ">
+    <div className="sticky top-0 z-50 w-full bg-white ">
       <div className="flex items-center justify-between w-full px-2 py-3 max-w-[1800px] mx-auto">
         <div className="flex items-center space-x-2">
           <Link href="/" className="flex items-center">

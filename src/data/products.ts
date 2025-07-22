@@ -40,6 +40,12 @@ export type ProductApplication =
       description: string;
     };
 
+export type productSpecification = {
+  icon: string;
+  heading: string;
+  description: string;
+};
+
 export type ApplicationType = {
   image: string;
   title: string;
@@ -56,7 +62,7 @@ export type Product = {
   tecnicalimage: string;
   whychose?: Whychose[];
   features: ProductFeature[];
-  specifications: ProductSpec[];
+  productspecification?:productSpecification[];
   howItWorks?: HowItWorks[];
   applications: ProductApplication[];
   gallery?: string[];
@@ -266,8 +272,8 @@ export const biometricProduct: Product = {
   name: "Biometric Product",
   tagline: "Biometric Access System",
   description:
-    "This biometric access system is built for hostels, institutions, and workplaces. It replaces manual registers, cards, or PINs with fast, accurate fingerprint authentication. Every entry is logged, timed, and secured with minimal human intervention",
-  mainImage: "/Products/biometric-product/main_photo2.svg",
+    "A fingerprint-based biometric system for hostels, institutions, and workplaces that replaces manual logs with fast, secure, and automated entry tracking",
+  mainImage: "/Products/biometric-product/TechPhoto.svg",
   productSectionImage: "/Products/biometric-product/main_productsection.svg",
   features: [
     {
@@ -350,7 +356,7 @@ export const biometricProduct: Product = {
         "Based on custom rules and fingerprint match  access is either approved or denied.",
     },
   ],
-  tecnicalimage: "/Products/biometric-product/TechPhoto.svg",
+  tecnicalimage: "/Products/biometric-product/main_photo2.svg",
   testimonials: [
     {
       id: 1,
@@ -372,25 +378,38 @@ export const biometricProduct: Product = {
         "We’ve deployed the Biometric System from VithSutra across our die casting industry units, with over 200+ installations now in place. More than 1,000 employees across India use it daily for secure, hassle-free access and attendance. The system is reliable, efficient, and has proven to be a strong fit for our industrial environment.",
     },
   ],
-  specifications: [
+  productspecification:[
     {
-      name: "Authentication Methods",
-      value: "Fingerprint, Face Recognition, RFID",
+      description:"Dust and tamper resistent casing",
+      heading:"Durabel casing",
+      icon:"/Products/biometric-product/Technical/durabel.png"
     },
     {
-      name: "Response Time",
-      value: "< 1 second",
+      description:"Operates on 5V or 12v DC",
+      heading:"Power",
+      icon:"/Products/biometric-product/Technical/thunderbolt.png"
     },
     {
-      name: "Storage Capacity",
-      value: "Up to 10,000 users",
+      description:"USB/Serial/Wi-Fi (based on model)" ,
+      heading:"",
+      icon:"/Products/biometric-product/Technical/no-connection.png",
     },
     {
-      name: "Connectivity",
-      value: "WiFi, Ethernet, 4G",
-    },
+      description:"Time and role based rule engine",
+      heading:"Custom Access Logic",
+      icon:"public/Products/biometric-product/Technical/custome.png",
+    }
+    ,{
+      description:"Ensures secure communication over USB,Wi-Fi or Serial",
+      heading:"Encripted Communication",
+      icon:"/Products/biometric-product/Technical/custome.png",
+    }
+    ,{
+      description:"Supports dry wet and rough fingerprints",
+      heading:"High-Precision Sensor",
+      icon:"/Products/biometric-product/Technical/senser.png"
+    }
   ],
-
   applications: [
     {
       image: "/Products/biometric-product/application/biometricfactory1.png",
@@ -599,21 +618,27 @@ export const hydroponicProduct: Product = {
   applications: [
     {
       industry: "Hydroponics",
-      image: "/images/hydroponics.png", // Replace with actual image path or URL
+      image: "/Products/vithnet/application/Hydrophonics.png",
       description:
         "Vithnet automates nutrient delivery, pH control, and water flow for soilless hydroponic systems. It ensures healthy root growth and maximizes yield with precise environmental monitoring.",
     },
     {
       industry: "Aeroponics",
-      image: "/images/aeroponics.png", // Replace with actual image path or URL
+      image: "/Products/vithnet/application/planet-rescue-101.png",
       description:
         "With custom integration, Vithnet can control misting cycles and manage nutrient spray timing. Ideal for high-efficiency root oxygenation in vertical and indoor aeroponic setups.",
     },
     {
       industry: "Aquaponics",
-      image: "/images/aquaponics.png", // Replace with actual image path or URL
+      image: "/Products/vithnet/application/aquaponics.png",
       description:
         "Vithnet supports plant-side automation by managing pH, water flow, and temperature. It complements fish-plant systems by enabling consistent crop-side conditions.",
+    },
+    {
+      industry: "Container Farming",
+      image: "/Products/vithnet/application/Containerforming.png",
+      description:
+        "Using shipping containers or enclosed units outfitted with full climate and nutrient control for urban or space-efficient agriculture.",
     },
   ],
   FaQ: [
@@ -668,7 +693,6 @@ export const hydroponicProduct: Product = {
   ],
   link: "/products/hydroponic-controller",
 };
-
 
 export const roboticsWorkshop = {
   heading: "Our Workshop Includes",

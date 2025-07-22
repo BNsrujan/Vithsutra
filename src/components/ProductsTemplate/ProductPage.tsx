@@ -87,21 +87,21 @@ export default function ProductPage({
 
       {product.name == "Hydroponic Controller" && (
         <div>
-        <section className="relative min-h-[70vh]  w-full  ">
-          <div className="container mx-auto px-4 flex flex-wrap-reverse items-center justify-between w-full h-full py-20 gap-company-xl-48 md:gap-0">
+        <section className="relative min-h-[70vh]     ">
+          <div className="container mx-auto px-4 sm:px-0 w-company-section-width flex flex-wrap-reverse items-center justify-between  h-full py-20 gap-company-xl-48 md:gap-0">
             {/* Right side - Image */}
-            <div className="relative w-full lg:w-1/2 h-[260px] md:h-[350px] lg:h-[700px] flex justify-center items-center">
+            <div className="relative w-full lg:w-1/2 h-[260px] min-h-[400px] pr-7  flex justify-center   overflow-hidden items-center">
               <motion.div
                 variants={containerVariants}
                 initial="hidden"
                 animate="visible"
-                className="relative h-full  sm:w-[600px] md:w-[500px] lg:w-[700px] max-w-full overflow-visible rounded-[28px]"
+                className="relative h-full   w-full max-w-full  rounded-company-section-24"
               >
                 <Image
                   src={"/Products/vithnet/CEA1.png"}
                   alt={product.name}
                   fill
-                  className="object-contain md:object-contain overflow-visible rounded-4xl"
+                  className="object-contain md:object-cover overflow-hidden rounded-company-section-24 "
                   priority
                 />
               </motion.div>
@@ -122,7 +122,7 @@ export default function ProductPage({
                   What is Controlled Environment Farming?
                 </motion.h1>
                 <motion.p
-                  className={`${text.cardBodytext} max-w-2xl `}
+                  className={`${text.Extratext} max-w-2xl `}
                   variants={fadeInUp}
                 >
                   Controlled Environment Farming (CEF) is the practice of
@@ -136,7 +136,7 @@ export default function ProductPage({
           </div>
         </section>
         <section className="relative min-h-[70vh]  w-full  ">
-          <div className="container mx-auto px-4 flex flex-wrap-reverse items-center justify-between w-full h-full py-20 gap-company-xl-48 md:gap-0">
+          <div className="container mx-auto px-4 sm:px-0 w-company-section-width flex flex-wrap-reverse items-center justify-between  h-full py-20  md:gap-0">
             {/* Left side - Text Content */}
             <div className="w-full lg:w-1/2 text-black flex  flex-col justify-center h-full items-center lg:items-start ">
               <motion.div
@@ -152,7 +152,7 @@ export default function ProductPage({
                   What is Controlled Environment Farming?
                 </motion.h1>
                 <motion.p
-                  className={`${text.cardBodytext} md:max-w-2xl max-w-64  `}
+                  className={`${text.Extratext} md:max-w-2xl max-w-64  `}
                   variants={fadeInUp}
                 >
                   Controlled Environment Farming (CEF) is the practice of
@@ -167,25 +167,28 @@ export default function ProductPage({
         
               <div className="md:w-1/2 mx-auto px-company-lg-24 ">
                 <Heading heading="FEATURES" Display="Key Features" />
-                <div className="min-w-company-section-width px-company-xl-48">
-                  <div className="grid grid-cols-1 md:grid-cols-2  gap-company-xl-48">
-                    {product.whychose.map((whychose, idx) => {
-                      const IconComponent = whychose.image ? (
-                        <Image
-                          src={whychose.image}
-                          alt={whychose.title}
-                          width={50}
-                          height={50}
-                        />
-                      ) : typeof whychose.icon === "function" ? (
-                        React.createElement(whychose.icon, {
+                <div className=" ">
+                  <div className="grid grid-cols-1 gap-company-sm-12  ">
+                    {product.whychose && Array.isArray(product.whychose) && product.whychose.map((whychose, idx) => {
+                      let IconComponent = null;
+                      if (typeof whychose.image === "string" && whychose.image.length > 0) {
+                        IconComponent = (
+                          <Image
+                            src={whychose.image}
+                            alt={whychose.title || `icon-${idx}`}
+                            width={50}
+                            height={50}
+                          />
+                        );
+                      } else if (whychose.icon && typeof whychose.icon === "function") {
+                        IconComponent = React.createElement(whychose.icon, {
                           className: " text-gray-700",
-                        })
-                      ) : null;
+                        });
+                      }
 
                       return (
                         <div
-                          key={whychose.title + idx}
+                          key={whychose.title ? whychose.title + idx : idx}
                           className="flex items-start gap-company-xs-8 justify-center "
                         >
                           <div className="flex-shrink-0">
@@ -221,7 +224,7 @@ export default function ProductPage({
       <section className=" px-4 md:px-0  flex py-company-xl-48 flex-col justify-center  ">
         <div className="max-w-company-section-width mx-auto">
           <Heading heading="FEATURES" Display="Key Features" />
-          <div className="py-6">
+          <div className="py-company-xl-48">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-company-xl-48">
               {product.features.map((feature, idx) => {
                 const IconComponent = feature.image ? (
@@ -276,7 +279,7 @@ export default function ProductPage({
               Display="How It Works"
               className="flex flex-col-reverse"
             />
-            <div className="flex flex-col md:flex-row items-center justify-between gap-company-xl-48 w-full">
+            <div className="flex flex-col py-company-xl-48 md:flex-row items-center justify-between gap-company-xl-48 w-full">
               {product.howItWorks.map((step, idx, arr) => (
                 <ProcessStepCard
                   key={step.title}
@@ -293,26 +296,32 @@ export default function ProductPage({
 
       {/* Technical Specifications Section */}
       <section className="flex p-company-xs-8 md:p-0  contain-content justify-center  ">
-        <div className="max-w-company-section-width  w-full h-full">
+        <div className="max-w-company-section-width   w-full h-full">
           <Heading
             heading="Detailed technical information for system integration and deployment"
             Display="Technical Specifications"
-            className="flex flex-col-reverse  "
+            className="flex flex-col-reverse mb-company-xl-48 "
           />
-          <div className="h-full flex justify-center  items-center bg-company-litest-gray rounded-company-section-24 border z-100 mx-auto ">
+          <div className="h-[38rem] flex justify-center py-company-xl-48  items-center bg-company-litest-gray rounded-company-section-24 border z-100 mx-auto ">
             <Image
               src={product.tecnicalimage}
               alt={product.name}
-              width={1000}
-              height={1000}
+              width={500}
+              height={500}
             />
           </div>
         </div>
       </section>
 
+      {product.productspecification && product.productspecification.length > 0 && (
+        <div>
+
+        </div>
+      )}
+
       {/* Applications Section */}
       <section className="py-16 px-4 md:px-0 md:py-24  relative flex justify-center items-center">
-        <div className="w-full ">
+        <div className=" mt-company-xl-48 w-company-section-width">
           <Application applications={product.applications} />
         </div>
       </section>
@@ -352,7 +361,7 @@ export default function ProductPage({
 
       {/* Testimonials Section */}
       {product.testimonials && product.testimonials.length > 0 && (
-        <section className="py-24 w-full flex justify-center">
+        <section className="py-24 w-full flex justify-center m">
           <TestimonialsCarousel testimonials={product.testimonials} />
         </section>
       )}
@@ -367,7 +376,7 @@ export default function ProductPage({
               product.FaQ.map(({ qution, answer }) => (
                 <AccordionItem key={qution} value={qution}>
                   <AccordionTrigger
-                    className={`${text.cardBodytext} font-bold text-company-primary-royalBlue`}
+                    className={`${text.cardBodytext} font-bold text-company-primary-royalBlue px-company-lg-24`}
                   >
                     {qution}
                   </AccordionTrigger>
@@ -449,7 +458,7 @@ export default function ProductPage({
 
       {/* Our Track */}
       {product.facts && (
-        <section className="mx-company-md-16 md:px-0 py-24 flex justify-center w-full">
+        <section className=" md:px-0 py-24 flex justify-center w-full">
           <div className="max-w-company-section-width w-full ">
             <QuickFacts facts={product.facts} />
           </div>

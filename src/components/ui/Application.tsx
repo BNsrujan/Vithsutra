@@ -94,20 +94,19 @@ function Application({ applications }: ApplicationProps) {
               transition={{ type: "spring", stiffness: 400, damping: 40, duration: 0.4 }}
             >
               <div 
-          className={`absolute z-2 inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent transition-all duration-700 ease-in-out 
-            `}
-        />
+                className="absolute z-10 inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent transition-all duration-700 ease-in-out"
+              />
               <Image
                 src={currentApp.image}
                 alt={currentApp.industry}
                 fill
                 className="rounded-company-section-24 w-full h-full object-cover bg-gray-200"
               />
-              <div className="absolute bottom-0 p-company-lg-24 z-10 text-start w-full">
+              <div className="absolute bottom-0 p-company-lg-24 z-20 text-start w-full">
                 <h2 className={`${text.cardHeadingtext} mt-2 text-white`}>
                   {currentApp.industry}
                 </h2>
-                <p className={`${text.cardBodytext}   transition-all duration-900 text-gray-200 mt-2`}>
+                <p className={`${text.cardBodytext}   transition-all duration-700 text-gray-200 mt-2`}>
                   {currentApp.description}
                 </p>
               </div>

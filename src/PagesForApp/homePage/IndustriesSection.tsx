@@ -8,6 +8,7 @@ import { SectionHeader } from '@/components/ui/section-header';
 import Image from 'next/image';
 import { Card, CardContent,  CardTitle, CardDescription } from '@/components/ui/card';
 import { industries } from '@/data/products';
+import Heading from '@/components/ui/heading';
 
 export default function IndustriesSection() {
   return (
@@ -19,9 +20,9 @@ export default function IndustriesSection() {
         whileInView="visible"
         viewport={{ once: true }}
       >
-        <SectionHeader 
-          label="INDUSTRIES"
-          title="Industry Solutions"
+        <Heading 
+          heading="INDUSTRIES"
+          Display="Industry Solutions"
         />
       </motion.div>
 
