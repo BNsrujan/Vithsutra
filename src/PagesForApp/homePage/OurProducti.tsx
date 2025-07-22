@@ -2,8 +2,7 @@
 
 import { motion } from "framer-motion";
 import { containerVariants } from "@/lib/animations";
-import { SectionHeader } from "@/components/ui/section-header";
-import React from "react";
+ import React from "react";
 import { Carousel, Card } from "@/components/ui/apple-cards-carousel";
 import { biometricProduct, rfidProduct, hydroponicProduct } from "@/data/products";
 import Heading from "@/components/ui/heading";

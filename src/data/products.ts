@@ -170,24 +170,24 @@ export const rfidProduct: Product = {
       avatar: "/Products/rfid-tel/testimonial_profilephoto/images_2.png",
     },
   ],
-  specifications: [
-    {
-      name: "RFID Technology",
-      value: "13.56 MHz ISO 14443",
-    },
-    {
-      name: "Call Duration Limit",
-      value: "Configurable per student",
-    },
-    {
-      name: "Balance Alert",
-      value: "Low balance notifications",
-    },
-    {
-      name: "Network Support",
-      value: "PSTN, VoIP",
-    },
-  ],
+  // specifications: [
+  //   {
+  //     name: "RFID Technology",
+  //     value: "13.56 MHz ISO 14443",
+  //   },
+  //   {
+  //     name: "Call Duration Limit",
+  //     value: "Configurable per student",
+  //   },
+  //   {
+  //     name: "Balance Alert",
+  //     value: "Low balance notifications",
+  //   },
+  //   {
+  //     name: "Network Support",
+  //     value: "PSTN, VoIP",
+  //   },
+  // ],
 
   applications: [
     {
@@ -592,24 +592,24 @@ export const hydroponicProduct: Product = {
       avatar: "/Products/vithnet/testimonal_profile/image1.png",
     },
   ],
-  specifications: [
-    {
-      name: "Sensors",
-      value: "pH, EC, Temperature, Humidity, Light",
-    },
-    {
-      name: "Control Parameters",
-      value: "Nutrient dosing, pH adjustment, Climate control",
-    },
-    {
-      name: "Connectivity",
-      value: "WiFi, 4G, Ethernet",
-    },
-    {
-      name: "Power Supply",
-      value: "AC/DC with backup",
-    },
-  ],
+  // specifications: [
+  //   {
+  //     name: "Sensors",
+  //     value: "pH, EC, Temperature, Humidity, Light",
+  //   },
+  //   {
+  //     name: "Control Parameters",
+  //     value: "Nutrient dosing, pH adjustment, Climate control",
+  //   },
+  //   {
+  //     name: "Connectivity",
+  //     value: "WiFi, 4G, Ethernet",
+  //   },
+  //   {
+  //     name: "Power Supply",
+  //     value: "AC/DC with backup",
+  //   },
+  // ],
   // gallery: [
   //   "/Products/vithnet/vithnet_device_2.svg",
   //   "/Products/vithnet/3DproductImage/",

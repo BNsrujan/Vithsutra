@@ -6,7 +6,6 @@ import { ProductGrid } from "../../components/ProductGrid";
 import { motion } from "framer-motion";
 import { text } from "@/lib/typography";
 import { Button } from "../../components/ui/button";
-import { SectionHeader } from "../../components/ui/section-header";
 import { containerVariants, itemVariants } from "@/lib/animations";
 import Link from "next/link";
 import Image from "next/image";

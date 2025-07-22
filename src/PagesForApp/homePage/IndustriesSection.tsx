@@ -4,7 +4,6 @@ import React from 'react';
 import Link from 'next/link';
 import { motion } from "motion/react";
 import { containerVariants, itemVariants } from '@/lib/motion';
-import { SectionHeader } from '@/components/ui/section-header';
 import Image from 'next/image';
 import { Card, CardContent,  CardTitle, CardDescription } from '@/components/ui/card';
 import { industries } from '@/data/products';

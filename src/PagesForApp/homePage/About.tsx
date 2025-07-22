@@ -1,7 +1,6 @@
 "use client"
 
 import { text } from "../../lib/typography";
-import { SectionHeader } from "@/components/ui/section-header";
 import { motion } from "framer-motion";
 import { aboutSection, aboutContent, aboutVideo } from "@/lib/animations";
 import Heading from "@/components/ui/heading";

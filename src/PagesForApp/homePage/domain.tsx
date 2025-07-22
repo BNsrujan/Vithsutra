@@ -2,8 +2,7 @@
 
 import Largecard from "@/components/ui/largecard";
 import { useRouter } from "next/navigation";
-import { SectionHeader } from "@/components/ui/section-header";
-import Heading from "@/components/ui/heading";
+ import Heading from "@/components/ui/heading";
 
 export default function WeOfferSection() {
   const router = useRouter();

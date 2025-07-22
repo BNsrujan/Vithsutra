@@ -2,8 +2,7 @@
 
 import React from "react";
 import { InfiniteMovingCards } from "@/components/ui/infinite-moving-cards";
-import { SectionHeader } from "@/components/ui/section-header";
-import Heading from "@/components/ui/heading";
+ import Heading from "@/components/ui/heading";
 
 export default function VentureCapital() {
   return (
