@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button";
 import { text } from "@/lib/typography";
 import Heading from "@/components/ui/heading";
 import { containerVariants, fadeInUp, fadeInDown } from "@/lib/motion";
-import { Carousel, Card } from "@/components/ui/apple-cards-carousel";
+import { Carousel, Card } from "@/components/ui/productscard";
 import ProcessStepCard from "@/components/ui/ProcessStepCard";
 import TestimonialsCarousel from "@/components/ui/testimonials-carousel";
 import Application from "../../components/ui/Application";
@@ -59,7 +59,12 @@ export default function ProductPage({
                 {product.description}
               </motion.p>
               <div className="flex md:justify-center lg:justify-start">
-                <Button onClick={()=>router.push("/contact")} variant={"neumorphic"}>Book a Demo</Button>
+                <Button
+                  onClick={() => router.push("/contact")}
+                  variant={"neumorphic"}
+                >
+                  Book a Demo
+                </Button>
               </div>
             </motion.div>
           </div>
@@ -87,143 +92,149 @@ export default function ProductPage({
 
       {product.name == "Hydroponic Controller" && (
         <div>
-        <section className="relative min-h-[70vh]     ">
-          <div className="container mx-auto px-4 sm:px-0 w-company-section-width flex flex-wrap-reverse items-center justify-between  h-full py-20 gap-company-xl-48 md:gap-0">
-            {/* Right side - Image */}
-            <div className="relative w-full lg:w-1/2 h-[260px] min-h-[400px] pr-7  flex justify-center   overflow-hidden items-center">
-              <motion.div
-                variants={containerVariants}
-                initial="hidden"
-                animate="visible"
-                className="relative h-full   w-full max-w-full  rounded-company-section-24"
-              >
-                <Image
-                  src={"/Products/vithnet/CEA1.png"}
-                  alt={product.name}
-                  fill
-                  className="object-contain md:object-cover overflow-hidden rounded-company-section-24 "
-                  priority
-                />
-              </motion.div>
-            </div>
+          <section className="relative min-h-[70vh]     ">
+            <div className="container mx-auto px-4 sm:px-0 w-company-section-width flex flex-wrap-reverse items-center justify-between  h-full py-20 gap-company-xl-48 md:gap-0">
+              {/* Right side - Image */}
+              <div className="relative w-full lg:w-1/2 h-[260px] min-h-[400px] pr-7  flex justify-center   overflow-hidden items-center">
+                <motion.div
+                  variants={containerVariants}
+                  initial="hidden"
+                  animate="visible"
+                  className="relative h-full   w-full max-w-full  rounded-company-section-24"
+                >
+                  <Image
+                    src={"/Products/vithnet/CEA1.png"}
+                    alt={product.name}
+                    fill
+                    className="object-contain md:object-cover overflow-hidden rounded-company-section-24 "
+                    priority
+                  />
+                </motion.div>
+              </div>
 
-            {/* Left side - Text Content */}
-            <div className="w-full lg:w-1/2 text-black flex  flex-col justify-center h-full items-center lg:items-start ">
-              <motion.div
-                variants={containerVariants}
-                initial="hidden"
-                animate="visible"
-                className=" space-y-company-md-16 md:space-y-company-lg-24 text-center lg:text-left"
-              >
-                <motion.h1
-                  className={`${text.Sectiontexthead} `}
-                  variants={fadeInDown}
+              {/* Left side - Text Content */}
+              <div className="w-full lg:w-1/2 text-black flex  flex-col justify-center h-full items-center lg:items-start ">
+                <motion.div
+                  variants={containerVariants}
+                  initial="hidden"
+                  animate="visible"
+                  className=" space-y-company-md-16 md:space-y-company-lg-24 text-center lg:text-left"
                 >
-                  What is Controlled Environment Farming?
-                </motion.h1>
-                <motion.p
-                  className={`${text.Extratext} max-w-2xl `}
-                  variants={fadeInUp}
-                >
-                  Controlled Environment Farming (CEF) is the practice of
-                  growing crops in enclosed spaces with precise control over
-                  environmental factors. It enhances crop yield and resource
-                  efficiency by managing temperature, humidity, pH, and
-                  nutrients.
-                </motion.p>
-              </motion.div>
+                  <motion.h1
+                    className={`${text.Sectiontexthead} `}
+                    variants={fadeInDown}
+                  >
+                    What is Controlled Environment Farming?
+                  </motion.h1>
+                  <motion.p
+                    className={`${text.Extratext} max-w-2xl `}
+                    variants={fadeInUp}
+                  >
+                    Controlled Environment Farming (CEF) is the practice of
+                    growing crops in enclosed spaces with precise control over
+                    environmental factors. It enhances crop yield and resource
+                    efficiency by managing temperature, humidity, pH, and
+                    nutrients.
+                  </motion.p>
+                </motion.div>
+              </div>
             </div>
-          </div>
-        </section>
-        <section className="relative min-h-[70vh]  w-full  ">
-          <div className="container mx-auto px-4 sm:px-0 w-company-section-width flex flex-wrap-reverse items-center justify-between  h-full py-20  md:gap-0">
-            {/* Left side - Text Content */}
-            <div className="w-full lg:w-1/2 text-black flex  flex-col justify-center h-full items-center lg:items-start ">
-              <motion.div
-                variants={containerVariants}
-                initial="hidden"
-                animate="visible"
-                className=" space-y-company-md-16 md:space-y-company-lg-24 text-center lg:text-left"
-              >
-                <motion.h1
-                  className={`${text.Sectiontexthead} `}
-                  variants={fadeInDown}
+          </section>
+          <section className="relative min-h-[70vh]  w-full  ">
+            <div className="container mx-auto px-4 sm:px-0 w-company-section-width flex flex-wrap-reverse items-center justify-between  h-full py-20  md:gap-0">
+              {/* Left side - Text Content */}
+              <div className="w-full lg:w-1/2 text-black flex  flex-col justify-center h-full items-center lg:items-start ">
+                <motion.div
+                  variants={containerVariants}
+                  initial="hidden"
+                  animate="visible"
+                  className=" space-y-company-md-16 md:space-y-company-lg-24 text-center lg:text-left"
                 >
-                  What is Controlled Environment Farming?
-                </motion.h1>
-                <motion.p
-                  className={`${text.Extratext} md:max-w-2xl max-w-64  `}
-                  variants={fadeInUp}
-                >
-                  Controlled Environment Farming (CEF) is the practice of
-                  growing crops in enclosed spaces with precise control over
-                  environmental factors. It enhances crop yield and resource
-                  efficiency by managing temperature, humidity, pH, and
-                  nutrients.
-                </motion.p>
-              </motion.div>
-            </div>
+                  <motion.h1
+                    className={`${text.Sectiontexthead} `}
+                    variants={fadeInDown}
+                  >
+                    What is Controlled Environment Farming?
+                  </motion.h1>
+                  <motion.p
+                    className={`${text.Extratext} md:max-w-2xl max-w-64  `}
+                    variants={fadeInUp}
+                  >
+                    Controlled Environment Farming (CEF) is the practice of
+                    growing crops in enclosed spaces with precise control over
+                    environmental factors. It enhances crop yield and resource
+                    efficiency by managing temperature, humidity, pH, and
+                    nutrients.
+                  </motion.p>
+                </motion.div>
+              </div>
 
-        
               <div className="md:w-1/2 mx-auto px-company-lg-24 ">
                 <Heading heading="FEATURES" Display="Key Features" />
                 <div className=" ">
                   <div className="grid grid-cols-1 gap-company-sm-12  ">
-                    {product.whychose && Array.isArray(product.whychose) && product.whychose.map((whychose, idx) => {
-                      let IconComponent = null;
-                      if (typeof whychose.image === "string" && whychose.image.length > 0) {
-                        IconComponent = (
-                          <Image
-                            src={whychose.image}
-                            alt={whychose.title || `icon-${idx}`}
-                            width={50}
-                            height={50}
-                          />
-                        );
-                      } else if (whychose.icon && typeof whychose.icon === "function") {
-                        IconComponent = React.createElement(whychose.icon, {
-                          className: " text-gray-700",
-                        });
-                      }
+                    {product.whychose &&
+                      Array.isArray(product.whychose) &&
+                      product.whychose.map((whychose, idx) => {
+                        let IconComponent = null;
+                        if (
+                          typeof whychose.image === "string" &&
+                          whychose.image.length > 0
+                        ) {
+                          IconComponent = (
+                            <Image
+                              src={whychose.image}
+                              alt={whychose.title || `icon-${idx}`}
+                              width={50}
+                              height={50}
+                            />
+                          );
+                        } else if (
+                          whychose.icon &&
+                          typeof whychose.icon === "function"
+                        ) {
+                          IconComponent = React.createElement(whychose.icon, {
+                            className: " text-gray-700",
+                          });
+                        }
 
-                      return (
-                        <div
-                          key={whychose.title ? whychose.title + idx : idx}
-                          className="flex items-start gap-company-xs-8 justify-center "
-                        >
-                          <div className="flex-shrink-0">
-                            <div className="w-20 h-20 bg-white border border-gray-200 rounded-company-button-8  flex items-center justify-center">
-                              {IconComponent}
+                        return (
+                          <div
+                            key={whychose.title ? whychose.title + idx : idx}
+                            className="flex items-start gap-company-xs-8 justify-center "
+                          >
+                            <div className="flex-shrink-0">
+                              <div className="w-20 h-20 bg-white border border-gray-200 rounded-company-button-8  flex items-center justify-center">
+                                {IconComponent}
+                              </div>
+                            </div>
+                            <div className="flex-1 justify-center h-full">
+                              <h3
+                                className={` ${text.cardHeadingsmall} pb-company-xs-8 text-gray-900 `}
+                              >
+                                {whychose.title}
+                              </h3>
+                              <p
+                                className={`${text.cardBodytextlight}text-sm text-gray-600 leading-relaxed`}
+                              >
+                                {whychose.description}
+                              </p>
                             </div>
                           </div>
-                          <div className="flex-1 justify-center h-full">
-                            <h3
-                              className={` ${text.cardHeadingsmall} pb-company-xs-8 text-gray-900 `}
-                            >
-                              {whychose.title}
-                            </h3>
-                            <p
-                              className={`${text.cardBodytextlight}text-sm text-gray-600 leading-relaxed`}
-                            >
-                              {whychose.description}
-                            </p>
-                          </div>
-                        </div>
-                      );
-                    })}
+                        );
+                      })}
                   </div>
                 </div>
               </div>
-            
-          </div>
-        </section>
+            </div>
+          </section>
         </div>
       )}
 
       {/* Features Section */}
       <section className=" px-4 md:px-0  flex py-company-xl-48 flex-col justify-center  ">
         <div className="max-w-company-section-width mx-auto">
-          <Heading heading="FEATURES" Display="Key Features" />
+          <Heading heading="Why Choose Us" Display="EXPLORE WHAT WE OFFER" />
           <div className="py-company-xl-48">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-company-xl-48">
               {product.features.map((feature, idx) => {
@@ -302,22 +313,60 @@ export default function ProductPage({
             Display="Technical Specifications"
             className="flex flex-col-reverse mb-company-xl-48 "
           />
-          <div className="h-[38rem] flex justify-center py-company-xl-48  items-center bg-company-litest-gray rounded-company-section-24 border z-100 mx-auto ">
+          <div className=" relative h-[38rem] flex justify-center py-company-xl-48  items-center bg-company-litest-gray rounded-company-section-24 border z-100 mx-auto ">
+           <div className="  grid grid-cols-2  p-company-lg-24 justify-between w-full "> 
+           {product.productspecification && product.productspecification.map((feature, idx) => {
+                const IconComponent = feature.icon ? (
+                  <Image
+                    src={feature.icon}
+                    alt={feature.heading}
+                    width={50}
+                    height={50}
+                  />
+                ) : typeof feature.icon === "function" ? (
+                  React.createElement(feature.icon, {
+                    className: " text-gray-700",
+                  })
+                ) : null;
+
+                return (
+                  <div
+                    key={ idx}
+                    className="flex items-start gap-company-xs-8 justify-center py-company-md-16 w-[400px]"
+                  >
+                    <div className="flex-shrink-0">
+                      <div className="w-20 h-20 bg-white border border-gray-200 rounded-company-button-8  flex items-center justify-center">
+                        {IconComponent}
+                      </div>
+                    </div>
+                    <div className="flex-1 justify-center h-full">
+                      <h3
+                        className={` ${text.cardHeadingsmall} pb-company-xs-8 text-gray-900 `}
+                      >
+                        {feature.heading}
+                      </h3>
+                      <p
+                        className={`${text.cardBodytextlight}text-sm text-gray-600 leading-relaxed`}
+                      >
+                        {feature.description}
+                      </p>
+                    </div>
+                  </div>
+                );
+              })}
+           </div>
             <Image
               src={product.tecnicalimage}
               alt={product.name}
-              width={500}
-              height={500}
+              width={400}
+              height={400}
             />
           </div>
         </div>
       </section>
 
-      {product.productspecification && product.productspecification.length > 0 && (
-        <div>
-
-        </div>
-      )}
+      {product.productspecification &&
+        product.productspecification.length > 0 && <div></div>}
 
       {/* Applications Section */}
       <section className="py-16 px-4 md:px-0 md:py-24  relative flex justify-center items-center">

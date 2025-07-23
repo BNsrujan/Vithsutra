@@ -397,7 +397,7 @@ export const biometricProduct: Product = {
     {
       description:"Time and role based rule engine",
       heading:"Custom Access Logic",
-      icon:"public/Products/biometric-product/Technical/custome.png",
+      icon:"/Products/biometric-product/Technical/custome.png",
     }
     ,{
       description:"Ensures secure communication over USB,Wi-Fi or Serial",
