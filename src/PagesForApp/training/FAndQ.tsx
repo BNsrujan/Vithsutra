@@ -33,10 +33,10 @@ export default function Faq() {
       <Heading Display='HAVE ANY Q&A' heading='Your Query' />
       <Accordion type="single" collapsible className="mt-8">
         {faqs.map((faq, index) => (
-          <AccordionItem key={index} value={String(index)}>
+          <AccordionItem key={index} value={String(index)} defaultChecked={true}>
             <AccordionTrigger className={`text-company-blue-black ${text.cardBodytext}`}>{faq.question}</AccordionTrigger>
             <AccordionContent>
-              <p className={`text-company-text-gray ${text.cardBodytextlight}`}>{faq.answer}</p>
+              <p className={`text-company-text-gray    ${text.cardBodytextlight}`}>{faq.answer}</p>
             </AccordionContent>
           </AccordionItem>
         ))}

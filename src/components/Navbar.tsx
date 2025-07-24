@@ -102,7 +102,7 @@ MenuItem.displayName = 'MenuItem'
 // Reusable menu section component
 const MenuSection = React.memo(({ section, items }: { section: MenuSection, items: MenuItem[] }) => (
   <NavigationMenuItem>
-    <NavigationMenuTrigger className={`${navigationMenuTriggerStyle()} ${text.Navtext} text-[var(--company-blue-black)] hover:text-[var(--company-primary-royalBlue)]`}>
+    <NavigationMenuTrigger  className={`${navigationMenuTriggerStyle()} ${text.Navtext} text-[var(--company-blue-black)] hover:text-[var(--company-primary-royalBlue)]`}>
       {section.title}
     </NavigationMenuTrigger>
     <NavigationMenuContent>
@@ -215,16 +215,9 @@ export function Navbar() {
                       </p>
                       </div>
                     </AccordionTrigger>
-                    <AccordionContent>
-                      
+                    <AccordionContent>                  
                       <div className="space-y-2">
-                        {/* <Link 
-                          href={section.href}
-                          className="block p-2 rounded-lg hover:bg-[var(--company-litest-gray)] transition-colors font-medium text-[var(--company-blue-black)] mb-2"
-                          onClick={() => setIsMobileMenuOpen(false)}
-                        >
-                          View All
-                        </Link> */}
+                        
                         {section.items.map((item, index) => (
                           <Link
                             key={index}
