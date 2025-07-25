@@ -1,76 +1,341 @@
 import { Product, ProductCategory } from '../../core/entities/Product';
 import { ProductRepository, ProductCategoryRepository } from '../../core/use-cases/ProductUseCases';
 
-// Mock data - in real app this would come from database
+// Mock data - migrated from legacy data/products.ts
 const mockProducts: Product[] = [
   {
-    id: '1',
-    name: 'Biometric Access Control System',
-    description: 'Advanced biometric authentication system with fingerprint and facial recognition',
-    category: 'biometric',
-    imageUrl: '/Products/biometric-product/biometric-main.jpg',
+    id: "biometric-product",
+    name: "Biometric Product",
+    tagline: "Biometric Access System",
+    description: "A fingerprint-based biometric system for hostels, institutions, and workplaces that replaces manual logs with fast, secure, and automated entry tracking",
+    mainImage: "/Products/biometric-product/TechPhoto.svg",
+    productSectionImage: "/Products/biometric-product/main_productsection.svg",
+    tecnicalimage: "/Products/biometric-product/main_photo2.svg",
+    category: "biometric",
     features: [
-      'Fingerprint Recognition',
-      'Facial Recognition',
-      'Multi-factor Authentication',
-      'Real-time Monitoring',
-      'Cloud Integration'
+      {
+        image: "/Products/biometric-product/features/customrules.svg",
+        title: "Custom Rules",
+        description: "Set limits for access hours, user roles, or restricted days.",
+      },
+      {
+        image: "/Products/biometric-product/features/easyenrollment.svg",
+        title: "Easy Enrollment",
+        description: "Enroll users in seconds using the guided fingerprint registration system.",
+      },
+      {
+        image: "/Products/biometric-product/features/custmdashboard.svg",
+        title: "Cloud Dashboard",
+        description: "Live access monitoring with admin-level control — anytime, anywhere.",
+      },
+      {
+        image: "/Products/biometric-product/features/smartaccesstracker.svg",
+        title: "Smart Access Tracking",
+        description: "Real-time logging of every fingerprint entry, ready for reports, audits, or investigations.",
+      },
+      {
+        image: "/Products/biometric-product/features/24x7.svg",
+        title: "24/7 Operational Availability",
+        description: "Operational anytime, day or night.",
+      },
+      {
+        image: "/Products/biometric-product/features/fingerprintauthentication.svg",
+        title: "Fingerprint Authentication",
+        description: "Secure access through fast and accurate biometric fingerprint recognition.",
+      },
     ],
-    specifications: {
-      'Recognition Speed': '< 1 second',
-      'Accuracy': '99.9%',
-      'Storage Capacity': '10,000 users',
-      'Operating Temperature': '-10°C to 60°C'
-    },
-    price: 2999,
+    howItWorks: [
+      {
+        image: "/Products/biometric-product/How_it_works/step1.svg",
+        title: "Enroll Fingerprint",
+        description: "Admin scans and stores fingerprints securely using the enrollment interface",
+      },
+      {
+        image: "/Products/biometric-product/How_it_works/step2.svg",
+        title: "Place Finger",
+        description: "User places their finger on the sensor to request access.",
+      },
+      {
+        image: "/Products/biometric-product/How_it_works/step3.svg",
+        title: " Authenticate",
+        description: "System verifies the fingerprint with stored templates in milliseconds.",
+      },
+      {
+        image: "/Products/biometric-product/How_it_works/step4.svg",
+        title: "Access Granted or Denied",
+        description: "Based on custom rules and fingerprint match  access is either approved or denied.",
+      },
+    ],
+    testimonials: [
+      {
+        id: 1,
+        avatar: "/Products/biometric-product/testimonialprofilephoto/image_2.png",
+        name: "Amitabh Rao",
+        title: "College Operations Manager",
+        company: "Pragna Institute of Technology",
+        quote: "Implementing VithSutra's Biometric System in our engineering college has been a game-changer. Our students now mark attendance through fingerprint scans, replacing the old, time-consuming paper-based method. It has reduced manual errors, saved faculty time, and improved overall efficiency. The deployment was smooth, and the system has been performing consistently across all departments.",
+      },
+      {
+        id: 2,
+        avatar: "/Products/biometric-product/testimonialprofilephoto/images_1.png",
+        name: "Dinesh Rao",
+        title: "Operations Officer",
+        company: "VMax Die Casting",
+        quote: "We've deployed the Biometric System from VithSutra across our die casting industry units, with over 200+ installations now in place. More than 1,000 employees across India use it daily for secure, hassle-free access and attendance. The system is reliable, efficient, and has proven to be a strong fit for our industrial environment.",
+      },
+    ],
+    productspecification: [
+      {
+        description: "Dust and tamper resistent casing",
+        heading: "Durabel casing",
+        icon: "/Products/biometric-product/Technical/durabel.png"
+      },
+      {
+        description: "Operates on 5V or 12v DC",
+        heading: "Power",
+        icon: "/Products/biometric-product/Technical/thunderbolt.png"
+      },
+      {
+        description: "USB/Serial/Wi-Fi (based on model)",
+        heading: "Connectivity",
+        icon: "/Products/biometric-product/Technical/no-connection.png",
+      },
+    ],
+    applications: [
+      {
+        image: "/Products/biometric-product/application/biometricfactory1.png",
+        industry: "Industries & Manufacturing Units",
+        description: "Restricted Area Access: Only authorized personnel can enter hazardous or sensitive zones. Production Floor Time Logs: Track when operators begin and finish tasks for productivity analysis.",
+      },
+      {
+        image: "/Products/biometric-product/application/biometricinschool1.png",
+        industry: "Educational Institutions (Schools, Colleges, Hostels)",
+        description: "Student Attendance Tracking: Eliminate paper registers; automate attendance with fingerprint scans. Staff Clock In/Out: Accurately track faculty and admin staff working hours.",
+      },
+      {
+        image: "/Products/biometric-product/application/office.png",
+        industry: "Corporate Offices",
+        description: "Employee Attendance & HR Integration: Sync biometric data with HR systems for payroll and leave tracking. Meeting Room or Floor Access Control: Control who enters specific workspaces or departments.",
+      },
+    ],
+    FaQ: [
+      {
+        qution: "How does the biometric system help in student attendance?",
+        answer: "It accurately records each student's attendance using thumbprint authentication, eliminating proxies and manual errors.",
+      },
+      {
+        qution: "Is the biometric device suitable for children of all ages?",
+        answer: "Yes, it's ergonomically designed and installed at a height suitable for children, making thumb scanning easy and quick.",
+      },
+      {
+        qution: "Does it work without an internet connection?",
+        answer: "Yes, it can store attendance offline and sync data later when reconnected to the internet.",
+      },
+    ],
+    facts: [
+      {
+        number: 2000,
+        suffix: "+",
+        title: "Students Educated",
+      },
+      {
+        number: 1000,
+        suffix: "+",
+        title: "Products Deployed",
+      },
+    ],
+    link: "/products/biometric-product",
     isActive: true,
     createdAt: new Date('2024-01-01'),
     updatedAt: new Date('2024-01-15')
   },
   {
-    id: '2',
-    name: 'RFID Telephone System',
-    description: 'Secure communication system with RFID-based access control',
-    category: 'rfid',
-    imageUrl: '/Products/rfid-tel/rfid-main.jpg',
+    id: "rfid-telephone",
+    name: "RFID-Based Telephone",
+    tagline: "RFID-Based Telephone",
+    description: "This RFID-based telephone is made for hostels, schools, and campuses. It replaces coin phones with smart, secure RFID cards. Each call is tracked, timed, and easy to manage.",
+    mainImage: "/Products/rfid-tel/telephone[1].png",
+    productSectionImage: "/Products/rfid-tel/telephone[1].png",
+    tecnicalimage: "/Products/rfid-tel/tec_telephone.svg",
+    category: "rfid",
     features: [
-      'RFID Authentication',
-      'Secure Communication',
-      'Call Logging',
-      'Remote Management',
-      'Integration Ready'
+      {
+        image: "/Products/rfid-tel/feature/image 37.svg",
+        title: "RFID Security",
+        description: "Secure access with individual RFID card authentication.",
+      },
+      {
+        image: "/Products/rfid-tel/feature/image 38.svg",
+        title: "Cloud Dashboard",
+        description: "Live data monitoring with admin-level access from anywhere.",
+      },
+      {
+        image: "/Products/rfid-tel/feature/image 39.svg",
+        title: "Smart Billing",
+        description: "$1 is deducted for every 60 seconds of talktime.",
+      },
     ],
-    specifications: {
-      'RFID Frequency': '13.56 MHz',
-      'Communication Range': '10 cm',
-      'Storage': '1000 cards',
-      'Power Supply': '12V DC'
-    },
-    price: 1499,
+    howItWorks: [
+      {
+        image: "/Products/rfid-tel/how_it_works/setp1.png",
+        title: "Tap to Recharge",
+        description: "User taps card on VithSutra's recharge machine",
+      },
+      {
+        image: "/Products/rfid-tel/how_it_works/step2.png",
+        title: "Insert Card",
+        description: "Insert RFID card into the telephone unit",
+      },
+      {
+        image: "/Products/rfid-tel/how_it_works/step3.png",
+        title: "Dial and Talk",
+        description: "Dial the number and start your call",
+      },
+      {
+        image: "/Products/rfid-tel/how_it_works/step4.png",
+        title: "Auto Deduction",
+        description: "Amount is deducted from the card",
+      },
+    ],
+    testimonials: [
+      {
+        id: 1,
+        name: "Ragavendra  Shetty",
+        title: "Hostel Manager",
+        company: "Ski-line Boys Hostel, Mysore",
+        quote: "Managing communication in a boys' hostel with over 300 students was always a challenge especially when students' personalphones were often misplaced or misused. Since installing these RFID-based telephones, daily communication has become streamlined and secure. Each student now has verified access, and calls can be tracked for accountability. The product has drastically reduced misuse and brought a sense of discipline in the hostel. It's become an essential part of our daily routine.",
+        avatar: "/Products/rfid-tel/testimonial_profilephoto/image_1.png",
+      },
+    ],
+    applications: [
+      {
+        image: "/public/industry/fmog.avif",
+        industry: "Hostels (Schools & Colleges)",
+        description: "Student communication to parents/guardians using a secure calling system without mobile phones or coins. RFID-based prepaid calling eliminates the need for tokens or physical money.",
+      },
+      {
+        image: "/public/industry/fmog.avif",
+        industry: "Industries, Mining Sites & Worker Quarters",
+        description: "In remote industrial and mining regions, unstable network coverage and varying SIM providers make communication difficult. Mobile phones act as a distraction, reducing productivity, discipline, and safety.",
+      },
+    ],
+    FaQ: [
+      {
+        qution: "What is an RFID-based telephone, and how does it work?",
+        answer: "It allows calls only after scanning an authorized RFID card, ensuring secure and trackable communication.",
+      },
+      {
+        qution: "Where is this system typically used?",
+        answer: "Commonly deployed in hostels, schools, factories, and offices to allow monitored communication for students, workers, or guests.",
+      },
+    ],
+    facts: [
+      {
+        number: 2000,
+        suffix: "+",
+        title: "Students Educated",
+      },
+      {
+        number: 1000,
+        suffix: "+",
+        title: "Products Deployed",
+      },
+    ],
+    link: "/products/rfid-telephone",
     isActive: true,
     createdAt: new Date('2024-01-05'),
     updatedAt: new Date('2024-01-20')
   },
   {
-    id: '3',
-    name: 'VithNet IoT Platform',
-    description: 'Comprehensive IoT platform for industrial automation and monitoring',
-    category: 'iot',
-    imageUrl: '/Products/vithnet/vithnet-main.jpg',
-    features: [
-      'Real-time Monitoring',
-      'Data Analytics',
-      'Remote Control',
-      'Alert System',
-      'Scalable Architecture'
+    id: "hydroponic-controller",
+    name: "Hydroponic Controller",
+    tagline: "Smart Farming Automation System",
+    description: "VITHNET is an IoT-powered automation system for Controlled Environment Agriculture (CEA) that helps optimize crop growth using minimal water and space. VITHNET offers real-time monitoring, automated sensing, and precise climate control, ensuring healthier crops and higher yields with minimal manual effort.",
+    mainImage: "/Products/vithnet/vithnet_device_2.svg",
+    productSectionImage: "/Products/vithnet/vithnet_device_2.svg",
+    tecnicalimage: "/Products/vithnet/vithnet_device_2.svg",
+    category: "iot",
+    whychose: [
+      {
+        title: "Multi Season",
+        description: "Grow in any season or location",
+        image: "/Products/vithnet/features/wether.png",
+      },
+      {
+        title: "Water Consumption",
+        description: "Use up to 90% less water",
+        image: "/Products/vithnet/features/waterconsumtion.png",
+      },
     ],
-    specifications: {
-      'Connectivity': 'WiFi, Ethernet, 4G',
-      'Sensors': 'Temperature, Humidity, Pressure',
-      'Data Storage': 'Cloud & Local',
-      'API': 'RESTful API'
-    },
-    price: 3999,
+    features: [
+      {
+        title: "High-Precision Sensors",
+        image: "/Products/vithnet/builtin_features/high-precision-sensors.svg",
+        description: "Provides accurate environmental readings to support data-driven decisions.",
+      },
+      {
+        title: "Mobile & Web Dashboard",
+        image: "/Products/vithnet/builtin_features/mobile&webdashboard.svg",
+        description: "Real-time sensor data visualization through a user-friendly interface.",
+      },
+    ],
+    howItWorks: [
+      {
+        image: "/Products/vithnet/how_it_work/step1.svg",
+        title: "Sensor Data Collection",
+        description: "VithNet is connected to multiple environmental sensors installed in the hydroponic setup.",
+      },
+      {
+        image: "/Products/vithnet/how_it_work/step2.svg",
+        title: " Instant Data Processing",
+        description: "The system processes the incoming sensor data to ensure it's clean and reliable.",
+      },
+    ],
+    testimonials: [
+      {
+        id: 1,
+        name: "Rahul Gupta,",
+        title: "Director",
+        company: "Aerotech Hydroponics Lab ",
+        quote: "We customized Vithnet to control misting intervals and root zone temperature for our aeroponics lab. Its precise timer controls and sensor integration made daily maintenance almost effortless. Even complex schedules are now handled automatically with great reliability. This has significantly improved our root oxygenation and reduced plant stress.",
+        avatar: "/Products/vithnet/testimonal_profile/image2.png",
+      },
+    ],
+    applications: [
+      {
+        industry: "Hydroponics",
+        image: "/Products/vithnet/application/Hydrophonics.png",
+        description: "Vithnet automates nutrient delivery, pH control, and water flow for soilless hydroponic systems. It ensures healthy root growth and maximizes yield with precise environmental monitoring.",
+      },
+      {
+        industry: "Aeroponics",
+        image: "/Products/vithnet/application/planet-rescue-101.png",
+        description: "With custom integration, Vithnet can control misting cycles and manage nutrient spray timing. Ideal for high-efficiency root oxygenation in vertical and indoor aeroponic setups.",
+      },
+    ],
+    FaQ: [
+      {
+        qution: "Can I automate my hydroponics system using VithNet?",
+        answer: "Yes, VithNet has been deployed across multiple hydroponic farms, helping automate pH, EC, and nutrient cycle monitoring.",
+      },
+      {
+        qution: "What exactly does VithNet monitor in a closed farming setup?",
+        answer: "It tracks temperature, humidity, soil moisture, CO₂ levels, and light intensity for better crop control and yield consistency.",
+      },
+    ],
+    facts: [
+      {
+        number: 2000,
+        suffix: "+",
+        title: "Students Educated",
+      },
+      {
+        number: 1000,
+        suffix: "+",
+        title: "Products Deployed",
+      },
+    ],
+    link: "/products/hydroponic-controller",
     isActive: true,
     createdAt: new Date('2024-01-10'),
     updatedAt: new Date('2024-01-25')

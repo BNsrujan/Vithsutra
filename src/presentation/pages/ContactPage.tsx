@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { ContactFormComponent } from '../components/ContactFormComponent';
-import { useContactInfo } from '../hooks/useContact';
+import { useContactInfo } from '@/hooks/useContact';
 import { Card, CardContent, CardHeader, CardTitle } from '../../components/ui/card';
 import { MapPin, Phone, Mail, Clock } from 'lucide-react';
 
