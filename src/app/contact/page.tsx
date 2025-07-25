@@ -1,4 +1,4 @@
-import ContactPage from '@/PagesForApp/contactPage/ContactPage'
+import { ContactPage } from '@/presentation/pages/ContactPage'
 import React from 'react'
 
 function page() {

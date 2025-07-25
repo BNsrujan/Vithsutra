@@ -9,14 +9,13 @@ import React, {
   useCallback,
 } from "react";
 
-import {
-  IconArrowNarrowLeft,
-  IconArrowNarrowRight,
-} from "@tabler/icons-react";
+// Removed unused imports: IconArrowNarrowLeft, IconArrowNarrowRight
 import { cn } from "@/lib/utils";
 import { motion } from "motion/react";
 import Image, { ImageProps } from "next/image";
 import { useOutsideClick } from "@/hooks/use-outside-click";
+import { Button } from "./button";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 interface CarouselProps {
   items: React.ReactElement[];
@@ -34,7 +33,7 @@ export const CarouselContext = createContext<{
   onCardClose: (index: number) => void;
   currentIndex: number;
 }>({
-  onCardClose: () => { },
+  onCardClose: () => {},
   currentIndex: 0,
 });
 
@@ -61,7 +60,8 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
 
   const scrollLeft = () => {
     if (carouselRef.current) {
-      carouselRef.current.scrollBy({ left: -300, behavior: "smooth" });
+      const scrollAmount = isMobile() ? 280 : 600;
+      carouselRef.current.scrollBy({ left: -scrollAmount, behavior: "smooth" });
       // Check scrollability after animation completes
       setTimeout(checkScrollability, 300);
     }
@@ -69,7 +69,8 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
 
   const scrollRight = () => {
     if (carouselRef.current) {
-      carouselRef.current.scrollBy({ left: 300, behavior: "smooth" });
+      const scrollAmount = isMobile() ? 280 : 600;
+      carouselRef.current.scrollBy({ left: scrollAmount, behavior: "smooth" });
       // Check scrollability after animation completes
       setTimeout(checkScrollability, 300);
     }
@@ -96,7 +97,7 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
     <CarouselContext.Provider
       value={{ onCardClose: handleCardClose, currentIndex }}
     >
-      <div className="relative w-full">
+      <div className="relative w-full h-full">
         <div
           className="flex w-full overflow-x-scroll overscroll-x-auto scroll-smooth py-10 [scrollbar-width:none] md:py-20"
           ref={carouselRef}
@@ -104,14 +105,8 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
         >
           <div
             className={cn(
-              "absolute   bottom-0  z-[1000] h-auto w-[5%] overflow-hidden bg-gradient-to-l",
-            )}
-          ></div>
-
-          <div
-            className={cn(
               "flex flex-row justify-start gap-4 ",
-              "mx-auto ", // remove max-w-4xl if you want the carousel to span the full width of its container
+              "mx-auto " // remove max-w-4xl if you want the carousel to span the full width of its container
             )}
           >
             {items.map((item, index) => (
@@ -137,21 +132,30 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
             ))}
           </div>
         </div>
-        <div className="mr-10 flex justify-end gap-2">
-          <button
-            className="relative z-50 flex h-10 w-10 items-center justify-center rounded-full bg-gray-100 disabled:opacity-50"
+        
+        {/* Navigation buttons - responsive positioning */}
+        <div className="absolute -bottom-16 sm:-bottom-12 right-12 sm:right-16 md:right-20 flex gap-2 z-50">
+          <Button
+            variant="outline"
+            size="icon"
             onClick={scrollLeft}
             disabled={!canScrollLeft}
+            className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white/90 border-company-primary-royalBlue/20 hover:bg-company-primary-royalBlue/20 text-gray-600 shadow-lg backdrop-blur-sm transition-all duration-200"
           >
-            <IconArrowNarrowLeft className="h-6 w-6 text-gray-500" />
-          </button>
-          <button
-            className="relative z-50  flex h-10 w-10 items-center justify-center rounded-full bg-gray-100 disabled:opacity-50"
+            <ChevronLeft className="w-4 h-4 sm:w-5 sm:h-5" />
+            <span className="sr-only">Previous</span>
+          </Button>
+          
+          <Button
+            variant="outline"
+            size="icon"
             onClick={scrollRight}
             disabled={!canScrollRight}
+            className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white/90 border-company-primary-royalBlue/20 hover:bg-company-primary-royalBlue/20 text-gray-600 shadow-lg backdrop-blur-sm transition-all duration-200"
           >
-            <IconArrowNarrowRight className="h-6 w-6 text-gray-500" />
-          </button>
+            <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5" />
+            <span className="sr-only">Next</span>
+          </Button>
         </div>
       </div>
     </CarouselContext.Provider>
@@ -201,13 +205,12 @@ export const Card = ({
 
   return (
     <>
-
       <motion.button
         layoutId={layout ? `card-${card.title}` : undefined}
         onClick={handleOpen}
-        className="relative z-10 flex h-80 w-[900px] flex-col items-start justify-start overflow-hidden rounded-3xl bg-gray-100 md:h-[30rem] md:w-[40prem] dark:bg-neutral-900"
+        className="relative z-10 flex h-64 w-72 sm:h-80 sm:w-80 md:h-[30rem] md:w-[40rem] flex-col items-start justify-end overflow-hidden rounded-3xl bg-gray-100 dark:bg-neutral-900"
       >
-        <div className="pointer-events-none    w-full  z-30 h-full bg-gradient-to-b from-black/50 via-transparent to-transparent" />
+        <div className="pointer-events-none  absolute   w-full  z-30 h-full bg-gradient-to-t from-black/10 via-transparent to-transparent" />
         <div className="relative z-40 p-8">
           <motion.p
             layoutId={layout ? `category-${card.category}` : undefined}
@@ -223,7 +226,7 @@ export const Card = ({
           </motion.p>
           <motion.p
             layoutId={layout ? `title-${card.title}` : undefined}
-            className="mt-2 max-w text-left font-sans text-2xl font-medium [text-wrap:balance] text-white md:text-2xl"
+            className="mt-2 max-w text-left font-sans text-1xl font-medium [text-wrap:balance] text-white md:text-1xl"
           >
             {card.content}
           </motion.p>
@@ -253,7 +256,7 @@ export const BlurImage = ({
       className={cn(
         "h-full w-full transition duration-300",
         isLoading ? "blur-sm" : "blur-0",
-        className,
+        className
       )}
       onLoad={() => setLoading(false)}
       src={src as string}

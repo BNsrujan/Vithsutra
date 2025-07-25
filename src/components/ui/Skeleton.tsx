@@ -1,5 +1,14 @@
 import React from "react";
+import { cn } from "@/lib/utils";
 
-export const Skeleton = () => (
-    <div className="flex flex-1 w-full h-full min-h-[6rem]  rounded-xl bg-gradient-to-br from-neutral-200 dark:from-neutral-900 dark:to-neutral-800 to-neutral-100 "></div>
+type SkeletonProps = React.HTMLAttributes<HTMLDivElement>;
+
+export const Skeleton: React.FC<SkeletonProps> = ({ className, ...props }) => (
+    <div 
+        className={cn(
+            "animate-pulse rounded-md bg-muted", 
+            className
+        )} 
+        {...props}
+    />
 );
