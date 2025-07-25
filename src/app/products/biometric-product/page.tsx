@@ -1,7 +1,7 @@
 import ProductPage from '@/components/ProductsTemplate/ProductPage';
-import { biometricProduct, rfidProduct, hydroponicProduct } from '@/data/products';
+import { rfidProduct ,biometricProduct,hydroponicProduct} from '@/data/prodcuts/prodcut';
 
-export default function BiometricProductPage() {
+export default function Page() {
   return <ProductPage 
     product={biometricProduct} 
     otherProducts={[rfidProduct, hydroponicProduct]}

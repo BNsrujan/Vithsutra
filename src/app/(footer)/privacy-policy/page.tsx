@@ -1,11 +1,5 @@
-import PrivacyPolicyPage from "@/PagesForApp/PrivacyPolicyPage/privacyPolicy"
+import PrivacyPolicyPage from "@/PagesForApp/PrivacyPolicyPage/privacyPolicy";
 
-import React from 'react'
-
-function Page() {
-  return (
-    <div><PrivacyPolicyPage/></div>
-  )
+export default function Page() {
+  return <PrivacyPolicyPage />
 }
-
-export default Page

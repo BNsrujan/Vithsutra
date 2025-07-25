@@ -1,10 +1,5 @@
-import { ContactPage } from '@/presentation/pages/ContactPage'
-import React from 'react'
+import { ContactPage } from "@/presentation/pages/ContactPage";
 
-function page() {
-  return (
-    <div><ContactPage/></div>
-  )
+export default function Page() {
+  return <ContactPage />;
 }
-
-export default page

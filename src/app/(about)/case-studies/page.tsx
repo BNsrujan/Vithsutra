@@ -1,10 +1,5 @@
-import CaseStudiesPage from '@/PagesForApp/CaseStudiesPage/CaseStudiesPage'
-import React from 'react'
+import CaseStudiesPage from "@/PagesForApp/CaseStudiesPage/CaseStudiesPage";
 
 export default function CaseStudies() {
-  return (
-    <div className="container mx-auto px-4 py-8">
-     <CaseStudiesPage />
-    </div>
-  )
-} 
+  return <CaseStudiesPage />;
+}

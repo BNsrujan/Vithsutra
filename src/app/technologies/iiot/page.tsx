@@ -1,18 +1,8 @@
-// import IIOTPages from '@/PagesForApp/IIOTPage/iiotPage'
-// export default function IIOTRobotics() {
-//   return (
-//     <div>
-//       <IIOTPages/>
-//     </div>
-//   )
-// } 
-
-import React from 'react'
-
-function page() {
+// import IIOTPages from "@/PagesForApp/IIOTPage/iiotPage";
+export default function Page() {
   return (
-    <div>page</div>
-  )
+    <div>
+      {/* <IIOTPages /> */}
+    </div>
+  );
 }
-
-export default page
