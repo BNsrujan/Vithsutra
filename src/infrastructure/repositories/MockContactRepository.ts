@@ -1,9 +1,9 @@
 import { ContactForm, ContactStatus } from '../../core/entities/Contact';
-import { ContactRepository } from '../../core/use-cases/ContactUseCases';
+import { IContactRepository } from '../../core/interfaces/IContactRepository';
 
 const mockContacts: ContactForm[] = [];
 
-export class MockContactRepository implements ContactRepository {
+export class MockContactRepository implements IContactRepository {
   async create(contactData: Omit<ContactForm, 'id' | 'createdAt' | 'status'>): Promise<ContactForm> {
     const contact: ContactForm = {
       ...contactData,
@@ -32,5 +32,13 @@ export class MockContactRepository implements ContactRepository {
     
     contact.status = status;
     return contact;
+  }
+
+  async delete(id: string): Promise<boolean> {
+    const index = mockContacts.findIndex(c => c.id === id);
+    if (index === -1) return false;
+    
+    mockContacts.splice(index, 1);
+    return true;
   }
 }

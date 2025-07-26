@@ -1,21 +1,11 @@
 import { ContactForm, ContactInfo, ContactStatus } from '../entities/Contact';
-
-export interface ContactRepository {
-  create(contact: Omit<ContactForm, 'id' | 'createdAt' | 'status'>): Promise<ContactForm>;
-  findById(id: string): Promise<ContactForm | null>;
-  findAll(): Promise<ContactForm[]>;
-  updateStatus(id: string, status: ContactStatus): Promise<ContactForm>;
-}
-
-export interface NotificationService {
-  sendContactNotification(contact: ContactForm): Promise<void>;
-  sendAutoReply(contact: ContactForm): Promise<void>;
-}
+import { IContactRepository } from '../interfaces/IContactRepository';
+import { INotificationService } from '../interfaces/INotificationService';
 
 export class ContactUseCases {
   constructor(
-    private contactRepository: ContactRepository,
-    private notificationService: NotificationService
+    private contactRepository: IContactRepository,
+    private notificationService: INotificationService
   ) {}
 
   async submitContactForm(contactData: Omit<ContactForm, 'id' | 'createdAt' | 'status'>): Promise<ContactForm> {
@@ -58,11 +48,11 @@ export class ContactUseCases {
     if (!this.isValidEmail(contactData.email)) {
       throw new Error('Invalid email format');
     }
-    if (!contactData.subject?.trim()) {
-      throw new Error('Subject is required');
-    }
     if (!contactData.message?.trim()) {
       throw new Error('Message is required');
+    }
+    if (contactData.phone && contactData.phone.length < 10) {
+      throw new Error('Phone number must be at least 10 digits');
     }
   }
 

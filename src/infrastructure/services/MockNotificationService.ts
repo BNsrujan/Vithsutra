@@ -1,7 +1,7 @@
 import { ContactForm } from '../../core/entities/Contact';
-import { NotificationService } from '../../core/use-cases/ContactUseCases';
+import { INotificationService } from '../../core/interfaces/INotificationService';
 
-export class MockNotificationService implements NotificationService {
+export class MockNotificationService implements INotificationService {
   async sendContactNotification(contact: ContactForm): Promise<void> {
     // In a real implementation, this would send an email to the admin
     console.log('📧 Admin notification sent for contact:', {
@@ -22,5 +22,17 @@ export class MockNotificationService implements NotificationService {
     
     // Simulate async operation
     await new Promise(resolve => setTimeout(resolve, 100));
+  }
+
+  async sendWelcomeEmail(email: string, name: string): Promise<boolean> {
+    console.log(`📧 Welcome email sent to ${name} at ${email}`);
+    await new Promise(resolve => setTimeout(resolve, 100));
+    return true;
+  }
+
+  async sendNewsletterConfirmation(email: string): Promise<boolean> {
+    console.log(`📧 Newsletter confirmation sent to ${email}`);
+    await new Promise(resolve => setTimeout(resolve, 100));
+    return true;
   }
 }

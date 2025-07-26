@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { containerVariants } from "@/lib/animations";
  import React from "react";
 import { Carousel, Card } from "@/components/ui/productscard";
-import { biometricProduct, rfidProduct, hydroponicProduct } from "@/data/products";
+import { biometricProduct, rfidProduct, hydroponicProduct } from "@/data/prodcuts/prodcut";
 import Heading from "@/components/ui/heading";
 
 // Create an array of products

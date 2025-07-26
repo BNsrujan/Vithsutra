@@ -3,20 +3,15 @@ export interface ContactForm {
   id?: string;
   name: string;
   email: string;
-  phone?: string;
-  company?: string;
-  subject: string;
+  phone: string;
+  subject?: string;
   message: string;
   createdAt?: Date;
   status?: ContactStatus;
 }
 
-export enum ContactStatus {
-  PENDING = 'pending',
-  IN_PROGRESS = 'in_progress',
-  RESOLVED = 'resolved',
-  CLOSED = 'closed'
-}
+// For backward compatibility with existing forms
+export interface FormData extends ContactForm {}
 
 export interface ContactInfo {
   address: string;
@@ -27,5 +22,13 @@ export interface ContactInfo {
     linkedin?: string;
     twitter?: string;
     facebook?: string;
+    instagram?: string;
   };
+}
+
+export enum ContactStatus {
+  PENDING = 'pending',
+  IN_PROGRESS = 'in_progress',
+  RESOLVED = 'resolved',
+  CLOSED = 'closed'
 }

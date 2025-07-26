@@ -1,8 +1,9 @@
-import { FormData } from "@/core/entities/Contact";
 import { useState } from "react";
+import { ContactForm } from "@/core/entities/Contact";
+import { getContactUseCases } from "@/infrastructure/di/Container";
 
 export default function useContact() {
-  const [formData, setFormData] = useState<FormData>({
+  const [formData, setFormData] = useState<Omit<ContactForm, 'id' | 'createdAt' | 'status'>>({
     name: "",
     email: "",
     phone: "",
@@ -11,6 +12,8 @@ export default function useContact() {
   
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState("");
+
+  const contactUseCases = getContactUseCases();
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -25,21 +28,11 @@ export default function useContact() {
     setError("");
 
     try {
-      const res = await fetch('/api/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData)
-      });
-
-      const data = await res.json();
+      const contact = await contactUseCases.submitContactForm(formData);
       
-      if (!res.ok) {
-        throw new Error(data.error || "Something went wrong");
-      }
-
       // Reset form on success
       setFormData({ name: "", email: "", phone: "", message: "" });
-      return { success: true, data };
+      return { success: true, data: contact };
       
     } catch (err) {
       const errorMessage = err instanceof Error ? err.message : "Failed to send message";
@@ -50,12 +43,22 @@ export default function useContact() {
     }
   };
 
+  const getContactInfo = async () => {
+    try {
+      return await contactUseCases.getContactInfo();
+    } catch (err) {
+      console.error('Failed to get contact info:', err);
+      return null;
+    }
+  };
+
   return {
     formData,
     isSubmitting,
     error,
     handleChange,
     handleSubmit,
+    getContactInfo,
     setFormData
   };
-} 
+}

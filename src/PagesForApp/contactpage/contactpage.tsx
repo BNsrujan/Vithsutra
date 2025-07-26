@@ -1,5 +1,4 @@
 "use client";
-import { useState } from "react";
 import { motion } from "framer-motion";
 import { Mail, Phone, MapPin, Send } from "lucide-react";
 import { toast } from "sonner";
@@ -8,54 +7,19 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import Heading from "@/components/ui/heading";
 import { textReveal, formField } from "@/lib/motion";
-
-// Form data type
-type FormData = {
-  name: string;
-  email: string;
-  phone: string;
-  message: string;
-};
+import useContact from "@/application/hooks/useContact";
 
 export default function ContactPage() {
-  const [formData, setFormData] = useState<FormData>({
-    name: "",
-    email: "",
-    phone: "",
-    message: "",
-  });
+  const { formData, isSubmitting, handleChange, handleSubmit } =
+    useContact();
 
-  const [isSubmitting, setIsSubmitting] = useState(false);
+  const onSubmit = async (e: React.FormEvent) => {
+    const result = await handleSubmit(e);
 
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
-  };
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-
-    try {
-      const res = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
-      });
-
-      const data = await res.json();
-      if (!res.ok) throw new Error(data.error || "Something went wrong");
-
+    if (result.success) {
       toast.success("Message sent!");
-      setFormData({ name: "", email: "", phone: "", message: "" });
-    } catch (err) {
-      toast.error(
-        err instanceof Error ? err.message : "Failed to send message"
-      );
-    } finally {
-      setIsSubmitting(false);
+    } else {
+      toast.error(result.error);
     }
   };
 
@@ -131,7 +95,7 @@ export default function ContactPage() {
             variants={formField}
             initial="initial"
             animate="animate"
-            onSubmit={handleSubmit}
+            onSubmit={onSubmit}
             className="bg-white flex flex-col justify-center  "
           >
             <Input
@@ -184,6 +148,7 @@ export default function ContactPage() {
               {!isSubmitting && <Send className="w-5 h-5 ml-2" />}
             </Button>
           </motion.form>
+       
         </div>
       </div>
     </div>

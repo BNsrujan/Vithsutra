@@ -1,146 +1,165 @@
-'use client';
+"use client";
+import { motion } from "framer-motion";
+import { Mail, Phone, MapPin, Send } from "lucide-react";
+import { toast } from "sonner";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import Heading from "@/components/ui/heading";
+import { textReveal, formField } from "@/lib/motion";
+import useContact from "@/application/hooks/useContact";
 
-import React from 'react';
-import { ContactFormComponent } from '../components/ContactFormComponent';
-import { useContactInfo } from '@/hooks/useContact';
-import { Card, CardContent, CardHeader, CardTitle } from '../../components/ui/card';
-import { MapPin, Phone, Mail, Clock } from 'lucide-react';
+export default function ContactPage() {
+  const { formData, isSubmitting, error, handleChange, handleSubmit } = useContact();
 
-export const ContactPage: React.FC = () => {
-  const { contactInfo, loading } = useContactInfo();
+  const onSubmit = async (e: React.FormEvent) => {
+    const result = await handleSubmit(e);
+    
+    if (result.success) {
+      toast.success("Message sent successfully!");
+    } else {
+      toast.error(result.error);
+    }
+  };
 
   return (
-    <div className="container mx-auto px-4 py-8">
-      <div className="space-y-8">
-        {/* Header */}
-        <div className="text-center space-y-4">
-          <h1 className="text-4xl font-bold text-gray-900">Contact Us</h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Get in touch with our team to discuss your project requirements or ask any questions you may have.
-          </p>
-        </div>
+    <div className="flex justify-center">
+      <div className="max-w-5xl w-full py-company-xl-48 md:h-screen">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-company-xl-48">
+          {/* Contact Info */}
+          <div className="space-y-6 h-full p-company-lg-24">
+            <motion.div
+              variants={textReveal}
+              initial="initial"
+              whileInView="whileInView"
+              viewport={{ once: true }}
+            >
+              <Heading
+                heading="CONTACT US"
+                Display="It's time for Vithsutra's innovation"
+              />
+            </motion.div>
+            
+            <motion.div
+              variants={textReveal}
+              initial="initial"
+              whileInView="whileInView"
+              viewport={{ once: true }}
+            >
+              <h3 className="flex items-center gap-2 text-lg font-semibold text-company-blue">
+                <Mail className="w-5 h-5 text-gray-500 mr-company-xs-8" />
+                Get in Touch
+              </h3>
+              <p className="text-gray-600 pt-company-xs-8">
+                We&apos;re here to help and answer any questions you might have.
+              </p>
+            </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <motion.div
+              variants={textReveal}
+              initial="initial"
+              whileInView="whileInView"
+              viewport={{ once: true }}
+            >
+              <h3 className="flex items-center gap-2 text-lg font-semibold text-company-blue">
+                <MapPin className="w-5 h-5 text-gray-500 mr-company-xs-8" />
+                Office Location
+              </h3>
+              <p className="text-gray-600 pt-company-xs-8">
+                Mijar, Mangalore
+                <br />
+                Karnataka, India
+              </p>
+            </motion.div>
+
+            <motion.div
+              variants={textReveal}
+              initial="initial"
+              whileInView="whileInView"
+              viewport={{ once: true }}
+            >
+              <h3 className="flex items-center gap-2 text-lg font-semibold text-company-blue">
+                <Phone className="w-5 h-5 text-gray-500 mr-company-xs-8" />
+                Contact Information
+              </h3>
+              <p className="text-gray-600 pt-company-xs-8">
+                <span className="text-black">Email</span>: contact@vithsutra.com
+                <br />
+                <span className="text-black">Phone</span>: +91 91130 68170
+              </p>
+            </motion.div>
+          </div>
+
           {/* Contact Form */}
-          <div>
-            <ContactFormComponent />
-          </div>
-
-          {/* Contact Information */}
-          <div className="space-y-6">
-            {/* Contact Details */}
-            <Card>
-              <CardHeader>
-                <CardTitle>Contact Information</CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                {loading ? (
-                  <div className="space-y-4">
-                    {Array.from({ length: 4 }).map((_, index) => (
-                      <div key={index} className="flex items-center space-x-3">
-                        <div className="w-5 h-5 bg-gray-200 rounded animate-pulse" />
-                        <div className="h-4 bg-gray-200 rounded flex-1 animate-pulse" />
-                      </div>
-                    ))}
-                  </div>
-                ) : contactInfo ? (
-                  <>
-                    <div className="flex items-start space-x-3">
-                      <MapPin className="w-5 h-5 text-blue-600 mt-0.5" />
-                      <div>
-                        <p className="font-medium">Address</p>
-                        <p className="text-gray-600">{contactInfo.address}</p>
-                      </div>
-                    </div>
-
-                    <div className="flex items-center space-x-3">
-                      <Phone className="w-5 h-5 text-blue-600" />
-                      <div>
-                        <p className="font-medium">Phone</p>
-                        <p className="text-gray-600">{contactInfo.phone}</p>
-                      </div>
-                    </div>
-
-                    <div className="flex items-center space-x-3">
-                      <Mail className="w-5 h-5 text-blue-600" />
-                      <div>
-                        <p className="font-medium">Email</p>
-                        <p className="text-gray-600">{contactInfo.email}</p>
-                      </div>
-                    </div>
-
-                    <div className="flex items-start space-x-3">
-                      <Clock className="w-5 h-5 text-blue-600 mt-0.5" />
-                      <div>
-                        <p className="font-medium">Working Hours</p>
-                        <p className="text-gray-600">{contactInfo.workingHours}</p>
-                      </div>
-                    </div>
-                  </>
-                ) : null}
-              </CardContent>
-            </Card>
-
-            {/* Social Links */}
-            {contactInfo?.socialLinks && (
-              <Card>
-                <CardHeader>
-                  <CardTitle>Follow Us</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <div className="flex space-x-4">
-                    {contactInfo.socialLinks.linkedin && (
-                      <a
-                        href={contactInfo.socialLinks.linkedin}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-blue-600 hover:text-blue-800 transition-colors"
-                      >
-                        LinkedIn
-                      </a>
-                    )}
-                    {contactInfo.socialLinks.twitter && (
-                      <a
-                        href={contactInfo.socialLinks.twitter}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-blue-600 hover:text-blue-800 transition-colors"
-                      >
-                        Twitter
-                      </a>
-                    )}
-                    {contactInfo.socialLinks.facebook && (
-                      <a
-                        href={contactInfo.socialLinks.facebook}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-blue-600 hover:text-blue-800 transition-colors"
-                      >
-                        Facebook
-                      </a>
-                    )}
-                  </div>
-                </CardContent>
-              </Card>
+          <motion.form
+            variants={formField}
+            initial="initial"
+            animate="animate"
+            onSubmit={onSubmit}
+            className="bg-white flex flex-col justify-center"
+          >
+            {error && (
+              <div className="mb-4 p-3 bg-red-100 border border-red-400 text-red-700 rounded">
+                {error}
+              </div>
             )}
-
-            {/* FAQ Link */}
-            <Card>
-              <CardContent className="pt-6">
-                <div className="text-center">
-                  <h3 className="font-semibold mb-2">Have Questions?</h3>
-                  <p className="text-gray-600 mb-4">
-                    Check out our frequently asked questions for quick answers.
-                  </p>
-                  <button className="text-blue-600 hover:text-blue-800 font-medium">
-                    View FAQ →
-                  </button>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
+            
+            <Input
+              type="text"
+              name="name"
+              label="Name"
+              id="name"
+              value={formData.name}
+              onChange={handleChange}
+              placeholder="Enter your name"
+              required
+              disabled={isSubmitting}
+            />
+            
+            <Input
+              type="email"
+              name="email"
+              label="Email"
+              value={formData.email}
+              onChange={handleChange}
+              placeholder="Enter your email"
+              required
+              disabled={isSubmitting}
+            />
+            
+            <Input
+              type="tel"
+              name="phone"
+              label="Phone Number"
+              value={formData.phone}
+              onChange={handleChange}
+              placeholder="Enter your phone number"
+              disabled={isSubmitting}
+            />
+            
+            <Textarea
+              name="message"
+              label="Message"
+              value={formData.message}
+              onChange={handleChange}
+              placeholder="Enter your message"
+              rows={4}
+              required
+              disabled={isSubmitting}
+            />
+            
+            <Button
+              type="submit"
+              disabled={isSubmitting}
+              className="w-full md:mx-company-lg-24"
+              variant="neumorphic"
+            >
+              {isSubmitting ? "Sending..." : "Send Message"}
+              {!isSubmitting && <Send className="w-5 h-5 ml-2" />}
+            </Button>
+          </motion.form>
         </div>
       </div>
     </div>
   );
-};
+}

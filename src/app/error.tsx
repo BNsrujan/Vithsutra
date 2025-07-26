@@ -19,7 +19,7 @@ export default function Error({
 
   return (
     <motion.div
-      className="min-h-screen flex flex-col justify-center items-center text-center px-4 bg-gray-50"
+      className="min-h-screen flex flex-col justify-center items-center text-center px-4 bg-company-white"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
     >
