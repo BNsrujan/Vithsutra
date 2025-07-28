@@ -1,4 +1,4 @@
-import CareersPage from '@/PagesForApp/CareerPage/CareersPage'
+import CareersPage from '@/PagesForApp/careerpage/CareersPage'
 
 export default function Page() {
   return <CareersPage />

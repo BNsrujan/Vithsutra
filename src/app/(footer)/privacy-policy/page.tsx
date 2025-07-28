@@ -1,4 +1,4 @@
-import PrivacyPolicyPage from "@/PagesForApp/PrivacyPolicyPage/privacyPolicy";
+import PrivacyPolicyPage from "@/PagesForApp/privacypolicypage/privacyPolicy";
 
 export default function Page() {
   return <PrivacyPolicyPage />

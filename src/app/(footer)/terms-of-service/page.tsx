@@ -1,4 +1,4 @@
-import TermsOfServicePage from "@/PagesForApp/TermsOfServicePage/termsofservicepage";
+import TermsOfServicePage from "@/PagesForApp/termsofservicepage/termsofservicepage";
 
 export default function Page() {
   return <TermsOfServicePage/>

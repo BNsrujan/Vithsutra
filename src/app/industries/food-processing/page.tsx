@@ -1,4 +1,4 @@
-import SectorLayout  from "@/PagesForApp/IndustrialSectorTemplate/IndustryalSectorLayout";
+import SectorLayout  from "@/PagesForApp/industrialsectortemplate/IndustryalSectorLayout";
 import { foodProcessingData } from "@/data/industries-data/foodprocessing.industries";
 
 
