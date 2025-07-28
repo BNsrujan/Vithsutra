@@ -7,8 +7,8 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { text } from "@/lib/typography";
-import { containerVariants, itemVariants } from "@/lib/animations";
+import { text } from "@/shared/lib/typography";
+import { containerVariants, itemVariants } from "@/shared/lib/animations";
 
 interface Product {
   name: string;

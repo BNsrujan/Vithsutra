@@ -4,7 +4,7 @@ import { useEffect } from 'react'
 import { Button } from '@/presentation/components/ui/button'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
-import { text } from '@/lib/typography'
+import { text } from '@/shared/lib/typography'
 
 export default function Error({
   error,

@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import { text } from "@/lib/typography";
+import { text } from "@/shared/lib/typography";
 
 interface TestimonialCardProps {
   name: string;

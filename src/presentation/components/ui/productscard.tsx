@@ -6,11 +6,11 @@ import React, {
   createContext,
   useContext,
 } from "react";
-import { cn } from "@/lib/utils";
+import { cn } from "@/shared/lib/utils";
 import { motion } from "motion/react";
 import Image, { ImageProps } from "next/image";
-import { useOutsideClick } from "@/hooks/use-outside-click";
-import { text } from "@/lib/typography";
+import { useOutsideClick } from "@/application/hooks/use-outside-click";
+import { text } from "@/shared/lib/typography";
 import { ArrowUpRightIcon, ChevronLeft, ChevronRight } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { Button } from "./button";

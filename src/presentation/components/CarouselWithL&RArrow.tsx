@@ -10,7 +10,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import { text } from "@/lib/typography";
+import { text } from "@/shared/lib/typography";
 import { Button } from "./ui/button";
 
 interface CarouselItem {

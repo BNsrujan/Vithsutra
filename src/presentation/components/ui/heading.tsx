@@ -1,5 +1,5 @@
-import { text } from "@/lib/typography";
-import { cn } from "@/lib/utils";
+import { text } from "@/shared/lib/typography";
+import { cn } from "@/shared/lib/utils";
 
 
 

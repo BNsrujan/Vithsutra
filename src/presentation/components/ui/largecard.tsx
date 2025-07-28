@@ -1,7 +1,7 @@
 import { ArrowUpRightIcon } from "lucide-react";
 import * as motion from "motion/react-client";
 import Image from "next/image";
-import { text } from "@/lib/typography";
+import { text } from "@/shared/lib/typography";
 import React, { useState, useCallback } from 'react'
 
 interface ArrowButtonProps {

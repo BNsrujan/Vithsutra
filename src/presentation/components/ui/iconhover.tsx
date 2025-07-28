@@ -1,6 +1,6 @@
 "use client";
 import React, { FC, SVGProps, useState } from "react";
-import { cn } from "@/lib/utils"; 
+import { cn } from "@/shared/lib/utils"; 
 
 interface IconButtonProps{
   icon:FC<SVGProps<SVGSVGElement>>;

@@ -1,6 +1,6 @@
 "use client";
 
-import { cn } from "@/lib/utils";
+import { cn } from "@/shared/lib/utils";
 import React, { useEffect, useState } from "react";
 import { Skeleton } from "./Skeleton";
 

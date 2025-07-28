@@ -1,4 +1,4 @@
-import SoftwaresPage from "@/presentation/PagesForApp/softwarepage/software";
+import SoftwaresPage from "@/presentation/pages/softwarepage/software";
 
 export default function Page() {
   return <SoftwaresPage />;

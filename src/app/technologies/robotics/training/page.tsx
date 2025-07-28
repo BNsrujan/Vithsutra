@@ -1,4 +1,4 @@
-import Training from '@/presentation/PagesForApp/training/training'
+import Training from '@/presentation/pages/training/training'
 
 export default function Page() {
   return <Training/>

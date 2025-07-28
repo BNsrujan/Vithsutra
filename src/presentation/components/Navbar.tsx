@@ -14,7 +14,7 @@ import {
 } from "@/presentation/components/ui/navigation-menu"
 import Image from "next/image"
 import { Menu, X } from "lucide-react"
-import { text } from "@/lib/typography"
+import { text } from "@/shared/lib/typography"
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/presentation/components/ui/accordion"
 
 // Types for menu items

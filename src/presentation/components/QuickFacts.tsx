@@ -2,8 +2,8 @@
 
 import React, { useEffect, useRef } from 'react';
 import { motion } from "framer-motion";
-import { text } from "@/lib/typography";
-import { containerVariants, itemVariants } from "@/lib/animations";
+import { text } from "@/shared/lib/typography";
+import { containerVariants, itemVariants } from "@/shared/lib/animations";
  import Heading from './ui/heading';
 
 

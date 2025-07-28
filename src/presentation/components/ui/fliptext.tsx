@@ -1,7 +1,7 @@
 // components/FlipText.tsx
 "use client";
 
-import { text } from "@/lib/typography";
+import { text } from "@/shared/lib/typography";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
 

@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { text } from "@/lib/typography";
+import { text } from "@/shared/lib/typography";
 
 const industries = [
   { name: "Food Processing", href: "/industries/food-processing" },

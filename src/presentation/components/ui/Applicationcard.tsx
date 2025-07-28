@@ -10,10 +10,10 @@ import React, {
 } from "react";
 
 // Removed unused imports: IconArrowNarrowLeft, IconArrowNarrowRight
-import { cn } from "@/lib/utils";
+import { cn } from "@/shared/lib/utils";
 import { motion } from "motion/react";
 import Image, { ImageProps } from "next/image";
-import { useOutsideClick } from "@/hooks/use-outside-click";
+import { useOutsideClick } from "@/application/hooks/use-outside-click";
 import { Button } from "./button";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
