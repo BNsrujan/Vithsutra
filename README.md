@@ -30,17 +30,17 @@ html {
 
 ```
 
-✅ This tells the browser: “use the --font-geist-sans font if it exists, otherwise fall back to system-ui or sans-serif.”
+This tells the browser: “use the --font-geist-sans font if it exists, otherwise fall back to system-ui or sans-serif.”
 
 
 
-Without referencing var(--font-geist-sans) in your CSS:
+- Without referencing var(--font-geist-sans) in your CSS:
 
-The font is loaded ✅
+- The font is loaded 
 
-The font is never used ❌
+- The font is never used 
 
-If you're not referencing it in globals.css or tailwind.config.js, don't use .variable. Use .className instead:
+- If you're not referencing it in globals.css or tailwind.config.js, don't use .variable. Use .className instead:
 
 ```
 
@@ -52,7 +52,7 @@ If you're not referencing it in globals.css or tailwind.config.js, don't use .va
 ## How to add the inter font 
 
 
-use the google fonts 
+### use the google fonts 
 
 ```
 
@@ -64,14 +64,13 @@ const inter = Inter({
 });
 
 ```
-applay to the body 
+### applay to the body 
 
 ```
 <body className={`${inter.variable} font-sans`}>
 ```
 
-add the var in globals.css
-
+### add the var in globals.css
 
 This tells the browser: “use the --font-geist-sans font if it exists, otherwise fall back to system-ui or sans-serif. 
 
@@ -83,7 +82,7 @@ html {
 
 
 
-###What is subsets?
+### What is subsets?
 
 subsets is an array that defines the language/region-specific character sets that should be included. It helps reduce font file size by including only the characters you need.
 
@@ -117,17 +116,17 @@ const inter = Inter({
 | `infrastructure` | External system access (DB, API, etc.) |
 
 
-## application layer
+## Application layer
 
 ### Characteristics of application layer
 
-Knows what to do, but not how it's done.
+- Knows what to do, but not how it's done.
 
-Orchestrates interactions between the presentation layer and the domain layer.
+- Orchestrates interactions between the presentation layer and the domain layer.
 
-Does not import from infrastructure — depends only on domain interfaces.
+- Does not import from infrastructure — depends only on domain interfaces.
 
-Holds the logic that would answer: "When the user does X, what should the app do?"
+- Holds the logic that would answer: "When the user does X, what should the app do?"
 
 ```
 src/
@@ -160,11 +159,11 @@ src/
 
 ### Characteristics of domain layer:
 
-Pure business logic
+- Pure business logic
 
-No external dependencies
+- No external dependencies
 
-Stable and reusable
+- Stable and reusable
 
 ### Typical Domain Layer Folder Structure
 
@@ -202,11 +201,11 @@ src/
 
 ### Notes
 
-The domain layer should never depend on the application or infrastructure layers.
+- The domain layer should never depend on the application or infrastructure layers.
 
-It defines what the app does, not how it does it.
+- It defines what the app does, not how it does it.
 
-Clean and testable code starts here.
+- Clean and testable code starts here.
 
 
 
@@ -214,13 +213,13 @@ Clean and testable code starts here.
 
 ### Characteristics of presentation layer:
 
-No business logic. It should not directly call APIs or handle data transformations.
+- No business logic. It should not directly call APIs or handle data transformations.
 
-It receives data via props from a container or higher layer.
+- It receives data via props from a container or higher layer.
 
-It’s mostly stateless or handles minimal local UI state (e.g., modal open/close).
+- It’s mostly stateless or handles minimal local UI state (e.g., modal open/close).
 
-It’s focused on layout, style, and user interaction.
+- It’s focused on layout, style, and user interaction.
 
 ```
 src/
@@ -244,21 +243,23 @@ The Infrastructure Layer is responsible for the technical details: connecting to
 
 ### Characteristics of infrastructure layer:
 
-Database access (ORM like Prisma/TypeORM, or raw SQL)
+- Database access (ORM like Prisma/TypeORM, or raw SQL)
 
-File system access
+- File system access
 
-Network APIs (e.g., external services)
+- Network APIs (e.g., external services)
 
-Email providers
+- Email providers
 
-Message brokers (e.g., Kafka, RabbitMQ)
+- Message brokers (e.g., Kafka, RabbitMQ)
 
-Caching (Redis)
+- Caching (Redis)
 
-Logging
+- Logging
 
-### Typical Folder Structure
+###  Folder Structure
+
+```
 
 src/
 └── infrastructure/
@@ -277,6 +278,7 @@ src/
     │   └── WinstonLogger.ts
     └── config/
         └── env.ts
+```
 
 ### Folder Descriptions
 
@@ -288,16 +290,6 @@ src/
 | `auth/`         | Infrastructure-related auth helpers like JWT, OAuth, etc.        |
 | `logger/`       | Logging tools (e.g., Winston, Bunyan).                           |
 | `config/`       | Environment variables, constants, configuration files.           |
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -315,3 +307,51 @@ export const metadata: Metadata = {
 };
 
 ```
+
+```
+# 🧱 Clean Architecture Layer Diagram
+
+                       +---------------------+
+                       |     Presentation    |
+                       |  (Controllers, UI)  |
+                       +----------+----------+
+                                  |
+                                  ▼
+                       +---------------------+
+                       |     Application     |
+                       | (Use Cases, DTOs)   |
+                       +----------+----------+
+                                  |
+                                  ▼
+                       +---------------------+
+                       |       Domain        |
+                       | (Entities, Repos)   |
+                       +----------+----------+
+                                  ▲
+                                  |
+                       +----------+----------+
+                       |    Infrastructure   |
+                       | (DB, APIs, Auth, FS)|
+                       +---------------------+
+
+
+
+```
+
+## Layer Responsibilities Recap:
+
+- Presentation: UI / API layer — sends user input to Application layer.
+
+- Application: Business rules and use cases — coordinates flow.
+
+- Domain: Pure business logic — entities and interfaces.
+
+- Infrastructure: Implements domain/application interfaces using real-world tools (DB, APIs, etc.).
+
+## Rules:
+
+- Inner layers (Domain) must not depend on outer layers (Infra).
+
+- Dependencies always point inward.
+
+
