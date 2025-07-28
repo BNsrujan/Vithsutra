@@ -1,14 +1,14 @@
 'use client';
 
 import React, { useState } from 'react';
-import { useFAQCategories, useFAQSearch } from '../hooks/useFAQ';
+import { useFAQCategories, useFAQSearch } from '@/hooks/';
 import { FAQAccordion } from '../components/FAQAccordion';
-import { Input } from '../../components/ui/input';
-import { Button } from '../../components/ui/button';
-import { Card, CardContent, CardHeader, CardTitle } from '../../components/ui/card';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '../../components/ui/tabs';
+import { Input } from '../components/ui/input';
+import { Button } from '../components/ui/button';
+import { Card, CardContent, CardHeader, CardTitle } from '../components/ui/card';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '../components/ui/tabs';
 import { Search, X } from 'lucide-react';
-import { Skeleton } from '../../components/ui/Skeleton';
+import { Skeleton } from '../components/ui/Skeleton';
 
 export const FAQPage: React.FC = () => {
   const { categories, loading, error } = useFAQCategories();

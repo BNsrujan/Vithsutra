@@ -1,9 +1,9 @@
 'use client';
 
 import React from 'react';
-import { useIndustries } from '../hooks/useIndustries';
+import { useIndustries } from '../../hooks/useIndustries';
 import { IndustryCard } from '../components/IndustryCard';
-import { Skeleton } from '../../components/ui/Skeleton';
+import { Skeleton } from '../components/ui/Skeleton';
 
 export const IndustriesPage: React.FC = () => {
   const { industries, loading, error } = useIndustries();

@@ -2,10 +2,10 @@
 import { motion } from "framer-motion";
 import { Mail, Phone, MapPin, Send } from "lucide-react";
 import { toast } from "sonner";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import Heading from "@/components/ui/heading";
+import { Button } from "@/presentation/components/ui/button";
+import { Input } from "@/presentation/components/ui/input";
+import { Textarea } from "@/presentation/components/ui/textarea";
+import Heading from "@/presentation/components/ui/heading";
 import { textReveal, formField } from "@/lib/motion";
 import useContact from "@/application/hooks/useContact";
 

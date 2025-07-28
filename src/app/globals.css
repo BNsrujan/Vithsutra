@@ -3,10 +3,12 @@
 /* ---break---  */
 @custom-variant dark (&:is(.dark *));
 
-html {
-  /* This tells the browser: “use the --font-geist-sans font if it exists, otherwise fall back to system-ui or sans-serif. */
-  font-family: var(--font-inter), sans-serif;
-}
+
+/* if you have variable in gont like variable[]
+/* html { */
+  /* This tells the browser: “use the --font-inter font if it exists, otherwise fall back to system-ui or sans-serif. */
+  /* font-family: var(--font-inter) ,'Inter',sans-serif; */
+/* } */
 
 
 :root {

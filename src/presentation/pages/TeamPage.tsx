@@ -1,9 +1,9 @@
 'use client';
 
 import React from 'react';
-import { useTeamByDepartment } from '../hooks/useTeam';
+import { useTeamByDepartment } from '../../hooks/useTeam';
 import { TeamMemberCard } from '../components/TeamMemberCard';
-import { Skeleton } from '../../components/ui/Skeleton';
+import { Skeleton } from '../components/ui/Skeleton';
 
 export const TeamPage: React.FC = () => {
   const { teamByDepartment, loading, error } = useTeamByDepartment();

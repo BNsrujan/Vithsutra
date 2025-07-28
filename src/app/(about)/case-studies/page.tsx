@@ -1,4 +1,4 @@
-import CaseStudiesPage from "@/PagesForApp/casestudiespage/CaseStudiesPage";
+import CaseStudiesPage from "@/presentation/PagesForApp/casestudiespage/CaseStudiesPage";
 
 export default function CaseStudies() {
   return <CaseStudiesPage />;

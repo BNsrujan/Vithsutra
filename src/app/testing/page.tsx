@@ -1,4 +1,4 @@
-import Testing from '@/PagesForApp/testingpage/page'
+import Testing from '@/presentation/PagesForApp/testingpage/page'
 
 export default function Page() {
   return <Testing/>

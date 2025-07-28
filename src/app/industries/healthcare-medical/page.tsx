@@ -1,5 +1,5 @@
 import React from "react";
-import SectorLayout  from "@/PagesForApp/industrialsectortemplate/IndustryalSectorLayout";
+import SectorLayout  from "@/presentation/PagesForApp/industrialsectortemplate/IndustryalSectorLayout";
 import { healthcareMedicalData } from "@/data/industries-data/healthcaremedical.industries";
 
 

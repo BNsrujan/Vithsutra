@@ -1,5 +1,5 @@
-import ProductPage from '@/components/productstemplate/ProductPage';
-import { hydroponicProduct, biometricProduct, rfidProduct } from '@/data/prodcuts/prodcut';
+import ProductPage from '@/presentation/components/productstemplate/ProductPage';
+import { hydroponicProduct, biometricProduct, rfidProduct } from '@/data/prodcuts-data/prodcut';
 
 export default function Page() {
   return <ProductPage 

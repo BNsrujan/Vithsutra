@@ -1,5 +1,5 @@
 
-import SectorLayout  from "@/PagesForApp/industrialsectortemplate/IndustryalSectorLayout";
+import SectorLayout  from "@/presentation/PagesForApp/industrialsectortemplate/IndustryalSectorLayout";
 import { educationResearchData } from "@/data/industries-data/educationresearch.industries";
 
 

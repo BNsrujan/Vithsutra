@@ -1,4 +1,4 @@
-import BlogPage from '@/PagesForApp/blogpage/BlogPage'
+import BlogPage from '@/presentation/PagesForApp/blogpage/BlogPage'
 
 export default function Blog() {
   return <BlogPage/>

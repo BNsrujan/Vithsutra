@@ -1,9 +1,9 @@
 'use client';
 
 import React from 'react';
-import { useProducts, useProductCategories } from '../hooks/useProducts';
+import { useProducts, useProductCategories } from '../../hooks/useProducts';
 import { ProductCard } from '../components/ProductCard';
-import { Skeleton } from '../../components/ui/Skeleton';
+import { Skeleton } from '../components/ui/Skeleton';
 
 export const ProductsPage: React.FC = () => {
   const { products, loading: productsLoading, error: productsError } = useProducts();

@@ -1,14 +1,14 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { Navbar } from "@/components/Navbar";
-import Footer from "@/components/Footer";
+import { Navbar } from "@/presentation/components/Navbar";
+import Footer from "@/presentation/components/Footer";
 import { Inter } from "next/font/google";
 
 // if you use the variable option when importing a font in your layout, then you must reference the font via var(--your-font-variable) 
 // in your global CSS or Tailwind config — otherwise, the font will never actually be applied.
 
 const inter = Inter({
-  variable:"--font-inter",
+  // variable:"--font-inter",
   subsets:["latin"]// only load the basic English alphabet characters
 })
 
@@ -30,7 +30,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${inter.variable}  antialiased min-h-screen flex flex-col bg-company-blue-white`}
+        className={`${inter.className} font-sans antialiased min-h-screen flex flex-col bg-company-blue-white`}
       >
         <Navbar />
         <main className="flex-grow">{children}</main>

@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect } from 'react'
-import { Button } from '@/components/ui/button'
+import { Button } from '@/presentation/components/ui/button'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import { text } from '@/lib/typography'
