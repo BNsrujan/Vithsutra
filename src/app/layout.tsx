@@ -1,22 +1,25 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { Inter } from "next/font/google";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
+// if you use the variable option when importing a font in your layout, then you must reference the font via var(--your-font-variable) 
+// in your global CSS or Tailwind config — otherwise, the font will never actually be applied.
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+const inter = Inter({
+  variable:"--font-inter",
+  subsets:["latin"]// only load the basic English alphabet characters
+})
 
 export const metadata: Metadata = {
   title: "Vithsutra",
   description: "Vithsutra - Your Technology Partner",
+  icons:{
+    icon:"/favicon/favicon.svg",
+    shortcut:"/favicon/favicon.ico",
+    apple:"/favicon/apple-touch-icon.png"
+  }
 };
 
 export default function RootLayout({
@@ -26,25 +29,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <head>
-        <link
-          rel="icon"
-          type="favicon/png"
-          href="/favicon/favicon-96x96.png"
-          sizes="96x96"
-        />
-        <link rel="icon" type="favicon/svg+xml" href="/favicon/favicon.svg" />
-        <link rel="shortcut icon" href="/favicon/favicon.ico" />
-        <link
-          rel="apple-touch-icon"
-          sizes="180x180"
-          href="/favicon/apple-touch-icon.png"
-        />
-        <meta name="apple-mobile-web-app-title" content="Vithsutra" />
-        <link rel="manifest" href="/favicon/site.webmanifest" />
-      </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen flex flex-col bg-company-blue-white`}
+        className={`${inter.variable}  antialiased min-h-screen flex flex-col bg-company-blue-white`}
       >
         <Navbar />
         <main className="flex-grow">{children}</main>

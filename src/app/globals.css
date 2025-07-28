@@ -3,6 +3,12 @@
 /* ---break---  */
 @custom-variant dark (&:is(.dark *));
 
+html {
+  /* This tells the browser: “use the --font-geist-sans font if it exists, otherwise fall back to system-ui or sans-serif. */
+  font-family: var(--font-inter), sans-serif;
+}
+
+
 :root {
   /* blue sets  */
   --company-primary-royalBlue: #4169e1;

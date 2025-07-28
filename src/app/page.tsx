@@ -1,12 +1,9 @@
-import Homepage from '@/PagesForApp/homepage/homepage'
-import React from 'react'
+import Homepage from "@/PagesForApp/homepage/homepage";
 
-function page() {
+export default function Page() {
   return (
-    <div className='bg-company-blue-white '>
+    <div className="bg-company-blue-white">
       <Homepage />
     </div>
-  )
+  );
 }
-
-export default page

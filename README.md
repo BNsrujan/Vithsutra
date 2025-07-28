@@ -1,41 +1,145 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+## what i learnt 
 
-## Getting Started
+ If you use the variable option when importing a font in your layout, then you must reference the font via var(--your-font-variable) in your global CSS or Tailwind config — otherwise, the font will never actually be applied.
 
-First, run the development server:
+ ```
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+ const geistSans = Geist({
+  subsets: ['latin'],
+  variable: '--font-geist-sans',
+});
+
+export default function RootLayout({ children }) {
+  return (
+    <html lang="en">
+      <body className={`${geistSans.variable}`}>
+        {children}
+      </body>
+    </html>
+  );
+}
+
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Now you must use that variable somewhere, typically like this:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```
+html {
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
+}
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+✅ This tells the browser: “use the --font-geist-sans font if it exists, otherwise fall back to system-ui or sans-serif.”
 
 
-# Reference
-https://flipperzero.one/
-https://www.eliterobots.com/cobots/cs612#applications
+
+Without referencing var(--font-geist-sans) in your CSS:
+
+The font is loaded ✅
+
+The font is never used ❌
+
+If you're not referencing it in globals.css or tailwind.config.js, don't use .variable. Use .className instead:
+
+```
+
+<body className={`${geistSans.className}`}>
+
+```
+
+
+## How to add the inter font 
+
+
+use the google fonts 
+
+```
+
+import { Inter } from 'next/font/google';
+
+const inter = Inter({
+  subsets: ['latin'],
+  variable: '--font-inter',
+});
+
+```
+applay to the body 
+
+```
+<body className={`${inter.variable} font-sans`}>
+```
+
+add the var in globals.css
+
+
+This tells the browser: “use the --font-geist-sans font if it exists, otherwise fall back to system-ui or sans-serif. 
+
+```
+html {
+  font-family: var(--font-inter), sans-serif;
+}
+```
+
+
+
+###What is subsets?
+
+subsets is an array that defines the language/region-specific character sets that should be included. It helps reduce font file size by including only the characters you need.
+
+
+
+| Subset       | Description                                               |
+| ------------ | --------------------------------------------------------- |
+| `latin`      | Basic Latin alphabet (English and most Western languages) |
+| `latin-ext`  | Extended Latin characters (for Central/Eastern European)  |
+| `cyrillic`   | Cyrillic alphabet (for Russian, Bulgarian, etc.)          |
+| `greek`      | Greek alphabet                                            |
+| `vietnamese` | Vietnamese characters                                     |
+| `devanagari` | For Hindi and other Indian languages                      |
+
+
+```
+const inter = Inter({
+  subsets: ['latin'], // only load the basic English alphabet characters
+  variable: '--font-inter'
+});
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+### Meta data decleration 
+
+```
+export const metadata: Metadata = {
+  title: "Vithsutra",
+  description: "Vithsutra - Your Technology Partner",
+  icons: {
+    icon: "/favicon/favicon.svg",
+    shortcut: "/favicon/favicon.ico",
+    apple: "/favicon/apple-touch-icon.png",
+  },
+};
+
+```
