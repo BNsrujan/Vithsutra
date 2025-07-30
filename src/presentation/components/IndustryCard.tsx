@@ -2,8 +2,8 @@ import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Industry } from '../../core/entities/Industry';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../../components/ui/card';
-import { Button } from '../../components/ui/button';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/presentation/components/ui/card';
+import { Button } from '@/presentation/components/ui/button';
 
 interface IndustryCardProps {
   industry: Industry;

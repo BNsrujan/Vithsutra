@@ -133,11 +133,11 @@ const text = {
 
   // 10px, 12px, 12px, tracking: 0.8px → 0.05rem, 0.01em, mb: 2.6px, max-w: 600px
   FooterHeadingtext:
-    "text-[0.625rem] sm:text-[0.75rem] md:text-[0.875rem] leading-[1.5em] tracking-[0.05rem] md:tracking-[0.1] font-bold text-black/70 max-w-[37.5rem] mb-[0.1625rem] text-wrap",
+    "text-[0.75rem] sm:text-[0.75rem] md:text-[0.875rem] leading-[1.5em] tracking-[0.05rem] md:tracking-[0.1] font-bold text-black/70 max-w-[37.5rem] mb-[0.1625rem] text-wrap",
 
   // 10px, 12px, 16px, tracking: 0.8em → 0.8em, 0.01em
   Footerlinktext:
-    "text-[0.625rem] sm:text-[0.75rem] md:text-[0.875rem] leading-[1em] tracking-[1.1] md:tracking-[0.01em] font-semibold text-black/50 text-wrap",
+    "text-[0.75rem] sm:text-[0.75rem] md:text-[0.875rem] leading-[1em] tracking-[1.1] md:tracking-[0.01em] font-semibold text-black/50 text-wrap",
 
   // 12px, 13px, 14px, tracking: 0.15px–0.22px → rems
   Buttontext:

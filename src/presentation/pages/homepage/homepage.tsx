@@ -38,8 +38,8 @@ function Homepage() {
   return (
     <main className="w-full ">
       <Hero />
-      <div className="container mx-auto w-">
-        <div className="space-y-24 max-w-company-section-width mx-auto  ">
+      <div className="container mx-auto ">
+        <div className="space-y-24 max-w-company-section-width mx-auto px-company-xs-8">
           <About />
           <WeOfferSection />
           <CardSection />

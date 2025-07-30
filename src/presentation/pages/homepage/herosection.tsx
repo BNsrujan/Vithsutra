@@ -8,14 +8,11 @@ import Image from "next/image";
 import FlipText from "@/presentation/components/ui/fliptext";
 
 
-// ;
-
-
 export default function Hero() {
   const router = useRouter();
   return (
     <div className="relative w-full ">
-      <div className="max-w-[1700px] mx-auto lg:px-company-lg-24 h-full">
+      <div className="max-w-[1700px] mx-auto px-0 lg:px-company-lg-24 h-full">
         <div className="grid grid-cols-1 lg:grid-cols-2 w-full gap-8   min-h-[100vh] py-company-sm-12 lg:py-0">
           {/* Left Content */}
           <motion.div
@@ -24,7 +21,7 @@ export default function Hero() {
             initial="initial"
             animate="animate"
           >
-            <motion.div className=" space-y-company-lg-24">
+            <motion.div className=" space-y-company-lg-24 px-4 ">
               <motion.div
                 className="flex flex-col justify-center md:justify-start md:flex-row items-center"
                 initial={{ opacity: 0, y: 20 }}

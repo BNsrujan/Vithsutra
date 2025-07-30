@@ -72,7 +72,7 @@ export default function UniqueFeatures() {
           <Heading heading="UNIQUE" Display="What Makes Us Unique" />
         </motion.div>
 
-        <div className="flex flex-col gap-company-lg-24 mt-12">
+        <div className="flex flex-col gap-company-lg-24 mt-12 ">
           <div className="flex flex-wrap gap-company-lg-24">
             <div className="w-full md:w-7/12 h-[50vh]">
               <FeatureCard

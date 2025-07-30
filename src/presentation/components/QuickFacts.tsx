@@ -70,7 +70,7 @@ export default function QuickFacts({facts}:factsProps) {
         />
 
         <motion.div 
-          className="grid grid-cols-2 md:h-[300px] h[] pt-company-xs-8  xl:grid-cols-4 "
+          className="grid grid-cols-2 md:h-[300px] h[] pt-company-xs-8  xl:grid-cols-4 my-company-xl-48"
           variants={containerVariants}
         >
           {facts.map((fact, index) => (

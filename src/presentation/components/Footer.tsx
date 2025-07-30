@@ -45,11 +45,11 @@ const legalLinks = [
 
 export default function Footer() {
   return (
-    <footer className="bg-company-litest-gray text-company-black px-10">
+    <footer className="bg-company-litest-gray text-company-black md:px-10">
       <div className="max-w-[1700px]   mx-auto justify-between pt-12 pb-[12px] flex flex-col items-baseline">
         <div className="w-full flex md:h-[300px] flex-col lg:flex-row items-start gap-12 justify-between">
           {/* logo section */}
-          <div className="flex-shrink-0  h-full max-w-[700px] flex flex-col       ml-7 md:m-0 lg:w-auto mb-8 lg:mb-0">
+          <div className="flex-shrink-0  h-full max-w-[700px] flex flex-col   ml-7 md:m-0 lg:w-auto mb-8 lg:mb-0">
             <div className=" ">
               <div className="flex gap-2 items-center">
                 <Link href="/" className="inline-block">
@@ -64,25 +64,24 @@ export default function Footer() {
                 <h1 className={`${text.Sectionbodytext}`}>Vithsutra</h1>
               </div>
               <p
-                className={` ${text.FooterHeadingtext} text-company-gray-text   font-semibold w-[350px]`}
+                className={` ${text.cardBodytext} text-company-gray-text   font-semibold w-[350px]`}
               >
                 Empowering industries with innovative automation solutions and
                 cutting-edge technology.
               </p>
             </div>
-            <div className="flex gap-3 w-full items-end h-full">
-
-              <div  className="p-2 border border-company-light-gray  rounded-company-button-8 bg-company-primary-royalBlue/25" >
+            <div className="flex gap-3 w-full items-end h-full mt-16">
+              <div  className="p-2 border border-company-light-gray  rounded-company-button-8 bg-company-primary-royalBlue/10" >
                 <Link href={""}>
-                  <Instagram size={30} color="#4169e1" strokeWidth={2} absoluteStrokeWidth={true}/>
+                  <Instagram size={30}  color="#4169e1" strokeWidth={2} absoluteStrokeWidth={true}/>
                 </Link>
               </div>
-              <div  className="p-2 border border-company-light-gray  rounded-company-button-8 bg-company-primary-royalBlue/25" >
+              <div  className="p-2 border border-company-light-gray  rounded-company-button-8 bg-company-primary-royalBlue/10" >
                 <Link href={""} >
                   <Linkedin size={30} color="#4169e1" strokeWidth={2} absoluteStrokeWidth={true} />
                 </Link>
               </div>
-              <div  className="p-2 border border-company-light-gray  rounded-company-button-8 bg-company-primary-royalBlue/25" >
+              <div  className="p-2 border border-company-light-gray  rounded-company-button-8 bg-company-primary-royalBlue/10" >
                 <Link href={""}>
                   <Twitter size={30} color="#4169e1" strokeWidth={2} absoluteStrokeWidth={true} />
                 </Link>
