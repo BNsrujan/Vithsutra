@@ -12,23 +12,17 @@ export default function WeOfferSection() {
       title: "Internet of Things (IoT)",
       description:
         "Smart sensor-based systems that connect devices, monitor data, and enable real-time control",
-      bgImage: "/iot_images/image.png",
-      link: "/technologies/robotics"
+      bgImage: "/home/domain/iot_text_1.png",
+      // link: "/technologies/robotics"
     },
     {
       title: "Robotics",
       description:
         "Industrial and educational robotics for automation, training, and real-world innovation",
-      bgImage: "/robotics/image.png",
-      link: "/technologies/robotics"
+      bgImage: "/home/domain/roboticsvector1.png",
+      // link: "/technologies/robotics"
     },
-    {
-      title: "Industrial Automation",
-      description:
-        "Custom PLC, SCADA, and cloud-integrated systems for intelligent factory control",
-      bgImage: "/robotics/image.png",
-      link: "/solutions/automation"
-    },
+
   ];
 
   const handleCardClick = (link: string) => {

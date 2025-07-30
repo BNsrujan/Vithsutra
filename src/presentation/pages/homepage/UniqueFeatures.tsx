@@ -58,7 +58,7 @@ export default function UniqueFeatures() {
   return (
     <section className="relative py-16 md:py-24">
       <motion.div
-        className="relative z-10 max-w-company-section-width mx-auto px-4"
+        className="relative z-10 max-w-company-section-width mx-auto px-4 md:px-0"
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"

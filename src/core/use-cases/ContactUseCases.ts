@@ -1,4 +1,4 @@
-import { ContactForm, ContactInfo, ContactStatus } from '../entities/Contact';
+import { ContactForm, ContactInfo, } from '../entities/Contact';
 import { IContactRepository } from '../interfaces/IContactRepository';
 import { INotificationService } from '../interfaces/INotificationService';
 

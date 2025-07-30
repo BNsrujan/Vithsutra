@@ -42,7 +42,7 @@ export default function IndustriesSection() {
             viewport={{once:true,margin:"-100px"}}
             className="group md:min-h-96 w-full "
           >
-            <Link href={industry.link}>
+            <Link href="/">
               <Card className="relative h-full min-h-[400px] overflow-hidden w-full  duration-300  ">
                 <div className="absolute inset-0 overflow-hidden">
                   <Image

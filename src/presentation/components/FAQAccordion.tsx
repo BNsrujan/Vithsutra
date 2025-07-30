@@ -1,11 +1,11 @@
 import React from 'react';
-import { FAQ } from '../../../core/entities/FAQ';
+import { FAQ } from '@/core/entities/FAQ';
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from '../../components/ui/accordion';
+} from '@/presentation/components/ui/accordion';
 
 interface FAQAccordionProps {
   faqs: FAQ[];

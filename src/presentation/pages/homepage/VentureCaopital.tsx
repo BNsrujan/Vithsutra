@@ -6,8 +6,9 @@ import { InfiniteMovingCards } from "@/presentation/components/ui/infinite-movin
 
 export default function VentureCapital() {
   return (
-    <div className="w-full  flex flex-col justify-center content-center">
+    <div className="w-full">
       <Heading heading="" Display="Worked With" />
+    <div className="w-full h-[600px]  flex flex-col justify-center content-center">
 
       <div className="h-[7rem] md:h-[10rem] rounded-md   flex flex-col antialiased bg-white dark:bg-black dark:bg-grid-white/[0.05] items-center justify-center relative overflow-hidden">
         <InfiniteMovingCards
@@ -17,6 +18,7 @@ export default function VentureCapital() {
           className=""
         />
       </div>
+    </div>
     </div>
   );
 }

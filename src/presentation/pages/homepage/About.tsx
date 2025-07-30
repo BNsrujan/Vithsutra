@@ -7,7 +7,7 @@ import Heading from "@/presentation/components/ui/heading";
 
 export default function About() {
   return (
-    <section className="h-full md:h-screen flex justify-center items-center">
+    <section className="h-full md:h-screen flex justify-center max-w-company-section-width items-center">
       <div className="mx-auto">
         <motion.div
           className="flex md:flex-row flex-col items-center gap-company-lg-24 w-full"

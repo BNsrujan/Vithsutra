@@ -51,7 +51,7 @@ const menuData: Record<string, MenuSection> = {
     href: "/technologies",
     items: [
       { title: "IIOT ", description: "Industrial IoT ", href: "/technologies/iiot" },
-      { title: "Robotics", description: "Robotic Automation Solutions", href: "/Technologics/robotics" },
+      { title: "Robotics", description: "Robotic Automation Solutions", href: "/technologies/robotics/training" },
       { title: "Softwares", description: "Real time Cloud based Dashboard", href: "/technologies/Softwares" },
     ]
   },
@@ -60,11 +60,11 @@ const menuData: Record<string, MenuSection> = {
     description: "Discover our comprehensive solutions tailored for various industries.",
     href: "/industries",
     items: [
-      { title: "Food Processing", description: "Automating packaging, sorting, and quality control with robotics and smart sensors to boost hygiene and efficiency.", href: "/industries/food-processing" },
-      { title: "Healthcare & Medical", description: "Secure patient access, sample inspection, and hospital automation powered by biometrics, robotics, and IIoT.", href: "/industries/healthcare-medical" },
-      { title: "Education & Research", description: "Providing institutions with IIoT labs and robotics training kits for real-world learning and innovation.", href: "/industries/education-research" },
-      { title: "Farming & Agriculture", description: "Empowering modern farmers with hydroponics automation, sensor-based monitoring, and precision farming tech.", href: "/industries/farming-agriculture" },
-      { title: "Manufacturing", description: "Streamlining industrial operations through PLC-based automation, SCADA systems, and robotic integration.", href: "/industries/manufacturing" },
+      { title: "Food Processing", description: "Automating packaging, sorting, and quality control with robotics and smart sensors to boost hygiene and efficiency.", href: "/" },
+      { title: "Healthcare & Medical", description: "Secure patient access, sample inspection, and hospital automation powered by biometrics, robotics, and IIoT.", href: "/" },
+      { title: "Education & Research", description: "Providing institutions with IIoT labs and robotics training kits for real-world learning and innovation.", href: "/" },
+      { title: "Farming & Agriculture", description: "Empowering modern farmers with hydroponics automation, sensor-based monitoring, and precision farming tech.", href: "/" },
+      { title: "Manufacturing", description: "Streamlining industrial operations through PLC-based automation, SCADA systems, and robotic integration.", href: "/" },
     ]
   },
   company: {
@@ -72,11 +72,11 @@ const menuData: Record<string, MenuSection> = {
     description: "Learn more about our company and mission.",
     href: "/about",
     items: [
-      { title: "Blog", description: "Latest news and insights", href: "/blog" },
-      { title: "Case Studies", description: "Explore our successful projects and implementations", href: "/case-studies" },
-      { title: "Career", description: "Join our team", href: "/career" },
-      {title:"F&Q",description:"Have any Questions",href:"/faq"},
-      {title:"Team",description:"Our Team",href:"/team"}
+      { title: "Blog", description: "Latest news and insights", href: "/" }, //blog
+      { title: "Case Studies", description: "Explore our successful projects and implementations", href: "/" }, // case-studies
+      { title: "Career", description: "Join our team", href: "/" }, //career
+      {title:"F&Q",description:"Have any Questions",href:"/"}, // faq
+      {title:"Team",description:"Our Team",href:"/"} // team
     ]
   }
 }

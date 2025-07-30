@@ -49,7 +49,7 @@ export default function CardSection() {
             <Card
               key={card.id}
               card={{
-                src: card.mainImage,
+                src: card.tecnicalimage,
                 title: card.name,
                 category: card.tagline || "",
                 content: (

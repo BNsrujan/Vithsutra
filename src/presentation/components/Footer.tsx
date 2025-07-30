@@ -3,13 +3,14 @@
 import Link from "next/link";
 import Image from "next/image";
 import { text } from "@/shared/lib/typography";
+import { Instagram, Linkedin, Twitter } from "lucide-react";
 
 const industries = [
-  { name: "Food Processing", href: "/industries/food-processing" },
-  { name: "Healthcare & Medical", href: "/industries/healthcare-medical" },
-  { name: "Education & Research", href: "/industries/education-research" },
-  { name: "Farming & Agriculture", href: "/industries/farming-agriculture" },
-  { name: "Manufacturing", href: "/industries/manufacturing" },
+  { name: "Food Processing", href: "/" },
+  { name: "Healthcare & Medical", href: "/" },
+  { name: "Education & Research", href: "/" },
+  { name: "Farming & Agriculture", href: "/" },
+  { name: "Manufacturing", href: "/" },
 ];
 
 const solutions = [
@@ -30,10 +31,10 @@ const technologies = [
 ];
 
 const companyLinks = [
-  { name: "About Us", href: "/about" },
-  { name: "Blog", href: "/blog" },
-  { name: "Case Studies", href: "/case-studies" },
-  { name: "Contact", href: "/contact" },
+  { name: "About Us", href: "/" }, // about
+  { name: "Blog", href: "/blog" }, // blog
+  { name: "Case Studies", href: "/case-studies" }, // case-studies
+  { name: "Contact", href: "/contact" }, // contact
 ];
 
 const legalLinks = [
@@ -69,7 +70,25 @@ export default function Footer() {
                 cutting-edge technology.
               </p>
             </div>
-            <div className="mb-auto  w-full">Hellow</div>
+            <div className="flex gap-3 w-full items-end h-full">
+
+              <div  className="p-2 border border-company-light-gray  rounded-company-button-8 bg-company-primary-royalBlue/25" >
+                <Link href={""}>
+                  <Instagram size={30} color="#4169e1" strokeWidth={2} absoluteStrokeWidth={true}/>
+                </Link>
+              </div>
+              <div  className="p-2 border border-company-light-gray  rounded-company-button-8 bg-company-primary-royalBlue/25" >
+                <Link href={""} >
+                  <Linkedin size={30} color="#4169e1" strokeWidth={2} absoluteStrokeWidth={true} />
+                </Link>
+              </div>
+              <div  className="p-2 border border-company-light-gray  rounded-company-button-8 bg-company-primary-royalBlue/25" >
+                <Link href={""}>
+                  <Twitter size={30} color="#4169e1" strokeWidth={2} absoluteStrokeWidth={true} />
+                </Link>
+              </div>
+             
+            </div>
           </div>
 
           {/* Navigation Sections */}
