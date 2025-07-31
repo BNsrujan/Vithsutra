@@ -6,9 +6,9 @@ export const rfidProduct: Product = {
     tagline: "RFID-Based Telephone",
     description:
     "This RFID-based telephone is made for hostels, schools, and campuses. It replaces coin phones with smart, secure RFID cards. Each call is tracked, timed, and easy to manage.",
-    mainImage: "/Products/rfid-tel/telephone[1].png",
+    mainImage: "/Products/rfid-tel/tec_telephone.svg",
     productSectionImage: "/Products/rfid-tel/telephone[1].png",
-    tecnicalimage: "/Products/rfid-tel/tec_telephone.svg",
+    tecnicalimage: "/Products/rfid-tel/telephone[1].png",
    features: [
       {
         image: "/Products/rfid-tel/feature/image 37.svg",

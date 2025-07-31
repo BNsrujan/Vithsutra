@@ -16,6 +16,7 @@ import Image, { ImageProps } from "next/image";
 import { useOutsideClick } from "@/application/hooks/use-outside-click";
 import { Button } from "./button";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import { text } from "@/shared/lib/typography";
 
 interface CarouselProps {
   items: React.ReactElement[];
@@ -208,25 +209,25 @@ export const Card = ({
       <motion.button
         layoutId={layout ? `card-${card.title}` : undefined}
         onClick={handleOpen}
-        className="relative z-10 flex h-64 w-72 sm:h-80 sm:w-80 md:h-[30rem] md:w-[40rem] flex-col items-start justify-end overflow-hidden rounded-3xl bg-gray-100 dark:bg-neutral-900"
+        className="relative z-10 flex h-80 w-96 sm:h-96 sm:w-30rem md:h-[35rem] md:w-[70rem] flex-col items-start justify-end overflow-hidden rounded-3xl bg-gray-100 dark:bg-neutral-900"
       >
         <div className="pointer-events-none  absolute   w-full  z-30 h-full bg-gradient-to-t from-black/10 via-transparent to-transparent" />
-        <div className="relative z-40 p-8">
+        <div className="relative z-40 p-company-md-16 md:p-company-md-16">
           <motion.p
             layoutId={layout ? `category-${card.category}` : undefined}
-            className="text-left font-sans text-sm font-medium text-white md:text-base"
+            className={`${text.cardBodytext} text-left    text-white `}
           >
             {card.category}
           </motion.p>
           <motion.p
             layoutId={layout ? `title-${card.title}` : undefined}
-            className="mt-2 max-w text-left font-sans text-xl font-semibold [text-wrap:balance] text-white md:text-3xl"
+            className={`${text.cardHeadingtext}  max-w text-left text-white `}
           >
             {card.title}
           </motion.p>
           <motion.p
             layoutId={layout ? `title-${card.title}` : undefined}
-            className="mt-2 max-w text-left font-sans text-1xl font-medium [text-wrap:balance] text-white md:text-1xl"
+            className={`${text.cardBodytext} hidden md:block text-mt-2 max-w text-left font-sans text-1xl font-medium [text-wrap:balance] text-white md:text-1xl`}
           >
             {card.content}
           </motion.p>

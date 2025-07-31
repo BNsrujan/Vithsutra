@@ -314,7 +314,7 @@ export default function ProductPage({
             className="flex flex-col-reverse mb-company-xl-48 "
           />
           <div className=" relative h-[38rem] flex justify-center py-company-xl-48  items-center bg-company-litest rounded-company-section-24 border z-100 mx-auto ">
-            <div className="  absolute grid grid-cols-2  p-company-lg-24 justify-items-center-safe md:gap-x-96 px-0 w-full ">
+            <div className="absolute hidden  md:grid grid-cols-1 md:grid-cols-2  p-company-lg-24 justify-items-center-safe md:gap-x-96 px-0 w-full ">
               {product.productspecification &&
                 product.productspecification.map((feature, idx) => {
                   const IconComponent = feature.icon ? (
@@ -370,7 +370,7 @@ export default function ProductPage({
         product.productspecification.length > 0 && <div></div>}
 
       {/* Applications Section */}
-      <section className="py-16 px-4 md:px-0 md:py-24  relative flex justify-center items-center">
+      <section className="py-16 px-4 md:px-0 md:py-24 overflow-hidden  relative flex justify-center items-center">
         <div className=" mt-company-xl-48 w-company-section-width">
           <Application applications={product.applications} />
         </div>

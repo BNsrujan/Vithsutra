@@ -1,6 +1,6 @@
 "use client";
 import { Carousel, Card } from "@/presentation/components/ui/Applicationcard";
-import { ProductApplication } from "@/data/products";
+import { ProductApplication } from "@/core/entities/Product";
 import Heading from "./heading";
 
 interface ApplicationProps {
@@ -43,7 +43,7 @@ function Application({ applications }: ApplicationProps) {
     <div className="md:py-company-lg-24">
       <div className="max-w-company-section-width mx-auto w-full">
         <Heading Display="APPLICATION" heading="Use Cases" />
-        <div className="flex justify-center items-center w-full h-[400px] md:h-[600px] min-h-96 relative overflow-hidden">
+        <div className="flex justify-center items-center w-full h-[400px] md:h-[800px] min-h-96 relative overflow-hidden">
           <Carousel items={carouselItems} />
         </div>
       </div>

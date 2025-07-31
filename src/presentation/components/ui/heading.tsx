@@ -5,7 +5,7 @@ import { cn } from "@/shared/lib/utils";
 
 export default function Heading({heading,Display,className}:{
   heading:string,
-  Display:string
+  Display:string,
   className?:string,
 }) {
     return (<div className={cn("mx-auto  max-w-company-section-width " ,className)}>

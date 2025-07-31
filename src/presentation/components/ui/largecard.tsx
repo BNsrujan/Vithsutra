@@ -62,7 +62,7 @@ function Largecard({ index, feature, onCardClick, className = "" }: LargecardPro
 
   return (
     <div 
-      className={`relative  rounded-2xl cursor-pointer ${className}`}
+      className={`relative rounded-2xl cursor-pointer ${className}`}
       onClick={handleClick}
     >
       <motion.div
