@@ -5,7 +5,7 @@ import WeOfferSection from './domain'
 import CardSection from './OurProducti'
 import IndustriesSection from './IndustriesSection'
 import  VentureCapital  from './VentureCaopital'
-import QuickFacts from '../../components/QuickFacts'
+import QuickFacts from '../../components/quickfactes.section'
 import UniqueFeatures from './UniqueFeatures'
 
 

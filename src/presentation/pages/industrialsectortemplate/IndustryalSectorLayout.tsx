@@ -2,14 +2,12 @@
 
 import React from "react";
 // import { Carousel, type CarouselItem } from "@/components/ui/apple-cards-carousel";
-import { ProductGrid } from "../../components/ProductGrid";
 import { motion } from "framer-motion";
 import { text } from "@/shared/lib/typography";
 import { Button } from "../../components/ui/button";
 import { containerVariants, itemVariants } from "@/shared/lib/animations";
 import Link from "next/link";
 import Image from "next/image";
-import { Carousel } from "../../components/CarouselWithL&RArrow";
 import Heading from "@/presentation/components/ui/heading";
 
 
@@ -103,9 +101,7 @@ const SectorLayout: React.FC<SectorLayoutProps> = ({ data }) => {
             Display="Key Highlights"
           />
           <div className="mt-company-lg-24 sm:mt-company-xl-48">
-            <Carousel 
-              items={data.carouselItems}
-            />
+           
           </div>
         </div>
       </motion.section>
@@ -124,7 +120,6 @@ const SectorLayout: React.FC<SectorLayoutProps> = ({ data }) => {
             Display="Our Solutions"
           />
           <div className="mt-company-lg-24 sm:mt-company-xl-48">
-            <ProductGrid products={data.products} />
           </div>
         </div>
       </motion.section>

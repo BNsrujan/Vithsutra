@@ -1,6 +1,6 @@
 "use client";
 
-import Heading from "./heading";
+import Heading from "./ui/heading";
 import { TestimonialsCarouselProps, Testimonial } from "@/core/entities/testimonial";
 import { cn } from "@/shared/lib/utils";
 import { Marquee } from "@/presentation/components/magicui/marquee.ui";
@@ -9,11 +9,11 @@ import { text } from "@/shared/lib/typography";
 
 export default function TestimonialsCarousel({ testimonials }: TestimonialsCarouselProps) {
   return (
-    <div className="py-24 w-full flex justify-center">
+    <div id="testimonials" className="py-24 w-full flex justify-center">
       <section className="px-4 md:px-0 max-w-company-section-width mx-auto">
         <Heading heading="TESTIMONIALS" Display="What Our Clients Say" />
         <div className="relative flex w-full flex-col items-center pt-company-xl-48 justify-center overflow-hidden">
-          <Marquee pauseOnHover className="[--duration:40s]">
+          <Marquee pauseOnHover className="[--duration:40s] gap-company-xl-48">
             {testimonials.map((item) => (
               <ReviewCard key={item.id} {...item} />
             ))}
@@ -37,7 +37,7 @@ const ReviewCard = ({ avatar, name, title, company, quote }: Testimonial) => {
     >
       <div className="flex flex-row items-center justify-between w-full">
         <div className="flex gap-company-xs-8">
-          {avatar && (
+          {avatar ? (
             <Image
               className="rounded-full w-16 h-16 object-cover grayscale-25"
               width={64}
@@ -45,11 +45,14 @@ const ReviewCard = ({ avatar, name, title, company, quote }: Testimonial) => {
               alt={name}
               src={avatar}
             />
+          ):
+          (
+            <span className="text-2xl w-16 h-16 rounded-full md:text-3xl font-bold text-gray-600">{name.charAt(0)}</span>
           )}
           <div className="flex flex-col items-start gap-company-xs-8">
             <figcaption className={text.DisplaySupportingtext}>{name}</figcaption>
             <p className={text.Sectionbodytexts}>
-              {title} {company}
+              {title} ,{company}
             </p>
           </div>
         </div>
