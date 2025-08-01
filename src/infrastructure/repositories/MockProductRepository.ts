@@ -1,5 +1,5 @@
-import { Product, ProductCategory } from '../../core/entities/Product';
-import { ProductRepository, ProductCategoryRepository } from '../../core/use-cases/ProductUseCases';
+import { Product, ProductCategory } from '../../core/entities/product';
+import { ProductRepository, ProductCategoryRepository } from '../../core/use-cases/product.usecases';
 
 // Mock data - migrated from legacy data/products.ts
 const mockProducts: Product[] = [

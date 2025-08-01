@@ -1,4 +1,4 @@
-import { FAQ, FAQCategory } from '../entities/FAQ';
+import { FAQ, FAQCategory } from '../entities/faq';
 
 export interface FAQRepository {
   findAll(): Promise<FAQ[]>;

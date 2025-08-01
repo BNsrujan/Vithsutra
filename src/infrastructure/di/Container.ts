@@ -1,9 +1,9 @@
 // Dependency Injection Container
-import { ProductUseCases } from '../../core/use-cases/ProductUseCases';
-import { IndustryUseCases } from '../../core/use-cases/IndustryUseCases';
-import { ContactUseCases } from '../../core/use-cases/ContactUseCases';
-import { TeamUseCases } from '../../core/use-cases/TeamUseCases';
-import { FAQUseCases } from '../../core/use-cases/FAQUseCases';
+import { ProductUseCases } from '../../core/use-cases/product.usecases';
+import { IndustryUseCases } from '../../core/use-cases/industry.usecases';
+import { ContactUseCases } from '../../core/use-cases/contact.usecases';
+import { TeamUseCases } from '../../core/use-cases/team.usecases';
+import { FAQUseCases } from '../../core/use-cases/faq.usecases';
 
 import { MockProductRepository, MockProductCategoryRepository } from '../repositories/MockProductRepository';
 import { MockIndustryRepository, MockCaseStudyRepository } from '../repositories/MockIndustryRepository';

@@ -1,4 +1,4 @@
-import { BlogPost, BlogCategory } from '../entities/Blog';
+import { BlogPost, BlogCategory } from '../entities/blog';
 
 export interface BlogRepository {
   findAllPosts(): Promise<BlogPost[]>;

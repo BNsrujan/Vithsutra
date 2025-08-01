@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ContactForm } from "@/core/entities/Contact";
+import { ContactForm } from "@/core/entities/contact";
 import { getContactUseCases } from "@/infrastructure/di/Container";
 
 export default function useContact() {

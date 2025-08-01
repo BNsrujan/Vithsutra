@@ -9,7 +9,6 @@ import React, {
   useCallback,
 } from "react";
 
-// Removed unused imports: IconArrowNarrowLeft, IconArrowNarrowRight
 import { cn } from "@/shared/lib/utils";
 import { motion } from "motion/react";
 import Image, { ImageProps } from "next/image";

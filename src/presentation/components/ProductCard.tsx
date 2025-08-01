@@ -1,7 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { Product } from '@/core/entities/Product';
+import { Product } from '@/core/entities/product';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/presentation/components/ui/card';
 import { Button } from '@/presentation/components/ui/button';
 

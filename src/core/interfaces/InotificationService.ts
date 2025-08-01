@@ -1,4 +1,4 @@
-import { ContactForm } from '../entities/Contact';
+import { ContactForm } from '../entities/contact';
 
 export interface INotificationService {
   sendContactNotification(contact: ContactForm): Promise<void>;

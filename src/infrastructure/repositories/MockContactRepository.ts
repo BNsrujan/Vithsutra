@@ -1,5 +1,5 @@
-import { ContactForm, ContactStatus } from '../../core/entities/Contact';
-import { IContactRepository } from '../../core/interfaces/IContactRepository';
+import { ContactForm, ContactStatus } from '../../core/entities/contact';
+import { IContactRepository } from '../../core/interfaces/Icontactrepository';
 
 const mockContacts: ContactForm[] = [];
 

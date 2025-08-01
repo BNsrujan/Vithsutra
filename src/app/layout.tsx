@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { Navbar } from "@/presentation/components/Navbar";
-import Footer from "@/presentation/components/Footer";
+import Footer from "@/presentation/components/footer.section";
 import { Inter } from "next/font/google";
 
 // if you use the variable option when importing a font in your layout, then you must reference the font via var(--your-font-variable) 

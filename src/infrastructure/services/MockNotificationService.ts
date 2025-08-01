@@ -1,5 +1,5 @@
-import { ContactForm } from '../../core/entities/Contact';
-import { INotificationService } from '../../core/interfaces/INotificationService';
+import { ContactForm } from '../../core/entities/contact';
+import { INotificationService } from '../../core/interfaces/InotificationService';
 
 export class MockNotificationService implements INotificationService {
   async sendContactNotification(contact: ContactForm): Promise<void> {

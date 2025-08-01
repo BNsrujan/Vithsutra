@@ -1,4 +1,4 @@
-import { TeamMember, Department } from '../entities/Team';
+import { TeamMember, Department } from '../entities/team';
 
 export interface TeamRepository {
   findAllMembers(): Promise<TeamMember[]>;

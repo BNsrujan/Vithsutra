@@ -1,4 +1,4 @@
-import { Product } from "@/core/entities/Product";
+import { Product } from "@/core/entities/product";
 export const biometricProduct: Product = {
     id: "biometric-product",
     name: "Biometric Product",

@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback } from 'react';
-import { TeamMember, Department } from '../../core/entities/Team';
+import { TeamMember, Department } from '../../core/entities/team';
 import { getTeamUseCases } from '../../infrastructure/di/Container';
 
 export const useTeam = () => {

@@ -1,4 +1,26 @@
+
+
 export const IIOT = {
+  whychose :[
+
+    {
+      image:"/industry/iiot/whychossesiiot/improve.png",
+      title:"Improve OEE",
+    },
+    {
+      title:"maximize uptime and productivity ",
+      image:"/industry/iiot/whychossesiiot/maxismis.png",
+    },
+    {
+      title:"Enhance Quality",
+      image:"/industry/iiot/whychossesiiot/enhase_ity.png",
+    },
+    {
+      title:"Reduce Costs",
+      image:"/industry/iiot/whychossesiiot/reduce.png",
+    }
+
+  ],
   builtinFeature: [
     {
       title: "Seamless Connectivity",

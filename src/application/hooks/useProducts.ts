@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback } from 'react';
-import { Product, ProductCategory } from '../../core/entities/Product';
+import { Product, ProductCategory } from '../../core/entities/product';
 import { getProductUseCases } from '../../infrastructure/di/Container';
 
 export const useProducts = () => {

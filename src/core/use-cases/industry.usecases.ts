@@ -1,4 +1,4 @@
-import { Industry, CaseStudy } from '../entities/Industry';
+import { Industry, CaseStudy } from '../entities/industry';
 
 export interface IndustryRepository {
   findAll(): Promise<Industry[]>;

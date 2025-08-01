@@ -1,6 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
-import { TeamMember } from '../../core/entities/Team';
+import { TeamMember } from '../../core/entities/team';
 import { Card, CardContent, CardHeader, CardTitle } from '../../components/ui/card';
 import { Badge } from '../../components/ui/badge';
 import { Linkedin, Twitter, Github } from 'lucide-react';

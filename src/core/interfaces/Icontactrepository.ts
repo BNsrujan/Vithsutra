@@ -1,4 +1,4 @@
-import { ContactForm, ContactStatus } from '../entities/Contact';
+import { ContactForm, ContactStatus } from '../entities/contact';
 
 export interface IContactRepository {
   create(contact: Omit<ContactForm, 'id' | 'createdAt' | 'status'>): Promise<ContactForm>;

@@ -1,6 +1,6 @@
-import { ContactForm, ContactInfo, } from '../entities/Contact';
-import { IContactRepository } from '../interfaces/IContactRepository';
-import { INotificationService } from '../interfaces/INotificationService';
+import { ContactForm, ContactInfo, } from '../entities/contact';
+import { IContactRepository } from '../interfaces/Icontactrepository';
+import { INotificationService } from '../interfaces/InotificationService';
 
 export class ContactUseCases {
   constructor(

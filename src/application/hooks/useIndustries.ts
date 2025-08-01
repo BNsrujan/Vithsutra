@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback } from 'react';
-import { Industry, CaseStudy } from '../../core/entities/Industry';
+import { Industry, CaseStudy } from '../../core/entities/industry';
 import { getIndustryUseCases } from '../../infrastructure/di/Container';
 
 export const useIndustries = () => {

@@ -1,4 +1,4 @@
-import { FormData } from "@/core/entities/Contact";
+import { FormData } from "@/core/entities/contact";
 import { useState } from "react";
 
 export default function useContact() {

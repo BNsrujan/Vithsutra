@@ -1,4 +1,4 @@
-import { TrainingProgram, TrainingEnrollment, TrainingLevel, EnrollmentStatus } from '../entities/Training';
+import { TrainingProgram, TrainingEnrollment, TrainingLevel, EnrollmentStatus } from '../entities/training';
 
 export interface TrainingRepository {
   findAllPrograms(): Promise<TrainingProgram[]>;

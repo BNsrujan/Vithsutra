@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback } from 'react';
-import { FAQ, FAQCategory } from '../../core/entities/FAQ';
+import { FAQ, FAQCategory } from '../../core/entities/faq';
 import { getFAQUseCases } from '../../infrastructure/di/Container';
 
 export const useFAQs = () => {

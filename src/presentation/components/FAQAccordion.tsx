@@ -1,5 +1,5 @@
 import React from 'react';
-import { FAQ } from '@/core/entities/FAQ';
+import { FAQ } from '@/core/entities/faq';
 import {
   Accordion,
   AccordionContent,
