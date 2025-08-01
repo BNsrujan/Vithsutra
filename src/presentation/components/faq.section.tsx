@@ -1,4 +1,4 @@
-import Heading from "./ui/heading" 
+import Heading from "./ui/heading.ui" 
 import { text  
  } from "@/shared/lib/typography"
 import {
@@ -6,7 +6,7 @@ import {
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "@/presentation/components/ui/accordion"
+} from "@/presentation/components/ui/accordion.component"
 import { Product } from "@/core/entities/product"
 
 interface FaqProps {

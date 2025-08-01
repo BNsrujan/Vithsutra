@@ -1,6 +1,6 @@
 "use client";
 
-import Heading from "./ui/heading";
+import Heading from "./ui/heading.ui";
 import { TestimonialsCarouselProps, Testimonial } from "@/core/entities/testimonial";
 import { cn } from "@/shared/lib/utils";
 import { Marquee } from "@/presentation/components/magicui/marquee.ui";

@@ -1,12 +1,12 @@
 "use client"
 
-import { Button } from "@/presentation/components/ui/button";
+import { Button } from "@/presentation/components/ui/button.ui";
 import Image from "next/image";
 import { IIOT } from "@/data/domain/iiotpages-data";
 import { text } from "@/shared/lib/typography";
 import {motion} from 'framer-motion'
 import { containerVariants, fadeInUp, fadeInDown } from "@/shared/lib/motion";
-import Heading from "@/presentation/components/ui/heading";
+import Heading from "@/presentation/components/ui/heading.ui";
 import { useRouter } from "next/router";
 
 

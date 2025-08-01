@@ -1,6 +1,6 @@
 "use client";
 
-import { IconButton } from "@/presentation/components/ui/iconhover";
+import { IconButton } from "@/presentation/components/ui/iconhover.ui";
 import { motion } from "motion/react";
 import {
   Bot,
@@ -29,8 +29,8 @@ import {
 } from "lucide-react";
 import { JSX } from "react";
 import { text } from "@/shared/lib/typography";
-import Heading from "@/presentation/components/ui/heading";
-import { Button } from "@/presentation/components/ui/button";
+import Heading from "@/presentation/components/ui/heading.ui";
+import { Button } from "@/presentation/components/ui/button.ui";
 
 const iconMap: Record<string, JSX.Element> = {
   "Introduction to Robotics & Industry Applications": (

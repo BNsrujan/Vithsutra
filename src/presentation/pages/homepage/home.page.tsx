@@ -4,9 +4,9 @@ import Hero from './herosection'
 import WeOfferSection from './domain'
 import CardSection from './OurProducti'
 import IndustriesSection from './IndustriesSection'
-import  VentureCapital  from './VentureCaopital'
+import  VentureCapital  from './venturecaopital'
 import QuickFacts from '../../components/quickfactes.section'
-import UniqueFeatures from './UniqueFeatures'
+import UniqueFeatures from './uniquefeatures'
 
 
 const facts = [

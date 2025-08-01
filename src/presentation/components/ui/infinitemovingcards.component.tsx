@@ -2,7 +2,7 @@
 
 import { cn } from "@/shared/lib/utils";
 import React, { useEffect, useState } from "react";
-import { Skeleton } from "./Skeleton";
+import { Skeleton } from "./skeleton.ui";
 
 export const InfiniteMovingCards = ({
   items,

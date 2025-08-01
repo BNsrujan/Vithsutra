@@ -4,11 +4,11 @@ import React from "react";
 // import { Carousel, type CarouselItem } from "@/components/ui/apple-cards-carousel";
 import { motion } from "framer-motion";
 import { text } from "@/shared/lib/typography";
-import { Button } from "../../components/ui/button";
+import { Button } from "../../components/ui/button.ui";
 import { containerVariants, itemVariants } from "@/shared/lib/animations";
 import Link from "next/link";
 import Image from "next/image";
-import Heading from "@/presentation/components/ui/heading";
+import Heading from "@/presentation/components/ui/heading.ui";
 
 
 interface CarouselItem {

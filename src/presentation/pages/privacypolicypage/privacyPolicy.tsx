@@ -2,7 +2,7 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import { text } from '@/shared/lib/typography';
-import Heading from '@/presentation/components/ui/heading';
+import Heading from '@/presentation/components/ui/heading.ui';
 import { containerVariants, itemVariants } from '@/shared/lib/motion';
 
 

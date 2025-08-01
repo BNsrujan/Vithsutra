@@ -2,7 +2,7 @@
 
 import * as React from "react"
 import Link from "next/link"
-import { Button } from "@/presentation/components/ui/button"
+import { Button } from "@/presentation/components/ui/button.ui"
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -11,11 +11,11 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
-} from "@/presentation/components/ui/navigation-menu"
+} from "@/presentation/components/ui/navigationmenu.ui"
 import Image from "next/image"
 import { Menu, X } from "lucide-react"
 import { text } from "@/shared/lib/typography"
-import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/presentation/components/ui/accordion"
+import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/presentation/components/ui/accordion.component"
 
 // Types for menu items
 type MenuItem = {

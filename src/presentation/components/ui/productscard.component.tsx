@@ -1,30 +1,36 @@
 "use client";
-
 import React, {
   useEffect,
   useRef,
   useState,
   createContext,
   useContext,
-  useCallback,
 } from "react";
-
 import { cn } from "@/shared/lib/utils";
 import { motion } from "motion/react";
 import Image, { ImageProps } from "next/image";
 import { useOutsideClick } from "@/application/hooks/use-outside-click";
-import { Button } from "./button";
-import { ChevronLeft, ChevronRight } from "lucide-react";
 import { text } from "@/shared/lib/typography";
+import { ArrowUpRightIcon, ChevronLeft, ChevronRight } from "lucide-react";
+import { useRouter } from "next/navigation";
+import { Button } from "./button.ui";
+import ArrowButtons from "./arrowupbutton.ui";
 
 interface CarouselProps {
-  items: React.ReactElement[];
+  items: React.ReactNode[];
   initialScroll?: number;
+}
+
+interface ArrowButtonProps {
+  onClick?: () => void;
+  className?: string;
+  isTouched?: boolean;
 }
 
 type Card = {
   src: string;
   title: string;
+  link: string;
   category: string;
   content: React.ReactNode;
 };
@@ -60,26 +66,20 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
 
   const scrollLeft = () => {
     if (carouselRef.current) {
-      const scrollAmount = isMobile() ? 280 : 600;
-      carouselRef.current.scrollBy({ left: -scrollAmount, behavior: "smooth" });
-      // Check scrollability after animation completes
-      setTimeout(checkScrollability, 300);
+      carouselRef.current.scrollBy({ left: -900, behavior: "smooth" });
     }
   };
 
   const scrollRight = () => {
     if (carouselRef.current) {
-      const scrollAmount = isMobile() ? 280 : 600;
-      carouselRef.current.scrollBy({ left: scrollAmount, behavior: "smooth" });
-      // Check scrollability after animation completes
-      setTimeout(checkScrollability, 300);
+      carouselRef.current.scrollBy({ left: 900, behavior: "smooth" });
     }
   };
 
   const handleCardClose = (index: number) => {
     if (carouselRef.current) {
-      const cardWidth = isMobile() ? 230 : 684; // (md:w-96)
-      const gap = isMobile() ? 4 : 8;
+      const cardWidth = isMobile() ? 230 : 384; // (md:w-96)
+      const gap = isMobile() ? 12 : 24;
       const scrollPosition = (cardWidth + gap) * (index + 1);
       carouselRef.current.scrollTo({
         left: scrollPosition,
@@ -97,15 +97,21 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
     <CarouselContext.Provider
       value={{ onCardClose: handleCardClose, currentIndex }}
     >
-      <div className="relative w-full h-full">
+      <div className="relative w-full  overflow-x-visible ">
         <div
-          className="flex w-full overflow-x-scroll overscroll-x-auto scroll-smooth py-10 [scrollbar-width:none] md:py-20"
+          className="flex w-full overflow-x-scroll overscroll-x-auto scroll-smooth py-10 [scrollbar-width:none] "
           ref={carouselRef}
           onScroll={checkScrollability}
         >
           <div
             className={cn(
-              "flex flex-row justify-start gap-4 ",
+              "absolute right-0 z-[1000] h-auto w-[5%]  bg-gradient-to-l"
+            )}
+          ></div>
+
+          <div
+            className={cn(
+              "flex flex-row justify-start gap-company-lg-24   w-screen md:w-full",
               "mx-auto " // remove max-w-4xl if you want the carousel to span the full width of its container
             )}
           >
@@ -118,43 +124,41 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
                 animate={{
                   opacity: 1,
                   y: 0,
-                }}
-                transition={{
-                  duration: 0.5,
-                  delay: 0.2 * index,
-                  ease: "easeOut",
+                  transition: {
+                    duration: 0.5,
+                    delay: 0.2 * index,
+                    ease: "easeOut",
+                  },
                 }}
                 key={"card" + index}
-                className="rounded-3xl "
+                className="rounded-3xl last:pr-[5%] md:last:pr-[33%]"
               >
                 {item}
               </motion.div>
             ))}
           </div>
         </div>
-        
-        {/* Navigation buttons - responsive positioning */}
-        <div className="absolute -bottom-16 sm:-bottom-12 right-12 sm:right-16 md:right-20 flex gap-2 z-50">
+
+        <div className="mr-10 flex justify-end gap-2">
           <Button
             variant="outline"
             size="icon"
             onClick={scrollLeft}
             disabled={!canScrollLeft}
-            className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white/90 border-company-primary-royalBlue/20 hover:bg-company-primary-royalBlue/20 text-gray-600 shadow-lg backdrop-blur-sm transition-all duration-200"
+            className="w-12 h-12 rounded-full 'bg-company-primary-royalBlue/10 border-company-primary-royalBlue/20 hover:bg-company-primary-royalBlue/20' text-gray-600"
           >
-            <ChevronLeft className="w-4 h-4 sm:w-5 sm:h-5" />
-            <span className="sr-only">Previous</span>
+            <ChevronLeft className="w-5 h-5" />
+            <span className="sr-only">Previous application</span>
           </Button>
-          
           <Button
             variant="outline"
             size="icon"
             onClick={scrollRight}
             disabled={!canScrollRight}
-            className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white/90 border-company-primary-royalBlue/20 hover:bg-company-primary-royalBlue/20 text-gray-600 shadow-lg backdrop-blur-sm transition-all duration-200"
+            className="w-12 h-12 rounded-full bg-company-primary-royalBlue/10 border-company-primary-royalBlue/20 hover:bg-company-primary-royalBlue-20 text-gray-600"
           >
-            <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5" />
-            <span className="sr-only">Next</span>
+            <ChevronRight className="w-5 h-5" />
+            <span className="sr-only">Next application</span>
           </Button>
         </div>
       </div>
@@ -171,16 +175,11 @@ export const Card = ({
   index: number;
   layout?: boolean;
 }) => {
-  const [open, setOpen] = useState(false);
-  const containerRef = useRef<HTMLDivElement>(null);
+  const [isTouched, setIsTouched] = useState(false);
+  const containerRef = useRef<HTMLDivElement>(null!);
   const { onCardClose } = useContext(CarouselContext);
-
-  const handleOpen = () => {
-    setOpen(true);
-  };
-
-  const handleClose = useCallback(() => {
-    setOpen(false);
+  const router = useRouter();
+  const handleClose = React.useCallback(() => {
     onCardClose(index);
   }, [onCardClose, index]);
 
@@ -191,52 +190,66 @@ export const Card = ({
       }
     }
 
-    if (open) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "auto";
-    }
-
     window.addEventListener("keydown", onKeyDown);
     return () => window.removeEventListener("keydown", onKeyDown);
-  }, [open, handleClose]);
+  }, [handleClose]);
 
-  useOutsideClick(containerRef, () => handleClose());
+  useOutsideClick(containerRef, handleClose);
+
+  const handleTouchStart = () => {
+    setIsTouched(true);
+  };
+
+  const handleTouchEnd = () => {
+    setIsTouched(false);
+  };
+
+
 
   return (
     <>
       <motion.button
         layoutId={layout ? `card-${card.title}` : undefined}
-        onClick={handleOpen}
-        className="relative z-10 flex h-80 w-96 sm:h-96 sm:w-30rem md:h-[35rem] md:w-[70rem] flex-col items-start justify-end overflow-hidden rounded-3xl bg-gray-100 dark:bg-neutral-900"
+        onClick={() => router.push(card.link)}
+        onTouchStart={handleTouchStart}
+        onTouchEnd={handleTouchEnd}
+        onMouseEnter={handleTouchStart}
+        onMouseLeave={handleTouchEnd}
+        whileInView={{
+          scale: 1,
+        }}
+        initial={{
+          scale: 0.9,
+        }}
+        transition={{
+          delay: -1,
+        }}
+        className="group relative w-[80vw] z-10 flex h-80 flex-col  items-start justify-start scale-0.9 overflow-hidden rounded-3xl bg-gray-100 md:h-[40rem] md:w-[50vw] dark:bg-neutral-900 transition-all duration-700 ease-in-out hover:scale-[1.0001]"
       >
-        <div className="pointer-events-none  absolute   w-full  z-30 h-full bg-gradient-to-t from-black/10 via-transparent to-transparent" />
-        <div className="relative z-40 p-company-md-16 md:p-company-md-16">
+        <div className="pointer-events-none  absolute w-auto inset-x-0 top-0 z-30 h-full bg-company-dark-gray/20  duration-700 ease-in-out " />
+        <div className=" absolute bottom-0 left-1 z-40 p-company-lg-24">
           <motion.p
             layoutId={layout ? `category-${card.category}` : undefined}
-            className={`${text.cardBodytext} text-left    text-white `}
+            className={`${text.cardBodytext} text-left text-company-black/70  transition-all duration-700 ease-in-out group-hover:text-company-black`}
           >
             {card.category}
           </motion.p>
           <motion.p
             layoutId={layout ? `title-${card.title}` : undefined}
-            className={`${text.cardHeadingtext}  max-w text-left text-white `}
+            className={`${text.cardHeadingtext}  max-w-xs text-left text-company-black/70  transition-all duration-700 ease-in-out group-hover:text-company-black`}
           >
             {card.title}
-          </motion.p>
-          <motion.p
-            layoutId={layout ? `title-${card.title}` : undefined}
-            className={`${text.cardBodytext} hidden md:block text-mt-2 max-w text-left font-sans text-1xl font-medium [text-wrap:balance] text-white md:text-1xl`}
-          >
-            {card.content}
           </motion.p>
         </div>
         <BlurImage
           src={card.src}
           alt={card.title}
           fill
-          className="absolute inset-0 z-10 object-cover"
+          className="absolute inset-0 z-10   object-contain transition-all duration-700 ease-in-out group-hover:scale-105"
         />
+        <div className="absolute  inset-y-0  right-16 md:right-3  z-40">
+          <ArrowButtons isTouched={isTouched} />
+        </div>
       </motion.button>
     </>
   );

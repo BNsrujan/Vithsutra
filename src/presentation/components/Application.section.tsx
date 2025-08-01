@@ -1,7 +1,7 @@
 "use client";
-import { Carousel, Card } from "@/presentation/components/ui/Applicationcard";
+import { Carousel, Card } from "@/presentation/components/ui/applicationcard.component";
 import { ProductApplication } from "@/core/entities/product";
-import Heading from "./heading";
+import Heading from "./heading.ui";
 
 interface ApplicationProps {
   applications: ProductApplication[];

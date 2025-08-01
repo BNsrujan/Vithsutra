@@ -1,11 +1,11 @@
 "use client";
 import { text } from "@/shared/lib/typography";
-import { Button } from "@/presentation/components/ui/button";
+import { Button } from "@/presentation/components/ui/button.ui";
 import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 import { heroContent } from "@/shared/lib/animations";
 import Image from "next/image";
-import FlipText from "@/presentation/components/ui/fliptext";
+import FlipText from "@/presentation/components/ui/fliptext.ui";
 
 
 export default function Hero() {

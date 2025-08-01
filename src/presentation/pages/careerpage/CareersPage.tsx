@@ -4,7 +4,7 @@ import { motion } from "framer-motion"
 import { useState } from "react"
 import { ArrowRight, MapPin, Briefcase, Clock, Star, Users, Lightbulb, Zap } from "lucide-react"
 import Image from "next/image"
-import { Input } from "@/presentation/components/ui/input"
+import { Input } from "@/presentation/components/ui/input.ui"
 
 // Job listings data
 const jobListings = [

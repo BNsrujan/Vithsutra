@@ -5,9 +5,9 @@ import Link from 'next/link';
 import { motion } from "motion/react";
 import { containerVariants, itemVariants } from '@/shared/lib/motion';
 import Image from 'next/image';
-import { Card, CardContent,  CardTitle, CardDescription } from '@/presentation/components/ui/card';
+import { Card, CardContent,  CardTitle, CardDescription } from '@/presentation/components/ui/card.component';
 import { industries } from '@/data/industries';
-import Heading from '@/presentation/components/ui/heading';
+import Heading from '@/presentation/components/ui/heading.ui';
 
 export default function IndustriesSection() {
   return (

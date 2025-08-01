@@ -3,9 +3,9 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import Image from 'next/image';
-import { Button } from '@/presentation/components/ui/button';
+import { Button } from '@/presentation/components/ui/button.ui';
 import { text } from '@/shared/lib/typography';
-import Heading from '@/presentation/components/ui/heading';
+import Heading from '@/presentation/components/ui/heading.ui';
 import { containerVariants, itemVariants, fadeInUp } from '@/shared/lib/motion';
 import { useRouter } from 'next/navigation';
 

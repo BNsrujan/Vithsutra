@@ -1,8 +1,8 @@
 "use client";
 
 import React from "react";
-import { InfiniteMovingCards } from "@/presentation/components/ui/infinite-moving-cards";
- import Heading from "@/presentation/components/ui/heading";
+import { InfiniteMovingCards } from "@/presentation/components/ui/infinitemovingcards.component";
+ import Heading from "@/presentation/components/ui/heading.ui";
 
 export default function VentureCapital() {
   return (

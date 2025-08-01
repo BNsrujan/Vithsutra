@@ -3,9 +3,9 @@
 import { motion } from "framer-motion";
 import { containerVariants } from "@/shared/lib/animations";
  import React from "react";
-import { Carousel, Card } from "@/presentation/components/ui/productscard";
+import { Carousel, Card } from "@/presentation/components/ui/productscard.component";
 import { biometricProduct, rfidProduct, hydroponicProduct } from "@/data/prodcuts-data/prodcut";
-import Heading from "@/presentation/components/ui/heading";
+import Heading from "@/presentation/components/ui/heading.ui";
 
 // Create an array of products
 const products = [biometricProduct, rfidProduct, hydroponicProduct];

@@ -1,7 +1,7 @@
 'use client';
 
-import Heading from '@/presentation/components/ui/heading';
-import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from '@/presentation/components/ui/accordion';
+import Heading from '@/presentation/components/ui/heading.ui';
+import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from '@/presentation/components/ui/accordion.component';
 import { text } from '@/shared/lib/typography';
 
 const faqs = [

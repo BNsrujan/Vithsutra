@@ -1,8 +1,8 @@
 "use client";
 
-import Largecard from "@/presentation/components/ui/largecard";
+import Largecard from "@/presentation/components/ui/largecard.ui";
 import { useRouter } from "next/navigation";
- import Heading from "@/presentation/components/ui/heading";
+ import Heading from "@/presentation/components/ui/heading.ui";
 
 export default function WeOfferSection() {
   const router = useRouter();

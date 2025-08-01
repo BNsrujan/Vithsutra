@@ -1,7 +1,7 @@
 'use client';
 
-import { Button } from '@/presentation/components/ui/button';
-import { Input } from '@/presentation/components/ui/input';
+import { Button } from '@/presentation/components/ui/button.ui';
+import { Input } from '@/presentation/components/ui/input.ui';
 import { text } from '@/shared/lib/typography';
 import { useState } from 'react';
 import { z } from "zod";

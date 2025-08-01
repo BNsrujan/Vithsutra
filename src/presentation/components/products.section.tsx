@@ -1,10 +1,10 @@
-import Heading from "./ui/heading"
+import Heading from "./ui/heading.ui"
 import {motion} from "motion/react"
-import { Carousel } from "./ui/productscard"
+import { Carousel } from "./ui/productscard.component"
 import { Product } from "@/core/entities/product";
 import { containerVariants } from "@/shared/lib/animations";
 import { text } from "@/shared/lib/typography";
-import { Card } from "./ui/productscard";
+import { Card } from "./ui/productscard.component";
 
 interface ProductsSectionProps {
   otherProducts: Product[];

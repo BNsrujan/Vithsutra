@@ -4,7 +4,7 @@ import React, { useEffect, useRef } from 'react';
 import { motion } from "framer-motion";
 import { text } from "@/shared/lib/typography";
 import { containerVariants, itemVariants } from "@/shared/lib/animations";
- import Heading from './ui/heading';
+ import Heading from './ui/heading.ui';
 
 
 function Counter({ end, suffix, duration = 2 }: { end: number; suffix: string; duration?: number }) {

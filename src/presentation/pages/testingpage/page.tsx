@@ -3,8 +3,8 @@ import { motion } from "motion/react";
 import { text } from "@/shared/lib/typography";
 import Components from "./Components";
 // import ShareButton from "@/components/ui/smooth-button";
-import { Button } from "@/presentation/components/ui/button";
-import { Input } from "@/presentation/components/ui/input";
+import { Button } from "@/presentation/components/ui/button.ui";
+import { Input } from "@/presentation/components/ui/input.ui";
 
 export default function Testing() {
   const box1 = [1];
@@ -220,6 +220,8 @@ export default function Testing() {
             placeholder="Input Placeholder Text"
             className={text.inputplaceholdertext}
           />
+
+
       </div>
     </div>
   );

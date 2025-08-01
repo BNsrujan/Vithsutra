@@ -3,14 +3,13 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { Button } from "@/presentation/components/ui/button";
+import { Button } from "@/presentation/components/ui/button.ui";
 import { text } from "@/shared/lib/typography";
-import Heading from "@/presentation/components/ui/heading";
+import Heading from "@/presentation/components/ui/heading.ui";
 import { containerVariants, fadeInUp, fadeInDown } from "@/shared/lib/motion";
-import { Carousel, Card } from "@/presentation/components/ui/productscard";
-import ProcessStepCard from "@/presentation/components/ui/ProcessStepCard";
+import ProcessStepCard from "@/presentation/components/processtepcard.componet";
 import TestimonialsCarousel from "@/presentation/components/testimonials.section";
-import Application from "../ui/Application";
+import Application from "../ui/Application.section";
 import { useRouter } from "next/navigation";
 import { DialogDemo } from "../brochuredialog.component";
 import { Product } from "@/core/entities/product";

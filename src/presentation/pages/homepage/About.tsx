@@ -3,7 +3,7 @@
 import { text } from "../../../shared/lib/typography";
 import { motion } from "framer-motion";
 import { aboutSection, aboutContent, aboutVideo } from "@/shared/lib/animations";
-import Heading from "@/presentation/components/ui/heading";
+import Heading from "@/presentation/components/ui/heading.ui";
 
 export default function About() {
   return (
