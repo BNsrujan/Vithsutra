@@ -3,7 +3,7 @@
 import React, { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { text } from "@/shared/lib/typography";
-import { containerVariants, itemVariants } from "@/shared/lib/animations";
+import { containerVariants, itemVariants } from "@/shared/lib/motion";
 import Heading from "./ui/heading.ui";
 
 function Counter({

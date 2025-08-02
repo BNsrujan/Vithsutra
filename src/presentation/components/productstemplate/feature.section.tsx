@@ -4,7 +4,7 @@ import Image from 'next/image';
 import { text } from '@/shared/lib/typography';
 import { Product } from '@/core/entities/product';
 
-function FeatureSection(features:Product["features"]) {
+function FeatureSection({features}:{features:Product["features"]}) {
   return (
     <div>
         <section className=" px-4 md:px-0  flex py-company-xl-48 flex-col justify-center  ">

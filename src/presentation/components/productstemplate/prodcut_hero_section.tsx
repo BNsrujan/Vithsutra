@@ -1,6 +1,6 @@
 import React from 'react'
 import { Product } from "@/core/entities/product";
-import { containerVariants } from "@/shared/lib/animations";
+import { containerVariants } from "@/shared/lib/motion";
 import { fadeInDown, fadeInUp } from "@/shared/lib/motion";
 import { text } from "@/shared/lib/typography";
 import { motion } from "motion/react";

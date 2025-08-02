@@ -1,10 +1,11 @@
-import { containerVariants } from "@/shared/lib/animations";
+import { containerVariants } from "@/shared/lib/motion";
 import { motion } from "motion/react";
 import Image from "next/image";
 import Heading from  "@/presentation/components/ui/heading.ui";
 import { text } from "@/shared/lib/typography";
 import { fadeInDown, fadeInUp } from "@/shared/lib/motion";
 import { Product } from "@/core/entities/product";
+import { createElement } from "react";
 
 export default function Hydroponic(product : Product) {
   return (
@@ -111,7 +112,7 @@ export default function Hydroponic(product : Product) {
                           whychose.icon &&
                           typeof whychose.icon === "function"
                         ) {
-                          IconComponent = React.createElement(whychose.icon, {
+                          IconComponent = createElement(whychose.icon, {
                             className: " text-gray-700",
                           });
                         }

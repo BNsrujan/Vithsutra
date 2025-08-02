@@ -2,6 +2,7 @@ import { Product } from "@/core/entities/product";
 import Image from "next/image";
 import React from "react";
 import Heading from "../ui/heading.ui";
+import { text } from "@/shared/lib/typography";
 
 function Technicalspecification(product: Product) {
   return (
@@ -43,8 +44,7 @@ function Technicalspecification(product: Product) {
                       <div className="flex-1 justify-center h-full">
                         <h3
                           className={` ${text.cardHeadingsmall} pb-company-xs-8 text-gray-900 `}
-                        >
-                          {feature.heading}
+                        >                          {feature.heading}
                         </h3>
                         <p
                           className={`${text.cardBodytextlight}text-sm text-gray-600 leading-relaxed`}

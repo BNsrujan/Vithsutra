@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { containerVariants } from "@/shared/lib/animations";
+import { containerVariants } from "@/shared/lib/motion";
  import React from "react";
 import { Carousel, Card } from "@/presentation/components/ui/productscard.component";
 import { biometricProduct, rfidProduct, hydroponicProduct } from "@/data/prodcuts-data/prodcut";

@@ -1,4 +1,4 @@
-import IIOTPages from "@/presentation/pages/iiotpage/iiotPage";
+import IIOTPages from "@/presentation/pages/iiot/iiotPage";
 export default function Page() {
   return (
     <div>

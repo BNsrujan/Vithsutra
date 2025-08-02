@@ -1,4 +1,5 @@
 import { Product } from "@/core/entities/product";
+
 export const biometricProduct: Product = {
     id: "biometric-product",
     name: "Biometric Product",
@@ -62,7 +63,6 @@ export const biometricProduct: Product = {
           "Rugged build, designed for long-term public use with low maintenance.",
       },
     ],
-  
     howItWorks: [
       {
         image: "/Products/biometric-product/How_it_works/step1.svg",

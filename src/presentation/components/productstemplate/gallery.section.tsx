@@ -3,7 +3,7 @@ import React from 'react'
 import Heading from '../ui/heading.ui'
 import Image from 'next/image'
 
-function Gallery(gallery:Product["gallery"]) {
+function Gallery({gallery}:{gallery:Product["gallery"]}) {
   return (
     <div>
         <section className=" w-full flex  justify-center">

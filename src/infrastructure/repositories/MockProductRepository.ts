@@ -242,8 +242,7 @@ const mockProducts: Product[] = [
     ],
     link: "/products/rfid-telephone",
     isActive: true,
-    createdAt: new Date('2024-01-05'),
-    updatedAt: new Date('2024-01-20')
+    
   },
   {
     id: "hydroponic-controller",
@@ -336,8 +335,7 @@ const mockProducts: Product[] = [
     ],
     link: "/products/hydroponic-controller",
     isActive: true,
-    createdAt: new Date('2024-01-10'),
-    updatedAt: new Date('2024-01-25')
+   
   }
 ];
 
@@ -379,8 +377,7 @@ export class MockProductRepository implements ProductRepository {
     const product: Product = {
       ...productData,
       id: Date.now().toString(),
-      createdAt: new Date(),
-      updatedAt: new Date()
+      
     };
     mockProducts.push(product);
     return product;
@@ -395,7 +392,7 @@ export class MockProductRepository implements ProductRepository {
     mockProducts[index] = {
       ...mockProducts[index],
       ...productData,
-      updatedAt: new Date()
+    
     };
     
     return mockProducts[index];

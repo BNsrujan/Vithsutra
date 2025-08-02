@@ -14,7 +14,7 @@ interface ProcessStepCardProps {
 }
 
 
-export default function Howitworks (howItWorks:Product["howItWorks"]) {
+export default function Howitworks ({howItWorks}:{howItWorks:Product["howItWorks"]}) {
   return(
     <section className="px-company-md-16 md:px-8  min-h-screen flex  justify-center items-center w-full">
     <div className="max-w-company-section-width mx-auto w-full">

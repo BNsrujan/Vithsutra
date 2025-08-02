@@ -4,7 +4,7 @@ import Hero from './herosection.section'
 import WeOfferSection from './domain.section'
 import CardSection from './ourproduct.section'
 import IndustriesSection from './Industries.section'
-import  VentureCapital  from './venturecaopital.section'
+// import  VentureCapital  from './venturecaopital.section'
 import QuickFacts from '../../components/quickfactes.section'
 import UniqueFeatures from './uniquefeatures.section'
 

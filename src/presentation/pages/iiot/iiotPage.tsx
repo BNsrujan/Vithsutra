@@ -7,7 +7,7 @@ import { text } from "@/shared/lib/typography";
 import {motion} from 'framer-motion'
 import { containerVariants, fadeInUp, fadeInDown } from "@/shared/lib/motion";
 import Heading from "@/presentation/components/ui/heading.ui";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 
 
 export default function IIOTPages() {

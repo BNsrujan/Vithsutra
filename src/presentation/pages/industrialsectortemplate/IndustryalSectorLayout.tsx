@@ -5,7 +5,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { text } from "@/shared/lib/typography";
 import { Button } from "../../components/ui/button.ui";
-import { containerVariants, itemVariants } from "@/shared/lib/animations";
+import { containerVariants, itemVariants } from "@/shared/lib/motion";
 import Link from "next/link";
 import Image from "next/image";
 import Heading from "@/presentation/components/ui/heading.ui";

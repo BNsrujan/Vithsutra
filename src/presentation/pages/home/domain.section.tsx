@@ -1,11 +1,11 @@
 "use client";
 
 import Largecard from "@/presentation/components/ui/largecard.ui";
-import { useRouter } from "next/navigation";
+// import { useRouter } from "next/navigation";
  import Heading from "@/presentation/components/ui/heading.ui";
 
 export default function WeOfferSection() {
-  const router = useRouter();
+  // const router = useRouter();
 
   const features = [
     {
@@ -13,7 +13,7 @@ export default function WeOfferSection() {
       description:
         "Smart sensor-based systems that connect devices, monitor data, and enable real-time control",
       bgImage: "/home/domain/iot_text_1.png",
-      // link: "/technologies/robotics"
+      // link: "/technologies/iiot"
     },
     {
       title: "Robotics",
@@ -25,9 +25,7 @@ export default function WeOfferSection() {
 
   ];
 
-  const handleCardClick = (link: string) => {
-    router.push(link);
-  };
+
 
   return (
     <section className="relative  overflow-hidden">
@@ -45,7 +43,7 @@ export default function WeOfferSection() {
               key={index}
               index={index}
               feature={feature}
-              onCardClick={() => handleCardClick(feature.link || '')}
+              // onCardClick={() => router.push(feature?.link || '')}
               className="w-full md:max-w-[100%] lg:max-w-full mx-auto"
             />
           ))}

@@ -1,4 +1,4 @@
-import ProductPage from '@/presentation/components/productstemplate/product.page';
+import ProductPage from '@/presentation/pages/products/product.page';
 import { hydroponicProduct, biometricProduct, rfidProduct } from '@/data/prodcuts-data/prodcut';
 
 export default function Page() {

@@ -2,7 +2,7 @@ import Heading from "./ui/heading.ui"
 import {motion} from "motion/react"
 import { Carousel } from "./ui/productscard.component"
 import { Product } from "@/core/entities/product";
-import { containerVariants } from "@/shared/lib/animations";
+import { containerVariants } from "@/shared/lib/motion";
 import { text } from "@/shared/lib/typography";
 import { Card } from "./ui/productscard.component";
 

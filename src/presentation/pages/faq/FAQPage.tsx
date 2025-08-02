@@ -3,7 +3,7 @@
 import { motion, AnimatePresence } from "framer-motion"
 import { useState } from "react"
 import { ChevronDown } from "lucide-react"
-
+import { faqData } from "@/data/faq"
 
 export default function FAQPage() {
   const [openCategory, setOpenCategory] = useState<string | null>("tech")

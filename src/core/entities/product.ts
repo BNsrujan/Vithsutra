@@ -76,7 +76,6 @@ export interface Product {
   testimonials?: Testimonial[];
   FaQ: FAQ[];
   isActive?: boolean;
-  slug: string;
   facts: Fact[];
   link: string;
 
