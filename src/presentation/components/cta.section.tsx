@@ -1,9 +1,9 @@
 import { containerVariants } from "@/shared/lib/motion";
 import { motion } from "motion/react";
 import { text } from "@/shared/lib/typography";
-import { Button } from "../ui/button.ui";
+import { Button } from "@/presentation/components/ui/button.ui";
 import { useRouter } from "next/navigation";
-import { DialogDemo } from "../brochuredialog.component";
+import { DialogDemo } from "@/presentation/components/brochure_dialog.component";
 import { Product } from "@/core/entities/product";
 
 export default function Cta(product: Product) {

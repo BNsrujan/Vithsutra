@@ -1,18 +1,18 @@
 "use client";
 
 import TestimonialsCarousel from "@/presentation/components/testimonials.section";
-import Application from "@/presentation/components/Application.section";
+import Application from "@/presentation/components/application.section";
 import { Product } from "@/core/entities/product";
-import QuickFacts from "@/presentation/components/quickfactes.section";
+import QuickFacts from "@/presentation/components/quick_factes.section";
 import Faq from "@/presentation/pages/training/FAndQ";
 import ProductsSection from "@/presentation/components/products.section";
 import ProductHeroSection from "@/presentation/components/productstemplate/prodcut_hero_section";
-import Technicalspecification from "../../components/productstemplate/technicalspecification.section";
-import Cta from "../../components/productstemplate/cta.section";
-import Gallery from "../../components/productstemplate/gallery.section";
-import Howitworks from "@/presentation/components/productstemplate/processtepcard.section";
-import FeatureSection from "../../components/productstemplate/feature.section";
-import Hydroponic from "../../components/productstemplate/hydroponic.section";
+import Technicalspecification from "@/presentation/components/productstemplate/technical_specification.section";
+import Cta from "@/presentation/components/cta.section";
+import Gallery from "@/presentation/components/gallery.section";
+import Howitworks from "@/presentation/components/productstemplate/process_step_card.section";
+import FeatureSection from "@/presentation/components/productstemplate/feature.section";
+import Hydroponic from "@/presentation/components/productstemplate/hydroponic.section";
 
 interface ProductPageProps {
   product: Product;

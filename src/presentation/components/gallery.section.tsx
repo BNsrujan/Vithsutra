@@ -1,6 +1,6 @@
 import { Product } from '@/core/entities/product'
 import React from 'react'
-import Heading from '../ui/heading.ui'
+import Heading from '@/presentation/components/ui/heading.ui'
 import Image from 'next/image'
 
 function Gallery({gallery}:{gallery:Product["gallery"]}) {

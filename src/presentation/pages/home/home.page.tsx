@@ -1,13 +1,11 @@
-import React from 'react'
-import About from './about.section'
-import Hero from './herosection.section'
-import WeOfferSection from './domain.section'
-import CardSection from './ourproduct.section'
-import IndustriesSection from './Industries.section'
-// import  VentureCapital  from './venturecaopital.section'
-import QuickFacts from '../../components/quickfactes.section'
-import UniqueFeatures from './uniquefeatures.section'
-
+import Hero from "./herosection.section";
+import About from "./about.section";
+import WeOfferSection from "./domain.section";
+import CardSection from "./ourproduct.section";
+import IndustriesSection from "./Industries.section";
+import UniqueFeatures from "./uniquefeatures.section";
+import QuickFacts from "@/presentation/components/quick_factes.section";
+// import VentureCapital from "./venturecapital.section";
 
 const facts = [
   {
