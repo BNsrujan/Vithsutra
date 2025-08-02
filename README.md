@@ -355,3 +355,5 @@ export const metadata: Metadata = {
 - Dependencies always point inward.
 
 
+## Small healper funtion 
+ex: connecting with the local data base , email validation , erro and request format
