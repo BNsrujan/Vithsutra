@@ -11,7 +11,7 @@ export interface ContactForm {
 }
 
 // For backward compatibility with existing forms
-export interface FormData extends ContactForm {}
+export type FormData = ContactForm
 
 export interface ContactInfo {
   address: string;

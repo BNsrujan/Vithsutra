@@ -1,12 +1,44 @@
 import React from "react";
 import Image from "next/image";
 import { text } from "@/shared/lib/typography";
+import Heading from "../ui/heading.ui";
+import { Product } from "@/core/entities/product";
+
+
+
 interface ProcessStepCardProps {
   image: string;
   title: string;
   description: string;
   showArrow?: boolean;
 }
+
+
+export default function Howitworks (howItWorks:Product["howItWorks"]) {
+  return(
+    <section className="px-company-md-16 md:px-8  min-h-screen flex  justify-center items-center w-full">
+    <div className="max-w-company-section-width mx-auto w-full">
+      <Heading
+        heading="Simple, secure, and streamlined - our four-step process ensures reliable communication access"
+        Display="How It Works"
+        className="flex flex-col-reverse"
+      />
+      <div className="flex flex-col py-company-xl-48 md:flex-row items-center justify-between gap-company-xl-48 w-full">
+        {howItWorks?.map((step, idx, arr) => (
+          <ProcessStepCard
+            key={step.title}
+            image={step.image}
+            title={step.title}
+            description={step.description}
+            showArrow={idx < arr.length - 1}
+          />
+        ))}
+      </div>
+    </div>
+  </section>
+  )
+}
+
 
 const ProcessStepCard: React.FC<ProcessStepCardProps> = ({
   image,
@@ -46,4 +78,4 @@ const ProcessStepCard: React.FC<ProcessStepCardProps> = ({
   </div>
 );
 
-export default ProcessStepCard;
+

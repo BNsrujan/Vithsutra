@@ -11,7 +11,7 @@ import { motion } from "motion/react";
 import Image, { ImageProps } from "next/image";
 import { useOutsideClick } from "@/application/hooks/use-outside-click";
 import { text } from "@/shared/lib/typography";
-import { ArrowUpRightIcon, ChevronLeft, ChevronRight } from "lucide-react";
+import {  ChevronLeft, ChevronRight } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { Button } from "./button.ui";
 import ArrowButtons from "./arrowupbutton.ui";
@@ -21,11 +21,7 @@ interface CarouselProps {
   initialScroll?: number;
 }
 
-interface ArrowButtonProps {
-  onClick?: () => void;
-  className?: string;
-  isTouched?: boolean;
-}
+
 
 type Card = {
   src: string;

@@ -2,7 +2,7 @@
 
 import { motion, AnimatePresence } from "framer-motion"
 import { useState } from "react"
-import { ChevronDown, Building2, Wrench, HelpCircle } from "lucide-react"
+import { ChevronDown } from "lucide-react"
 
 
 export default function FAQPage() {

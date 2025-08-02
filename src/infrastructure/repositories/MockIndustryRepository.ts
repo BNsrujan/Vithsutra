@@ -1,5 +1,5 @@
 import { Industry, CaseStudy } from '../../core/entities/industry';
-import { IndustryRepository, CaseStudyRepository } from '../../core/use-cases/industry.usecases';
+import { IndustryRepository, CaseStudyRepository } from '../../core/usecases/industry.usecases';
 
 const mockIndustries: Industry[] = [
   {

@@ -3,6 +3,7 @@
 import { cn } from "@/shared/lib/utils";
 import React, { useEffect, useState } from "react";
 import { Skeleton } from "./skeleton.ui";
+import Image from "next/image";
 
 export const InfiniteMovingCards = ({
   items,
@@ -36,7 +37,7 @@ export const InfiniteMovingCards = ({
 
       containerRef.current.style.setProperty(
         "--animation-direction",
-        direction === "left" ? "forwards" : "reverse"
+        direction === "right" ? "forwards" : "reverse"
       );
       containerRef.current.style.setProperty(
         "--animation-duration",
@@ -65,7 +66,7 @@ export const InfiniteMovingCards = ({
       <div
         ref={containerRef}
         className={cn(
-          "scroller relative z-20 max-w-company-section-width overflow-hidden [mask-image:linear-gradient(to_right,transparent,white_20%,white_80%,transparent)]",
+          "scroller relative  max-w-company-section-width overflow-hidden  [mask-image:linear-gradient(to_right,transparent,white_20%,white_80%,transparent)]",
           className,
         )}
       >
@@ -79,18 +80,18 @@ export const InfiniteMovingCards = ({
         >
           {items.map((item) => (
             <li
-              className="relative w-[170px] max-w-full shrink-0 rounded-[8px] overflow-hidden md:w-[200px] "
+              className="relative w-[170px] max-w-full flex  gap-y-company-xl-48 justify-center shrink-0 rounded-[8px] overflow-hidden md:w-[200px] "
               key={item.name}
             >
               <div className="flex items-center justify-center h-full">
-                {/* <Image
+                <Image
                   src={item.image}
                   alt={item.name}
                   width={120}
                   height={120}
-                  className="object-contain w-full h-full"
-                /> */}
-                <Skeleton/>
+                  className="object-contain w-full h-full  grayscale hover:grayscale-0 transition-all duration-700"
+                />
+                <Skeleton className="h-[100px] "/>
               </div>
             </li>
           ))}

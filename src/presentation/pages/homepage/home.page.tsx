@@ -44,7 +44,7 @@ function Homepage() {
           <WeOfferSection />
           <CardSection />
           <IndustriesSection />
-          <VentureCapital/>
+          {/* <VentureCapital /> */}
           <UniqueFeatures />
           <QuickFacts facts={facts} />
         </div>

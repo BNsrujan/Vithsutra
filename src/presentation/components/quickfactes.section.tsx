@@ -1,13 +1,20 @@
 "use client";
 
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { text } from "@/shared/lib/typography";
 import { containerVariants, itemVariants } from "@/shared/lib/animations";
- import Heading from './ui/heading.ui';
+import Heading from "./ui/heading.ui";
 
-
-function Counter({ end, suffix, duration = 2 }: { end: number; suffix: string; duration?: number }) {
+function Counter({
+  end,
+  suffix,
+  duration = 2,
+}: {
+  end: number;
+  suffix: string;
+  duration?: number;
+}) {
   const [count, setCount] = React.useState(0);
   const countRef = useRef(null);
 
@@ -18,7 +25,10 @@ function Counter({ end, suffix, duration = 2 }: { end: number; suffix: string; d
           let startTime: number | null = null;
           const animate = (currentTime: number) => {
             if (!startTime) startTime = currentTime;
-            const progress = Math.min((currentTime - startTime) / (duration * 1000), 1);
+            const progress = Math.min(
+              (currentTime - startTime) / (duration * 1000),
+              1
+            );
             setCount(Math.floor(progress * end));
             if (progress < 1) {
               requestAnimationFrame(animate);
@@ -39,60 +49,65 @@ function Counter({ end, suffix, duration = 2 }: { end: number; suffix: string; d
 
   return (
     <span ref={countRef} className="inline-block">
-      {count}{suffix}
+      {count}
+      {suffix}
     </span>
   );
 }
 
 interface Fact {
-  number:number;
-  title:string;
-  suffix:string;
+  number: number;
+  title: string;
+  suffix: string;
 }
 
 interface factsProps {
-  facts:Fact[]
+  facts: Fact[];
 }
 
-export default function QuickFacts({facts}:factsProps) {
+export default function QuickFacts({ facts }: factsProps) {
   return (
-    <section className="w-full max-w-company-section-width   ">
-      <motion.div 
-        className="w-full mx-auto "
-        variants={containerVariants}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
-      >
-        <Heading 
-          heading="Achievements"
-          Display="What We've Built So Far"
-        />
+    <section className=" md:px-0 py-24 flex justify-center w-full">
+      <div className="max-w-company-section-width w-full ">
+        <section className="w-full max-w-company-section-width   ">
+          <motion.div
+            className="w-full mx-auto "
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+          >
+            <Heading heading="Achievements" Display="What We've Built So Far" />
 
-        <motion.div 
-          className="grid grid-cols-2 md:h-[300px] h[] pt-company-xs-8  xl:grid-cols-4 my-company-xl-48"
-          variants={containerVariants}
-        >
-          {facts.map((fact, index) => (
             <motion.div
-              key={fact.title}
-              variants={itemVariants}
-              custom={index}
-              className="text-center "
+              className="grid grid-cols-2 md:h-[300px] h[] pt-company-xs-8  xl:grid-cols-4 my-company-xl-48"
+              variants={containerVariants}
             >
-              <div className="mb-company-sm-12">
-                <span className={`${text.Sectiontexthead} text-[var(--company-primary-royalBlue)]`}>
-                  <Counter end={fact.number} suffix={fact.suffix} />
-                </span>
-              </div>
-              <h3 className={`${text.Extratext} text-[var(--company-blue-black)] `}>
-                {fact.title}
-              </h3>
-              
+              {facts.map((fact, index) => (
+                <motion.div
+                  key={fact.title}
+                  variants={itemVariants}
+                  custom={index}
+                  className="text-center "
+                >
+                  <div className="mb-company-sm-12">
+                    <span
+                      className={`${text.Sectiontexthead} text-[var(--company-primary-royalBlue)]`}
+                    >
+                      <Counter end={fact.number} suffix={fact.suffix} />
+                    </span>
+                  </div>
+                  <h3
+                    className={`${text.Extratext} text-[var(--company-blue-black)] `}
+                  >
+                    {fact.title}
+                  </h3>
+                </motion.div>
+              ))}
             </motion.div>
-          ))}
-        </motion.div>
-      </motion.div>
+          </motion.div>
+        </section>
+      </div>
     </section>
   );
-} 
+}

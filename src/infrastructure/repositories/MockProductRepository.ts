@@ -1,5 +1,5 @@
 import { Product, ProductCategory } from '../../core/entities/product';
-import { ProductRepository, ProductCategoryRepository } from '../../core/use-cases/product.usecases';
+import { ProductRepository, ProductCategoryRepository } from '../../core/usecases/product.usecases';
 
 // Mock data - migrated from legacy data/products.ts
 const mockProducts: Product[] = [
@@ -146,8 +146,7 @@ const mockProducts: Product[] = [
     ],
     link: "/products/biometric-product",
     isActive: true,
-    createdAt: new Date('2024-01-01'),
-    updatedAt: new Date('2024-01-15')
+   
   },
   {
     id: "rfid-telephone",

@@ -1,5 +1,5 @@
 import { TeamMember, Department } from '../../core/entities/team';
-import { TeamRepository } from '../../core/use-cases/team.usecases';
+import { TeamRepository } from '../../core/usecases/team.usecases';
 
 const mockTeamMembers: TeamMember[] = [
   {

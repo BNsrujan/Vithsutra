@@ -64,6 +64,7 @@ export interface Product {
   tagline?: string | null;
   description: string;
   mainImage: string;
+  category?:string;
   productSectionImage: string;
   tecnicalimage: string;
   whychose?: WhyChoose[];
@@ -74,6 +75,8 @@ export interface Product {
   gallery?: string[];
   testimonials?: Testimonial[];
   FaQ: FAQ[];
+  isActive?: boolean;
+  slug: string;
   facts: Fact[];
   link: string;
 

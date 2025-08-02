@@ -1,5 +1,5 @@
-import { TeamPage } from "@/presentation/pages/pages/TeamPage"
+// import { TeamPage } from "@/presentation/pages/pages/TeamPage"
 
 export default function Page() {
-  return <TeamPage />
+  // return <TeamPage />
 } 

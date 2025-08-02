@@ -1,5 +1,5 @@
-import { FAQPage } from '@/presentation/pages/pages/FAQPage'
+// import { FAQPage } from '@/presentation/components/faq.section'
 
 export default function Page() {
-  return <FAQPage />
+  // return <FAQPage />
 } 

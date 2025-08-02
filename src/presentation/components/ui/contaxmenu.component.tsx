@@ -1,5 +1,4 @@
 import {
-  ContextMenu,
   ContextMenuCheckboxItem,
   ContextMenuContent,
   ContextMenuItem,

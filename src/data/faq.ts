@@ -1,6 +1,6 @@
-import { Wrench,HelpCircle , Building } from "lucide-react"
+import { Wrench,HelpCircle ,Building2  } from "lucide-react"
 
-const faqData = {
+export const faqData = {
     tech: {
       title: "Technical Questions",
       icon: Wrench,

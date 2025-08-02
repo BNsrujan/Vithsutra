@@ -64,6 +64,7 @@ const blogPosts = [
   }
 ]
 
+
 // Category filter options
 const categories = ["All", "IoT", "Robotics", "AI"]
 
