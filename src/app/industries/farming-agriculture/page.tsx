@@ -1,4 +1,4 @@
-import SectorLayout  from "@/presentation/pages/industrialsectortemplate/IndustryalSectorLayout";
+import SectorLayout  from "@/presentation/pages/industrialsectortemplate/industryal_sector_layout";
 import { farmingAgricultureData } from "@/data/industries-data/farmingagriculture.industries";
 
 export default function Page() {

@@ -1,9 +1,9 @@
-import Hero from "./herosection.section";
+import Hero from "./hero_section.section";
 import About from "./about.section";
 import WeOfferSection from "./domain.section";
-import CardSection from "./ourproduct.section";
+import CardSection from "./our_product.section";
 import IndustriesSection from "./Industries.section";
-import UniqueFeatures from "./uniquefeatures.section";
+import UniqueFeatures from "./unique_features.section";
 import QuickFacts from "@/presentation/components/quick_factes.section";
 // import VentureCapital from "./venturecapital.section";
 

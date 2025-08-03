@@ -9,25 +9,24 @@ import {
 } from "@/presentation/components/ui/accordion.component"
 import { Product } from "@/core/entities/product"
 
-interface FaqProps {
-  product: Product
-}
 
-export default function Faq({ product }: FaqProps) {
+
+export default function Faq({ FaQ }: {FaQ: Product["FaQ"] }
+) {
   return (
     <div>
         <section className=" px-4 md:px-0 flex justify-center">
         <div className="max-w-company-section-width w-full">
           <Heading heading="HAVE ANY Q&A" Display="Your Query" />
-          <Accordion type="single" className="pt-company-xl-48 " defaultValue={product.FaQ[0]?.qution  || undefined} collapsible>
-            {product.FaQ &&
-              product.FaQ.length > 0 &&
-              product.FaQ.map(({ qution, answer }) => (
-                <AccordionItem  key={qution} value={qution}>
+          <Accordion type="single" className="pt-company-xl-48 " defaultValue={FaQ[0]?.question  || undefined} collapsible>
+            {FaQ &&
+              FaQ.length > 0 &&
+              FaQ.map(({ question, answer }) => (
+                <AccordionItem  key={question} value={question}>
                   <AccordionTrigger
                     className={`${text.cardBodytext} font-bold text-company-primary-royalBlue px-company-lg-24`}
                   >
-                    {qution}
+                    {question}
                   </AccordionTrigger>
                   <AccordionContent
                     className={`${text.cardBodytext} text-company-dark-gray `}

@@ -54,7 +54,7 @@ export interface Testimonial {
 }
 
 export interface FAQ {
-  qution: string; // Note: keeping original typo for compatibility
+  question: string; // Note: keeping original typo for compatibility
   answer: string;
 }
 

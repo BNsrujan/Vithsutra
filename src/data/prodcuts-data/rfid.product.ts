@@ -136,27 +136,27 @@ export const rfidProduct: Product = {
     // ],
     FaQ: [
       {
-        qution: "What is an RFID-based telephone, and how does it work?",
+        question: "What is an RFID-based telephone, and how does it work?",
         answer:
           "It allows calls only after scanning an authorized RFID card, ensuring secure and trackable communication.",
       },
       {
-        qution: "Where is this system typically used?",
+        question: "Where is this system typically used?",
         answer:
           "Commonly deployed in hostels, schools, factories, and offices to allow monitored communication for students, workers, or guests.",
       },
       {
-        qution: "Can calling time be limited or scheduled for each user?",
+        question: "Can calling time be limited or scheduled for each user?",
         answer:
           "Yes, administrators can configure time limits, allowed hours, and even daily call quotas per RFID card.",
       },
       {
-        qution: "Is call history or usage tracked for each card?",
+        question: "Is call history or usage tracked for each card?",
         answer:
           "Absolutely — every call made through an RFID card is logged with time, duration, and optionally the phone number dialed.",
       },
       {
-        qution: "Can this telephone be connected to normal phone lines or VoIP?",
+        question: "Can this telephone be connected to normal phone lines or VoIP?",
         answer:
           "Yes, the system can be configured to work with standard landlines or VoIP services based on deployment needs.",
       },

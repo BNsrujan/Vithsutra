@@ -164,27 +164,27 @@ export const hydroponicProduct: Product = {
     ],
     FaQ: [
       {
-        qution: "Can I automate my hydroponics system using VithNet?",
+        question: "Can I automate my hydroponics system using VithNet?",
         answer:
           "Yes, VithNet has been deployed across multiple hydroponic farms, helping automate pH, EC, and nutrient cycle monitoring.",
       },
       {
-        qution: "What exactly does VithNet monitor in a closed farming setup?",
+        question: "What exactly does VithNet monitor in a closed farming setup?",
         answer:
           "It tracks temperature, humidity, soil moisture, CO₂ levels, and light intensity for better crop control and yield consistency.",
       },
       {
-        qution: "Is VithNet only limited to greenhouses or polyhouses?",
+        question: "Is VithNet only limited to greenhouses or polyhouses?",
         answer:
           "No, it also works in vertical farms, indoor grow rooms, aquaponics, and other controlled environment systems.",
       },
       {
-        qution: "Does VithNet require internet to function?",
+        question: "Does VithNet require internet to function?",
         answer:
           "No. VithNet is equipped with local data logging and offline processing. Even if your internet is down, it continues recording sensor data, and syncs it to the dashboard once the connection is restored.",
       },
       {
-        qution: "Can I view my farm's data remotely?",
+        question: "Can I view my farm's data remotely?",
         answer:
           "Yes. VithNet offers both mobile and web dashboards, allowing you to access real-time data, historical trends, and alerts from anywhere. It puts complete environmental control right in your pocket.",
       },

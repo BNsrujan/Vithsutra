@@ -4,7 +4,7 @@ import TestimonialsCarousel from "@/presentation/components/testimonials.section
 import Application from "@/presentation/components/application.section";
 import { Product } from "@/core/entities/product";
 import QuickFacts from "@/presentation/components/quick_factes.section";
-import Faq from "@/presentation/pages/training/FAndQ";
+import Faq from "@/presentation/components/faq.section";
 import ProductsSection from "@/presentation/components/products.section";
 import ProductHeroSection from "@/presentation/components/productstemplate/prodcut_hero_section";
 import Technicalspecification from "@/presentation/components/productstemplate/technical_specification.section";
@@ -55,7 +55,7 @@ export default function ProductPage({
       }
 
       {/* FAQ Section */}
-      <Faq />
+      <Faq FaQ={product.FaQ} />
 
       {/* Related Products Section */}
       {otherProducts.length > 0 && 

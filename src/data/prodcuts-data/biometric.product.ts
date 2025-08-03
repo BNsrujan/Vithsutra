@@ -169,28 +169,28 @@ export const biometricProduct: Product = {
     // ],
     FaQ: [
       {
-        qution: "How does the biometric system help in student attendance?",
+        question: "How does the biometric system help in student attendance?",
         answer:
           "It accurately records each student's attendance using thumbprint authentication, eliminating proxies and manual errors.",
       },
       {
-        qution: "Is the biometric device suitable for children of all ages?",
+        question: "Is the biometric device suitable for children of all ages?",
         answer:
           "Yes, it's ergonomically designed and installed at a height suitable for children, making thumb scanning easy and quick.",
       },
       {
-        qution: "Does it work without an internet connection?",
+        question: "Does it work without an internet connection?",
         answer:
           "Yes, it can store attendance offline and sync data later when reconnected to the internet.",
       },
       {
-        qution:
+        question:
           "Can the system generate attendance reports for teachers or parents?",
         answer:
           "Absolutely, it can generate automated reports and can be integrated with dashboards or parent notification systems.",
       },
       {
-        qution:
+        question:
           "Is the biometric data secure and compliant with privacy standards?",
         answer:
           "Yes, all biometric data is encrypted and securely stored to protect student privacy and comply with institutional guidelines.",

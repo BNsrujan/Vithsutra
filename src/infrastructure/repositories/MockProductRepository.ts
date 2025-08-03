@@ -120,15 +120,15 @@ const mockProducts: Product[] = [
     ],
     FaQ: [
       {
-        qution: "How does the biometric system help in student attendance?",
+        question: "How does the biometric system help in student attendance?",
         answer: "It accurately records each student's attendance using thumbprint authentication, eliminating proxies and manual errors.",
       },
       {
-        qution: "Is the biometric device suitable for children of all ages?",
+        question: "Is the biometric device suitable for children of all ages?",
         answer: "Yes, it's ergonomically designed and installed at a height suitable for children, making thumb scanning easy and quick.",
       },
       {
-        qution: "Does it work without an internet connection?",
+        question: "Does it work without an internet connection?",
         answer: "Yes, it can store attendance offline and sync data later when reconnected to the internet.",
       },
     ],
@@ -220,11 +220,11 @@ const mockProducts: Product[] = [
     ],
     FaQ: [
       {
-        qution: "What is an RFID-based telephone, and how does it work?",
+        question: "What is an RFID-based telephone, and how does it work?",
         answer: "It allows calls only after scanning an authorized RFID card, ensuring secure and trackable communication.",
       },
       {
-        qution: "Where is this system typically used?",
+        question: "Where is this system typically used?",
         answer: "Commonly deployed in hostels, schools, factories, and offices to allow monitored communication for students, workers, or guests.",
       },
     ],
@@ -313,11 +313,11 @@ const mockProducts: Product[] = [
     ],
     FaQ: [
       {
-        qution: "Can I automate my hydroponics system using VithNet?",
+        question: "Can I automate my hydroponics system using VithNet?",
         answer: "Yes, VithNet has been deployed across multiple hydroponic farms, helping automate pH, EC, and nutrient cycle monitoring.",
       },
       {
-        qution: "What exactly does VithNet monitor in a closed farming setup?",
+        question: "What exactly does VithNet monitor in a closed farming setup?",
         answer: "It tracks temperature, humidity, soil moisture, CO₂ levels, and light intensity for better crop control and yield consistency.",
       },
     ],
