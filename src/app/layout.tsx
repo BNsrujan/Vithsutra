@@ -32,13 +32,13 @@ export default function RootLayout({
       <body
         className={`${inter.className} font-sans antialiased min-h-screen bg-company-blue-white`}
       >
-        <Navbar />
-        <ContextMenu>
-          <ContextMenuTrigger >
-            <main className="flex-grow">{children}</main>
-          </ContextMenuTrigger>
-        </ContextMenu>
-        <Footer />
+        <main className="flex-grow">
+          <Navbar />
+          <ContextMenu>
+            <ContextMenuTrigger>{children}</ContextMenuTrigger>
+          </ContextMenu>
+          <Footer />
+        </main>
       </body>
     </html>
   );

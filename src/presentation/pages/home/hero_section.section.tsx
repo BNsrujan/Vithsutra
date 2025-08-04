@@ -13,7 +13,7 @@ export default function Hero() {
   return (
     <div className="relative w-full ">
       <div className="max-w-[1700px] mx-auto px-0 lg:px-company-lg-24 h-full">
-        <div className="grid grid-cols-1 lg:grid-cols-2 w-full gap-8   min-h-[100vh] py-company-sm-12 lg:py-0">
+        <div className="grid grid-cols-1 lg:grid-cols-2 w-full gap-8 min-h-[100vh] py-company-sm-12 lg:py-0">
           {/* Left Content */}
           <motion.div
             className="relative z-20 flex flex-col py-company-md-16 justify-center h-full space-y-company-lg-24"
@@ -86,12 +86,6 @@ export default function Hero() {
           </motion.div>
         </div>
       </div>
-
-      {/* Background Pattern */}
-      {/* <div className="absolute inset-0 -z-10 opacity-10">
-        <div className="absolute inset-0 bg-[url('/patterns/grid.svg')] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]" />
-      </div>
-       */}
     </div>
   );
 }

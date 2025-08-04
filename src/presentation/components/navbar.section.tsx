@@ -25,15 +25,13 @@ import type  { MenuSection ,MenuItem }  from "@/core/entities/navbar";
 import { menuData } from "@/data/navbar";
 
 
-
-
 // Reusable menu item component
 const MenuItem = React.memo(({ item }: { item: MenuItem }) => (
   <li>
     <NavigationMenuLink asChild>
       <Link
         href={item.href}
-        className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-[var(--company-litest-gray)] hover:text-[var(--company-primary-royalBlue)] focus:bg-[var(--company-litest-gray)] focus:text-[var(--company-primary-royalBlue)]"
+        className="block select-none space-y-1 rounded-md p-company-lg-24 leading-none no-underline outline-none transition-colors hover:bg-[var(--company-litest-gray)] hover:text-[var(--company-primary-royalBlue)] focus:bg-[var(--company-litest-gray)] focus:text-[var(--company-primary-royalBlue)]"
       >
         <div className={`${text.Navtext} font-medium`}>{item.title}</div>
         <p
@@ -63,7 +61,7 @@ const MenuSection = React.memo(
           <li className="row-span-3">
             <NavigationMenuLink asChild>
               <Link
-                className="flex h-full w-full select-none flex-col overflow-hidden justify-end rounded-md bg-company-litest-gray p-6 no-underline outline-none focus:shadow-md"
+                className="flex h-full w-full select-none flex-col overflow-hidden justify-end rounded-md bg-company-litest-gray p-company-lg-24 no-underline outline-none focus:shadow-md"
                 href={section.href}
               >
                 <div
@@ -119,17 +117,17 @@ export function Navbar() {
   }, [isMobileMenuOpen]);
 
   return (
-    <div className="sticky top-0 z-50 w-full bg-company-white ">
-      <div className="flex items-center justify-between w-full px-2 py-3 max-w-[1800px] mx-auto">
-        <div className="flex items-center space-x-2">
-          <Link href="/" className="flex items-center">
+    <div className="sticky top-0 z-50 bg-company-white   w-full ">
+      <div className="flex  items-center justify-between w-full  px-2 py-4 max-w-[1800px] mx-auto">
+        <div className="flex items-baseline space-x-2">
+          <Link href="/" className="flex items-baseline ">
             <Image
               src="/logo/company_logo_without_text.png"
               alt="Logo"
-              width={40}
-              height={40}
+              width={60}
+              height={60}
             />
-            <h1 className={`vithsutra ${text.logo} ml-2 text-lg font-bold`}>
+            <h1 className={`vithsutra ${text.logo} ml-company-xs-8   font-bold`}>
               Vithsutra
             </h1>
           </Link>
@@ -138,7 +136,7 @@ export function Navbar() {
         {/* Desktop Navigation */}
         <div className="hidden md:block">
           <NavigationMenu>
-            <NavigationMenuList>
+            <NavigationMenuList className="space-x-company-md-16">
               {Object.entries(menuData).map(([key, section]) => (
                 <MenuSection
                   key={key}
@@ -181,7 +179,7 @@ export function Navbar() {
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
         <div
-          className={`mobile-menu md:hidden fixed  w-full right-0 left-auto bg-company-white  h-[calc(100vh-64px)]  transition-transform duration-300 ${
+          className={`mobile-menu md:hidden fixed  w-full right-0 left-auto  h-[calc(100vh-64px)]  transition-transform duration-300 ${
             isMobileMenuOpen ? "translate-x-0" : "translate-x-full"
           }`}
         >

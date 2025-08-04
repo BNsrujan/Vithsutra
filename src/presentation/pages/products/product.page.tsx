@@ -24,7 +24,7 @@ export default function ProductPage({
   otherProducts = [],
 }: ProductPageProps) {
   return (
-    <main className="min-h-screen space-y-company-xl-48">
+    <main className="min-h-screen ">
       
       {/* Hero Section */}
       <ProductHeroSection {...product} />
