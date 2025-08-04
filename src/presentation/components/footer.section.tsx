@@ -10,6 +10,7 @@ import {
   legalLinks,
 } from "@/data/footer";
 import { text } from "@/shared/lib/typography";
+import LogoWithName from "./ui/logo_with_name";
 
 const SocialIconLink = ({
   href,
@@ -59,21 +60,7 @@ export default function Footer() {
           {/* Logo & Description */}
           <div className="flex-shrink-0 max-w-[700px] h-full flex flex-col ml-7 md:m-0 lg:w-auto mb-8 lg:mb-0">
             <div className=" space-y-company-xs-8">
-              <div className="flex items-baseline space-x-company-xs-8">
-                <Link href="/" className="flex items-baseline ">
-                  <Image
-                    src="/logo/company_logo_without_text.png"
-                    alt="Logo"
-                    width={60}
-                    height={60}
-                  />
-                  <h1
-                    className={`vithsutra ${text.logo} ml-company-xs-8  font-bold`}
-                  >
-                    Vithsutra
-                  </h1>
-                </Link>
-              </div>
+              <LogoWithName/>
               <p
                 className={` ${text.labelHeadingText} text-company-gray-text font-semibold w-[400px]`}
               >
@@ -122,9 +109,7 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="border-t border-company-gray mt-[24px] pt-[8px] w-full">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p
-              className={` ${text.labelText} text-company-black `}
-            >
+            <p className={` ${text.labelText} text-company-black `}>
               © {new Date().getFullYear()} Vithsutra. All rights reserved.
             </p>
             <div className="flex flex-wrap justify-center md:justify-end space-x-6">

@@ -4,7 +4,7 @@ import { Mail, Phone, MapPin, Send } from "lucide-react";
 import { toast } from "sonner";
 import { Button } from "@/presentation/components/ui/button.ui";
 import { Input } from "@/presentation/components/ui/input.ui";
-import { Textarea } from "@/presentation/components/ui/textarea.ui";
+import { Textarea } from "@/presentation/components/ui/text_area.ui";
 import Heading from "@/presentation/components/ui/heading.ui";
 import { textReveal, formField } from "@/shared/lib/motion";
 import useContact from "@/application/hooks/useContact";

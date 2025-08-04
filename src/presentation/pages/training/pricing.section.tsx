@@ -1,6 +1,6 @@
 "use client";
 
-import { IconButton } from "@/presentation/components/ui/iconhover.ui";
+import { IconButton } from "@/presentation/components/ui/icon_hover.ui";
 import { motion } from "motion/react";
 import { Puzzle } from "lucide-react";
 import { text } from "@/shared/lib/typography";

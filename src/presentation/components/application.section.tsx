@@ -2,7 +2,7 @@
 import {
   Carousel,
   Card,
-} from "@/presentation/components/ui/applicationcard.component";
+} from "@/presentation/components/ui/application_card.component";
 import { ProductApplication } from "@/core/entities/product";
 import Heading from "@/presentation/components/ui/heading.ui";
 

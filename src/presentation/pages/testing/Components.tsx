@@ -1,7 +1,7 @@
 import { Button } from '@/presentation/components/ui/button.ui'
 import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from '@/presentation/components/ui/card.component'
 import { Input } from '@/presentation/components/ui/input.ui'
-import Largecard from '@/presentation/components/ui/largecard.ui'
+import Largecard from '@/presentation/components/ui/large_card.ui'
 import { text } from '@/shared/lib/typography'
 import React from 'react'
 

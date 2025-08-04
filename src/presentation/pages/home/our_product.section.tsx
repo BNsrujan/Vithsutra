@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { containerVariants } from "@/shared/lib/motion";
  import React from "react";
-import { Carousel, Card } from "@/presentation/components/ui/productscard.component";
+import { Carousel, Card } from "@/presentation/components/ui/products_card.component";
 import { biometricProduct, rfidProduct, hydroponicProduct } from "@/data/prodcuts-data/prodcut";
 import Heading from "@/presentation/components/ui/heading.ui";
 

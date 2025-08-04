@@ -14,7 +14,7 @@ import { text } from "@/shared/lib/typography";
 import {  ChevronLeft, ChevronRight } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { Button } from "./button.ui";
-import ArrowButtons from "./arrowupbutton.ui";
+import ArrowButtons from "./arrow_up_button.ui";
 
 interface CarouselProps {
   items: React.ReactNode[];

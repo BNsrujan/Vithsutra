@@ -11,7 +11,7 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
-} from "@/presentation/components/ui/navigationmenu.ui"
+} from "@/presentation/components/ui/nav_menu.ui"
 
 const components: { title: string; href: string; description: string }[] = [
   {

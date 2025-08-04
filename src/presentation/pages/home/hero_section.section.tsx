@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 import { heroContent } from "@/shared/lib/motion";
 import Image from "next/image";
-import FlipText from "@/presentation/components/ui/fliptext.ui";
+import FlipText from "@/presentation/components/ui/flip_text.ui";
 
 
 export default function Hero() {

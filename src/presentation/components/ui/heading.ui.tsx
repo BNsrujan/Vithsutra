@@ -11,7 +11,7 @@ export default function Heading({heading,Display,className}:{
     return (<div className={cn("mx-auto  max-w-company-section-width " ,className)}>
       <div className=
         "inline-block   bg-company-light-light-gray" >
-        <h1 className="text-sm font-medium pb-company-xs-8 tracking-wider text-company-text-gray">
+        <h1 className={`${text.labelText}pb-company-xs-8`}>
           {heading}
         </h1>
       </div>

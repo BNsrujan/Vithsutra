@@ -1,4 +1,4 @@
-import { IconButton } from "@/presentation/components/ui/iconhover.ui";
+import { IconButton } from "@/presentation/components/ui/icon_hover.ui";
 import {
     Bot,
     Cpu,

@@ -1,6 +1,6 @@
 "use client";
 
-import Largecard from "@/presentation/components/ui/largecard.ui";
+import Largecard from "@/presentation/components/ui/large_card.ui";
 // import { useRouter } from "next/navigation";
  import Heading from "@/presentation/components/ui/heading.ui";
 

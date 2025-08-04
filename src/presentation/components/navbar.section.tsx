@@ -11,7 +11,7 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
-} from "@/presentation/components/ui/navigationmenu.ui";
+} from "@/presentation/components/ui/nav_menu.ui";
 import Image from "next/image";
 import { Menu, X } from "lucide-react";
 import { text } from "@/shared/lib/typography";
@@ -23,6 +23,7 @@ import {
 } from "@/presentation/components/ui/accordion.component";
 import type  { MenuSection ,MenuItem }  from "@/core/entities/navbar";
 import { menuData } from "@/data/navbar";
+import LogoWithName from "./ui/logo_with_name";
 
 
 // Reusable menu item component
@@ -119,19 +120,7 @@ export function Navbar() {
   return (
     <div className="sticky top-0 z-50 bg-company-white   w-full ">
       <div className="flex  items-center justify-between w-full  px-2 py-4 max-w-[1800px] mx-auto">
-        <div className="flex items-baseline space-x-2">
-          <Link href="/" className="flex items-baseline ">
-            <Image
-              src="/logo/company_logo_without_text.png"
-              alt="Logo"
-              width={60}
-              height={60}
-            />
-            <h1 className={`vithsutra ${text.logo} ml-company-xs-8   font-bold`}>
-              Vithsutra
-            </h1>
-          </Link>
-        </div>
+        <LogoWithName/>
 
         {/* Desktop Navigation */}
         <div className="hidden md:block">

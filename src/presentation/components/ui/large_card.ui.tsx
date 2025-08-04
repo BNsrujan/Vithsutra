@@ -2,7 +2,7 @@ import * as motion from "motion/react-client";
 import Image from "next/image";
 import { text } from "@/shared/lib/typography";
 import { useState, useCallback } from "react";
-import ArrowButtons from "./arrowupbutton.ui";
+import ArrowButtons from "./arrow_up_button.ui";
 
 interface LargecardProps {
   index: number;

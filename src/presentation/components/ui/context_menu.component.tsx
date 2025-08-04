@@ -11,7 +11,7 @@ import {
   ContextMenuSubContent,
   ContextMenuSubTrigger,
 
-} from "./macoscontextmenu.ui";
+} from "./context_menu.ui";
 
 export const MacOsContextMenu = () => {
   return (
