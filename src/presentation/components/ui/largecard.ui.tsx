@@ -1,10 +1,8 @@
 import * as motion from "motion/react-client";
 import Image from "next/image";
 import { text } from "@/shared/lib/typography";
-import React, { useState, useCallback } from "react";
+import { useState, useCallback } from "react";
 import ArrowButtons from "./arrowupbutton.ui";
-
-
 
 interface LargecardProps {
   index: number;
@@ -22,34 +20,28 @@ function Largecard({
   index,
   feature,
   onCardClick,
-  className = "",
+  className,
 }: LargecardProps) {
   const [isTouched, setIsTouched] = useState(false);
   const [touchTimeout, setTouchTimeout] = useState<NodeJS.Timeout | null>(null);
 
   const handleTouchStart = useCallback(() => {
-    if (touchTimeout) {
-      clearTimeout(touchTimeout);
-    }
+    if (touchTimeout) clearTimeout(touchTimeout);
     setIsTouched(true);
   }, [touchTimeout]);
 
   const handleTouchEnd = useCallback(() => {
-    const timeout = setTimeout(() => {
-      setIsTouched(false);
-    }, 300);
+    const timeout = setTimeout(() => setIsTouched(false), 300);
     setTouchTimeout(timeout);
   }, []);
 
   const handleClick = useCallback(() => {
-    if (onCardClick) {
-      onCardClick();
-    }
+    onCardClick?.();
   }, [onCardClick]);
 
   return (
     <div
-      className={`relative rounded-2xl cursor-pointer ${className}`}
+      className={`rounded-2xl cursor-pointer w-full ${className ?? ""}`}
       onClick={handleClick}
     >
       <motion.div
@@ -64,56 +56,46 @@ function Largecard({
         }}
         onTouchStart={handleTouchStart}
         onTouchEnd={handleTouchEnd}
-        className={`group relative aspect-video border border-company-litest-gray rounded-[8px] sm:rounded-16px sm:rounded-[24px] sm:min-h-[350px] md:min-h-[500px] overflow-hidden bg-company-white transition-all duration-700 ease-in-out ${
-          isTouched ? "touch-active" : ""
-        }`}
+        className={`group relative aspect-video border border-company-litest-gray rounded-[8px] sm:rounded-[24px] sm:min-h-[350px] md:min-h-[500px] overflow-hidden bg-company-white transition-all duration-700 ease-in-out ${isTouched ? "touch-active" : ""}`}
       >
         <Image
           src={feature.bgImage}
           alt={feature.title}
           width={1296}
           height={850}
-          className={`w-full h-full object-cover transition-all z-0 duration-700 ease-in-out ${
+          className={`w-full h-full object-cover transition-all duration-700 ease-in-out z-0 ${
             isTouched ? "scale-105" : "group-hover:scale-105"
           }`}
+          quality={100}
         />
-        {/* Gradient Overlay */}
         <div
           className={`absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent transition-all duration-700 ease-in-out ${
             isTouched ? "opacity-90" : "opacity-70 group-hover:opacity-90"
           }`}
         />
-        <div className="absolute inset-0 p-4 sm:p-6 md:p-company-lg-24 flex flex-col justify-end">
+        <div className="absolute inset-0 p-4 sm:p-8 md:p-company-lg-24 flex flex-col justify-end w-full">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.3 }}
-            className="max-w-[90%] sm:max-w-[80%] z-10 md:max-w-[70%]"
+            className="max-w-[90%] sm:max-w-[80%] md:max-w-[70%] z-10"
           >
             <h3
-              className={`${text.SectionHeader} text-company-white-text ${
-                isTouched
-                  ? "text-company-white-text"
-                  : "group-hover:text-company-white-text"
-              } transition-all duration-700 ease-in-out`}
+              className={`${text.SectionHeader} text-company-white-text transition-all duration-700 ease-in-out`}
             >
               {feature.title}
             </h3>
             <p
-              className={`${
-                text.cardBodytextwrape
-              } text-clip h-4 md:h-full md:w-full w-80 sm:w-full text-company-light-gray  ${
-                isTouched
-                  ? "text-company-white-text"
-                  : "group-hover:text-company-white-text"
-              } transition-all duration-700 ease-in-out`}
+              className={`${text.cardBodytextwrape} text-clip h-4 md:h-full w-80 sm:w-full md:w-full text-company-light-gray transition-all duration-700 ease-in-out ${
+                isTouched ? "text-company-white-text" : "group-hover:text-company-white-text"
+              }`}
             >
               {feature.description}
             </p>
           </motion.div>
-          <ArrowButtons isTouched={isTouched} />
         </div>
+        <ArrowButtons isTouched={isTouched} />
       </motion.div>
     </div>
   );

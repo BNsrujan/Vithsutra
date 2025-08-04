@@ -60,7 +60,7 @@ export default function PricingModels() {
                   key={idx}
                   className="flex items-center   gap-company-md-16 group transition duration-300 ease-in group-hover:text-company-primary-royalBlue"
                 >
-                  {iconMap[feature] ?? <IconButton icon={Puzzle} />}
+                  {iconMap[feature] ?? <IconButton icon={Puzzle}  />}
                   <span
                     className={
                       text.cardBodytext +

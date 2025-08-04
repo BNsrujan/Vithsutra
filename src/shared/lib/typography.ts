@@ -5,6 +5,10 @@
 
 
 const text = {
+  // 16px, 22px, 24px, 28px
+  logo:
+  "text-[1rem] sm:text-[1.375rem] md:text-[1.5rem] lg:text-[1.75rem] leading-[1em] font-semibold text-wrap ",
+
   // 96px, 140px, 90px, 100px, 100px
   Displaytext:
     "text-[6rem] sm:text-[8.75rem] md:text-[5.625rem] lg:text-[6.25rem] xl:text-[6.25rem] leading-[1] tracking-tighter font-semibold text-wrap",

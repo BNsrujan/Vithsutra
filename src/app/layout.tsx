@@ -30,7 +30,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${inter.className} font-sans antialiased min-h-screen flex flex-col bg-company-blue-white`}
+        className={`${inter.className} font-sans antialiased min-h-screen bg-company-blue-white`}
       >
         <Navbar />
         <ContextMenu>

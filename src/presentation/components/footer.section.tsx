@@ -73,17 +73,17 @@ export default function Footer() {
             <div className="flex gap-3 w-full items-end h-full mt-16">
               <div  className="p-2 border border-company-light-gray  rounded-company-button-8 bg-company-primary-royalBlue/10" >
                 <Link href={""}>
-                  <Instagram size={30}  color="#4169e1" strokeWidth={2} absoluteStrokeWidth={true}/>
+                  <Instagram  className="w-icon-width  text-icon-color hover:text-icon-hover-color duration-300"   strokeWidth={2.5} absoluteStrokeWidth={true}/>
                 </Link>
               </div>
               <div  className="p-2 border border-company-light-gray  rounded-company-button-8 bg-company-primary-royalBlue/10" >
                 <Link href={""} >
-                  <Linkedin size={30} color="#4169e1" strokeWidth={2} absoluteStrokeWidth={true} />
+                  <Linkedin  color="#4169e1" strokeWidth={2.5} className="w-icon-width h-icon-height text-icon-color hover:text-icon-hover-color" absoluteStrokeWidth={true} />
                 </Link>
               </div>
               <div  className="p-2 border border-company-light-gray  rounded-company-button-8 bg-company-primary-royalBlue/10" >
                 <Link href={""}>
-                  <Twitter size={30} color="#4169e1" strokeWidth={2} absoluteStrokeWidth={true} />
+                  <Twitter  strokeWidth={2} className="w-icon-width h-icon-height text-icon-color hover:text-icon-hover-color" absoluteStrokeWidth={true} />
                 </Link>
               </div>
              

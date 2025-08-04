@@ -357,3 +357,20 @@ export const metadata: Metadata = {
 
 ## Small healper funtion 
 ex: connecting with the local data base , email validation , erro and request format
+
+
+## tailwindcss propery 
+transition - which will transitioned wiht the transform propety - opacity ,colors, transform, fill , box-shadow , 
+duration ( 200,300 ...), timing funtion (eas-in ...) , delay (200 , 300 , 400) 
+
+### Transform utility
+scale (75 - 85 x-50 y-1/2) 
+rotation (45(45deg) origin-center )
+translate (x-1/2 y-30 skeew)
+
+
+### space between utility
+space (y-6 x-7 appling level 7 spacing )
+only use space between utility when you are not wraping 
+
+##

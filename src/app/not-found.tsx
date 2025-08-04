@@ -14,9 +14,9 @@ export default function NotFound() {
 
       <Link
         href="/"
-        className="mt-6 inline-flex items-center gap-2 px-6 py-4 font-semibold text-white bg-company-primary-royalBlue rounded-md hover:bg-company-primary-royalBlue transition-colors"
+        className="mt-6 inline-flex items-center gap-2 px-6 py-4 font-bold text-white bg-company-primary-royalBlue rounded-md hover:bg-company-primary-royalBlue transition-colors"
       >
-        <ArrowLeft className="w-4 h-4" />
+        <ArrowLeft className="w-icon-width h-icon-height text-white" color='white'  strokeWidth={2.5}/>
         Go back home
       </Link>
     </div>
