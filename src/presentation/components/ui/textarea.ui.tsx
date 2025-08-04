@@ -12,7 +12,7 @@ function Textarea({ label, id, helpText, className, ...props }: TextareaProps) {
   return (
     <div className="px-company-lg-24">
       {label && (
-        <label htmlFor={id} className={`${text.Footerlinktext} text-company-gray pt-[14px]`}>
+        <label htmlFor={id} className={`${text.labelText} text-company-gray pt-[14px]`}>
           {label}
         </label>
       )}
@@ -28,7 +28,7 @@ function Textarea({ label, id, helpText, className, ...props }: TextareaProps) {
       />
       <div className="h-[14px]">
         {helpText && (
-          <p className={`${text.Footerlinktext} text-red-600`}>
+          <p className={`${text.labelText} text-red-600`}>
             {helpText}
           </p>
         )}

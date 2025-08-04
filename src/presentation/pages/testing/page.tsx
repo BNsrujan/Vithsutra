@@ -184,15 +184,15 @@ export default function Testing() {
             Card Body Text - The quick brown fox jumps over the lazy dog.
           </p>
 
-          <nav className={text.Navtext}>
+          <nav className={text.labelHeadingText}>
             Navigation Text - The quick brown fox jumps over the lazy dog.
           </nav>
 
           <footer className="">
-            <h3 className={text.FooterHeadingtext}>
+            <h3 className={text.labelHeadingText}>
               Footer Heading Text - The quick brown fox jumps over the lazy dog.
             </h3>
-            <a href="#" className={text.Footerlinktext}>
+            <a href="#" className={text.labelText}>
               Footer Link Text - The quick brown fox jumps over the lazy dog.
             </a>
           </footer>

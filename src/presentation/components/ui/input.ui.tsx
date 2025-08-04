@@ -12,7 +12,7 @@ function Input({ className, id, label, helpText, type, placeholder, ...props }: 
   return (
     <div className="px-company-lg-24">
       {label && (
-        <label htmlFor={id} className={`${text.Footerlinktext}  text-company-gray  pt-company-sm-12 `}>
+        <label htmlFor={id} className={`${text.labelText}  text-company-gray  pt-company-sm-12 `}>
           {label}
         </label>
       )}
@@ -32,7 +32,7 @@ function Input({ className, id, label, helpText, type, placeholder, ...props }: 
       />
       <div className="h-company-md-16">
       {helpText && (
-        <p className={`${text.Footerlinktext}  text-red-600 `}>
+        <p className={`${text.labelText}  text-red-600 `}>
           {helpText}
         </p>
       )}

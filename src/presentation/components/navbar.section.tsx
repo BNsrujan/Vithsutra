@@ -33,7 +33,7 @@ const MenuItem = React.memo(({ item }: { item: MenuItem }) => (
         href={item.href}
         className="block select-none space-y-1 rounded-md p-company-lg-24 leading-none no-underline outline-none transition-colors hover:bg-[var(--company-litest-gray)] hover:text-[var(--company-primary-royalBlue)] focus:bg-[var(--company-litest-gray)] focus:text-[var(--company-primary-royalBlue)]"
       >
-        <div className={`${text.Navtext} font-medium`}>{item.title}</div>
+        <div className={`${text.labelHeadingText} font-medium`}>{item.title}</div>
         <p
           className={`${text.cardBodytextlight} font-light text-[var(--company-mid-gray)]`}
         >
@@ -51,7 +51,7 @@ const MenuSection = React.memo(
     <NavigationMenuItem>
       <NavigationMenuTrigger
         className={`${navigationMenuTriggerStyle()} ${
-          text.Navtext
+          text.labelHeadingText
         } text-[var(--company-blue-black)] hover:text-[var(--company-primary-royalBlue)]`}
       >
         {section.title}
