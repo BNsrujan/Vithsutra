@@ -11,7 +11,6 @@ export default function NotFound() {
       <p className="mt-2 text-gray-600 max-w-md">
         Sorry, the page you’re looking for doesn’t exist or has been moved.
       </p>
-
       <Link
         href="/"
         className="mt-6 inline-flex items-center gap-2 px-6 py-4 font-bold text-white bg-company-primary-royalBlue rounded-md hover:bg-company-primary-royalBlue transition-colors"

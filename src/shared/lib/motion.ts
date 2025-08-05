@@ -107,24 +107,7 @@ export const gridItem: Variants = {
   animate: { opacity: 1, scale: 1 },
 };
 
-// Bento grid item animations
-export const bentoItem: Variants = {
-  initial: { opacity: 0, y: 20 },
-  whileInView: { opacity: 1, y: 0 },
-};
 
-// Navigation menu animations
-export const navigationMenu: Variants = {
-  initial: { opacity: 0, y: -10 },
-  animate: { opacity: 1, y: 0 },
-  exit: { opacity: 0, y: -10 },
-};
-
-// Testimonial card animations
-export const testimonialCard: Variants = {
-  initial: { opacity: 0, x: -20 },
-  whileInView: { opacity: 1, x: 0, transition: { duration: 0.5 } },
-};
 
 // Hero section animations
 export const heroContent: Variants = {
@@ -137,15 +120,7 @@ export const heroContent: Variants = {
   },
 };
 
-// Feature card animations
-export const featureCard: Variants = {
-  initial: { opacity: 0, y: 30 },
-  whileInView: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.6, ease: [0.21, 0.47, 0.32, 0.98] },
-  },
-};
+
 
 // Case study card animations
 export const caseStudyCard: Variants = {
@@ -153,11 +128,6 @@ export const caseStudyCard: Variants = {
   whileInView: { opacity: 1, y: 0 },
 };
 
-// Partner logo animations
-export const partnerLogo: Variants = {
-  initial: { opacity: 0 },
-  whileInView: { opacity: 1 },
-};
 
 // Form field animations
 export const formField: Variants = {
@@ -166,12 +136,7 @@ export const formField: Variants = {
   exit: { opacity: 0, x: 20 },
 };
 
-// Button animations
-export const buttonHover: Variants = {
-  initial: { scale: 1 },
-  whileHover: { scale: 1.05 },
-  whileTap: { scale: 0.95 },
-};
+
 
 // Image hover animations
 export const imageHover: Variants = {
@@ -185,30 +150,5 @@ export const textReveal: Variants = {
   whileInView: { opacity: 1, y: 0 },
 };
 
-// Section title animations
-export const sectionTitle: Variants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      type: "spring",
-      stiffness: 100,
-      duration: 0.5,
-      delay: 0.2,
-    },
-  },
-};
 
-// List item animations
-export const listItem: Variants = {
-  initial: { opacity: 0, x: -20 },
-  whileInView: { opacity: 1, x: 0, transition: { duration: 0.3 } },
-};
 
-// Page transition animations
-export const pageTransition: Variants = {
-  initial: { opacity: 0 },
-  animate: { opacity: 1, transition: { duration: 0.3 } },
-  exit: { opacity: 0, transition: { duration: 0.3 } },
-};
