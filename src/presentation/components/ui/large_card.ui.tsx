@@ -69,8 +69,8 @@ function Largecard({
           quality={100}
         />
         <div
-          className={`absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent transition-all duration-700 ease-in-out ${
-            isTouched ? "opacity-90" : "opacity-70 group-hover:opacity-90"
+          className={`absolute inset-0 bg-gradient-to-t from-black/60 via-black/50 to-transparent transition-all duration-700 ease-in-out ${
+            isTouched ? "opacity-90" : "group-hover:opacity-90"
           }`}
         />
         <div className="absolute inset-0 p-4 sm:p-8 md:p-company-lg-24 flex flex-col justify-end w-full">
@@ -87,7 +87,7 @@ function Largecard({
               {feature.title}
             </h3>
             <p
-              className={`${text.cardBodytext} hidden md:blcok text-clip h-4 md:h-full w-80 sm:w-full md:w-full text-company-light-gray transition-all duration-700 ease-in-out ${
+              className={`${text.cardBodytext} hidden md:block text-clip h-4 md:h-full w-80 sm:w-full md:w-full text-company-light-gray transition-all duration-700 ease-in-out ${
                 isTouched ? "text-company-white-text" : "group-hover:text-company-white-text"
               }`}
             >

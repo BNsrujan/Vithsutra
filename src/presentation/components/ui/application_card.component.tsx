@@ -14,7 +14,7 @@ import { motion } from "motion/react";
 import Image, { ImageProps } from "next/image";
 import { useOutsideClick } from "@/application/hooks/use-outside-click";
 import { Button } from "./button.ui";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import ArrowLeftRight from "./arrow_left_rigth.ui";
 import { text } from "@/shared/lib/typography";
 
 interface CarouselProps {
@@ -134,29 +134,12 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
         </div>
         
         {/* Navigation buttons - responsive positioning */}
-        <div className="absolute -bottom-16 sm:-bottom-12 right-12 sm:right-16 md:right-20 flex gap-2 z-50">
-          <Button
-            variant="outline"
-            size="icon"
-            onClick={scrollLeft}
-            disabled={!canScrollLeft}
-            className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white/90 border-company-primary-royalBlue/20 hover:bg-company-primary-royalBlue/20 text-gray-600 shadow-lg backdrop-blur-sm transition-all duration-200"
-          >
-            <ChevronLeft className="w-4 h-4 sm:w-5 sm:h-5" />
-            <span className="sr-only">Previous</span>
-          </Button>
-          
-          <Button
-            variant="outline"
-            size="icon"
-            onClick={scrollRight}
-            disabled={!canScrollRight}
-            className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white/90 border-company-primary-royalBlue/20 hover:bg-company-primary-royalBlue/20 text-gray-600 shadow-lg backdrop-blur-sm transition-all duration-200"
-          >
-            <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5" />
-            <span className="sr-only">Next</span>
-          </Button>
-        </div>
+        <ArrowLeftRight 
+          scrollLeft={scrollLeft} 
+          scrollRight={scrollRight} 
+          canScrollLeft={canScrollLeft}
+          canScrollRight={canScrollRight}
+        />
       </div>
     </CarouselContext.Provider>
   );

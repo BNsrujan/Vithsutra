@@ -15,7 +15,7 @@ export default function Faq({ FaQ }: {FaQ: Product["FaQ"] }
 ) {
   return (
     <div>
-        <section className=" px-4 md:px-0 flex justify-center">
+        <section className="h-screen w-full px-4 md:px-0 flex justify-center items-center">
         <div className="max-w-company-section-width w-full">
           <Heading heading="HAVE ANY Q&A" Display="Your Query" />
           <Accordion type="single" className="pt-company-xl-48 " defaultValue={FaQ[0]?.question  || undefined} collapsible>

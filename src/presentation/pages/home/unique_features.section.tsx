@@ -79,7 +79,7 @@ export default function UniqueFeatures() {
                 title="24/7 Support"
                 description="Round-the-clock assistance ensuring your business never stops. Our dedicated team is always ready to help you succeed."
                 delay={0.2}
-                image="/home/what_makes_us_unique/image 50.svg"
+                image="/home/what_makes_us_unique/image50.svg"
               />
             </div>
             <div className="w-full md:w-4/12 h-[50vh]">
@@ -87,7 +87,7 @@ export default function UniqueFeatures() {
                 title="Latest Technology"
                 description="Stay ahead with cutting-edge solutions and innovative approaches to modern business challenges."
                 delay={0.4}
-                image="/home/what_makes_us_unique/image 48.svg"
+                image="/home/what_makes_us_unique/image48.svg"
               />
             </div>
           </div>
@@ -98,7 +98,7 @@ export default function UniqueFeatures() {
                 title="Cloud-Based Service"
                 description="Access your data and services from anywhere, anytime. Secure, scalable, and reliable cloud infrastructure."
                 delay={0.6}
-                image="/home/what_makes_us_unique/image 49.svg"
+                image="/home/what_makes_us_unique/image49.png"
               />
             </div>
             <div className="w-full md:w-7/12 h-[50vh]">
@@ -106,7 +106,8 @@ export default function UniqueFeatures() {
                 title="Customizable Software"
                 description="Tailored solutions that adapt to your specific needs. We build software that grows with your business."
                 delay={0.8}
-                image="/home/what_makes_us_unique/image 51.svg"
+                image="/home/what_makes_us_unique/image51.png
+                "
               />
             </div>
           </div>

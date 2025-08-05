@@ -71,19 +71,19 @@ export const rfidProduct: Product = {
     ],
     applications: [
       {
-        image: "/public/industry/fmog.avif",
+        image: "/industry/fmog.avif",
         industry: "Hostels (Schools & Colleges)",
         description:
           "Student communication to parents/guardians using a secure calling system without mobile phones or coins. RFID-based prepaid calling eliminates the need for tokens or physical money.",
       },
       {
-        image: "/public/industry/fmog.avif",
+        image: "/industry/fmog.avif",
         industry: "Industries, Mining Sites & Worker Quarters",
         description:
           "In remote industrial and mining regions, unstable network coverage and varying SIM providers make communication difficult. Mobile phones act as a distraction, reducing productivity, discipline, and safety.",
       },
       {
-        image: "/public/industry/fmog.avif",
+        image: "/industry/fmog.avif",
         industry: "High-Security Zones (Defence, Government, R&D Labs)",
         description:
           "Used in Indian Army Bases, DRDO Labs, and research facilities to allow only authorized personnel to initiate secure calls. RFID authentication ensures identity verification and prevents unauthorized communication.",
