@@ -12,7 +12,6 @@ import {
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from "@/presentation/components/ui/nav_menu.ui";
-import Image from "next/image";
 import { Menu, X } from "lucide-react";
 import { text } from "@/shared/lib/typography";
 import {

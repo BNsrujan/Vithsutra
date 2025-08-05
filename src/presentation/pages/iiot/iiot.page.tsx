@@ -14,7 +14,7 @@ export default function IIOTPages() {
 
   return (
     <div>
-      <section className=" flex justify-center ">
+      <section className=" flex flex-col justify-center ">
         {/* Hero Section */}
         <section className="relative min-h-[80vh] lg:h-[93vh] w-full bg-gradient-to-b from-blue-100 to-company-white  ">
           <div className="container mx-auto px-4 flex flex-wrap-reverse md:items-center justify-start w-full h-full py-20 gap-company-xl-48 md:gap-0">
@@ -202,6 +202,7 @@ export default function IIOTPages() {
           </section>
         </div>
       </section>
+      
     </div>
   );
 }

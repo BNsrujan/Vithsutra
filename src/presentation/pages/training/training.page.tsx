@@ -13,7 +13,6 @@ export default function Training() {
       <BrochureDownload/>
       <Faq  FaQ={faqs} />
       <TestimonialsCarousel testimonials={testimonials} />
-    
     </div>
   );
 }

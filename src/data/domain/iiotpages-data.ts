@@ -122,7 +122,7 @@ export const IIOT = {
   ],
   testimonials: [
     {
-      id: 1,
+      id: "1",
       name: "Nikhil Jadhav",
       title: "Project Supervisor",
       company: "AquaSure Infra Pvt. Ltd., Bengaluru",
@@ -133,7 +133,7 @@ export const IIOT = {
       avatar: "",
     },
     {
-      id: 2,
+      id: "2",
       name: "Farhan Khan",
       title: "Maintenance Head",
       company: "CoreFuel Energy Ltd., Mumbai",

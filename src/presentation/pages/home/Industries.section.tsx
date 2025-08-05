@@ -13,7 +13,7 @@ export default function IndustriesSection() {
   return (
     <div className="max-w-company-section-width  py-4 w-full">
       <motion.div 
-        className="max-w-company-section-width mx-auto"
+        className="max-w-company-section-width mx-auto pb-company-xl-48"
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"

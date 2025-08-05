@@ -91,7 +91,7 @@ export const rfidProduct: Product = {
     ],
     testimonials: [
       {
-        id: 1,
+        id: "1",
         name: "Ragavendra  Shetty",
         title: "Hostel Manager",
         company: "Ski-line Boys Hostel, Mysore",
@@ -100,7 +100,7 @@ export const rfidProduct: Product = {
         avatar: "/Products/rfid-tel/testimonial_profilephoto/image_1.png",
       },
       {
-        id: 2,
+        id: "2",
         name: "Surjeet Yadav",
         title: "Site Operations Head",
         company: "Mahadev Mining Corporation, Jharkhand",

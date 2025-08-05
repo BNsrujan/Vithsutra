@@ -18,7 +18,6 @@ export default function ProductsSection({
         <div className="max-w-company-section-width mx-auto px-4 md:px-0">
           <Heading heading="BEST SELLING PRODUCT" Display="Other Products" />
           <motion.div
-           
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"

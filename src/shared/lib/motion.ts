@@ -83,27 +83,9 @@ export const fadeInDown: Variants = {
   exit: { opacity: 0, y: -20 },
 };
 
-// Scale in
-export const scaleIn: Variants = {
-  initial: { opacity: 0, scale: 0.9 },
-  animate: { opacity: 1, scale: 1 },
-  exit: { opacity: 0, scale: 0.9 },
-};
 
-// Stagger children
-export const staggerContainer: Variants = {
-  animate: {
-    transition: {
-      staggerChildren: 0.1,
-    },
-  },
-};
 
-// Fade in with delay
-export const fadeInWithDelay = (delay: number = 0): Variants => ({
-  initial: { opacity: 0, y: 20 },
-  animate: { opacity: 1, y: 0, transition: { duration: 0.5, delay } },
-});
+
 
 // Modal animations
 export const modalOverlay: Variants = {
@@ -118,11 +100,6 @@ export const modalContent: Variants = {
   exit: { scale: 0.95, opacity: 0 },
 };
 
-// Card hover animations
-export const cardHover: Variants = {
-  initial: { opacity: 0, y: 30 },
-  whileInView: { opacity: 1, y: 0, transition: { duration: 0.5 } },
-};
 
 // Grid item animations
 export const gridItem: Variants = {

@@ -57,7 +57,7 @@ export const roboticsWorkshop = {
     ],
     testimonials: [
       {
-        id: 1,
+        id: "1",
         name: "Dr. Nalini Rao",
         title: "Managing Trustee",
         company: "Vidya Vihar Educational Trust, Maharashtra",
@@ -65,7 +65,7 @@ export const roboticsWorkshop = {
         avatar: "",
       },
       {
-        id: 2,
+        id: "2",
         name: "Mr. Suresh Deshmukh",
         title: "",
         company: "",

@@ -13,7 +13,6 @@ import { cn } from "@/shared/lib/utils";
 import { motion } from "motion/react";
 import Image, { ImageProps } from "next/image";
 import { useOutsideClick } from "@/application/hooks/use-outside-click";
-import { Button } from "./button.ui";
 import ArrowLeftRight from "./arrow_left_rigth.ui";
 import { text } from "@/shared/lib/typography";
 
@@ -99,7 +98,7 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
     >
       <div className="relative w-full h-full">
         <div
-          className="flex w-full overflow-x-scroll overscroll-x-auto scroll-smooth py-10 [scrollbar-width:none] md:py-20"
+          className="  flex w-full overflow-x-scroll overscroll-x-auto scroll-smooth  [scrollbar-width:none] py-10"
           ref={carouselRef}
           onScroll={checkScrollability}
         >
@@ -131,15 +130,17 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
               </motion.div>
             ))}
           </div>
-        </div>
-        
+
         {/* Navigation buttons - responsive positioning */}
-        <ArrowLeftRight 
-          scrollLeft={scrollLeft} 
-          scrollRight={scrollRight} 
-          canScrollLeft={canScrollLeft}
-          canScrollRight={canScrollRight}
-        />
+        <div className="absolute sm:bottom-20 sm:right-0 left flex gap-2 z-50">
+          <ArrowLeftRight
+            scrollLeft={scrollLeft}
+            scrollRight={scrollRight}
+            canScrollLeft={canScrollLeft}
+            canScrollRight={canScrollRight}
+            />
+        </div>
+            </div>
       </div>
     </CarouselContext.Provider>
   );

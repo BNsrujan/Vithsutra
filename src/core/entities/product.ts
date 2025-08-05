@@ -45,7 +45,7 @@ export interface ProductSpecification {
 }
 
 export interface Testimonial {
-  id: number;
+  id: string;
   name: string;
   title: string;
   company: string;

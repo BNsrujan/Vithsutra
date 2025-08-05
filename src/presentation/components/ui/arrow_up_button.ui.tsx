@@ -18,12 +18,12 @@ export default function ArrowButtons({
       className={`absolute z-50 right-4 sm:right-6 md:right-8 bottom-4 sm:bottom-6 md:bottom-8 bg-company-white rounded-full p-5 md:p-8 md:w-16 transition-all duration-700 ease-in-out  text-company-black group-hover:bg-company-primary-royalBlue group-hover:text-company-white-text ${className}`}
     >
       <ArrowUpRightIcon
-        className={`  w-icon-width ${
+        className={`  w-icon-width h-icon-height ${
           isTouched
-            ? "text-company-white group-hover:text-company-primary-royalBlue"
+            ? "text-company-white"
             : "text-company-text-gray group-hover:text-company-white-text"
         } transition-all duration-700 ease-in-out`}
-        strokeWidth={2}
+        strokeWidth={2.5}
         
       />
     </Button>

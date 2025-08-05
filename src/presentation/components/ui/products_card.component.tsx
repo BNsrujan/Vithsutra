@@ -11,10 +11,9 @@ import { motion } from "motion/react";
 import Image, { ImageProps } from "next/image";
 import { useOutsideClick } from "@/application/hooks/use-outside-click";
 import { text } from "@/shared/lib/typography";
-import {  ChevronLeft, ChevronRight } from "lucide-react";
 import { useRouter } from "next/navigation";
-import { Button } from "./button.ui";
 import ArrowButtons from "./arrow_up_button.ui";
+import ArrowLeftRight from "./arrow_left_rigth.ui";
 
 interface CarouselProps {
   items: React.ReactNode[];
@@ -135,28 +134,12 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
           </div>
         </div>
 
-        <div className="mr-10 flex justify-end gap-2">
-          <Button
-            variant="outline"
-            size="icon"
-            onClick={scrollLeft}
-            disabled={!canScrollLeft}
-            className="w-12 h-12 rounded-full 'bg-company-primary-royalBlue/10 border-company-primary-royalBlue/20 hover:bg-company-primary-royalBlue/20' text-gray-600"
-          >
-            <ChevronLeft className="w-5 h-5" />
-            <span className="sr-only">Previous application</span>
-          </Button>
-          <Button
-            variant="outline"
-            size="icon"
-            onClick={scrollRight}
-            disabled={!canScrollRight}
-            className="w-12 h-12 rounded-full bg-company-primary-royalBlue/10 border-company-primary-royalBlue/20 hover:bg-company-primary-royalBlue-20 text-gray-600"
-          >
-            <ChevronRight className="w-5 h-5" />
-            <span className="sr-only">Next application</span>
-          </Button>
-        </div>
+      <ArrowLeftRight 
+        scrollLeft={scrollLeft} 
+        scrollRight={scrollRight} 
+        canScrollLeft={canScrollLeft}
+        canScrollRight={canScrollRight}
+      />
       </div>
     </CarouselContext.Provider>
   );

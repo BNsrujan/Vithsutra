@@ -95,7 +95,7 @@ export const hydroponicProduct: Product = {
     tecnicalimage: "/Products/vithnet/vithnet_device_2.svg",
     testimonials: [
       {
-        id: 1,
+        id: "1",
         name: "Rahul Gupta,",
         title: "Director",
         company: "Aerotech Hydroponics Lab ",
@@ -104,7 +104,7 @@ export const hydroponicProduct: Product = {
         avatar: "/Products/vithnet/testimonal_profile/image2.png",
       },
       {
-        id: 2,
+        id: "2",
         name: "Anita Deshmukh",
         title: "Owner",
         company: "GreenSprout Hydro Farms",

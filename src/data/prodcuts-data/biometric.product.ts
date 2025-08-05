@@ -91,7 +91,7 @@ export const biometricProduct: Product = {
     tecnicalimage: "/Products/biometric-product/main_photo2.svg",
     testimonials: [
       {
-        id: 1,
+        id: "1",
         avatar: "/Products/biometric-product/testimonialprofilephoto/image_2.png",
         name: "Amitabh Rao",
         title: "College Operations Manager",
@@ -100,7 +100,7 @@ export const biometricProduct: Product = {
           "Implementing VithSutra’s Biometric System in our engineering college has been a game-changer. Our students now mark attendance through fingerprint scans, replacing the old, time-consuming paper-based method. It has reduced manual errors, saved faculty time, and improved overall efficiency. The deployment was smooth, and the system has been performing consistently across all departments.",
       },
       {
-        id: 2,
+        id: "2",
         avatar:
           "/Products/biometric-product/testimonialprofilephoto/images_1.png",
         name: "Dinesh Rao",

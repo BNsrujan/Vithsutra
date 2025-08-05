@@ -134,7 +134,8 @@ export const faqs = [
     },
   ];
 
- export  const testimonials = [
+
+export  const testimonials = [
 {
     id: "1",
     avatar: "/images/testimonials/testimonial-1.jpg",
@@ -167,5 +168,4 @@ export const faqs = [
     company: "Global Manufacturing Co.",
     quote: "The advanced model helped me bridge the gap between theoretical knowledge and practical industrial applications. Excellent instructors!"
   }
-  
-  ];
+];
