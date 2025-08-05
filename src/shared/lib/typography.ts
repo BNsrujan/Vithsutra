@@ -7,7 +7,7 @@
 const text = {
   // 16px, 22px, 24px, 28px
   logo:
-  "text-[1rem] sm:text-[1.375rem] md:text-[1.5rem] lg:text-[1.75rem] leading-[1em] font-semibold text-wrap ",
+  "text-[1.75rem] lg:text-[1.75rem] leading-[1em] font-semibold text-wrap ",
 
   // 96px, 140px, 90px, 100px, 100px
   Displaytext:
@@ -35,15 +35,15 @@ const text = {
 
   // 16px, 22px, 24px, 28px
   Extratext:
-    "text-[1rem] sm:text-[1.375rem] md:text-[1.5rem] lg:text-[1.75rem] leading-[1.6em] font-light text-wrap",
+    "text-[1rem] sm:text-[1.375rem] md:text-[1.5rem] lg:text-[1.5rem] leading-[1.6em] font-light text-wrap",
 
   // 11px, 16px, 17px, max-w: 270px, 400px
   Sectionbodytexts:
     "text-[0.6875rem] sm:text-[1rem] md:text-[1.0625rem] leading-[1.3] tracking font-normal max-w-[16.875rem] sm:max-w-[25rem] md:max-w-full text-wrap",
 
-  // 24px, 36px, 42px, 48px
+  // 24px, 36px, 42px
   Sectionprefixtext:
-    "text-[1.5rem] sm:text-[2.25rem] md:text-[2.625rem] lg:text-[3rem] leading-[1.1] tracking-tight font-semibold",
+    "text-[1.5rem] sm:text-[2.25rem] md:text-[2.625rem]  leading-[1.1] tracking-tight font-semibold",
 
   // 24px, 36px, 42px, 48px
   SectionHeader:
@@ -59,23 +59,19 @@ const text = {
 
   // 14px, 18px, 18px, 16px
   cardBodytext:
-    "text-[1.1rem] sm:text-[1.425rem] md:text-[1rem] lg:text-[1rem] leading-[1.1] md:leading-[1.3] tracking-[0]  font-medium",
+    "text-[1.1rem] sm:text-[1.425rem] md:text-[1rem] lg:text-[1rem]   font-regular ",
 
   // 14px, 18px, 18px, 16px
   cardBodytextlight:
     "text-[0.875rem] sm:text-[1.125rem] md:text-[1.125rem] lg:text-[1rem] leading-[1.1] md:leading-[1.3] tracking-[0] font-light text-wrap",
 
-  // 14px, 18px, 16px, 16px, leading: 0.9–1.3, width: 270px
-  cardBodytextwrape:
-    "text-[0.875rem] sm:text-[1.125rem] md:text-[1rem] lg:text-[1rem] leading-[0.9] md:leading-[1.3] tracking-[0] font-semibold w-[16.875rem] ... truncate",
-
-  // 10px, 12px, 16px
+  // 12px, 16px
   labelHeadingText:
-    "text-[0.625rem] sm:text-[0.75rem] md:text-[1rem] font-semibold font-[500] text-wrap",
+    "text-[0.875rem] md:text-[1rem] font-semibold font-[500] text-wrap",
 
-  // 10px, 12px, 16px, tracking: 0.8em → 0.8em, 0.01em
+  // 12px, 16px, tracking: 0.8em → 0.8em, 0.01em
   labelText:
-    "text-[0.75rem]  md:text-[0.875rem] leading-[1em] tracking-[1.1] md:tracking-[0.01em] font-regular ",
+    "text-[0.875rem] leading-[1.3em] tracking-[1.1] md:tracking-[0.01em] font-regular ",
 
   // 12px, 13px, 14px, tracking: 0.15px–0.22px → rems
   Buttontext:

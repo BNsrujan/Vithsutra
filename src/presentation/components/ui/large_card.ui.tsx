@@ -87,7 +87,7 @@ function Largecard({
               {feature.title}
             </h3>
             <p
-              className={`${text.cardBodytextwrape} text-clip h-4 md:h-full w-80 sm:w-full md:w-full text-company-light-gray transition-all duration-700 ease-in-out ${
+              className={`${text.cardBodytext} hidden md:blcok text-clip h-4 md:h-full w-80 sm:w-full md:w-full text-company-light-gray transition-all duration-700 ease-in-out ${
                 isTouched ? "text-company-white-text" : "group-hover:text-company-white-text"
               }`}
             >

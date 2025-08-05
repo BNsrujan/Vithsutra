@@ -226,7 +226,7 @@ export const Card = ({
         <div className=" absolute bottom-0 left-1 z-40 p-company-lg-24">
           <motion.p
             layoutId={layout ? `category-${card.category}` : undefined}
-            className={`${text.cardBodytext} text-left text-company-black/70  transition-all duration-700 ease-in-out group-hover:text-company-black`}
+            className={`${text.cardBodytextlight} text-left text-company-black/70  transition-all duration-700 ease-in-out group-hover:text-company-black`}
           >
             {card.category}
           </motion.p>
@@ -243,7 +243,7 @@ export const Card = ({
           fill
           className="absolute inset-0 z-10   object-contain transition-all duration-700 ease-in-out group-hover:scale-105"
         />
-        <div className="absolute  inset-y-0  right-16 md:right-3  z-40">
+        <div className="absolute  inset-y-0  right-2 md:right-3  z-40">
           <ArrowButtons isTouched={isTouched} />
         </div>
       </motion.button>

@@ -168,7 +168,7 @@ export function Navbar() {
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
         <div
-          className={`mobile-menu md:hidden fixed  w-full right-0 left-auto  h-[calc(100vh-64px)]  transition-transform duration-300 ${
+          className={`mobile-menu md:hidden fixed bg-white  w-full right-0 left-auto  h-[calc(100vh-64px)]  transition-transform duration-300 ${
             isMobileMenuOpen ? "translate-x-0" : "translate-x-full"
           }`}
         >

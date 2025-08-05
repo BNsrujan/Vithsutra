@@ -62,7 +62,7 @@ export default function Footer() {
             <div className=" space-y-company-xs-8">
               <LogoWithName/>
               <p
-                className={` ${text.labelHeadingText} text-company-gray-text font-semibold w-[400px]`}
+                className={` ${text.labelHeadingText} text-company-gray-text font-semibold w-[330px] md:w-[400px]`}
               >
                 Empowering industries with innovative automation solutions and
                 cutting-edge technology.

@@ -57,10 +57,10 @@ const ProcessStepCard: React.FC<ProcessStepCardProps> = ({
       />
     </div>
     <div className="bottom-0 flex flex-col   justify-center  items-start my-auto   pt-company-xs-8  w-full  ">
-      <h3 className={` ${text.cardHeadingsmall}text-lg font-semibold  text-start  `}>
+      <h3 className={` ${text.cardBodytext} text-start  `}>
         {title}
       </h3>
-      <p className={`${text.cardBodytextlight}text-gray-600  pt-company-xs-8 `}>{description}</p>
+      <p className={`${text.cardBodytextlight}text-gray-600`}>{description}</p>
     </div>
     {showArrow && (
       <div className="hidden md:block absolute right-[-72px] top-1/2 -translate-y-1/2">

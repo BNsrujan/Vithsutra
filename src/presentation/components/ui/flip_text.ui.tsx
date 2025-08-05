@@ -24,7 +24,7 @@ export default function FlipText() {
   }, []);
 
   return (
-    <div className="relative flex  justify-center w-full  content-center    ">
+    <div className="relative flex justify-center content-center w-full">
       <AnimatePresence mode="wait">
         <motion.div
           key={index}

@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 
-function backgroundimagelogo() {
+function Backgroundimagelogo() {
   return (
     <div>
       {" "}
@@ -17,4 +17,4 @@ function backgroundimagelogo() {
   );
 }
 
-export default backgroundimagelogo;
+export default Backgroundimagelogo;
