@@ -7,13 +7,11 @@ import { text } from "@/shared/lib/typography";
 import { motion } from "framer-motion";
 import { containerVariants, fadeInUp, fadeInDown } from "@/shared/lib/motion";
 import Heading from "@/presentation/components/ui/heading.ui";
-import { useRouter } from "next/navigation";
 import { ProcessStepCard } from "@/presentation/components/productstemplate/process_step_card.section";
 import { FeatuerCard } from "@/presentation/components/productstemplate/feature.section";
-import router from "next/navigation";
+import { useRouter } from "next/navigation";
 
 export default function IIOTPages() {
-  const router = useRouter();
 
   return (
     <div className="flex flex-col justify-center">
@@ -183,6 +181,7 @@ export default function IIOTPages() {
 }
 
 export function HeroSectionIIot() {
+  const router = useRouter();
   return (
     <section className="relative min-h-[80vh] lg:h-[93vh] w-full bg-gradient-to-b from-blue-100 to-company-white  ">
       <div className="container mx-auto px-4 flex flex-wrap-reverse md:items-center justify-start w-full h-full py-20 gap-company-xl-48 md:gap-0">
