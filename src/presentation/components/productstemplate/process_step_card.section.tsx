@@ -40,7 +40,7 @@ export default function Howitworks ({howItWorks}:{howItWorks:Product["howItWorks
 }
 
 
-const ProcessStepCard: React.FC<ProcessStepCardProps> = ({
+export const ProcessStepCard: React.FC<ProcessStepCardProps> = ({
   image,
   title,
   description,

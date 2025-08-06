@@ -1,57 +1,61 @@
-
-
 export const IIOT = {
-  whychose :[
-
+  whychose: [
     {
-      image:"/industry/iiot/whychossesiiot/improve.png",
-      title:"Improve OEE",
+      image: "/industry/iiot/whychossesiiot/improve.png",
+      title: "Improve OEE",
     },
     {
-      title:"maximize uptime and productivity ",
-      image:"/industry/iiot/whychossesiiot/maxismis.png",
+      title: "maximize uptime and productivity ",
+      image: "/industry/iiot/whychossesiiot/maxismis.png",
     },
     {
-      title:"Enhance Quality",
-      image:"/industry/iiot/whychossesiiot/enhase_ity.png",
+      title: "Enhance Quality",
+      image: "/industry/iiot/whychossesiiot/enhase_ity.png",
     },
     {
-      title:"Reduce Costs",
-      image:"/industry/iiot/whychossesiiot/reduce.png",
-    }
-
+      title: "Reduce Costs",
+      image: "/industry/iiot/whychossesiiot/reduce.png",
+    },
   ],
   builtinFeature: [
     {
+      image: "/industry/iiot/buitinfeature/seamless.png",
       title: "Seamless Connectivity",
       description:
         "Connect effortlessly with PLCs, VFDs, SCADA systems, and industrial sensors.",
     },
+
     {
+      image: "/industry/iiot/buitinfeature/customerrules.png",
       title: "Custom Rule-Based Alerts",
       description:
         "Trigger SMS or email alerts based on threshold, error, or sensor logic.",
     },
     {
+      image: "/industry/iiot/buitinfeature/liveDashboard.png",
       title: "Live Dashboards",
       description:
         "Visualize KPIs and machine data instantly via intuitive dashboards.",
     },
     {
+      image: "/industry/iiot/buitinfeature/high-speeddata.png ",
       title: "High-Speed Data Acquisition",
       description:
         "Capture real-time equipment data at sampling rates up to 1 kHz.",
     },
     {
+      image: "/industry/iiot/buitinfeature/erpcrmintegration.png",
       title: "ERP/CRM Integration",
       description:
         "Sync equipment data directly with your ERP, BI tools, or CRM platforms.",
     },
     {
+      image: "/industry/iiot/buitinfeature/scalableArchitecture.png",
       title: "Scalable Architecture",
       description: "Deploy from one unit to full-factory monitoring with ease.",
     },
   ],
+  
   title: "Technical Specifications",
   subtitle:
     "Detailed technical information for system integration and deployment",
@@ -182,30 +186,30 @@ export const IIOT = {
         "Automate pump control, track tank levels, detect leaks, and optimize water flow using real-time sensor data.",
     },
   ],
-  howItWorks: {
-    heading: "How VithSutra's IIoT Automation Works",
-    subheading: "Real-time data. Smarter decisions. Seamless automation.",
-    steps: [
-      {
-        title: "Seamlessly interface",
-        description:
-          "Seamlessly interface with PLCs, VFDs, and SCADA systems via industrial-grade protocols.",
-      },
-      {
-        title: "Capture Real-Time Data",
-        description:
-          "Continuously collect high-speed machine data like status, flow, and temperature up to 1 kHz.",
-      },
-      {
-        title: "Analyze & Generate Alerts",
-        description:
-          "Detect anomalies instantly and trigger intelligent alerts using custom rules and AI models.",
-      },
-      {
-        title: "Visualize & Act",
-        description:
-          "View actionable KPIs and trends on a unified dashboard integrated with your ERP or CRM.",
-      },
-    ],
-  },
+  howItWorks: [
+    {
+      image: "/industry/iiot/howitworks/step1.png",
+      title: "Seamlessly interface",
+      description:
+        "Seamlessly interface with PLCs, VFDs, and SCADA systems via industrial-grade protocols.",
+    },
+    {
+      image: "/industry/iiot/howitworks/step2.png",
+      title: "Capture Real-Time Data",
+      description:
+        "Continuously collect high-speed machine data like status, flow, and temperature up to 1 kHz.",
+    },
+    {
+      image: "/industry/iiot/howitworks/step3.png",
+      title: "Analyze & Generate Alerts",
+      description:
+        "Detect anomalies instantly and trigger intelligent alerts using custom rules and AI models.",
+    },
+    {
+      image: "/industry/iiot/howitworks/step4.png",
+      title: "Visualize & Act",
+      description:
+        "View actionable KPIs and trends on a unified dashboard integrated with your ERP or CRM.",
+    },
+  ],
 };

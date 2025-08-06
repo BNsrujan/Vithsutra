@@ -65,6 +65,7 @@ export const hydroponicProduct: Product = {
         description: "End-to-end encrypted data for safety and compliance.",
       },
     ],
+    
     howItWorks: [
       {
         image: "/Products/vithnet/how_it_work/step1.svg",

@@ -11,7 +11,7 @@ import Technicalspecification from "@/presentation/components/productstemplate/t
 import Cta from "@/presentation/components/cta.section";
 import Gallery from "@/presentation/components/gallery.section";
 import Howitworks from "@/presentation/components/productstemplate/process_step_card.section";
-import FeatureSection from "@/presentation/components/productstemplate/feature.section";
+import {FeatureSection} from "@/presentation/components/productstemplate/feature.section";
 import Hydroponic from "@/presentation/components/productstemplate/hydroponic.section";
 
 interface ProductPageProps {
