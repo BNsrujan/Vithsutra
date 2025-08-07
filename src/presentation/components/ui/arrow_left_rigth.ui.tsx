@@ -22,7 +22,7 @@ export default function ArrowLeftRight({
           size="icon"
           onClick={scrollLeft}
           disabled={!canScrollLeft}
-          className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white/90 border-company-primary-royalBlue/20 hover:bg-company-primary-royalBlue/20 text-gray-600 shadow-lg backdrop-blur-sm transition-all duration-200"
+          className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white/90 border-company-primary-royalBlue/20 hover:bg-company-primary-royalBlue/20 text-gray-600  backdrop-blur-sm transition-all duration-200"
         >
           <ChevronLeft className="w-icon-width h-icon-height " strokeWidth={2.5} />
           <span className="sr-only">Previous</span>
@@ -33,7 +33,7 @@ export default function ArrowLeftRight({
           size="icon"
           onClick={scrollRight}
           disabled={!canScrollRight}
-          className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white/90 border-company-primary-royalBlue/20 hover:bg-company-primary-royalBlue/20 text-gray-600 shadow-lg backdrop-blur-sm transition-all duration-200"
+          className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white/90 border-company-primary-royalBlue/20 hover:bg-company-primary-royalBlue/20 text-gray-600  backdrop-blur-sm transition-all duration-200"
         >
           <ChevronRight className="w-icon-width h-icon-height " strokeWidth={2.5} />
           <span className="sr-only">Next</span>

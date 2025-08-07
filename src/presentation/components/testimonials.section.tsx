@@ -9,7 +9,7 @@ import { text } from "@/shared/lib/typography";
 
 export default function TestimonialsCarousel({ testimonials }: TestimonialsCarouselProps) {
   return (
-    <div id="testimonials" className="py-16 sm:py-24 w-full flex justify-center">
+    <div id="testimonials" className="py-16 sm:py-24 w-full  flex justify-center">
       <section className="px-4 sm:px-6 md:px-8 lg:px-0 w-full max-w-screen-xl mx-auto">
         <Heading heading="TESTIMONIALS" Display="What Our Clients Say" />
 

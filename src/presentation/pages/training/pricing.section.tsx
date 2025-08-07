@@ -6,8 +6,8 @@ import { Puzzle } from "lucide-react";
 import { text } from "@/shared/lib/typography";
 import Heading from "@/presentation/components/ui/heading.ui";
 import { Button } from "@/presentation/components/ui/button.ui";
-import { iconMap } from "@/data/domain/robotics.data";
-import { models } from "@/data/domain/robotics.data";
+import { iconMap } from "@/data/domain/training_page.data";
+import { models } from "@/data/domain/training_page.data";
 
 export default function PricingModels() {
   return (

@@ -26,33 +26,33 @@ export const IIOT = {
     },
 
     {
-      image: "/industry/iiot/buitinfeature/customerrules.png",
+      image: "/industry/iiot/buitinfeature/customerules.png",
       title: "Custom Rule-Based Alerts",
       description:
         "Trigger SMS or email alerts based on threshold, error, or sensor logic.",
     },
     {
-      image: "/industry/iiot/buitinfeature/liveDashboard.png",
+      image: "/industry/iiot/buitinfeature/liveDashboards.png",
       title: "Live Dashboards",
       description:
         "Visualize KPIs and machine data instantly via intuitive dashboards.",
     },
     {
-      image: "/industry/iiot/buitinfeature/high-speeddata.png ",
+      image: "/industry/iiot/buitinfeature/highspeeddata.png",
       title: "High-Speed Data Acquisition",
       description:
         "Capture real-time equipment data at sampling rates up to 1 kHz.",
     },
     {
-      image: "/industry/iiot/buitinfeature/erpcrmintegration.png",
+      image: "/industry/iiot/buitinfeature/erpcrmIntegration.png",
       title: "ERP/CRM Integration",
       description:
-        "Sync equipment data directly with your ERP, BI tools, or CRM platforms.",
+        "Sync equipment data directly with your ERP, BI tools, or CRM platforms",
     },
     {
       image: "/industry/iiot/buitinfeature/scalableArchitecture.png",
       title: "Scalable Architecture",
-      description: "Deploy from one unit to full-factory monitoring with ease.",
+      description: "Deploy from one unit to full-factory monitoring with ease",
     },
   ],
   
@@ -150,41 +150,30 @@ export const IIOT = {
   ],
   applications: [
     {
-      image: "/public/industry/fmog.avif",
+      image: "/industry/iiot/application/foodandbeverage.svg",
       industry: "Food & Beverage Processing",
       description:
         "Monitor critical parameters like temperature, humidity, and machine hygiene in real-time to ensure food safety and compliance with standards.",
     },
     {
-      image: "/public/industry/fmog.avif",
+      image: "/industry/iiot/application/cementandstel.svg",
       industry: "Cement & Steel Industries",
       description:
         "Monitor kiln temperature, vibration, motor current, and conveyor operation to prevent critical failures.",
     },
     {
-      image: "/public/industry/fmog.avif",
-      industry: "Manufacturing",
-      description:
-        "Monitor production lines, reduce unplanned downtime, track OEE (Overall Equipment Effectiveness), and optimize energy usage.",
-    },
-    {
-      image: "/public/industry/fmog.avif",
+      image: "/industry/iiot/application/pharmaceutical.svg",
       industry: "Pharmaceuticals & Chemical Processing",
       description:
         "Monitor critical parameters like temperature, pressure, and flow in real-time to maintain product quality and ensure compliance.",
     },
     {
-      image: "/public/industry/fmog.avif",
+      image: "/industry/iiot/application/powerohow.svg",
       industry: "Power & Energy",
       description:
         "Track performance of turbines, transformers, and solar panels; automate load balancing and predictive maintenance.",
     },
-    {
-      image: "/public/industry/fmog.avif",
-      industry: "Water & Wastewater Management",
-      description:
-        "Automate pump control, track tank levels, detect leaks, and optimize water flow using real-time sensor data.",
-    },
+
   ],
   howItWorks: [
     {

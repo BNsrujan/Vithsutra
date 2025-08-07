@@ -189,7 +189,7 @@ export const Card = ({
     <>
       <motion.button
         layoutId={layout ? `card-${card.title}` : undefined}
-        onClick={() => router.push(card.link)}
+        onClick ={() => router.push(card.link || " ")}
         onTouchStart={handleTouchStart}
         onTouchEnd={handleTouchEnd}
         onMouseEnter={handleTouchStart}
@@ -246,7 +246,7 @@ export const BlurImage = ({
   return (
     <Image
       className={cn(
-        "h-full w-full transition duration-300",
+        "h-full w-full transition duration-300 object-cover",
         isLoading ? "blur-sm" : "blur-0",
         className
       )}

@@ -10,7 +10,7 @@ export function FeatureSection({
   features: Product["features"];
 }) {
   return (
-    <div>
+    <div  className=" ">
       <section className=" px-4 md:px-0  flex py-company-xl-48 flex-col justify-center  ">
         <div className="max-w-company-section-width mx-auto">
           <Heading heading="Why Choose Us" Display="EXPLORE WHAT WE OFFER" />
@@ -23,7 +23,7 @@ export function FeatureSection({
 
 export function FeatuerCard({ features }: { features: Product["features"] }) {
   return (
-    <div className="py-company-xl-48">
+    <div className="py-company-xl-48 max-w-company-section-width mx-auto">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-company-xl-48">
         {features?.map((feature, idx) => {
           const IconComponent = feature.image ? (
