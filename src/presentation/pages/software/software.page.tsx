@@ -4,7 +4,7 @@ import React from 'react';
 import { motion } from 'motion/react';
 import Image from 'next/image';
 import { Button } from '@/presentation/components/ui/button.ui';
-import { text } from '@/shared/lib/typography';
+import { typography } from '@/shared/lib/typography';
 import Heading from '@/presentation/components/ui/heading.ui';
 import { containerVariants, itemVariants, fadeInUp } from '@/shared/lib/motion';
 import { useRouter } from 'next/navigation';
@@ -53,13 +53,13 @@ export default function SoftwaresPage() {
               className="space-y-6 text-center lg:text-left"
             >
               <motion.h1
-                className={`${text.Sectiontexthead} text-3xl md:text-4xl lg:text-5xl`}
+                className={`${typography.display.large} text-3xl md:text-4xl lg:text-5xl`}
                 variants={fadeInUp}
               >
                 Real-time Cloud Based Dashboard
               </motion.h1>
               <motion.p
-                className={`${text.cardBodytext} max-w-2xl mx-auto lg:mx-0 text-base md:text-lg`}
+                className={`${typography.body.large} max-w-2xl mx-auto lg:mx-0 text-base md:text-lg`}
                 variants={fadeInUp}
               >
                 Transform your business operations with our advanced cloud-based dashboard solutions. 
@@ -115,10 +115,10 @@ export default function SoftwaresPage() {
                     <div className="text-4xl">📊</div>
                   </div>
                   <div className="pt-4">
-                    <h3 className={`${text.cardHeadingtext} mb-4`}>
+                    <h3 className={`${typography.headline.large} mb-4`}>
                       {feature.title}
                     </h3>
-                    <p className={`${text.cardBodytext} text-gray-600`}>
+                    <p className={`${typography.body.large} text-gray-600`}>
                       {feature.description}
                     </p>
                   </div>
@@ -149,7 +149,7 @@ export default function SoftwaresPage() {
                 <div className="w-12 h-12 bg-company-primary-royalBlue rounded-lg flex items-center justify-center mb-4">
                   <div className="text-white text-xl">✓</div>
                 </div>
-                <p className={`${text.cardBodytext} text-gray-700`}>{benefit}</p>
+                <p className={`${typography.body.large} text-gray-700`}>{benefit}</p>
               </motion.div>
             ))}
           </motion.div>
@@ -165,17 +165,17 @@ export default function SoftwaresPage() {
             whileInView="visible"
             viewport={{ once: true }}
           >
-            <h2 className={`${text.cardHeadingtext} text-white mb-2`}>
+            <h2 className={`${typography.headline.large} text-white mb-2`}>
               Ready to Transform Your Operations?
             </h2>
-            <p className={`${text.Sectionbodytexts} text-gray-200 mb-10 max-w-2xl mx-auto`}>
+            <p className={`${typography.body.medium} text-gray-200 mb-10 max-w-2xl mx-auto`}>
               Contact us today to learn more about our cloud dashboard solutions and how they can benefit your business.
             </p>
             <Button
               onClick={() => router.push("/contact")}
               className="bg-company-secondary-yello text-black hover:text-black hover:bg-company-secondary-yello/80"
             >
-              <span className={text.Buttontext}>Request a Demo</span>
+              <span className={typography.label.large}>Request a Demo</span>
             </Button>
           </motion.div>
         </div>

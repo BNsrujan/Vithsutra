@@ -1,6 +1,6 @@
 import * as motion from "motion/react-client";
 import Image from "next/image";
-import { text } from "@/shared/lib/typography";
+import { typography } from "@/shared/lib/typography";
 import { useState, useCallback } from "react";
 import ArrowButtons from "./arrow_up_button.ui";
 
@@ -82,12 +82,12 @@ function Largecard({
             className="max-w-[90%] sm:max-w-[80%] md:max-w-[70%] z-10"
           >
             <h3
-              className={`${text.SectionHeader} text-company-white-text transition-all duration-700 ease-in-out`}
+              className={`${typography.headline.large} text-company-white-text transition-all duration-700 ease-in-out`}
             >
               {feature.title}
             </h3>
             <p
-              className={`${text.cardBodytext} hidden md:block text-clip h-4 md:h-full w-80 sm:w-full md:w-full text-company-light-gray transition-all duration-700 ease-in-out ${
+              className={`${typography.body.large} hidden md:block text-clip h-4 md:h-full w-80 sm:w-full md:w-full text-company-light-gray transition-all duration-700 ease-in-out ${
                 isTouched ? "text-company-white-text" : "group-hover:text-company-white-text"
               }`}
             >

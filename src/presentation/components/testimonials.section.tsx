@@ -5,7 +5,7 @@ import { TestimonialsCarouselProps, Testimonial } from "@/core/entities/testimon
 import { cn } from "@/shared/lib/utils";
 import { Marquee } from "@/presentation/components/magicui/marquee.ui";
 import Image from "next/image";
-import { text } from "@/shared/lib/typography";
+import { typography } from "@/shared/lib/typography";
 
 export default function TestimonialsCarousel({ testimonials }: TestimonialsCarouselProps) {
   return (
@@ -52,8 +52,8 @@ const ReviewCard = ({ avatar, name, title, company, quote }: Testimonial) => {
             </span>
           )}
           <div className="flex flex-col">
-            <figcaption className={text.DisplaySupportingtext}>{name}</figcaption>
-            <p className={text.Sectionbodytexts}>
+            <figcaption className={typography.title.large}>{name}</figcaption>
+            <p className={typography.body.medium}>
               {title}, {company}
             </p>
           </div>

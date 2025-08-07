@@ -5,7 +5,7 @@ import * as AccordionPrimitive from "@radix-ui/react-accordion"
 import { ChevronDownIcon } from "lucide-react"
 
 import { cn } from "@/shared/lib/utils"
-import { text } from "@/shared/lib/typography"
+import { typography } from "@/shared/lib/typography"
 
 function Accordion({
   ...props
@@ -57,7 +57,7 @@ function AccordionContent({
   return (
     <AccordionPrimitive.Content
       data-slot="accordion-content"
-      className={`${text.cardBodytext} text-company-black data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down overflow-hidden text-sm`}
+      className={`${typography.body.large} text-company-black data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down overflow-hidden text-sm`}
       {...props}
     >
       <div className={cn("pt-0 pb-4 px-company-lg-24  py-company-lg-24", className)}>{children}</div>

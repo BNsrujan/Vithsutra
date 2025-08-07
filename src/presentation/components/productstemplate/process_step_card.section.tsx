@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import { text } from "@/shared/lib/typography";
+import { typography } from "@/shared/lib/typography";
 import Heading from "../ui/heading.ui";
 import { Product } from "@/core/entities/product";
 
@@ -57,10 +57,10 @@ export const ProcessStepCard: React.FC<ProcessStepCardProps> = ({
       />
     </div>
     <div className="bottom-0 flex flex-col   justify-center  items-start my-auto   pt-company-xs-8  w-full  ">
-      <h3 className={` ${text.cardBodytext} text-start  `}>
+      <h3 className={` ${typography.body.large} text-start  `}>
         {title}
       </h3>
-      <p className={`${text.cardBodytextlight}text-gray-600`}>{description}</p>
+      <p className={`${typography.body.medium} text-gray-600`}>{description}</p>
     </div>
     {showArrow && (
       <div className="hidden md:block absolute right-[-72px] top-1/2 -translate-y-1/2">

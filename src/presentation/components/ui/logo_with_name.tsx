@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { text } from "@/shared/lib/typography";
+import { typography } from "@/shared/lib/typography";
 
 
 export default function  LogoWithName  ()  {
@@ -13,7 +13,7 @@ export default function  LogoWithName  ()  {
             width={60}
             height={60}
           />
-          <h1 className={`vithsutra ${text.logo} ml-company-xs-8  font-bold`}>
+          <h1 className={`vithsutra ${typography.headline.medium} ml-company-xs-8  font-bold`}>
             Vithsutra
           </h1>
         </Link>

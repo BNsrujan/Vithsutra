@@ -2,7 +2,7 @@
 
 import React, { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
-import { text } from "@/shared/lib/typography";
+import { typography } from "@/shared/lib/typography";
 import { containerVariants, itemVariants } from "@/shared/lib/motion";
 import Heading from "./ui/heading.ui";
 
@@ -92,13 +92,13 @@ export default function QuickFacts({ facts }: factsProps) {
                 >
                   <div className="mb-company-sm-12">
                     <span
-                      className={`${text.Sectiontexthead} text-[var(--company-primary-royalBlue)]`}
+                      className={`${typography.display.large} text-[var(--company-primary-royalBlue)]`}
                     >
                       <Counter end={fact.number} suffix={fact.suffix} />
                     </span>
                   </div>
                   <h3
-                    className={`${text.Extratext} text-[var(--company-blue-black)] `}
+                    className={`${typography.body.large} text-[var(--company-blue-black)] `}
                   >
                     {fact.title}
                   </h3>

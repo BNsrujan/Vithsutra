@@ -4,7 +4,7 @@ import { useEffect } from 'react'
 import { Button } from '@/presentation/components/ui/button.ui'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
-import { text } from '@/shared/lib/typography'
+import { typography } from '@/shared/lib/typography'
 
 export default function Error({
   error,
@@ -32,7 +32,7 @@ export default function Error({
         priority
       />
 
-      <h2 className={`${text.cardHeadingsmall} font-bold mb-company-xs-8 text-company-primary-royalBlue`}>Something went wrong!</h2>
+      <h2 className={`${typography.title.large} font-bold mb-company-xs-8 text-company-primary-royalBlue`}>Something went wrong!</h2>
       <p className={`max-w-md mb-6 text-gray-600  `}>
         We&apos;re sorry, an unexpected error has occurred. Please try again or come back later.
       </p>

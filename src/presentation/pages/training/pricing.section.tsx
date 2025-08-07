@@ -3,7 +3,7 @@
 import { IconButton } from "@/presentation/components/ui/icon_hover.ui";
 import { motion } from "motion/react";
 import { Puzzle } from "lucide-react";
-import { text } from "@/shared/lib/typography";
+import { typography } from "@/shared/lib/typography";
 import Heading from "@/presentation/components/ui/heading.ui";
 import { Button } from "@/presentation/components/ui/button.ui";
 import { iconMap } from "@/data/domain/training_page.data";
@@ -37,12 +37,12 @@ export default function PricingModels() {
                   {model.icon}
                 </div>
                 <div className="h-full  ">
-                  <p className={text.cardHeadingsmall + "mb-company-xl-48"}>
+                  <p className={typography.title.large + " mb-company-xl-48"}>
                     {model.title}
                   </p>
                   <p
                     className={
-                      text.Sectionbodytexts + "  text-company-primary-royalBlue"
+                      typography.body.medium + "  text-company-primary-royalBlue"
                     }
                   >
                     {model.subtitle}
@@ -50,7 +50,7 @@ export default function PricingModels() {
                 </div>
               </div>
             </div>
-            <p className={text.cardBodytext + "pt-company-xl-48 text-company-text-gray mb-4 "}>
+            <p className={typography.body.large + " pt-company-xl-48 text-company-text-gray mb-4 "}>
               {model.description}
             </p>
             <hr className=" w-full my-company-lg-24 bg-company-dark-gray" />
@@ -63,7 +63,7 @@ export default function PricingModels() {
                   {iconMap[feature] ?? <IconButton icon={Puzzle}  />}
                   <span
                     className={
-                      text.cardBodytext +
+                      typography.body.large +
                       "  text-company-gray-text group-hover:text-company-primary-royalBlue"
                     }
                   >
@@ -83,11 +83,11 @@ export default function PricingModels() {
       </motion.div>
 
       <section className="text-center py-company-xl-48 space-y-company-xs-8 bg-company-primary-royalBlue rounded-company-section-24 mt-company-lg-24">
-        <h2 className={text.SectionHeader + " text-white"}>
+        <h2 className={typography.headline.large + " text-white"}>
           Ready to Start Your Robotics Journey?
         </h2>
         <p
-          className={text.cardBodytextlight + " text-white/90 pb-company-md-16"}
+          className={typography.body.medium + " text-white/90 pb-company-md-16"}
         >
           Choose your model and begin hands-on learning with industry experts.
         </p>

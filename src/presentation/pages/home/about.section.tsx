@@ -1,6 +1,6 @@
 "use client"
 
-import { text } from "../../../shared/lib/typography";
+import { typography } from "../../../shared/lib/typography";
 import { motion } from "framer-motion";
 import { aboutSection, aboutContent, aboutVideo } from "@/shared/lib/motion";
 import Heading from "@/presentation/components/ui/heading.ui";
@@ -27,7 +27,7 @@ export default function About() {
             />
             
             <motion.p 
-              className={`${text.Extratext} text-[var(--company-mid-gray)]`}
+              className={`${typography.body.large} text-[var(--company-mid-gray)]`}
               variants={aboutContent}
               viewport={{ once: true, margin: "-100px" }}
             >

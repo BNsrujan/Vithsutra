@@ -3,7 +3,7 @@
 import React from "react";
 // import { Carousel, type CarouselItem } from "@/components/ui/apple-cards-carousel";
 import { motion } from "framer-motion";
-import { text } from "@/shared/lib/typography";
+import { typography } from "@/shared/lib/typography";
 import { Button } from "../../components/ui/button.ui";
 import { containerVariants, itemVariants } from "@/shared/lib/motion";
 import Link from "next/link";
@@ -64,13 +64,13 @@ const SectorLayout: React.FC<SectorLayoutProps> = ({ data }) => {
       >
         <div className=" justify-end mx-auto w-full max-w-company-section-width">
           <motion.h1 
-            className={`${text.Sectiontexthead} font-semibold mb-company-md-16 sm:mb-company-lg-24`}
+            className={`${typography.display.large} font-semibold mb-company-md-16 sm:mb-company-lg-24`}
             variants={itemVariants}
           >
             {data.title}
           </motion.h1>
           <motion.p 
-            className={`${text.Extratext} md:w-9/12 text-company-mid-gray`}
+            className={`${typography.body.large} md:w-9/12 text-company-mid-gray`}
             variants={itemVariants}
           >
             {data.description}
@@ -147,7 +147,7 @@ const SectorLayout: React.FC<SectorLayoutProps> = ({ data }) => {
                     custom={index}
                     className="bg-company-blue-white p-company-lg-24 sm:p-company-xl-48 rounded-card"
                   >
-                    <h3 className={`${text.cardHeadingtext} text-company-gray mb-company-md-16 sm:mb-company-lg-24`}>
+                    <h3 className={`${typography.headline.large} text-company-gray mb-company-md-16 sm:mb-company-lg-24`}>
                       {app}
                     </h3>
                   </motion.div>
@@ -171,10 +171,10 @@ const SectorLayout: React.FC<SectorLayoutProps> = ({ data }) => {
                         className="w-full h-full object-contain"
                       />
                     </div>
-                    <h3 className={`${text.cardHeadingtext} text-company-gray mb-company-md-16 sm:mb-company-lg-24`}>
+                    <h3 className={`${typography.headline.large} text-company-gray mb-company-md-16 sm:mb-company-lg-24`}>
                       {app.title}
                     </h3>
-                    <p className={`${text.cardBodytextlight} text-company-mid-gray`}>
+                    <p className={`${typography.body.medium} text-company-mid-gray`}>
                       {app.description}
                     </p>
                   </motion.div>
@@ -209,10 +209,10 @@ const SectorLayout: React.FC<SectorLayoutProps> = ({ data }) => {
                 <div className="w-12 h-12 sm:w-16 sm:h-16 mb-4 sm:mb-6">
                   <Image src={solution.icon} alt={solution.title} fill className="w-full h-full object-contain" />
                 </div>
-                <h3 className={`${text.Sectiontexthead} text-company-gray mb-company-md-16 sm:mb-company-lg-24`}>
+                <h3 className={`${typography.display.large} text-company-gray mb-company-md-16 sm:mb-company-lg-24`}>
                   {solution.title}
                 </h3>
-                <p className={`${text.Extratext} text-company-mid-gray`}>
+                <p className={`${typography.body.large} text-company-mid-gray`}>
                   {solution.description}
                 </p>
               </motion.div>
@@ -243,10 +243,10 @@ const SectorLayout: React.FC<SectorLayoutProps> = ({ data }) => {
                 className="bg-company-blue-white p-company-lg-24 sm:p-company-xl-48 rounded-card hover:shadow-md transition-shadow duration-300"
               >
                 <Link href={industry.href} className="block">
-                  <h3 className={`${text.Sectiontexthead} text-company-gray mb-company-md-16 sm:mb-company-lg-24 hover:text-company-primary-royalBlue transition-colors`}>
+                  <h3 className={`${typography.display.large} text-company-gray mb-company-md-16 sm:mb-company-lg-24 hover:text-company-primary-royalBlue transition-colors`}>
                     {industry.title}
                   </h3>
-                  <p className={`${text.Extratext} text-company-mid-gray`}>
+                  <p className={`${typography.body.large} text-company-mid-gray`}>
                     {industry.description}
                   </p>
                 </Link>
@@ -266,13 +266,13 @@ const SectorLayout: React.FC<SectorLayoutProps> = ({ data }) => {
       >
         <div className="mx-auto max-w-company-section-width text-center">
           <motion.h2 
-            className={`${text.Displaytext} text-company-white mb-company-md-16 sm:mb-company-lg-24`}
+            className={`${typography.headline.large} text-company-white mb-company-md-16 sm:mb-company-lg-24`}
             variants={itemVariants}
           >
             Ready to Transform Your Industry?
           </motion.h2>
           <motion.p 
-            className={`${text.Extratext} text-company-white/80 mb-company-lg-24 sm:mb-company-xl-48 max-w-2xl mx-auto`}
+            className={`${typography.body.large} text-company-white/80 mb-company-lg-24 sm:mb-company-xl-48 max-w-2xl mx-auto`}
             variants={itemVariants}
           >
             Let&apos;s discuss how our solutions can help you achieve your goals.

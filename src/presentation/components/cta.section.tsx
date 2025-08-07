@@ -1,6 +1,6 @@
 import { containerVariants } from "@/shared/lib/motion";
 import { motion } from "motion/react";
-import { text } from "@/shared/lib/typography";
+import { typography } from "@/shared/lib/typography";
 import { Button } from "@/presentation/components/ui/button.ui";
 import { useRouter } from "next/navigation";
 import { DialogDemo } from "@/presentation/components/brochure_dialog.component";
@@ -19,12 +19,12 @@ export default function Cta(product: Product) {
             viewport={{ once: true }}
           >
             <h2
-              className={`${text.cardHeadingtext} text-white mb-company-md-16`}
+              className={`${typography.headline.large} text-white mb-company-md-16`}
             >
               Ready to Get Started?
             </h2>
             <p
-              className={`${text.Extratext} text-company-litest-gray  mb-company-md-16 max-w-2xl mx-auto`}
+              className={`${typography.body.large} text-company-litest-gray  mb-company-md-16 max-w-2xl mx-auto`}
             >
               Contact us today to learn more about {product.name} and how it can
               benefit your business.

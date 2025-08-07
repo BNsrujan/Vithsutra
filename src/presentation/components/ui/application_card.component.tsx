@@ -14,7 +14,7 @@ import { motion } from "motion/react";
 import Image, { ImageProps } from "next/image";
 import { useOutsideClick } from "@/application/hooks/use-outside-click";
 import ArrowLeftRight from "./arrow_left_rigth.ui";
-import { text } from "@/shared/lib/typography";
+import { typography } from "@/shared/lib/typography";
 
 interface CarouselProps {
   items: React.ReactElement[];
@@ -198,19 +198,19 @@ export const Card = ({
         <div className="relative z-40 p-company-md-16 md:p-company-md-16">
           <motion.p
             layoutId={layout ? `category-${card.category}` : undefined}
-            className={`${text.cardBodytext} text-left    text-white `}
+            className={`${typography.body.large} text-left    text-white `}
           >
             {card.category}
           </motion.p>
           <motion.p
             layoutId={layout ? `title-${card.title}` : undefined}
-            className={`${text.cardHeadingtext}  max-w text-left text-white `}
+            className={`${typography.headline.large}  max-w text-left text-white `}
           >
             {card.title}
           </motion.p>
           <motion.p
             layoutId={layout ? `title-${card.title}` : undefined}
-            className={`${text.cardBodytext} hidden md:block text-mt-2 max-w text-left font-sans text-1xl font-medium [text-wrap:balance] text-white md:text-1xl`}
+            className={`${typography.body.large} hidden md:block text-mt-2 max-w text-left font-sans text-1xl font-medium [text-wrap:balance] text-white md:text-1xl`}
           >
             {card.content}
           </motion.p>

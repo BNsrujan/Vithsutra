@@ -1,7 +1,7 @@
 import React from "react";
 import Heading from "../ui/heading.ui";
 import Image from "next/image";
-import { text } from "@/shared/lib/typography";
+import { typography } from "@/shared/lib/typography";
 import { Product } from "@/core/entities/product";
 
 export function FeatureSection({
@@ -51,12 +51,12 @@ export function FeatuerCard({ features }: { features: Product["features"] }) {
               </div>
               <div className="flex-1 justify-center h-full">
                 <h3
-                  className={` ${text.cardHeadingsmall} pb-company-xs-8 text-gray-900 `}
+                  className={` ${typography.title.large} pb-company-xs-8 text-gray-900 `}
                 >
                   {feature.title}
                 </h3>
                 <p
-                  className={`${text.cardBodytextlight} text-sm text-gray-600 leading-relaxed`}
+                  className={`${typography.body.medium} text-sm text-gray-600 leading-relaxed`}
                 >
                   {feature.description}
                 </p>

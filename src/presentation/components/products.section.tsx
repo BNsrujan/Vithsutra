@@ -3,7 +3,7 @@ import {motion} from "motion/react"
 import { Carousel } from "./ui/products_card.component"
 import { Product } from "@/core/entities/product";
 import { containerVariants } from "@/shared/lib/motion";
-import { text } from "@/shared/lib/typography";
+import { typography } from "@/shared/lib/typography";
 import { Card } from "./ui/products_card.component";
 
 interface ProductsSectionProps {
@@ -36,7 +36,7 @@ export default function ProductsSection({
                       link: `/products/${p.id}`,
                       content: (
                         <div className="space-y-4">
-                          <p className={`${text.cardBodytext} text-gray-600`}>
+                          <p className={`${typography.body.large} text-gray-600`}>
                             {p.description}
                           </p>
                           <a

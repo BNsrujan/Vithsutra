@@ -1,6 +1,6 @@
 import * as React from "react"
 import { cn } from "@/shared/lib/utils"
-import { text } from "@/shared/lib/typography"
+import { typography } from "@/shared/lib/typography"
 
 function Card({ className, ...props }: React.ComponentProps<"div">) {
   return (
@@ -32,7 +32,7 @@ function CardTitle({ className, ...props }: React.ComponentProps<"div">) {
   return (
     <div
       data-slot="card-title"
-      className={cn(text.cardHeadingtext, className)}
+      className={cn(typography.headline.large, className)}
       {...props}
     />
   )
@@ -42,7 +42,7 @@ function CardDescription({ className, ...props }: React.ComponentProps<"div">) {
   return (
     <div
       data-slot="card-description"
-      className={cn(text.cardBodytext, className)}
+      className={cn(typography.body.large, className)}
       {...props}
     />
   )

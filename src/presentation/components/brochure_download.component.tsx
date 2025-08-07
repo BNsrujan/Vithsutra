@@ -2,7 +2,7 @@
 
 import { Button } from '@/presentation/components/ui/button.ui';
 import { Input } from '@/presentation/components/ui/input.ui';
-import { text } from '@/shared/lib/typography';
+import { typography } from '@/shared/lib/typography';
 import { useState } from 'react';
 import { z } from "zod";
 
@@ -64,7 +64,7 @@ export default function BrochureDownload() {
       {isOpen && (
         <div className="fixed inset-0 bg-[#0000006b] z-50 flex items-center justify-center">
           <div className="bg-white p-6 rounded-lg w-full max-w-md space-y-company-lg-24   -xl text-black">
-            <h3 className={`${text.cardHeadingsmall}text-lg font-semibold`}>Enter your details to download</h3>
+            <h3 className={`${typography.title.large} text-lg font-semibold`}>Enter your details to download</h3>
             <div className="space-y-company-lg-24">
               <Input
                 type="text"

@@ -1,5 +1,5 @@
 "use client";
-import { text } from "@/shared/lib/typography";
+import {  typography } from "@/shared/lib/typography";
 import { Button } from "@/presentation/components/ui/button.ui";
 import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
@@ -29,7 +29,7 @@ export default function Hero() {
                 transition={{ duration: 0.5, delay: 0.1 }}
               >
                 <span
-                  className={`${text.Sectionprefixtext} w-auto text-center md:text-left flex-nowrap text-[var(--company-blue-black)]`}
+                  className={`${typography.display.small} w-auto text-center md:text-left flex-nowrap text-[var(--company-blue-black)]`}
                 >
                   Our Expertise
                 </span>
@@ -38,7 +38,7 @@ export default function Hero() {
                 </div>
               </motion.div>
               <motion.p
-                className={`${text.Extratext} mt-[8px] md:mt-[8px] text-center md:text-left text-[var(--company-mid-gray)] max-w-4xl`}
+                className={`${typography.title.medium} mt-[8px] md:mt-[8px] text-center md:text-left text-[var(--company-mid-gray)] max-w-4xl`}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.4 }}

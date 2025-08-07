@@ -1,7 +1,7 @@
 "use client";
 import React from 'react';
 import { motion } from 'motion/react';
-import { text } from '@/shared/lib/typography';
+import { typography } from '@/shared/lib/typography';
 import Heading from '@/presentation/components/ui/heading.ui';
 import { containerVariants, itemVariants } from '@/shared/lib/motion';
 
@@ -75,7 +75,7 @@ export default function TermsOfServicePage() {
           >
             <Heading heading="TERMS" Display="Terms of Service" />
             <motion.p
-              className={`${text.Sectionbodytexts} text-white mt-6 max-w-2xl mx-auto`}
+              className={`${typography.body.medium} text-white mt-6 max-w-2xl mx-auto`}
               variants={itemVariants}
             >
               These terms govern your use of our services. Please read them carefully.
@@ -100,14 +100,14 @@ export default function TermsOfServicePage() {
                 variants={itemVariants}
                 className="bg-white rounded-xl p-8 shadow-lg border border-gray-100"
               >
-                <h2 className={`${text.cardHeadingtext} text-company-black mb-6`}>
+                <h2 className={`${typography.headline.large} text-company-black mb-6`}>
                   {section.title}
                 </h2>
                 <ul className="space-y-3">
                   {section.content.map((item, itemIndex) => (
                     <li key={itemIndex} className="flex items-start space-x-3">
                       <div className="w-2 h-2 bg-company-primary-royalBlue rounded-full mt-2 flex-shrink-0"></div>
-                      <p className={`${text.cardBodytext} text-company-mid-gray`}>
+                      <p className={`${typography.body.large} text-company-mid-gray`}>
                         {item}
                       </p>
                     </li>
@@ -122,17 +122,17 @@ export default function TermsOfServicePage() {
             variants={itemVariants}
             className="mt-16 bg-company-litest-gray rounded-xl p-8 text-center"
           >
-            <h3 className={`${text.cardHeadingtext} text-company-black mb-4`}>
+            <h3 className={`${typography.headline.large} text-company-black mb-4`}>
               Questions About These Terms?
             </h3>
-            <p className={`${text.cardBodytext} text-company-mid-gray mb-6`}>
+            <p className={`${typography.body.large} text-company-mid-gray mb-6`}>
               If you have any questions about these terms of service, please contact us.
             </p>
             <div className="space-y-2">
-              <p className={`${text.cardBodytext} text-company-black`}>
+              <p className={`${typography.body.large} text-company-black`}>
                 Email: legal@vithsutra.com
               </p>
-              <p className={`${text.cardBodytext} text-company-black`}>
+              <p className={`${typography.body.large} text-company-black`}>
                 Phone: +91-XXXXXXXXXX
               </p>
             </div>
@@ -143,7 +143,7 @@ export default function TermsOfServicePage() {
             variants={itemVariants}
             className="mt-8 text-center"
           >
-            <p className={`${text.cardBodytext} text-company-mid-gray`}>
+            <p className={`${typography.body.large} text-company-mid-gray`}>
               Last updated: {new Date().toLocaleDateString('en-US', { 
                 year: 'numeric', 
                 month: 'long', 

@@ -2,7 +2,7 @@ import { containerVariants } from "@/shared/lib/motion";
 import { motion } from "motion/react";
 import Image from "next/image";
 import Heading from  "@/presentation/components/ui/heading.ui";
-import { text } from "@/shared/lib/typography";
+import { typography } from "@/shared/lib/typography";
 import { fadeInDown, fadeInUp } from "@/shared/lib/motion";
 import { Product } from "@/core/entities/product";
 import { createElement } from "react";
@@ -40,13 +40,13 @@ export default function Hydroponic(product : Product) {
                   className=" space-y-company-md-16 md:space-y-company-lg-24 text-center lg:text-left"
                 >
                   <motion.h1
-                    className={`${text.Sectiontexthead} `}
+                    className={`${typography.display.large} `}
                     variants={fadeInDown}
                   >
                     What is Controlled Environment Farming?
                   </motion.h1>
                   <motion.p
-                    className={`${text.Extratext} max-w-2xl `}
+                    className={`${typography.body.large} max-w-2xl `}
                     variants={fadeInUp}
                   >
                     Controlled Environment Farming (CEF) is the practice of
@@ -70,13 +70,13 @@ export default function Hydroponic(product : Product) {
                   className=" space-y-company-md-16 md:space-y-company-lg-24 text-center lg:text-left"
                 >
                   <motion.h1
-                    className={`${text.Sectiontexthead} `}
+                    className={`${typography.display.large} `}
                     variants={fadeInDown}
                   >
                     What is Controlled Environment Farming?
                   </motion.h1>
                   <motion.p
-                    className={`${text.Extratext} md:max-w-2xl max-w-64  `}
+                    className={`${typography.body.large} md:max-w-2xl max-w-64  `}
                     variants={fadeInUp}
                   >
                     Controlled Environment Farming (CEF) is the practice of
@@ -129,12 +129,12 @@ export default function Hydroponic(product : Product) {
                             </div>
                             <div className="flex-1 justify-center h-full">
                               <h3
-                                className={` ${text.cardHeadingsmall} pb-company-xs-8 text-gray-900 `}
+                                className={` ${typography.title.large} pb-company-xs-8 text-gray-900 `}
                               >
                                 {whychose.title}
                               </h3>
                               <p
-                                className={`${text.cardBodytextlight}text-sm text-gray-600 leading-relaxed`}
+                                className={`${typography.body.medium} text-sm text-gray-600 leading-relaxed`}
                               >
                                 {whychose.description}
                               </p>

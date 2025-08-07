@@ -1,7 +1,7 @@
 // components/FlipText.tsx
 "use client";
 
-import { text } from "@/shared/lib/typography";
+import { typography } from "@/shared/lib/typography";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
 
@@ -37,7 +37,7 @@ export default function FlipText() {
           }}
           className=" flex items-center justify-center md:justify-start p-0 m-0 w-full md:min-w-[390px]"
         >
-          <span className={`${text.Sectionprefixtext}  text-[var(--company-primary-royalBlue)]`}>
+          <span className={`${typography.display.small}  text-[var(--company-primary-royalBlue)]`}>
             {words[index]}
           </span>
         </motion.div>

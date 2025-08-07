@@ -10,7 +10,7 @@ import { cn } from "@/shared/lib/utils";
 import { motion } from "motion/react";
 import Image, { ImageProps } from "next/image";
 import { useOutsideClick } from "@/application/hooks/use-outside-click";
-import { text } from "@/shared/lib/typography";
+import { typography } from "@/shared/lib/typography";
 import { useRouter } from "next/navigation";
 import ArrowButtons from "./arrow_up_button.ui";
 import ArrowLeftRight from "./arrow_left_rigth.ui";
@@ -209,13 +209,13 @@ export const Card = ({
         <div className=" absolute bottom-0 left-1 z-40 p-company-lg-24">
           <motion.p
             layoutId={layout ? `category-${card.category}` : undefined}
-            className={`${text.cardBodytextlight} text-left text-company-black/70  transition-all duration-700 ease-in-out group-hover:text-company-black`}
+            className={`${typography.body.medium} text-left text-company-black/70  transition-all duration-700 ease-in-out group-hover:text-company-black`}
           >
             {card.category}
           </motion.p>
           <motion.p
             layoutId={layout ? `title-${card.title}` : undefined}
-            className={`${text.cardHeadingtext}  max-w-xs text-left text-company-black/70  transition-all duration-700 ease-in-out group-hover:text-company-black`}
+            className={`${typography.headline.large}  max-w-xs text-left text-company-black/70  transition-all duration-700 ease-in-out group-hover:text-company-black`}
           >
             {card.title}
           </motion.p>

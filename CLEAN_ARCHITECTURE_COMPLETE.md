@@ -728,6 +728,40 @@ The foundation is solid and ready for your team to build upon! 💪
 - [React Clean Architecture](https://github.com/eduardomoroni/react-clean-architecture)
 - [Dependency Injection in TypeScript](https://github.com/microsoft/tsyringe)
 
+
+
+
+
 ---
 
+
 This clean architecture implementation provides a solid foundation for scalable, maintainable, and testable code while preserving all existing functionality and design.
+
+
+
+Updated all imports from import { text } from "@/shared/lib/typography" to import { typography } from "@/shared/lib/typography"
+
+Replaced typography classes with appropriate mappings:
+
+text.cardHeadingtext → typography.headline.large
+text.cardBodytext → typography.body.large
+text.cardBodytextlight → typography.body.medium
+text.cardHeadingsmall → typography.title.large
+text.Sectiontexthead → typography.display.large
+text.SectionHeader → typography.headline.large
+text.Extratext → typography.body.large
+text.labelText → typography.label.medium
+text.labelHeadingText → typography.title.medium
+text.Buttontext → typography.label.large
+text.inputplaceholdertext → typography.body.medium
+text.logo → typography.headline.medium
+text.DisplaySupportingtext → typography.title.large
+text.Sectionbodytexts → typography.body.medium
+Files Updated (over 40 files across the codebase):
+
+
+Display: Large headings (large, medium, small)
+Headline: Section headings (large, medium, small)
+Title: Card titles and labels (large, medium, small)
+Body: Regular text content (large, medium, small)
+Label: Small text and buttons (large, medium, small)

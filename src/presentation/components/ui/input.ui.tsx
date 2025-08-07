@@ -1,6 +1,6 @@
 import * as React from "react"
 import { cn } from "@/shared/lib/utils"
-import {text }from "@/shared/lib/typography"
+import { typography } from "@/shared/lib/typography"
 
 interface InputProps extends React.ComponentProps<"input"> {
   label?: string;
@@ -12,7 +12,7 @@ function Input({ className, id, label, helpText, type, placeholder, ...props }: 
   return (
     <div className="px-company-lg-24">
       {label && (
-        <label htmlFor={id} className={`${text.labelText}  text-company-gray  pt-company-sm-12 `}>
+        <label htmlFor={id} className={`${typography.label.medium}  text-company-gray  pt-company-sm-12 `}>
           {label}
         </label>
       )}
@@ -24,7 +24,7 @@ function Input({ className, id, label, helpText, type, placeholder, ...props }: 
           "focus-visible:border-company-primary-royalBlue focus-visible:ring-company-primary-royalBlue  focus-visible:ring-[1px] duration-500",
           "aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive  placeholder:font-semibold font-semibold",
           className,
-          text.inputplaceholdertext
+          typography.body.medium
         )}
         placeholder={placeholder || "Enter Your Name"}
         
@@ -32,7 +32,7 @@ function Input({ className, id, label, helpText, type, placeholder, ...props }: 
       />
       <div className="h-company-md-16">
       {helpText && (
-        <p className={`${text.labelText}  text-red-600 `}>
+        <p className={`${typography.label.medium}  text-red-600 `}>
           {helpText}
         </p>
       )}

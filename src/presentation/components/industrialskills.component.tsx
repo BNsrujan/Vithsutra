@@ -1,7 +1,7 @@
 // app/components/IndustrySkillsHighlights.tsx
 "use client";
 
-import { text } from "@/shared/lib/typography";
+import { typography } from "@/shared/lib/typography";
 import { CheckCircle } from "lucide-react";
 
 const highlights = [
@@ -20,7 +20,7 @@ export default function IndustrySkillsHighlights() {
           {highlights.map((item, idx) => (
             <li key={idx} className="flex items-start gap-4">
               <CheckCircle className="text-green-600 mt-1" size={22} />
-              <span className={`${text.Extratext} text-gray-700`}>{item}</span>
+              <span className={`${typography.body.large} text-gray-700`}>{item}</span>
             </li>
           ))}
         </ul>

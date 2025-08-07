@@ -13,7 +13,7 @@ import {
   navigationMenuTriggerStyle,
 } from "@/presentation/components/ui/nav_menu.ui";
 import { Menu, X } from "lucide-react";
-import { text } from "@/shared/lib/typography";
+import { typography } from "@/shared/lib/typography";
 import {
   Accordion,
   AccordionItem,
@@ -33,9 +33,9 @@ const MenuItem = React.memo(({ item }: { item: MenuItem }) => (
         href={item.href}
         className="block select-none space-y-1 rounded-md p-company-lg-24 leading-none no-underline outline-none transition-colors hover:bg-[var(--company-litest-gray)] hover:text-[var(--company-primary-royalBlue)] focus:bg-[var(--company-litest-gray)] focus:text-[var(--company-primary-royalBlue)]"
       >
-        <div className={`${text.labelHeadingText} font-medium`}>{item.title}</div>
+        <div className={`${typography.title.medium} font-medium`}>{item.title}</div>
         <p
-          className={`${text.cardBodytextlight} font-light text-[var(--company-mid-gray)]`}
+          className={`${typography.body.medium} font-light text-[var(--company-mid-gray)]`}
         >
           {item.description}
         </p>
@@ -51,7 +51,7 @@ const MenuSection = React.memo(
     <NavigationMenuItem>
       <NavigationMenuTrigger
         className={`${navigationMenuTriggerStyle()} ${
-          text.labelHeadingText
+          typography.title.medium
         } text-[var(--company-blue-black)] hover:text-[var(--company-primary-royalBlue)]`}
       >
         {section.title}
@@ -65,12 +65,12 @@ const MenuSection = React.memo(
                 href={section.href}
               >
                 <div
-                  className={`${text.cardHeadingsmall} text-wrap  text-[var(--company-blue-black)]`}
+                  className={`${typography.title.large} text-wrap  text-[var(--company-blue-black)]`}
                 >
                   {section.title}
                 </div>
                 <p
-                  className={`${text.cardBodytextlight} text-[var(--company-mid-gray)]`}
+                  className={`${typography.body.medium} text-[var(--company-mid-gray)]`}
                 >
                   {section.description}
                 </p>
@@ -139,7 +139,7 @@ export function Navbar() {
         {/* Desktop CTA */}
         <div className="hidden md:block">
           <Button variant="neumorphic">
-            <Link href="/contact" className={text.Buttontext}>
+            <Link href="/contact" className={typography.label.large}>
               Let&apos;s Talk
             </Link>
           </Button>

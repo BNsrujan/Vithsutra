@@ -2,7 +2,7 @@ import React from 'react'
 import { Product } from "@/core/entities/product";
 import { containerVariants } from "@/shared/lib/motion";
 import { fadeInDown, fadeInUp } from "@/shared/lib/motion";
-import { text } from "@/shared/lib/typography";
+import { typography } from "@/shared/lib/typography";
 import { motion } from "motion/react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
@@ -24,13 +24,13 @@ export default function ProductHeroSection(product : Product) {
               className=" space-y-company-lg-24 md:space-y-company-lg-24  lg:text-left"
             >
               <motion.h1
-                className={`${text.Sectiontexthead} `}
+                className={`${typography.display.large} `}
                 variants={fadeInDown}
               >
                 {product.tagline}
               </motion.h1>
               <motion.p
-                className={`${text.Extratext}  max-w-2xl `}
+                className={`${typography.body.large}  max-w-2xl `}
                 variants={fadeInUp}
               >
                 {product.description}

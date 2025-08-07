@@ -8,7 +8,7 @@ import {
   companyLinks,
   legalLinks,
 } from "@/data/footer";
-import { text } from "@/shared/lib/typography";
+import { typography } from "@/shared/lib/typography";
 import LogoWithName from "./ui/logo_with_name";
 
 const SocialIconLink = ({
@@ -32,7 +32,7 @@ const FooterLinkList = ({
 }) => (
   <div>
     <h3
-      className={` font-semibold mb-company-sm-12 text-company-blue ${text.labelHeadingText}`}
+      className={` font-semibold mb-company-sm-12 text-company-blue ${typography.title.medium}`}
     >
       {title}
     </h3>
@@ -41,7 +41,7 @@ const FooterLinkList = ({
         <li key={link.name}>
           <Link
             href={link.href}
-            className={`text-company-text-gray hover:text-company-primary-royalBlue duration-300 transition-colors ${text.labelText}`}
+            className={`text-company-text-gray hover:text-company-primary-royalBlue duration-300 transition-colors ${typography.label.medium}`}
           >
             {link.name}
           </Link>
@@ -55,13 +55,13 @@ export default function Footer() {
   return (
     <footer className="bg-company-litest-gray text-company-black md:px-10">
       <div className="max-w-[1700px] mx-auto pt-12 pb-[12px] flex flex-col items-baseline">
-        <div className="w-full flex flex-col lg:flex-row items-start gap-12 justify-between md:h-[300px]">
+        <div className="w-full flex flex-col lg:flex-row items-start gap-12 justify-between ">
           {/* Logo & Description */}
           <div className="flex-shrink-0 max-w-[700px] h-full flex flex-col ml-7 md:m-0 lg:w-auto mb-8 lg:mb-0">
             <div className=" space-y-company-xs-8">
               <LogoWithName/>
               <p
-                className={` ${text.labelHeadingText} text-company-gray-text font-semibold w-[330px] md:w-[400px]`}
+                className={` ${typography.title.medium} text-company-gray-text font-semibold w-[330px] md:w-[400px]`}
               >
                 Empowering industries with innovative automation solutions and
                 cutting-edge technology.
@@ -108,7 +108,7 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="border-t border-company-gray mt-[24px] pt-[8px] w-full">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className={` ${text.labelText} text-company-black `}>
+            <p className={` ${typography.label.medium} text-company-black `}>
               © {new Date().getFullYear()} Vithsutra. All rights reserved.
             </p>
             <div className="flex flex-wrap justify-center md:justify-end space-x-6">
@@ -116,7 +116,7 @@ export default function Footer() {
                 <Link
                   key={link.name}
                   href={link.href}
-                  className={`text-company-text-gray hover:text-company-blue  transition-colors ${text.labelText}`}
+                  className={`text-company-text-gray hover:text-company-blue  transition-colors ${typography.label.medium}`}
                 >
                   {link.name}
                 </Link>

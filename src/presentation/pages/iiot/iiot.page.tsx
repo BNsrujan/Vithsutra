@@ -3,7 +3,7 @@
 import { Button } from "@/presentation/components/ui/button.ui";
 import Image from "next/image";
 import { IIOT } from "@/data/domain/iiot_pages.data";
-import { text } from "@/shared/lib/typography";
+import { typography } from "@/shared/lib/typography";
 import { motion } from "framer-motion";
 import { containerVariants, fadeInUp, fadeInDown } from "@/shared/lib/motion";
 import Heading from "@/presentation/components/ui/heading.ui";
@@ -28,13 +28,13 @@ export function HeroSectionIIot() {
             className=" space-y-company-lg-24 md:space-y-company-lg-24  lg:text-left"
           >
             <motion.h1
-              className={`${text.Sectiontexthead} `}
+              className={`${typography.display.large} `}
               variants={fadeInDown}
             >
               Introduction Meet Our IIoT Automation
             </motion.h1>
             <motion.p
-              className={`${text.Extratext}  max-w-2xl `}
+              className={`${typography.body.large}  max-w-2xl `}
               variants={fadeInUp}
             >
               At VithSutra, we harness the power of Industrial Internet of
@@ -115,13 +115,13 @@ export default function IIOTPages() {
                   className=" space-y-company-md-16 md:space-y-company-lg-24 text-center lg:text-left"
                 >
                   <motion.h1
-                    className={`${text.Sectiontexthead} `}
+                    className={`${typography.display.large} `}
                     variants={fadeInDown}
                   >
                     What Is IIoT?
                   </motion.h1>
                   <motion.p
-                    className={`${text.Extratext} max-w-2xl `}
+                    className={`${typography.body.large} max-w-2xl `}
                     variants={fadeInUp}
                   >
                     Industrial IoT, or Industrial Internet of Things, means
@@ -145,13 +145,13 @@ export default function IIOTPages() {
                   className=" space-y-company-md-16 md:space-y-company-lg-24 text-center lg:text-left"
                 >
                   <motion.h1
-                    className={`${text.Sectiontexthead} `}
+                    className={`${typography.display.large} `}
                     variants={fadeInDown}
                   >
                     Why Choose VithSutra&apos;s IIoT Solutions?
                   </motion.h1>
                   <motion.p
-                    className={`${text.Extratext} md:max-w-2xl max-w-64  `}
+                    className={`${typography.body.large} md:max-w-2xl max-w-64  `}
                     variants={fadeInUp}
                   >
                     Our IIoT platform delivers comprehensive industrial
@@ -196,12 +196,12 @@ export default function IIOTPages() {
                             </div>
                             <div className="flex-1 justify-center h-full">
                               <h3
-                                className={` ${text.cardHeadingsmall} pb-company-xs-8 text-gray-900 `}
+                                className={` ${typography.title.large} pb-company-xs-8 text-gray-900 `}
                               >
                                 {whychose.title}
                               </h3>
                               {/* <p
-                                className={`${text.cardBodytextlight} text-sm text-gray-600 leading-relaxed`}
+                                className={`${typography.body.medium} text-sm text-gray-600 leading-relaxed`}
                               >
                                 {whychose.description}
                               </p> */}

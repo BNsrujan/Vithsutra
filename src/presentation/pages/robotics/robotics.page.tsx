@@ -2,7 +2,7 @@
 import Image from "next/image";
 import React from "react";
 import { Button } from "@/presentation/components/ui/button.ui";
-import { text } from "@/shared/lib/typography";
+import { typography } from "@/shared/lib/typography";
 import { motion } from "motion/react";
 import { containerVariants, fadeInUp, fadeInDown } from "@/shared/lib/motion";
 import { useRouter } from "next/navigation";
@@ -31,13 +31,13 @@ export function HeroSectionIIot() {
             className=" space-y-company-lg-24 md:space-y-company-lg-24  lg:text-left"
           >
             <motion.h1
-              className={`${text.Sectiontexthead} `}
+              className={`${typography.display.large} `}
               variants={fadeInDown}
             >
               Robotics: Beyond the Basics
             </motion.h1>
             <motion.p
-              className={`${text.Extratext}  max-w-2xl `}
+              className={`${typography.body.large}  max-w-2xl `}
               variants={fadeInUp}
             >
               Robotics is the science of designing and controlling machines that
@@ -116,7 +116,7 @@ export default function RoboticsPage() {
               className=" space-y-company-md-16 md:space-y-company-lg-24 text-center lg:text-left"
             >
               <motion.h1
-                className={`${text.Sectiontexthead} `}
+                className={`${typography.display.large} `}
                 variants={fadeInDown}
               >
                 Why Introduce Industrial Robotics Training?
@@ -137,13 +137,13 @@ export default function RoboticsPage() {
               className=" space-y-company-md-16 md:space-y-company-lg-24 text-center lg:text-left"
             >
               <motion.h1
-                className={`${text.Sectiontexthead} `}
+                className={`${typography.display.large} `}
                 variants={fadeInDown}
               >
                 How Vithsutra’s Robotics Training Can Help You?
               </motion.h1>
               <motion.p
-                className={`${text.Extratext} md:max-w-2xl max-w-64  `}
+                className={`${typography.body.large} md:max-w-2xl max-w-64  `}
                 variants={fadeInUp}
               >
                 At Vithsutra, we offer customized industrial robotics training
@@ -189,12 +189,12 @@ export default function RoboticsPage() {
                         </div>
                         <div className="flex-1 justify-center h-full">
                           <h3
-                            className={` ${text.cardHeadingsmall} pb-company-xs-8 text-gray-900 `}
+                            className={` ${typography.title.large} pb-company-xs-8 text-gray-900 `}
                           >
                             {whychose.title}
                           </h3>
                           {/* <p
-                                        className={`${text.cardBodytextlight} text-sm text-gray-600 leading-relaxed`}
+                                        className={`${typography.body.medium} text-sm text-gray-600 leading-relaxed`}
                                       >
                                         {whychose.description}
                                       </p> */}

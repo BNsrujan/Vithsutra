@@ -3,10 +3,10 @@ import { Slot } from "@radix-ui/react-slot";
 import { cva, type VariantProps } from "class-variance-authority";
 
 import { cn } from "@/shared/lib/utils";
-import { text } from "@/shared/lib/typography";
+import { typography } from "@/shared/lib/typography";
 
 const buttonVariants = cva(
-  `inline-flex items-center justify-center ${text.Buttontext} whitespace-nowrap text-sm font-medium transition-all duration-200 ease-in-out 
+  `inline-flex items-center justify-center ${typography.label.large} whitespace-nowrap text-sm font-medium transition-all duration-200 ease-in-out 
    disabled:pointer-events-none 
    [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 
    outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] 

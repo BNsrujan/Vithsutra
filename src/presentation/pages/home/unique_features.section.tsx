@@ -4,7 +4,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { containerVariants } from "@/shared/lib/motion";
  import Image from "next/image";
-import { text } from "@/shared/lib/typography";
+import { typography } from "@/shared/lib/typography";
 import Heading from "@/presentation/components/ui/heading.ui";
 
 const FeatureCard = ({
@@ -42,11 +42,11 @@ const FeatureCard = ({
       </div>
       <div>
         <h3
-          className={`${text.cardHeadingtext}  mb-company-xs-8 text-company-primary-royalBlue`}
+          className={`${typography.headline.large}  mb-company-xs-8 text-company-primary-royalBlue`}
         >
           {title}
         </h3>
-        <p className={`${text.cardBodytext} text-company-dark-gray`}>
+        <p className={`${typography.body.large} text-company-dark-gray`}>
           {description}
         </p>
       </div>
