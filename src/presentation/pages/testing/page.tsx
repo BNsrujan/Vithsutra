@@ -1,6 +1,5 @@
 "use client";
 import { motion } from "motion/react";
-import { typography } from "@/shared/lib/typography";
 import Components from "./Components";
 // import ShareButton from "@/components/ui/smooth-button";
 import { Button } from "@/presentation/components/ui/button.ui";
@@ -144,77 +143,7 @@ export default function Testing() {
           ))}
         </motion.div>
 
-        <div className="w-full p-6   mx-auto  ">
-          <div className={text.Displaytext}>
-            Display Text - The quick brown fox jumps over the lazy dog.
-          </div>
-
-          <h1 className={text.Sectiontexthead}>
-            Section Heading - The quick brown fox jumps over the lazy dog.
-          </h1>
-          
-
-          <p className={text.Sectionprefixtext}>
-            Section Prefix Text - The quick brown fox jumps over the lazy dog.
-          </p>
-
-          <p className={text.Sectionbodytext}>
-            Section Body Text (Bold) - The quick brown fox jumps over the lazy
-            dog.
-          </p>
-          <h2 className={text.cardHeadingtext}>
-            Card Heading - The quick brown fox jumps over the lazy dog.
-          </h2>
-          <p className={text.Extratext}>
-            Section Body Text - The quick brown fox jumps over the lazy dog.
-          </p>
-          <div className={text.midtext}>
-            Mid Text - The quick brown fox jumps over the lazy dog.
-          </div>
-          <div className={text.DisplaySupportingtext}>
-            Display Supporting Text - The quick brown fox jumps over the lazy
-            dog.
-          </div>
-
-          <div className={text.DisplayPrefixtext}>
-            Display Prefix Text - The quick brown fox jumps over the lazy dog.
-          </div>
-          <p className={text.Sectionbodytexts}>
-            Section Body Text (Alt) - The quick brown fox jumps over the lazy
-            dog.
-          </p>
-
-        
-          <p className={text.cardBodytext}>
-            Card Body Text - The quick brown fox jumps over the lazy dog.
-          </p>
-
-          <footer className="">
-            <h3 className={text.labelHeadingText}>
-              LableHeading Text - The quick brown fox jumps over the lazy dog.
-            </h3>
-            <a href="#" className={text.labelText}>
-              Label Text - The quick brown fox jumps over the lazy dog.
-            </a>
-          </footer>
-          <TypographyPreview/>
-
-          <div>
-
-    </div>
-
-
-          <div className="flex space-x-4 w-full  mt-40">
-            <Button variant="neumorphic" className={text.Buttontext}>
-              Primary Button
-            </Button>
-            <Button variant="secondary" className={text.secondaryButtontext}>
-              Secondary Button
-            </Button>
-          </div>
-
-          
-        </div>
+       <TypographyPreview/>
 
         <Components />
 
@@ -225,7 +154,7 @@ export default function Testing() {
             type="text"
             label="Email"
             placeholder="Input Placeholder Text"
-            className={text.inputplaceholdertext}
+            className={typography.label.small}
           />
 
 

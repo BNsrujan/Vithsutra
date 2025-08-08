@@ -7,7 +7,7 @@ import { typography } from "@/shared/lib/typography";
 function Technicalspecification(product: Product) {
   return (
     <div>
-      <section className="flex p-company-xs-8 md:p-0  contain-content justify-center  ">
+      <section className="flex p-company-md-16 md:p-0  contain-content justify-center  ">
         <div className="max-w-company-section-width   w-full h-full">
           <Heading
             heading="Detailed technical information for system integration and deployment"

@@ -98,7 +98,7 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
     >
       <div className="relative w-full h-full">
         <div
-          className="  flex w-full overflow-x-scroll overscroll-x-auto scroll-smooth  [scrollbar-width:none] py-10"
+          className="flex w-full overflow-x-scroll overscroll-x-auto scroll-smooth  [scrollbar-width:none] py-10"
           ref={carouselRef}
           onScroll={checkScrollability}
         >
@@ -131,16 +131,16 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
             ))}
           </div>
 
-        {/* Navigation buttons - responsive positioning */}
-        <div className="absolute sm:bottom-20 sm:right-0 left flex gap-2 z-50">
-          <ArrowLeftRight
-            scrollLeft={scrollLeft}
-            scrollRight={scrollRight}
-            canScrollLeft={canScrollLeft}
-            canScrollRight={canScrollRight}
+          {/* Navigation buttons - responsive positioning */}
+          <div className="absolute -bottom-2 right-0 sm:bottom-20 sm:right-0 left flex gap-2 z-50">
+            <ArrowLeftRight
+              scrollLeft={scrollLeft}
+              scrollRight={scrollRight}
+              canScrollLeft={canScrollLeft}
+              canScrollRight={canScrollRight}
             />
+          </div>
         </div>
-            </div>
       </div>
     </CarouselContext.Provider>
   );
@@ -192,7 +192,7 @@ export const Card = ({
       <motion.button
         layoutId={layout ? `card-${card.title}` : undefined}
         onClick={handleOpen}
-        className="relative z-10 flex h-80 w-96 sm:h-96 sm:w-30rem md:h-[35rem] md:w-[70rem] flex-col items-start justify-end overflow-hidden rounded-3xl bg-gray-100 dark:bg-neutral-900"
+        className="relative z-10 flex h-80 w-screen sm:h-96 sm:w-30rem md:h-[35rem] md:w-[70rem] flex-col items-start justify-end overflow-hidden rounded-3xl bg-gray-100 dark:bg-neutral-900"
       >
         <div className="pointer-events-none  absolute   w-full  z-30 h-full bg-gradient-to-t from-black/60 via-transparent to-transparent" />
         <div className="relative z-40 p-company-md-16 md:p-company-lg-24">

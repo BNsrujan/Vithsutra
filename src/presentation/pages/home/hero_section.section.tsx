@@ -1,5 +1,5 @@
 "use client";
-import {  typography } from "@/shared/lib/typography";
+import { typography } from "@/shared/lib/typography";
 import { Button } from "@/presentation/components/ui/button.ui";
 import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
@@ -7,21 +7,20 @@ import { heroContent } from "@/shared/lib/motion";
 import FlipText from "@/presentation/components/ui/flip_text.ui";
 import Backgroundimagelogo from "@/presentation/components/ui/background_image_logo.component";
 
-
 export default function Hero() {
   const router = useRouter();
   return (
     <div className="relative w-full">
       <div className="max-w-[1700px] mx-auto h-full">
-        <div className="flex justify-center  h-full items-center w-full gap-8 min-h-[93vh] py-company-sm-12 lg:py-0">
-          {/* Left Content */}
+        <div className="flex justify-center  h-full items-center  w-full  min-h-[93vh] py-company-sm-12 lg:py-0">
+
           <motion.div
-            className="relative flex flex-col py-company-md-16 justify-center md:items-start w-full  h-full space-y-company-lg-24"
+            className="relative flex flex-col  py-company-md-16 justify-center md:items-start w-full  h-full space-y-company-lg-24"
             variants={heroContent}
             initial="initial"
             animate="animate"
           >
-            <motion.div className=" space-y-company-xs-8 px-4 md:px-0 ">
+            <motion.div className=" space-y-company-xs-8 px-4 md:px-0  flex flex-col justify-center w-full  md:w-auto">
               <motion.div
                 className="flex flex-col justify-center md:justify-start md:flex-row items-center"
                 initial={{ opacity: 0, y: 20 }}
@@ -38,7 +37,7 @@ export default function Hero() {
                 </div>
               </motion.div>
               <motion.p
-                className={`${typography.title.large} mt-[8px] md:mt-[8px] text-center md:text-left text-[var(--company-mid-gray)] max-w-4xl`}
+                className={`${typography.title.large} mt-[8px] text-center md:text-left text-[var(--company-mid-gray)] max-w-4xl`}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.4 }}
@@ -65,12 +64,9 @@ export default function Hero() {
             </motion.div>
           </motion.div>
 
-          {/* Right Image */}
-          <motion.div
-          >
+
+
           <Backgroundimagelogo />
-          </motion.div>
-            
         </div>
       </div>
     </div>

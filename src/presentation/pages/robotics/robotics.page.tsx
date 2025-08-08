@@ -14,7 +14,6 @@ import {
 } from "@/presentation/components/ui/application_card.component";
 import TestimonialsCarousel from "@/presentation/components/testimonials.section";
 import Faq from "@/presentation/components/faq.section";
-import BrochureDownload from "@/presentation/components/brochure_download.component";
 import IndustrySkillsHighlights from "@/presentation/components/industrialskills.component";
 import Training from "../training/training.page";
 

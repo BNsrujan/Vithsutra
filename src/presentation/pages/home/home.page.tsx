@@ -33,10 +33,10 @@ const facts = [
 
 function Homepage() {
   return (
-    <main className="w-full">
+    <main className="w-full justify-center">
       <Hero />
       <div className="container mx-auto ">
-        <div className="space-y-24 max-w-company-section-width mx-auto px-company-xs-8">
+        <div className="space-y-24 max-w-company-section-width mx-auto px-company-sm-12">
           <About />
           <WeOfferSection />
           <CardSection />

@@ -67,7 +67,7 @@ interface factsProps {
 
 export default function QuickFacts({ facts }: factsProps) {
   return (
-    <section className=" md:px-0 py-24 flex justify-center w-full">
+    <section className="px-4 md:px-0 py-24 flex justify-center w-full">
       <div className="max-w-company-section-width w-full ">
         <section className="w-full max-w-company-section-width   ">
           <motion.div

@@ -35,9 +35,9 @@ const FeatureCard = ({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-100px" }}
       transition={{ delay: delay + 0.2, duration: 1 }}
-      className="gap-5 justify-center"
+      className="md:gap-5 justify-center"
     >
-      <div className="relative w-full h-64 md:h-72 mb-6 rounded-xl overflow-hidden">
+      <div className="relative w-full h-64 md:h-72 md:mb-6 rounded-xl overflow-hidden">
         <Image src={image} alt={title} fill className="object-contain" />
       </div>
       <div>
@@ -74,7 +74,7 @@ export default function UniqueFeatures() {
 
         <div className="flex flex-col gap-company-lg-24 mt-12 ">
           <div className="flex flex-wrap gap-company-lg-24">
-            <div className="w-full md:w-7/12 h-[50vh]">
+            <div className="w-full md:w-7/12 md:h-[50vh]">
               <FeatureCard
                 title="24/7 Support"
                 description="Round-the-clock assistance ensuring your business never stops. Our dedicated team is always ready to help you succeed."
@@ -82,7 +82,7 @@ export default function UniqueFeatures() {
                 image="/home/what_makes_us_unique/image50.svg"
               />
             </div>
-            <div className="w-full md:w-4/12 h-[50vh]">
+            <div className="w-full md:w-4/12 md:h-[50vh]">
               <FeatureCard
                 title="Latest Technology"
                 description="Stay ahead with cutting-edge solutions and innovative approaches to modern business challenges."
@@ -93,7 +93,7 @@ export default function UniqueFeatures() {
           </div>
 
           <div className="flex flex-wrap gap-company-lg-24">
-            <div className="w-full md:w-4/12 h-[50vh]">
+            <div className="w-full md:w-4/12 md:h-[50vh]">
               <FeatureCard
                 title="Cloud-Based Service"
                 description="Access your data and services from anywhere, anytime. Secure, scalable, and reliable cloud infrastructure."
@@ -101,7 +101,7 @@ export default function UniqueFeatures() {
                 image="/home/what_makes_us_unique/image49.png"
               />
             </div>
-            <div className="w-full md:w-7/12 h-[50vh]">
+            <div className="w-full md:w-7/12 md:h-[50vh]">
               <FeatureCard
                 title="Customizable Software"
                 description="Tailored solutions that adapt to your specific needs. We build software that grows with your business."

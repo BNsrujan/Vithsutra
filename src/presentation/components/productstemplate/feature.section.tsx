@@ -45,7 +45,7 @@ export function FeatuerCard({ features }: { features: Product["features"] }) {
               className="flex items-start gap-company-xs-8 justify-center "
             >
               <div className="flex-shrink-0">
-                <div className="w-20 h-20 bg-white border border-gray-200 rounded-company-button-8  flex items-center justify-center">
+                <div className="w-20 h-20 bg-blue-50 border border-blue-100  rounded-company-button-8  flex items-center justify-center">
                   {IconComponent}
                 </div>
               </div>

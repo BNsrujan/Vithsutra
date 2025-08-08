@@ -1,20 +1,32 @@
 "use client";
 
 import Heading from "./ui/heading.ui";
-import { TestimonialsCarouselProps, Testimonial } from "@/core/entities/testimonial";
+import {
+  TestimonialsCarouselProps,
+  Testimonial,
+} from "@/core/entities/testimonial";
 import { cn } from "@/shared/lib/utils";
 import { Marquee } from "@/presentation/components/magicui/marquee.ui";
 import Image from "next/image";
 import { typography } from "@/shared/lib/typography";
+import { useState } from "react";
 
-export default function TestimonialsCarousel({ testimonials }: TestimonialsCarouselProps) {
+export default function TestimonialsCarousel({
+  testimonials,
+}: TestimonialsCarouselProps) {
   return (
-    <div id="testimonials" className="py-16 sm:py-24 w-full  flex justify-center">
+    <div
+      id="testimonials"
+      className="py-16 sm:py-24 w-full flex justify-center"
+    >
       <section className="px-4 sm:px-6 md:px-8 lg:px-0 w-full max-w-screen-xl mx-auto">
         <Heading heading="TESTIMONIALS" Display="What Our Clients Say" />
 
         <div className="relative flex w-full flex-col items-center justify-center pt-12 overflow-hidden">
-          <Marquee pauseOnHover className="[--duration:40s] gap-6 md:gap-company-xl-48">
+          <Marquee
+            pauseOnHover
+            className="[--duration:40s] gap-6 md:gap-company-xl-48"
+          >
             {testimonials.map((item) => (
               <ReviewCard key={item.id} {...item} />
             ))}
@@ -30,12 +42,55 @@ export default function TestimonialsCarousel({ testimonials }: TestimonialsCarou
 }
 
 const ReviewCard = ({ avatar, name, title, company, quote }: Testimonial) => {
+  const [isDragging, setIsDragging] = useState(false);
+  const [position, setPosition] = useState({ x: 0, y: 0 });
+  const [dragStart, setDragStart] = useState({ x: 0, y: 0 });
+
+  const handleMouseDown = (e: React.MouseEvent) => {
+    e.preventDefault();
+    setIsDragging(true);
+    setDragStart({
+      x: e.clientX - position.x,
+      y: e.clientY - position.y,
+    });
+  };
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    if (!isDragging) return;
+
+    setPosition({
+      x: e.clientX - dragStart.x,
+      y: e.clientY - dragStart.y,
+    });
+  };
+
+  const handleMouseUp = () => {
+    setIsDragging(false);
+  };
+
   return (
     <figure
       className={cn(
-        "relative w-[90vw] sm:w-[500px] md:w-[700px] lg:w-[900px] max-w-full cursor-pointer gap-6 rounded-xl border border-company-primary-royalBlue p-6 sm:p-10"
+        "relative w-[90vw] sm:w-[500px] md:w-[700px] lg:w-[900px] max-w-full gap-6 rounded-xl border border-company-primary-royalBlue p-6 sm:p-10 select-none",
+        isDragging ? "cursor-grabbing z-50" : "cursor-grab"
       )}
+      style={{
+        transform: `translate(${position.x}px, ${position.y}px)`,
+        transition: isDragging ? "none" : "transform 0.2s ease-out",
+        userSelect: isDragging ? "none" : "auto",
+      }}
+      onMouseDown={handleMouseDown}
+      onMouseMove={handleMouseMove}
+      onMouseUp={handleMouseUp}
+      onMouseLeave={handleMouseUp}
     >
+      {/* Show Dragging indicator */}
+      {isDragging && (
+        <div className="absolute top-2 right-2 text-xs px-2 py-1 bg-blue-500 text-white rounded">
+          Dragging...
+        </div>
+      )}
+
       <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between w-full gap-4 sm:gap-6">
         <div className="flex gap-4">
           {avatar ? (

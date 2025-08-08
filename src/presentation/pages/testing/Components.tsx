@@ -2,8 +2,8 @@ import { Button } from '@/presentation/components/ui/button.ui'
 import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from '@/presentation/components/ui/card.component'
 import { Input } from '@/presentation/components/ui/input.ui'
 import Largecard from '@/presentation/components/ui/large_card.ui'
-import { text } from '@/shared/lib/typography'
 import React from 'react'
+import { typography } from '@/shared/lib/typography'
 
 function Components() {
   return (
@@ -15,8 +15,8 @@ function Components() {
       {/* Interactive Card */}
       <Card className="w-full flex flex-col justify-center gap-y-[20px]  max-w-[1600px] max-h-[1200px] ">
         <CardHeader>
-          <CardTitle className={`${text.cardHeadingtext}`}>Interactive Card</CardTitle>
-          <CardDescription className={`${text.cardBodytext}`}>Hover over this card to see the effect</CardDescription>
+          <CardTitle className={`${typography.display.large}`}>Interactive Card</CardTitle>
+          <CardDescription className={`${typography.body.large}`}>Hover over this card to see the effect</CardDescription>
         </CardHeader>
         <CardContent>
           <div className="flex flex-col gap-y-[20px]">
