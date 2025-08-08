@@ -30,7 +30,7 @@ export default function ProductHeroSection(product : Product) {
                 {product.tagline}
               </motion.h1>
               <motion.p
-                className={`${typography.body.large}  max-w-2xl `}
+                className={`${typography.title.large}  max-w-2xl `}
                 variants={fadeInUp}
               >
                 {product.description}

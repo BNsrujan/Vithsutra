@@ -135,37 +135,3 @@ export const faqs = [
   ];
 
 
-export  const testimonials = [
-{
-    id: "1",
-    avatar: "/images/testimonials/testimonial-1.jpg",
-    name: "Alice Johnson",
-    title: "Robotics Student",
-    company: "Tech University",
-    quote: "The robotics training program was incredibly insightful and hands-on. I learned so much about industrial robots and ROS. Highly recommended!"
-  },
-  {
-    id: "2",
-    avatar: "/images/testimonials/testimonial-2.jpg",
-    name: "Bob Williams",
-    title: "Engineering Graduate",
-    company: "Future Innovations Inc.",
-    quote: "The Master Model course provided me with the practical skills and industry exposure I needed. The guaranteed internship was a huge plus!"
-  },
-  {
-    id: "3",
-    avatar: "/images/testimonials/testimonial-3.jpg",
-    name: "Charlie Brown",
-    title: "Educator",
-    company: "RoboTech Academy",
-    quote: "Vithsutra's training modules are well-structured and comprehensive. My students gained valuable experience with real-world robotics applications."
-  },
-  {
-    id: "4",
-    avatar: "/images/testimonials/testimonial-4.jpg",
-    name: "Diana Miller",
-    title: "Industrial Automation Engineer",
-    company: "Global Manufacturing Co.",
-    quote: "The advanced model helped me bridge the gap between theoretical knowledge and practical industrial applications. Excellent instructors!"
-  }
-];

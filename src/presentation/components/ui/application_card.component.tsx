@@ -176,7 +176,7 @@ export const Card = ({
     }
 
     if (open) {
-      document.body.style.overflow = "hidden";
+      document.body.style.overflow = "";
     } else {
       document.body.style.overflow = "auto";
     }
@@ -194,8 +194,8 @@ export const Card = ({
         onClick={handleOpen}
         className="relative z-10 flex h-80 w-96 sm:h-96 sm:w-30rem md:h-[35rem] md:w-[70rem] flex-col items-start justify-end overflow-hidden rounded-3xl bg-gray-100 dark:bg-neutral-900"
       >
-        <div className="pointer-events-none  absolute   w-full  z-30 h-full bg-gradient-to-t from-black/10 via-transparent to-transparent" />
-        <div className="relative z-40 p-company-md-16 md:p-company-md-16">
+        <div className="pointer-events-none  absolute   w-full  z-30 h-full bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+        <div className="relative z-40 p-company-md-16 md:p-company-lg-24">
           <motion.p
             layoutId={layout ? `category-${card.category}` : undefined}
             className={`${typography.body.large} text-left    text-white `}

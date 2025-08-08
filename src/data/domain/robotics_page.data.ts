@@ -32,24 +32,29 @@ export const Robotics = {
     {
       image: "/industry/robotics/howtrainingcanhelp/customlerning.svg",
       title: "Custom Learning Pathways",
-      description: "",
+      description:
+        "Tailor-made training modules based on student and institutional goals to ensure focused skill development.",
     },
     {
       image: "/industry/robotics/howtrainingcanhelp/innovationdriven.svg",
       title: "Innovation-Driven Challenges",
-      description: "",
+      description:
+        "Encouraging students to solve real-world industrial problems using creative automation solutions.",
     },
     {
       image: "/industry/robotics/howtrainingcanhelp/industrylinked.svg",
       title: "Industry-Linked Internships",
-      description: "",
+      description:
+        "Providing students with hands-on experience through internships aligned with leading automation companies.",
     },
     {
       image: "/industry/robotics/howtrainingcanhelp/industry.svg",
-      title: "",
-      description: "",
+      title: "Real-World Industrial Exposure",
+      description:
+        "Expose students to actual industrial robots and environments to build confidence and practical know-how.",
     },
   ],
+  
   ourWorkShopinclude: [
     {
       image: "",
@@ -66,9 +71,9 @@ export const Robotics = {
     },
     {
       id: "2",
-      name: "",
-      title: "Managing Trustee,",
-      company: " Agama Reddy Educational Trust, Tamil Nadu",
+      name: "Mrs. Lakshmi ",
+      title: "Managing Trustee",
+      company: "Agama Reddy Educational Trust, Tamil Nadu",
       quote: `We were impressed by how Vithsutra seamlessly blended advanced robotics with an easy-to-understand curriculum. Their approach ignited interest even in non-technical students and created a buzz across our campus. Highly recommended for any institution serious about future-ready education.`,
       avatar: "/industry/robotics/testimonials/femail.svg",
     },

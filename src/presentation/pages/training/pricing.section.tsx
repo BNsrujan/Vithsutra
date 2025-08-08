@@ -14,7 +14,7 @@ export default function PricingModels() {
     <section className="py-company-xl-48  max-w-company-section-width mx-auto bg-company-white">
       <Heading heading="Training Models" Display="Choose Your Path" />
       <motion.div
-        className="md:grid md:grid-cols-3  md:gap-company-lg-24 flex flex-col md:h-[800px] justify-center gap-company-lg-24 md:mb-0 z-10"
+        className="md:grid md:grid-cols-3  md:gap-company-lg-24 flex flex-col md:h-[900px] justify-center gap-company-lg-24 md:mb-0 z-10"
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         exit={{ opacity: 0, y: -20 }}
@@ -24,7 +24,7 @@ export default function PricingModels() {
         {models.map((model, index) => (
           <div
             key={index}
-            className={`relative  border-1 border-company-primary-royalBlue/40 rounded-card max-w-company-card-width p-company-lg-24 transition duration-300 rounded-company-section-24 ease-in bg-company-litest-gray z-10 text-black`}
+            className={`relative border-1 border-company-primary-royalBlue/40 rounded-card max-w-company-card-width p-company-lg-24 transition duration-300 rounded-company-section-24 ease-in bg-company-litest-gray z-10 text-black`}
           >
             {/* {index == 2 && (
               <div className="absolute -top-4 left-0 max-w-company-card-width w-full h-9 font-semibold px-3 py-1 rounded-t-company-section-24  bg-company-secondary-yello  z-20">
@@ -33,24 +33,23 @@ export default function PricingModels() {
             )} */}
             <div className="">
               <div className="flex items-center mt-company-sm-12 ">
-                <div className="flex  items-center h-full size-6  ">
-                  {model.icon}
-                </div>
-                <div className="h-full  ">
-                  <p className={typography.title.large + " mb-company-xl-48"}>
-                    {model.title}
-                  </p>
+                <div className="flex  items-center h-full   ">{model.icon}</div>
+                <div className="h-full pl-company-xs-8">
+                  <p className={`${typography.title.large} `}>{model.title}</p>
                   <p
-                    className={
-                      typography.body.medium + "  text-company-primary-royalBlue"
-                    }
+                    className={`${typography.body.medium} text-company-primary-royalBlue`}
                   >
                     {model.subtitle}
                   </p>
                 </div>
               </div>
             </div>
-            <p className={typography.body.large + " pt-company-xl-48 text-company-text-gray mb-4 "}>
+            <p
+              className={
+                typography.body.large +
+                " pt-company-xl-48 text-company-text-gray mb-4 "
+              }
+            >
               {model.description}
             </p>
             <hr className=" w-full my-company-lg-24 bg-company-dark-gray" />
@@ -60,7 +59,7 @@ export default function PricingModels() {
                   key={idx}
                   className="flex items-center   gap-company-md-16 group transition duration-300 ease-in group-hover:text-company-primary-royalBlue"
                 >
-                  {iconMap[feature] ?? <IconButton icon={Puzzle}  />}
+                  {iconMap[feature] ?? <IconButton icon={Puzzle} />}
                   <span
                     className={
                       typography.body.large +
@@ -74,7 +73,7 @@ export default function PricingModels() {
             </ul>
             <Button
               variant={"neumorphic"}
-              className="w-full absolute bottom-company-lg-24"
+              className="w-[90%] absolute  bottom-company-lg-24 "
             >
               Book a Model
             </Button>

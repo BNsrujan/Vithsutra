@@ -1,6 +1,5 @@
 import Heading from "./ui/heading.ui" 
-import { text  
- } from "@/shared/lib/typography"
+import { typography } from "@/shared/lib/typography"
 import {
   Accordion,
   AccordionContent,

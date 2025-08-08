@@ -31,11 +31,11 @@ const MenuItem = React.memo(({ item }: { item: MenuItem }) => (
     <NavigationMenuLink asChild>
       <Link
         href={item.href}
-        className="block select-none space-y-1 rounded-md p-company-lg-24 leading-none no-underline outline-none transition-colors hover:bg-[var(--company-litest-gray)] hover:text-[var(--company-primary-royalBlue)] focus:bg-[var(--company-litest-gray)] focus:text-[var(--company-primary-royalBlue)]"
+        className="block select-none space-y-1 rounded-md h-full p-company-lg-24 leading-none no-underline outline-none transition-colors hover:bg-[var(--company-litest-gray)] hover:text-[var(--company-primary-royalBlue)] focus:bg-[var(--company-litest-gray)] focus:text-[var(--company-primary-royalBlue)]"
       >
         <div className={`${typography.title.medium} font-medium`}>{item.title}</div>
         <p
-          className={`${typography.body.medium} font-light text-[var(--company-mid-gray)]`}
+          className={`${typography.body.medium} leading-5  text-[var(--company-mid-gray)]`}
         >
           {item.description}
         </p>
@@ -65,12 +65,12 @@ const MenuSection = React.memo(
                 href={section.href}
               >
                 <div
-                  className={`${typography.title.large} text-wrap  text-[var(--company-blue-black)]`}
+                  className={`${typography.title.large}   text-[var(--company-blue-black)]`}
                 >
                   {section.title}
                 </div>
                 <p
-                  className={`${typography.body.medium} text-[var(--company-mid-gray)]`}
+                  className={`${typography.body.medium}  text-[var(--company-mid-gray)]`}
                 >
                   {section.description}
                 </p>

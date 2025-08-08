@@ -203,19 +203,19 @@ export const Card = ({
         transition={{
           delay: -1,
         }}
-        className="group relative w-[80vw] z-10 flex h-80 flex-col  items-start justify-start scale-0.9 overflow-hidden rounded-3xl bg-gray-100 md:h-[40rem] md:w-[50vw] dark:bg-neutral-900 transition-all duration-700 ease-in-out hover:scale-[1.0001]"
+        className="group relative w-[80vw] z-10 flex h-80 flex-col  items-start justify-start scale-0.9  rounded-3xl bg-gray-100 md:h-[40rem] md:w-[50vw] dark:bg-neutral-900 transition-all duration-700 ease-in-out hover:scale-[1.0001]"
       >
-        <div className="pointer-events-none  absolute w-auto inset-x-0 top-0 z-30 h-full bg-company-dark-gray/20  duration-700 ease-in-out " />
+        <div className="pointer-events-none  absolute   w-full   rounded-company-section-24 z-30 h-full bg-gradient-to-t from-black/60 via-transparent to-transparent" />
         <div className=" absolute bottom-0 left-1 z-40 p-company-lg-24">
           <motion.p
             layoutId={layout ? `category-${card.category}` : undefined}
-            className={`${typography.body.medium} text-left text-company-black/70  transition-all duration-700 ease-in-out group-hover:text-company-black`}
+            className={`${typography.body.medium} text-left text-company-white  transition-all duration-700 ease-in-out `}
           >
             {card.category}
           </motion.p>
           <motion.p
             layoutId={layout ? `title-${card.title}` : undefined}
-            className={`${typography.headline.large}  max-w-xs text-left text-company-black/70  transition-all duration-700 ease-in-out group-hover:text-company-black`}
+            className={`${typography.headline.large}  max-w-xs md:max-w-md text-left text-company-white  transition-all duration-700 ease-in-out `}
           >
             {card.title}
           </motion.p>

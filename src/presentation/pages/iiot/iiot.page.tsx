@@ -10,7 +10,7 @@ import Heading from "@/presentation/components/ui/heading.ui";
 import { ProcessStepCard } from "@/presentation/components/productstemplate/process_step_card.section";
 import { FeatuerCard } from "@/presentation/components/productstemplate/feature.section";
 import { useRouter } from "next/navigation";
-import { Card, Carousel } from "@/presentation/components/ui/products_card.component";
+import { Card, Carousel } from "@/presentation/components/ui/application_card.component";
 import TestimonialsCarousel from "@/presentation/components/testimonials.section";
 import Faq from "@/presentation/components/faq.section";
 
@@ -34,14 +34,14 @@ export function HeroSectionIIot() {
               Introduction Meet Our IIoT Automation
             </motion.h1>
             <motion.p
-              className={`${typography.body.large}  max-w-2xl `}
+              className={`${typography.title.large}  max-w-2xl `}
               variants={fadeInUp}
             >
               At VithSutra, we harness the power of Industrial Internet of
               Things (IIoT) to revolutionize factory operations. Our advanced
               services integrate with PLCs, VFDs, SCADA systems, and sensors to
               capture real-time data, transform it through intelligent analysis,
-              and present it via intuitive dashboards—so you can optimize
+              and present it via intuitive dashboards - so you can optimize
               performance, reduce downtime, and increase operational efficiency.
             </motion.p>
             <div className="flex md:justify-center lg:justify-start">
@@ -121,7 +121,7 @@ export default function IIOTPages() {
                     What Is IIoT?
                   </motion.h1>
                   <motion.p
-                    className={`${typography.body.large} max-w-2xl `}
+                    className={`${typography.title.large} max-w-2xl `}
                     variants={fadeInUp}
                   >
                     Industrial IoT, or Industrial Internet of Things, means
@@ -151,7 +151,7 @@ export default function IIOTPages() {
                     Why Choose VithSutra&apos;s IIoT Solutions?
                   </motion.h1>
                   <motion.p
-                    className={`${typography.body.large} md:max-w-2xl max-w-64  `}
+                    className={`${typography.title.large}   `}
                     variants={fadeInUp}
                   >
                     Our IIoT platform delivers comprehensive industrial
@@ -196,15 +196,15 @@ export default function IIOTPages() {
                             </div>
                             <div className="flex-1 justify-center h-full">
                               <h3
-                                className={` ${typography.title.large} pb-company-xs-8 text-gray-900 `}
+                                className={` ${typography.title.large}  text-gray-900 `}
                               >
                                 {whychose.title}
                               </h3>
-                              {/* <p
+                              <p
                                 className={`${typography.body.medium} text-sm text-gray-600 leading-relaxed`}
                               >
                                 {whychose.description}
-                              </p> */}
+                              </p>
                             </div>
                           </div>
                         );
@@ -267,7 +267,7 @@ export default function IIOTPages() {
                         src: app.image,
                         title: app.industry || " ",
                         category: "Industry",
-                        link:"#",
+                        
                         content: <div>{app.description}</div>,
                         
                       }}

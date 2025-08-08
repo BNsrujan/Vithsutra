@@ -5,7 +5,7 @@ export const industries = [
       description:
         "Automating packaging, sorting, and quality control with robotics and smart sensors to boost hygiene and efficiency.",
       // link: "/industries/food-processing",
-      image: "/industry/food-processing.avif",
+      image: "/industry/iiot/application/foodandbeverage.svg",
     },
     {
       title: "Healthcare & Medical",
@@ -26,7 +26,7 @@ export const industries = [
       description:
         "Empowering modern farmers with hydroponics automation, sensor-based monitoring, and precision farming tech.",
       // link: "/industries/farming-agriculture",
-      image: "/industry/farming.avif",
+      image: "/Products/vithnet/application/planet-rescue-101.png",
     },
     {
       title: "Manufacturing",

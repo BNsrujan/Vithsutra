@@ -69,7 +69,7 @@ function Largecard({
           quality={100}
         />
         <div
-          className={`absolute inset-0 bg-gradient-to-t from-black/60 via-black/50 to-transparent transition-all duration-700 ease-in-out ${
+          className={`absolute inset-0 bg-gradient-to-t from-black/70  via-transparent to-transparent transition-all duration-700 ease-in-out ${
             isTouched ? "opacity-90" : "group-hover:opacity-90"
           }`}
         />
@@ -87,7 +87,7 @@ function Largecard({
               {feature.title}
             </h3>
             <p
-              className={`${typography.body.large} hidden md:block text-clip h-4 md:h-full w-80 sm:w-full md:w-full text-company-light-gray transition-all duration-700 ease-in-out ${
+              className={`${typography.title.large} hidden md:block text-clip h-4 md:h-full w-80 sm:w-full md:w-full text-company-light-gray transition-all duration-700 ease-in-out ${
                 isTouched ? "text-company-white-text" : "group-hover:text-company-white-text"
               }`}
             >

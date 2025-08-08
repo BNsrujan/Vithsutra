@@ -43,7 +43,7 @@ function Technicalspecification(product: Product) {
                       </div>
                       <div className="flex-1 justify-center h-full">
                         <h3
-                          className={` ${typography.title.large} pb-company-xs-8 text-gray-900 `}
+                          className={` ${typography.title.large}  text-gray-900 `}
                         >                          {feature.heading}
                         </h3>
                         <p

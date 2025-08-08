@@ -7,7 +7,7 @@ export const industries = [
   ];
   
 export const solutions = [
-    { name: "RFID-Based Telephone", href: "/products/rfid-telephone" },
+    // { name: "RFID-Based Telephone", href: "/products/rfid-telephone" },
     { name: "Biometric System", href: "/products/biometric-product" },
     { name: "Hydroponics Controller", href: "/products/hydroponic-controller" },
     {

@@ -139,20 +139,7 @@ const SectorLayout: React.FC<SectorLayoutProps> = ({ data }) => {
           />
           <div className="mt-company-lg-24 sm:mt-company-xl-48 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-company-lg-24 sm:gap-company-xl-48">
             {data.applications.map((app, index) => {
-              if (typeof app === "string") {
-                return (
-                  <motion.div
-                    key={index}
-                    variants={itemVariants}
-                    custom={index}
-                    className="bg-company-blue-white p-company-lg-24 sm:p-company-xl-48 rounded-card"
-                  >
-                    <h3 className={`${typography.headline.large} text-company-gray mb-company-md-16 sm:mb-company-lg-24`}>
-                      {app}
-                    </h3>
-                  </motion.div>
-                );
-              } else {
+             
                 // Type guard for image property
                 const hasImage = Object.prototype.hasOwnProperty.call(app, 'image');
                 return (
@@ -162,7 +149,7 @@ const SectorLayout: React.FC<SectorLayoutProps> = ({ data }) => {
                     custom={index}
                     className="bg-company-blue-white p-company-lg-24 sm:p-company-xl-48 rounded-card"
                   >
-                    <div className="w-12 h-12 sm:w-16 sm:h-16 mb-4 sm:mb-6">
+                    <div className="w-12 hAPPLICATION-12 sm:w-16 sm:h-16 mb-4 sm:mb-6">
                       <Image
                         src={app.icon || (hasImage ? (app as unknown as { image: string }).image : "/placeholder.png")}
                         alt={app.title}
@@ -171,15 +158,15 @@ const SectorLayout: React.FC<SectorLayoutProps> = ({ data }) => {
                         className="w-full h-full object-contain"
                       />
                     </div>
-                    <h3 className={`${typography.headline.large} text-company-gray mb-company-md-16 sm:mb-company-lg-24`}>
+                    <h3 className={`${typography.headline.large}  mb-company-md-16 sm:mb-company-lg-24`}>
                       {app.title}
                     </h3>
-                    <p className={`${typography.body.medium} text-company-mid-gray`}>
+                    <p className={`${typography.body.medium} `}>
                       {app.description}
                     </p>
                   </motion.div>
                 );
-              }
+              
             })}
           </div>
         </div>

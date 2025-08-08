@@ -27,7 +27,7 @@ export default function About() {
             />
             
             <motion.p 
-              className={`${typography.body.large} text-[var(--company-mid-gray)]`}
+              className={`${typography.title.large}  text-[var(--company-mid-gray)]`}
               variants={aboutContent}
               viewport={{ once: true, margin: "-100px" }}
             >

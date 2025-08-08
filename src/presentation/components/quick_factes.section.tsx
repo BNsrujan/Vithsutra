@@ -80,7 +80,7 @@ export default function QuickFacts({ facts }: factsProps) {
             <Heading heading="Achievements" Display="What We've Built So Far" />
 
             <motion.div
-              className="grid grid-cols-2 md:h-[300px] h[] pt-company-xs-8  xl:grid-cols-4 my-company-xl-48"
+              className="grid grid-cols-2 md:h-[300px]  pt-company-xs-8  xl:grid-cols-4 my-company-xl-48"
               variants={containerVariants}
             >
               {facts.map((fact, index) => (
@@ -98,7 +98,7 @@ export default function QuickFacts({ facts }: factsProps) {
                     </span>
                   </div>
                   <h3
-                    className={`${typography.body.large} text-[var(--company-blue-black)] `}
+                    className={`${typography.title.large} text-[var(--company-blue-black)] `}
                   >
                     {fact.title}
                   </h3>

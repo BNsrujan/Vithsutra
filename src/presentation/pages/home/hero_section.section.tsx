@@ -13,7 +13,7 @@ export default function Hero() {
   return (
     <div className="relative w-full">
       <div className="max-w-[1700px] mx-auto h-full">
-        <div className="grid grid-cols-1 lg:grid-cols-2 w-full gap-8 min-h-[93vh] py-company-sm-12 lg:py-0">
+        <div className="flex justify-center  h-full items-center w-full gap-8 min-h-[93vh] py-company-sm-12 lg:py-0">
           {/* Left Content */}
           <motion.div
             className="relative flex flex-col py-company-md-16 justify-center md:items-start w-full  h-full space-y-company-lg-24"
@@ -29,7 +29,7 @@ export default function Hero() {
                 transition={{ duration: 0.5, delay: 0.1 }}
               >
                 <span
-                  className={`${typography.display.small} w-auto text-center md:text-left flex-nowrap text-[var(--company-blue-black)]`}
+                  className={`${typography.display.large}  w-auto text-center md:text-left flex-nowrap text-[var(--company-blue-black)]`}
                 >
                   Our Expertise
                 </span>
@@ -38,7 +38,7 @@ export default function Hero() {
                 </div>
               </motion.div>
               <motion.p
-                className={`${typography.title.medium} mt-[8px] md:mt-[8px] text-center md:text-left text-[var(--company-mid-gray)] max-w-4xl`}
+                className={`${typography.title.large} mt-[8px] md:mt-[8px] text-center md:text-left text-[var(--company-mid-gray)] max-w-4xl`}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.4 }}

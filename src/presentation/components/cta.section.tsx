@@ -24,7 +24,7 @@ export default function Cta(product: Product) {
               Ready to Get Started?
             </h2>
             <p
-              className={`${typography.body.large} text-company-litest-gray  mb-company-md-16 max-w-2xl mx-auto`}
+              className={`${typography.body.large} text-company-litest-gray  mb-company-md-16 max-w-3xl mx-auto`}
             >
               Contact us today to learn more about {product.name} and how it can
               benefit your business.

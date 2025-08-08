@@ -19,7 +19,7 @@ export default function IndustrySkillsHighlights() {
         <ul className="grid gap-6 grid-cols-1 text-left">
           {highlights.map((item, idx) => (
             <li key={idx} className="flex items-start gap-4">
-              <CheckCircle className="text-green-600 mt-1" size={22} />
+              <CheckCircle className="text-company-primary-royalBlue mt-1" size={22} />
               <span className={`${typography.body.large} text-gray-700`}>{item}</span>
             </li>
           ))}

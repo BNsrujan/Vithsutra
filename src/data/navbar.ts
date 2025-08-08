@@ -7,12 +7,12 @@ export const menuData: Record<string, MenuSection> = {
     description: "Explore our diverse range of successful Products.",
     href: "/Solutions",
     items: [
-      {
-        title: "RFID-Based Telephone",
-        description:
-          "Secure RFID calling system with student-specific digital balance recharge",
-        href: "/products/rfid-telephone",
-      },
+      // {
+      //   title: "RFID-Based Telephone",
+      //   description:
+      //     "Secure RFID calling system with student-specific digital balance recharge",
+      //   href: "/products/rfid-telephone",
+      // },
       {
         title: "Biometric System",
         description:

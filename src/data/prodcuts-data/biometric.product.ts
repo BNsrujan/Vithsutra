@@ -123,7 +123,7 @@ export const biometricProduct: Product = {
       },
       {
         description:"USB/Serial/Wi-Fi (based on model)" ,
-        heading:"",
+        heading:"Multi-Mode Connectivity",
         icon:"/Products/biometric-product/Technical/no-connection.png",
       },
       {

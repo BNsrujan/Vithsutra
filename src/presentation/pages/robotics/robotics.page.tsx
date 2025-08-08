@@ -16,6 +16,7 @@ import TestimonialsCarousel from "@/presentation/components/testimonials.section
 import Faq from "@/presentation/components/faq.section";
 import BrochureDownload from "@/presentation/components/brochure_download.component";
 import IndustrySkillsHighlights from "@/presentation/components/industrialskills.component";
+import Training from "../training/training.page";
 
 export function HeroSectionIIot() {
   const router = useRouter();
@@ -37,7 +38,7 @@ export function HeroSectionIIot() {
               Robotics: Beyond the Basics
             </motion.h1>
             <motion.p
-              className={`${typography.body.large}  max-w-2xl `}
+              className={`${typography.title.large}  max-w-2xl `}
               variants={fadeInUp}
             >
               Robotics is the science of designing and controlling machines that
@@ -121,7 +122,7 @@ export default function RoboticsPage() {
               >
                 Why Introduce Industrial Robotics Training?
               </motion.h1>
-              <IndustrySkillsHighlights/>
+              <IndustrySkillsHighlights />
             </motion.div>
           </div>
         </div>
@@ -189,15 +190,15 @@ export default function RoboticsPage() {
                         </div>
                         <div className="flex-1 justify-center h-full">
                           <h3
-                            className={` ${typography.title.large} pb-company-xs-8 text-gray-900 `}
+                            className={` ${typography.title.large}  text-gray-900 `}
                           >
                             {whychose.title}
                           </h3>
-                          {/* <p
-                                        className={`${typography.body.medium} text-sm text-gray-600 leading-relaxed`}
-                                      >
-                                        {whychose.description}
-                                      </p> */}
+                          <p
+                            className={`${typography.body.medium} text-sm text-gray-600 leading-relaxed`}
+                          >
+                            {whychose.description}
+                          </p>
                         </div>
                       </div>
                     );
@@ -210,7 +211,7 @@ export default function RoboticsPage() {
 
       {/* Application */}
       <section className="py-16 px-4 md:px-0 md:py-24 overflow-hidden relative flex justify-center items-center">
-        <div className="mt-company-xl-48 w-company-section-width">
+        <div className="mt-company-xl-48 ">
           <div className="md:py-company-lg-24">
             <div className="max-w-company-section-width mx-auto w-full">
               <Heading Display="APPLICATION" heading="Use Cases" />
@@ -234,13 +235,14 @@ export default function RoboticsPage() {
           </div>
         </div>
       </section>
-      <BrochureDownload />
+     
 
       {/* Testimonial  */}
-        <TestimonialsCarousel
-          testimonials={Robotics.testimonials}
-          key={`robotics-testimonials`}
-        />
+      <TestimonialsCarousel
+        testimonials={Robotics.testimonials}
+        key={`robotics-testimonials`}
+      />
+      <Training />
 
       <Faq FaQ={Robotics.faq} key={`robotics-faq`} />
     </div>

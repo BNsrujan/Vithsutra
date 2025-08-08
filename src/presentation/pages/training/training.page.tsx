@@ -2,8 +2,7 @@ import BrochureDownload from "@/presentation/components/brochure_download.compon
 import Faq from "@/presentation/components/faq.section";
 import ComparisonTable from "@/presentation/pages/training/futhers_comparision.section";
 import PricingModels from "@/presentation/pages/training/pricing.section";
-import { faqs ,testimonials } from "@/data/domain/training_page.data";
-import TestimonialsCarousel from "@/presentation/components/testimonials.section";
+import { faqs } from "@/data/domain/training_page.data";
 
 export default function Training() {
   return (
@@ -11,8 +10,7 @@ export default function Training() {
       <PricingModels/>
       <ComparisonTable/>
       <BrochureDownload/>
-      <Faq  FaQ={faqs} />
-      <TestimonialsCarousel testimonials={testimonials} />
+      {/* <Faq  FaQ={faqs} /> */}
     </div>
   );
 }

@@ -1,22 +1,28 @@
+
 export const IIOT = {
   whychose: [
     {
       image: "/industry/iiot/whychossesiiot/improve.png",
       title: "Improve OEE",
+      description: "Boost operational efficiency and eliminate production bottlenecks.",
     },
     {
-      title: "maximize uptime and productivity ",
+      title: "Maximize Uptime and Productivity",
       image: "/industry/iiot/whychossesiiot/maxismis.png",
+      description: "Ensure continuous operations with predictive maintenance and monitoring.",
     },
     {
       title: "Enhance Quality",
       image: "/industry/iiot/whychossesiiot/enhase_ity.png",
+      description: "Improve product consistency through real-time process control.",
     },
     {
       title: "Reduce Costs",
       image: "/industry/iiot/whychossesiiot/reduce.png",
+      description: "Cut waste, energy use, and unplanned downtime expenses.",
     },
   ],
+  
   builtinFeature: [
     {
       image: "/industry/iiot/buitinfeature/seamless.png",
