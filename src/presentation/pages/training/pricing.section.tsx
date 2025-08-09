@@ -11,10 +11,10 @@ import { models } from "@/data/domain/training_page.data";
 
 export default function PricingModels() {
   return (
-    <section className="py-company-xl-48  max-w-company-section-width mx-auto bg-company-white">
-      <Heading heading="Training Models" Display="Choose Your Path" />
+    <section className="py-company-xl-48  max-w-company-section-width mx-auto bg-company-white  ">
+      <Heading heading="Training Models" Display="Choose Your Path" className="px-4 md:px-0 " />
       <motion.div
-        className="md:grid md:grid-cols-3  md:gap-company-lg-24 flex flex-col md:h-[900px] justify-center gap-company-lg-24 md:mb-0 z-10"
+        className="md:grid md:grid-cols-3 pt-company-xl-48 md:gap-company-lg-24 flex flex-col px-4 md:px-0   md:h-[900px] justify-center gap-company-lg-24 md:mb-0 z-10"
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         exit={{ opacity: 0, y: -20 }}
@@ -24,7 +24,7 @@ export default function PricingModels() {
         {models.map((model, index) => (
           <div
             key={index}
-            className={`relative border-1 border-company-primary-royalBlue/40 rounded-card max-w-company-card-width p-company-lg-24 transition duration-300 rounded-company-section-24 ease-in bg-company-litest-gray z-10 text-black`}
+            className={`relative border-1 border-company-primary-royalBlue/40 min-h-[800px] rounded-card max-w-company-card-width p-company-lg-24 transition duration-300 rounded-company-section-24 ease-in bg-company-litest-gray z-10 text-black`}
           >
             {/* {index == 2 && (
               <div className="absolute -top-4 left-0 max-w-company-card-width w-full h-9 font-semibold px-3 py-1 rounded-t-company-section-24  bg-company-secondary-yello  z-20">
@@ -81,7 +81,7 @@ export default function PricingModels() {
         ))}
       </motion.div>
 
-      <section className="text-center py-company-xl-48 space-y-company-xs-8 bg-company-primary-royalBlue rounded-company-section-24 mt-company-lg-24">
+      <section className="text-center py-company-xl-48 space-y-company-xs-8 bg-company-primary-royalBlue  md:rounded-company-section-24 mt-company-lg-24">
         <h2 className={typography.headline.large + " text-white"}>
           Ready to Start Your Robotics Journey?
         </h2>

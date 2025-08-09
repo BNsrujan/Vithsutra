@@ -43,7 +43,7 @@ const plans = {
 
 export default function ComparisonTable() {
   return (
-    <section className="py-12 px-6 w-full bg-gray-50">
+    <section className="py-12  w-full bg-gray-50  px-4 md:px-0">
       <div className="max-w-[1400px] mx-auto">
         <h2 className={`${typography.display.large} mb-6 text-center`}>Model Comparison</h2>
         <div className="overflow-x-auto border rounded-lg">

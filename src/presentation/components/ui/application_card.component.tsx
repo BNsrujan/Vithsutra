@@ -98,7 +98,7 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
     >
       <div className="relative w-full h-full">
         <div
-          className="flex w-full overflow-x-scroll overscroll-x-auto scroll-smooth  [scrollbar-width:none] py-10"
+          className="flex w-full overflow-x-scroll overscroll-x-auto scroll-smooth  [scrollbar-width:none]"
           ref={carouselRef}
           onScroll={checkScrollability}
         >
@@ -132,7 +132,7 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
           </div>
 
           {/* Navigation buttons - responsive positioning */}
-          <div className="absolute -bottom-2 right-0 sm:bottom-20 sm:right-0 left flex gap-2 z-50">
+          <div className="absolute -bottom-4 right-0 sm:bottom-20 sm:right-0 left flex gap-2 z-50">
             <ArrowLeftRight
               scrollLeft={scrollLeft}
               scrollRight={scrollRight}

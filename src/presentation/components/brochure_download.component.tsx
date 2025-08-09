@@ -52,7 +52,7 @@ export default function BrochureDownload() {
   };
 
   return (
-    <section className="text-center bg-company-primary-royalBlue rounded-company-section-24 h-full w-company-section-width mx-auto py-12">
+    <section className="text-center bg-company-primary-royalBlue w-full px-12  md:rounded-company-section-24 h-full max-w-company-section-width mx-auto py-12">
       <h2 className="text-2xl font-semibold mb-4 text-white">Want the Full Robotics Brochure?</h2>
       <Button
         variant={'neumorphicYellow'}

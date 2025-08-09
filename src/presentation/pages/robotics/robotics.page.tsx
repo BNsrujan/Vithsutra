@@ -88,9 +88,9 @@ export default function RoboticsPage() {
       <HeroSectionIIot />
 
       <section className="relative min-h-[70vh]     ">
-        <div className="container mx-auto px-4 sm:px-0 w-company-section-width flex flex-wrap-reverse items-center justify-between  h-full py-20 gap-company-xl-48 md:gap-0">
+        <div className="mx-auto px-4 sm:px-0 max-w-company-section-width flex flex-wrap-reverse items-center justify-between  h-full py-20 gap-company-xl-48 md:gap-0">
           {/* Right side - Image */}
-          <div className="relative w-full lg:w-1/2 h-[260px] min-h-[400px] pr-7  flex justify-center   overflow-hidden items-center">
+          <div className="relative w-full lg:w-1/2 h-[260px]  md:min-h-[400px] md:pr-7  flex justify-center   overflow-hidden items-center">
             <motion.div
               variants={containerVariants}
               initial="hidden"
@@ -127,7 +127,7 @@ export default function RoboticsPage() {
         </div>
       </section>
       <section className="relative min-h-[70vh]  w-full  ">
-        <div className="container mx-auto px-4 sm:px-0 w-company-section-width flex flex-wrap-reverse   justify-between items-end h-full py-20  md:gap-0">
+        <div className="container mx-auto px-4 sm:px-0 max-w-company-section-width flex flex-wrap   justify-between items-end h-full py-20  md:gap-0">
           {/* Left side - Text Content */}
           <div className="w-full lg:w-1/2 text-black flex  flex-col justify-center h-full items-center lg:items-start ">
             <motion.div
@@ -143,7 +143,7 @@ export default function RoboticsPage() {
                 How Vithsutra’s Robotics Training Can Help You?
               </motion.h1>
               <motion.p
-                className={`${typography.body.large} md:max-w-2xl max-w-64  `}
+                className={`${typography.body.large} md:max-w-2xl w-full  `}
                 variants={fadeInUp}
               >
                 At Vithsutra, we offer customized industrial robotics training
@@ -155,7 +155,7 @@ export default function RoboticsPage() {
             </motion.div>
           </div>
 
-          <div className="md:w-1/2 mx-auto px-company-lg-24 ">
+          <div className="md:w-1/2 mx-auto pt-company-xl-48 md:pt-0 px-company-lg-24 w-full">
             <Heading heading="FEATURES" Display="Key Features" />
             <div className="pt-company-xl-48">
               <div className="grid grid-cols-1 gap-company-sm-12  ">
@@ -183,7 +183,7 @@ export default function RoboticsPage() {
                         className="flex items-start gap-company-xs-8 justify-center "
                       >
                         <div className="flex-shrink-0">
-                          <div className="w-20 h-20 bg-white border border-gray-200 rounded-company-button-8  flex items-center justify-center">
+                          <div className="w-20 h-20 bg-blue-50 border border-blue-200 rounded-company-button-8  flex items-center justify-center">
                             {IconComponent}
                           </div>
                         </div>
@@ -209,7 +209,7 @@ export default function RoboticsPage() {
       </section>
 
       {/* Application */}
-      <section className="py-16 px-4 md:px-0 md:py-24 overflow-hidden relative flex justify-center items-center">
+      <section className="py-16 px-4 md:px-0 md:py-24 overflow-hidden relative ">
         <div className="mt-company-xl-48 ">
           <div className="md:py-company-lg-24">
             <div className="max-w-company-section-width mx-auto w-full">

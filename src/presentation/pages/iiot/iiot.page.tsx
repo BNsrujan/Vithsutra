@@ -90,7 +90,7 @@ export default function IIOTPages() {
 
         {/* About Section */}
         <section className="relative min-h-[50vh] md:min-h-[70vh] flex">
-          <div className="mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl w-full flex flex-col lg:flex-row-reverse items-center justify-between h-full py-12 md:py-20 gap-8 lg:gap-12">
+          <div className="mx-auto px-4 sm:px-6 lg:px-8 max-w-company-section-width w-full flex flex-col lg:flex-row-reverse items-center justify-between h-full py-12 md:py-20 gap-8 lg:gap-12">
             {/* Image */}
             <div className="relative w-full lg:w-1/2 h-[200px] sm:h-[260px] md:h-[350px] lg:h-[400px] flex justify-center items-center">
               <motion.div
@@ -140,7 +140,7 @@ export default function IIOTPages() {
 
         {/* why Choose VithSutra's IIoT Solutions Section  */}
         <section className="relative min-h-[50vh] md:min-h-[70vh] w-full ">
-          <div className="mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl w-full flex flex-col lg:flex-row items-center justify-between h-full py-12 md:py-20 gap-8 lg:gap-12">
+          <div className="mx-auto px-4 sm:px-6 lg:px-8 max-w-company-section-width w-full flex flex-col lg:flex-row items-center justify-between h-full py-12 md:py-20 gap-8 lg:gap-12">
             {/* Left side - Text Content */}
             <div className="w-full lg:w-1/2 text-black flex flex-col justify-center items-center lg:items-start text-center lg:text-left">
               <motion.div
@@ -224,7 +224,7 @@ export default function IIOTPages() {
       </section>
 
       <section className="py-12 md:py-20 lg:py-24">
-        <div className="mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl w-full">
+        <div className="mx-auto px-4 sm:px-6 lg:px-8 max-w-company-section-width w-full">
           <div className="mb-8 md:mb-12 lg:mb-16">
             <Heading
               heading="Simple, secure, and streamlined - our four-step process ensures reliable communication access"
@@ -232,7 +232,7 @@ export default function IIOTPages() {
               className="flex flex-col-reverse"
             />
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 lg:gap-12 w-full">
+          <div className="grid   grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 lg:gap-12 Ptp">
             {IIOT.howItWorks?.map((step, idx, arr) => (
               <ProcessStepCard
                 key={step.title}
@@ -248,7 +248,7 @@ export default function IIOTPages() {
 
       {/* builtinFeature */}
       <section className="py-12 md:py-20 lg:py-24 bg-white">
-        <div className="mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl w-full">
+        <div className="mx-auto px-4 sm:px-6 lg:px-8 max-w-company-section-width w-full">
           <div className="mb-8 md:mb-12 lg:mb-16">
             <Heading
               heading="Designed for factories. Engineered for intelligence"
@@ -262,7 +262,7 @@ export default function IIOTPages() {
 
       {/* Application section */}
       <section className="py-12 md:py-20 lg:py-24 bg-gray-50 overflow-hidden">
-        <div className="mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl w-full">
+        <div className="mx-auto px-4 sm:px-6 lg:px-8 max-w-company-section-width w-full">
           <div className="mb-8 md:mb-12 lg:mb-16">
             <Heading Display="APPLICATION" heading="Use Cases" />
           </div>
