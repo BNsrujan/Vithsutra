@@ -1,13 +1,16 @@
 import { MenuSection } from "@/core/entities/navbar";
 
-// Menu data
-export const menuData: Record<string, MenuSection> = {
+/**
+ * Navigation menu data for the main navbar
+ * This data defines the structure and content of the navigation menu
+ */
+export const navbarData: Record<string, MenuSection> = {
   projects: {
     title: "Solutions",
     description: "Explore our diverse range of successful Products.",
     href: "/Solutions",
     items: [
-      // {
+              // {
       //   title: "RFID-Based Telephone",
       //   description:
       //     "Secure RFID calling system with student-specific digital balance recharge",
@@ -20,7 +23,7 @@ export const menuData: Record<string, MenuSection> = {
         href: "/products/biometric-product",
       },
       {
-        title: "Hydroponics Controller ",
+        title: "Hydroponics Controller",
         description:
           "Precision-controlled farming using industrial-grade sensors and real-time dashboards",
         href: "/products/hydroponic-controller",
@@ -45,8 +48,8 @@ export const menuData: Record<string, MenuSection> = {
     href: "/technologies",
     items: [
       {
-        title: "IIOT ",
-        description: "Industrial IoT ",
+        title: "IIOT",
+        description: "Industrial IoT",
         href: "/technologies/iiot",
       },
       {
@@ -71,31 +74,31 @@ export const menuData: Record<string, MenuSection> = {
         title: "Food Processing",
         description:
           "Automating packaging, sorting, and quality control with robotics and smart sensors to boost hygiene and efficiency.",
-        href: "/",
+        href: "/industries/food-processing",
       },
       {
         title: "Healthcare & Medical",
         description:
           "Secure patient access, sample inspection, and hospital automation powered by biometrics, robotics, and IIoT.",
-        href: "/",
+        href: "/industries/healthcare-medical",
       },
       {
         title: "Education & Research",
         description:
           "Providing institutions with IIoT labs and robotics training kits for real-world learning and innovation.",
-        href: "/",
+        href: "/industries/education-research",
       },
       {
         title: "Farming & Agriculture",
         description:
           "Empowering modern farmers with hydroponics automation, sensor-based monitoring, and precision farming tech.",
-        href: "/",
+        href: "/industries/farming-agriculture",
       },
       {
         title: "Manufacturing",
         description:
           "Streamlining industrial operations through PLC-based automation, SCADA systems, and robotic integration.",
-        href: "/",
+        href: "/industries/manufacturing",
       },
     ],
   },
@@ -104,15 +107,15 @@ export const menuData: Record<string, MenuSection> = {
     description: "Learn more about our company and mission.",
     href: "/about",
     items: [
-      { title: "Blog", description: "Latest news and insights", href: "/" }, //blog
+      { title: "Blog", description: "Latest news and insights", href: "/blog" },
       {
         title: "Case Studies",
         description: "Explore our successful projects and implementations",
-        href: "/",
-      }, // case-studies
-      { title: "Career", description: "Join our team", href: "/" }, //career
-      { title: "F&Q", description: "Have any Questions", href: "/" }, // faq
-      { title: "Team", description: "Our Team", href: "/" }, // team
+        href: "/case-studies",
+      },
+      { title: "Career", description: "Join our team", href: "/careers" },
+      { title: "F&Q", description: "Have any Questions", href: "/faq" },
+      { title: "Team", description: "Our Team", href: "/about/team" },
     ],
   },
 };

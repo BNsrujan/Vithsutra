@@ -1,13 +1,15 @@
 "use client";
 import Link from "next/link";
 import { Instagram, Linkedin, Twitter } from "lucide-react";
-import {
+import { footerData } from "@/infrastructure/data/navigation/footer.data";
+
+const {
   industries,
   solutions,
   technologies,
   companyLinks,
   legalLinks,
-} from "@/data/footer";
+} = footerData;
 import { typography } from "@/shared/lib/typography";
 import LogoWithName from "./ui/logo_with_name";
 

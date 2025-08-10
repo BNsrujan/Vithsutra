@@ -7,7 +7,7 @@ import { motion } from "motion/react";
 import { containerVariants, fadeInUp, fadeInDown } from "@/shared/lib/motion";
 import { useRouter } from "next/navigation";
 import Heading from "@/presentation/components/ui/heading.ui";
-import { Robotics } from "@/data/domain/robotics_page.data";
+import { Robotics } from "@/infrastructure/data/domain/robotics_page.data";
 import {
   Carousel,
   Card as CarouselCard,

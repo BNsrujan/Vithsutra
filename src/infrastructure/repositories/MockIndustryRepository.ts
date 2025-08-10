@@ -1,138 +1,51 @@
 import { Industry, CaseStudy } from '../../core/entities/industry';
 import { IndustryRepository, CaseStudyRepository } from '../../core/usecases/industry.usecases';
+import { industriesData } from '../data/industries/industries.data';
 
-const mockIndustries: Industry[] = [
-  {
-    id: '1',
-    name: 'Manufacturing',
-    description: 'Advanced automation solutions for manufacturing industries',
-    slug: 'manufacturing',
-    imageUrl: '/industry/manufacturing.jpg',
-    applications: [
-      'Quality Control',
-      'Production Monitoring',
-      'Predictive Maintenance',
-      'Supply Chain Management'
-    ],
-    challenges: [
-      'Equipment Downtime',
-      'Quality Consistency',
-      'Cost Optimization',
-      'Safety Compliance'
-    ],
-    solutions: [
-      'IoT Sensors for Real-time Monitoring',
-      'AI-powered Quality Control',
-      'Predictive Analytics',
-      'Automated Reporting Systems'
-    ],
-    isActive: true
+// Transform static data to entities using adapter
+import { IndustryDataAdapter } from '../data/adapters/industry.adapter';
+
+// Use the adapter to transform static data to entities
+const mockIndustries: Industry[] = IndustryDataAdapter.transformAllToEntities();
+
+// Additional detailed industry data (can be moved to separate data files later)
+const detailedIndustryData = {
+  'manufacturing': {
+    applications: ['Quality Control', 'Production Monitoring', 'Predictive Maintenance', 'Supply Chain Management'],
+    challenges: ['Equipment Downtime', 'Quality Consistency', 'Cost Optimization', 'Safety Compliance'],
+    solutions: ['IoT Sensors for Real-time Monitoring', 'AI-powered Quality Control', 'Predictive Analytics', 'Automated Reporting Systems']
   },
-  {
-    id: '2',
-    name: 'Healthcare & Medical',
-    description: 'Innovative technology solutions for healthcare sector',
-    slug: 'healthcare-medical',
-    imageUrl: '/industry/healthcare.jpg',
-    applications: [
-      'Patient Monitoring',
-      'Medical Device Integration',
-      'Data Management',
-      'Telemedicine'
-    ],
-    challenges: [
-      'Data Security',
-      'Regulatory Compliance',
-      'System Integration',
-      'Cost Management'
-    ],
-    solutions: [
-      'Secure Data Platforms',
-      'HIPAA Compliant Systems',
-      'Interoperability Solutions',
-      'Cloud-based Infrastructure'
-    ],
-    isActive: true
+  'healthcare-medical': {
+    applications: ['Patient Monitoring', 'Medical Device Integration', 'Data Management', 'Telemedicine'],
+    challenges: ['Data Security', 'Regulatory Compliance', 'System Integration', 'Cost Management'],
+    solutions: ['Secure Data Platforms', 'HIPAA Compliant Systems', 'Interoperability Solutions', 'Cloud-based Infrastructure']
   },
-  {
-    id: '3',
-    name: 'Education & Research',
-    description: 'Technology solutions for educational institutions and research facilities',
-    slug: 'education-research',
-    imageUrl: '/industry/education.jpg',
-    applications: [
-      'Smart Classrooms',
-      'Research Data Management',
-      'Campus Security',
-      'Learning Analytics'
-    ],
-    challenges: [
-      'Budget Constraints',
-      'Technology Adoption',
-      'Data Privacy',
-      'Infrastructure Limitations'
-    ],
-    solutions: [
-      'Cost-effective Solutions',
-      'User-friendly Interfaces',
-      'Privacy-first Design',
-      'Scalable Architecture'
-    ],
-    isActive: true
+  'education-research': {
+    applications: ['Smart Classrooms', 'Research Data Management', 'Campus Security', 'Learning Analytics'],
+    challenges: ['Budget Constraints', 'Technology Adoption', 'Data Privacy', 'Infrastructure Limitations'],
+    solutions: ['Cost-effective Solutions', 'User-friendly Interfaces', 'Privacy-first Design', 'Scalable Architecture']
   },
-  {
-    id: '4',
-    name: 'Food Processing',
-    description: 'Automation and monitoring solutions for food processing industry',
-    slug: 'food-processing',
-    imageUrl: '/industry/food-processing.jpg',
-    applications: [
-      'Quality Assurance',
-      'Temperature Monitoring',
-      'Inventory Management',
-      'Compliance Tracking'
-    ],
-    challenges: [
-      'Food Safety',
-      'Regulatory Compliance',
-      'Waste Reduction',
-      'Efficiency Optimization'
-    ],
-    solutions: [
-      'Real-time Monitoring Systems',
-      'Automated Quality Control',
-      'Traceability Solutions',
-      'Process Optimization'
-    ],
-    isActive: true
+  'food-processing': {
+    applications: ['Quality Assurance', 'Temperature Monitoring', 'Inventory Management', 'Compliance Tracking'],
+    challenges: ['Food Safety', 'Regulatory Compliance', 'Waste Reduction', 'Efficiency Optimization'],
+    solutions: ['Real-time Monitoring Systems', 'Automated Quality Control', 'Traceability Solutions', 'Process Optimization']
   },
-  {
-    id: '5',
-    name: 'Farming & Agriculture',
-    description: 'Smart farming solutions for modern agriculture',
-    slug: 'farming-agriculture',
-    imageUrl: '/industry/agriculture.jpg',
-    applications: [
-      'Precision Farming',
-      'Crop Monitoring',
-      'Irrigation Control',
-      'Livestock Management'
-    ],
-    challenges: [
-      'Weather Dependency',
-      'Resource Optimization',
-      'Crop Yield',
-      'Sustainability'
-    ],
-    solutions: [
-      'IoT Sensor Networks',
-      'Weather Monitoring',
-      'Automated Irrigation',
-      'Data-driven Insights'
-    ],
-    isActive: true
+  'farming-agriculture': {
+    applications: ['Precision Farming', 'Crop Monitoring', 'Irrigation Control', 'Livestock Management'],
+    challenges: ['Weather Dependency', 'Resource Optimization', 'Crop Yield', 'Sustainability'],
+    solutions: ['IoT Sensor Networks', 'Weather Monitoring', 'Automated Irrigation', 'Data-driven Insights']
   }
-];
+};
+
+// Enhance industries with detailed data
+mockIndustries.forEach(industry => {
+  const details = detailedIndustryData[industry.slug as keyof typeof detailedIndustryData];
+  if (details) {
+    industry.applications = details.applications;
+    industry.challenges = details.challenges;
+    industry.solutions = details.solutions;
+  }
+});
 
 const mockCaseStudies: CaseStudy[] = [
   {

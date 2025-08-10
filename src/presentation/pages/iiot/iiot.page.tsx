@@ -2,7 +2,7 @@
 
 import { Button } from "@/presentation/components/ui/button.ui";
 import Image from "next/image";
-import { IIOT } from "@/data/domain/iiot_pages.data";
+import { IIOT } from "@/infrastructure/data/domain/iiot_pages.data";
 import { typography } from "@/shared/lib/typography";
 import { motion } from "framer-motion";
 import { containerVariants, fadeInUp, fadeInDown } from "@/shared/lib/motion";

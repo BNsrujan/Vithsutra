@@ -4,12 +4,14 @@ import { IndustryUseCases } from '../../core/usecases/industry.usecases';
 import { ContactUseCases } from '../../core/usecases/contact.usecases';
 import { TeamUseCases } from '../../core/usecases/team.usecases';
 import { FAQUseCases } from '../../core/usecases/faq.usecases';
+import { BlogUseCases } from '../../core/usecases/blog.usecases';
 
 import { MockProductRepository, MockProductCategoryRepository } from '../repositories/MockProductRepository';
 import { MockIndustryRepository, MockCaseStudyRepository } from '../repositories/MockIndustryRepository';
 import { MockContactRepository } from '../repositories/MockContactRepository';
 import { MockTeamRepository } from '../repositories/MockTeamRepository';
 import { MockFAQRepository, MockFAQCategoryRepository } from '../repositories/MockFAQRepository';
+import { MockBlogRepository, MockBlogCategoryRepository } from '../repositories/MockBlogRepository';
 import { MockNotificationService } from '../services/MockNotificationService';
 
 // Singleton container
@@ -38,6 +40,8 @@ class DIContainer {
     const teamRepository = new MockTeamRepository();
     const faqRepository = new MockFAQRepository();
     const faqCategoryRepository = new MockFAQCategoryRepository();
+    const blogRepository = new MockBlogRepository();
+    const blogCategoryRepository = new MockBlogCategoryRepository();
 
     // Services
     const notificationService = new MockNotificationService();
@@ -48,6 +52,7 @@ class DIContainer {
     const contactUseCases = new ContactUseCases(contactRepository, notificationService);
     const teamUseCases = new TeamUseCases(teamRepository);
     const faqUseCases = new FAQUseCases(faqRepository, faqCategoryRepository);
+    const blogUseCases = new BlogUseCases(blogRepository, blogCategoryRepository);
 
     // Register services
     this.services.set('ProductUseCases', productUseCases);
@@ -55,6 +60,7 @@ class DIContainer {
     this.services.set('ContactUseCases', contactUseCases);
     this.services.set('TeamUseCases', teamUseCases);
     this.services.set('FAQUseCases', faqUseCases);
+    this.services.set('BlogUseCases', blogUseCases);
   }
 
   get<T>(serviceName: string): T {
@@ -75,3 +81,4 @@ export const getIndustryUseCases = (): IndustryUseCases => container.get('Indust
 export const getContactUseCases = (): ContactUseCases => container.get('ContactUseCases');
 export const getTeamUseCases = (): TeamUseCases => container.get('TeamUseCases');
 export const getFAQUseCases = (): FAQUseCases => container.get('FAQUseCases');
+export const getBlogUseCases = (): BlogUseCases => container.get('BlogUseCases');

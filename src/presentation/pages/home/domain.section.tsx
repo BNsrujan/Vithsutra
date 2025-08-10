@@ -19,7 +19,7 @@ export default function WeOfferSection() {
       title: "Robotics",
       description:
         "Industrial and educational robotics for automation, training, and real-world innovation",
-      bgImage: "/home/domain/roboticsvector1.png",
+      bgImage: "/home/domain/roboticscectore1.svg",
       // link: "/technologies/robotics"
     },
 

@@ -1,5 +1,6 @@
 import { FAQ, FAQCategory } from '../../core/entities/faq';
 import { FAQRepository, FAQCategoryRepository } from '../../core/usecases/faq.usecases';
+import { faqData } from '../data/content/faq.data';
 
 const mockFAQs: FAQ[] = [
   {

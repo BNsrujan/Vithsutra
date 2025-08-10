@@ -6,7 +6,7 @@ import { motion } from "motion/react";
 import { containerVariants, itemVariants } from '@/shared/lib/motion';
 import Image from 'next/image';
 import { Card, CardContent,  CardTitle, CardDescription } from '@/presentation/components/ui/card.component';
-import { industries } from '@/data/industries';
+import { industriesData } from '@/infrastructure/data/industries/index';
 import Heading from '@/presentation/components/ui/heading.ui';
 
 export default function IndustriesSection() {
@@ -32,7 +32,7 @@ export default function IndustriesSection() {
         whileInView="visible"
         viewport={{ once: true }}
       >
-        {industries.map((industry, idx) => (
+        {industriesData.map((industry, idx) => (
           <motion.div
             key={industry.title}
             variants={itemVariants}

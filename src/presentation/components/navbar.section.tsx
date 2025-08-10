@@ -21,7 +21,7 @@ import {
   AccordionContent,
 } from "@/presentation/components/ui/accordion.component";
 import type  { MenuSection ,MenuItem }  from "@/core/entities/navbar";
-import { menuData } from "@/data/navbar";
+import { navbarData as menuData } from "@/infrastructure/data/navigation/navbar.data";
 import LogoWithName from "./ui/logo_with_name";
 
 

@@ -22,7 +22,7 @@ export const Robotics = {
       image: "/industry/robotics/application/manufactureingautomation.svg",
     },
     {
-      title: "Smart Agriculture & Precision Farming",
+      // title: "Smart Agriculture & Precision Farming",
       description:
         "Cobots assist in automated planting, harvesting, and crop monitoring. Integrated with sensors and AI, they enable data-driven decisions, reducing labor and increasing yield efficiency.",
       image: "/industry/robotics/application/smartagriculture.svg",
