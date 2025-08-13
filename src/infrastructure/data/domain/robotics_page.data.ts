@@ -105,4 +105,26 @@ export const Robotics = {
       answer: "Yes, each participant will receive a Vithsutra Robotics Training Certificate, adding credibility to their resumes and profiles.",  
     }
   ],
+  facts:[
+    {
+      number: 1500,
+      suffix: "+",
+      title: "Students Trained",
+    },
+    {
+      number: 25,
+      suffix: "+",
+      title: "Workshops Conducted",
+    },
+    {
+      number: 2000,
+      suffix: "+",
+      title: "Training Hours",
+    },
+    {
+      number: 95,
+      suffix: "%+",
+      title: "Project Success",
+    },
+  ]
 };

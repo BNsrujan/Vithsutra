@@ -10,13 +10,13 @@ export default function Heading({heading,Display,className}:{
 }) {
     return (<div className={cn("mx-auto  max-w-company-section-width " ,className)}>
       <div className=
-        "inline-block   bg-company-light-light-gray" >
+        "inline-block bg-company-light-light-gray" >
             <h1 className={`${typography.label.medium} `}>
           {heading}
         </h1>
       </div>
 
-      <h1 className={`${typography.display.large} text-company-black `}>
+      <h1 className={`${typography.display.large}  text-company-black `}>
         {Display}
       </h1>
     </div>)

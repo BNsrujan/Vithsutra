@@ -31,9 +31,9 @@ export default function WeOfferSection() {
     <section className="relative  overflow-hidden">
       <div className="max-w-company-section-width mx-auto ">
         <Heading
-          heading="FEATURED"
+          heading="Company Offerings"
           Display="Automation at All Levels"
-          className="mb-company-lg-24 md:mb-company-xl-48"
+          className="mb-company-lg-24 md:mb-company-xl-48 "
         />
 
         {/* Features Grid */}

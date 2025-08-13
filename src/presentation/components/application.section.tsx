@@ -29,7 +29,7 @@ function Application({ applications }: ApplicationProps) {
     <section className="relative py-16 px-4 md:px-0 md:py-24 overflow-hidden mt-company-xl-48  md:w-full  ">
       <div className="md:py-company-lg-24 ">
         <Heading Display="APPLICATION" heading="Use Cases" />
-        <div className="flex justify-center items-center w-full h-[400px] md:h-[750px] min-h-96 relative ">
+        <div className="flex justify-center items-center w-full h-[400px] md:h-[900px] min-h-96 relative ">
           <Carousel items={carouselItems} />
         </div>
       </div>

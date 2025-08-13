@@ -4,8 +4,6 @@ import { typography } from "@/shared/lib/typography";
 import Heading from "../ui/heading.ui";
 import { Product } from "@/core/entities/product";
 
-
-
 interface ProcessStepCardProps {
   image: string;
   title: string;
@@ -13,32 +11,24 @@ interface ProcessStepCardProps {
   showArrow?: boolean;
 }
 
-
-export default function Howitworks ({howItWorks}:{howItWorks:Product["howItWorks"]}) {
-  return(
+export default function Howitworks({
+  howItWorks,
+}: {
+  howItWorks: Product["howItWorks"];
+}) {
+  return (
     <section className="px-company-md-16 md:px-8  min-h-screen flex  justify-center items-center w-full">
-    <div className="max-w-company-section-width mx-auto w-full">
-      <Heading
-        heading="Simple, secure, and streamlined - our four-step process ensures reliable communication access"
-        Display="How It Works"
-        className="flex flex-col-reverse"
-      />
-      <div className="flex flex-col py-company-xl-48 md:flex-row items-center justify-between gap-company-xl-48 w-full">
-        {howItWorks?.map((step, idx, arr) => (
-          <ProcessStepCard
-            key={step.title}
-            image={step.image}
-            title={step.title}
-            description={step.description}
-            showArrow={idx < arr.length - 1}
-          />
-        ))}
+      <div className="max-w-company-section-width mx-auto w-full">
+        <Heading
+          heading="Simple, secure, and streamlined - our four-step process ensures reliable communication access"
+          Display="How It Works"
+          className="flex flex-col-reverse"
+        />
+        <ProcessStepCards howItWorks={howItWorks} />
       </div>
-    </div>
-  </section>
-  )
+    </section>
+  );
 }
-
 
 export const ProcessStepCard: React.FC<ProcessStepCardProps> = ({
   image,
@@ -78,4 +68,22 @@ export const ProcessStepCard: React.FC<ProcessStepCardProps> = ({
   </div>
 );
 
-
+export function ProcessStepCards({
+  howItWorks,
+}: {
+  howItWorks: Product["howItWorks"];
+}) {
+  return (
+    <div className="flex max-w-company-section-width mx-auto flex-wrap  flex-col py-company-xl-48 md:flex-row items-center justify-between gap-company-xl-48 w-full">
+      {howItWorks?.map((step, idx, arr) => (
+        <ProcessStepCard
+          key={step.title}
+          image={step.image}
+          title={step.title}
+          description={step.description}
+          showArrow={idx < arr.length - 1}
+        />
+      ))}
+    </div>
+  );
+}

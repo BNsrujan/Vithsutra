@@ -134,7 +134,7 @@ export const biometricProduct: Product = {
     {
       description: "Ensures secure communication over USB,Wi-Fi or Serial",
       heading: "Encripted Communication",
-      icon: "/products/biometric-product/Technical/custome.png",
+      icon: "/products/biometric-product/Technical/encripted.png",
     },
     {
       description: "Supports dry wet and rough fingerprints",
@@ -198,15 +198,26 @@ export const biometricProduct: Product = {
   ],
   facts: [
     {
-      number: 2000,
+      number: 200,
       suffix: "+",
-      title: "Students Educated",
+      title: "Actively Used Biometric Devices",
     },
     {
-      number: 1000,
-      suffix: "+",
-      title: "Products Deployed",
+      number: 95,
+      suffix: "%",
+      title: "Authentication Accuracy",
     },
+  {
+      number: 4000,
+      suffix: "+",
+      title: "Daily Verifications Processed",
+    },
+    {
+      number: 7,
+      suffix: "+",
+      title: "Industries Integrated",
+    },
+    
   ],
   link: "/products/biometric-product",
 };

@@ -191,27 +191,27 @@ export const hydroponicProduct: Product = {
       },
     ],
     facts: [
+    {
+        number: 435,
+        suffix: "+",
+        title: "Devices Deployed",
+      },
+      {
+        number: 99.9,
+        suffix: "%",
+        title: "Network Uptime",
+      },
       {
         number: 2000,
         suffix: "+",
-        title: "Students Educated",
+        title: "Yield Growth",
       },
       {
-        number: 1000,
+        number: 17,
         suffix: "+",
-        title: "Products Deployed",
+        title: "Sites Connected locations",
       },
-  
-      {
-        number: 15,
-        suffix: "+",
-        title: "Domains Served",
-      },
-      {
-        number: 2,
-        suffix: "+",
-        title: "Years Of Experience",
-      },
+      
     ],
     link: "/products/hydroponic-controller",
   };

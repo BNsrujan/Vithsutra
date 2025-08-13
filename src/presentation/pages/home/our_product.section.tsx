@@ -27,7 +27,7 @@ export default function CardSection() {
           transition={{ type: "spring", stiffness: 50, damping: 20 }}
         >
           <Heading 
-            heading="FEATURED"
+            heading="Hight Qulity product"
             Display="Our Products"
           />
         </motion.div>

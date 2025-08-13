@@ -16,6 +16,7 @@ import {
 } from "@/presentation/components/ui/application_card.component";
 import TestimonialsCarousel from "@/presentation/components/testimonials.section";
 import Faq from "@/presentation/components/faq.section";
+import QuickFacts from "@/presentation/components/quick_factes.section";
 
 export function HeroSectionIIot() {
   const router = useRouter();
@@ -60,18 +61,17 @@ export function HeroSectionIIot() {
 
         {/* Right side - Image */}
         <div className="relative w-full lg:w-1/2 h-[260px] md:h-[350px] lg:h-[700px] flex justify-center items-center">
-          <div className="absolute h-4 -bottom-2 md:-bottom-8 w-3/5 justify-center rounded-full bg-gradient-to-t from-transparent to-gray-600/10 blur-xs backdrop-blur-3xl" />
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
-            className="relative h-full w-[90vw] sm:w-full md:w-[500px] lg:w-[700px] max-w-full overflow-visible rounded-[28px]"
+            className="relative h-full w-[90vw] sm:w-full md:w-[500px] lg:w-[700px] max-w-full overflow-hidden rounded-[28px]"
           >
             <Image
               src="/industry/iiot/heroimage/iiotindustry.png"
               alt={"iiot image"}
               fill
-              className="object-contain md:object-contain overflow-visible rounded-4xl"
+              className="object-contain md:object-contain overflow-hidden rounded-4xl"
               priority
             />
           </motion.div>
@@ -118,7 +118,7 @@ export default function IIOTPages() {
                 className="space-y-4 md:space-y-6 lg:space-y-8 max-w-2xl"
               >
                 <motion.h1
-                  className={`${typography.display.large} text-2xl sm:text-3xl md:text-4xl lg:text-5xl`}
+                  className={`${typography.display.medium}`}
                   variants={fadeInDown}
                 >
                   What Is IIoT?
@@ -140,23 +140,22 @@ export default function IIOTPages() {
 
         {/* why Choose VithSutra's IIoT Solutions Section  */}
         <section className="relative min-h-[50vh] md:min-h-[70vh] w-full ">
-          <div className="mx-auto px-4 sm:px-6 lg:px-8 max-w-company-section-width w-full flex flex-col lg:flex-row items-center justify-between h-full py-12 md:py-20 gap-8 lg:gap-12">
-            {/* Left side - Text Content */}
-            <div className="w-full lg:w-1/2 text-black flex flex-col justify-center items-center lg:items-start text-center lg:text-left">
+          <div className="mx-auto px-4 sm:px-0 max-w-company-section-width w-full flex flex-col lg:flex-row items-center justify-between h-full py-12 md:py-20 gap-8 lg:gap-12">
+            <div className="w-full  text-black flex flex-col justify-center items-center lg:items-start text-center lg:text-left">
               <motion.div
                 variants={containerVariants}
                 initial="hidden"
                 animate="visible"
-                className="space-y-4 md:space-y-6 lg:space-y-8 max-w-2xl"
+                className="space-y-4 md:space-y-6"
               >
                 <motion.h1
-                  className={`${typography.display.large} text-2xl sm:text-3xl md:text-4xl lg:text-5xl`}
+                  className={`${typography.display.large}`}
                   variants={fadeInDown}
                 >
                   Why Choose VithSutra&apos;s IIoT Solutions?
                 </motion.h1>
                 <motion.p
-                  className={`${typography.title.large} text-base sm:text-lg md:text-xl leading-relaxed`}
+                  className={`${typography.title.large}`}
                   variants={fadeInUp}
                 >
                   Our IIoT platform delivers comprehensive industrial automation
@@ -166,60 +165,8 @@ export default function IIOTPages() {
                 </motion.p>
               </motion.div>
             </div>
-
-            {/* Right side - Features */}
-            <div className="w-full lg:w-1/2">
-              <div className="mb-6 lg:mb-8">
-                <Heading heading="FEATURES" Display="Key Features" />
-              </div>
-              <div className="space-y-4 md:space-y-6">
-                {IIOT.whychose &&
-                  Array.isArray(IIOT.whychose) &&
-                  IIOT.whychose.map((whychose, idx) => {
-                    let IconComponent = null;
-                    if (
-                      typeof whychose.image === "string" &&
-                      whychose.image.length > 0
-                    ) {
-                      IconComponent = (
-                        <Image
-                          src={whychose.image}
-                          alt={whychose.title || `icon-${idx}`}
-                          width={40}
-                          height={40}
-                          className="sm:w-12 sm:h-12"
-                        />
-                      );
-                    }
-
-                    return (
-                      <div
-                        key={whychose.title ? whychose.title + idx : idx}
-                        className="flex items-start gap-3 sm:gap-4 p-4  rounded-lg transition-shadow"
-                      >
-                        <div className="flex-shrink-0">
-                          <div className="w-12 h-12 sm:w-16 sm:h-16 bg-blue-50 border border-blue-100 rounded-lg flex items-center justify-center">
-                            {IconComponent}
-                          </div>
-                        </div>
-                        <div className="flex-1">
-                          <h3
-                            className={`${typography.title.large} text-base sm:text-lg md:text-xl text-gray-900 mb-2`}
-                          >
-                            {whychose.title}
-                          </h3>
-                          <p
-                            className={`${typography.body.medium} text-sm sm:text-base text-gray-600 leading-relaxed`}
-                          >
-                            {whychose.description}
-                          </p>
-                        </div>
-                      </div>
-                    );
-                  })}
-              </div>
-            </div>
           </div>
+          <div>{IIOT.whychose && <FeatuerCard features={IIOT.whychose} />}</div>
         </section>
       </section>
 
@@ -227,8 +174,8 @@ export default function IIOTPages() {
         <div className="mx-auto px-4 sm:px-6 lg:px-8 max-w-company-section-width w-full">
           <div className="mb-8 md:mb-12 lg:mb-16">
             <Heading
-              heading="Simple, secure, and streamlined - our four-step process ensures reliable communication access"
-              Display="How It Works"
+              heading="Real-time data. Smarter decisions. Seamless automation."
+              Display="How VithSutra's IIoT Automation Works"
               className="flex flex-col-reverse"
             />
           </div>
@@ -261,12 +208,13 @@ export default function IIOTPages() {
       </section>
 
       {/* Application section */}
-      <section className="py-12 md:py-20 lg:py-24 bg-gray-50 overflow-hidden">
-        <div className="mx-auto px-4 sm:px-6 lg:px-8 max-w-company-section-width w-full">
-          <div className="mb-8 md:mb-12 lg:mb-16">
-            <Heading Display="APPLICATION" heading="Use Cases" />
+      <section className="py-12 md:py-20 lg:py-24 overflow-hidden">
+        <div className="mx-auto px-4 sm:px-6  w-full">
+          <div className="mb-8">
+            <Heading Display="APPLICATION" heading="Use Cases"/>
           </div>
-          <div className="flex justify-center items-center w-full h-[350px] sm:h-[400px] md:h-[500px] lg:h-[600px] xl:h-[750px] relative">
+
+          <div className="flex justify-center items-center w-full h-[350px] sm:h-[400px] md:h-[820px] relative">
             <Carousel
               items={IIOT.applications.map((app, index) => (
                 <Card
@@ -292,6 +240,8 @@ export default function IIOTPages() {
       />
 
       <Faq FaQ={IIOT.faq} key={`iiot-faq`} />
+
+      <QuickFacts facts={IIOT.facts} key={`iiot-facts`}/>
     </div>
   );
 }

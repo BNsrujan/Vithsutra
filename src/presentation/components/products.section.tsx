@@ -16,7 +16,7 @@ export default function ProductsSection({
   return (
       <section className="py-24">
         <div className="max-w-company-section-width mx-auto px-4  md:px-0">
-          <Heading heading="BEST SELLING PRODUCT" Display="Other Products" />
+          <Heading heading="Top Recommendation" Display="Explore Other Products" />
           <motion.div
             variants={containerVariants}
             initial="hidden"

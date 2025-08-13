@@ -10,7 +10,7 @@ export default function Cta(product: Product) {
   const router = useRouter();
   return (
     <div>
-      <section className="">
+      <section className="h-[560px]">
         <div className="max-w-company-section-width w-full mx-auto md:rounded-4xl bg-company-primary-royalBlue h-[300px] flex flex-col justify-center  items-center  text-center">
           <motion.div
             variants={containerVariants}

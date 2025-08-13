@@ -52,7 +52,7 @@ export default function BrochureDownload() {
   };
 
   return (
-    <section className="text-center bg-company-primary-royalBlue w-full px-12  md:rounded-company-section-24 h-full max-w-company-section-width mx-auto py-12">
+    <section className="text-center bg-company-primary-royalBlue w-full px-12  md:rounded-company-section-24 h-[650px] max-w-company-section-width mx-auto py-12">
       <h2 className="text-2xl font-semibold mb-4 text-white">Want the Full Robotics Brochure?</h2>
       <Button
         variant={'neumorphicYellow'}
@@ -62,7 +62,7 @@ export default function BrochureDownload() {
       </Button>
 
       {isOpen && (
-        <div className="fixed inset-0 bg-[#0000006b] z-50 flex items-center justify-center">
+        <div className="fixed inset-0  bg-[#0000006b] z-50 flex items-center justify-center">
           <div className="bg-white p-6 rounded-lg w-full max-w-md space-y-company-lg-24   -xl text-black">
             <h3 className={`${typography.title.large} text-lg font-semibold`}>Enter your details to download</h3>
             <div className="space-y-company-lg-24">

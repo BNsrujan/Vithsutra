@@ -16,6 +16,7 @@ import TestimonialsCarousel from "@/presentation/components/testimonials.section
 import Faq from "@/presentation/components/faq.section";
 import IndustrySkillsHighlights from "@/presentation/components/industrialskills.component";
 import Training from "../training/training.page";
+import QuickFacts from "@/presentation/components/quick_factes.section";
 
 export function HeroSectionIIot() {
   const router = useRouter();
@@ -244,6 +245,8 @@ export default function RoboticsPage() {
       <Training />
 
       <Faq FaQ={Robotics.faq} key={`robotics-faq`} />
+
+      <QuickFacts facts={Robotics.facts} />
     </div>
   );
 }

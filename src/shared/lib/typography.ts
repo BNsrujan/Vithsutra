@@ -1,7 +1,7 @@
 export const typography = {
   display: {
-    large: "text-[1.5rem] sm:text-[3.5rem] md:text-[5rem] font-semibold sm:font-normal leading-tight  tracking-tight",
-    medium: "text-[2rem] sm:text-[2.5rem] md:text-[2.813rem] font-light leading-snug",
+    large: "text-[1.5rem] sm:text-[3.5rem] md:text-[5rem]/23 font-semibold sm:font-normal leading-tight   tracking-tighter",
+    medium: "text-[2rem] sm:text-[2.5rem] md:text-[2.813rem] tracking-tight leading-snug",
     small: "text-[1.75rem] sm:text-[2rem] md:text-[2.25rem] font-normal leading-normal",
   },
   headline: {
@@ -21,7 +21,7 @@ export const typography = {
   },
   label: {
     large: "text-[0.75rem] sm:text-[0.875rem] font-medium uppercase",
-    medium: "text-[0.6875rem] sm:text-[0.75rem] font-medium uppercase",
+    medium: "text-[0.6875rem] sm:text-[0.75rem] font-medium uppercase tracking-wider",
     small: "text-[0.625rem] sm:text-[0.6875rem] font-medium uppercase",
   },
 };

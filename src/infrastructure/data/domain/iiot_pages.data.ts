@@ -1,4 +1,3 @@
-
 export const IIOT = {
   whychose: [
     {
@@ -205,6 +204,28 @@ export const IIOT = {
       title: "Visualize & Act",
       description:
         "View actionable KPIs and trends on a unified dashboard integrated with your ERP or CRM.",
+    },
+  ],
+    facts: [
+    {
+      number: 95,
+      suffix: "%",
+      title: "Process Efficiency",
+    },
+    {
+      number: 99.9,
+      suffix: "%",
+      title: "System Uptime",
+    },
+    {
+      number: 50,
+      suffix: "L+",
+      title: "Cost Savings",
+    },
+    {
+      number: 80,
+      suffix: "%",
+      title: "Reduction",
     },
   ],
 };

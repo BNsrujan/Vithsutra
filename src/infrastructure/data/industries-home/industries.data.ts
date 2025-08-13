@@ -1,7 +1,4 @@
-/**
- * Industries data for the industries section
- * This data defines the industries that Vithsutra serves
- */
+
 export const industriesData = [
   {
     id: "food-processing",

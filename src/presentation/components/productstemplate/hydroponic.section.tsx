@@ -19,7 +19,7 @@ export default function Hydroponic(product : Product) {
                   variants={containerVariants}
                   initial="hidden"
                   animate="visible"
-                  className="relative h-full   w-full max-w-full  rounded-company-section-24"
+                  className="relative h-full  w-full max-w-full  rounded-company-section-24"
                 >
                   <Image
                     src={"/products/vithnet/CEA1.png"}
@@ -37,10 +37,10 @@ export default function Hydroponic(product : Product) {
                   variants={containerVariants}
                   initial="hidden"
                   animate="visible"
-                  className=" space-y-company-md-16 md:space-y-company-lg-24 text-center lg:text-left"
+                  className=" space-y-company-md-16 md:space-y-company-lg-24 text-center lg:text-left "
                 >
                   <motion.h1
-                    className={`${typography.display.large} `}
+                    className={`${typography.display.medium} `}
                     variants={fadeInDown}
                   >
                     What is Controlled Environment Farming?
@@ -70,7 +70,7 @@ export default function Hydroponic(product : Product) {
                   className=" space-y-company-md-16 md:space-y-company-lg-24 text-center lg:text-left"
                 >
                   <motion.h1
-                    className={`${typography.display.large} `}
+                    className={`${typography.display.medium} `}
                     variants={fadeInDown}
                   >
                     What is Controlled Environment Farming?
@@ -89,7 +89,7 @@ export default function Hydroponic(product : Product) {
               </div>
 
               <div className="md:w-1/2 mx-auto px-company-lg-24 ">
-                <Heading heading="FEATURES" Display="Key Features" />
+                <Heading heading="FEATURES" Display="Key Features"  />
                 <div className=" ">
                   <div className="grid grid-cols-1 gap-company-sm-12  ">
                     {product.whychose &&
