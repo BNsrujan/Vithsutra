@@ -10,7 +10,7 @@ import ProductHeroSection from "@/presentation/components/productstemplate/prodc
 import Technicalspecification from "@/presentation/components/productstemplate/technical_specification.section";
 import Cta from "@/presentation/components/cta.section";
 import Gallery from "@/presentation/components/gallery.section";
-import Howitworks from "@/presentation/components/productstemplate/process_step_card.section";
+import { Howitworks } from "@/presentation/components/productstemplate/process_step_card.section";
 import {FeatureSection} from "@/presentation/components/productstemplate/feature.section";
 import Hydroponic from "@/presentation/components/productstemplate/hydroponic.section";
 

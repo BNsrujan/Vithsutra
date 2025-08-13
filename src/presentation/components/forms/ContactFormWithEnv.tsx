@@ -12,7 +12,7 @@ interface ContactFormData {
 }
 
 export const ContactFormWithEnv = () => {
-  const [formData, setFormData] = useState<ContactFormData>({
+  const [formData, setFormData] = useState<ContactFormData >({
     name: '',
     email: '',
     phone: '',

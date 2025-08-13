@@ -11,7 +11,7 @@ interface ProcessStepCardProps {
   showArrow?: boolean;
 }
 
-export default function Howitworks({
+export function Howitworks({
   howItWorks,
 }: {
   howItWorks: Product["howItWorks"];

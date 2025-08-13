@@ -27,7 +27,7 @@ export class ProductUseCases {
 
   async getFeaturedProducts(): Promise<Product[]> {
     const products = await this.productRepository.findAll();
-    return products.filter(product => product.featured);
+    return products.filter(product => product.features);
   }
 
   async getProductById(id: string): Promise<Product | null> {
@@ -41,7 +41,7 @@ export class ProductUseCases {
     }
     
     // Get products from the same category, excluding the current product
-    const relatedProducts = await this.productRepository.findByCategory(product.categoryId);
+    const relatedProducts = await this.productRepository.findByCategory(product.id);
     return relatedProducts
       .filter(p => p.id !== productId)
       .slice(0, limit);

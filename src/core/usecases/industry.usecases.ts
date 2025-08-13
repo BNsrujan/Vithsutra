@@ -24,7 +24,7 @@ export class IndustryUseCases {
 
   async getFeaturedIndustries(): Promise<Industry[]> {
     const industries = await this.industryRepository.findAll();
-    return industries.filter(industry => industry.featured);
+    return industries.filter(industry => industry.solutions);
   }
 
   async getIndustryById(id: string): Promise<Industry | null> {

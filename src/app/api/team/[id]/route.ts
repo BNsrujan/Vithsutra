@@ -14,7 +14,7 @@ export async function GET(
     }
 
     const teamUseCases = getTeamUseCases();
-    const member = await teamUseCases.getMemberById(id);
+    const member = await teamUseCases.getTeamMemberById(id);
 
     if (!member) {
       return NextResponse.json(

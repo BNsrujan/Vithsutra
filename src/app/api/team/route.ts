@@ -20,10 +20,10 @@ export async function GET(request: Request) {
       const departments = await teamUseCases.getAllDepartments();
       result = { departments };
     } else if (department) {
-      const members = await teamUseCases.getMembersByDepartment(department);
+      const members = await teamUseCases.getActiveTeamMembers();
       result = { members, total: members.length };
     } else {
-      const members = await teamUseCases.getAllMembers();
+      const members = await teamUseCases.getAllTeamMembers();
       result = { members, total: members.length };
     }
 
