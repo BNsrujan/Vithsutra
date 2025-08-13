@@ -4,15 +4,17 @@ import { config, isDevelopment } from '@/infrastructure/config/environment';
 
 export async function GET(
   request: Request,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
+    const { id } = await params;
+    
     if (isDevelopment) {
-      console.log(`📡 [${config.app.name}] Team member API called for ID: ${params.id}`);
+      console.log(`📡 [${config.app.name}] Team member API called for ID: ${id}`);
     }
 
     const teamUseCases = getTeamUseCases();
-    const member = await teamUseCases.getMemberById(params.id);
+    const member = await teamUseCases.getMemberById(id);
 
     if (!member) {
       return NextResponse.json(

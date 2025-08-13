@@ -23,12 +23,12 @@ export default function Faq({ FaQ }: {FaQ: Product["FaQ"] }
               FaQ.map(({ question, answer }) => (
                 <AccordionItem  key={question} value={question}>
                   <AccordionTrigger
-                    className={`${typography.body.large} font-bold text-company-primary-royalBlue md:px-company-lg-24`}
+                    className={`${typography.title.large} font-bold text-company-primary-royalBlue md:px-company-lg-24`}
                   >
                     {question}
                   </AccordionTrigger>
                   <AccordionContent
-                    className={`${typography.body.large} text-company-dark-gray `}
+                    className={`${typography.title.large} text-company-dark-gray `}
                   >
                     {answer}
                   </AccordionContent>

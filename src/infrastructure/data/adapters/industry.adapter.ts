@@ -1,5 +1,5 @@
 import { Industry } from '../../../core/entities/industry';
-import { industriesData } from '../industries/industries.data';
+import { industriesData } from '../industries-home/industries.data';
 
 /**
  * Adapter to transform static industries data to Industry entities

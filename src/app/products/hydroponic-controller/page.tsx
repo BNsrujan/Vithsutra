@@ -4,6 +4,6 @@ import { hydroponicProduct, biometricProduct, rfidProduct } from '@/infrastructu
 export default function Page() {
   return <ProductPage 
     product={hydroponicProduct} 
-    otherProducts={[biometricProduct, rfidProduct]}
+    otherProducts={[biometricProduct,rfidProduct]}
   />;
 } 

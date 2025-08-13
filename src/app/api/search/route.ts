@@ -5,6 +5,9 @@ import {
   getFAQUseCases,
 } from "@/infrastructure/di/Container";
 import { config, isDevelopment } from "@/infrastructure/config/environment";
+import { BlogPost } from "@/core/entities/blog";
+import { Product } from "@/core/entities/product";
+import { FAQ } from "@/core/entities/faq";
 
 export async function GET(request: Request) {
   try {
@@ -27,7 +30,14 @@ export async function GET(request: Request) {
       );
     }
 
-    const results: any = {
+    const results: {
+      query: string;
+      results: {
+        blog?: BlogPost[];
+        products?: Product[];
+        faq?: FAQ[];
+      };
+    } = {
       query: query.trim(),
       results: {},
     };
@@ -81,7 +91,7 @@ export async function GET(request: Request) {
 
     // Calculate total results
     const totalResults = Object.values(results.results).reduce(
-      (sum: number, items: any) => sum + (items?.length || 0),
+      (sum: number, items: BlogPost[] | Product[] | FAQ[] | undefined) => sum + (items?.length || 0),
       0
     );
 

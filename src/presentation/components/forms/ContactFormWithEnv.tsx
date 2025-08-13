@@ -127,7 +127,7 @@ export const ContactFormWithEnv = () => {
 
         {submitStatus === 'success' && (
           <div className="p-3 bg-green-100 border border-green-400 text-green-700 rounded">
-            ✅ Message sent successfully! We'll get back to you soon.
+            ✅ Message sent successfully! We&apos;ll get back to you soon.
           </div>
         )}
 

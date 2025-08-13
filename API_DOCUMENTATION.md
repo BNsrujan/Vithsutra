@@ -128,7 +128,7 @@ GET /api/blog?tag=robotics
       "slug": "future-of-industrial-iot-transforming-manufacturing",
       "excerpt": "Discover how Industrial IoT is revolutionizing...",
       "author": "Vithsutra Team",
-      "imageUrl": "/public/appli_image_iiot/Industrial-Automation.jpg",
+      "imageUrl": "/public/application_image_iiot/Industrial-Automation.jpg",
       "tags": ["IIoT", "Manufacturing", "Industry 4.0"],
       "category": "technology",
       "publishedAt": "2024-01-15T00:00:00.000Z",

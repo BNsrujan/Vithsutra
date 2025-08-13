@@ -3,7 +3,15 @@ import { config, isDevelopment } from '@/infrastructure/config/environment';
 
 export async function GET() {
   try {
-    const healthData = {
+    const healthData: {
+      status: string;
+      timestamp: string;
+      uptime: number;
+      environment: string;
+      version: string;
+      name: string;
+      services: Record<string, string | object>;
+    } = {
       status: 'healthy',
       timestamp: new Date().toISOString(),
       uptime: process.uptime(),

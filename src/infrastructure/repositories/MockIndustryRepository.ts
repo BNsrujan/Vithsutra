@@ -1,6 +1,5 @@
 import { Industry, CaseStudy } from '../../core/entities/industry';
 import { IndustryRepository, CaseStudyRepository } from '../../core/usecases/industry.usecases';
-import { industriesData } from '../data/industries/industries.data';
 
 // Transform static data to entities using adapter
 import { IndustryDataAdapter } from '../data/adapters/industry.adapter';

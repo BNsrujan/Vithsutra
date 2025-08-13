@@ -22,7 +22,7 @@ const mockBlogPosts: BlogPost[] = [
       <p>As we move forward, IIoT will continue to be a driving force in Industry 4.0, enabling smarter factories and more sustainable manufacturing practices.</p>
     `,
     author: 'Vithsutra Team',
-    imageUrl: '/public/appli_image_iiot/Industrial-Automation.jpg',
+    imageUrl: '/public/application_image_iiot/Industrial-Automation.jpg',
     tags: ['IIoT', 'Manufacturing', 'Industry 4.0', 'Automation'],
     category: 'technology',
     publishedAt: new Date('2024-01-15'),
@@ -49,7 +49,7 @@ const mockBlogPosts: BlogPost[] = [
       <p>The integration of AI and robotics in agriculture promises a more sustainable and efficient future for food production.</p>
     `,
     author: 'Vithsutra Team',
-    imageUrl: '/public/appli_image_iiot/Smart-robots.jpg',
+    imageUrl: '/public/application_image_iiot/Smart-robots.jpg',
     tags: ['Robotics', 'Agriculture', 'Automation', 'AI'],
     category: 'robotics',
     publishedAt: new Date('2024-01-10'),

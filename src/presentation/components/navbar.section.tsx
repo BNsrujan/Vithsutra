@@ -57,7 +57,7 @@ const MenuSection = React.memo(
         {section.title}
       </NavigationMenuTrigger>
       <NavigationMenuContent>
-        <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2">
+        <ul className="grid w-[400px] gap-3 p-4 md:w-[800px] md:grid-cols-3">
           <li className="row-span-3">
             <NavigationMenuLink asChild>
               <Link
@@ -117,7 +117,7 @@ export function Navbar() {
   }, [isMobileMenuOpen]);
 
   return (
-    <div className="sticky top-0 z-50 bg-company-white   w-full ">
+    <div className="sticky top-0 z-50  backdrop-blur-md bg-white/80 border-b border-gray-200   w-full ">
       <div className="flex  items-center justify-between w-full  px-2 py-4 max-w-[1800px] mx-auto">
         <LogoWithName/>
 

@@ -6,65 +6,65 @@ export const rfidProduct: Product = {
     tagline: "RFID-Based Telephone",
     description:
     "This RFID-based telephone is made for hostels, schools, and campuses. It replaces coin phones with smart, secure RFID cards. Each call is tracked, timed, and easy to manage.",
-    mainImage: "/Products/rfid-tel/tec_telephone.svg",
-    productSectionImage: "/Products/rfid-tel/telephone[1].png",
-    tecnicalimage: "/Products/rfid-tel/telephone[1].png",
+    mainImage: "/products/rfid-tel/tec_telephone.svg",
+    productSectionImage: "/products/rfid-tel/telephone[1].png",
+    tecnicalimage: "/products/rfid-tel/telephone[1].png",
    features: [
       {
-        image: "/Products/rfid-tel/feature/image 37.svg",
+        image: "/products/rfid-tel/feature/image 37.svg",
         title: "RFID Security",
         description: "Secure access with individual RFID card authentication.",
       },
       {
-        image: "/Products/rfid-tel/feature/image 38.svg",
+        image: "/products/rfid-tel/feature/image 38.svg",
         title: "Cloud Dashboard",
         description:
           "Live data monitoring with admin-level access from anywhere.",
       },
       {
-        image: "/Products/rfid-tel/feature/image 39.svg",
+        image: "/products/rfid-tel/feature/image 39.svg",
         title: "Smart Billing",
         description: "$1 is deducted for every 60 seconds of talktime.",
       },
       {
-        image: "/Products/rfid-tel/feature/image 40.svg",
+        image: "/products/rfid-tel/feature/image 40.svg",
         title: "Custom Rules",
         description: "Set limits for call time, users, or access hours.",
       },
       {
-        image: "/Products/rfid-tel/feature/image 41.svg",
+        image: "/products/rfid-tel/feature/image 41.svg",
         title: "Easy Recharge",
         description: "Top and recharge using VINSura's recharge machine.",
       },
       {
-        image: "/Products/rfid-tel/feature/image 42.svg",
+        image: "/products/rfid-tel/feature/image 42.svg",
         title: "Durable Hardware",
         description: "Built for long-term public use with low power",
       },
       {
-        image: "/Products/rfid-tel/feature/image 43.svg",
+        image: "/products/rfid-tel/feature/image 43.svg",
         title: "24/7 operational availability",
         description: "Operational anytime, day or night.",
       },
     ],
     howItWorks: [
       {
-        image: "/Products/rfid-tel/how_it_works/setp1.png",
+        image: "/products/rfid-tel/how_it_works/setp1.png",
         title: "Tap to Recharge",
         description: "User taps card on VithSutra's recharge machine",
       },
       {
-        image: "/Products/rfid-tel/how_it_works/step2.png",
+        image: "/products/rfid-tel/how_it_works/step2.png",
         title: "Insert Card",
         description: "Insert RFID card into the telephone unit",
       },
       {
-        image: "/Products/rfid-tel/how_it_works/step3.png",
+        image: "/products/rfid-tel/how_it_works/step3.png",
         title: "Dial and Talk",
         description: "Dial the number and start your call",
       },
       {
-        image: "/Products/rfid-tel/how_it_works/step4.png",
+        image: "/products/rfid-tel/how_it_works/step4.png",
         title: "Auto Deduction",
         description: "Amount is deducted from the card",
       },
@@ -97,7 +97,7 @@ export const rfidProduct: Product = {
         company: "Ski-line Boys Hostel, Mysore",
         quote:
           "Managing communication in a boys' hostel with over 300 students was always a challenge especially when students' personalphones were often misplaced or misused. Since installing these RFID-based telephones, daily communication has become streamlined and secure. Each student now has verified access, and calls can be tracked for accountability. The product has drastically reduced misuse and brought a sense of discipline in the hostel. It's become an essential part of our daily routine.",
-        avatar: "/Products/rfid-tel/testimonial_profilephoto/image_1.png",
+        avatar: "/products/rfid-tel/testimonial_profilephoto/image_1.png",
       },
       {
         id: "2",
@@ -106,7 +106,7 @@ export const rfidProduct: Product = {
         company: "Mahadev Mining Corporation, Jharkhand",
         quote:
           "Our mining site is located deep in a region where mobile networks from different SIM providers constantly fail. Communication was a huge bottleneck affecting both safety and coordination. After implementing these telephones with wide coverage antennas,  we've finally found a reliable solution. Now, our teams stay connected across the entire site, without worrying about poor signal  strength. It's a game-changer for the mining industry.",
-        avatar: "/Products/rfid-tel/testimonial_profilephoto/images_2.png",
+        avatar: "/products/rfid-tel/testimonial_profilephoto/images_2.png",
       },
     ],
     // specifications: [

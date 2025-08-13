@@ -4,15 +4,17 @@ import { config, isDevelopment } from '@/infrastructure/config/environment';
 
 export async function GET(
   request: Request,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
+    const { id } = await params;
+    
     if (isDevelopment) {
-      console.log(`📡 [${config.app.name}] Product API called for ID: ${params.id}`);
+      console.log(`📡 [${config.app.name}] Product API called for ID: ${id}`);
     }
 
     const productUseCases = getProductUseCases();
-    const product = await productUseCases.getProductById(params.id);
+    const product = await productUseCases.getProductById(id);
 
     if (!product) {
       return NextResponse.json(
@@ -22,7 +24,7 @@ export async function GET(
     }
 
     // Get related products (same category)
-    const relatedProducts = await productUseCases.getRelatedProducts(params.id, 3);
+    const relatedProducts = await productUseCases.getRelatedProducts(id, 3);
 
     if (isDevelopment) {
       console.log(`✅ Retrieved product: ${product.name}`);

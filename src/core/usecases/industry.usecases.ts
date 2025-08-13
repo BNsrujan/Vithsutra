@@ -22,6 +22,15 @@ export class IndustryUseCases {
     return this.industryRepository.findAll();
   }
 
+  async getFeaturedIndustries(): Promise<Industry[]> {
+    const industries = await this.industryRepository.findAll();
+    return industries.filter(industry => industry.featured);
+  }
+
+  async getIndustryById(id: string): Promise<Industry | null> {
+    return this.industryRepository.findById(id);
+  }
+
   async getIndustryBySlug(slug: string): Promise<Industry | null> {
     return this.industryRepository.findBySlug(slug);
   }

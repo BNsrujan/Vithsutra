@@ -4,11 +4,11 @@ import { motion } from "framer-motion";
 import { containerVariants } from "@/shared/lib/motion";
  import React from "react";
 import { Carousel, Card } from "@/presentation/components/ui/products_card.component";
-import { biometricProduct, rfidProduct, hydroponicProduct } from "@/infrastructure/data/prodcuts-data/prodcut";
+import { biometricProduct,  hydroponicProduct } from "@/infrastructure/data/prodcuts-data/prodcut";
 import Heading from "@/presentation/components/ui/heading.ui";
 
 // Create an array of products
-const products = [biometricProduct, rfidProduct, hydroponicProduct];
+const products = [biometricProduct, hydroponicProduct];
 
 export default function CardSection() {
   return (

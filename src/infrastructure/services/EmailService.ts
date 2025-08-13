@@ -70,7 +70,7 @@ export class EmailService implements INotificationService {
     this.validateEmailConfig();
 
     // Implementation would use environment variables for email templates
-    console.log(`📧 Welcome email configured for ${config.app.name}`);
+    console.log(`📧 Welcome email configured for ${config.app.name} for ${email} (${name})`);
     return true;
   }
 
@@ -78,7 +78,7 @@ export class EmailService implements INotificationService {
     this.validateEmailConfig();
 
     // Implementation would use environment variables
-    console.log(`📧 Newsletter confirmation from ${config.email.fromEmail}`);
+    console.log(`📧 Newsletter confirmation from ${config.email.fromEmail} to ${email}`);
     return true;
   }
 

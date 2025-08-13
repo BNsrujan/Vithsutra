@@ -1,4 +1,4 @@
-import Hero from "./hero_section.section";
+import Hero from "./home_hero.section";
 import About from "./about.section";
 import WeOfferSection from "./domain.section";
 import CardSection from "./our_product.section";
@@ -36,7 +36,7 @@ function Homepage() {
     <main className="w-full justify-center">
       <Hero />
       <div className="container mx-auto ">
-        <div className="space-y-24 max-w-company-section-width mx-auto px-company-sm-12">
+        <div className="space-y-24 max-w-company-section-width mx-auto px-company-sm-12 md:p-0">
           <About />
           <WeOfferSection />
           <CardSection />

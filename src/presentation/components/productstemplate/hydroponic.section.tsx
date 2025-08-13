@@ -22,7 +22,7 @@ export default function Hydroponic(product : Product) {
                   className="relative h-full   w-full max-w-full  rounded-company-section-24"
                 >
                   <Image
-                    src={"/Products/vithnet/CEA1.png"}
+                    src={"/products/vithnet/CEA1.png"}
                     alt={product.name}
                     fill
                     className="object-contain md:object-cover overflow-hidden rounded-company-section-24 "

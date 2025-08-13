@@ -1,5 +1,5 @@
-import { rfidProduct } from "./rfid.product";
-import { hydroponicProduct } from "./hydroponic.product";
-import { biometricProduct } from "./biometric.product";
+import { rfidProduct } from "./rfid.product.data";
+import { hydroponicProduct } from "./hydroponic.product.data";
+import { biometricProduct } from "./biometric.product.data";
 
 export {rfidProduct ,hydroponicProduct,biometricProduct}

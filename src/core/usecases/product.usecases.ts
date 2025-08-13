@@ -25,8 +25,26 @@ export class ProductUseCases {
     return this.productRepository.findAll();
   }
 
+  async getFeaturedProducts(): Promise<Product[]> {
+    const products = await this.productRepository.findAll();
+    return products.filter(product => product.featured);
+  }
+
   async getProductById(id: string): Promise<Product | null> {
     return this.productRepository.findById(id);
+  }
+
+  async getRelatedProducts(productId: string, limit: number = 3): Promise<Product[]> {
+    const product = await this.productRepository.findById(productId);
+    if (!product) {
+      return [];
+    }
+    
+    // Get products from the same category, excluding the current product
+    const relatedProducts = await this.productRepository.findByCategory(product.categoryId);
+    return relatedProducts
+      .filter(p => p.id !== productId)
+      .slice(0, limit);
   }
 
   async getProductsByCategory(categorySlug: string): Promise<Product[]> {

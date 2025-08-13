@@ -27,14 +27,14 @@ const FeatureCard = ({
       type: "spring",
       stiffness: 50,
       damping: 20,
-      delay: 0.1,
+      delay: 0.09,
     }}
   >
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-100px" }}
-      transition={{ delay: delay + 0.2, duration: 1 }}
+      transition={{ delay: delay , duration: 0.5 }}
       className="md:gap-5 justify-center"
     >
       <div className="relative w-full h-64 md:h-72 md:mb-6 rounded-xl overflow-hidden">
@@ -69,7 +69,7 @@ export default function UniqueFeatures() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
         >
-          <Heading heading="UNIQUE" Display="What Makes Us Unique" />
+          <Heading heading="we are Special" Display="What Makes Us Unique" />
         </motion.div>
 
         <div className="flex flex-col gap-company-lg-24 mt-12 ">
@@ -106,8 +106,7 @@ export default function UniqueFeatures() {
                 title="Customizable Software"
                 description="Tailored solutions that adapt to your specific needs. We build software that grows with your business."
                 delay={0.8}
-                image="/home/what_makes_us_unique/image51.png
-                "
+                image="/home/what_makes_us_unique/image51.png"
               />
             </div>
           </div>

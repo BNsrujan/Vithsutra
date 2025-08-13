@@ -4,15 +4,17 @@ import { config, isDevelopment } from '@/infrastructure/config/environment';
 
 export async function GET(
   request: Request,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
+    const { id } = await params;
+    
     if (isDevelopment) {
-      console.log(`📡 [${config.app.name}] Industry API called for ID: ${params.id}`);
+      console.log(`📡 [${config.app.name}] Industry API called for ID: ${id}`);
     }
 
     const industryUseCases = getIndustryUseCases();
-    const industry = await industryUseCases.getIndustryById(params.id);
+    const industry = await industryUseCases.getIndustryById(id);
 
     if (!industry) {
       return NextResponse.json(
@@ -22,7 +24,7 @@ export async function GET(
     }
 
     // Get case studies for this industry
-    const caseStudies = await industryUseCases.getCaseStudiesByIndustry(params.id);
+    const caseStudies = await industryUseCases.getCaseStudiesByIndustry(id);
 
     if (isDevelopment) {
       console.log(`✅ Retrieved industry: ${industry.name}`);

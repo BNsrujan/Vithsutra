@@ -4,15 +4,17 @@ import { config, isDevelopment } from '@/infrastructure/config/environment';
 
 export async function GET(
   request: Request,
-  { params }: { params: { slug: string } }
+  { params }: { params: Promise<{ slug: string }> }
 ) {
   try {
+    const { slug } = await params;
+    
     if (isDevelopment) {
-      console.log(`📡 [${config.app.name}] Blog post API called for slug: ${params.slug}`);
+      console.log(`📡 [${config.app.name}] Blog post API called for slug: ${slug}`);
     }
 
     const blogUseCases = getBlogUseCases();
-    const post = await blogUseCases.getPostBySlug(params.slug);
+    const post = await blogUseCases.getPostBySlug(slug);
 
     if (!post) {
       return NextResponse.json(

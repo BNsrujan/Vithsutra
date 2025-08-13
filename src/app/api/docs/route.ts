@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
 import { config, isDevelopment } from '@/infrastructure/config/environment';
 
+
 export async function GET() {
   const apiDocs = {
     name: config.app.name,

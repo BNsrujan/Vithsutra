@@ -5,10 +5,10 @@ import { useState } from "react"
 import { X, ChevronRight, ArrowRight } from "lucide-react"
 import Image from "next/image"
 import { heroContent, caseStudyCard, modalOverlay, modalContent } from '@/shared/lib/motion'
-import { caseStudies } from "@/data/casestudies"
+import { caseStudiesData } from "@/infrastructure/data/content/casestudies.data"
 
 export default function CaseStudiesPage() {
-  const [selectedCase, setSelectedCase] = useState<typeof caseStudies[0] | null>(null)
+  const [selectedCase, setSelectedCase] = useState<typeof caseStudiesData[0] | null>(null)
 
   return (
     <div className="min-h-screen bg-white">
@@ -35,7 +35,7 @@ export default function CaseStudiesPage() {
       <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {caseStudies.map((study) => (
+            {caseStudiesData.map((study) => (
               <motion.div
                 key={study.id}
                 variants={caseStudyCard}

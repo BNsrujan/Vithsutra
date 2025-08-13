@@ -36,7 +36,7 @@ export const industriesData = [
     description:
       "Empowering modern farmers with hydroponics automation, sensor-based monitoring, and precision farming tech.",
     slug: "farming-agriculture",
-    image: "/Products/vithnet/application/planet-rescue-101.png",
+    image: "/products/vithnet/application/planet-rescue-101.png",
     featured: true,
   },
   {
@@ -48,4 +48,5 @@ export const industriesData = [
     image: "/industry/manufactureing.avif",
     featured: true,
   },
+  
 ];

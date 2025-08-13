@@ -36,7 +36,7 @@ export async function GET() {
       productUseCases.getAllProducts(),
       productUseCases.getAllCategories(),
       faqUseCases.getAllFAQs(),
-      teamUseCases.getAllMembers(),
+      teamUseCases.getAllTeamMembers(),
       industryUseCases.getAllIndustries()
     ]);
 
