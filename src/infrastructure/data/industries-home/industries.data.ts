@@ -15,7 +15,7 @@ export const industriesData = [
     description:
       "Secure patient access, sample inspection, and hospital automation powered by biometrics, robotics, and IIoT.",
     slug: "healthcare-medical",
-    image: "/industry/healthcare.webp",
+    image: "/industry/iiot/application/pharmaceutical.svg",
     featured: true,
   },
   {
@@ -42,8 +42,18 @@ export const industriesData = [
     description:
       "Streamlining industrial operations through PLC-based automation, SCADA systems, and robotic integration.",
     slug: "manufacturing",
-    image: "/industry/manufactureing.avif",
+    image: "/industry/robotics/application/manufactureingautomation.svg",
     featured: true,
   },
+  {
+    id: "power-energy",
+    title: "Power & Energy",
+    description:
+      "Automating energy management, smart grid solutions, and renewable energy systems with advanced IIoT and control technologies",
+    slug:"power-energy",
+    image: "/industry/iiot/application/powerohow.svg",
+    featured: true,
+  },
+
   
 ];

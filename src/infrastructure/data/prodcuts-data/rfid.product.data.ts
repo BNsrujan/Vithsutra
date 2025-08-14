@@ -11,38 +11,38 @@ export const rfidProduct: Product = {
     tecnicalimage: "/products/rfid-tel/telephone[1].png",
    features: [
       {
-        image: "/products/rfid-tel/feature/image 37.svg",
+        image: "/products/rfid-tel/feature/image-37.svg",
         title: "RFID Security",
         description: "Secure access with individual RFID card authentication.",
       },
       {
-        image: "/products/rfid-tel/feature/image 38.svg",
+        image: "/products/rfid-tel/feature/image-38.svg",
         title: "Cloud Dashboard",
         description:
           "Live data monitoring with admin-level access from anywhere.",
       },
       {
-        image: "/products/rfid-tel/feature/image 39.svg",
+        image: "/products/rfid-tel/feature/image-39.svg",
         title: "Smart Billing",
         description: "$1 is deducted for every 60 seconds of talktime.",
       },
       {
-        image: "/products/rfid-tel/feature/image 40.svg",
+        image: "/products/rfid-tel/feature/image-40.svg",
         title: "Custom Rules",
         description: "Set limits for call time, users, or access hours.",
       },
       {
-        image: "/products/rfid-tel/feature/image 41.svg",
+        image: "/products/rfid-tel/feature/image-41.svg",
         title: "Easy Recharge",
         description: "Top and recharge using VINSura's recharge machine.",
       },
       {
-        image: "/products/rfid-tel/feature/image 42.svg",
+        image: "/products/rfid-tel/feature/image-42.svg",
         title: "Durable Hardware",
         description: "Built for long-term public use with low power",
       },
       {
-        image: "/products/rfid-tel/feature/image 43.svg",
+        image: "/products/rfid-tel/feature/image-43.svg",
         title: "24/7 operational availability",
         description: "Operational anytime, day or night.",
       },

@@ -139,7 +139,7 @@ export const IIOT = {
   From flow sensors to tank levels and pump pressure — we now track everything remotely with precise data logs. 
   It has made SLA compliance easier with on-time overflow alerts and live analytics for pump efficiency. 
   The shift from reactive to proactive control has transformed our operational model completely.`,
-      avatar: "",
+      avatar: "/industry/iiot/testimonial/nikel.png",
     },
     {
       id: "2",
@@ -150,7 +150,7 @@ export const IIOT = {
   Our team now monitors pipeline pressure, pump vibration, and leak indicators in real time across multiple sites. 
   The system's threshold-based alarms helped us prevent two major failures in just the first month of deployment. 
   It has reduced our unplanned maintenance and strengthened our remote control and safety protocols.`,
-      avatar: "",
+      avatar: "/industry/iiot/testimonial/manoge.png",
     },
   ],
   applications: [
